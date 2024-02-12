@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Septiembre 2023 - Actualmente...",
+    title: "Testing Engineer",
+    company: "Gaming Labs Sudamerica",
+    description:
+      "Cree un software para automatizar el ingreso de numero de datos sobre un maquina de juegos, ahorrando semanas de trabajo para la empresa. Para el proyecto use python con Pandas, PyGetWindow, Pyautogui, Tkinter, entre otras.",
+    link: "https://github.com/Fabian-Martinez-Rincon/EmuTi",
+  },
+  {
+    date: "Marzo 2022 - Diciempre 2022",
+    title: "Tutor de Matematicas",
+    company: "UNLP Informatica",
+    description:
+      "Mi tarea fue compartir mi experiencia con quienes están comenzando a transitar por alguna de las carreras, a fin de facilitar su adaptación al nuevo ámbito y ayudarlos a construir su rol de estudiante universitario.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
