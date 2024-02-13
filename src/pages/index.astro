@@ -3,12 +3,21 @@ import Layout from "@/layouts/Layout.astro"
 
 import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
+import YoutubeIcon from "@/components/icons/Youtube.astro"
+import CamIcon from "@/components/icons/Cam.astro"
+import StudenIcon from "@/components/icons/StudenIcon.astro"
+
 import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
+import Education from "@/components/Education.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
+
+import Youtube from "@/components/Youtube.astro"
+import Gallery from "@/components/Gallery.astro"
+
 ---
 
 <Layout
@@ -42,6 +51,16 @@ import Hero from "@/components/Hero.astro"
       <Projects />
     </SectionContainer>
 
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <StudenIcon class="size-8" />
+        Educación
+      </h2>
+      <Education />
+    </SectionContainer>
+
     <SectionContainer id="sobre-mi">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
@@ -51,6 +70,30 @@ import Hero from "@/components/Hero.astro"
       </h2>
       <AboutMe />
     </SectionContainer>
+
+    <SectionContainer id="galeria">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <CamIcon class="size-8" />
+        Galería (Una foto dice más que mil palabras)
+      </h2>
+      <Gallery />
+
+    </SectionContainer>
+
+    <SectionContainer id="videos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+      >
+        <YoutubeIcon class="size-8" />
+        Videos de mi canal :D
+      </h2>
+      
+      <Youtube />
   </div>
+
+    
+
   </main>
 </Layout>
