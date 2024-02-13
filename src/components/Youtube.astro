@@ -1,81 +1,70 @@
 ---
-import { Image } from "astro:assets";
+import 'photoswipe/style.css';
+
+
+
 ---
 
-<section class="max-w-screen-lg px-4 mx-auto pb-12 sm:px-6 lg:px-8">
-  <ul
-    class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-white"
-  >
-        <li>
-          <a
-            href={`https://www.youtube.com/watch?v=6xmOD4W_2Kc&ab_channel=FabianMartinez`}
-            target="_blank"
-            class="relative top-0 block overflow-hidden rounded-2xl"
-          >
-            <figure>
-              <Image
-                alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/280f4a16-81e3-4330-9372-1d73835dea6c`}
-                src={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/280f4a16-81e3-4330-9372-1d73835dea6c`}
-                class="h-44 w-full object-cover"
-                width={309}
-                height={176}
-                decoding="async"
-                loading="lazy"
-              />
-            </figure>
-            <div class="bg-zinc-900 p-4">
-              <span class="text-sm">Libros de Programación</span>
-              <p class="mt-1 text-xs text-zinc-400 h-8">Libros que me ayudaron a mejorar mi logica o son de gusto personal | 10k views</p>
-            </div>
-          </a>
-        </li>
-        <li>
-            <a
-              href={`https://www.youtube.com/watch?v=d5u4DT3oH8E&ab_channel=FabianMartinez`}
-              target="_blank"
-              class="relative top-0 block overflow-hidden rounded-2xl"
-            >
-              <figure>
-                <Image
-                  alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/211cbf95-209e-428c-aef4-49dc2d465bdd`}
-                  src={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/211cbf95-209e-428c-aef4-49dc2d465bdd`}
-                  class="h-44 w-full object-cover"
-                  width={309}
-                  height={176}
-                  decoding="async"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="bg-zinc-900 p-4">
-                <span class="text-sm">Proyectos en Programación </span>
-                <p class="mt-1 text-xs text-zinc-400 h-8">Hablo de como sacar ideas, o de como encarar un proyecto nuevo | 1.8k views</p>
-              </div>
-            </a>
-          </li>
+    
 
+<section class=" max-w-screen-lg px-4 mx-auto pb-12 sm:px-6 lg:px-8" id="gallery">
+    <ul
+      class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 lg:mx-0 lg:max-w-none lg:grid-cols-2 text-white"
+    >
           <li>
-            <a
-              href={`https://www.youtube.com/watch?v=64jPO_DxQEQ`}
-              target="_blank"
-              class="relative top-0 block overflow-hidden rounded-2xl"
-            >
-              <figure>
-                <Image
-                  alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/717d9cf7-33e0-403a-bf28-714512377052`}
-                  src={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/717d9cf7-33e0-403a-bf28-714512377052`}
-                  class="h-44 w-full object-cover"
-                  width={309}
-                  height={176}
-                  decoding="async"
-                  loading="lazy"
-                />
-              </figure>
-              <div class="bg-zinc-900 p-4">
-                <span class="text-sm">Aumentar Lógica en Programación </span>
-                <p class="mt-1 text-xs text-zinc-400 h-8">Algunos consejos de como practico mi logica | 1.3k views</p>
-              </div>
-            </a>
+            <lite-youtube
+                class="h-44 w-full object-cover"
+                videoid="Mdbeg4IpxkE"
+                params="controls=1"
+                class="relative top-0 block overflow-hidden rounded-2xl"
+                data-pswp-width="1280" 
+                data-pswp-height="720"
+            ></lite-youtube>
           </li>
-      
-  </ul>
+          <li>
+            <lite-youtube
+                class="h-44 w-full object-cover"
+                videoid="KB_tUK8yiSg"
+                params="controls=1"
+                class="relative top-0 block overflow-hidden rounded-2xl"
+                data-pswp-width="1280" 
+                data-pswp-height="720"
+            ></lite-youtube>
+          </li>
+          <li>
+            <lite-youtube
+                class="h-44 w-full object-cover"
+                videoid="TjzeV7slTOc"
+                params="controls=1"
+                class="relative top-0 block overflow-hidden rounded-2xl"
+                data-pswp-width="1280" 
+                data-pswp-height="720"
+            ></lite-youtube>
+          </li>
+          <li>
+            <lite-youtube
+                class="h-44 w-full object-cover"
+                videoid="zS4fT5KMjNY"
+                params="controls=1"
+                class="relative top-0 block overflow-hidden rounded-2xl"
+                data-pswp-width="1280" 
+                data-pswp-height="720"
+
+                
+                
+            ></lite-youtube>
+          </li>
+    </ul>
 </section>
+
+<script>
+    import "@justinribeiro/lite-youtube";
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      pswpModule: () => import('photoswipe')
+    });
+    lightbox.init();
+
+</script>
