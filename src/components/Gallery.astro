@@ -3,187 +3,85 @@ import 'photoswipe/style.css';
 
 import { Image } from 'astro:assets'
 
+const GALLERY = [
+  {
+    src: '/images/1.webp',
+    width: 1501,
+    height: 1126,
+  },
+  {
+    src: '/images/2.webp',
+    width: 1904,
+    height: 1269,
+  },
+  {
+    src: '/images/3.webp',
+    width: 1080,
+    height: 810,
+  },
+  {
+    src: '/images/4.webp',
+    width: 1434,
+    height: 1843,
+  },
+  {
+    src: '/images/5.webp',
+    width: 1280,
+    height: 1706,
+  },
+  {
+    src: '/images/6.webp',
+    width: 960,
+    height: 1280,
+  },
+  {
+    src: '/images/7.webp',
+    width: 2000,
+    height: 1333,
+  },
+  {
+    src: '/images/8.webp',
+    width: 921,
+    height: 1024,
+  },
+  {
+    src: '/images/10.webp',
+    width: 1600,
+    height: 899,
+  },
+];
+
 ---
+
 
 <section class=" max-w-screen-lg px-4 mx-auto pb-12 sm:px-6 lg:px-8" id="gallery">
     <ul
       class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-white"
     >
-          <li>
-            <a
-              href={`/images/1.webp`}
-              target="_blank"
-              class="relative top-0 block overflow-hidden rounded-2xl"
-              data-pswp-width="1501" 
-            data-pswp-height="1126" 
-            >
-              <figure>
-                <Image
-                  alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/280f4a16-81e3-4330-9372-1d73835dea6c`}
-                  src={`/images/1.webp`}
-                  class="h-44 w-full object-cover"
-                  width={309}
-                  height={176}
-                  decoding="async"
-                  loading="lazy"
-                />
-              </figure>
-            </a>
-          </li>
-          <li>
-              <a
-                href={`/images/2.webp`}
-                target="_blank"
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="1904" 
-                data-pswp-height="1269" 
-              >
-                <figure>
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/211cbf95-209e-428c-aef4-49dc2d465bdd`}
-                    src={`/images/2.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </figure>
-              </a>
-            </li>
-  
-            <li>
-              <a
-                href={`/images/3.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="1080" 
-                data-pswp-height="810" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/3.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
+      {GALLERY.map((image) => (
+        <li class="">
+          <a
+            href={image.src}
+            target="_blank"
+            class="relative top-0 block overflow-hidden rounded-2xl"
+            data-pswp-width={image.width}
+            data-pswp-height={image.height}
+          >
+            <figure>
+              <Image
+                alt={image.src}
+                src={image.src}
+                class="h-44 w-full object-cover"
+                width={309}
+                height={176}
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+          </a>
+        </li>
+      ))}
 
-            <li>
-              <a
-                href={`/images/4.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="1434" 
-                data-pswp-height="1843" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/4.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href={`/images/5.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="1280" 
-                data-pswp-height="1706" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/5.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
-
-
-            <li>
-              <a
-                href={`/images/6.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="960" 
-                data-pswp-height="1280" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/6.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
-            <li>
-              <a
-                href={`/images/7.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="2000" 
-                data-pswp-height="1333" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/7.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href={`/images/8.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="921" 
-                data-pswp-height="1024" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/8.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
-
-            <li>
-              <a
-                href={`/images/10.webp`}
-                class="relative top-0 block overflow-hidden rounded-2xl"
-                data-pswp-width="1600" 
-                data-pswp-height="899" 
-              >
-                  <Image
-                    alt={`https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/740b2b94-a063-4c38-9e8c-392e4f9d1260`}
-                    src={`/images/10.webp`}
-                    class="h-44 w-full object-cover"
-                    width={309}
-                    height={176}
-                    data-pswp-width="1440" 
-                    data-pswp-height="900" 
-                  />
-              </a>
-            </li>
     </ul>
   </section>
 
