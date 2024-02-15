@@ -1,0 +1,37 @@
+---
+import Card from '../../components/Card.astro';
+interface MarkdownFrontmatter {
+  date: number;
+}
+
+
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await Astro.glob<MarkdownFrontmatter>('./*.md');
+  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
+
+
+  return paginate(sortedPosts, {
+    pageSize: 21
+  })
+}
+
+const { page } = Astro.props
+---
+
+<html lang="en">
+
+<body class="bg-white text-black font-body leading-normal personality-casual">
+
+  <main class="py-12 lg:py-20">
+    <article class="max-w-6xl mx-auto px-3">
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8" data-test="articles-section">
+        {page.data.map(p => <div class="col-span-1">
+          <Card post={p} />
+        </div>)}
+      </section>
+    </article>
+  </main>
+</body>
+
+</html>

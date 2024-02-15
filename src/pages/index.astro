@@ -22,6 +22,14 @@ import Youtube from "@/components/Sections/Youtube.astro"
 import Gallery from "@/components/Sections/Gallery.astro"
 import Github from "@/components/Sections/Github.astro"
 
+import Card from '../components/Card.astro';
+
+interface MarkdownFrontmatter {
+  date: number;
+}
+
+const allPosts = await Astro.glob<MarkdownFrontmatter>('./posts/*.md');
+
 ---
 
 <Layout
@@ -121,6 +129,26 @@ import Github from "@/components/Sections/Github.astro"
 
     </SectionContainer>
 
+      <SectionContainer id="blog">
+
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+
+      >
+
+        <GithubIcon class="size-8" />
+        Blogs
+
+      </h2>
+      <article class="max-w-6xl mx-auto px-3">
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8" data-test="articles-section">
+          {allPosts.map(p => <div class="col-span-1">
+            <Card post={p} />
+          </div>)}
+        </section>
+      </article>
+
+      </SectionContainer>
     
   </div>
 
