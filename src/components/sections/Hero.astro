@@ -1,10 +1,10 @@
 ---
 const personalImageAlt = "Miguel Ángel"
 import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import GithubIcon from "@/components/icons/GitHub.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+import LinkedInIcon from "@/components/icons/IconLinkedIn.astro"
+import GithubIcon from "@/components/icons/IconGitHub.astro"
+import MailIcon from "@/components/icons/IconMail.astro"
+import SocialPill from "@/components/buttons/SocialPill.astro"
 ---
 
 <div class="max-w-xl">
@@ -23,11 +23,7 @@ import SocialPill from "@/components/SocialPill.astro"
       <Badge>Backend Developer</Badge>
     </a>
   </div>
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Fabian Martinez Rincon
-  </h1>
+  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"> Fabian Martinez Rincon</h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
@@ -48,11 +44,8 @@ import SocialPill from "@/components/SocialPill.astro"
       <GithubIcon class="size-4" />
       Github
     </SocialPill>
-  </nav>
-  <div class="flex flex-wrap gap-4 mt-8 h-12  ">
     <SocialPill  href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">
-
-      Descargar Curriculum
-
-  </div>
+      Curriculum
+    </SocialPill>
+  </nav>
 </div>
