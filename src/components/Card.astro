@@ -4,7 +4,6 @@ export interface Props {
 }
 
 const { post } = Astro.props;
-
 ---
 
 <a href={post.url}
@@ -12,11 +11,10 @@ const { post } = Astro.props;
   data-test="article-card">
 
   <img class="squiggle" 
-    src={post.frontmatter.hero} 
-    alt={post.frontmatter.title} 
-    width="360" 
-    height="192"
-  >
+      src={post.frontmatter.hero} 
+      alt={post.frontmatter.title} 
+      width="360" 
+      height="192">
   <div class="py-6 px-8">
     <h2 class="font-bold text-2xl leading-tight">
       {post.frontmatter.title}
