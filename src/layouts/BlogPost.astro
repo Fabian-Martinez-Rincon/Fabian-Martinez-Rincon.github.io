@@ -1,17 +1,17 @@
 ---
 
-import BlogPost from "../components/Sections/BlogPost.astro";
+import BlogPost2 from "../components/Sections/BlogPost.astro";
 
 const {content} = Astro.props;
-const {title, description, date, hero, youtube} = content;
+const {title, date, hero, youtube} = content;
 ---
 <html lang={ content.lang || 'en' }>
 
   <body>
     <main class="py-12 lg:py-20">
-      <BlogPost title={title} hero={hero} date={date} youtube={youtube} >
+      <BlogPost2 title={title} hero={hero} date={date} youtube={youtube} >
         <slot />
-      </BlogPost>
+      </BlogPost2>
     </main>
   </body>
 </html>

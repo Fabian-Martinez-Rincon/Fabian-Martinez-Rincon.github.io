@@ -1,15 +1,13 @@
 ---
 import Card from '../../components/Card.astro';
+
 interface MarkdownFrontmatter {
-  date: number;
+  pubDate: number;
 }
 
-
-
 export async function getStaticPaths({ paginate }) {
-  const allPosts = await Astro.glob<MarkdownFrontmatter>('./*.md');
+  const allPosts = await Astro.fetchContent<MarkdownFrontmatter>('./*.md');
   const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf());
-
 
   return paginate(sortedPosts, {
     pageSize: 21
