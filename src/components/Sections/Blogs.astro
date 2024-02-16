@@ -3,11 +3,11 @@
 import Card from '../../components/Card.astro';
 
 interface MarkdownFrontmatter {
-  date: number;
 }
 
 const allPosts = await Astro.glob<MarkdownFrontmatter>('../../pages/posts/*.md');
 
+console.log(allPosts);
 ---
 
 <article class="max-w-6xl mx-auto px-3">
@@ -17,3 +17,4 @@ const allPosts = await Astro.glob<MarkdownFrontmatter>('../../pages/posts/*.md')
       </div>)}
     </section>
   </article>
+
