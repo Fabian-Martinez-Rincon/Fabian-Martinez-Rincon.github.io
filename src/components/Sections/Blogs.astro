@@ -3,7 +3,7 @@
 import Card from '../../components/Card.astro';
 
 interface MarkdownFrontmatter {
-  data: any;
+    pubDate: any;
 }
 
 const allPosts = await Astro.glob<MarkdownFrontmatter>('../../pages/posts/*.md');
