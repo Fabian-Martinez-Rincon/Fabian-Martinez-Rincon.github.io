@@ -1,29 +1,24 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import AboutMe from "@/components/Sections/AboutMe.astro"
-import Briefcase from "@/components/icons/IconBriefcase.astro"
-import YoutubeIcon from "@/components/icons/IconYoutube.astro"
-import PresentationIcon from "@/components/icons/IconPresentation.astro"
-import CamIcon from "@/components/icons/IconCam.astro"
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import YoutubeIcon from "@/components/icons/Youtube.astro"
+import CamIcon from "@/components/icons/Cam.astro"
 import GithubIcon from "@/components/icons/GithubIcon.astro"
-import StudenIcon from "@/components/icons/IconStuden.astro"
+import StudenIcon from "@/components/icons/StudenIcon.astro"
 
-import CodeIcon from "@/components/icons/IconCode.astro"
-import Experience from "@/components/Sections/Experience.astro"
-import Precentations from "@/components/Sections/Others.astro"
-import Education from "@/components/Sections/Education.astro"
-import ProfileCheck from "@/components/icons/IconProfileCheck.astro"
-import Projects from "@/components/Sections/Projects.astro"
+import CodeIcon from "@/components/icons/Code.astro"
+import Experience from "@/components/Experience.astro"
+import Education from "@/components/Education.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Sections/Hero.astro"
+import Hero from "@/components/Hero.astro"
 
-import Youtube from "@/components/Sections/Youtube.astro"
-import Gallery from "@/components/Sections/Gallery.astro"
-import Github from "@/components/Sections/Github.astro"
-import Blogs from "@/components/Sections/Blogs.astro"
-
-
+import Youtube from "@/components/Youtube.astro"
+import Gallery from "@/components/Gallery.astro"
+import Github from "@/components/Github.astro"
 
 ---
 
@@ -89,17 +84,6 @@ import Blogs from "@/components/Sections/Blogs.astro"
 
     </SectionContainer>
 
-    <SectionContainer id="presentaciones">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <PresentationIcon class="size-8" />
-        Otros (Certificados, Charlas, Talleres, etc.)
-      </h2>
-      <Precentations />
-
-    </SectionContainer>
-
     <SectionContainer id="videos">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
@@ -121,22 +105,6 @@ import Blogs from "@/components/Sections/Blogs.astro"
       </h2>
       
       <Github />
-
-    </SectionContainer>
-
-      <SectionContainer id="blog">
-
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-
-      >
-        <GithubIcon class="size-8" />
-        Blogs</h2>
-      <Blogs>
-      
-
-      </SectionContainer>
-    
   </div>
 
     

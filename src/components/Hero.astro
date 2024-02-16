@@ -1,11 +1,10 @@
 ---
 const personalImageAlt = "Miguel Ángel"
 import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/IconLinkedIn.astro"
-import GithubIcon from "@/components/badges/GitHub.astro"
-import MailIcon from "@/components/icons/IconMail.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import GithubIcon from "@/components/icons/GitHub.astro"
+import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
-import Profile from "@/components/icons/IconProfileCheck.astro"
 ---
 
 <div class="max-w-xl">
@@ -49,10 +48,11 @@ import Profile from "@/components/icons/IconProfileCheck.astro"
       <GithubIcon class="size-4" />
       Github
     </SocialPill>
-
-    <SocialPill href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">
-      <Profile class="size-4" />
-       Curriculum
-    </SocialPill>
   </nav>
+  <div class="flex flex-wrap gap-4 mt-8 h-12  ">
+    <SocialPill  href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">
+
+      Descargar Curriculum
+
+  </div>
 </div>

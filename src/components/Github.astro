@@ -1,0 +1,94 @@
+---
+const REPOSITORIOS = [
+  {
+        nombre: "CADP",
+        url: "https://github.com/Fabo-University/CADP",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Taller-de-Programacion",
+        url: "https://github.com/Fabo-University/Taller-de-Programacion",
+        organizacion: "Fabo-University"
+    }, 
+    {
+        nombre: "Orientacion-a-Objetos1",
+        url: "https://github.com/Fabo-University/Orientacion-a-Objetos1",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "AyED",
+        url: "https://github.com/Fabo-University/AyED",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "FOD",
+        url: "https://github.com/Fabo-University/FOD",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Seminario-de-Lenguajes-Python",
+        url: "https://github.com/Fabo-University/Seminario-de-Lenguajes-Python",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "ISO",
+        url: "https://github.com/Fabo-University/ISO",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Ingenieria-de-Software1",
+        url: "https://github.com/Fabo-University/Ingenieria-de-Software1",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Programacion-Concurrente",
+        url: "https://github.com/Fabo-University/Programacion-Concurrente",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Redes-y-Comunicaciones",
+        url: "https://github.com/Fabo-University/Redes-y-Comunicaciones",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "CPLP",
+        url: "https://github.com/Fabo-University/CPLP",
+        organizacion: "Fabo-University"
+    },
+    {
+        nombre: "Arquitectura-de-Computadoras",
+        url: "https://github.com/Fabo-University/Arquitectura-de-Computadoras",
+        organizacion: "Fabo-University"
+    }
+]
+---
+
+<section class=" max-w-screen-lg mx-auto pb-12">
+    <ul
+      class="mx-auto grid grid-cols-1 gap-x-4 gap-y-4 lg:mx-0 lg:max-w lg:grid-cols-3  text-white"
+    >
+    {REPOSITORIOS.map((repo) => (
+        <li class="">
+            <a href={repo.url}>
+                <img
+                src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${repo.organizacion}&repo=${repo.nombre}&theme=react&bg_color=1F222E&title_color=FACC15&icon_color=F8D866&hide_border=true&show_icons=false`}
+                alt="readme-typing-svg"
+                />
+            </a>
+        </li>    
+    ))}
+    </ul>
+</section>
+
+  
+
+
+
+
+
+
+
+
+
+
+
