@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import AboutMe from "@/components/sections/AboutMe.astro"
 import Briefcase from "@/components/icons/IconBriefcase.astro"
 import YoutubeIcon from "@/components/icons/IconYoutube.astro"
 import CamIcon from "@/components/icons/IconCam.astro"
@@ -20,6 +19,8 @@ import Youtube from "@/components/sections/Youtube.astro"
 import Gallery from "@/components/sections/Gallery.astro"
 import Github from "@/components/sections/Github.astro"
 
+import Video from "@/components/video/Video.astro"
+
 ---
 
 <Layout
@@ -35,7 +36,7 @@ import Github from "@/components/sections/Github.astro"
     <div class="space-y-24">
     <SectionContainer id="experiencia">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2 "
       >
         <Briefcase class="size-8" />
         Experiencia laboral
@@ -43,9 +44,19 @@ import Github from "@/components/sections/Github.astro"
       <Experience />
     </SectionContainer>
 
+    <SectionContainer>
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
+      >
+        <ProfileCheck class="size-8" />
+        Emuti | Gaming Labs Sudamerica
+      </h2>
+      <Video />
+    </SectionContainer>
+
     <SectionContainer id="proyectos">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2"
       >
         <CodeIcon class="size-7" />
         Proyectos
@@ -55,7 +66,7 @@ import Github from "@/components/sections/Github.astro"
 
     <SectionContainer id="education">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2"
       >
         <StudenIcon class="size-8" />
         Educación
@@ -63,19 +74,9 @@ import Github from "@/components/sections/Github.astro"
       <Education />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
-    </SectionContainer>
-
     <SectionContainer id="galeria">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
       >
         <CamIcon class="size-8" />
         Galería (Una foto dice más que mil palabras)
@@ -86,7 +87,7 @@ import Github from "@/components/sections/Github.astro"
 
     <SectionContainer id="videos">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
       >
         <YoutubeIcon class="size-8" />
         Videos programando cosas random
@@ -98,14 +99,16 @@ import Github from "@/components/sections/Github.astro"
 
     <SectionContainer id="github">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
       >
         <GithubIcon class="size-8" />
         Algunos repositorios de mi Github
       </h2>
-      
+
       <Github />
     </SectionContainer>
+
+  
   </div>
   </main>
 </Layout>
