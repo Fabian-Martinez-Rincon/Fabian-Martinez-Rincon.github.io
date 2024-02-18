@@ -18,7 +18,7 @@ const VIDEOS = [
 ---
 
 
-<section class=" max-w-screen-lg mx-auto pb-12" id="gallery">
+<!-- <section class=" max-w-screen-lg mx-auto pb-12" id="gallery">
     <ul
       class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 lg:mx-0 lg:max-w-none lg:grid-cols-2 text-white"
     >
@@ -28,13 +28,75 @@ const VIDEOS = [
                 class="h-44 w-full object-cover"
                 videoid={video.id}
                 params="controls=1"
-                class="relative top-0 block overflow-hidden rounded-2xl"
+                class="relative top-0 overflow-hidden rounded-2xl"
                 data-pswp-width="1280" 
                 data-pswp-height="720"
             ></lite-youtube>
         </li>
       ))}
     </ul>
+</section> -->
+
+<section class="flex flex-col gap-y-10">
+  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+    <div class="flex flex-col justify-center space-content">
+      <h2>Linktree para Instagram Next js 13</h2>
+      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">Tenia un monton de 
+        links por todos lados y se me ocurrio hacer esto para tener un recopilatorio.</p></div>
+      <lite-youtube
+        class="h-44 w-full object-cover"
+        videoid="Mdbeg4IpxkE"
+        params="controls=1"
+        class="relative top-0 overflow-hidden rounded-2xl"
+        data-pswp-width="1280" 
+        data-pswp-height="720"
+      ></lite-youtube>
+  </div>
+  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+    <lite-youtube
+        class="h-44 w-full object-cover"
+        videoid="KB_tUK8yiSg"
+        params="controls=1"
+        class="relative top-0 overflow-hidden rounded-2xl"
+        data-pswp-width="1280" 
+        data-pswp-height="720"
+      ></lite-youtube>
+    <div class="flex flex-col justify-center space-content">
+      <h2>Pagina Web Next js (Portada)</h2>
+      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+        Portada principal para Nomadiix (mi empresa) con algunas transiciones usando tailiwind.</p></div>
+      
+  </div>
+  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+    <div class="flex flex-col justify-center space-content">
+      <h2>Readme para Github</h2>
+      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+        Readme principal de Github sonde personalizo mis proyectos y le doy un poco de vida a la pagina usando markdown.
+      </p></div>
+      <lite-youtube
+        class="h-44 w-full object-cover"
+        videoid="TjzeV7slTOc"
+        params="controls=1"
+        class="relative top-0 overflow-hidden rounded-2xl"
+        data-pswp-width="1280" 
+        data-pswp-height="720"
+      ></lite-youtube>
+  </div>
+  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
+    <lite-youtube
+        class="h-44 w-full object-cover"
+        videoid="zS4fT5KMjNY"
+        params="controls=1"
+        class="relative top-0 overflow-hidden rounded-2xl"
+        data-pswp-width="1280" 
+        data-pswp-height="720"
+      ></lite-youtube>
+    <div class="flex flex-col justify-center space-content">
+      <h2>Galeria en Next js 13</h2>
+      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
+        Tenia un monton de logos que habia hecho con inteligencia artificial y queria tenerlos en un lugar en concreto
+      y se me ocurrio hacer esta galeria.</p></div>
+  </div>
 </section>
 
 <script>

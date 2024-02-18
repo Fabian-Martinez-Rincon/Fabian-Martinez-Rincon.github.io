@@ -27,29 +27,30 @@ import Video from "@/components/video/Video.astro"
   title="Fabian Martinez Rincon - Backend Developer Python"
   description="Backend Developer Python"
 >
-  <main class="px-4">
+  <main class="px-4 ">
     <SectionContainer class="py-16 md:py-36">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-24">
+    <div class="space-y-20  ">
+
+      
     <SectionContainer id="experiencia">
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2 "
       >
-        <Briefcase class="size-8" />
-        Experiencia laboral
+        Experiencia <span class="text-blue-600 dark:text-blue-500">laboral</span>
       </h2>
+      
       <Experience />
     </SectionContainer>
 
     <SectionContainer>
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-1 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <ProfileCheck class="size-8" />
-        Emuti | Gaming Labs Sudamerica
+        Emuti |<span class="text-blue-600 dark:text-blue-500">Gaming Labs Sudamerica</span>
       </h2>
       <Video />
     </SectionContainer>
@@ -58,8 +59,7 @@ import Video from "@/components/video/Video.astro"
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <CodeIcon class="size-7" />
-        Proyectos
+        Proyectos <span class="text-blue-600 dark:text-blue-500"> Personales</span>
       </h2>
       <Projects />
     </SectionContainer>
@@ -68,7 +68,6 @@ import Video from "@/components/video/Video.astro"
       <h2
         class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <StudenIcon class="size-8" />
         Educación
       </h2>
       <Education />
@@ -76,10 +75,9 @@ import Video from "@/components/video/Video.astro"
 
     <SectionContainer id="galeria">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-1 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <CamIcon class="size-8" />
-        Galería (Una foto dice más que mil palabras)
+        Imagenes <span class="text-blue-600 dark:text-blue-500">Random</span>
       </h2>
       <Gallery />
 
@@ -87,10 +85,9 @@ import Video from "@/components/video/Video.astro"
 
     <SectionContainer id="videos">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-1 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <YoutubeIcon class="size-8" />
-        Videos programando cosas random
+        Videos <span class="text-blue-600 dark:text-blue-500">Programando</span>
       </h2>
       
       <Youtube />
@@ -99,10 +96,9 @@ import Video from "@/components/video/Video.astro"
 
     <SectionContainer id="github">
       <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white items-center justify-center flex2"
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-1 text-black/80 dark:text-white items-center justify-center flex2"
       >
-        <GithubIcon class="size-8" />
-        Algunos repositorios de mi Github
+        Algunos repositorios de mi <span class="text-blue-600 dark:text-blue-500">Github</span>
       </h2>
 
       <Github />
