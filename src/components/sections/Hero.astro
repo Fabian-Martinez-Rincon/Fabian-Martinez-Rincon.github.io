@@ -23,15 +23,17 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
       <Badge>Backend Developer</Badge>
     </a>
   </div>
-  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white items-center justify-center flex"> Fabian Martinez Rincon</h1>
+  <h1 class="text-4xl font-extrabold tracking-tight text-black sm:text-5xl items-center justify-center flex"> <span class="underline underline-offset-3 decoration-8 decoration-red-400">Fabian Martinez Rincon</span></h1>
+
+
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="bg-white mt-6 text-xl text-black "
   >
-    Me especializo en la automatización de tareas usando <strong
-      >Python como lenguaje principal</strong
-    >. Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub.
+    Me especializo en la automatización de tareas usando
+    <mark class="px-2 text-black bg-blue-300 rounded">Python como lenguaje principal</mark>
+    . Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub.
   </p>
-  <nav class="flex flex-wrap gap-4 mt-8 items-center justify-center flex">
+  <nav class="flex-wrap gap-4 mt-8 items-center justify-center flex">
     <SocialPill href="mailto:fabianmartinezrincon.123@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
