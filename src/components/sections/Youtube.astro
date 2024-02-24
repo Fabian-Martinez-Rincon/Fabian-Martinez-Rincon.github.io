@@ -1,112 +1,72 @@
 ---
-import 'photoswipe/style.css';
+import "photoswipe/style.css";
 
 const VIDEOS = [
   {
-    id: 'Mdbeg4IpxkE'
+    title: "Linktree para Instagram Next js 13",
+    description:
+      "Tenía un montón de links por todos lados y se me ocurrió hacer esto para tener un recopilatorio.",
+    id: "Mdbeg4IpxkE",
   },
   {
-    id: 'KB_tUK8yiSg'
+    title: "Pagina Web Next js (Portada)",
+    description:
+      "Portada principal para Nomadiix (mi empresa) con algunas transiciones usando Tailiwind.",
+    id: "KB_tUK8yiSg",
   },
   {
-    id: 'TjzeV7slTOc'
+    title: "Readme para Github",
+    description:
+      "Readme principal de GitHub donde personalizo mis proyectos y le doy un poco de vida a la página usando Markdown.",
+    id: "TjzeV7slTOc",
   },
   {
-    id: 'zS4fT5KMjNY'
-  }
+    title: "Galeria en Next js 13",
+    description:
+      "Tenía un montón de logos que había hecho con inteligencia artificial y quería tenerlos en un lugar en concreto y se me ocurrió hacer esta galería.",
+    id: "zS4fT5KMjNY",
+  },
 ];
 ---
 
+<section class="flex flex-col ">
+  <div class="grid grid-cols-1 gap-2">
+      {
+        VIDEOS.map((video, i) => (
+      <div class=" grid gap-8  md:grid-cols-2 ">
 
-<!-- <section class=" max-w-screen-lg mx-auto pb-12" id="gallery">
-    <ul
-      class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 lg:mx-0 lg:max-w-none lg:grid-cols-2 text-white"
-    >
-      {VIDEOS.map((video) => (
-        <li class="">
-          <lite-youtube
-                class="h-44 w-full object-cover"
-                videoid={video.id}
-                params="controls=1"
-                class="relative top-0 overflow-hidden rounded-2xl"
-                data-pswp-width="1280" 
-                data-pswp-height="720"
-            ></lite-youtube>
-        </li>
-      ))}
-    </ul>
-</section> -->
+        <div class={`col-start-${i%2+1} flex flex-col justify-center space-content`}>
+          <h2 class="text-xl font-extrabold text-blue-800">
+            {video.title}
+          </h2>
 
-<section class="flex flex-col gap-y-10">
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-    <div class="flex flex-col justify-center space-content">
-      <h2>Linktree para Instagram Next js 13</h2>
-      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">Tenía un montón de links por todos lados y se me ocurrió hacer esto para tener un recopilatorio.</p></div>
-      <lite-youtube
-        class="h-44 w-full object-cover"
-        videoid="Mdbeg4IpxkE"
-        params="controls=1"
-        class="relative top-0 overflow-hidden rounded-2xl"
-        data-pswp-width="1280" 
-        data-pswp-height="720"
-      ></lite-youtube>
-  </div>
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-    <lite-youtube
-        class="h-44 w-full object-cover"
-        videoid="KB_tUK8yiSg"
-        params="controls=1"
-        class="relative top-0 overflow-hidden rounded-2xl"
-        data-pswp-width="1280" 
-        data-pswp-height="720"
-      ></lite-youtube>
-    <div class="flex flex-col justify-center space-content">
-      <h2>Pagina Web Next js (Portada)</h2>
-      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-        Portada principal para Nomadiix (mi empresa) con algunas transiciones usando Tailiwind.</p></div>
-      
-  </div>
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-    <div class="flex flex-col justify-center space-content">
-      <h2>Readme para Github</h2>
-      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-        Readme principal de GitHub donde personalizo mis proyectos y le doy un poco de vida a la página usando Markdown.
-      </p></div>
-      <lite-youtube
-        class="h-44 w-full object-cover"
-        videoid="TjzeV7slTOc"
-        params="controls=1"
-        class="relative top-0 overflow-hidden rounded-2xl"
-        data-pswp-width="1280" 
-        data-pswp-height="720"
-      ></lite-youtube>
-  </div>
-  <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-    <lite-youtube
-        class="h-44 w-full object-cover"
-        videoid="zS4fT5KMjNY"
-        params="controls=1"
-        class="relative top-0 overflow-hidden rounded-2xl"
-        data-pswp-width="1280" 
-        data-pswp-height="720"
-      ></lite-youtube>
-    <div class="flex flex-col justify-center space-content">
-      <h2>Galeria en Next js 13</h2>
-      <p class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
-        Tenía un montón de logos que había hecho con inteligencia artificial y quería tenerlos en un lugar en concreto y se me ocurrió hacer esta galería.</p></div>
-  </div>
+          <p
+            class="bg-white relative flex flex-col gap-2 pb-4 text-black md:col-span-3"
+          >
+            {video.description}
+          </p>
+        </div>
+        <lite-youtube
+          class={`relative top-0 overflow-hidden rounded-2xl h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
+          videoid={video.id}
+          params="controls=1"
+          data-pswp-width="1280"
+          data-pswp-height="720">
 
-  
+        </lite-youtube>
+    </div>
+        ))
+      }
+  </div>
 </section>
 
 <script>
-    import "@justinribeiro/lite-youtube";
-    import PhotoSwipeLightbox from 'photoswipe/lightbox';
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: '#gallery',
-      children: 'a',
-      pswpModule: () => import('photoswipe')
-    });
-    lightbox.init();
-
+  import "@justinribeiro/lite-youtube";
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+  lightbox.init();
 </script>

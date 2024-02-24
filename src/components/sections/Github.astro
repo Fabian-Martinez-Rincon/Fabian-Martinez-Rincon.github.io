@@ -96,18 +96,20 @@ const REPOS = [
     {REPOS.map((repo) => (
         Object.entries(repo).map(([key, value]) => (
             <h2
-            class="flex items-center mb-6 mt-6 text-2xl font-semibold gap-x-1 text-black/80 dark:text-white items-center justify-center flex2"
+            class="flex items-center mb-6 mt-6 text-2xl font-extrabold gap-x-1 text-black justify-center"
             >
-            Materias de <span class="text-blue-600 dark:text-blue-500">{key}</span>
+            
+            Materias de <mark class="px-2 text-black bg-yellow-300 rounded"> {key}</mark>
             </h2>
             <ul
-            class="mx-auto grid grid-cols-1 gap-x-4 gap-y-4 lg:mx-0 lg:max-w lg:grid-cols-3  text-white"
+            class="mx-auto grid grid-cols-1 gap-x-4 gap-y-4 lg:mx-0 lg:max-w lg:grid-cols-3  text-white md:gap-6 md:grid-cols-2"
             >
             {value.map((r:any) => (
                 <li class="">
                     <a href={r.url}>
                         <img
-                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&theme=react&bg_color=1F222E&title_color=007FFF&icon_color=F8D866&hide_border=true&show_icons=false`}
+                        class="border border-black"
+                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&theme=react&bg_color=FFFFFF&title_color=000000&icon_color=000000&hide_border=true&show_icons=false&text_color=000000`}
                         alt="readme-typing-svg"
                         />
                     </a>
