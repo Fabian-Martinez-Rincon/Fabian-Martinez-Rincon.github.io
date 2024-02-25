@@ -27,9 +27,10 @@ const { title, company, description, link, date } = Astro.props
     </div>
   </div>
   <div class="font-extrabold relative flex flex-col gap-2 pb-4 text-black dark:text-gray-300 md:col-span-3">
-    <p class="bg-amber-200 border-4 border-black p-4 text-pretty">
-      {description}
-  </p>
+    <div class="relative bg-amber-200 border-4 border-black p-4 text-pretty">
+      <p>{description}</p>
+      <img src="/projects/push.png" alt="Descripción de la imagen" class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-10 h-10">
+    </div>
     {
       link && (
         <LinkInline href={link}>
