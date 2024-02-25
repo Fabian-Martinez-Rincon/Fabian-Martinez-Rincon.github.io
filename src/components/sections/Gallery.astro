@@ -50,35 +50,59 @@ const GALLERY = [
   },
 ];
 
+const COLORS_TARGET = [
+    "#FECACA",
+    "#BBF7D0",
+    "#BFDBFE",
+    "#F3E6A7",
+]
+
+function getRandomColor() {
+    const colors = Object.values(COLORS_TARGET);
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
 ---
 
 <style>
-  .image-hover {
-    filter: brightness(80%);
+  .image-container {
+    position: relative;
   }
-  .image-hover:hover {
-    filter: brightness(100%);
+
+  .image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-color);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover::after {
+    opacity: 0;
   }
 </style>
 
 <section class="max-w-screen-lg mx-auto pb-12" id="gallery">
-    <ul
-      class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-white"
-    >
+    <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-white">
       {GALLERY.map((image) => (
         <li class="">
           <a
             href={image.src}
             target="_blank"
-            class="relative top-0 block overflow-hidden rounded-2xl"
+            class="relative top-0 block overflow-hidden rounded-2xl image-container"
             data-pswp-width={image.width}
             data-pswp-height={image.height}
+            style={`--hover-color: ${getRandomColor()}`}
           >
             <figure>
               <Image
                 alt={image.src}
                 src={image.src}
-                class="h-44 w-full object-cover image-hover border-8 border-black"
+                class="h-44 w-full object-cover border-8 border-black"
                 width={309}
                 height={176}
                 decoding="async"
@@ -88,7 +112,6 @@ const GALLERY = [
           </a>
         </li>
       ))}
-
     </ul>
   </section>
 
