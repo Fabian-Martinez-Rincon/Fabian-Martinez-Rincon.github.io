@@ -1,13 +1,29 @@
 ---
-const { title, color } = Astro.props
+const { title, emoji='' } = Astro.props
 ---
 
-<h2
-  class={`flex mb-6 text-3xl font-extrabold gap-x-3 text-blue-900 items-center justify-center flex2`}
->
-<span class="border-b-4 border-red-800">
-  {title}</span>
-</h2>
+<style>
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    .animate-bounce {
+        animation: bounce 1s infinite;
+    }
+    </style>
+
+<section>
+    <h2
+    class={`flex mb-6 text-3xl font-extrabold gap-x-3 text-blue-900 items-center justify-center flex2`}
+  >
+  <span class="animate-bounce">{emoji}</span>
+  <span class="border-b-4 border-red-800">
+    {title}</span>
+  </h2>
 </section>
 
 
