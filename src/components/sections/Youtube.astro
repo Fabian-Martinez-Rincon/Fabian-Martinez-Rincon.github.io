@@ -29,34 +29,31 @@ const VIDEOS = [
 ];
 ---
 
-<section class="flex flex-col ">
-  <div class="grid grid-cols-1 gap-2">
-      {
-        VIDEOS.map((video, i) => (
-      <div class=" grid gap-8  md:grid-cols-2 ">
 
-        <div class={`col-start-${i%2+1} flex flex-col justify-center space-content`}>
-          <h2 class="text-xl font-extrabold text-blue-800">
-            {video.title}
-          </h2>
-
-          <p
-            class="bg-white relative flex flex-col gap-2 pb-4 text-black md:col-span-3"
-          >
-            {video.description}
-          </p>
+<section class="flex flex-col gap-y-10 ">
+  <div class="grid grid-cols-1 gap-5">
+    {
+      VIDEOS.map((video, i) => (
+        <div class="grid gap-8 md:grid-cols-2">
+          <div class={`flex flex-col justify-center space-y-4}`}>
+            <h2 class="text-xl font-extrabold text-blue-800">
+              {video.title}
+              ${(i%2+1)}
+            </h2>
+            <p class="bg-white relative flex flex-col gap-2 pb-4 text-black md:col-span-2 ">
+              {video.description}
+            </p>
+          </div>
+          <lite-youtube
+            class={`relative top-0 overflow-hidden rounded-2xl h-44 w-full object-cover row-start-${(i%2)}`}
+            videoid={video.id}
+            params="controls=1"
+            data-pswp-width="1280"
+            data-pswp-height="720">
+          </lite-youtube>
         </div>
-        <lite-youtube
-          class={`relative top-0 overflow-hidden rounded-2xl h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
-          videoid={video.id}
-          params="controls=1"
-          data-pswp-width="1280"
-          data-pswp-height="720">
-
-        </lite-youtube>
-    </div>
-        ))
-      }
+      ))
+    }
   </div>
 </section>
 
