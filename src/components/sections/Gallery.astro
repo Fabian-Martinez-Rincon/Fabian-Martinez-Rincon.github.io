@@ -52,6 +52,14 @@ const GALLERY = [
 
 ---
 
+<style>
+  .image-hover {
+    filter: brightness(80%);
+  }
+  .image-hover:hover {
+    filter: brightness(100%);
+  }
+</style>
 
 <section class="max-w-screen-lg mx-auto pb-12" id="gallery">
     <ul
@@ -70,7 +78,7 @@ const GALLERY = [
               <Image
                 alt={image.src}
                 src={image.src}
-                class="h-44 w-full object-cover"
+                class="h-44 w-full object-cover image-hover"
                 width={309}
                 height={176}
                 decoding="async"
