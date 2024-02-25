@@ -110,7 +110,7 @@ function getRandomColor() {
             class="flex items-center mb-6 mt-6 text-2xl font-extrabold gap-x-1 text-black justify-center"
             >
             
-            Materias de <mark class={`px-2 text-black ${(COLORS[i])} rounded`}> {key}</mark>
+            <mark class={`px-2 text-black ${(COLORS[i])} rounded`}>Materias de {key}</mark>
             </h2>
             <ul
             class="mx-auto grid grid-cols-1 gap-x-2 gap-y-2 lg:mx-0 lg:max-w lg:grid-cols-3 text-white md:gap-4 md:grid-cols-2"
@@ -119,8 +119,8 @@ function getRandomColor() {
                 <li class="">
                     <a href={r.url}>
                         <img
-                        class="border-4 border-black w-full h-auto"
-                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&theme=react&bg_color=${getRandomColor()}&title_color=000000&icon_color=000000&hide_border=true&show_icons=false&text_color=000000`}
+                        class="border-4 border-black w-full h-auto transform transition-all duration-300 ease-in-out hover:-translate-y-2"
+                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&theme=react&bg_color=${getRandomColor()}&title_color=000000&icon_color=CE3700&hide_border=true&show_icons=false&text_color=000000`}
                         alt="readme-typing-svg"
                         />
                     </a>
