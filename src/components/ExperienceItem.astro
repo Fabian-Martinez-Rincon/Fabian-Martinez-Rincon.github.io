@@ -10,7 +10,28 @@ interface Props {
 }
 
 const { title, company, description, link, date } = Astro.props
+
 ---
+
+<style>
+  #parrafo:hover + #imagen {
+    transform: translate(35px, -35px);
+  }
+  #fondo:hover {
+    background-color: #ffe033d8; /* Cambia el color del texto a rojo
+   */
+}
+  #imagen {
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
 
 <div
   class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
@@ -27,9 +48,9 @@ const { title, company, description, link, date } = Astro.props
     </div>
   </div>
   <div class="font-extrabold relative flex flex-col gap-2 pb-4 text-black dark:text-gray-300 md:col-span-3">
-    <div class="relative bg-amber-200 border-4 border-black p-4 text-pretty">
-      <p>{description}</p>
-      <img src="/projects/push.png" alt="Descripción de la imagen" class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 w-10 h-10">
+    <div id="fondo" class="relative bg-amber-200 border-4 border-black p-4 text-pretty">
+      <p id="parrafo" class="static">{description}</p>
+      <img id="imagen" src="/projects/push.png" alt="Descripción de la imagen">
     </div>
     {
       link && (
@@ -57,3 +78,5 @@ const { title, company, description, link, date } = Astro.props
     }
   </div>
 </div>
+
+
