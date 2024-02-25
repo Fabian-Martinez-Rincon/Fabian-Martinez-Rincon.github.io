@@ -118,10 +118,10 @@ function getRandomColor() {
             >
             {value.map((r:any) => (
                 <li class="">
-                    <a href={r.url}>
+                    <a href={r.url} target="_blank">
                         <img
                         class="border-4 border-black w-full h-auto transform transition-all duration-300 ease-in-out hover:-translate-y-2 "
-                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&theme=react&bg_color=${getRandomColor()}&title_color=000000&icon_color=CE3700&hide_border=true&show_icons=false&text_color=000000&`}
+                        src={`https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=${r.organizacion}&repo=${r.nombre}&bg_color=${getRandomColor()}&title_color=000000&icon_color=CE3700&hide_border=true&show_icons=false&text_color=000000&&show_description=false`}
                         alt="readme-typing-svg"
                         />
                     </a>
