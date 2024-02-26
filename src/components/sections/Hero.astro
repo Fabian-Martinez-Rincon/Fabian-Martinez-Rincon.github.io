@@ -8,30 +8,42 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
 ---
 
 <style>
-  #marco:hover #image, #marco:hover #image2 {
-      transform: rotate(360deg);
+  #marco:hover #image{
+      transform: translate(35px, -35px);
     }
+  #marco:hover #image2{
+      transform: scaleX(-1) translate(35px, -35px);
+      
+    }
+    #marco:hover {
+      filter: brightness(105%); /* #ffe033d8Cambia el color del texto a rojo / amarillo */
+  
+    } 
+
   #image, #image2 {
     transition: all 0.3s ease;
     position: absolute;
     top: 0;
     right: 0;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
   #image {
     top: -20px;
-    right: -20px;
+    right: -10px;
+    
   }
   #image2 {
     top: -20px;
-    left: -20px;
+    left: -10px;
+    transform: scaleX(-1);
+    
   }
 </style> 
 
-<div id="marco" class="relative bg-white border-4 border-black border-dashed p-4 text-pretty ">
-  <img id="image2" class=" top-0 left-0 border-4 border-black rounded-full" src="/projects/screw.png" alt="Descripción de la imagen">
-  <img id="image" class=" top-0 right-0 border-4 border-black rounded-full" src="/projects/screw.png" alt="Descripción de la imagen">
+<div id="marco" class="relative bg-orange-100 border-4 border-black  p-4 text-pretty ">
+  <img id="image2" class=" top-0 left-0 " src="/projects/push.png" alt="Descripción de la imagen">
+  <img id="image" class=" top-0 right-0 " src="/projects/push.png" alt="Descripción de la imagen">
 
   <div class="flex gap-4 mb-4 items-center justify-center">
     <img
@@ -52,7 +64,7 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
 
 
   <p
-    class="bg-white mt-6 text-xl text-black "
+    class="mt-6 text-xl text-black "
   >
     Me especializo en la automatización de tareas usando
     <mark class="px-2 text-black bg-yellow-300 rounded">Python como lenguaje principal</mark>
