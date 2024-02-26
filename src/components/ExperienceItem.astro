@@ -1,5 +1,6 @@
 ---
 import LinkInline from "./LinkInline.astro"
+import Postfit from "./Postfit.astro"
 
 interface Props {
   title: string
@@ -47,11 +48,8 @@ const { title, company, description, link, date } = Astro.props
       <time class="font-extrabold p-0 m-0 text-sm text-black ">{date}</time>
     </div>
   </div>
-  <div class="font-extrabold relative flex flex-col gap-2 pb-4 text-black dark:text-gray-300 md:col-span-3">
-    <div id="fondo" class="relative bg-amber-200 border-4 border-black p-4 text-pretty">
-      <p id="parrafo" class="static">{description}</p>
-      <img id="imagen" src="/projects/push.png" alt="Descripción de la imagen">
-    </div>
+  <div class="font-extrabold relative flex flex-col gap-2 pb-4 text-black md:col-span-3">
+    <Postfit description={description} color="bg-amber-200" />
     {
       link && (
         <LinkInline href={link}>

@@ -1,5 +1,6 @@
 ---
 import "photoswipe/style.css";
+import Postfit from "../Postfit.astro";
 
 const VIDEOS = [
   {
@@ -19,33 +20,40 @@ const VIDEOS = [
     description:
       "Readme principal de GitHub donde personalizo mis proyectos y le doy un poco de vida a la página usando Markdown.",
     id: "TjzeV7slTOc",
-  },
-  {
-    title: "Galeria en Next js 13",
-    description:
-      "Tenía un montón de logos que había hecho con inteligencia artificial y quería tenerlos en un lugar en concreto y se me ocurrió hacer esta galería.",
-    id: "zS4fT5KMjNY",
-  },
+   }
+  // {
+  //   title: "Galeria en Next js 13",
+  //   description:
+  //     "Tenía un montón de logos que había hecho con inteligencia artificial y quería tenerlos en un lugar en concreto y se me ocurrió hacer esta galería.",
+  //   id: "zS4fT5KMjNY",
+  // },
 ];
 ---
 
+<style>
+  #logo {
+    box-shadow: inset 0 0 0 4px black;
+  }
+
+</style>
 
 <section class="flex flex-col gap-y-10 ">
+
+  <div class="flex items-center justify-center space-x-4">
+    <img id="logo" src="/nomadiix.webp" alt="emoji" class="w-[250px] border-4 border-black rounded-full" />
+      <Postfit description={"Subo videos programando, o hablando temas que me son de interes, tambien tengo algunos videos de la facultad o trabajos practicos."} color="bg-blue-200" />
+  </div>
   <div class="grid grid-cols-1 gap-5">
       {
         VIDEOS.map((video, i) => (
       <div class=" grid gap-8  md:grid-cols-2 ">
 
         <div class={`col-start-${i%2+1} flex flex-col justify-center space-content row-start-${2-(i%2)}`}>
-          <h2 class="text-xl font-extrabold text-blue-800 ">
+          <h2 class="text-xl font-extrabold text-blue-800 text-center mx-auto">
             {video.title}
           </h2>
 
-          <p
-            class="bg-white relative flex flex-col gap-2 pb-4 text-black md:col-span-3"
-          >
-            {video.description}
-          </p>
+          <Postfit description={video.description} color="bg-violet-200" />
         </div>
         <lite-youtube
           class={`relative top-0 overflow-hidden rounded-2xl h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
