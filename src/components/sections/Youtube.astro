@@ -40,8 +40,8 @@ const VIDEOS = [
 <section class="flex flex-col gap-y-10 ">
 
   <div class="flex items-center justify-center space-x-4">
-    <img id="logo" src="/nomadiix.webp" alt="emoji" class="w-[250px] border-4 border-black rounded-full" />
       <Postfit description={"Subo videos programando, o hablando temas que me son de interes, tambien tengo algunos videos de la facultad o trabajos practicos."} color="bg-blue-200" />
+      <img id="logo" src="/nomadiix.webp" alt="emoji" class="w-[250px] border-4 border-black rounded-full" />
   </div>
   <div class="grid grid-cols-1 gap-5">
       {
@@ -49,14 +49,16 @@ const VIDEOS = [
       <div class=" grid gap-8  md:grid-cols-2 ">
 
         <div class={`col-start-${i%2+1} flex flex-col justify-center space-content row-start-${2-(i%2)}`}>
-          <h2 class="text-xl font-extrabold text-blue-800 text-center mx-auto">
+          <h2 class="text-xl font-extrabold text-black text-center mx-auto pb-4">
+            <span class="border-b-4 border-red-800">
             {video.title}
+          </span>
           </h2>
 
           <Postfit description={video.description} color="bg-violet-200" />
         </div>
         <lite-youtube
-          class={`relative top-0 overflow-hidden rounded-2xl h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
+          class={`relative top-0 overflow-hidden  h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
           videoid={video.id}
           params="controls=1"
           data-pswp-width="1280"
