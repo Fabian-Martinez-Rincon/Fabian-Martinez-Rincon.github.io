@@ -14,26 +14,6 @@ const { title, company, description, link, date } = Astro.props
 
 ---
 
-<style>
-  #parrafo:hover + #imagen {
-    transform: translate(35px, -35px);
-  }
-  #fondo:hover {
-    background-color: #ffe033d8; /* Cambia el color del texto a rojo
-   */
-}
-  #imagen {
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(50%, -50%);
-    width: 40px;
-    height: 40px;
-  }
-</style>
-
-
 <div
   class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
 >

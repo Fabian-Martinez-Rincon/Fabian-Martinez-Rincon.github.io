@@ -7,7 +7,32 @@ import MailIcon from "@/components/icons/IconMail.astro"
 import SocialPill from "@/components/buttons/SocialPill.astro"
 ---
 
-<div class="">
+<style>
+  #marco:hover #image, #marco:hover #image2 {
+      transform: rotate(360deg);
+    }
+  #image, #image2 {
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+  }
+  #image {
+    top: -20px;
+    right: -20px;
+  }
+  #image2 {
+    top: -20px;
+    left: -20px;
+  }
+</style> 
+
+<div id="marco" class="relative bg-white border-8 border-black p-4 text-pretty ">
+  <img id="image2" class=" top-0 left-0 border-4 border-black rounded-full" src="/projects/screw.png" alt="Descripción de la imagen">
+  <img id="image" class=" top-0 right-0 border-4 border-black rounded-full" src="/projects/screw.png" alt="Descripción de la imagen">
+
   <div class="flex gap-4 mb-4 items-center justify-center">
     <img
       class="rounded-full shadow-lg size-16"
