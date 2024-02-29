@@ -14,10 +14,6 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
       transform: scaleX(-1) translate(35px, -35px);
       
     }
-    #marco:hover {
-      filter: brightness(105%); /* #ffe033d8Cambia el color del texto a rojo / amarillo */
-  
-    } 
 
   #image, #image2 {
     transition: all 0.3s ease;
@@ -46,7 +42,7 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
 
   <div class="flex gap-4 mb-4 items-center justify-center">
     <img
-      class="rounded-full shadow-lg size-20 border-4 border-black"
+      class="rounded-full shadow-lg size-20 rounded-full h-32 w-32 bg-neutral-100 object-cover p-2"
       src="/fabian.jpg"
       alt={personalImageAlt}
     />
