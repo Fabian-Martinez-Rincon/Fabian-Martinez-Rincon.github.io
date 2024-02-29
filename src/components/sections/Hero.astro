@@ -1,6 +1,5 @@
 ---
 const personalImageAlt = "Fabian Martinez Rincon"
-import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/IconLinkedIn.astro"
 import GithubIcon from "@/components/icons/IconGitHub.astro"
 import MailIcon from "@/components/icons/IconMail.astro"
@@ -41,13 +40,13 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
   }
 </style> 
 
-<div id="marco" class="relative bg-white border-8 border-black  p-4 text-pretty ">
-  <img id="image2" class=" top-0 left-0 " src="/projects/push.png" alt="Descripción de la imagen">
-  <img id="image" class=" top-0 right-0 " src="/projects/push.png" alt="Descripción de la imagen">
+<div id="marco" class="relative   p-4 text-pretty ">
+  <!-- <img id="image2" class=" top-0 left-0 " src="/projects/push.png" alt="Descripción de la imagen">
+  <img id="image" class=" top-0 right-0 " src="/projects/push.png" alt="Descripción de la imagen"> -->
 
   <div class="flex gap-4 mb-4 items-center justify-center">
     <img
-      class="rounded-full shadow-lg size-16"
+      class="rounded-full shadow-lg size-20 border-4 border-black"
       src="/fabian.jpg"
       alt={personalImageAlt}
     />
@@ -57,7 +56,6 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
       rel="noopener"
       class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Backend Developer</Badge>
     </a>
   </div>
   <h1 class="text-4xl font-extrabold tracking-tight text-black sm:text-5xl items-center justify-center flex"> <span class="underline underline-offset-3 decoration-8 decoration-red-800">Fabian Martinez Rincon</span></h1>
