@@ -15,7 +15,7 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 left-0 right-0 z-10 flex items-center justify-between mx-auto mt-2 gap-x-2 rounded-b-md bg-white px-12 shadow-md w-fit"
 >
   <nav
     class="flex px-3 text-sm font-extrabold rounded-full text-black justify-center items-center"
@@ -23,7 +23,7 @@ const navItems = [
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-2 py-2 transition hover:text-yellow-500"
           aria-label={link.label}
           href={link.url}
         >
