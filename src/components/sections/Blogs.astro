@@ -1,0 +1,21 @@
+---
+import BlogPost from '../../components/BlogPost.astro';
+const allPosts = await Astro.glob('../../pages/posts/*.md');
+---
+
+<h1>Mi blog de Astro aprendizaje</h1>
+<p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
+<ul>
+    {allPosts.map((post) => (
+      <BlogPost
+        url={post.url}
+        title={post.frontmatter.title}
+        pubDate={post.frontmatter.pubDate}
+        description={post.frontmatter.description}
+        author={post.frontmatter.author}
+        image={post.frontmatter.image}
+        tags={post.frontmatter.tags}
+      />
+    ))}
+  </ul>
+

@@ -21,12 +21,6 @@ const VIDEOS = [
       "Readme principal de GitHub donde personalizo mis proyectos y le doy un poco de vida a la página usando Markdown.",
     id: "TjzeV7slTOc",
    }
-  // {
-  //   title: "Galeria en Next js 13",
-  //   description:
-  //     "Tenía un montón de logos que había hecho con inteligencia artificial y quería tenerlos en un lugar en concreto y se me ocurrió hacer esta galería.",
-  //   id: "zS4fT5KMjNY",
-  // },
 ];
 ---
 
@@ -46,26 +40,26 @@ const VIDEOS = [
   <div class="grid grid-cols-1 gap-5">
       {
         VIDEOS.map((video, i) => (
-      <div class=" grid gap-8  md:grid-cols-2 ">
+        <div class=" grid gap-8  md:grid-cols-2 ">
 
-        <div class={`col-start-${i%2+1} flex flex-col justify-center space-content row-start-${2-(i%2)}`}>
-          <h2 class="text-xl font-extrabold text-black text-center mx-auto pb-4">
-            <span class="border-b-4 border-red-800">
-            {video.title}
-          </span>
-          </h2>
+          <div class={`col-start-${i%2+1} flex flex-col justify-center space-content row-start-${2-(i%2)}`}>
+            <h2 class="text-xl font-extrabold text-black text-center mx-auto pb-4">
+              <span class="border-b-4 border-red-800">
+              {video.title}
+            </span>
+            </h2>
 
-          <Postfit description={video.description} color="bg-violet-200" />
-        </div>
-        <lite-youtube
-          class={`relative top-0 overflow-hidden  h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
-          videoid={video.id}
-          params="controls=1"
-          data-pswp-width="1280"
-          data-pswp-height="720">
+            <Postfit description={video.description} color="bg-violet-200" />
+          </div>
+          <lite-youtube
+            class={`relative top-0 overflow-hidden  h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}
+            videoid={video.id}
+            params="controls=1"
+            data-pswp-width="1280"
+            data-pswp-height="720">
 
-        </lite-youtube>
-    </div>
+          </lite-youtube>
+      </div>
         ))
       }
   </div>

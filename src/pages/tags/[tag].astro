@@ -22,8 +22,12 @@ const { posts }: { posts: any } = Astro.props;
 <BaseLayout title={tag}
   description="Backend Developer Python">
   
+  
+
   <p>Entradas etiquetadas con {tag}</p>
   <ul>
     {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+    
   </ul>
+  
 </BaseLayout>
