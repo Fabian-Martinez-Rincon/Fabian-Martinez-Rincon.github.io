@@ -2,6 +2,8 @@
 import Layout from "./Layout.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 const { frontmatter } = Astro.props;
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 ---
 <Layout 
     title={frontmatter.title}
@@ -12,6 +14,31 @@ const { frontmatter } = Astro.props;
         <p><em>{frontmatter.description}</em></p>
         <p>Escrito por: {frontmatter.author}</p>
         <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+        <div class="tags">
+          {tags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+          ))}
+        </div>
         <slot />
     </SectionContainer>
 </Layout>
+
+<style>
+  a {
+    color: #00539F;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
+  }
+</style>
