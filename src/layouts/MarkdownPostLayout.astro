@@ -1,0 +1,17 @@
+---
+import Layout from "./Layout.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+const { frontmatter } = Astro.props;
+---
+<Layout 
+    title={frontmatter.title}
+    description="Backend Developer Python"
+  >
+    <SectionContainer class="py-16 md:py-36">
+        <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+        <p><em>{frontmatter.description}</em></p>
+        <p>Escrito por: {frontmatter.author}</p>
+        <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+        <slot />
+    </SectionContainer>
+</Layout>
