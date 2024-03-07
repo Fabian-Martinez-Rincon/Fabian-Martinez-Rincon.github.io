@@ -1,21 +1,24 @@
 ---
-import BlogPost from '../../components/BlogPost.astro';
 const allPosts = await Astro.glob('../../pages/posts/*.md');
 ---
 
-<h1>Mi blog de Astro aprendizaje</h1>
-<p>Aquí es donde publicaré acerca de mi viaje aprendiendo Astro.</p>
-<ul>
+
+
+<ul class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-black">
     {allPosts.map((post) => (
-      <BlogPost
-        url={post.url}
-        title={post.frontmatter.title}
-        pubDate={post.frontmatter.pubDate}
-        description={post.frontmatter.description}
-        author={post.frontmatter.author}
-        image={post.frontmatter.image}
-        tags={post.frontmatter.tags}
-      />
+      <a href={post.url} class="transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-xl bg-white rounded-xl overflow-hidden astro-DOHJNAO5" data-test="article-card">
+
+        <img class="squiggle astro-DOHJNAO5" src={post.frontmatter.image.url} alt="Introducing Astro: Ship Less JavaScript" width="360" height="192">
+        <div class="py-6 px-8 astro-DOHJNAO5">
+          <h2 class="font-bold text-2xl leading-tight astro-DOHJNAO5">
+            {post.frontmatter.title}
+          </h2>
+          <p class="text-xs text-gray-600 mt-4 flex items-center astro-DOHJNAO5">
+            {post.frontmatter.pubDate}
+          </p>
+        </div>
+        </a>
+      
     ))}
   </ul>
 
