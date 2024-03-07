@@ -4,7 +4,7 @@ title: Mi segunda publicación en el blog
 author: Alumno de Astro
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
-    url: "https://docs.astro.build/assets/arc.webp"
+    url: '/posts/vim.jpg'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-07-08
 tags: ["astro", "bloguear", "aprender en público", "éxitos"]
