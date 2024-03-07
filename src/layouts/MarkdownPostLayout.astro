@@ -14,13 +14,13 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
   >
     <SectionContainer class="py-16 md:py-36">
     
-        <main class="pt-[56px] markdown-body" >
+        <main class="markdown-body" >
           <Content className="pt-6 markdown-body">
             <div class="mb-8 ">
               {
                 frontmatter.image.url && (
                   <img
-                    class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                    class="border border-slate-300 dark:border-zinc-700 rounded-xl "
                     width={720}
                     height={360}
                     src={frontmatter.image.url}
@@ -179,6 +179,7 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 }
 
 .markdown-body img {
+  
   max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
