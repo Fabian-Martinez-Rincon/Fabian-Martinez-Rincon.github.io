@@ -1,12 +1,7 @@
 ---
-const { title, url, pubDate, description, author, image, tags } = Astro.props;
+const { title, url} = Astro.props;
 ---
 
 <li>
   <a href={url}>{title}</a>
-  <p>Publicado el: {pubDate}</p>
-  <p>Descripción: {description}</p>
-  <p>Autor: {author}</p>
-  <img src={image.url} alt={image.alt} />
-  <p>Tags: {tags.join(', ')}</p>
 </li>
