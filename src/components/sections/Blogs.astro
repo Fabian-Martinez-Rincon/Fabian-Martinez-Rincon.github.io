@@ -12,9 +12,10 @@ const allPosts = await Astro.glob('../../pages/posts/*.md');
                     {post.frontmatter.title ?? 'Untitled Post'}
                 </h2>
                 <p class="text-xs text-gray-600 mt-4 flex items-center astro-DOHJNAO5">
-                    {post.frontmatter.pubDate ?? 'Unknown Date'}
+                    {post.frontmatter.pubDate.toString().slice(0,10) ?? 'Unknown Date'}
                 </p>
             </div>
         </a> : null
     ))}
 </ul>
+

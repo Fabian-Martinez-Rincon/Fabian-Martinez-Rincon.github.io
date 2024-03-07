@@ -1,28 +1,12 @@
 ---
 import Layout from "./Layout.astro"
 import SectionContainer from "../components/SectionContainer.astro"
-
+import Content from "../components/Content.astro"
 const { frontmatter } = Astro.props;
 const allPosts = await Astro.glob('../pages/posts/*.md');
 const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
 ---
-<Layout 
-    title={frontmatter.title}
-    description="Backend Developer Python"
-  >
-    <SectionContainer class="py-16 md:py-36">
-        <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
-        <p><em>{frontmatter.description}</em></p>
-        <p>Escrito por: {frontmatter.author}</p>
-        <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
-        <div class="tags">
-          {tags.map((tag) => (
-            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-          ))}
-        </div>
-        <slot />
-    </SectionContainer>
-</Layout>
 
 <style>
   a {
@@ -42,4 +26,53 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
     font-size: 1.15em;
     background-color: #F8FCFD;
   }
+  
 </style>
+
+
+<Layout 
+    title={frontmatter.title}
+    description="Backend Developer Python"
+  >
+    <SectionContainer class="py-16 md:py-36">
+      
+        <!-- <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+        
+        <p><em>{frontmatter.description}</em></p>
+        <p>Escrito por: {frontmatter.author}</p>
+        <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+        <div class="tags">
+          {tags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+          ))}
+        </div>
+        <slot /> -->
+
+        <main class="pt-[56px]">
+          <Content className="pt-6">
+            <div class="mb-8">
+              {
+                frontmatter.image.url && (
+                  <img
+                    class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                    width={720}
+                    height={360}
+                    src={frontmatter.image.url}
+                    alt=""
+                  />
+                )
+              }
+            </div>
+            <h1 class="text-3xl my-1 font-mplus">{frontmatter.title}</h1>
+            <div>{frontmatter.description}</div>
+            <hr class="border-top border-zinc-400 my-4" />
+            <slot />
+            <span
+              class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
+            ></span>
+          </Content>
+        </main>
+    </SectionContainer>
+</Layout>
+
+
