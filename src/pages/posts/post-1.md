@@ -30,83 +30,84 @@ Resultado Final
 
 ![image](https://user-images.githubusercontent.com/55964635/194474898-97cf049c-94c3-4e05-821f-11612f3da941.png)
 
+## Pasos para la instalación
 
-- Actualizamos el apt
-  ```powershell
-  sudo apt-get update
-  ```
-- Ahora podemos installar neovim
-  ```powershell
-  sudo apt-get -y install neovim
-  ```
-- Nos metemos en config
-  ```powershell
-  cd .config/
-  ```
-- Chequeamos que tengamos la carpeta **nvim**
-  ```powershell
-  ls -la
-  ```
-- En caso de no tenerla, la creamos
-  ```powershell
-  mkdir nvim
-  ```
-- Accedemos a la carpeta creada
-  ```shell
-  cd vim
-  ```
-- Creamos el archivo init.vim que es el que contendra toda la configuración de nuestro ide
-  ```shell
-  touch init.vim
-  ```
-- Creamos una carpeta en donde van a estar nuestras configuraciones
-  ```shell
-  mkdir general
-  ```
-- Accedemos a la carpeta
-  ```shell
-  cd general
-  ```
-- Y creamos nuestro archivo de configuración
-  ```shell
-  touch settings.vim
-  ```
+Actualizamos el apt
+```powershell
+sudo apt-get update
+```
+Ahora podemos installar neovim
+```powershell
+sudo apt-get -y install neovim
+```
+Nos metemos en config
+```powershell
+cd .config/
+```
+Chequeamos que tengamos la carpeta **nvim**
+```powershell
+ls -la
+```
+En caso de no tenerla, la creamos
+```powershell
+mkdir nvim
+```
+Accedemos a la carpeta creada
+```shell
+cd vim
+```
+Creamos el archivo init.vim que es el que contendra toda la configuración de nuestro ide
+```shell
+touch init.vim
+```
+Creamos una carpeta en donde van a estar nuestras configuraciones
+```shell
+mkdir general
+```
+Accedemos a la carpeta
+```shell
+cd general
+```
+Y creamos nuestro archivo de configuración
+```shell
+touch settings.vim
+```
 
-- Dentro de este, pegamos lo siguiente (Ctrl + Shift + v)
-  ```shell
-  synta enable
-  set t_Co=256
-  set encoding=utf-8
-  set hidden
-  set number
-  set title
-  set mouse=a
-  set nowrap
-  set cursorline
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
-  set shiftround
-  set expandtab
-  set ignorecase
-  set smartcase
-  set spelllang=en,es
-  set termguicolors
-  set background=dark
-  set noshowmode
-  set clipboard=unnamed
-  set numberwidth=1
-  set showcmd
-  set ruler
-  set showmatch
-  " set relativenumber
+Dentro de este, pegamos lo siguiente (Ctrl + Shift + v)
+```shell
+synta enable
+set t_Co=256
+set encoding=utf-8
+set hidden
+set number
+set title
+set mouse=a
+set nowrap
+set cursorline
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set shiftround
+set expandtab
+set ignorecase
+set smartcase
+set spelllang=en,es
+set termguicolors
+set background=dark
+set noshowmode
+set clipboard=unnamed
+set numberwidth=1
+set showcmd
+set ruler
+set showmatch
+" set relativenumber
 
-  " Theme Gruvbox
-  colorscheme gruvbox
-  let g:gruvbox_contrast = 'hard'
-  let g:gruvbox_termcolors = 256
-  highlight Normal ctermbg=NONE
-  ```
+" Theme Gruvbox
+colorscheme gruvbox
+let g:gruvbox_contrast = 'hard'
+let g:gruvbox_termcolors = 256
+highlight Normal ctermbg=NONE
+```
 
 Ahora nos metemos en el archivo init.vim y copiamos lo siguiente, para poder hacer referencia a nuestro archivo
 

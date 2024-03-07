@@ -8,7 +8,42 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 
 ---
 
-<style>
+<Layout 
+    title={frontmatter.title}
+    description="Backend Developer Python"
+  >
+    <SectionContainer class="py-16 md:py-36">
+    
+        <main class="pt-[56px] markdown-body" >
+          <Content className="pt-6 markdown-body">
+            <div class="mb-8 ">
+              {
+                frontmatter.image.url && (
+                  <img
+                    class="border border-slate-300 dark:border-zinc-700 rounded-xl"
+                    width={720}
+                    height={360}
+                    src={frontmatter.image.url}
+                    alt=""
+                  />
+                )
+              }
+            </div>
+            <h1 class="text-3xl my-1 font-mplus">{frontmatter.title}</h1>
+            <div>{frontmatter.description}</div>
+            <hr class="border-top border-zinc-400 my-4" />
+            <div class="markdown-body">
+              <slot />
+            </div>
+            <span
+              class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
+            ></span>
+          </Content>
+        </main>
+    </SectionContainer>
+</Layout>
+
+<style is:global>
   a {
     color: #00539F;
   }
@@ -26,39 +61,162 @@ const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
     font-size: 1.15em;
     background-color: #F8FCFD;
   }
-  
+
+  /* Estilos globales para Markdown */
+.markdown-body {
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+  max-width: 800px;
+  margin: auto;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #333333;
+  background-color: aquamarine;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  background-color: aquamarine;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-size: 0.875em;
+}
+
+.markdown-body h6 {
+  font-size: 0.85em;
+}
+
+.markdown-body p {
+  bottom: unset;
+  padding: 1px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body li {
+  margin-top: 0.25em;
+}
+
+.markdown-body a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body blockquote {
+  margin-bottom: 20px;
+  padding: 0.5em 1em;
+  margin: 0 0 16px;
+  border-left: 0.25em solid #dfe2e5;
+  background-color: #f6f8fa;
+  color: #6a737d;
+}
+
+.markdown-body code {
+  margin-bottom: 20px;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(27,31,35,0.05);
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  margin-bottom: 20px;
+  word-wrap: normal;
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f6f8fa;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: none;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  margin-top: 0;
+  margin-bottom: 16px;
+  border-collapse: collapse;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 8px;
+  line-height: 1.6;
+  vertical-align: top;
+  border-top: 1px solid #dfe2e5;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table thead th {
+  vertical-align: bottom;
+}
+
+.markdown-body table tbody + tbody {
+  border-top: 2px solid #dfe2e5;
+}
+
+.markdown-body table table {
+  background-color: #ffffff;
+}
+
+
 </style>
 
-
-<Layout 
-    title={frontmatter.title}
-    description="Backend Developer Python"
-  >
-    <SectionContainer class="py-16 md:py-36">
-    
-        <main class="pt-[56px] " >
-          <Content className="pt-6">
-            <div class="mb-8 ">
-              {
-                frontmatter.image.url && (
-                  <img
-                    class="border border-slate-300 dark:border-zinc-700 rounded-xl"
-                    width={720}
-                    height={360}
-                    src={frontmatter.image.url}
-                    alt=""
-                  />
-                )
-              }
-            </div>
-            <h1 class="text-3xl my-1 font-mplus">{frontmatter.title}</h1>
-            <div>{frontmatter.description}</div>
-            <hr class="border-top border-zinc-400 my-4" />
-            <slot />
-            <span
-              class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
-            ></span>
-          </Content>
-        </main>
-    </SectionContainer>
-</Layout>
