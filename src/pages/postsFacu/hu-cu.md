@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Hu y Cu
+title: Parciales ING1
 author: Fabian Martinez Rincon
 description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
 image:
