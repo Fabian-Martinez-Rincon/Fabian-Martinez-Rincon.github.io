@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Instalar NVIM'
-pubDate: 2023-07-01
+pubDate: 2022-10-04
 description: ''
 author: 'Fabian Martinez Rincon'
 image:

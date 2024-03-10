@@ -6,8 +6,8 @@ description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
     url: '/posts/comandos.jpg'
     alt: "Miniatura de los arcos de Astro."
-pubDate: 2022-07-08
-tags: ["astro", "bloguear", "aprender en público", "éxitos"]
+pubDate: 2022-10-04
+tags: ["Bash", "Linux", "Comandos"]
 ---
 
 
