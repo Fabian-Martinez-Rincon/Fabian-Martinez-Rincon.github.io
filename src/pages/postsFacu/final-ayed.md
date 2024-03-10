@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Final Fod
+title: Final AYED
 author: Fabian Martinez Rincon
-description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
+description: ""
 image:
-    url: '/posts/fod.jpg'
+    url: '/posts/ayed.jpg'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-12-23
 tags: ["bash", "nvim", "linux", "debian"]

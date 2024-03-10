@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Parcial DBD
+title: Parciales DBD
 author: Fabian Martinez Rincon
-description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
+description: ""
 image:
     url: '/posts/dbd.jpg'
     alt: "Miniatura de los rayos de Astro."

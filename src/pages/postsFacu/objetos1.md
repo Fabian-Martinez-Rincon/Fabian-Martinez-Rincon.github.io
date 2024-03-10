@@ -2,7 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Parciales Objetos 1
 author: Fabian Martinez Rincon
-description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
+description: ""
 image:
     url: '/posts/objetos1.jpg'
     alt: "Miniatura de los rayos de Astro."

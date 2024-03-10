@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Final Fod
+title: Final FOD
 author: Fabian Martinez Rincon
-description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
+description: ""
 image:
     url: '/posts/fod.jpg'
     alt: "Miniatura de los rayos de Astro."
