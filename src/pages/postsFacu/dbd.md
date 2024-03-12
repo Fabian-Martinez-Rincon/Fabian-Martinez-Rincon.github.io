@@ -11,7 +11,7 @@ tags: ["Modelo Conceptual", "Modelo Logico", "Modelo Fisico"]
 ---
 
 
-### ``Indice``
+### Indice
 - [Conceptual](#conceptual)
     - [Parcial](#parcial-conceptual)
 - [Logico-Fisico](#logicofisico)
@@ -20,7 +20,7 @@ tags: ["Modelo Conceptual", "Modelo Logico", "Modelo Fisico"]
 - [Algebra Relacional y Sql](#algebra-y-sql)
     - [Parcial Algebra y Sql](#parcial-algebra-y-sql)
 
-## ``Conceptual``
+## Conceptual
 
 ### Parcial Conceptual
 
@@ -147,7 +147,7 @@ Por último de los clientes se conoce D.N.I, apellidos, nombres y C.U.1,T. Los e
 
 ---
 
-## ``Logico|Fisico``
+## Logico|Fisico
 
 
 <details >
@@ -231,7 +231,7 @@ Tramos y posee tiene relacion (1, 1)
 
 ---
 
-## `Algebra y Sql`
+## Algebra y Sql
 
 <details >
 <summary>📚 Resumen Algebra Relacional</summary>

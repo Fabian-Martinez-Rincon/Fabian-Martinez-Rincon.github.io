@@ -35,16 +35,16 @@ operativo GNU/Linux, así como con su entorno y comandos principales.
 
 ---
 
-## `1)` Características de **GNU/Linux**:
+## 1) Características de **GNU/Linux**:
 
-### `a)` Mencione y explique las características más relevantes de **GNU/Linux**.
+### a) Mencione y explique las características más relevantes de **GNU/Linux**.
 
-### **`Es multiusuario`**
+### **Es multiusuario**
 
 Cumple simultáneamente las necesidades de dos o más usuarios que comparten los mismos recursos, un sistema multiusuario permite que los usuarios accedan a los datos o procesos de una única maquina, desde diferentes computadoras o termínales
 
 
-### **`Es multitarea y multiprocesador`**
+### **Es multitarea y multiprocesador**
 
 Puede realizar varias operaciones, funciones o ejecuciones al mismo tiempo
 
@@ -52,21 +52,21 @@ Los SO multitarea permiten realizar varias operaciones gracias a una operación 
 
 Multiprocesador se refiere al número de procesadores del sistema, que es más de uno y éste es capaz de usarlos todos para distribuir su carga de trabajo. 
 
-### **`Es altamente portable`**
+### **Es altamente portable**
 
 Se puede usar en cualquier ordenador que tenga el SO para el que fue programado sin la
 necesidad de una instalación previa; significa que no hace falta la instalación de bibliotecas adicionales en el sistema para que pueda funcionar. 
 
-### **`Posee diversos intérpretes de comandos, de los cuales algunos son programables`**
+### **Posee diversos intérpretes de comandos, de los cuales algunos son programables**
 
 - Es el método de interacción entre el usuario y la máquina (shell)
 - CLI (interfaz de línea de comando) un ejemplo seria la terminal bash. 
 
-### **`Permite el manejo de usuarios y permisos`**
+### **Permite el manejo de usuarios y permisos**
 
 Nos permite darle permisos particulares a usuarios y archivos del file system.
 
-### **`Todo es un archivo (hasta los dispositivos y directorios):`**
+### **Todo es un archivo (hasta los dispositivos y directorios):**
 
 Todo es un fichero. Los directorios son ficheros, los ficheros son ficheros, y los dispositivos son ficheros. A veces a los dispositivos se les llama nodos, pero siguen siendo ficheros.
 
@@ -74,7 +74,7 @@ Los sistemas de ficheros de GNU/Linux se organizan en una estructura jerárquica
 
 El nivel más alto del sistema de ficheros es / o directorio raíz. Todos los demás ficheros y directorios están bajo el directorio raíz. Por ejemplo, `/home/jebediah/cheeses.odt` muestra la ruta completa al fichero cheeses.odt que está en el directorio jebediah, que a su vez está bajo el directorio home, que por su parte está bajo el directorio raíz (/).
 
-### **`Cada directorio puede estar en una partición diferente (/temp, /home, etc.)`**
+### **Cada directorio puede estar en una partición diferente (/temp, /home, etc.)**
 
 En Linux, el sistema de archivos se organiza en una estructura de árbol con una raíz denominada "/" (barra). Dentro de esta estructura de árbol, cada partición puede montarse en un directorio diferente, lo que significa que los archivos y directorios que se encuentran dentro de esa partición se harán accesibles a través del directorio montado.
 
@@ -82,17 +82,17 @@ Por ejemplo, si tienes una partición llamada /dev/sda1 y quieres montarla en el
 
 En resumen, en Linux, cada partición puede montarse en un directorio diferente en la estructura de árbol de archivos del sistema, lo que permite una mejor organización y gestión de los datos.
 
-###  **`Es case sensitive`**
+###  **Es case sensitive**
 
 Sensible a las mayúsculas y minúsculas
 
-### **`Es código abierto`**
+### **Es código abierto**
 
 Software cuyo código fuente y otros derechos que normalmente son exclusivos para quienes poseen los derechos de autor, son publicados bajo una licencia de código abierto o forman parte del dominio público. En las licencias compatibles con la Open Source Definition el propietario de los derechos de autor permite a los usuarios utilizarlo, modificarlo, estudiarlo, aprovechar su documentación, redistribuir el software, a cualquiera, para cualquier propósito, ya sea en su forma modificada o en su forma original etc. 
 
 ---
 
-### `b)` Mencione otros sistemas operativos y compárelos con GNU/Linux en cuanto a los puntos mencionados en el inciso a.
+### b) Mencione otros sistemas operativos y compárelos con GNU/Linux en cuanto a los puntos mencionados en el inciso a.
 
 - A diferencia de Windows y Mac, Linux no pertenece a ninguna compañía, sino que su desarrollo depende de la colaboración de un gran número de empresas y profesionales.
 - Su uso esta mas enfocado a programadores dado que sus interfaces son menos amigables.
@@ -101,7 +101,7 @@ Software cuyo código fuente y otros derechos que normalmente son exclusivos par
 
 ---
 
-### `c)` ¿Qué es **GNU**?
+### c) ¿Qué es **GNU**?
 
 GNU es un SO de tipo Unix pero libre, diseñado por miles de programadores, así como una gran colección de programas informáticos que componen al sistema, desarrollado por y para el GNU.
 
@@ -110,7 +110,7 @@ de copyleft. GNU es el acrónimo recursivo de "GNU's Not Unix" **(GNU no es Unix
 
 ---
 
-### `d)` Indique una breve historia sobre la evolución del proyecto *GNU*
+### d) Indique una breve historia sobre la evolución del proyecto *GNU*
 
 - El proyecto GNU fue iniciado por Richard M. Stallman con el propósito de crear un sistema operativo completo y libre: el sistema GNU.
 - Se baso principalmente en 4 libertades
@@ -123,7 +123,7 @@ Pondria más pero a nadie le importa la historia de linux salu2.
 
 ---
 
-### `e)` Explique qué es la multitarea, e indique si *GNU/Linux* hace uso de ella.
+### e) Explique qué es la multitarea, e indique si *GNU/Linux* hace uso de ella.
 
 Puede realizar varias operaciones, funciones o ejecuciones al mismo tiempo
 
@@ -135,7 +135,7 @@ Los SO multitarea permiten realizar varias operaciones gracias a una operación 
 
 ---
 
-### `f)` ¿Qué es **POSIX**?
+### f) ¿Qué es **POSIX**?
 
 POSIX (Interfaz de sistema operativo portátil) es un conjunto de interfaces de sistema
 operativo estándar basadas en el sistema operativo Unix .
@@ -146,9 +146,9 @@ El estándar también define un intérprete de comandos ( shell ) y programas de
 
 ---
 
-## `2)` Distribuciones de **GNU/Linux**:
+## 2) Distribuciones de **GNU/Linux**:
 
-### `a)` ¿Qué es una distribución de GNU/Linux? Nombre al menos 4 distribuciones de GNU/- Linux y cite diferencias básicas entre ellas.
+### a) ¿Qué es una distribución de GNU/Linux? Nombre al menos 4 distribuciones de GNU/- Linux y cite diferencias básicas entre ellas.
 
 Una distribución es un conjunto de software de GNU, así como programas de sistema, librerías y aplicaciones de usuario, con también software de terceros (a veces), con una versión de un kernel de Linux, todo compilado, empaquetado, configurado y preparado para su instalación en una computadora.
 
@@ -172,7 +172,7 @@ Debian, Opensuse, Fedora, Ubuntu.
 
 ---
 
-### `b)` ¿En qué se diferencia una distribución de otra?
+### b) ¿En qué se diferencia una distribución de otra?
 
 Las mayores diferencias se encuentran sobre todo en distribuciones comerciales, donde se han introducido herramientas para una fácil instalación, detección de software etc... 
 
@@ -185,7 +185,7 @@ Las mayores diferencias se encuentran sobre todo en distribuciones comerciales, 
 
 ---
 
-### `c)` ¿Qué es Debian? Acceda al sitio 1 e indique cuáles son los objetivos del proyecto y una breve cronología del mismo.
+### c) ¿Qué es Debian? Acceda al sitio 1 e indique cuáles son los objetivos del proyecto y una breve cronología del mismo.
 
 Debian es una comunidad de desarrolladores , que mantiene un sistema operativo GNU basado en software libre. El sistema se encuentra precompilado, empaquetado y en formato deb para múltiples arquitecturas de computador y para varios núcleos.
 
@@ -202,15 +202,15 @@ hay quince versiones estables (con sus respectivas revisiones) enumeradas en la 
 
 ---
 
-## `3)` Estructura de GNU/Linux:
+## 3) Estructura de GNU/Linux:
 
-### `a)` Nombre cuales son los 3 componentes fundamentales de GNU/Linux.
+### a) Nombre cuales son los 3 componentes fundamentales de GNU/Linux.
 
 Kernel, shell y Filesystem.
 
 ---
 
-### `b)` Mencione y explique la estructura básica del Sistema Operativo GNU/Linux.
+### b) Mencione y explique la estructura básica del Sistema Operativo GNU/Linux.
 
 Estructura. Nos ocuparemos de tres componentes principales:
 
@@ -220,9 +220,9 @@ Estructura. Nos ocuparemos de tres componentes principales:
 
 ---
 
-## `4)` Kernel: 
+## 4) Kernel: 
 
-### `a)` ¿Qué es? Indique una breve reseña histórica acerca de la evolución del Kernel de GNU/Linux.
+### a) ¿Qué es? Indique una breve reseña histórica acerca de la evolución del Kernel de GNU/Linux.
 
 El kernel es la estructura principal del SO, es el que se encarga de que el software y el hardware puedan trabajar juntos.
 
@@ -255,14 +255,14 @@ La decisión del cambio son los 20 años del SO y no superar los 40 números de 
 
 ---
 
-### `b)` ¿Cuáles son sus funciones principales?
+### b) ¿Cuáles son sus funciones principales?
 
 Funciones principales: Administrar la memoria, CPU y E/S, administración de procesos y
 comunicación y concurrencia. 
 
 ---
 
-### `c)` ¿Cuál es la versión actual? 
+### c) ¿Cuál es la versión actual? 
 
 La versión del kernel actual es 5.16. Lo demas a nadie le importa 
 
@@ -287,13 +287,13 @@ Ejemplo actualidad: versión 5.19.6
 
 ---
 
-### `d)` ¿Es posible tener más de un Kernel de GNU/Linux instalado en la misma máquina?
+### d) ¿Es posible tener más de un Kernel de GNU/Linux instalado en la misma máquina?
 
 Sí. Se puede instalar en la misma máquina, pero 2 núcleos corriendo simultáneamente en Linux es imposible
 
 ---
 
-### `e)` ¿Dónde se encuentra ubicado dentro del File System?
+### e) ¿Dónde se encuentra ubicado dentro del File System?
 
 Se encuentra ubicado el /lib/: librerías esenciales compartidas y módulos de kernel
 
@@ -320,7 +320,7 @@ Directorio raíz de toda la jerarquía de archivos del sistema.
 
 ---
 
-### `f)` ¿El Kernel de GNU/Linux es monolítico? Justifique.
+### f) ¿El Kernel de GNU/Linux es monolítico? Justifique.
 
 El kernel Gnu/Linux si es **monolítico**.
 
@@ -336,9 +336,9 @@ Básicamente el kernel microkernel reduce al máximo el uso del modo kernel y de
 
 ---
 
-## `5)` Intérprete de comandos (Shell):
+## 5) Intérprete de comandos (Shell):
 
-### `a)` ¿Qué es?
+### a) ¿Qué es?
 
 La shell también conocida como CLI (interfaz de línea de comando), es el que gestiona la interacción entre el usuario y el sistema operativo.
 
@@ -349,7 +349,7 @@ La shell es iniciada por un proceso llamado login y dado que cada usuario tiene 
 
 ---
 
-### `b)` ¿Cuáles son sus funciones?
+### b) ¿Cuáles son sus funciones?
 
 Es el encargado de ejecutar programas a partir del ingreso de comandos.
 
@@ -358,7 +358,7 @@ Ejemplo: control de procesos, redirección de entrada/salida, listado y lectura 
 
 ---
 
-### `c)` Mencione al menos 3 intérpretes de comandos que posee GNU/Linux y compárelos entre ellos.
+### c) Mencione al menos 3 intérpretes de comandos que posee GNU/Linux y compárelos entre ellos.
 
 - **`Bourne Shell (sh)`** Creado por S. Bourne, es el más utilizado en la actualidad. Su símbolo del sistema es $. Es el shell estándar y el que se monta en casi todos los sistemas UNIX/Linux.
 - **`Korn Shell (ksh)`** Escrito por David Korn, amplía el shell del sistema añadiendo historial de órdenes, edición en línea de órdenes y características ampliadas de programación. 
@@ -369,7 +369,7 @@ Los intérpretes se diferencian entre sí básicamente en la sintaxis de sus com
 
 ---
 
-### `d)` ¿Dónde se ubican (path) los comandos propios y externos al Shell?
+### d) ¿Dónde se ubican (path) los comandos propios y externos al Shell?
 
 **PATH:** es una variable y su contenido es una cadena que contiene rutas de
 directorios separadas por dos puntos.
@@ -392,7 +392,7 @@ En resumen, los comandos propios están integrados en la propia shell y los coma
 
 ---
 
-### `e)` ¿Por qué considera que el Shell no es parte del Kernel de GNU/Linux?
+### e) ¿Por qué considera que el Shell no es parte del Kernel de GNU/Linux?
 
 La principal razon es que es muy remplazable, en caso de que falle, se puede reiniciar y todo tendria que seguir andando.
 
@@ -402,7 +402,7 @@ La shell no forma parte del kernel de Linux porque es una aplicación que propor
 
 ---
 
-### `f)` ¿Es posible definir un intérprete de comandos distinto para cada usuario? 
+### f) ¿Es posible definir un intérprete de comandos distinto para cada usuario? 
 
 Si, es posible. 
 
@@ -416,9 +416,9 @@ No, cada usuario puede definir su o sus intérpretes
 
 ---
 
-## `6)` Sistema de Archivos (File System):
+## 6) Sistema de Archivos (File System):
 
-### `a)` ¿Qué es?
+### a) ¿Qué es?
 
 Es la forma en que dentro de un SO se organizan y se administran los archivos.
 
@@ -430,7 +430,7 @@ Lo que esto significa, básicamente, es que el filesystem es la estructura que s
 
 ---
 
-### `b)` Mencione sistemas de archivos soportados por GNU/Linux.
+### b) Mencione sistemas de archivos soportados por GNU/Linux.
 
 A continuación veremos una lista con algunos filesystem utilizados hoy en día:
 
@@ -441,11 +441,11 @@ A continuación veremos una lista con algunos filesystem utilizados hoy en día:
 
 ---
 
-### `c)` ¿Es posible visualizar particiones del tipo FAT y NTFS en GNU/Linux?
+### c) ¿Es posible visualizar particiones del tipo FAT y NTFS en GNU/Linux?
 
 Si. En estos momentos existen distribuciones de GNU-Linux que pueden realizar operaciones de lectura y escritura sobre ellas. 
 
-### `d)`  ¿Cuál es la estructura básica de los File System en GNU/Linux? 
+### d)  ¿Cuál es la estructura básica de los File System en GNU/Linux? 
 
 ![image](https://user-images.githubusercontent.com/55964635/227661611-40497548-8ce3-4142-88f9-e193515a9d88.png)
 
@@ -467,9 +467,9 @@ FHS: es el estándar que siguen todos los sistemas operativos unix, para organiz
 
 ---
 
-## `7)` Particiones:
+## 7) Particiones:
 
-### `a)`  Definición
+### a)  Definición
 
 Es el nombre que recibe cada división de una sola unidad física de almacenamiento
 de datos. (es un pedazo de una unidad ).
@@ -508,7 +508,7 @@ Existen 3 tipos diferentes de particiones:
 
 ---
 
-### `b)` ¿Cómo se identifican las particiones en GNU/Linux? (Considere discos **IDE**, **SCSI** y **SATA**).
+### b) ¿Cómo se identifican las particiones en GNU/Linux? (Considere discos **IDE**, **SCSI** y **SATA**).
 
 El primer disco duro **`IDE`** se conoce como /dev/hda. Si tenemos un segundo disco duro IDE se llamará /dev/hdb, etc.
 
@@ -516,7 +516,7 @@ Los discos duros **`SCSI`** y **`SATA`** se denominan /dev/sda, /dev/sdb, etc. E
 
 ---
 
-### `c)` ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux? Nómbrelas indicando tipo de partición, identificación, tipo de File System y punto de montaje.
+### c) ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux? Nómbrelas indicando tipo de partición, identificación, tipo de File System y punto de montaje.
 
 Si bien el número **mínimo absoluto de particiones sería uno (1)**, una **instalación típica de GNU / Linux tendrá al menos dos (2)** particiones: la partición raíz (indicada como /) y la partición de **intercambio**. Puede optar por tener todos los archivos en una sola partición dentro de la mayoría de las distribuciones durante la instalación.
 
@@ -533,7 +533,7 @@ Para una instalación de **GNU/Linux saludable se recomiendan 3 particiones swap
 **`Tipo de filesystem`** Sistema de archivos **Ext2, ext3 y ext4**: Así como Apple y Microsoft tienen sus propios sistemas, estos tres (cada uno evolución del anterior) son los utilizados por las distribuciones GNU/Linux. El principal inconveniente es que sólo puede ser utilizado en esta familia de sistemas operativos. 
 
 
-### `d)` Ejemplifique diversos casos de particionamiento dependiendo del tipo de tarea que se deba realizar en su sistema operativo.
+### d) Ejemplifique diversos casos de particionamiento dependiendo del tipo de tarea que se deba realizar en su sistema operativo.
 
 **`Integración de nuevas adquisiciones`** Si forma una empresa nueva. La empresa recién formada no utiliza las mismas aplicaciones para las nóminas, el inventario y la facturación. Tiene previsto consolidar las dos empresas en un solo conjunto de aplicaciones, pero esta consolidación tardará un tiempo. Mientras tanto, debe reducir el coste de los centros de datos con rapidez. 
 
@@ -553,9 +553,9 @@ Existen 2 tipos:
 
 ---
 
-## `8)` Arranque (bootstrap) de un Sistema Operativo:
+## 8) Arranque (bootstrap) de un Sistema Operativo:
 
-### `a)` ¿Qué es el BIOS? 
+### a) ¿Qué es el BIOS? 
 
 La BIOS (Sistema Básico de Entrada/Salida) es un software que inicializa y comprueba todos los componentes de hardware durante el arranque de la máquina. También prepara el equipo para que el Sistema Operativo se cargue y se ejecute. Su nombre viene de las siglas en inglés Basic Input Output System.
 
@@ -570,7 +570,7 @@ El POST comprueba todo, desde el teclado y la unidad de disco, hasta la velocida
 
 ---
 
-### `b)` ¿Qué es UEFI? 
+### b) ¿Qué es UEFI? 
 
 UEFI (Unified Extensible Firmware Interface o Interfaz de Firmware Extensible Unificada). Es la Alianza entre varias compañías con el objetivo de modernizar el proceso de arranque, querían reemplazar a la BIOS. Sus funciones son parecidas a los de la BIOS, pero mejoradas. UEFI aporta criptografía, autenticación por red, y una interfaz gráfica. 
 
@@ -581,7 +581,7 @@ Usa el sistema GPT (GUID Partition table) para solucionar algunas limitaciones d
 
 ---
 
-### `c)` ¿Qué es el MBR? 
+### c) ¿Qué es el MBR? 
 
 Sector de arranque – MBR
 
@@ -597,7 +597,7 @@ El MBC es un pequeño código que permite arrancar el sistema operativo. La tare
 
 ---
 
-### `d)` ¿A qué hacen referencia las siglas GPT? 
+### d) ¿A qué hacen referencia las siglas GPT? 
 
 Una partición GPT GUID Partition Table es un estándar diseñado para realizar la configuración de las tablas de particiones y su ubicación en medios de almacenamiento como los discos duros físicos.
 
@@ -616,7 +616,7 @@ Puede ser utilizado independientemente de la UEFI.
 
 ---
 
-### `e)` ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen? ¿Dónde se instalan? Cite gestores de arranque conocidos.
+### e) ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen? ¿Dónde se instalan? Cite gestores de arranque conocidos.
 
 Un gestor de arranque, es un programa que se encarga del inicio del ordenador, antes del sistema operativo, y que nos permite elegir el sistema operativo que queremos cargar, es decir se encarga del bootstrap (carga) o booteo del sistema.
 
@@ -642,7 +642,7 @@ GRand Unified Bootloader(grub): gestor de arranque múltiple que se usa para ini
 
 ---
 
-### `f)` ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de bootstrap)?
+### f) ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que el Sistema Operativo es cargado (proceso de bootstrap)?
 
 Cuando aprietas el botón de arranque de un ordenador, lo primero que aparece en la pantalla son los datos acerca del hardware del equipo. El software responsable de esta información es, en primer lugar, el ya mencionado firmware, que los productores de los dispositivos por lo general implementan en una memoria flash en la placa base o mainboard. En la mayoría de los ordenadores de mesa y portátiles se apuesta por el ya veterano BIOS (Basic Input/Output System) o por el más reciente UEFI (Unified Extensible Firmware Interface). Ambos programas reúnen diferentes datos del hardware y para generar, entre otras cosas, una lista completa de todas las unidades de disco disponibles en el dispositivo. 
 
@@ -650,7 +650,7 @@ Una vez se ha completado este proceso, el firmware comprueba uno a uno los sopor
 
 ---
 
-###  `g)` Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.
+### g) Analice el proceso de arranque en GNU/Linux y describa sus principales pasos.
 
 Ell flujo de control durante el arranque es desde el **[BIOS]()**, al **[gestor de arranque]()** y al núcleo (**[kernel]())**). 
 
@@ -662,7 +662,7 @@ Ell flujo de control durante el arranque es desde el **[BIOS]()**, al **[gesto
 
 ---
 
-### `h)` ¿Cuáles son los pasos que se suceden en el proceso de parada (shutdown) de GNU/Linux?
+### h) ¿Cuáles son los pasos que se suceden en el proceso de parada (shutdown) de GNU/Linux?
 
 - Se notifica a los usuarios este hecho.
 - Se bloquea el sistema para que nadie más pueda acceder exceptuando el **root**.
@@ -670,21 +670,21 @@ Ell flujo de control durante el arranque es desde el **[BIOS]()**, al **[gesto
 
 ---
 
-### `i)` ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique
+### i) ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique
 
 Si es posible ya lo vimos anteriormente gracias a las particiones de disco instalar múltiples sistema operativos o a través de maquinas virtuales.
 
 ---
 
-## `9)` Archivos
+## 9) Archivos
 
-### `a)` ¿Cómo se identifican los archivos en GNU/Linux?
+### a) ¿Cómo se identifican los archivos en GNU/Linux?
 
 Un nombre de archivo puede tener entre 1 y 255 caracteres. recomendable emplear los caracteres con significado especial en Linux, que son los siguientes: **= \ ^ ~ ' " ` * ; - ? ( )! & ~ < >**
 
 ---
 
-### `b)` Investigue el funcionamiento de los editores vi y mcedit, y los comandos cat y more.
+### b) Investigue el funcionamiento de los editores vi y mcedit, y los comandos cat y more.
 
 - **VI**
 Es el editor de texto clásico en UNIX. Puede usarse en cualquier tipo de terminal con un mínimo de teclas.
@@ -710,7 +710,7 @@ Es un comando para ver (pero no modificar) el contenido de un archivo o comando
 
 ---
 
-### `c)` Cree un archivo llamado “prueba.exe” en su directorio personal usando el vi. El mismo debe contener su número de alumno y su nombre.
+### c) Cree un archivo llamado “prueba.exe” en su directorio personal usando el vi. El mismo debe contener su número de alumno y su nombre.
 
 - Utilice el siguiente comando para crear un archivo (en este ejemplo, .htaccess). También puede editar un archivo existente con el mismo comando. 
 
@@ -729,7 +729,7 @@ nvim fabianmartinezrincon.txt
 
 ---
 
-### `d)` Investigue el funcionamiento del comando file. Pruébelo con diferentes archivos. ¿Qué diferencia nota?
+### d) Investigue el funcionamiento del comando file. Pruébelo con diferentes archivos. ¿Qué diferencia nota?
 
 Permite detectar el tipo y formato de un archivo
 
@@ -743,7 +743,7 @@ file [opciones] archivo
 
 ---
 
-### `10)` Indique qué comando es necesario utilizar para realizar cada una de las siguientes acciones. Investigue su funcionamiento y parámetros más importantes:
+### 10) Indique qué comando es necesario utilizar para realizar cada una de las siguientes acciones. Investigue su funcionamiento y parámetros más importantes:
 
 - `mkdir "ISO 2022"` Cree la carpeta ISO2017 
 - `cd 'ISO 2022'` Acceda a la carpeta (cd)
@@ -758,7 +758,7 @@ file [opciones] archivo
 
 ---
 
-### `11)` Investigue su funcionamiento y parámetros más importantes:
+### 11) Investigue su funcionamiento y parámetros más importantes:
 
 - `shutdown`  El comando de apagado (Shutdown) te permite apagar, reiniciar y detener tu sistema
 
@@ -827,7 +827,7 @@ sudo shutdown -c
 
 ---
 
-### `12)` Investigue su funcionamiento y parámetros más importantes:
+### 12) Investigue su funcionamiento y parámetros más importantes:
 
 - `a)`  Indique en qué directorios se almacenan los comandos mencionados en el ejercicio anterior.
 
@@ -837,17 +837,6 @@ El directorio /bin es un directorio estático y es donde se almacenan todos los 
 
 <h1 align="center"> 📓 Practica 2
 </h1>
-
-
-
-<div align="center">
-
-[Siguiente](/Documentos/Practica3.md)<br>
-[Anterior](/Documentos/Practica1.md)
-
-</div>
-
-
 
 El objetivo de esta práctica es que el alumno comprenda los aspectos principales acerca de la estructura del sistema Operativo GNU/Linux en lo que respecta a procesos, usuarios, filesystems,
 permisos, etc
@@ -869,8 +858,8 @@ permisos, etc
 
 
 
-## `1)` Editor de textos:
-#### `(a)` Nombre al menos 3 editores de texto que puede utilizar desde la línea de comandos.
+## 1) Editor de textos:
+#### (a) Nombre al menos 3 editores de texto que puede utilizar desde la línea de comandos.
 
 -  **Vim:** Es un editor de texto que rompe las bolas pero aprendes
 - **GNU Emacs:** La misma basura que vim pero con calculadora y administrador de archivos
@@ -878,7 +867,7 @@ permisos, etc
 
 ---
 
-#### `(b)` ¿En qué se diferencia un editor de texto de los comandos cat, more o less? Enumere los modos de operación que posee el editor de textos vi.
+#### (b) ¿En qué se diferencia un editor de texto de los comandos cat, more o less? Enumere los modos de operación que posee el editor de textos vi.
 
 Los **comandos cat, more y less** permiten mostrar el contenido de ficheros de texto desde la línea de comandos en sistemas **Unix**. 
 
@@ -896,8 +885,8 @@ En su lugar los **editores de texto**, justamente nos dejan **editar texto** ade
 
 
 
-## `2)` Proceso de Arranque SystemV:
-#### `(a)` Enumere los pasos del proceso de inicio de un sistema GNU/Linux, desde que se prende la PC hasta que se logra obtener el login en el sistema.
+## 2) Proceso de Arranque SystemV:
+#### (a) Enumere los pasos del proceso de inicio de un sistema GNU/Linux, desde que se prende la PC hasta que se logra obtener el login en el sistema.
 
 - `Paso 1)` Se empieza a ejecutar el código del BIOS
 - `Paso 2)` El BIOS ejecuta el POST
@@ -914,7 +903,7 @@ En su lugar los **editores de texto**, justamente nos dejan **editar texto** ade
 
 ---
 
-#### `(b)` Proceso INIT. ¿Quién lo ejecuta? ¿Cuál es su objetivo?
+#### (b) Proceso INIT. ¿Quién lo ejecuta? ¿Cuál es su objetivo?
 - Su función es cargar todos los subprocesos necesarios para el correcto funcionamiento del SO
 - El proceso init posee el PID 1 y se encuentra en **/sbin/init**
 - En SysV se lo configura a traves del archivo **/etc/inittab**
@@ -923,13 +912,13 @@ En su lugar los **editores de texto**, justamente nos dejan **editar texto** ade
 
 ---
 
-#### `(c)` Ejecute el comando pstree. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?
+#### (c) Ejecute el comando pstree. ¿Qué es lo que se puede observar a partir de la ejecución de este comando?
 
 El programa pstree facilita información sobre la finalización de una serie de procesos relacionados entre sí, esto es, todos los descendientes de un proceso particular. El programa deja claro desde un principio que proceso es el primario y cuales son los secundarios.
 
 ---
 
-#### `(d)` RunLevels. ¿Qué son? ¿Cuál es su objetivo?
+#### (d) RunLevels. ¿Qué son? ¿Cuál es su objetivo?
 - Es el modo en que arranca Linux (3 en Redhat, 2 en Debian)
 - El proceso de arranque lo dividimos en niveles
 - Cada uno es responsable de levantar (iniciar) o bajar (parar) una serie de servicios
@@ -944,7 +933,7 @@ Explicación más detallada
 - `Paso 5)` Dentro del directorio encontraremos una serie de **scripts** o enlaces a los scripts que controlan el servicio. Cada script posee un nombre relacionado con el servicio, una S o K inicial que indica si es el script para iniciar **(S)** o matar **(K)** el servicio, y un número que refleja el orden en que se ejecutarán los servicios. 
 
 
-#### `(e)` ¿A qué hace referencia cada nivel de ejecución según el estándar? [Fuente](https://www.factor.mx/portal/base-de-conocimiento/niveles-de-ejecucion/)
+#### (e) ¿A qué hace referencia cada nivel de ejecución según el estándar? [Fuente](https://www.factor.mx/portal/base-de-conocimiento/niveles-de-ejecucion/)
 
 - **`0`** Indica halt o apagado de la máquina.
 - **`1`** Indica monousuario.
@@ -980,7 +969,7 @@ No todas las distribuciones respetan los estándares.
 
 ---
 
-#### `(f)` Archivo /etc/inittab. ¿Cuál es su finalidad?  
+#### (f) Archivo /etc/inittab. ¿Cuál es su finalidad?  
 
 Es el archivo de configuración de init, que decide el modo de ejecución en el que va a entrar.
 
@@ -1004,7 +993,7 @@ Cuando el sistema se arranca, se verifica si existe un runlevel predeterminado e
 
 ---
 
-#### `(g)` Suponga que se encuentra en el runlevel \<X>. Indique qué comando(s) ejecutaría para cambiar al runlevel \<Y>. ¿Este cambio es permanente? ¿Por qué?
+#### (g) Suponga que se encuentra en el runlevel \<X>. Indique qué comando(s) ejecutaría para cambiar al runlevel \<Y>. ¿Este cambio es permanente? ¿Por qué?
 
 Existen dos formas de modificar los runlevels:
 
@@ -1019,7 +1008,7 @@ También **`telinit`**, nos permite cambiar de nivel de ejecución, sólo tenemo
 
 ---
 
-#### **`b) Modificar el runlevel por defecto`**
+#### **b) Modificar el runlevel por defecto**
 
 Por defecto, el sistema suele arrancar en el nivel de ejecución 5 (modo gráfico). Si se quisiera modificar este comportamiento, habría que editar el fichero **`/etc/inittab.`**
 
@@ -1038,7 +1027,7 @@ sudo telinit 2
 
 ---
 
-#### `(h)` Scripts RC. ¿Cuál es su finalidad?
+#### (h) Scripts RC. ¿Cuál es su finalidad?
 
 Los scripts RC se encargan de cargar o cerrar los servicios necesarios para que el sistema funcione, de acuerdo con el runlevel que se está iniciando. Por ejemplo: lpd (servicio para imprimir), fetchmail (servicio para leer correo-e), sshd (SecureShell para abrir sesiones remotas de una manera segura), networking (abre las conexiones de red).
 
@@ -1064,7 +1053,7 @@ Los nombres en estos directorios tienen una sintaxis bastante concreta. Empiezan
 
 ---
 
-### `(i)` ¿Qué es insserv? 
+### (i) ¿Qué es insserv? 
 
 El comando **insserv** se usa para controlar el orden de inicio y detención de los servicios que se encuentran en un sistema Linux. 
 
@@ -1081,7 +1070,7 @@ Mejora la performance del arranque en sistemas multiprocesadores.
 
 ---
 
-#### `(j)` ¿Cómo maneja Upstart el proceso de arranque del sistema?
+#### (j) ¿Cómo maneja Upstart el proceso de arranque del sistema?
 
 Upstart fue el primer reemplazo propuesto para SystemV (Ubuntu, Fedora, Debian, etc.). 
 
@@ -1112,7 +1101,7 @@ Upstart fue el primer reemplazo propuesto para SystemV (Ubuntu, Fedora, Debian, 
 
 ---
 
-#### `(k)` Cite las principales diferencias entre SystemV y Upstart.
+#### (k) Cite las principales diferencias entre SystemV y Upstart.
 
 Upstart se creó como reemplazo del modelo SysVinit. A diferencia de SysVinit, que se creó para operar en un entorno estático Upstart se creó para operar en un entorno flexible.
 
@@ -1123,14 +1112,14 @@ Upstart en lugar de usar runlevels, usa jobs que cada uno de ellos posee un obje
 
 ---
 
-#### `(l)` Qué reemplaza a los scripts rc de SystemV en Upstart? ¿En que ubicación del filesystem se encuentran?
+#### (l) Qué reemplaza a los scripts rc de SystemV en Upstart? ¿En que ubicación del filesystem se encuentran?
 
 - Los **`jobs`** reemplazan a los scripts de SystemV en Upstart.
 - Cada job es definido en el **`/etc/init (.conf)`**
 
 ---
 
-#### `(m)` Dado el siguiente job de upstart perteneciente al servicio de base de datos del mysql indique a qué hace referencia cada línea del mismo:
+#### (m) Dado el siguiente job de upstart perteneciente al servicio de base de datos del mysql indique a qué hace referencia cada línea del mismo:
 
 ```powershell
 # MySQL Servise
@@ -1156,7 +1145,7 @@ Este es un archivo de configuración Upstart para el servicio de base de datos M
 
 ---
 
-#### `(n)` ¿Qué es sytemd?
+#### (n) ¿Qué es sytemd?
 
 - Es un sistema que centraliza la administración de demonios y librerias del sistema.
 - Puede ser controlado por `systemctl`
@@ -1167,7 +1156,7 @@ Este es un archivo de configuración Upstart para el servicio de base de datos M
 
 ---
 
-#### `(ñ)` ¿A qué hace referencia el concepto de activación de socket en systemd?
+#### (ñ) ¿A qué hace referencia el concepto de activación de socket en systemd?
 
 Las unidades de trabajo son denominadas units de tipo:
 
@@ -1183,7 +1172,7 @@ Las **units** pueden tener dos estados -> **active** o **inactive**
 
  ---
 
-#### `(o)` ¿A qué hace referencia el concepto de cgroup?
+#### (o) ¿A qué hace referencia el concepto de cgroup?
 
 Permite organizar un grupo de procesos en forma jerárquica
 
@@ -1196,9 +1185,9 @@ Tareas que realiza:
 
 
 
-## `3)` Usuarios
+## 3) Usuarios
 
-#### `(a)` ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?
+#### (a) ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información de los usuarios?
 
 En un sistema GNU/Linux, la información de los usuarios se almacena principalmente en los siguientes archivos:
 
@@ -1211,7 +1200,7 @@ Es importante destacar que estos archivos son de lectura y escritura solo para e
 
 ---
 
-#### `(b)` ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique.
+#### (b) ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales en un sistema GNU/Linux? Justifique.
 
 Los sistemas operativos Linux y Unix utilizan el UID (User ID o ID de usuario) para identificar al usuario particular. El GID (Group ID o ID de grupo) se utiliza para identificar a un grupo. Supongo que no podrian existir dos iguales ya que no los podrias distinguir.
 
@@ -1219,7 +1208,7 @@ Puede haber un caso que seria el root en el que podemos tener varios usuarios ro
 
 ---
 
-#### `(c)` ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la UID del root?.
+#### (c) ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Linux? ¿Cuál es la UID del root?.
 
 En sistemas operativos del tipo Unix, el superusuario o root es el nombre
 convencional de la cuenta de usuario que posee todos los derechos en todos los
@@ -1237,7 +1226,7 @@ modos (monousuario o multiusuario). Normalmente es la cuenta de administrador.
 
 ---
 
-#### `(d)` Agregue un nuevo usuario llamado iso2017 a su instalación de GNU/Linux, especifique que su home sea creada en /home/iso_2017, y hágalo miembro del grupo catedra (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
+#### (d) Agregue un nuevo usuario llamado iso2017 a su instalación de GNU/Linux, especifique que su home sea creada en /home/iso_2017, y hágalo miembro del grupo catedra (si no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique que no queden registros de él en los archivos de información de los usuarios y grupos.
 
 - `sudo adduser iso2022` creo un usuario y en home le agrego /home/ (contra = nombre para pruebas)
 - `sudo gropadd catedra` creo un grupo 
@@ -1249,7 +1238,7 @@ modos (monousuario o multiusuario). Normalmente es la cuenta de administrador.
 
 ---
 
-#### `(e)` Investigue la funcionalidad y parámetros de los siguientes comandos:
+#### (e) Investigue la funcionalidad y parámetros de los siguientes comandos:
 - **`useradd nombre ó adduser nombre`** Crea un nuevo usuario
 - **`usermod nombre`** nos permite modificar todos los parámetros de la cuenta de un usuario creado con anterioridad.
 - **`userdel nombre`** Elimina un usuario
@@ -1261,9 +1250,9 @@ modos (monousuario o multiusuario). Normalmente es la cuenta de administrador.
 
 
 
-## `4)` FileSystem:
+## 4) FileSystem:
 
-#### `(a)` ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?
+#### (a) ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?
 
 Este mecanismo permite que archivos y directorios “pertenezcan” a un usuario en particular. Por ejemplo, como diego creó archivos en su directorio “home”, diego es el propietario de esos archivos y tiene acceso total a ellos. 
 
@@ -1301,12 +1290,12 @@ Aquí tenemos otros ejemplos de permisos de grupo
 
 ---
 
-#### `(b)` Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
+#### (b) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con los permisos en GNU/Linux:
 - **chmod:** nos permite gestionar permisos
 - **chown:** permite cambiar el propietario de un archivo o directorio en sistemas
 - **chgrp:** nos permite cambiar el grupo al que pertenece un archivo
 
-#### `(c)` Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+#### (c) Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
 
 Existen 3 tipos de permisos y se basan en una notacion octal para referenciar a cada uno:
 
@@ -1334,21 +1323,21 @@ Por lo tanto, en el ejemplo **`chmod 755`**, indica que el **`dueño (U)`** tien
 
 ---
 
-#### `(d)` ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Nombrelo, y realice las pruebas correspondientes.
+#### (d) ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado archivo para el cual no posee permisos? Nombrelo, y realice las pruebas correspondientes.
 
 
 Existe la posibilidad, si es que el usuario puede utilizar el comando su, o sudo. Sino, sin poseer los permisos necesarios no puede acceder al archivo. Sólo root.
 
 ---
 
-#### `(e)` Explique los conceptos de “full path name” y “relative path name”. De ejemplos claros de cada uno de ellos.
+#### (e) Explique los conceptos de “full path name” y “relative path name”. De ejemplos claros de cada uno de ellos.
 
 - **`Full path name`** es la ruta completa a ese archivo o carpeta desde el directorio / del sistema de archivos. ejemplo `/home/your_username/my_script`
 - **`Relative path name`** Rastrea la ruta desde el directorio actual a través de su padre o sus subdirectorios y archivos. ..\Documents
 
 ---
 
-#### `(f)` ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
+#### (f) ¿Con qué comando puede determinar en qué directorio se encuentra actualmente? ¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios? ¿Cómo? Explique con un ejemplo.
 
 - Con el comando pwd podemos saber el directorio actual.
 - Con `cd`o `cd ~` vamos al directorio personal.
@@ -1358,7 +1347,7 @@ Se podría acceder a diferentes directorios gracias la ubicación relativa o ata
 
 ---
 
-#### `(g)` Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
+#### (g) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el uso del FileSystem:
 
 - **`cd`** Nos permite meternos en un directorio interno
 - **`umount`** permite eliminar un sistema de archivos remoto que esté montando en la actualidad (no usar xd)
@@ -1375,9 +1364,9 @@ Se podría acceder a diferentes directorios gracias la ubicación relativa o ata
 
 
 
-## `5)` Procesos
+## 5) Procesos
 
-#### `(a)` ¿Qué es un proceso? ¿A que hacen referencia las siglas PID y PPID? ¿Todos los procesos tienen estos atributos en GNU/Linux? Justifique. Indique qué otros atributos tiene un proceso.
+#### (a) ¿Qué es un proceso? ¿A que hacen referencia las siglas PID y PPID? ¿Todos los procesos tienen estos atributos en GNU/Linux? Justifique. Indique qué otros atributos tiene un proceso.
 
 Un proceso es un programa en ejecución. Para nosotros serán sinónimos de tarea, job y proceso.
 - Es dinámico
@@ -1392,7 +1381,7 @@ PUEDO VER EL PPID.
 
 ----
 
-#### `(b)` Indique qué comandos se podrían utilizar para ver qué procesos están en ejecución en un sistema GNU/Linux.
+#### (b) Indique qué comandos se podrían utilizar para ver qué procesos están en ejecución en un sistema GNU/Linux.
 
 - **`pstree`** que nos muestra los procesos en una estructura de árbol top El comando top te permite ver las tareas del sistema que se ejecutan en tiempo real.
 - **`top`** El comando top te permite ver las tareas del sistema que se ejecutan en tiempo real.Proporciona un buen resumen de tu sistema para verificar rápidamente si algo se destaca que pueda estar causando problemas con tu sitio web o servidor
@@ -1407,14 +1396,14 @@ Suelen usarse combiandas para tener una visión global de los procesos que está
 
 ---
 
-#### `(c)` ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
+#### (c) ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
 
 - **`Proceso ejecutándose en Background`** significa que el proceso continúa la ejecución mientras que el shell se libera para otras actividades. **`Proceso en segundo plano`**.
 - **`Proceso ejecutándose en Foreground`** Es exactamente lo contrario, quiere decir que no se admitirá ningún otro comando hasta que se complete el proceso. **`Proceso en primer plano`**.
 
 ---
 
-#### `(d)` ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?
+#### (d) ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para pasar un proceso de background a foreground y viceversa?
 
 Para ejecutar un proceso en background en Linux, se puede agregar el símbolo "&" al final del comando en la línea de comandos. Por ejemplo, para ejecutar un proceso llamado "mi_proceso" en background, se puede escribir:
 
@@ -1441,7 +1430,7 @@ También se puede suspender un proceso en foreground con la combinación de tecl
 
 ---
 
-#### `(e)` Pipe ( | ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
+#### (e) Pipe ( | ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
 
  El **`|`** nos permite comunicar dos procesos por medio de un pipe o tubería desde la shell
 
@@ -1465,7 +1454,7 @@ cat /etc/passwd | cut -d: -f1 | grep a | wc –l
 
 ---
 
-#### `(f)` Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.
+#### (f) Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos de utilización.
 
 En Linux, al final todo es tratado como si fuera un fichero y como tal, tenemos descriptores de fichero para aquellos puntos donde queramos acceder.
 
@@ -1516,7 +1505,7 @@ Además, con el carácter `&` podemos redirigir salidas de un tipo hacia otras, 
 
 ---
 
-#### `(g)` Comando kill. ¿Cuál es su funcionalidad? Cite ejemplos.
+#### (g) Comando kill. ¿Cuál es su funcionalidad? Cite ejemplos.
 
 El comando **`kill`** en Linux (ubicado en / bin / kill), es un comando incorporado que se usa para terminar los procesos manualmente. El comando kill envía una señal a un proceso que termina el proceso. Si el usuario no especifica ninguna señal que se enviará junto con el comando kill, se envía la señal TERM predeterminada que finaliza el proceso.
 
@@ -1527,7 +1516,7 @@ El comando **`kill`** en Linux (ubicado en / bin / kill), es un comando incorpor
 
 ---
 
-#### `(h)` Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el manejo de procesos en GNU/Linux. Además, compárelos entre ellos:
+#### (h) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con el manejo de procesos en GNU/Linux. Además, compárelos entre ellos:
 
 - **ps:** Muestra información de los procesos activos.
 - **kill:** Usa el PID para matar el proceso. Permite interactuar con cualquier proceso mandando señales. Kill `<pid>` termina un proceso y Kill -9 `<pid>` fuerza a terminar un proceso en caso de que la anterior opción falle. 
@@ -1538,9 +1527,9 @@ El comando **`kill`** en Linux (ubicado en / bin / kill), es un comando incorpor
 
 
 
-## `6)` Otros comandos de Linux (Indique funcionalidad y parámetros)
+## 6) Otros comandos de Linux (Indique funcionalidad y parámetros)
 
-#### `(a)` ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?
+#### (a) ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?
 
 Los archivos `TAR` no son archivos comprimidos sino empaquetados. `TAR` es un empaquetador, es algo más parecido a un compresor como `arj` ó `zip` pero sin compresión. Su función es la de incluir todos los ficheros juntos en el mismo archivo, conservando las estructuras de directorios y permisos de los mismos. 
 
@@ -1572,7 +1561,7 @@ Los archivos `TAR` no son archivos comprimidos sino empaquetados. `TAR` es un em
 
 ---
 
-#### `(b)` Seleccione 4 archivos dentro de algún directorio al que tenga permiso y sume el tamaño de cada uno de estos archivos. Cree un archivo empaquetado conteniendo estos 4 archivos y compare los tamaños de los mismos. ¿Qué característica nota?
+#### (b) Seleccione 4 archivos dentro de algún directorio al que tenga permiso y sume el tamaño de cada uno de estos archivos. Cree un archivo empaquetado conteniendo estos 4 archivos y compare los tamaños de los mismos. ¿Qué característica nota?
 
 Claro, para sumar el tamaño de cuatro archivos en Linux y crear un archivo empaquetado que los contenga, puede seguir los siguientes pasos:
 
@@ -1594,7 +1583,7 @@ Es importante tener en cuenta que el comando `tar` utiliza la compresión para r
 
 ---
 
-#### `(c)` ¿Qué acciones debe llevar a cabo para comprimir 4 archivos en uno solo? Indique la secuencia de comandos ejecutados.
+#### (c) ¿Qué acciones debe llevar a cabo para comprimir 4 archivos en uno solo? Indique la secuencia de comandos ejecutados.
 
 Teniendo en cuenta que tenemos 4 archivos en el directorio Descargas/ejercicio6 y nos situamos en Descargas ejecutamos lo siguiente
 
@@ -1609,14 +1598,14 @@ tar xvfz archivo.tar.gz
 
 ---
 
-#### `(d)` ¿Pueden comprimirse un conjunto de archivos utilizando un único comando?
+#### (d) ¿Pueden comprimirse un conjunto de archivos utilizando un único comando?
 
 Si los archivos están en el mismo directorio utilizamos el comando visto anteriormente
 
 
 ----
 
-#### `(e)` Investigue la funcionalidad de los siguientes comandos:
+#### (e) Investigue la funcionalidad de los siguientes comandos:
 
 - **`tar`** Empaqueta/desempaqueta varios archivos en uno solo, puede realizar compresión sin perdida
 - **`grep`** El comando grep nos permite buscar cadenas de texto y palabras dentro de un fichero de texto o de la entrada estándar de la terminal. Una vez encontrado el contenido que estamos buscando: 
@@ -1627,7 +1616,7 @@ Si los archivos están en el mismo directorio utilizamos el comando visto anteri
 
 
 
-## `7)` Ejercicio
+## 7) Ejercicio
 
 Enunciado: Indique qué acción realiza cada uno de los comandos indicados a continuación considerando su orden. Suponga que se ejecutan desde un usuario que no es root ni pertenece al grupo de root. (Asuma que se encuentra posicionado en el directorio de trabajo del usuario con el que se logueó). En caso de no poder ejecutarse el comando, indique la razón
 
@@ -1669,9 +1658,9 @@ shutdown
 
 
 
-## `8)` Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones:
+## 8) Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones:
 
-#### `(a)` Terminar el proceso con PID 23.
+#### (a) Terminar el proceso con PID 23.
 
 - Todos los procesos tienen un pid (id de proceso) para terminar un proceso se usa el comando:
     ```
@@ -1681,7 +1670,7 @@ shutdown
 
 ---
 
-#### `(b)` Terminar el proceso llamado init. ¿Qué resultados obtuvo?
+#### (b) Terminar el proceso llamado init. ¿Qué resultados obtuvo?
 
 - `1)` Primero buscamos el PID de init con el comando `ps –aux`
 - `2)` Ingresamos como superusuario: su – e ingresamos contraseña
@@ -1691,7 +1680,7 @@ shutdown
 
 ---
 
-#### `(c)` Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf”
+#### (c) Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf”
 
 Para buscar un `archivo` se utiliza el comando:
 ```
@@ -1713,7 +1702,7 @@ find / -name NombreABuscar
 
 ---
 
-#### `(d)` Guardar una lista de procesos en ejecución el archivo /home/\<su nombre de usuario>/procesos
+#### (d) Guardar una lista de procesos en ejecución el archivo /home/\<su nombre de usuario>/procesos
 
 ```
 ps > /home/user/procesos
@@ -1724,7 +1713,7 @@ ps > /home/user/procesos
 
 ---
 
-#### `(e)` Cambiar los permisos del archivo /home/\<su nombre de usuario>/xxxx a:
+#### (e) Cambiar los permisos del archivo /home/\<su nombre de usuario>/xxxx a:
 
 - **Usuario:** Lectura, escritura, ejecución
 - **Grupo:** Lectura, ejecución
@@ -1748,7 +1737,7 @@ Para lograr visualizar los permisos se lee de la siguiente forma:
 
 ---
 
-#### `(f)` Cambiar los permisos del archivo /home/<su nombre de usuario>/yyyy a:
+#### (f) Cambiar los permisos del archivo /home/<su nombre de usuario>/yyyy a:
 - **Usuario:** Lectura, escritura.
 - **Grupo:** Lectura, ejecución
 - **Otros:** Ninguno
@@ -1759,7 +1748,7 @@ Para lograr visualizar los permisos se lee de la siguiente forma:
 
 ---
 
-#### `(g)` Borrar todos los archivos del directorio /tmp
+#### (g) Borrar todos los archivos del directorio /tmp
 
 ```shell
 cd /tmp
@@ -1768,13 +1757,13 @@ rm *
 
 ---
 
-#### `(h)` Cambiar el propietario del archivo /opt/isodata al usuario iso2010
+#### (h) Cambiar el propietario del archivo /opt/isodata al usuario iso2010
 
 ```shell
 chown iso2010 /opt/isodata
 ```
 
-#### `(i)` Guardar en el archivo /home/\<su nombre de usuario>/donde el directorio donde me encuentro en este momento, en caso de que el archivo exista no se debe eliminar su contenido anterior.
+#### (i) Guardar en el archivo /home/\<su nombre de usuario>/donde el directorio donde me encuentro en este momento, en caso de que el archivo exista no se debe eliminar su contenido anterior.
 
 ```
 pwd >> /home/user/donde
@@ -1782,9 +1771,9 @@ pwd >> /home/user/donde
 
 
 
-## `9)` Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones
+## 9) Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones
 
-#### `(a)` Ingrese al sistema como usuario “root”
+#### (a) Ingrese al sistema como usuario “root”
 
 ```shell
 su
@@ -1792,7 +1781,7 @@ su
 
 ---
 
-#### `(b)` Cree un usuario. Elija como nombre, por convención, la primer letra de su nombre seguida de su apellido. Asígnele una contraseña de acceso.
+#### (b) Cree un usuario. Elija como nombre, por convención, la primer letra de su nombre seguida de su apellido. Asígnele una contraseña de acceso.
 
 ```powershell
 sudo adduser il {crear}
@@ -1801,13 +1790,13 @@ passwd il {nueva contra}
 
 ---
 
-#### `(c)` ¿Qué archivos fueron modificados luego de crear el usuario y qué directorios se crearon?
+#### (c) ¿Qué archivos fueron modificados luego de crear el usuario y qué directorios se crearon?
 
 se modificaron los archivos `/etc/passwd` y se creo el directorio personal del perfil en /home/nombrelegido
 
 ---
 
-#### `(d)` Crear un directorio en `/tmp` llamado cursada2017
+#### (d) Crear un directorio en `/tmp` llamado cursada2017
 
 ```shell
 cd /tmp
@@ -1816,7 +1805,7 @@ mkdir cursada2017
 
 ---
 
-#### `(e)` Copiar todos los archivos de `/var/log` al directorio antes creado.
+#### (e) Copiar todos los archivos de `/var/log` al directorio antes creado.
 
 En modo superusuario/root
 
@@ -1826,7 +1815,7 @@ cp /var/log/* /tmp/cursada2017
 
 ---
 
-#### `(f)` Para el directorio antes creado (y los archivos y subdirectorios contenidos en él) cambiar el propietario y grupo al usuario creado y grupo users.
+#### (f) Para el directorio antes creado (y los archivos y subdirectorios contenidos en él) cambiar el propietario y grupo al usuario creado y grupo users.
 
 ```shell
 chown nombreUsuario:nombreUsuario /tmp/cursada2017
@@ -1834,7 +1823,7 @@ chown nombreUsuario:nombreUsuario /tmp/cursada2017
 
 ---
 
-#### `(g)` Agregue permiso total al dueño, de escritura al grupo y escritura y ejecución a todos los demás usuarios para todos los archivos dentro de un directorio en forma recursiva.
+#### (g) Agregue permiso total al dueño, de escritura al grupo y escritura y ejecución a todos los demás usuarios para todos los archivos dentro de un directorio en forma recursiva.
 
 ```shell
 chmod -R 745 /tmp/cursada2017
@@ -1842,7 +1831,7 @@ chmod -R 745 /tmp/cursada2017
 
 ---
 
-#### `(h)` Acceda a otra terminal virtual para loguearse con el usuario antes creado.
+#### (h) Acceda a otra terminal virtual para loguearse con el usuario antes creado.
 
 ```
 sudo login user
@@ -1850,7 +1839,7 @@ sudo login user
 
 ---
 
-#### `(i)` Una vez logueado con el usuario antes creado, averigüe cuál es el nombre de su terminal.
+#### (i) Una vez logueado con el usuario antes creado, averigüe cuál es el nombre de su terminal.
 
 ```shell
 ps -p 544
@@ -1858,7 +1847,7 @@ ps -p 544
 
 ---
 
-#### `(j)` Verifique la cantidad de procesos activos que hay en el sistema.
+#### (j) Verifique la cantidad de procesos activos que hay en el sistema.
 
 ```shell
 ps aux | wc -l
@@ -1866,7 +1855,7 @@ ps aux | wc -l
 
 ---
 
-#### `(k)` Verifiqué la cantidad de usuarios conectados al sistema.
+#### (k) Verifiqué la cantidad de usuarios conectados al sistema.
 
 ```shell
 who
@@ -1874,7 +1863,7 @@ who
 
 ---
 
-#### `(l)` Vuelva a la terminal del usuario root, y envíele un mensaje al usuario anteriormente creado, avisándole que el sistema va a ser apagado.
+#### (l) Vuelva a la terminal del usuario root, y envíele un mensaje al usuario anteriormente creado, avisándole que el sistema va a ser apagado.
 
 ```shell
 sudo shutdown 1 'El sistema se va a apagar'
@@ -1884,7 +1873,7 @@ wall "En un minuto apagaremos el sistema."
 
 ---
 
-#### `(m)` Apague el sistema
+#### (m) Apague el sistema
 
 ```shell
 sudo shutdown now
@@ -1892,9 +1881,9 @@ sudo shutdown now
 
 
 
-## `10)` Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones
+## 10) Indique qué comando sería necesario ejecutar para realizar cada una de las siguientes acciones
 
-#### `(a)` Cree un directorio cuyo nombre sea su número de legajo e ingrese a él.
+#### (a) Cree un directorio cuyo nombre sea su número de legajo e ingrese a él.
 
 ```shell
 mkdir 19508/3 {No se puede dado q confunde / con un desplazamiento de directorio}
@@ -1902,7 +1891,7 @@ mkdir 19508/3 {No se puede dado q confunde / con un desplazamiento de directorio
 
 ---
 
-#### `(b)` Cree un archivo utilizando el editor de textos vi, e introduzca su información personal:
+#### (b) Cree un archivo utilizando el editor de textos vi, e introduzca su información personal:
 
 Nombre, Apellido, Número de alumno y dirección de correo electrónico. El archivo debe llamarse "LEAME".
 
@@ -1913,7 +1902,7 @@ vi LEAME
 
 ---
 
-#### `(c)` Cambie los permisos del archivo LEAME, de manera que se puedan ver reflejados los siguientes permisos:
+#### (c) Cambie los permisos del archivo LEAME, de manera que se puedan ver reflejados los siguientes permisos:
 
 - **Dueño:** ningún permiso
 - **Grupo:** permiso de ejecución
@@ -1925,13 +1914,13 @@ chmod 017 LEAME
 
 ---
 
-#### `(d)` Vaya al directorio /etc y verifique su contenido. Cree un archivo dentro de su directorio personal cuyo nombre sea leame donde el contenido del mismo sea el listado de todos los archivos y directorios contenidos en /etc. ¿Cuál es la razón por la cuál puede crear este archivo si ya existe un archivo llamado "LEAME.en este directorio?.
+#### (d) Vaya al directorio /etc y verifique su contenido. Cree un archivo dentro de su directorio personal cuyo nombre sea leame donde el contenido del mismo sea el listado de todos los archivos y directorios contenidos en /etc. ¿Cuál es la razón por la cuál puede crear este archivo si ya existe un archivo llamado "LEAME.en este directorio?.
 
 Se puede porque unix es case sensitive y distingue entre mayúsculas y minúsculas.
 
 ---
 
-#### `(e)` ¿Qué comando utilizaría y de qué manera si tuviera que localizar un archivo dentro del filesystem? ¿Y si tuviera que localizar varios archivos con características similares? Explique el concepto teórico y ejemplifique.
+#### (e) ¿Qué comando utilizaría y de qué manera si tuviera que localizar un archivo dentro del filesystem? ¿Y si tuviera que localizar varios archivos con características similares? Explique el concepto teórico y ejemplifique.
 
 ```shell
 find / -name "[0-9]*"
@@ -1939,7 +1928,7 @@ find / -name "[0-9]*"
 
 ---
 
-#### `(f)` Utilizando los conceptos aprendidos en el punto e), busque todos los archivos cuya extensión sea .so y almacene el resultado de esta búsqueda en un archivo dentro del directorio creado en a). El archivo deberá llamarse .ejercicio_f".
+#### (f) Utilizando los conceptos aprendidos en el punto e), busque todos los archivos cuya extensión sea .so y almacene el resultado de esta búsqueda en un archivo dentro del directorio creado en a). El archivo deberá llamarse .ejercicio_f".
 
 ```shell
 find / -name "*.os" > /home/user/legajo/ejerciciof
@@ -1947,7 +1936,7 @@ find / -name "*.os" > /home/user/legajo/ejerciciof
 
 
 
-## `11)` Ejercicio
+## 11) Ejercicio
 
 Indique qué acción realiza cada uno de los comandos indicados a continuación considerando su orden. Suponga que se ejecutan desde un usuario que no es root ni pertenece al grupo de root. (Asuma que se encuentra posicionado en el directorio de trabajo del usuario con el que se logueó). En caso de no poder ejecutarse el comando indique la razón:
 
@@ -1972,26 +1961,26 @@ Indique qué acción realiza cada uno de los comandos indicados a continuación 
 - `mkdir ejercicio5` crea el directorio ejercicio5
 
 
-#### `(a)` Inicie 2 sesiones utilizando su nombre de usuario y contraseña. En una sesión vaya siguiendo paso a paso las órdenes que se encuentran escritas en el cuadro superior. En la otra sesión, cree utilizando algún editor de textos un archivo que se llame. ejercicio10_explicacion"dentro del directorio creado en el ejercicio 9.a) y, para cada una de las órdenes que ejecute en la otra sesión, realice una breve explicación de los resultados obtenidos. (ARRIBA)
+#### (a) Inicie 2 sesiones utilizando su nombre de usuario y contraseña. En una sesión vaya siguiendo paso a paso las órdenes que se encuentran escritas en el cuadro superior. En la otra sesión, cree utilizando algún editor de textos un archivo que se llame. ejercicio10_explicacion"dentro del directorio creado en el ejercicio 9.a) y, para cada una de las órdenes que ejecute en la otra sesión, realice una breve explicación de los resultados obtenidos. (ARRIBA)
 
 ---
 
-#### `(b)` Complete en el cuadro superior los comandos 19 y 20, de manera tal que realicen la siguiente acción:
+#### (b) Complete en el cuadro superior los comandos 19 y 20, de manera tal que realicen la siguiente acción:
 - `19:` Copiar el directorio iso y todo su contenido al directorio creado en el inciso 9.a).
 - `20:` Copiar el resto de los archivos y directorios que se crearon en este ejercicio al directorio creado en el ejercicio 9.a).
 
-#### `(c)` Ejecute las órdenes 19 y 20 y comentelas en el archivo creado en el inciso a).
+#### (c) Ejecute las órdenes 19 y 20 y comentelas en el archivo creado en el inciso a).
 
 ![image](https://user-images.githubusercontent.com/55964635/189272687-459c381d-b44c-4a8d-b3d0-aa3acc44e1ae.png)
 
 
 
-## `12)` Ejercicio
+## 12) Ejercicio
 
 **Enunciado:** Cree una estructura desde el directorio /home que incluya varios directorios, subdirectorios y archivos, según el esquema siguiente. Asuma que “usuario” indica cuál es su nombre de usuario. Además deberá tener en cuenta que dirX hace referencia a directorios y fX hace
 referencia a archivos:
 
-#### `(a)` Utilizando la estructura de directorios anteriormente creada, indique que comandos son necesarios para realizar las siguientes acciones:
+#### (a) Utilizando la estructura de directorios anteriormente creada, indique que comandos son necesarios para realizar las siguientes acciones:
 
 #### Mueva el archivo "f3.al directorio de trabajo /home/usuario.
 
@@ -2065,9 +2054,9 @@ chmod 023 f3.exe f4.exe
 
 
 
-## `13)` Indique qué comando/s es necesario para realizar cada una de las acciones de la siguiente secuencia de pasos (considerando su orden de aparición):
+## 13) Indique qué comando/s es necesario para realizar cada una de las acciones de la siguiente secuencia de pasos (considerando su orden de aparición):
 
-#### `(a)` Cree un directorio llamado logs en el directorio /tmp.
+#### (a) Cree un directorio llamado logs en el directorio /tmp.
 
 ```shell
 cd /tmp; mkdir logs
@@ -2075,7 +2064,7 @@ cd /tmp; mkdir logs
 
 ---
 
-#### `(b)` Copie todo el contenido del directorio /var/log en el directorio creado en el punto anterior.
+#### (b) Copie todo el contenido del directorio /var/log en el directorio creado en el punto anterior.
 
 ```shell
 cp -a /var/log/. /tmp/logs
@@ -2083,7 +2072,7 @@ cp -a /var/log/. /tmp/logs
 
 ---
 
-#### `(c)` Empaquete el directorio creado en 1, el archivo resultante se debe llamar "misLogs.tar".
+#### (c) Empaquete el directorio creado en 1, el archivo resultante se debe llamar "misLogs.tar".
 
 ```shell
 tar cvf misLogs.tar logs
@@ -2091,7 +2080,7 @@ tar cvf misLogs.tar logs
 
 ---
 
-#### `(d)` Empaquete y comprima el directorio creado en 1, el archivo resultante se debe llamar "misLogs.tar.gz".
+#### (d) Empaquete y comprima el directorio creado en 1, el archivo resultante se debe llamar "misLogs.tar.gz".
 
 ```shell
 tar cvfz misLogs.tar.gz logs
@@ -2099,7 +2088,7 @@ tar cvfz misLogs.tar.gz logs
 
 ---
 
-#### `(e)` Copie los archivos creados en 3 y 4 al directorio de trabajo de su usuario.
+#### (e) Copie los archivos creados en 3 y 4 al directorio de trabajo de su usuario.
 
 ```shell
 cp misLoggs.tar $HOME
@@ -2108,7 +2097,7 @@ cp misLogs.tar.gz $HOME
 
 ---
 
-#### `(f)` Elimine el directorio creado en 1, logs
+#### (f) Elimine el directorio creado en 1, logs
 
 ```shell
 rm -r logs
@@ -2116,7 +2105,7 @@ rm -r logs
 
 ---
 
-#### `(g)` Desempaquete los archivos creados en 3 y 4 en do directorios diferentes.
+#### (g) Desempaquete los archivos creados en 3 y 4 en do directorios diferentes.
 
 ```shell
 tar xvf misLogs.tar -C 1 
@@ -2266,8 +2255,6 @@ echo "Su directorio actual es:"
 
 </td>
 </table>
-
-
 
 
 

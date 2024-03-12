@@ -5,6 +5,7 @@ import Content from "../components/Content.astro"
 const { frontmatter } = Astro.props;
 //const allPosts = await Astro.glob('../pages/posts/*.md');
 //const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+import BlogsFacu from "../components/sections/BlogsFacu.astro"
 
 ---
 
@@ -21,8 +22,8 @@ const { frontmatter } = Astro.props;
                 frontmatter.image.url && (
                   <img
                     class="border border-slate-300 dark:border-zinc-700 rounded-xl "
-                    width={720}
-                    height={360}
+                    width="100%"
+                    height="auto"
                     src={frontmatter.image.url}
                     alt=""
                   />
@@ -38,8 +39,15 @@ const { frontmatter } = Astro.props;
             <span
               class="underline underline-offset-2 hover:text-orange-500 decoration-orange-500 text-2xl"
             ></span>
+
+            
           </Content>
+          
         </main>
+
+        <div><BlogsFacu/></div>
+
+        
     </SectionContainer>
 </Layout>
 
@@ -68,7 +76,6 @@ const { frontmatter } = Astro.props;
   font-size: 16px;
   color: #333333;
   background-color: #ffffff;
-  max-width: 800px;
   margin: auto;
 }
 
@@ -83,24 +90,34 @@ const { frontmatter } = Astro.props;
   font-weight: bold;
   line-height: 1.25;
   color: #333333;
-  background-color: aquamarine;
+  background-color: rgba(176, 127, 255, 0.486);
 }
 
 .markdown-body h1 {
   font-size: 2em;
-  background-color: aquamarine;
+  background-color: rgb(253, 255, 127);
 }
-
+.markdown-body hr {
+  line-height: 16px;
+  border: none;
+  border-top: 3px solid black; /* Ajusta el grosor del separador aquí */
+  color: black;
+  overflow: visible;
+  width: 100%;
+}
 .markdown-body h2 {
   font-size: 1.5em;
+  background-color: rgba(127, 172, 255, 0.486);
 }
 
 .markdown-body h3 {
   font-size: 1.25em;
+  background-color: rgba(127, 255, 127, 0.486);
 }
 
 .markdown-body h4 {
   font-size: 1em;
+  
 }
 
 .markdown-body h5 {
@@ -110,6 +127,8 @@ const { frontmatter } = Astro.props;
 .markdown-body h6 {
   font-size: 0.85em;
 }
+
+
 
 .markdown-body p {
   bottom: unset;
@@ -152,9 +171,16 @@ const { frontmatter } = Astro.props;
   margin-bottom: 20px;
   padding: 0.2em 0.4em;
   margin: 0;
-  font-size: 85%;
-  background-color: rgba(27,31,35,0.05);
-  border-radius: 3px;
+  
+  background-color: rgba(238, 71, 135, 0.527);
+  font-size: 1em;
+  font-weight: bold;
+  color: #000000;
+  
+}
+
+.markdown-body pre > code {
+  color: #ffffff;
 }
 
 .markdown-body pre {
