@@ -18,11 +18,10 @@ const { title, emoji='' } = Astro.props
 
 <section>
     <h2
-    class={`flex mb-6 text-3xl font-extrabold gap-x-3 text-blue-900 items-center justify-center`}
+    class={` flex mb-6 text-3xl font-bold gap-x-3 text-gray-100 items-center justify-center`}
   >
-  <span class="animate-bounce">{emoji}</span>
-  <span class="border-b-4 border-red-800">
-    {title}</span>
+  <strong class="text-gray-300 bg-custom-color">
+    {title}</strong>
   </h2>
 </section>
 

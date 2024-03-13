@@ -44,7 +44,7 @@ const { frontmatter } = Astro.props;
 
 <style is:global>
   a {
-    color: #00539F;
+    color: #6aaff0;
   }
 
   .tags {
@@ -66,8 +66,9 @@ const { frontmatter } = Astro.props;
     line-height: 1.6;
     font-size: 16px;
     color: #333333;
-    background-color: #ffffff;
+    background-color: #1f1f1f;
     margin: auto;
+    color: #e0dddd;
   }
 
   .markdown-body h1,
@@ -80,30 +81,32 @@ const { frontmatter } = Astro.props;
     margin-bottom: 16px;
     font-weight: bold;
     line-height: 1.25;
-    color: #333333;
-    background-color: rgba(176, 127, 255, 0.486);
+    color: whitee;
   }
 
   .markdown-body h1 {
     font-size: 2em;
-    background-color: rgb(253, 255, 127);
+    color:rgb(251, 255, 0);
+
   }
   .markdown-body hr {
     line-height: 16px;
     border: none;
-    border-top: 3px solid black; /* Ajusta el grosor del separador aquí */
-    color: black;
+    border-top: 3px solid rgb(121, 121, 121); /* Ajusta el grosor del separador aquí */
+    color: white;
     overflow: visible;
     width: 100%;
   }
   .markdown-body h2 {
     font-size: 1.5em;
-    background-color: rgba(127, 172, 255, 0.486);
+    color: rgba(127, 172, 255, 0.993);
+    
   }
 
   .markdown-body h3 {
     font-size: 1.25em;
-    background-color: rgba(127, 255, 127, 0.486);
+    color: rgb(127, 255, 127);
+    
   }
 
   .markdown-body h4 {
@@ -141,7 +144,7 @@ const { frontmatter } = Astro.props;
   }
 
   .markdown-body a {
-    color: #0366d6;
+    color: #317fda;
     text-decoration: none;
   }
 
@@ -154,19 +157,16 @@ const { frontmatter } = Astro.props;
     padding: 0.5em 1em;
     margin: 0 0 16px;
     border-left: 0.25em solid #dfe2e5;
-    background-color: #f6f8fa;
-    color: #6a737d;
+    background-color: #2e2e2e;
+    color: #ffffff;
   }
 
   .markdown-body code {
     margin-bottom: 20px;
     padding: 0.2em 0.4em;
     margin: 0;
-    
-    background-color: rgba(238, 71, 135, 0.527);
-    font-size: 1em;
-    font-weight: bold;
-    color: #000000;
+    color: rgb(248, 101, 101);
+    background-color: #cecece11;
     
   }
 
@@ -217,7 +217,7 @@ const { frontmatter } = Astro.props;
     padding: 8px;
     line-height: 1.6;
     vertical-align: top;
-    border-top: 1px solid #dfe2e5;
+    border-top: 1px solid #a4c3e2;
   }
 
   .markdown-body table th {
@@ -229,11 +229,11 @@ const { frontmatter } = Astro.props;
   }
 
   .markdown-body table tbody + tbody {
-    border-top: 2px solid #dfe2e5;
+    border-top: 2px solid #dfe2e5d3;
   }
 
   .markdown-body table table {
-    background-color: #ffffff;
+    background-color: #ffffff00;
   }
 </style>
 

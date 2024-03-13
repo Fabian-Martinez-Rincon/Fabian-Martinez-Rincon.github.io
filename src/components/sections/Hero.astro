@@ -35,47 +35,44 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
   }
 </style> 
 
-<div id="marco" class="relative   p-4 text-pretty ">
+<div id="marco" class="relative  text-gray-100 p-4 ">
+
+  <div class="mb-16">
+
+  <h1 class="text-4xl font-bold tracking-tight sm:text-5xl items-center justify-center flex mb-4" > Fabian Martinez Rincon</h1>
+
+  <h2 class="text-2xl font-semibold text-gray-400 mt-2 text-center">Backend Developer</h2>
+
+</div>
 
   <div class="flex gap-4 mb-4 items-center justify-center">
     <img
-      class="rounded-full shadow-lg size-20 rounded-full h-32 w-32 bg-neutral-100 object-cover p-2"
-      src="/fabian.jpg"
+      class="shadow-lg  object-cover  w-[400px] border-4 border-black rounded-lg"
+      src="/3.webp"
       alt={personalImageAlt}
     />
-    <a
-      href="https://linkedin.com/in/fabian-martinez-rincon"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
-    >
-    </a>
+
+
+    <div>
+      <p class="bg-custom-color ">Me especializo en la automatización de tareas usando <strong class=" text-yellow-300">Python como lenguaje principal</strong>. Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub.</p>
+      <p class="mb-4">Mis conocimientos no quedan solo en lo teorico ya que trato de encontrar siempre una forma de aplicarlo en el trabajo o en algun proyecto. </p>
+      <ul class="list-disc pl-4">
+        <li>
+          <a class="text-blue-500 hover:text-blue-700" href="mailto:fabianmartinezrincon.123@gmail.com" >Contáctame</a>
+        </li>
+        <li>
+          <a class="text-blue-500 hover:text-blue-700" href="https://linkedin.com/in/fabian-martinez-rincon">LinkedIn</a>
+        </li>
+        <li>
+          <a class="text-blue-500 hover:text-blue-700" href="https://github.com/Fabian-Martinez-Rincon">Github</a>
+        </li>
+        <li>
+          <a class="text-blue-500 hover:text-blue-700" href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">Curriculum</a>
+        </li>
+      </ul>
   </div>
-  <h1 class="text-4xl font-extrabold tracking-tight text-black sm:text-5xl items-center justify-center flex"> <span class="underline underline-offset-3 decoration-8 decoration-red-800">Fabian Martinez Rincon</span></h1>
 
 
-  <p
-    class="mt-6 text-xl text-black "
-  >
-    Me especializo en la automatización de tareas usando
-    <mark class="px-2 text-black bg-yellow-300 rounded">Python como lenguaje principal</mark>
-    . Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub.
-  </p>
-  <nav class="flex-wrap gap-4 mt-8 items-center justify-center flex">
-    <SocialPill  href="mailto:fabianmartinezrincon.123@gmail.com">
-      <MailIcon class="size-4 " />
-      Contáctame
-    </SocialPill>
-    <SocialPill href="https://linkedin.com/in/fabian-martinez-rincon">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="https://github.com/Fabian-Martinez-Rincon">
-      <GithubIcon class="size-4" />
-      Github
-    </SocialPill>
-    <SocialPill  href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">
-      Curriculum
-    </SocialPill>
-  </nav>
 </div>
+</div>
+

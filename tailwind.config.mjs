@@ -5,7 +5,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'custom-color': '#FFF7ED',
+				'custom-color': '#0D1117',
+				'custom-color2':'#2e2e2e'
 			},
 		},
 	},

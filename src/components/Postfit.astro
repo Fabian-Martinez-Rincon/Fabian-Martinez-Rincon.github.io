@@ -11,10 +11,7 @@ const { description, color} = Astro.props
     #fondo:hover #imagen {
       transform: translate(35px, -35px);
     }
-     #fondo:hover {
-        filter: brightness(120%); /* #ffe033d8Cambia el color del texto a rojo / amarillo */
-    
-    } 
+
     #imagen {
       transition: all 0.3s ease;
       position: absolute;
@@ -28,5 +25,5 @@ const { description, color} = Astro.props
 
 <div id="fondo" class={`relative ${color} border-4 border-black p-4 text-pretty `}>
     <p id="parrafo" class="static">{description}</p>
-    <img id="imagen" src="/projects/push.png" alt="Descripción de la imagen">
+  
 </div>
