@@ -33,23 +33,24 @@ const VIDEOS = [
 
 <section class="flex flex-col gap-y-10 ">
 
-  <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+  <!-- <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
     <Postfit description={"Subo videos programando, o hablando temas que me son de interes, tambien tengo algunos videos de la facultad o trabajos practicos."} color="bg-blue-200" />
     <img id="logo" src="/nomadiix.webp" alt="emoji" class="w-48 sm:w-64 md:w-[250px] border-4 border-black rounded-full" />
-</div>
+</div> -->
   <div class="grid grid-cols-1 gap-5">
       {
         VIDEOS.map((video, i) => (
         <div class=" grid gap-8  md:grid-cols-2 ">
 
           <div class={`col-start-${i%2+1} flex flex-col justify-center space-content row-start-${2-(i%2)}`}>
-            <h2 class="text-xl font-bold text-white text-center mx-auto pb-4">
-              <span class="border-b-4 border-red-800">
+            <h2 class="text-xl font-bold text-custom-text text-center mx-auto pb-4">
+              <span>
               {video.title}
             </span>
             </h2>
 
-            <Postfit description={video.description} color="bg-violet-200" />
+            <p class="text-center bg-custom-text">
+            {video.description}</p>
           </div>
           <lite-youtube
             class={`relative top-0 overflow-hidden  h-44 w-full object-cover col-start-${2-(i%2)} row-start-1`}

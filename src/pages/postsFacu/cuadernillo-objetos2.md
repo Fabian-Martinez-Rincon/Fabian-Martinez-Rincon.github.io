@@ -1,11 +1,11 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Cuadernillo Objetos 2
+title: Cuadernillo OO2
 author: Fabian Martinez Rincon
 description: ""
 image:
     url: '/posts/objetos1.jpg'
-    alt: "Orientación a Objetos 2."
+    alt: "Orientación a OO2."
 pubDate: 2024-03-12
 tags: ["Objetos", "Uml", "Java", "Test Unit"]
 ---

@@ -17,15 +17,15 @@ const PROJECTS = [
     image: "/projects/conversor.webp",
     tags: [],
   },
-  {
-    title: "Ei-Materias",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://mith-arg.github.io/EI-Materias/",
-    github: "https://github.com/MITH-arg/EI-Materias",
-    image: "/projects/eimaterias.webp",
-    tags: [],
-  },
+  // {
+  //   title: "Ei-Materias",
+  //   description:
+  //     "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+  //   link: "https://mith-arg.github.io/EI-Materias/",
+  //   github: "https://github.com/MITH-arg/EI-Materias",
+  //   image: "/projects/eimaterias.webp",
+  //   tags: [],
+  // },
   {
     title: "Emuti | Gaming Labs Sudamerica",
     description:
@@ -49,13 +49,15 @@ const PROJECTS = [
   </div>
 
   <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-black text-center mx-auto">
-      <span class="border-b-4 border-red-800">
+    <h3 class="text-2xl  text-custom-text text-center mx-auto">
+      <span>
         {title}
       </span>
+      
     </h3>
     <div class="flex flex-wrap mt-2">
       <Postfit description={description} color="bg-gray-200"/>
+      
       <footer class="flex items-end justify-start center  mt-2 gap-x-4 mx-auto">
           {github && (
             <LinkButton href={github}>

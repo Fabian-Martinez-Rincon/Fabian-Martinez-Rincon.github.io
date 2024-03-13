@@ -28,7 +28,7 @@ const { description, title } = Astro.props
   <body class="relative text-black font-semibold">
     <div
       class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-custom-color dark:bg-gray-950
-      bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"
+      "
     >
     </div>
 
@@ -48,6 +48,12 @@ const { description, title } = Astro.props
         min-height: 100vh;
         overscroll-behavior: none;
         
+      }
+
+      p {
+        line-height: 1.75rem;
+        display: block;
+
       }
 
       @media (prefers-reduced-motion: reduce) {

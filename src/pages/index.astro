@@ -11,7 +11,8 @@ import Youtube from "@/components/sections/Youtube.astro"
 import Gallery from "@/components/sections/Gallery.astro"
 
 import Video from "@/components/video/Video.astro"
-
+import Blogs from "../components/sections/Blogs.astro"
+import BlogsFacu from "../components/sections/BlogsFacu.astro"
 import Title from "@/components/Title.astro"
 
 ---
@@ -58,7 +59,7 @@ import Title from "@/components/Title.astro"
 
     <SectionContainer id="videos">
 
-      <Title title="Nomadiix" emoji=""/>
+      <Title title="Youtube" emoji=""/>
       
       <Youtube />
 
@@ -69,7 +70,14 @@ import Title from "@/components/Title.astro"
       <Title title="Proyectos" emoji="🗃️"/>
       <Projects />
     </SectionContainer>
+
+    
   
+    <SectionContainer id="proyectos">
+      <Title title="Blogs" emoji="🤖"/>
+      <Blogs/>
+      
+    </SectionContainer>
   </div>
   </main>
 </Layout>
