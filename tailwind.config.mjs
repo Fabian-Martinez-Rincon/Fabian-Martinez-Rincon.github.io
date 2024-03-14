@@ -5,7 +5,7 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				'custom-color': '#1A1A1A',
+				'custom-color': '#000000',
 				'custom-color2':'#2e2e2e',
 				'custom-text': '#dcddde'
 			},
