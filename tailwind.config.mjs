@@ -7,7 +7,8 @@ export default {
 			colors: {
 				'custom-color': '#000000',
 				'custom-color2':'#2e2e20',
-				'custom-text': '#dcddde'
+				'custom-text': '#dcddde',
+				'font-blog':'#0f0f0f'
 			},
 		},
 	},
