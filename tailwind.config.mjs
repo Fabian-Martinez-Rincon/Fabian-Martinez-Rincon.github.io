@@ -6,7 +6,7 @@ export default {
 		extend: {
 			colors: {
 				'custom-color': '#000000',
-				'custom-color2':'#2e2e2e',
+				'custom-color2':'#2e2e20',
 				'custom-text': '#dcddde'
 			},
 		},
