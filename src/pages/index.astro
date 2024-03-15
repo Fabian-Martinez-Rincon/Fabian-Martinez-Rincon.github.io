@@ -22,14 +22,20 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
   description="Backend Developer Python"
 >
   <main class="px-4 ">
-    <SectionContainer class="py-16 md:py-36 ">
+    <SectionContainer class=" md:py-16 ">
       <Hero>
       </slot>
     </Hero>
     </SectionContainer>
     <div class="space-y-20  ">
 
-      <CustomImageScroll />
+      <SectionContainer id="experiencia">
+        <Title title="Videos" emoji="💻"/>
+  
+        <CustomImageScroll />
+      </SectionContainer>
+
+      
       
     <SectionContainer id="experiencia">
       <Title title="Experiencia Laboral" emoji="💻"/>
