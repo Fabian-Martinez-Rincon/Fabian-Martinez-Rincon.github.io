@@ -3,7 +3,8 @@ const personalImageAlt = "Fabian Martinez Rincon"
 import LinkedInIcon from "@/components/icons/IconLinkedIn.astro"
 import GithubIcon from "@/components/icons/IconGitHub.astro"
 import MailIcon from "@/components/icons/IconMail.astro"
-import SocialPill from "@/components/buttons/SocialPill.astro"
+import Link from "../icons/IconLink.astro"
+import LinkButton from "../LinkButton.astro"
 ---
 
 <style>
@@ -51,15 +52,31 @@ import SocialPill from "@/components/buttons/SocialPill.astro"
       src="/fabian.jpg"
       alt={personalImageAlt}
     />
-      <p class="text-custom-text ">Me especializo en la automatización de tareas usando <strong class=" text-yellow-300">Python como lenguaje principal</strong>. Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub. Mis conocimientos no quedan solo en lo teorico ya que trato de encontrar siempre una forma de aplicarlo en el trabajo o en algun proyecto. <br>
+      <p class="text-custom-text ">Me especializo en la automatización de tareas usando <strong class=" text-yellow-300">Python como lenguaje principal</strong>. Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub. Mis conocimientos no quedan solo en lo teorico ya que trato de encontrar siempre una forma de aplicarlo en el trabajo o en algun proyecto. <br class="">
+        <br class="">
         
-          <a class="text-blue-500 hover:text-blue-700" href="mailto:fabianmartinezrincon.123@gmail.com" >Contáctame</a>
         
-          <a class="text-green-500 hover:text-blue-700" href="https://linkedin.com/in/fabian-martinez-rincon">LinkedIn</a>
-  
-          <a class="text-gray-500 hover:text-blue-700" href="https://github.com/Fabian-Martinez-Rincon">Github</a>
 
-          <a class="text-orange-500 hover:text-blue-700" href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">Curriculum</a>
+      <LinkButton href="https://github.com/Fabian-Martinez-Rincon">
+        <GithubIcon class="size-6 flex " />
+        Github
+        
+      </LinkButton>
+      <LinkButton href="https://linkedin.com/in/fabian-martinez-rincon">
+        <LinkedInIcon class="size-6 flex" />
+        LinkedIn
+      </LinkButton>
+
+      <LinkButton href="mailto:fabianmartinezrincon.123@gmail.commailto:fabianmartinezrincon.123@gmail.com">
+        <MailIcon class="size-6 flex" />
+        Contáctame
+      </LinkButton>
+
+      <LinkButton href="https://drive.google.com/file/d/1H9IQzIcPTgCtffV4D-LzDxGFi2joDUnT/view?usp=sharing">
+        <Link  />
+        Curriculum
+      </LinkButton>
+    </p>
 </div>
 </div>
 
