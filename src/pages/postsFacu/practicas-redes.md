@@ -11,7 +11,6 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 ---
 
 
-
 ## Practica 1 Introducción
 
 - [Ejercicio 1) ¿Qué es una red? ¿Cuál es el principal objetivo para construir una red?](#ejercicio-1)
@@ -26,92 +25,303 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 - [Ejercicio 10) ¿Qué ventajas tiene una implementación basada en capas o niveles?](#ejercicio-10)
 - [Ejercicio 11) ¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?](#ejercicio-11)
 - [Ejercicio 12) ¿Qué es la encapsulación? Si una capa realiza la encapsulación de datos, ¿qué capa del nodo receptorrealizará el proceso inverso?](#ejercicio-12)
-- [Ejercicio 13) Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.14. Compare el modelo OSI con la implementación TCP/IP](#ejercicio-13)
-
+- [Ejercicio 13) Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.](#ejercicio-13)
+- [Ejercicio 14). Compare el modelo OSI con la implementación TCP/IP](#ejercicio-14)
 
 ---
 
 ### Ejercicio 1
 
-**¿Qué es una red?**
+`¿Qué es una red?`
 
 Una red, en el contexto de las redes de computadoras, es un grupo de computadoras y dispositivos interconectados entre sí. 
 
-**¿Cuál es el principal objetivo para construir una red?**
+`¿Cuál es el principal objetivo para construir una red?`
 
-El principal objetivo de construir una red es compartir recursos, como dispositivos, información y servicios. Al conectar computadoras y dispositivos, los usuarios pueden compartir archivos, software, hardware (como impresoras y escáneres), y datos de manera eficiente y económica. Además, las redes permiten la comunicación y colaboración entre usuarios, independientemente de su ubicación geográfica .
+El principal objetivo de construir una red es compartir recursos, como dispositivos, información y servicios. Al conectar computadoras y dispositivos, los usuarios pueden compartir archivos, software, hardware (como impresoras y escáneres), y datos de manera eficiente y económica. Además, las redes permiten la comunicación y colaboración entre usuarios, independientemente de su ubicación geográfica.
 
 ---
 
 ### Ejercicio 2
 
-¿Qué es Internet? Describa los principales componentes que permiten su funcionamiento.
+`¿Qué es Internet?`
+
+
+Internet es una red de redes de computadoras descentralizada y pública que utiliza el conjunto abierto de protocolos conocido como suite TCP/IP (Protocolo de Control de Transmisión/Protocolo de Internet). Permite la integración de diferentes tecnologías de red y protocolos de comunicación de nivel más bajo, facilitando la interconexión mundial de redes de computadoras de todo tipo.
+
+`Describa los principales componentes que permiten su funcionamiento.`
+
+
+Los principales componentes que permiten el funcionamiento de Internet incluyen:
+
+1. **Computadoras y Dispositivos de Usuario**: Incluyen PCs, laptops, smartphones, tabletas y otros dispositivos capaces de conectarse a Internet. Estos pueden ser tanto los dispositivos de usuarios finales como servidores que albergan sitios web, aplicaciones y servicios.
+
+2. **Routers y Switches**: Son dispositivos de red que dirigen el tráfico de datos en Internet. Los routers conectan redes diferentes entre sí, permitiendo que los datos se envíen de un punto a otro a través de Internet. Los switches conectan dispositivos dentro de la misma red.
+
+3. **Medios de Conexión**: Los cables (como los de cobre o fibra óptica), las conexiones inalámbricas (Wi-Fi, 4G, 5G, etc.), y los satélites son medios físicos o inalámbricos que transportan los datos entre los dispositivos y a través de redes.
+
+4. **Protocolos de Comunicación**: TCP/IP es el conjunto de protocolos que define cómo se transmiten los datos a través de Internet. Incluye protocolos como HTTP para páginas web, FTP para la transferencia de archivos, SMTP para el correo electrónico, y muchos otros.
+
+5. **Proveedores de Servicios de Internet (ISPs)**: Son compañías que proporcionan la conectividad a Internet a usuarios y empresas. Los ISPs conectan a sus suscriptores al resto de Internet a través de diversas tecnologías de acceso.
+
+6. **Puntos de Acceso a la Red (NAPs) y Puntos de Intercambio de Internet (IXPs)**: Son infraestructuras que permiten que diferentes redes, incluyendo las de diferentes ISPs, se interconecten y compartan tráfico.
+
+7. **Direcciones IP y DNS**: La Dirección IP es un número único asignado a cada dispositivo en Internet. El Sistema de Nombres de Dominio (DNS) traduce los nombres de dominio fáciles de recordar (como www.example.com) en sus correspondientes direcciones IP.
+
+Estos componentes trabajan en conjunto para permitir la comunicación y transferencia de datos a través de la vasta red global que es Internet.
 
 ---
 
 ### Ejercicio 3
 
-¿Qué son las RFCs?
+`¿Qué son las RFCs?`
+
+Las RFCs (Request for Comments) son una serie de documentos técnicos que describen los métodos, conductas, investigaciones, o innovaciones aplicables al funcionamiento de Internet y sistemas conectados a Internet. Funcionan como las especificaciones estándar que definen los protocolos y políticas de Internet, incluyendo aspectos técnicos y organizativos.
+
+Originalmente, las RFCs se crearon como una forma de compartir notas de trabajo entre varios grupos de investigadores en redes informáticas. Sin embargo, con el tiempo, se convirtieron en el medio oficial para la publicación de los estándares de Internet, junto con otros documentos informativos y experimentales.
+
+Las RFCs abarcan desde propuestas iniciales, descripciones de métodos experimentales, hasta estándares de Internet formalmente adoptados. Cada RFC recibe un número de serie y una vez publicada, una RFC no se modifica. Si surgen cambios o actualizaciones, se publican en una nueva RFC con un nuevo número.
+
+Las categorías de las RFCs pueden incluir:
+
+- **Proposed Standard**: Propuestas de nuevos estándares esperando consideración y posible adopción.
+- **Internet Standard**: Aquellos que han sido sometidos a múltiples revisiones y pruebas y han sido formalmente aprobados como estándares.
+- **Experimental**: Documentos que describen métodos experimentales, no destinados a ser estándares.
+- **Informational**: Documentos que proporcionan información general sobre temas de Internet, pero no están destinados a ser estándares.
+- **Historic**: Documentos que son obsoletos o que no se consideran para uso estándar.
+
+Las RFCs son fundamentales para el desarrollo y funcionamiento de Internet, proporcionando una base documentada y abierta para la evolución de sus tecnologías y protocolos.
 
 ---
 
 ### Ejercicio 4
 
-¿Qué es un protocolo?
+`¿Qué es un protocolo?`
+
+Un protocolo, en el contexto de las redes de computadoras y las comunicaciones, es un conjunto de reglas y convenciones que determinan cómo se transmite la información a través de la red. Estas reglas definen el formato, la sincronización, la secuenciación y la verificación de los mensajes o datos que se envían y reciben entre dispositivos, sistemas o entidades.
+
+Los protocolos especifican las interacciones entre los distintos componentes de la red, incluyendo cómo se inicia y termina una comunicación, cómo se manejan los errores, cómo se asegura que los datos lleguen de forma íntegra y en el orden correcto, y cómo se controla el flujo de datos para evitar la saturación de la red.
+
+Por ejemplo, el Protocolo de Control de Transmisión (TCP) es un protocolo que permite la transmisión de datos de forma confiable y ordenada entre computadoras en una red. El Protocolo de Internet (IP), por otro lado, es responsable de direccionar y encaminar los paquetes de datos desde el origen hasta el destino a través de diferentes redes.
+
+Los protocolos son fundamentales para el funcionamiento de las redes de computadoras e Internet, ya que permiten la interoperabilidad entre diferentes sistemas y dispositivos, asegurando que la comunicación pueda ocurrir de manera efectiva y eficiente.
 
 ---
 
 ### Ejercicio 5
 
-¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte de una misma red?
+`¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte de una misma red?`
+
+Dos máquinas con distintos sistemas operativos pueden formar parte de la misma red gracias al uso de estándares y protocolos de red comunes. Estos protocolos, como el TCP/IP (Protocolo de Control de Transmisión/Protocolo de Internet), definen las reglas para la comunicación en la red, independientemente de los sistemas operativos o el hardware de las máquinas involucradas.
+
+Cuando los dispositivos en una red se comunican entre sí, no interactúan directamente con los sistemas operativos del otro dispositivo, sino a través de la capa de red, utilizando estos protocolos estandarizados. Estos protocolos aseguran que la información se pueda enviar y recibir de manera coherente y comprensible, sin importar las diferencias subyacentes en el software o el hardware.
+
+Los sistemas operativos están diseñados para implementar estos protocolos de red, lo que permite a las máquinas configurar conexiones de red, enviar y recibir datos, y realizar otras funciones de red necesarias para la comunicación y el intercambio de recursos. Esto hace posible que dispositivos con sistemas operativos diferentes, como Windows, macOS, Linux, etc., puedan conectarse y comunicarse entre sí en la misma red, compartiendo recursos como archivos, impresoras, y acceso a Internet.
 
 ---
 
 ### Ejercicio 6
 
-¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas finales o End Systems? Dé unejemplo del rol de cada uno en alguna aplicación distribuida que corra sobre Internet.
+
+- `¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas finales o End Systems? `
+- `Dé un ejemplo del rol de cada uno en alguna aplicación distribuida que corra sobre Internet.`
+
+Los sistemas finales, también conocidos como end systems, se pueden clasificar generalmente en dos categorías: clientes y servidores.
+
+1. **Clientes**: Son los sistemas finales que inician las comunicaciones en una aplicación distribuida. Los clientes suelen solicitar y consumir recursos proporcionados por los servidores. Por ejemplo, en una aplicación distribuida como la navegación web, un navegador de Internet operando en una PC o dispositivo móvil actúa como cliente. Cuando ingresas una dirección web, el navegador (cliente) solicita la página al servidor web correspondiente.
+
+2. **Servidores**: Son los sistemas finales que atienden las solicitudes de los clientes y les proporcionan los recursos o servicios solicitados. Los servidores están configurados para escuchar y responder a las solicitudes entrantes de los clientes. Siguiendo con el ejemplo anterior, en la navegación web, el servidor web es el que alberga los sitios web y envía las páginas web solicitadas de vuelta al navegador del cliente en respuesta a sus solicitudes.
+
+Esta clasificación en clientes y servidores facilita el diseño, la implementación y el mantenimiento de aplicaciones distribuidas y permite una clara distinción de roles en la comunicación de red, lo que a su vez soporta una gran variedad de servicios y aplicaciones en Internet.
 
 ---
 
 ### Ejercicio 7
 
-¿Cuál es la diferencia entre una red conmutada de paquetes de una red conmutada de circuitos?
+`¿Cuál es la diferencia entre una red conmutada de paquetes de una red conmutada de circuitos?`
+
+Las redes conmutadas de paquetes y las redes conmutadas de circuitos son dos tecnologías fundamentales para la transmisión de datos, pero operan de manera muy diferente:
+
+1. **Redes Conmutadas de Paquetes**:
+   - **Funcionamiento**: En las redes conmutadas de paquetes, los datos se dividen en pequeñas unidades llamadas paquetes. Cada paquete se envía de forma independiente a través de la red desde el origen hasta el destino, pudiendo seguir diferentes rutas para llegar a su destino.
+   - **Ventajas**: Esta técnica permite un uso más eficiente y flexible de los recursos de la red, ya que la capacidad de la red se puede compartir entre muchos usuarios. Además, es más resistente a fallos y congestiones, ya que los paquetes pueden redirigirse por rutas alternativas en caso de problemas en alguna parte de la red.
+   - **Ejemplos**: Internet es el ejemplo más destacado de una red conmutada de paquetes, donde los datos de diferentes usuarios se transmiten en forma de paquetes a través de la misma infraestructura.
+
+2. **Redes Conmutadas de Circuitos**:
+   - **Funcionamiento**: En las redes conmutadas de circuitos, se establece una conexión dedicada y continua (un circuito) entre el punto de origen y el destino antes de que comience la transmisión de datos. Esta conexión se mantiene durante toda la duración de la comunicación, independientemente de si se están transmitiendo datos o no.
+   - **Ventajas**: Este método garantiza una cantidad fija de ancho de banda y una calidad constante de la conexión durante la comunicación, lo que es ideal para servicios que requieren transmisión en tiempo real, como las llamadas telefónicas.
+   - **Ejemplos**: La red telefónica tradicional (PSTN) es un ejemplo de una red conmutada de circuitos, donde se establece una conexión dedicada entre los teléfonos del emisor y el receptor durante una llamada.
+
+La elección entre una red conmutada de paquetes y una red conmutada de circuitos depende de las necesidades específicas de la comunicación. Las redes conmutadas de paquetes son más versátiles y eficientes para el tráfico de datos variable, mientras que las redes conmutadas de circuitos son preferibles para servicios que necesitan garantías de ancho de banda y tiempo de transmisión.
 
 ---
 
 ### Ejercicio 8
 
-Analice qué tipo de red es una red de telefonía y qué tipo de red es Internet.
+`Analice qué tipo de red es una red de telefonía y qué tipo de red es Internet.`
+
+La red de telefonía tradicional, también conocida como Red Telefónica Pública Conmutada (PSTN, por sus siglas en inglés Public Switched Telephone Network), es un ejemplo de una red conmutada de circuitos. En este tipo de red, se establece una conexión directa y continua entre el teléfono del emisor y el del receptor para toda la duración de la llamada telefónica. La conexión es exclusiva para los dos interlocutores y proporciona un canal fijo de comunicación con un ancho de banda garantizado. Esto es ideal para la transmisión de voz en tiempo real, ya que asegura una calidad constante sin interrupciones ni retrasos significativos.
+
+Por otro lado, Internet es un ejemplo de una red conmutada de paquetes. En Internet, los datos (ya sean correos electrónicos, páginas web, videos, etc.) se dividen en pequeñas unidades llamadas paquetes. Cada paquete se envía de manera independiente y puede tomar diferentes rutas a través de la red para llegar a su destino. Esto permite un uso más eficiente de la red, ya que múltiples comunicaciones pueden compartir la misma infraestructura. La red conmutada de paquetes es más flexible y escalable, lo que la hace ideal para manejar la gran variedad y volumen de datos que se transmiten a través de Internet.
+
+En resumen:
+
+- **Red de telefonía (PSTN)**: Es una red conmutada de circuitos, ideal para comunicaciones de voz en tiempo real, proporcionando un canal de comunicación constante y de calidad garantizada.
+  
+- **Internet**: Es una red conmutada de paquetes, diseñada para transmitir datos de manera eficiente y flexible, soportando una amplia variedad de aplicaciones y servicios al compartir la infraestructura entre múltiples usuarios.
 
 ---
 
 ### Ejercicio 9
 
-Describa brevemente las distintas alternativas que conoce para acceder a Internet en su hogar.
+`Describa brevemente las distintas alternativas que conoce para acceder a Internet en su hogar.`
+
+Existen varias alternativas para acceder a Internet en el hogar, y la disponibilidad de cada una puede variar según la ubicación y la infraestructura local. Aquí tienes algunas de las opciones más comunes:
+
+1. **DSL (Línea de Suscriptor Digital)**: Utiliza las líneas telefónicas existentes para proporcionar acceso a Internet. No interfiere con el servicio telefónico y puede ofrecer una gama de velocidades, dependiendo de la calidad de la línea y la distancia a la central.
+
+2. **Cable**: Utiliza la infraestructura de cableado de televisión para proporcionar acceso a Internet. Generalmente ofrece mayores velocidades que DSL y puede ser una buena opción si ya cuentas con servicio de televisión por cable.
+
+3. **Fibra Óptica**: Ofrece altas velocidades de conexión a través de cables de fibra óptica. Es conocida por su capacidad para proporcionar velocidades de subida y bajada simétricas y es ideal para usuarios que demandan mucho ancho de banda.
+
+4. **Satélite**: Proporciona acceso a Internet mediante la comunicación con un satélite en órbita. Es una opción viable para áreas rurales o remotas donde otras formas de acceso a Internet no están disponibles.
+
+5. **Conexiones inalámbricas fijas**: Utilizan antenas para proporcionar acceso a Internet sin necesidad de cables. Son otra opción para áreas rurales o regiones sin amplia infraestructura de cable o fibra.
+
+6. **Redes móviles (4G LTE, 5G)**: Permiten el acceso a Internet a través de la red celular. Puedes usar un smartphone como punto de acceso móvil o adquirir un módem o router especial que utilice la red móvil para proporcionar acceso a Internet en tu hogar.
+
+7. **Banda ancha inalámbrica municipal**: Algunas ciudades ofrecen su propia red de acceso a Internet, que puede ser gratuita o de bajo costo para los residentes.
+
+Al elegir el tipo de conexión, considera factores como la velocidad de conexión necesaria, el presupuesto, la disponibilidad en tu área y el tipo de uso que le darás a tu conexión a Internet.
 
 ---
 
 ### Ejercicio 10
 
-¿Qué ventajas tiene una implementación basada en capas o niveles?
+`¿Qué ventajas tiene una implementación basada en capas o niveles?`
+
+La implementación basada en capas o niveles en sistemas de redes y software tiene varias ventajas significativas:
+
+1. **Modularidad**: La estructura en capas permite descomponer un sistema complejo en partes más pequeñas y manejables (módulos). Cada capa se encarga de una función específica y se comunica con las capas superior e inferior mediante interfaces bien definidas. Esto facilita la comprensión, el desarrollo y la prueba del sistema.
+
+2. **Facilidad de mantenimiento y actualización**: Gracias a la separación de funciones, es más fácil modificar o actualizar una capa sin afectar a las demás. Esto significa que se pueden realizar cambios o mejoras en una parte específica del sistema (como adoptar nuevos protocolos o tecnologías) sin necesidad de rediseñar todo el sistema.
+
+3. **Reusabilidad**: Las capas diseñadas para realizar funciones generales pueden reutilizarse en diferentes sistemas o aplicaciones. Esto reduce el tiempo y el costo de desarrollo al evitar la necesidad de recrear soluciones para problemas comunes.
+
+4. **Interoperabilidad**: Al adherirse a estándares de capas bien definidos, diferentes productos y tecnologías pueden interactuar y trabajar juntos más fácilmente. Esto es especialmente importante en redes y comunicaciones, donde equipos de diferentes fabricantes deben comunicarse entre sí.
+
+5. **Abstracción**: Cada capa abstrae la complejidad de las operaciones de sus capas inferiores, presentando una interfaz simple a la capa superior. Esto oculta los detalles de implementación complejos y permite a los diseñadores y desarrolladores concentrarse en la funcionalidad de alto nivel sin preocuparse por las complejidades subyacentes.
+
+6. **Seguridad mejorada**: Al segmentar las funciones en diferentes capas, es posible aplicar políticas de seguridad y control de acceso específicas para cada capa, aumentando así la seguridad general del sistema.
+
+7. **Facilidad de prueba y depuración**: La estructura en capas facilita la prueba de componentes individuales de forma aislada (pruebas unitarias) y la identificación de problemas en niveles específicos del sistema, simplificando el proceso de depuración.
+
+8. **Escalabilidad**: Los sistemas basados en capas pueden escalarse más fácilmente, ya que es posible aumentar la capacidad de una capa específica (por ejemplo, añadiendo más recursos o mejorando el rendimiento) sin alterar el resto del sistema.
+
+En resumen, la implementación basada en capas ofrece una estructura organizada y flexible que mejora la mantenibilidad, extensibilidad y robustez de los sistemas de redes y software.
 
 ---
 
 ### Ejercicio 11
 
-¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?
+`¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?`
+
+En el contexto de los modelos de red, como el Modelo OSI (Open Systems Interconnection), las Unidades de Datos de Protocolo (PDUs) tienen diferentes nombres dependiendo de la capa en la que se encuentran. Para las capas que mencionaste, las PDUs se denominan de la siguiente manera:
+
+1. **Capa de Aplicación**: La PDU de la capa de aplicación se llama "Mensaje". En esta capa, los datos se preparan para la transferencia a través de la red y se enfocan en el formato y el control de los datos necesarios para las aplicaciones.
+
+2. **Capa de Transporte**: La PDU de la capa de transporte se llama "Segmento" en el caso de TCP (Protocolo de Control de Transmisión) o "Datagrama" en el caso de UDP (Protocolo de Datagramas de Usuario). Esta capa asegura la transferencia de datos completa y confiable entre los sistemas finales.
+
+3. **Capa de Red**: La PDU de la capa de red se conoce como "Paquete". En esta capa, los datos se formatean para la transmisión a través de diferentes redes y se maneja el direccionamiento, la clasificación y el enrutamiento de los paquetes.
+
+4. **Capa de Enlace de Datos**: La PDU de la capa de enlace de datos se llama "Trama". En esta capa, los datos se preparan para su transmisión física a través del medio de red, proporcionando control de errores y control de flujo.
+
+Cada una de estas PDUs contiene información específica necesaria para la funcionalidad de su respectiva capa, permitiendo la comunicación y el intercambio de datos a través de la red de manera estructurada y eficiente.
 
 ---
 
 ### Ejercicio 12
 
-¿Qué es la encapsulación? Si una capa realiza la encapsulación de datos, ¿qué capa del nodo receptorrealizará el proceso inverso?
+`¿Qué es la encapsulación?` 
+
+La encapsulación es un proceso utilizado en las comunicaciones de red donde una capa del modelo de red toma los datos que recibe de la capa superior y los envuelve (o encapsula) en una nueva unidad de datos agregando su propia información de cabecera (y a veces de cola). Esta información de cabecera típicamente contiene detalles necesarios para la entrega y el procesamiento correcto del paquete de datos, como direcciones de origen y destino, tipo de servicio, y otros datos de control y de secuenciación.
+
+Por ejemplo, en la capa de transporte, los datos se encapsulan en segmentos o datagramas; en la capa de red, en paquetes; y en la capa de enlace de datos, en tramas.
+
+`Si una capa realiza la encapsulación de datos, ¿qué capa del nodo receptor realizará el proceso inverso?`
+
+Si una capa de un nodo transmisor realiza la encapsulación de datos, el proceso inverso, llamado desencapsulación, se llevará a cabo en la capa correspondiente del nodo receptor. Esto significa que:
+
+- Si la capa de Aplicación en el transmisor encapsula los datos, la capa de Aplicación en el receptor los desencapsulará.
+- Si la capa de Transporte en el transmisor encapsula los datos, la capa de Transporte en el receptor los desencapsulará.
+- Si la capa de Red en el transmisor encapsula los datos, la capa de Red en el receptor los desencapsulará.
+- Si la capa de Enlace de Datos en el transmisor encapsula los datos, la capa de Enlace de Datos en el receptor los desencapsulará.
+
+El proceso de desencapsulación implica quitar las cabeceras (y colas si las hay) puestas por el nodo transmisor para acceder a los datos originales o a la información de la cabecera de la siguiente capa. Este proceso asegura que cada nivel del modelo de red en el nodo receptor pueda interpretar y procesar correctamente los datos recibidos antes de pasarlos a la capa superior.
 
 ---
 
 ### Ejercicio 13
 
-Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.14. Compare el modelo OSI con la implementación TCP/IP
+`Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.`
+
+El stack TCP/IP, también conocido como el modelo de protocolo de Internet, consta de cuatro capas que definen la comunicación en redes de computadoras. Cada capa tiene funciones específicas:
+
+1. **Capa de Aplicación**:
+   - Función: Es la capa más alta del modelo TCP/IP y se ocupa de las aplicaciones y procesos de nivel superior.
+   - Responsabilidades: Proporciona interfaces y protocolos que las aplicaciones utilizan para comunicarse a través de la red. Gestiona servicios de red específicos como HTTP para la web, SMTP para el correo electrónico, FTP para la transferencia de archivos, y DNS para la resolución de nombres de dominio.
+   - Ejemplo de trabajo: Cuando utilizas un navegador web, este opera en la capa de aplicación, utilizando HTTP para solicitar páginas web.
+
+2. **Capa de Transporte**:
+   - Función: Responsable de la transferencia de datos entre dos hosts.
+   - Responsabilidades: Se encarga de la segmentación de los datos y del control de la conexión, asegurando la entrega completa y en orden de los datos, además de gestionar el control de flujo y el error. Los principales protocolos de esta capa son TCP (Protocolo de Control de Transmisión) y UDP (Protocolo de Datagramas de Usuario).
+   - Ejemplo de trabajo: TCP divide los datos de la aplicación en segmentos y establece una conexión confiable entre el emisor y el receptor, asegurando que los datos lleguen íntegros y en orden.
+
+3. **Capa de Internet (o Capa de Red)**:
+   - Función: Define los protocolos para el enrutamiento de paquetes a través de redes interconectadas hacia el destino final.
+   - Responsabilidades: Se ocupa del direccionamiento lógico (direcciones IP) y de la determinación de la ruta óptima para los paquetes a través de la red. El principal protocolo en esta capa es el Protocolo de Internet (IP).
+   - Ejemplo de trabajo: IP asigna direcciones a cada dispositivo y dirige los paquetes de datos desde el origen hasta el destino, incluso a través de múltiples redes intermedias.
+
+4. **Capa de Acceso a la Red (o Capa de Enlace)**:
+   - Función: Corresponde a la combinación de las capas de enlace de datos y física del modelo OSI.
+   - Responsabilidades: Se encarga de la transmisión de los datos entre un dispositivo y la red física. Incluye la encapsulación de paquetes de IP en tramas, el mapeo de direcciones IP a direcciones físicas como direcciones MAC, y puede gestionar el acceso al medio, la detección y corrección de errores en el nivel físico.
+   - Ejemplo de trabajo: Esta capa toma los paquetes IP y los prepara para su transmisión a través de medios físicos como cables de Ethernet, Wi-Fi o fibra óptica, utilizando protocolos como Ethernet, Wi-Fi (IEEE 802.11) y otros protocolos de enlace de datos.
+
+Cada capa del modelo TCP/IP proporciona un conjunto de funciones específicas que permiten la comunicación efectiva a través de una red de computadoras, desde la aplicación que origina los datos hasta la red física que transporta los datos.
+
+### Ejercicio 14
+
+`Compare el modelo OSI con la implementación TCP/IP`
+
+El Modelo OSI (Open Systems Interconnection) y el Modelo TCP/IP (Transmission Control Protocol/Internet Protocol) son dos marcos de referencia estándar para la comprensión de la comunicación en red y la interconexión de sistemas de redes. Ambos modelos dividen las funciones de la red en diferentes capas, pero tienen diferencias significativas en su enfoque y estructura:
+
+1. **Número de Capas**:
+   - **Modelo OSI**: Compuesto por siete capas: Aplicación, Presentación, Sesión, Transporte, Red, Enlace de Datos y Física.
+   - **Modelo TCP/IP**: Compuesto por cuatro capas: Aplicación, Transporte, Internet (o Red), y Acceso a la Red (que combina las funciones de las capas Física y Enlace de Datos del modelo OSI).
+
+2. **Estándar vs. Implementación**:
+   - **Modelo OSI**: Es un modelo conceptual creado por la ISO (Organización Internacional de Normalización) que sirve como guía para el diseño de protocolos de red. Es más teórico y fue creado antes de la implementación de la tecnología.
+   - **Modelo TCP/IP**: Se desarrolló inicialmente como parte del proyecto de investigación DARPA para la creación de ARPANET, precursor de Internet. Es un modelo práctico basado en estándares y protocolos reales en uso.
+
+3. **Capas de Sesión y Presentación**:
+   - **Modelo OSI**: Define capas de sesión y presentación separadas para funciones como el manejo de la sesión y la traducción de datos entre formatos.
+   - **Modelo TCP/IP**: No tiene capas equivalentes a las de Sesión y Presentación del modelo OSI. Estas funciones, si son necesarias, son generalmente manejadas por la capa de Aplicación.
+
+4. **Flexibilidad y Abstracción**:
+   - **Modelo OSI**: Ofrece una mayor abstracción y se considera más riguroso en la separación de las funciones de la red en diferentes capas. Esto lo hace más flexible en términos de definir nuevas normas y protocolos.
+   - **Modelo TCP/IP**: Es menos abstracto y está más orientado a la práctica y a la implementación real de las redes. Su estructura es considerada más simple y directa.
+
+5. **Universalidad**:
+   - **Modelo OSI**: A pesar de su detallada estructuración, no se adoptó tan ampliamente en la práctica real fuera de los marcos teóricos y educativos.
+   - **Modelo TCP/IP**: Se convirtió en el estándar de facto para Internet y las redes modernas debido a su implementación práctica y al éxito global de Internet.
+
+6. **Interoperabilidad y Adopción**:
+   - **Modelo OSI**: Proporciona un marco más universal para la interoperabilidad entre diferentes sistemas y tecnologías, aunque en la práctica, muchas redes no siguen estrictamente este modelo.
+   - **Modelo TCP/IP**: Ha logrado una amplia adopción e interoperabilidad gracias a Internet, con sus protocolos que se utilizan prácticamente en todas las redes informáticas.
+
+En resumen, mientras que el modelo OSI proporciona una estructura teórica detallada para la comunicación en red, el modelo TCP/IP ofrece un enfoque más pragmático basado en la implementación real y las necesidades de Internet.
+
+---
 
 ## Practica 2 Capa de Aplicación - HTTP
 
