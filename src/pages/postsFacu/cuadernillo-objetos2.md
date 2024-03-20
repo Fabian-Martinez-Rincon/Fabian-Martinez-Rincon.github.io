@@ -4,7 +4,7 @@ title: Cuadernillo OO2
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/objetos1.jpg'
+    url: '/posts/oo2.jpg'
     alt: "Orientación a OO2."
 pubDate: 2024-03-12
 tags: ["Objetos", "Uml", "Java", "Test Unit"]
@@ -69,6 +69,239 @@ Tareas:
   - Spock rompe tijera y vaporiza piedra.
 - ¿Qué cambios se necesitan agregar?
 - Agregue los cambios a la solución anterior.
+
+
+### Resolución
+
+![Scan_20240319](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/272140cb-ada6-4b2c-a06c-11b377e61e03)
+
+### Jugada
+
+```java
+public abstract class Jugada {
+	public abstract String juegaContra(Jugada j);
+	public abstract String contraPiedra();
+	public abstract String contraPapel();
+	public abstract String contraTijera();
+	public abstract String contraLagarto();
+	public abstract String contraSpock();
+}
+```
+
+### Lagarto
+
+```java
+public class Lagarto extends Jugada{
+
+	@Override
+	public String juegaContra(Jugada j) {
+		return j.contraLagarto();
+	}
+
+	@Override
+	public String contraPiedra() {
+		return "Es Aplastado";
+	}
+
+	@Override
+	public String contraPapel() {
+		return "Come";
+	}
+
+	@Override
+	public String contraTijera() {
+		return "Es Decapitado";
+	}
+
+	@Override
+	public String contraLagarto() {
+		return "Empata";
+	}
+
+	@Override
+	public String contraSpock() {
+		return "Envenena";
+	}
+}
+```
+
+### Papel
+
+```java
+public class Papel extends Jugada{
+
+	@Override
+	public String juegaContra(Jugada j) {
+		return j.contraPapel();
+	}
+
+	@Override
+	public String contraPiedra() {
+		return "Cubre";
+	}
+
+	@Override
+	public String contraPapel() {
+		return "Empata";
+	}
+
+	@Override
+	public String contraTijera() {
+		return "Es Cortado";
+	}
+
+	@Override
+	public String contraLagarto() {
+		return "Es Comido";
+	}
+
+	@Override
+	public String contraSpock() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+```
+
+### Piedra
+
+```java
+public class Piedra extends Jugada{
+
+	@Override
+	public String juegaContra(Jugada j) {
+		return j.contraPiedra();
+	}
+
+	@Override
+	public String contraPiedra() {
+		return "Empata";
+	}
+
+	@Override
+	public String contraPapel() {
+		return "Es cubierto";
+	}
+
+	@Override
+	public String contraTijera() {
+		return "Aplasta";
+	}
+
+	@Override
+	public String contraLagarto() {
+		return "Aplasta";
+	}
+
+	@Override
+	public String contraSpock() {
+		return "Es Vaporizado";
+	}
+}
+```
+
+### Spock
+
+```java
+public class Spock extends Jugada{
+	@Override
+	public String juegaContra(Jugada j) {
+		return j.contraSpock();
+	}
+
+	@Override
+	public String contraPiedra() {
+		return "Vaporiza";
+	}
+
+	@Override
+	public String contraPapel() {
+		return "Desaprueba";
+	}
+
+	@Override
+	public String contraTijera() {
+		return "Rompe";
+	}
+
+	@Override
+	public String contraLagarto() {
+		return "Es Envenenado";
+	}
+
+	@Override
+	public String contraSpock() {
+		return "Empata";
+	}
+}
+```
+
+### Tijera
+
+```java
+public class Tijera extends Jugada{
+	@Override
+	public String juegaContra(Jugada j) {
+		return j.contraTijera();
+	}
+
+	@Override
+	public String contraPiedra() {
+		return "Se Rompe";
+	}
+
+	@Override
+	public String contraPapel() {
+		return "Corta";
+	}
+
+	@Override
+	public String contraTijera() {
+		return "Empata";
+	}
+
+	@Override
+	public String contraLagarto() {
+		return "Envenena";
+	}
+
+	@Override
+	public String contraSpock() {
+		return "Es Rompido :c";
+	}
+}
+```
+
+### Test
+
+```java
+public class JugadaTest {
+	
+	Piedra piedra;
+	Papel papel;
+	Tijera tijera;
+	Lagarto lagarto;
+	Spock spock;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		piedra = new Piedra();
+		papel = new Papel();
+		tijera = new Tijera();
+		lagarto = new Lagarto();
+		spock = new Spock();
+	}
+	
+    @Test
+    public void testJugadas() {
+        assertEquals("Se Rompe", piedra.juegaContra(tijera));
+        assertEquals("Cubre", piedra.juegaContra(papel));
+        assertEquals("Empata", piedra.juegaContra(piedra));
+        assertEquals("Es Aplastado", piedra.juegaContra(lagarto));
+        assertEquals("Vaporiza", piedra.juegaContra(spock));
+    }
+}
+```
 
 
 ---
