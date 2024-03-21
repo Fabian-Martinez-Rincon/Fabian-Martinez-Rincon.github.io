@@ -47,6 +47,8 @@ Tareas:
 
 Nota: para crear el proyecto Java lea el material llamado “Trabajando en OO2 con proyectos Maven”.
 
+![image](https://github.com/Fabian-Martinez-Rincon/Orientacion-a-Objetos-2/assets/55964635/efd0868e-2c4b-4407-abc9-ab9b403fe8f3)
+
 ---
 
 ## Ejercicio 2 Piedra Papel o Tijera

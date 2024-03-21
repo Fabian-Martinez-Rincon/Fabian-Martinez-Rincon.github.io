@@ -10,6 +10,8 @@ pubDate: 2024-03-12
 tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 ---
 
+- [Practica 1 Introducción](#practica-1-introducción)
+- [Practica 2 Capa de Aplicación](#practica-2-capa-de-aplicación---http)
 
 ## Practica 1 Introducción
 
@@ -359,7 +361,7 @@ En resumen, mientras que el modelo OSI proporciona una estructura teórica detal
 
 ### Ejercicio 2
 
-¿Cuál es la función de la capa de aplicación?
+`¿Cuál es la función de la capa de aplicación?`
 
 ---
 
