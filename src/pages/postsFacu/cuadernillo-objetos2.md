@@ -49,6 +49,166 @@ Nota: para crear el proyecto Java lea el material llamado “Trabajando en OO2 c
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Orientacion-a-Objetos-2/assets/55964635/efd0868e-2c4b-4407-abc9-ab9b403fe8f3)
 
+### Resolución mia (Lo saque a las patadas)
+
+#### Test
+
+```java
+public class TwitterTest {
+	Twitter twitter;
+	Usuario pepe;
+	Usuario maria;
+	
+	Tweet tweetPepe;
+	Tweet tweetMaria;
+	
+	ReTweet retweetPepe;
+	ReTweet retweetMaria;
+	
+	@BeforeEach
+	void setUp() throws Exception{
+		twitter = new Twitter();
+		
+		pepe = new Usuario("Pepe");
+		maria = new Usuario("Maria");
+		
+		tweetPepe = new Tweet("Esto no es un juego");
+		tweetMaria = new Tweet("Pugliese publiese pugliese");
+		
+		pepe.agregarTweet(tweetPepe);
+		maria.agregarTweet(tweetMaria);
+		
+		pepe.agregarReTweet(new ReTweet(tweetMaria));
+
+		twitter.agregarUsuario(pepe);
+		twitter.agregarUsuario(maria);
+	}
+	
+	@Test
+	public void testTweets() {
+		assertEquals(1, pepe.cantidadTweets());
+		assertEquals(1, pepe.cantidadReTweets());
+		assertEquals(1, maria.cantidadTweets());
+		
+		twitter.eliminarUsuario(maria);
+		
+		assertEquals(1, pepe.cantidadTweets());
+		assertEquals(0, pepe.cantidadReTweets());
+		assertEquals(0, maria.cantidadTweets());		
+	}
+}
+```
+#### Twitter
+
+```java
+public class Twitter {
+	
+	private List<Usuario> usuarios = new ArrayList<>();
+	
+	public void agregarUsuario(Usuario u) {
+		this.usuarios.add(u);
+	}
+	
+	public void eliminarUsuario(Usuario u) {
+		u.eliminarReTweets();
+		this.eliminarReferenciasAlUsuario(u.devolverTweets());
+		u.eliminarTweets();
+	}
+	
+	public void eliminarReferenciasAlUsuario(List<Tweet> tweetsEliminar){
+		for (Tweet tweet: tweetsEliminar) {
+			for (Usuario usuario: usuarios) {
+				if (usuario.tieneReTweetsDelTweet(tweet)){
+					usuario.eliminarReTweetsReferenciados(tweet);
+				}
+			}
+				
+		}
+	}
+}
+```
+
+#### Usuario
+
+```java
+public class Usuario {
+	
+	private String screenName;
+	private List<Tweet> tweets = new ArrayList<>();
+	private List<ReTweet> re_tweets = new ArrayList<>();
+	
+	// Se supone que el screen name es unico
+	public Usuario(String screenName) {
+		this.screenName = screenName;
+	}
+	
+	public void agregarTweet(Tweet T) {
+		this.tweets.add(T);
+	}
+	
+	public void agregarReTweet(ReTweet RT) {
+		this.re_tweets.add(RT);
+	}
+	
+	public List<Tweet> devolverTweets(){
+		return this.tweets;
+	}
+	
+	public int cantidadTweets() {
+		return this.tweets.size();
+	}
+	
+	public int cantidadReTweets() {
+		return this.re_tweets.size();
+	}
+	
+	public void eliminarReTweets(){
+		this.re_tweets.clear();
+	}
+	
+	public void eliminarTweets(){
+		this.tweets.clear();
+	}
+	
+	public boolean tieneReTweetsDelTweet(Tweet t) {
+		return this.re_tweets.stream()
+				.anyMatch(retweet -> retweet.esOrigen(t));
+	}
+	
+	public void eliminarReTweetsReferenciados(Tweet t) {
+		this.re_tweets.removeIf(rt -> rt.esOrigen(t));
+	}
+}
+```
+
+#### ReTweet
+
+```java
+public class ReTweet {
+	private Tweet origen = null;;
+	
+	public ReTweet(Tweet origen) {
+		this.origen = origen;		
+	}
+	
+	public boolean esOrigen(Tweet destino) {
+		return this.origen.equals(destino);
+	}
+}
+```
+
+#### Tweet
+
+```java
+public class Tweet {
+	private String texto;
+	
+	public Tweet(String texto) {
+		this.texto = texto;
+	}
+}
+```
+
 ---
 
 ## Ejercicio 2 Piedra Papel o Tijera
