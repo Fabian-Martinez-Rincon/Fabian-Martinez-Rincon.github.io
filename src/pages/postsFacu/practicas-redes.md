@@ -42,6 +42,8 @@ Una red, en el contexto de las redes de computadoras, es un grupo de computadora
 
 El principal objetivo de construir una red es compartir recursos, como dispositivos, información y servicios. Al conectar computadoras y dispositivos, los usuarios pueden compartir archivos, software, hardware (como impresoras y escáneres), y datos de manera eficiente y económica. Además, las redes permiten la comunicación y colaboración entre usuarios, independientemente de su ubicación geográfica.
 
+<audio controls><source src="../redes/practica1/1.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 2
@@ -72,6 +74,8 @@ Los principales componentes que permiten el funcionamiento de Internet incluyen:
 
 Estos componentes trabajan en conjunto para permitir la comunicación y transferencia de datos a través de la vasta red global que es Internet.
 
+<audio controls><source src="../redes/practica1/2.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 3
@@ -94,6 +98,8 @@ Las categorías de las RFCs pueden incluir:
 
 Las RFCs son fundamentales para el desarrollo y funcionamiento de Internet, proporcionando una base documentada y abierta para la evolución de sus tecnologías y protocolos.
 
+<audio controls><source src="../redes/practica1/3.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 4
@@ -108,6 +114,8 @@ Por ejemplo, el Protocolo de Control de Transmisión (TCP) es un protocolo que p
 
 Los protocolos son fundamentales para el funcionamiento de las redes de computadoras e Internet, ya que permiten la interoperabilidad entre diferentes sistemas y dispositivos, asegurando que la comunicación pueda ocurrir de manera efectiva y eficiente.
 
+<audio controls><source src="../redes/practica1/4.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 5
@@ -119,6 +127,8 @@ Dos máquinas con distintos sistemas operativos pueden formar parte de la misma 
 Cuando los dispositivos en una red se comunican entre sí, no interactúan directamente con los sistemas operativos del otro dispositivo, sino a través de la capa de red, utilizando estos protocolos estandarizados. Estos protocolos aseguran que la información se pueda enviar y recibir de manera coherente y comprensible, sin importar las diferencias subyacentes en el software o el hardware.
 
 Los sistemas operativos están diseñados para implementar estos protocolos de red, lo que permite a las máquinas configurar conexiones de red, enviar y recibir datos, y realizar otras funciones de red necesarias para la comunicación y el intercambio de recursos. Esto hace posible que dispositivos con sistemas operativos diferentes, como Windows, macOS, Linux, etc., puedan conectarse y comunicarse entre sí en la misma red, compartiendo recursos como archivos, impresoras, y acceso a Internet.
+
+<audio controls><source src="../redes/practica1/5.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -135,6 +145,8 @@ Los sistemas finales, también conocidos como end systems, se pueden clasificar 
 2. **Servidores**: Son los sistemas finales que atienden las solicitudes de los clientes y les proporcionan los recursos o servicios solicitados. Los servidores están configurados para escuchar y responder a las solicitudes entrantes de los clientes. Siguiendo con el ejemplo anterior, en la navegación web, el servidor web es el que alberga los sitios web y envía las páginas web solicitadas de vuelta al navegador del cliente en respuesta a sus solicitudes.
 
 Esta clasificación en clientes y servidores facilita el diseño, la implementación y el mantenimiento de aplicaciones distribuidas y permite una clara distinción de roles en la comunicación de red, lo que a su vez soporta una gran variedad de servicios y aplicaciones en Internet.
+
+<audio controls><source src="../redes/practica1/6.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -156,6 +168,8 @@ Las redes conmutadas de paquetes y las redes conmutadas de circuitos son dos tec
 
 La elección entre una red conmutada de paquetes y una red conmutada de circuitos depende de las necesidades específicas de la comunicación. Las redes conmutadas de paquetes son más versátiles y eficientes para el tráfico de datos variable, mientras que las redes conmutadas de circuitos son preferibles para servicios que necesitan garantías de ancho de banda y tiempo de transmisión.
 
+<audio controls><source src="../redes/practica1/7.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 8
@@ -171,6 +185,8 @@ En resumen:
 - **Red de telefonía (PSTN)**: Es una red conmutada de circuitos, ideal para comunicaciones de voz en tiempo real, proporcionando un canal de comunicación constante y de calidad garantizada.
   
 - **Internet**: Es una red conmutada de paquetes, diseñada para transmitir datos de manera eficiente y flexible, soportando una amplia variedad de aplicaciones y servicios al compartir la infraestructura entre múltiples usuarios.
+
+<audio controls><source src="../redes/practica1/8.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -195,6 +211,8 @@ Existen varias alternativas para acceder a Internet en el hogar, y la disponibil
 7. **Banda ancha inalámbrica municipal**: Algunas ciudades ofrecen su propia red de acceso a Internet, que puede ser gratuita o de bajo costo para los residentes.
 
 Al elegir el tipo de conexión, considera factores como la velocidad de conexión necesaria, el presupuesto, la disponibilidad en tu área y el tipo de uso que le darás a tu conexión a Internet.
+
+<audio controls><source src="../redes/practica1/9.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -222,6 +240,8 @@ La implementación basada en capas o niveles en sistemas de redes y software tie
 
 En resumen, la implementación basada en capas ofrece una estructura organizada y flexible que mejora la mantenibilidad, extensibilidad y robustez de los sistemas de redes y software.
 
+<audio controls><source src="../redes/practica1/10.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 11
@@ -239,6 +259,8 @@ En el contexto de los modelos de red, como el Modelo OSI (Open Systems Interconn
 4. **Capa de Enlace de Datos**: La PDU de la capa de enlace de datos se llama "Trama". En esta capa, los datos se preparan para su transmisión física a través del medio de red, proporcionando control de errores y control de flujo.
 
 Cada una de estas PDUs contiene información específica necesaria para la funcionalidad de su respectiva capa, permitiendo la comunicación y el intercambio de datos a través de la red de manera estructurada y eficiente.
+
+<audio controls><source src="../redes/practica1/11.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -260,6 +282,8 @@ Si una capa de un nodo transmisor realiza la encapsulación de datos, el proceso
 - Si la capa de Enlace de Datos en el transmisor encapsula los datos, la capa de Enlace de Datos en el receptor los desencapsulará.
 
 El proceso de desencapsulación implica quitar las cabeceras (y colas si las hay) puestas por el nodo transmisor para acceder a los datos originales o a la información de la cabecera de la siguiente capa. Este proceso asegura que cada nivel del modelo de red en el nodo receptor pueda interpretar y procesar correctamente los datos recibidos antes de pasarlos a la capa superior.
+
+<audio controls><source src="../redes/practica1/12.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -290,6 +314,10 @@ El stack TCP/IP, también conocido como el modelo de protocolo de Internet, cons
    - Ejemplo de trabajo: Esta capa toma los paquetes IP y los prepara para su transmisión a través de medios físicos como cables de Ethernet, Wi-Fi o fibra óptica, utilizando protocolos como Ethernet, Wi-Fi (IEEE 802.11) y otros protocolos de enlace de datos.
 
 Cada capa del modelo TCP/IP proporciona un conjunto de funciones específicas que permiten la comunicación efectiva a través de una red de computadoras, desde la aplicación que origina los datos hasta la red física que transporta los datos.
+
+<audio controls><source src="../redes/practica1/13.mp3" type="audio/mpeg"></audio>
+
+---
 
 ### Ejercicio 14
 
@@ -322,6 +350,8 @@ El Modelo OSI (Open Systems Interconnection) y el Modelo TCP/IP (Transmission Co
    - **Modelo TCP/IP**: Ha logrado una amplia adopción e interoperabilidad gracias a Internet, con sus protocolos que se utilizan prácticamente en todas las redes informáticas.
 
 En resumen, mientras que el modelo OSI proporciona una estructura teórica detallada para la comunicación en red, el modelo TCP/IP ofrece un enfoque más pragmático basado en la implementación real y las necesidades de Internet.
+
+<audio controls><source src="../redes/practica1/14.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -363,16 +393,30 @@ En resumen, mientras que el modelo OSI proporciona una estructura teórica detal
 
 `¿Cuál es la función de la capa de aplicación?`
 
+La función de la capa de aplicación en las redes de computadoras es proporcionar servicios de comunicación a los usuarios y a las aplicaciones. Esta capa incluye las propias aplicaciones que utilizan la red, como navegadores web, clientes de correo electrónico y aplicaciones de mensajería instantánea. En el contexto de Machine to Machine (M2M), la capa de aplicación facilita la comunicación entre máquinas sin intervención humana.
+
+Además, la capa de aplicación actúa como una interfaz entre el usuario o las aplicaciones/servicios y la red. Es responsable de la definición del formato de los mensajes, de establecer las reglas para el intercambio de mensajes y de asegurar que los mensajes se transmitan de manera que cumplan con los requisitos de la aplicación. También se encarga de la conversión y codificación de datos, la compresión y descompresión, y el cifrado y descifrado, integrando funciones de lo que en el modelo OSI corresponden a las capas de Aplicación, Presentación y Sesión.
+
 ---
 
 ### Ejercicio 3
 
 Si dos procesos deben comunicarse:
 
-**¿Cómo podrían hacerlo si están en diferentes máquinas?**
+`¿Cómo podrían hacerlo si están en diferentes máquinas?`
 
+**A través de la red**: Utilizan la comunicación de red, intercambiando mensajes a través de un protocolo de la capa de aplicación adecuado (como HTTP, FTP, SMTP, etc.). Cada proceso utiliza un socket, que es un punto final de comunicación que proporciona la puerta de enlace para enviar y recibir datos. Los sockets se basan en la dirección IP de la máquina y un número de puerto específico para identificar el proceso de destino, permitiendo que los procesos en diferentes hosts se comuniquen entre sí a través de la red.
 
-**Y si están en la misma máquina, ¿qué alternativas existen?**
+`Y si están en la misma máquina, ¿qué alternativas existen?`
+
+**Comunicación entre procesos (IPC)**: Pueden utilizar varios mecanismos de IPC proporcionados por el sistema operativo, tales como:
+
+- **Pipes (tuberías)**: Permiten la comunicación secuencial entre procesos, donde la salida de un proceso se convierte en la entrada del otro.
+- **Memoria compartida**: Permite a múltiples procesos acceder a una sección común de la memoria RAM para intercambiar datos de manera rápida.
+- **Sockets de dominio UNIX**: Son similares a los sockets de red, pero están diseñados para la comunicación entre procesos en la misma máquina, ofreciendo una manera eficiente de intercambio de datos.
+- **Señales**: Son mensajes asincrónicos enviados a un proceso para indicar la ocurrencia de un evento específico.
+- **Semáforos y mutexes**: Se utilizan para manejar el acceso concurrente a recursos compartidos, como la memoria.
+- **Colas de mensajes**: Permiten el intercambio de mensajes entre procesos, donde los mensajes se almacenan en una cola hasta que el proceso receptor está listo para procesarlos.
 
 ---
 
