@@ -452,8 +452,27 @@ El modelo Cliente/Servidor es una arquitectura de red donde el servidor es una m
 
 ### Ejercicio 5
 
-Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”
+`Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”`
 
+Un "Agente de Usuario" o "User Agent" se refiere a cualquier software que actúa en nombre de un usuario. La función principal de un agente de usuario es servir como intermediario entre el usuario y las aplicaciones de red, facilitando la interacción del usuario con la red o los servicios de Internet.
+
+Las funcionalidades de un agente de usuario incluyen:
+
+1. **Interfaz de Usuario**: Proporciona una interfaz a través de la cual los usuarios pueden interactuar con las aplicaciones de la red. Por ejemplo, un navegador web ofrece una interfaz gráfica donde los usuarios pueden ingresar URLs, ver páginas web y interactuar con elementos en línea.
+
+2. **Comunicación de Red**: Maneja la comunicación entre el dispositivo del usuario y la red. Esto incluye la creación de solicitudes de red según las acciones del usuario, el envío de estas solicitudes al servidor correspondiente, y la recepción y procesamiento de las respuestas.
+
+3. **Interpretación de Contenidos**: Interpreta y presenta los datos recibidos de la red al usuario de una manera entendible y utilizable. Por ejemplo, un navegador web interpreta el HTML, CSS y JavaScript de una página web y los presenta visualmente al usuario.
+
+4. **Gestión de Sesiones**: Mantiene la información de estado durante la interacción del usuario con las aplicaciones de red. Esto puede incluir la gestión de cookies, autenticaciones y otras informaciones de sesión.
+
+5. **Seguridad**: Implementa medidas de seguridad para proteger la información del usuario durante la comunicación en la red. Esto puede incluir el cifrado de datos, la verificación de la autenticidad de los sitios web y la protección contra malware.
+
+6. **Almacenamiento y Caché**: Almacena datos localmente para mejorar el rendimiento y la eficiencia de las solicitudes de red, utilizando técnicas como el almacenamiento en caché de páginas web previamente visitadas.
+
+Ejemplos de agentes de usuario incluyen navegadores web, clientes de correo electrónico, y aplicaciones de mensajería instantánea. En la práctica, el término "user agent" se utiliza a menudo específicamente para referirse al navegador web del usuario.
+
+<audio controls><source src="../redes/practica2/5.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -461,19 +480,38 @@ Describa la funcionalidad de la entidad genérica “Agente de usuario” o “U
 
 Observe el indice de la RFC2616, busque el apartado donde se describe el requerimiento y la respuesta.
 
-**¿Qué son y en qué se diferencian HTML y HTTP?**
+`¿Qué son y en qué se diferencian HTML y HTTP?`
 
-**¿En que entidad ubicaría a HTML?**
+1. **HTML**: Es un lenguaje de marcado utilizado para crear y estructurar páginas web. HTML utiliza etiquetas y atributos para definir cómo se muestra el contenido en un navegador web, como textos, imágenes, enlaces, tablas, listas, etc. HTML se ocupa de la presentación y la estructura del contenido en la web.
 
+2. **HTTP**: Es un protocolo de la capa de aplicación utilizado para la transmisión de documentos hipermedia, como HTML. Es el fundamento de cualquier intercambio de datos en la Web y es un protocolo basado en solicitudes y respuestas entre clientes (por ejemplo, un navegador web) y servidores (el lugar donde se aloja la página web). HTTP define cómo se deben transmitir los mensajes y los datos entre cliente y servidor.
+
+`¿En que entidad ubicaría a HTML?`
+
+En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de aplicación del modelo TCP/IP o en las capas de presentación y aplicación del modelo OSI, ya que está directamente relacionado con la forma en que se presentan los datos al usuario final en aplicaciones de red, específicamente en navegadores web .
+
+<audio controls><source src="../redes/practica2/6.mp3" type="audio/mpeg"></audio>
 
 ---
 
 ### Ejercicio 7
 
-**Utilizando la VM, abra una terminal e investigue sobre el comando curl.**
+`Utilizando la VM, abra una terminal e investigue sobre el comando curl.`
+
+El comando `curl` es una herramienta de línea de comandos utilizada para transferir datos desde o hacia un servidor. Se utiliza para trabajar con diversos protocolos, incluidos HTTP, HTTPS, FTP, SMTP, entre otros. `curl` es útil para probar, depurar y trabajar con API web o servicios de red.
+
+`Analice para qué sirven los siguientes parámetros (-I, -H, -X, -s).`
 
 
-**Analice para qué sirven los siguientes parámetros (-I, -H, -X, -s).**
+1. **-I** (o --head): Este parámetro se utiliza para hacer una solicitud HTTP HEAD, lo que significa que `curl` recuperará solo los encabezados de una respuesta HTTP. Es útil para ver metadatos de la respuesta como el tipo de contenido, estado, cookies, y otros encabezados de respuesta sin descargar todo el cuerpo del documento.
+
+2. **-H** (o --header): Este parámetro permite al usuario pasar encabezados adicionales en la solicitud HTTP. Por ejemplo, puede ser utilizado para incluir encabezados de autenticación, indicar el tipo de contenido que se está enviando o cualquier otro encabezado HTTP personalizado necesario para la solicitud.
+
+3. **-X** (o --request): Este parámetro se utiliza para especificar un método de solicitud HTTP personalizado cuando se comunica con el servidor HTTP. Los valores comunes incluyen GET, POST, PUT, DELETE, etc. Por defecto, `curl` realiza una solicitud GET, pero con -X puedes cambiar el tipo de solicitud según sea necesario.
+
+4. **-s** (o --silent): Este parámetro se usa para hacer que `curl` sea silencioso o discreto durante su operación. Cuando se utiliza, `curl` no mostrará la barra de progreso, pero aún proporcionará el resultado final. Es útil para scripts o para cuando se desea un resultado limpio sin información adicional de progreso o errores.
+
+Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes HTTP de diversas maneras para satisfacer diferentes necesidades de prueba y comunicación con servidores web y servicios en línea.
 
 ---
 
@@ -481,27 +519,45 @@ Observe el indice de la RFC2616, busque el apartado donde se describe el requeri
 
 Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.unlp.edu.ar. Luego responda:
 
+### Resultado
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/37102b10-935b-4061-b8ea-cc6e96ce24e2)
 
 #### Parte a
 
-**¿Cuántos requerimientos realizó y qué recibió?**
+`¿Cuántos requerimientos realizó y qué recibió?`
 
-**Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.**
+Cuando ejecutas el comando `curl` sin ningún parámetro adicional accediendo a `www.redes.unlp.edu.ar`, estás realizando un solo requerimiento HTTP GET hacia el servidor. Este requerimiento pide al servidor que devuelva el contenido completo de la página principal del sitio.
 
+`Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.`
+
+```bash
+curl www.redes.unlp.edu.ar > index.html
+```
 
 #### Parte b
 
-**¿Cómo funcionan los atributos href de los tags link e img en html?**
+`¿Cómo funcionan los atributos href de los tags link e img en html?`
+
+- **`<link href="./bootstrap/css/bootstrap.css" rel="stylesheet">`**: El atributo `href` en un elemento `link` generalmente se utiliza para enlazar hojas de estilo externas a la página HTML. Aquí, `href` apunta a la ubicación de una hoja de estilo CSS que el navegador debería cargar y aplicar a la página.
+
+- **`<img src="image.jpg" alt="Descripción">`**: Aunque en tu ejemplo no tienes un tag `img` explícito, típicamente el atributo `src` (similar en propósito al `href` para los elementos `img`) indica la ubicación de una imagen que debe ser mostrada en la página. El navegador solicita y muestra la imagen desde esta ubicación.
 
 #### Parte c
 
 Para visualizar la página completa con imágenes como en un navegador
 
-**¿alcanza con realizar un único requerimiento?**
+`¿alcanza con realizar un único requerimiento?`
 
-**¿Cuántos requerimientos serían necesarios para obtener una página que tiene dos CSS, dos Javascript y tres imágenes?**
+Para visualizar completamente una página web como en un navegador, no es suficiente con realizar un único requerimiento (como lo hace `curl` por defecto). 
 
-**Diferencie como funcionaría un navegador respecto al comando curl ejecutado previamente**
+`¿Cuántos requerimientos serían necesarios para obtener una página que tiene dos CSS, dos Javascript y tres imágenes?`
+
+La página principal puede contener referencias a otros recursos como hojas de estilo CSS, scripts de JavaScript, imágenes, etc. Cada uno de estos recursos requerirá de su propio requerimiento HTTP para ser recuperado. Por lo tanto, para una página que tiene dos CSS, dos Javascript y tres imágenes, se necesitarían, en total, **siete requerimientos HTTP adicionales** además del requerimiento inicial para la página HTML.
+
+`Diferencie como funcionaría un navegador respecto al comando curl ejecutado previamente`
+
+Un navegador automáticamente realiza todos estos requerimientos adicionales cuando carga una página, interpretando el HTML, descubriendo los recursos necesarios y solicitándolos al servidor. Por el contrario, el comando `curl` ejecutado anteriormente solo hace el requerimiento inicial y recupera el HTML, pero no carga ni interpreta los recursos adicionales. Por eso, si abres el HTML guardado localmente sin los recursos adicionales, la página podría no verse como se espera.
 
 ---
 
@@ -509,20 +565,38 @@ Para visualizar la página completa con imágenes como en un navegador
 
 Ejecute a continuación los siguientes comandos:
 
+<table>
+<tr><td>
 
 ```bash
 curl -v -s www.redes.unlp.edu.ar > /dev/null
 ```
 
+</td><td>
+
 ```bash
 curl -I -v -s www.redes.unlp.edu.ar
 ```
+</td></tr>
+<tr><td>
 
-***Observe la salida y luego repita la prueba, pero previamente inicie una nueva captura en wireshark.***
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/cf6f186e-6542-41c4-b46e-c4420eaacb87)
+</td><td>
 
-***Utilice la opción Follow Stream. ¿Qué se transmitió en cada caso?***
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/0f4449f1-8184-4c83-9c2a-35175821a384)
+</td></tr>
 
-***¿A que se debió esta diferencia entre lo que se transmitió y lo que se mostró en pantalla?***
+</table>
+
+`Observe la salida y luego repita la prueba, pero previamente inicie una nueva captura en wireshark.`
+
+
+
+`Utilice la opción Follow Stream. ¿Qué se transmitió en cada caso?`
+
+`¿A que se debió esta diferencia entre lo que se transmitió y lo que se mostró en pantalla?`
+
+> Preguntar
 
 ---
 
@@ -530,16 +604,25 @@ curl -I -v -s www.redes.unlp.edu.ar
 
 Investigue cómo define las cabeceras la RFC
 
-***¿Establece todas las cabeceras posibles?.***
+Las Request for Comments (RFC) relacionadas con el Protocolo de Transferencia de Hipertexto (HTTP) definen un conjunto de cabeceras (headers) estándar que pueden ser utilizadas en las solicitudes y respuestas HTTP. Estas cabeceras están documentadas en varias RFC, siendo las más relevantes para HTTP/1.1 las RFC 7230 a la RFC 7235.
 
+``¿Establece todas las cabeceras posibles?.``
+
+No, las RFCs no establecen todas las cabeceras posibles. Mientras que las RFCs definen un conjunto estándar de cabeceras conocidas y ampliamente utilizadas, también permiten el uso de cabeceras no estándar o personalizadas. Esto significa que los desarrolladores pueden definir sus propias cabeceras para casos de uso específicos que no están cubiertos por el conjunto estándar.
 
 ***¿Cuántas cabeceras viajaron en el requerimiento y en la respuesta del ejercicio anterior?***
 
+- En el ejercicio anterior, en la **respuesta** se proporcionaron 7 cabeceras: `Date`, `Server`, `Last-Modified`, `ETag`, `Accept-Ranges`, `Content-Length`, y `Content-Type`.
+- En cuanto al **requerimiento** hecho por `curl`, sin parámetros adicionales, generalmente incluiría al menos las cabeceras `Host` y potencialmente `User-Agent`, entre otras que `curl` podría incluir automáticamente. El número exacto y cuáles cabeceras depende de la versión de `curl` y de la configuración específica.
 
-***¿La cabecera Date es una de las definidas en la RFC? ¿Qué indica?***
+`¿La cabecera Date es una de las definidas en la RFC? ¿Qué indica?`
+
+Sí, la cabecera `Date` está definida en las RFCs relacionadas con HTTP, como la RFC 7231. Esta cabecera representa la fecha y hora en que el mensaje fue originado, siguiendo el formato especificado por la RFC 5322, que es típicamente algo como "Tue, 15 Nov 1994 08:12:31 GMT". La cabecera `Date` es utilizada principalmente para proporcionar una estampa temporal que indica cuándo se generó el mensaje HTTP. Esto puede ser importante para la gestión de caché y para permitir a los receptores estimar la antigüedad de la respuesta o solicitud.
 
 
+### Conclusión 
 
+Las cabeceras HTTP juegan un papel crucial en el control y la gestión de la comunicación entre clientes y servidores en la web, facilitando la transmisión de información importante que no forma parte del cuerpo de la solicitud o respuesta.
 
 ---
 
@@ -547,36 +630,77 @@ Investigue cómo define las cabeceras la RFC
 
 Utilizando curl, realice un requerimiento con el método HEAD al sitio www.redes.unlp.edu.ar e indique:
 
-***¿Qué información brinda la primer línea de la respuesta?***
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/df14ddae-c33e-4d5e-a352-ac675d1a5344)
+
+`¿Qué información brinda la primer línea de la respuesta?`
+
+Brinda la versión de http que se esta usando.
+
+`¿Cuántos encabezados muestra la respuesta?`
+
+7
+
+`¿Qué servidor web está sirviendo la página?`
+
+Apache/2.4.56 (Unix)
+
+`¿El acceso a la página solicitada fue exitoso o no?`
+
+- **200 OK**: Indica que la solicitud fue exitosa y que el servidor ha respondido con los encabezados del recurso solicitado.
+- **301 Moved Permanently**: Significa que la URL solicitada se ha cambiado permanentemente. El servidor proporcionará la nueva URL en el encabezado de respuesta `Location`. Los clientes deben usar la nueva URL en el futuro.
+- **302 Found** (también conocido como **302 Moved Temporarily**): Similar al 301, pero se utiliza para redireccionamientos temporales. El cliente debe realizar una solicitud subsiguiente a la nueva URL proporcionada, pero los futuros requerimientos todavía deberían usar la URL original.
+- **304 Not Modified**: Se utiliza en situaciones de caché. Significa que el documento no ha sido modificado desde la última vez que fue solicitado y que el cliente puede continuar utilizando la versión almacenada en caché.
+- **400 Bad Request**: Indica que la solicitud no se pudo entender o procesar por el servidor debido a una sintaxis incorrecta.
+- **401 Unauthorized**: Significa que la autenticación es necesaria para acceder al recurso y que ha fallado o aún no ha sido proporcionada.
+- **403 Forbidden**: El servidor entendió la solicitud, pero se niega a autorizarla. A diferencia del 401, la autenticación no haría diferencia.
+- **404 Not Found**: Significa que el servidor no pudo encontrar el recurso solicitado.
+- **500 Internal Server Error**: Indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud.
+- **503 Service Unavailable**: El servidor no está listo para manejar la solicitud, generalmente debido a un mantenimiento temporal o a una sobrecarga.
 
 
-***¿Cuántos encabezados muestra la respuesta?***
+`¿Cuándo fue la última vez que se modificó la página?`
 
+Sun, 19 Mar 2023 19:04:46 GMT
 
-***¿Qué servidor web está sirviendo la página?***
+`Solicite la página nuevamente con curl usando GET, pero esta vez indique que quiere obtenerla sólo si la misma fue modificada en una fecha posterior a la que efectivamente fue modificada.`
+`¿Cómo lo hace?`
 
+```bash
+curl -H "If-Modified-Since: Sun, 19 Mar 2023 18:00:00 GMT" www.redes.unlp.edu.ar
+```
 
-***¿El acceso a la página solicitada fue exitoso o no?***
+`¿Qué resultado obtuvo?`
 
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f63104fc-cf9a-486d-90ba-6e17725481b6)
 
-***¿Cuándo fue la última vez que se modificó la página?***
+En tu comando específico, recibiste una respuesta con el código de estado `304 Not Modified`. Esto significa que el servidor determinó que la página no ha sido modificada desde la fecha que proporcionaste en `If-Modified-Since`. Por lo tanto, el servidor decidió no enviar nuevamente el contenido de la página, ya que consideró que la versión que tienes es la más actualizada.
 
-Solicite la página nuevamente con curl usando GET, pero esta vez indique que quiere obtenerla sólo si la misma fue modificada en una fecha posterior a la que efectivamente fue modificada. 
+`¿Puede explicar para qué sirve?`
 
-***¿Cómo lo hace?***
-
-***¿Qué resultado obtuvo?***
-
-***¿Puede explicar para qué sirve?***
+La cabecera `If-Modified-Since` se utiliza para hacer una solicitud condicional. Sirve para optimizar la transferencia de datos entre el cliente y el servidor. Al usar esta cabecera, le estás pidiendo al servidor que solo envíe el recurso (en este caso, la página web) si ha sido modificado después de la fecha especificada. Si el recurso no ha sido modificado desde esa fecha, el servidor responde con un código `304 Not Modified`, y no se transmite el cuerpo del recurso, lo que ahorra ancho de banda y mejora la eficiencia de la carga de páginas web, especialmente útil para la caché y la actualización de contenidos en la web.
 
 
 ---
 
 ### Ejercicio 12
 
-En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente? 
+`En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?`
 
-**¿Y en HTTP/1.1?**
+En HTTP, la forma en que un cliente sabe que ha recibido todo el objeto solicitado completamente varía entre las versiones HTTP/1.0 y HTTP/1.1 debido a las diferencias en cómo gestionan las conexiones y transmiten los datos.
+
+En HTTP/1.0, la forma principal de determinar que todo el objeto solicitado ha sido completamente recibido es a través del cierre de la conexión TCP por parte del servidor. HTTP/1.0 no tiene un mecanismo estándar para mantener la conexión abierta después de que se haya enviado una respuesta; por lo tanto, una vez que el servidor termina de enviar los datos, cierra la conexión. Cuando el cliente detecta que la conexión se ha cerrado, sabe que ha recibido toda la respuesta. Sin embargo, este enfoque tiene varias desventajas, como la necesidad de abrir una nueva conexión TCP para cada solicitud, lo que aumenta la latencia y reduce la eficiencia de la red.
+
+`¿Y en HTTP/1.1?`
+
+HTTP/1.1 introduce varias mejoras para superar las limitaciones de HTTP/1.0, incluyendo el concepto de conexiones persistentes. En HTTP/1.1, las conexiones se mantienen abiertas por defecto, lo que permite enviar múltiples solicitudes y respuestas a través de la misma conexión TCP. Esto plantea la pregunta de cómo el cliente sabe cuándo ha recibido una respuesta completa sin el cierre de la conexión como indicador.
+
+En HTTP/1.1, esto se logra principalmente a través de dos mecanismos:
+
+1. **La cabecera Content-Length**: Cuando el servidor incluye la cabecera `Content-Length` en la respuesta, especifica la longitud exacta del cuerpo de la respuesta en bytes. El cliente usa este valor para determinar cuántos bytes necesita leer del cuerpo de la respuesta, independientemente de si la conexión se mantiene abierta para futuras solicitudes.
+
+2. **Transfer-Encoding chunked**: En casos donde el servidor no puede determinar el tamaño total del contenido de antemano (por ejemplo, para contenido generado dinámicamente), puede utilizar la codificación de transferencia "chunked". Esto implica enviar el cuerpo de la respuesta en una serie de segmentos (chunks), cada uno precedido por su tamaño. El final de la respuesta se indica mediante un segmento de tamaño cero, seguido por los encabezados finales (si los hay) y una línea en blanco. Esto permite al cliente saber que ha recibido todo el objeto solicitado, incluso sin una longitud de contenido predeterminada.
+
+Estos mecanismos permiten una transferencia de datos más eficiente y la reutilización de conexiones, mejorando el rendimiento general de la comunicación HTTP en la versión 1.1 respecto a la 1.0.
 
 ---
 
