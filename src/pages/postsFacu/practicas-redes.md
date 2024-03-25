@@ -809,6 +809,64 @@ En resumen, esta respuesta indica que el recurso solicitado en la URL `www.redes
 
 Utilizando curl, acceda al sitio www.redes.unlp.edu.ar/restringido/index.php y siga las instrucciones y las pistas que vaya recibiendo hasta obtener la respuesta final. Será de utilidad para resolver este ejercicio poder analizar tanto el contenido de cada página como los encabezados
 
+```bash
+curl www.redes.unlp.edu.ar/restringido/index.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/d44c6726-e3e9-43f4-a06a-c8dbedf93900)
+
+```bash
+curl www.redes.unlp.edu.ar/obtener-usuario.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/1ab7dd69-bc87-4795-a417-07d6d63be0dc)
+
+```bash
+curl -H "Usuario-Redes: obtener" www.redes.unlp.edu.ar/obtener-usuario.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/0645cd34-7af6-474a-ad0a-295df1b05af2)
+
+
+```bash
+Authorization: Basic {credenciales_codificadas_en_base64}
+```
+
+Las "credenciales_codificadas_en_base64" son simplemente el nombre de usuario y la contraseña concatenados con un dos puntos (`:`) entre ellos, luego todo esto codificado en base64. Para el usuario "redes" y la contraseña "RYC", esto sería:
+
+1. Concatenar usuario y contraseña con un dos puntos: `redes:RYC`.
+2. Codificar este string en base64. Puedes hacer esto en una terminal Linux usando el comando: `echo -n 'redes:RYC' | base64`. Asegúrate de incluir la opción `-n` para `echo` para evitar que se añada un salto de línea al final del string antes de codificarlo.
+
+```bash
+echo -n 'redes:RYC' | base64
+
+cmVkZXM6UllD
+```
+
+Una vez que tienes la cadena codificada en base64, puedes hacer la solicitud con `curl` de la siguiente manera:
+
+```bash
+curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/obtener-usuario.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/585f519d-b989-45d1-8cc2-af01dbb44afc)
+
+
+```bash
+curl -I -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/obtener-usuario.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/67cffcc1-0090-400b-a7dc-fb3f9dc8ac7d)
+
+```bash
+curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/the-end.php
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15f018e5-8770-4b32-a731-0531421e6957)
+
+
+
+
 ---
 
 ### Ejercicio 15
