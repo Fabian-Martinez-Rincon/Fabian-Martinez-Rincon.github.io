@@ -706,26 +706,102 @@ Estos mecanismos permiten una transferencia de datos más eficiente y la reutili
 
 ### Ejercicio 13
 
-Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.
+`Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.`
 
-**¿Qué parte se ve principalmente interesada de esta información, cliente o servidor?**
+Los códigos de retorno de un servidor web, también conocidos como códigos de estado HTTP, están definidos y clasificados en varias RFC, principalmente en la RFC 7231, que es parte de la serie de documentos que actualizan y definen el protocolo HTTP/1.1. Estos códigos se clasifican en cinco categorías principales:
 
-**¿Es útil que esté detallado y clasificado en la RFC?.**
+1. **1xx (Respuestas informativas)**: Indican que la solicitud fue recibida y el proceso continúa.
+2. **2xx (Respuestas exitosas)**: Indican que la solicitud fue recibida correctamente, entendida y aceptada.
+3. **3xx (Redirecciones)**: Indican que se deben tomar más acciones para completar la solicitud.
+4. **4xx (Errores del cliente)**: Indican que hubo un error y la solicitud no puede ser procesada debido a algo que se percibe como un error del cliente (por ejemplo, URL mal formada, falta de autenticación).
+5. **5xx (Errores del servidor)**: Indican que el servidor falló al intentar procesar una solicitud válida.
 
-**Dentro de la VM, ejecute los siguientes comandos y evalue el estado que recibe.**
+`¿Qué parte se ve principalmente interesada de esta información, cliente o servidor?`
+
+Ambas partes, el cliente y el servidor, están interesadas en los códigos de retorno:
+
+- **Cliente**: Necesita entender los códigos de estado para saber cómo proceder después de hacer una solicitud. Por ejemplo, si recibe un 200 OK, sabe que la solicitud fue exitosa; si recibe un 404 Not Found, sabe que el recurso solicitado no existe; si recibe un 301 Moved Permanently, sabe que debe realizar una nueva solicitud al URL proporcionado en la respuesta.
+
+- **Servidor**: Debe enviar el código de estado adecuado como parte de su respuesta para comunicar el resultado de la solicitud al cliente. Esto es crucial para el correcto funcionamiento del protocolo HTTP y para proporcionar una experiencia de usuario adecuada.
+
+`¿Es útil que esté detallado y clasificado en la RFC?.`
+
+Sí, es muy útil que esta información esté detallada y clasificada en la RFC por varias razones:
+
+- **Estándar Global**: Proporciona un conjunto estándar de códigos de estado que pueden ser utilizados e interpretados de manera coherente por todos los servidores y clientes web en todo el mundo.
+  
+- **Desarrollo y Depuración**: Ayuda a los desarrolladores a entender cómo deben programar sus aplicaciones cliente y servidor para manejar diferentes situaciones. También facilita la depuración al proporcionar una explicación clara de por qué una solicitud puede haber fallado.
+
+- **Interoperabilidad**: Asegura que diferentes aplicaciones y servicios web puedan trabajar juntos de manera efectiva, ya que todos siguen las mismas reglas para interpretar los códigos de estado.
+
+En resumen, la clasificación y el detalle de los códigos de retorno en la RFC son fundamentales para la interoperabilidad de la web, permitiendo que clientes y servidores se comuniquen y entiendan entre sí de manera efectiva.
+
+`Dentro de la VM, ejecute los siguientes comandos y evalue el estado que recibe.`
 
 ```bash
 curl -I http://unlp.edu.ar
 ```
 
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/011934e1-7505-47f4-a7eb-07c0f6147fce)
+
+
+1. **HTTP/1.1 301 Moved Permanently**: Este es el código de estado HTTP devuelto por el servidor. El código 301 indica que la URL solicitada ha sido asignada a una nueva URL de manera permanente. Este es un tipo de respuesta de redirección que informa al cliente que debe realizar una nueva solicitud a la URL indicada en el encabezado `Location`.
+
+2. **Server: nginx/1.18.0**: Indica que el servidor web que maneja la solicitud está utilizando Nginx versión 1.18.0.
+
+3. **Date: Mon, 25 Mar 2024 18:48:47 GMT**: Es la fecha y hora en que la respuesta fue enviada desde el servidor.
+
+4. **Content-Type: text/html**: Este encabezado indica que el tipo de contenido que se habría devuelto si la solicitud hubiera sido un GET en lugar de un HEAD (que es lo que realiza `curl -I`) es HTML.
+
+5. **Content-Length: 169**: Indica la longitud del cuerpo de la respuesta, que en el caso de una solicitud HEAD, no se devuelve, pero si fuera una solicitud GET, el cuerpo de la respuesta tendría 169 bytes.
+
+6. **Connection: keep-alive**: Este encabezado sugiere que la conexión se mantendrá abierta para futuras solicitudes del cliente al servidor, característico de HTTP/1.1 que soporta conexiones persistentes.
+
+7. **Location: https://unlp.edu.ar/**: Este es el encabezado más importante en el contexto de la redirección 301. Indica la nueva URL a la que el cliente debe dirigirse para obtener el recurso solicitado. En este caso, está redirigiendo de `http://unlp.edu.ar` a `https://unlp.edu.ar/`, esencialmente forzando una actualización a una conexión segura (HTTPS).
+
+En resumen, el estado de esta solicitud indica que la página ha sido movida permanentemente de HTTP a HTTPS, y el cliente (en este caso `curl`) debería seguir la redirección al nuevo URL para obtener el contenido solicitado. Esta es una práctica común para mejorar la seguridad al asegurar que los usuarios se conecten a través de HTTPS.
+
 ```bash
 curl -I www.redes.unlp.edu.ar/restringido/index.php
 ```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a50cfa7a-35ff-44ac-bf60-9dabdf52d0ae)
+
+1. **HTTP/1.1 401 Unauthorized**: Este es el código de estado HTTP devuelto por el servidor. Un código 401 indica que la solicitud requiere autenticación del usuario y que esta no se ha proporcionado o no ha sido aceptada. Es una indicación de que el acceso al recurso está restringido y requiere credenciales válidas.
+
+2. **Date: Mon, 25 Mar 2024 18:56:57 GMT**: Fecha y hora en que el servidor envió la respuesta.
+
+3. **Server: Apache/2.4.56 (Unix)**: Información sobre el software del servidor, que en este caso es Apache versión 2.4.56 corriendo en un sistema Unix.
+
+4. **WWW-Authenticate: Basic realm="Authentication Required"**: Este encabezado es parte de la respuesta 401 y define el método de autenticación que el servidor espera. En este caso, indica autenticación básica y proporciona un “realm” (dominio) que describe el área segura o el recurso que requiere autenticación. El "realm" sirve como una pista para el usuario sobre qué credenciales se deben proporcionar.
+
+5. **Last-Modified: Sun, 19 Mar 2023 19:04:46 GMT**: La fecha y hora de la última modificación del recurso solicitado.
+
+6. **ETag: "cb-5f7457bd64f80"**: Un identificador único asignado al recurso actual en su estado específico. Utilizado para gestionar la caché y las modificaciones del recurso.
+
+7. **Accept-Ranges: bytes**: Indica que el servidor acepta solicitudes de rango de bytes, lo que permite la descarga parcial del recurso, útil para reanudar descargas interrumpidas.
+
+8. **Content-Length: 203**: La longitud del cuerpo de la respuesta en bytes, que en el caso de una solicitud HEAD no se retorna, pero si fuera una solicitud GET, el cuerpo de la respuesta contendría 203 bytes.
+
+9. **Content-Type: text/html**: El tipo de medio del recurso, que en este caso es texto HTML.
+
+En resumen, esta respuesta indica que para acceder al recurso `/restringido/index.php` en `www.redes.unlp.edu.ar`, se requiere autenticación. El servidor espera que el cliente proporcione credenciales válidas mediante el método de autenticación básica. Si deseas acceder al contenido, necesitarás proporcionar un nombre de usuario y una contraseña validados por el servidor.
 
 ```bash
 curl -I www.redes.unlp.edu.ar/noexiste
 ```
 
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15276da8-afa1-4ebc-af2e-543da1a11803)
+
+1. **HTTP/1.1 404 Not Found**: Este es el código de estado HTTP devuelto por el servidor. Un código 404 indica que el servidor no pudo encontrar el recurso solicitado. Esto significa que la URL especificada no existe en el servidor, o que no hay ningún contenido asociado con ella.
+
+2. **Date: Mon, 25 Mar 2024 19:01:32 GMT**: Fecha y hora en que el servidor envió la respuesta. Indica cuándo se generó y envió la respuesta al cliente.
+
+3. **Server: Apache/2.4.56 (Unix)**: Información sobre el software del servidor. En este caso, se está utilizando Apache versión 2.4.56 en un sistema operativo tipo Unix.
+
+4. **Content-Type: text/html; charset=iso-8859-1**: Este encabezado indica el tipo de medio (MIME type) del recurso que habría sido enviado si la solicitud hubiese sido un GET en lugar de un HEAD. En este caso, indica que el contenido (que no se encuentra) se habría devuelto como HTML con el conjunto de caracteres ISO-8859-1.
+
+En resumen, esta respuesta indica que el recurso solicitado en la URL `www.redes.unlp.edu.ar/noexiste` no se pudo encontrar en el servidor (error 404). Esto podría deberse a un error tipográfico en la URL, a que el recurso haya sido movido o eliminado, o a que nunca haya existido. No se devuelve contenido HTML en la respuesta debido a que la solicitud utilizó el método HEAD, pero el servidor indica qué tipo de contenido habría devuelto si se hubiera utilizado GET.
 
 ---
 
