@@ -530,6 +530,108 @@ Tareas:
 - Documente la implementación mediante un diagrama de clases UML.
 - Programe los Test de Unidad para la implementación propuesta.
 
+### Biblioteca
+
+```java
+public class Biblioteca {
+	private List<Socio> socios;
+	private VoorheesExporter exporter;
+
+	public Biblioteca() {
+		socios = new ArrayList<>();
+		exporter= new VoorheesExporter(); 
+	}
+
+	public void agregarSocio(Socio socio) {
+		socios.add(socio);
+	}
+
+	/**
+	 * Retorna la representación JSON de la colección de socios.
+	 */
+	public String exportarSocios() {
+		return exporter.exportar(socios);
+	}
+
+	public VoorheesExporter getExporter() {
+		return exporter;
+	}
+
+	public void setExporter(VoorheesExporter exporter) {
+		this.exporter = exporter;
+	}
+}
+```
+
+### Socio
+
+```java
+public class Socio {
+	private String nombre;
+	private String legajo;
+	private String email;
+
+
+	public Socio(String nombre, String email, String legajo) {
+		this.nombre = nombre;
+		this.email = email;
+		this.legajo = legajo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getLegajo() {
+		return legajo;
+	}
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
+	}
+}
+```
+
+### VoorheesExporter
+
+```java
+public class VoorheesExporter {
+
+	private String exportar(Socio socio) {
+		String separator = System.lineSeparator();
+		return "\t{" + separator
+			+ "\t\t\"nombre\": \"" + socio.getNombre() + "\"," + separator
+			+ "\t\t\"email\": \"" + socio.getEmail() + "\"," + separator
+			+ "\t\t\"legajo\": \"" + socio.getLegajo() + "\"" + separator
+			+ "\t}";
+	}
+
+	public String exportar(List<Socio> socios) {
+		if (socios.isEmpty()) {
+			return "[]";
+		}
+		String separator = System.lineSeparator();
+		StringBuilder buffer = new StringBuilder("[" + separator);
+		socios.forEach(socio -> {
+			buffer.append(this.exportar(socio))
+				.append(",")
+				.append(separator);
+		});
+		// remueve la última coma y fin de línea
+		buffer.setLength(buffer.length() - (separator.length() + 1));
+		buffer.append(separator).append("]");
+		return buffer.toString();
+	}
+}
+```
+
 ---
 
 ## Ejercicio 3b Usando la librería JSON.simple
