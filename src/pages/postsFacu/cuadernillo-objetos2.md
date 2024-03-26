@@ -470,7 +470,6 @@ public class JugadaTest {
 
 ## Ejercicio 3 Friday the 13th en Java
 
-
 Nota: Para realizar este ejercicio utilice el recurso que se encuentra en el sitio de la cátedra. Allí encontrará un proyecto Maven que contiene el código fuente de las clases Biblioteca, Socio y VoorheesExporter.
 
 La clase Biblioteca implementa la funcionalidad de exportar el listado de sus socios en formato JSON. Para ello define el método `exportarSocios()` de la siguiente forma:
@@ -533,7 +532,7 @@ Tareas:
 
 ---
 
-## Ejercicio 3b
+## Ejercicio 3b Usando la librería JSON.simple
 
 Ejercicio 3.b - Usando la librería JSON.simple  
 Su nuevo desafío consiste en utilizar la librería JSON.simple para imprimir en formato JSON a los socios de la Biblioteca en lugar de utilizar la clase VoorheesExporter. Pero con la siguiente condición: nada de esto debe generar un cambio en el código de la clase Biblioteca.
@@ -564,11 +563,38 @@ Investigue sobre la librería Jackson, la cual también permite utilizar el form
 
 ---
 
-## Ejercicio 4
+## Ejercicio 4 Cálculo de sueldos
+
+Sea una empresa que paga sueldos a sus empleados, los cuales están organizados en tres tipos: Temporarios, Pasantes y Planta. El sueldo se compone de 3 elementos: sueldo básico, adicionales y descuentos. 
+
+|          | Temporario                                      | Pasante          | Planta                        |
+|----------|-------------------------------------------------|------------------|-------------------------------|
+| básico   | $ 20.000 + cantidad de horas que trabajo * $ 300| $20.000          | $ 50.000                      |
+| adicional| $5.000 si está casado<br>$2.000 por cada hijo  | $2.000 por examen que rindió | $5.000 si está casado<br>$2.000 por cada hijo<br>$2.000 por cada año de antigüedad |
+| descuento| 13% del sueldo básico<br>5% del sueldo adicional| 13% del sueldo básico<br>5% del sueldo adicional | 13% del sueldo básico<br>5% del sueldo adicional |
+
+
+### Tareas
+
+- Diseñe la jerarquía de Empleados de forma tal que cualquier empleado puede responder al mensaje #sueldo. 
+- Desarrolle los test cases necesarios para probar todos los casos posibles.
+- Implemente en Java.
+
 
 ---
 
-## Ejercicio 5
+## Ejercicio 5 Media Player
+
+Usted ha implementado una clase Media player, para reproducir archivos de audio y video en formatos que usted ha diseñado. Cada Media se puede reproducir con el mensaje play(). Para continuar con el desarrollo, usted desea incorporar la posibilidad de reproducir Video Stream. Para ello, dispone de la clase VideoStream que pertenece a una librería de terceros y usted no puede ni debe modificarla. El desafío que se le presenta es hacer que la clase MediaPlayer pueda interactuar con la clase VideoStream. 
+La situación se resume en el siguiente diagrama UML:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Orientacion-a-Objetos-2/assets/55964635/6400603c-4313-40fd-ac50-25eae5c79657)
+
+### Tareas:
+
+- Modifique el diagrama de clases UML para considerar los cambios necesarios. Si utiliza patrones de diseño indique los roles en las clases utilizando estereotipos.
+- Implemente en Java
+
 
 ---
 
