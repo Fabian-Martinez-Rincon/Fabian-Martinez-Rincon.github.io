@@ -864,9 +864,6 @@ curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/the-end.php
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15f018e5-8770-4b32-a731-0531421e6957)
 
-
-
-
 ---
 
 ### Ejercicio 15
@@ -875,15 +872,142 @@ Utilizando la VM, realice las siguientes pruebas:
 
 #### Parte a
 
-Ejecute el comando ’curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt’ y copie la salida completa (incluyendo los dos saltos de linea del final).
+Ejecute el comando `curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt` y copie la salida completa (incluyendo los dos saltos de linea del final).
+
+```bash
+curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c2a1a58b-00fd-4d38-9282-33dac551fae0)
 
 #### Parte b
 
 Desde la consola ejecute el comando telnet www.redes.unlp.edu.ar 80 y luego pegue el contenido que tiene almacenado en el portapapeles. ¿Qué ocurre luego de hacerlo?
 
+```
+telnet www.redes.unlp.edu.ar 80
+```
+
+```bash
+redes@debian:~$ telnet www.redes.unlp.edu.ar 80
+Trying 172.28.0.50...
+Connected to www.redes.unlp.edu.ar.
+Escape character is '^]'.
+GET /http/HTTP-1.1/ HTTP/1.0
+User-Agent: curl/7.38.0
+Host: www.redes.unlp.edu.ar
+Accept: */*
+
+
+
+HTTP/1.1 200 OK
+Date: Tue, 26 Mar 2024 01:39:42 GMT
+Server: Apache/2.4.56 (Unix)
+Last-Modified: Sun, 19 Mar 2023 19:04:46 GMT
+ETag: "760-5f7457bd64f80"
+Accept-Ranges: bytes
+Content-Length: 1888
+Connection: close
+Content-Type: text/html
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Protocolo HTTP: versiones</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../../bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="../../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="./bootstrap/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+    <div id="wrap">
+        
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="../../index.html"><i class="icon-home icon-white"></i></a>
+          <a class="brand" href="https://catedras.info.unlp.edu.ar" target="_blank">Redes y Comunicaciones</a>
+          <a class="brand" href="http://www.info.unlp.edu.ar" target="_blank">Facultad de Inform&aacute;tica</a>
+          <a class="brand" href="http://www.unlp.edu.ar" target="_blank">UNLP</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <h1>Ejemplo del protocolo HTTP 1.1</h1>
+    <p>
+        Esta p&aacute;gina se visualiza utilizando HTTP 1.1. Utilizando el capturador de paquetes analice cuantos flujos utiliza el navegador para visualizar la p&aacute;gina con sus im&aacute;genes en contraposici&oacute;n con el protocolo HTTP/1.0.
+    </p>
+    </p>
+    <h2>Imagen de ejemplo</h2>
+    <img src="13532-tuxkiller03green.png" width="800px"/>
+    </div> 
+    
+    
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Redes y Comunicaciones</p>
+      </div>
+    </div>
+  </body>
+</html>
+Connection closed by foreign host.
+```
+
+La salida del comando `telnet` que has ejecutado muestra una sesión típica de comunicación HTTP entre tu cliente (en este caso, la sesión Telnet que está simulando un navegador) y el servidor web en `www.redes.unlp.edu.ar`.
+
+Aquí te explico lo que ocurrió luego de hacerlo:
+
+1. **Establecimiento de la conexión**:
+   - `Trying 172.28.0.50...`: Intenta conectarse al servidor.
+   - `Connected to www.redes.unlp.edu.ar.`: Se estableció la conexión con éxito.
+   - `Escape character is '^]'.`: Indica que puedes presionar `Ctrl+]` para entrar en el modo de comando Telnet.
+
+2. **Envío de la solicitud HTTP**:
+   - A través de Telnet, enviaste manualmente una solicitud HTTP al servidor. La solicitud incluye:
+     - Línea de solicitud: `GET /http/HTTP-1.1/ HTTP/1.0`, que solicita el recurso `/http/HTTP-1.1/` utilizando el protocolo HTTP versión 1.0.
+     - Encabezados de solicitud: Incluyen `User-Agent`, que identifica el cliente que hace la solicitud; `Host`, que especifica el dominio al que se está haciendo la solicitud; y `Accept`, que indica los tipos de contenido que el cliente está dispuesto a recibir.
+
+3. **Respuesta del servidor**:
+   - El servidor responde con la versión del protocolo `HTTP/1.1` y el código de estado `200 OK`, indicando que la solicitud ha sido exitosa.
+   - Los encabezados de respuesta incluyen información como la fecha, el servidor, la última modificación del contenido, el rango de aceptación de bytes, la longitud del contenido y el tipo de contenido.
+   - La conexión se cierra después de enviar la respuesta, como lo indica `Connection: close`, que es el comportamiento esperado cuando un cliente HTTP/1.0 realiza una solicitud.
+
+4. **Contenido HTML**:
+   - Después de los encabezados, el servidor devuelve el cuerpo de la respuesta, que es un documento HTML. Este documento contiene la estructura de una página web típica, incluidos elementos como links a hojas de estilo CSS y scripts, así como contenido textual e imágenes.
+
+5. **Cierre de la conexión**:
+   - `Connection closed by foreign host.`: El servidor cierra la conexión después de enviar la respuesta completa. Esto es típico de las conexiones HTTP/1.0, donde cada solicitud y respuesta requieren una nueva conexión.
+
+Lo que ocurrió después de pegar el contenido en Telnet es que el servidor procesó tu solicitud HTTP y te devolvió una respuesta que incluía el contenido HTML para el recurso solicitado. La conexión se cerró después, siguiendo el modelo de "una solicitud, una respuesta" de HTTP/1.0.
+
 #### Parte c
 
 Repita el proceso anterior, pero copiando la salida del recurso /extras/prueba-http-1-1.txt. Verifique que debería poder pegar varias veces el mismo contenido sin tener que ejecutar telnet nuevamente.
+
+```bash
+curl www.redes.unlp.edu.ar/extras/prueba-http-1-1.txt
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/dc1c16aa-6e7b-49f1-8173-c0c6cf559267)
+
+Es lo mismo pero podes ingresar varios inputs
 
 ---
 
@@ -891,25 +1015,43 @@ Repita el proceso anterior, pero copiando la salida del recurso /extras/prueba-h
 
 En base a lo obtenido en el ejercicio anterior, responda:
 
-**¿Qué está haciendo al ejecutar el comando telnet?**
+`¿Qué está haciendo al ejecutar el comando telnet`
 
-**¿Qué lo diferencia con curl?**
+Estás iniciando una conexión manual a un servidor web y escribiendo directamente solicitudes HTTP en la terminal. En el contexto de HTTP/1.1, si envías varias solicitudes a través de una sesión de telnet, el servidor mantiene la conexión abierta, permitiéndote enviar varias solicitudes y recibir sus respectivas respuestas sin necesidad de reconectar cada vez.
+
+`¿Qué lo diferencia con curl?`
+
+`curl` por defecto hace una sola solicitud y cierra la conexión (a menos que se especifique lo contrario con opciones como `--keepalive`). `curl` es más automatizado y manejable para solicitudes únicas, mientras que con `telnet` estás manejando la conexión manualmente, lo que te permite ver el comportamiento de la conexión persistente en HTTP/1.1.
 
 Observe la definición de método y recurso en la RFC. Luego responda
 
-**¿Qué método HTTP utilizó?**
+`¿Qué método HTTP utilizó?`
 
-**¿Qué recurso solicitó?**
+Get
 
-**¿Qué diferencias notó entre los dos casos?**
+`¿Qué recurso solicitó?`
 
-**¿Puede explicar por qué?**
+> Preguntar
 
-**¿Cuál de los dos casos le parece más eficiente?**
+`¿Qué diferencias notó entre los dos casos?`
+
+La diferencia principal es que con HTTP/1.0, la conexión se cierra después de cada respuesta, mientras que con HTTP/1.1, la conexión se mantiene abierta para solicitudes adicionales.
+
+`¿Puede explicar por qué?`
+
+Esto se debe al diseño de los protocolos: HTTP/1.1 fue diseñado para ser más eficiente al permitir múltiples transacciones por conexión, reduciendo la sobrecarga de la conexión.
+
+`¿Cuál de los dos casos le parece más eficiente?`
+
+HTTP/1.1 es más eficiente en términos de uso de la red debido a las conexiones persistentes.
+
+---
 
 Piense en el ejercicio donde analizó la cantidad de requerimientos necesarios para obtener una página con estilos, javascripts e imágenes. 
 
-El caso elegido, ¿puede traer asociado algún problema?
+`El caso elegido, ¿puede traer asociado algún problema?`
+
+Las conexiones persistentes (HTTP/1.1) pueden aumentar el uso de recursos del servidor porque las conexiones se mantienen abiertas más tiempo. Esto podría ser un problema para servidores con alto tráfico o recursos limitados. Sin embargo, en general, los beneficios en términos de eficiencia y rendimiento suelen superar estos inconvenientes.
 
 ---
 
@@ -917,7 +1059,7 @@ El caso elegido, ¿puede traer asociado algún problema?
 
 En el siguiente ejercicio veremos la diferencia entre los métodos POST y GET. Para ello, será necesario utilizar la VM y la herramienta **Wireshark**. Antes de iniciar considere:
 
-Capture los paquetes utilizando la interfaz con IP 172.28.0.1. (Menú “**Capture->Options**”. Luego seleccione la interfaz correspondiente y presione **Start**).
+Capture los paquetes utilizando la interfaz con IP 172.28.0.1. (Menú `Capture->Options`. Luego seleccione la interfaz correspondiente y presione `Start`).
 
 Para que el analizador de red sólo nos muestre los mensajes del protocolo http introduciremos la cadena ‘http’ (sin las comillas) en la ventana de especificación de filtros de visualización (display-filter).
 
@@ -946,29 +1088,58 @@ Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en
 **¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?**
 
 
+> Voy a tener que pedir ayuda en este ejercicio
 
 ---
 
 ### Ejercicio 18
 
-HTTP es un protocolo stateless, para sortear esta carencia muchos servicios se apoyan en el uso de Cookies. ¿En qué RFC se definió dicha funcionalidad? Investigue cuál es el principal uso que se le da a Set-Cookie y Cookie en HTTP. 
+HTTP es un protocolo stateless, para sortear esta carencia muchos servicios se apoyan en el uso de Cookies. 
 
-¿Qué atributo de la RFC original fue en parte aprovechado para la implementación?
+`¿En qué RFC se definió dicha funcionalidad?`
 
+La funcionalidad de las cookies en HTTP se definió inicialmente en la **RFC 2109** y luego en la **RFC 2965**. Sin embargo, el estándar actual que se sigue es la **RFC 6265**.
+
+`Investigue cuál es el principal uso que se le da a Set-Cookie y Cookie en HTTP.`
+
+El principal uso de `Set-Cookie` (que el servidor utiliza para enviar cookies al cliente) y `Cookie` (que el cliente utiliza para enviar cookies de vuelta al servidor) en HTTP es para la gestión del estado de la sesión. Esto incluye mantener a los usuarios autenticados, rastrear preferencias del usuario, gestionar carritos de compras en sitios de comercio electrónico, y más. Las cookies permiten que la información persista entre diferentes solicitudes HTTP en un protocolo que por diseño es sin estado.
+
+`¿Qué atributo de la RFC original fue en parte aprovechado para la implementación?`
+
+El atributo de la RFC original que fue en parte aprovechado para la implementación de las cookies fue el concepto de **cabeceras de extensión HTTP**. Esto permitió a los servidores web y a los clientes HTTP (como los navegadores) comunicarse y almacenar información adicional a través de solicitudes y respuestas HTTP utilizando las cabeceras `Set-Cookie` y `Cookie`.
 
 ---
 
 ### Ejercicio 19
 
-¿Cuál es la diferencia entre un protocolo binario y uno basado en texto? 
+`¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?`
 
-¿de que tipo de protocolo se trata HTTP/1.0, HTTP/1.1 y HTTP/2?
+- **Protocolo basado en texto**: Este tipo de protocolo utiliza texto legible por humanos para la comunicación entre dispositivos o programas. Los mensajes se componen de texto claro, lo que facilita su lectura y depuración sin necesidad de herramientas adicionales. Sin embargo, este tipo de protocolos puede resultar menos eficiente en términos de tamaño del mensaje y velocidad de procesamiento. Ejemplos incluyen HTTP/1.0 y HTTP/1.1.
+
+- **Protocolo binario**: Este tipo de protocolo utiliza estructuras de datos binarias para la comunicación. Los mensajes son compactos y están diseñados para ser procesados rápidamente por la máquina, pero no son legibles directamente por los humanos. Los protocolos binarios suelen ser más eficientes en términos de rendimiento y tamaño de mensaje que los basados en texto, pero pueden ser más difíciles de depurar sin herramientas especiales. Un ejemplo común es el Protocolo de Control de Transmisión (TCP) a nivel de transporte.
+
+
+`¿de que tipo de protocolo se trata HTTP/1.0, HTTP/1.1 y HTTP/2?`
+
+- **HTTP/1.0 y HTTP/1.1**: Estas versiones de HTTP son protocolos basados en texto. Utilizan texto claro para definir las solicitudes y respuestas, incluyendo métodos, URI, cabeceras y cuerpos del mensaje. Esto los hace fáciles de leer y escribir para los humanos, pero potencialmente más grandes en tamaño y más lentos de procesar que los mensajes binarios debido a la sobrecarga del texto.
+
+- **HTTP/2**: A diferencia de sus predecesores, HTTP/2 es un protocolo principalmente binario. Aunque las solicitudes y respuestas HTTP siguen conceptualmente el mismo formato (métodos, cabeceras, cuerpos), en HTTP/2 estas son codificadas en estructuras binarias llamadas "frames". Esto permite un envío más eficiente, como la compresión de cabeceras y la multiplexación (enviar múltiples solicitudes y respuestas en paralelo a través de la misma conexión). Aunque los mensajes en HTTP/2 son binarios, las cabeceras y otros elementos todavía pueden representarse y enviarse en un formato legible por humanos cuando se visualizan a través de herramientas de depuración.
 
 ---
 
 ### Ejercicio 20
 
-Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push
+`Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push`
+
+HTTP/2 introduce mejoras significativas sobre HTTP/1.x para aumentar la eficiencia y la velocidad de las comunicaciones web:
+
+- **Stream**: Permite múltiples intercambios de datos simultáneos dentro de una sola conexión TCP, mejorando el uso del ancho de banda y reduciendo la latencia.
+
+- **Frame**: Es la unidad básica de comunicación en HTTP/2, permitiendo una transmisión de datos más eficiente y soportando funcionalidades como la priorización y el control de flujo.
+
+- **Server Push**: Permite al servidor enviar recursos al cliente antes de que sean explícitamente solicitados, acelerando la carga de la página.
+
+En conjunto, estas características hacen que HTTP/2 sea más rápido y eficiente que sus predecesores.
 
 ---
 
@@ -978,22 +1149,28 @@ Responder las siguientes preguntas
 
 #### Parte a
 
-**¿Qué función cumple la cabecera Host en HTTP 1.1?**
+`¿Qué función cumple la cabecera Host en HTTP 1.1? ¿Existía en HTTP 1.0?`
 
-**¿Existía en HTTP 1.0?**
+**Cabecera Host en HTTP 1.1**: Identifica el dominio y puerto específico al que el cliente intenta conectarse, permitiendo al servidor diferenciar entre diferentes sitios alojados en la misma dirección IP. No existía en HTTP 1.0.
 
-**¿Qué sucede en HTTP/2?**
+`¿Qué sucede en HTTP/2?`
 
 > Ayuda: https://undertow.io/blog/2015/04/27/An-in-depth-overview-of-HTTP2.html para HTTP/2
+  
+**En HTTP/2**: La funcionalidad es similar, pero debido a la naturaleza binaria y multiplexada de HTTP/2, la eficiencia y el manejo de los encabezados, incluido el Host, se mejoran considerablemente.
+
 
 #### Parte b
 
-¿Cómo quedaría en HTTP/2 el siguiente pedido realizado en HTTP/1.1 si se está usando https?
+`¿Cómo quedaría en HTTP/2 el siguiente pedido realizado en HTTP/1.1 si se está usando https?`
 
 ```bash
 GET /index.php HTTP/1.1
 Host: www.info.unlp.edu.ar
 ```
+
+En HTTP/2, el mismo pedido realizado en HTTP/1.1 se traduce a un flujo de comunicación binario, no una solicitud de texto plano. Sin embargo, conceptos como el método, la ruta y los encabezados (incluido Host) se mantienen y se utilizan en la construcción de frames HTTP/2. Por ejemplo, la solicitud anterior se representaría en un frame de encabezado en HTTP/2, conservando la semántica pero codificada de manera diferente.
+
 
 ## Practica 3 Capa de Aplicación DNS
 
