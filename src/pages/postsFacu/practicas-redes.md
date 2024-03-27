@@ -1078,17 +1078,16 @@ Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/dbe456ec-26a7-4528-a81e-b4d05a341908)
 
-**Analice el código HTML.**
+`Analice el código HTML.`
 
-**Utilizando el analizador de paquetes Wireshark capture los paquetes enviados y recibidos al presionar el botón Enviar.**
+`Utilizando el analizador de paquetes Wireshark capture los paquetes enviados y recibidos al presionar el botón Enviar.`
 
-**¿Qué diferencias detectó en los mensajes enviados por el cliente?**
+`¿Qué diferencias detectó en los mensajes enviados por el cliente?`
+
+`¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?`
 
 
-**¿Observó alguna diferencia en el browser si se utiliza un mensaje u otro?**
-
-
-> Voy a tener que pedir ayuda en este ejercicio
+> Lo pude resolver en [Blog usando Wireshark](https://rincondelfabo.vercel.app/posts/wireshark)
 
 ---
 

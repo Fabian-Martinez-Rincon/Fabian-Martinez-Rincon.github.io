@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Wireshark'
-pubDate: 2022-10-04
+pubDate: 2024-03-27
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
@@ -88,3 +88,31 @@ La captura de pantalla muestra una sesión de Wireshark, una herramienta utiliza
 - **Paquetes ARP (Address Resolution Protocol)**: Se utilizan para mapear una dirección IP a una dirección MAC en la red local.
 
 Cada fila representa un paquete diferente, y las columnas proporcionan información como el tiempo, las direcciones de origen y destino, el protocolo utilizado y una breve descripción del contenido del paquete.
+
+### Filtramos por http
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8960fa1c-bf43-46c9-8101-511e7812d75e)
+
+Podemos ver el resultado haciendo click derecho y dandole a follow `TCP stream`
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7dccc896-8d08-4121-b97c-0714641ddac6)
+
+Si uso el metodo get sobre el formulario de una pagina puedo ver la respuesta
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a8c005f2-af85-43a5-badf-3ff0fd808110)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/474bc1bc-fe61-4d80-880f-ab4ae6399af0)
+
+```bash
+curl -X POST -d "form_nombre=Fabian&form_apellido=Martinez" www.redes.unlp.edu.ar
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/894fa8dd-81c7-48ca-a357-bf7b73d984d5)
+
+Creo que la cosa esa no funciono, probamos con este
+
+```bash
+curl -X POST -d "Nombre=Juan&Apellido=Perez&Email=juan.perez@example.com&Sexo=Masculino&Contrasena=miContrasena&Recibir=on" http://www.redes.unlp.edu.ar/http/metodo-post.html
+```
+
+> Tengo que preguntar porque creo que esta mal
