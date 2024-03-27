@@ -115,4 +115,8 @@ Creo que la cosa esa no funciono, probamos con este
 curl -X POST -d "Nombre=Juan&Apellido=Perez&Email=juan.perez@example.com&Sexo=Masculino&Contrasena=miContrasena&Recibir=on" http://www.redes.unlp.edu.ar/http/metodo-post.html
 ```
 
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/eaf8519d-85de-47f9-8325-0e1b872597ce)
+
 > Tengo que preguntar porque creo que esta mal
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6428f7f8-42ac-4364-a5bf-e2fd1d945df4)

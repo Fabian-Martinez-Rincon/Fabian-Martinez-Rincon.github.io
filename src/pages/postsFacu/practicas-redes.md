@@ -12,6 +12,8 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 
 - [Practica 1 Introducción](#practica-1-introducción)
 - [Practica 2 Capa de Aplicación](#practica-2-capa-de-aplicación---http)
+- [Practica 3 Capa de Transporte](#practica-3-capa-de-aplicación-dns)
+
 
 ## Practica 1 Introducción
 
@@ -1157,7 +1159,6 @@ Responder las siguientes preguntas
 > Ayuda: https://undertow.io/blog/2015/04/27/An-in-depth-overview-of-HTTP2.html para HTTP/2
   
 **En HTTP/2**: La funcionalidad es similar, pero debido a la naturaleza binaria y multiplexada de HTTP/2, la eficiencia y el manejo de los encabezados, incluido el Host, se mejoran considerablemente.
-
 
 #### Parte b
 
