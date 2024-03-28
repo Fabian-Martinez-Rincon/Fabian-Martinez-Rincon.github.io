@@ -15,6 +15,26 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 - [Practica 3 Capa de Transporte](#practica-3-capa-de-aplicación-dns)
 
 
+---
+
+## Clases grabadas
+
+- [Presentación de la materia - 9/3](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/472904f53442431feff992fb77aa2b44dca73578-1646862489077)
+- [Conceptos introductorios y Capa de aplicación (Intro) - 16/3](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/e53200e0f691a70ceb98ef960773faa779a0f3c8-1647468073015 )
+- [Capa de aplicación - HTTP - 23/3](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/25bedccfb8dd9ab30f442c6636143000e1dae0d3-1648072284229)
+- [Capa de aplicación - HTTP (Cont) y DNS -30/3](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/7822bf5e3e634bd078e9ecafd192abfa3eb863f1-1648676357874)
+- [Capa de aplicación - DNS (cont) , FTP y Mail (Intro) - 6/4](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/109875a7e015e2e1974b60f72bd7dcee4a92d14c-1649282314287)
+- [Capa de aplic - Mail y Capa de Transporte(Intro) - 13/4](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/7fb26872c9aae8f1bebfe34017d48a8dd2bfddba-1649886587941)
+- [Capa de transporte - 20/4](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/51dddba72150c621c4517d51711c08ea8f7015c6-1650492050091)
+- [Capa de transporte (cont) - 27/4](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/15938871ab0dcda82c2e9437146a529d2140a07a-1651096552662)
+- [Capa de transporte (cont) e Intro a capa de red- 4/5](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/b6806a4a9e1b358b1a2c30a631640c626295f987-1651699822073)
+- [Capa de red - 11/5](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/6e47e71679494159e62cb18b4db65fa855f49503-1652306386693)
+- [Capa de enlace- 1/6](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/85f68a320bfb3f9801a19eb5c92d05bcaa7ec28b-1654120460566)
+- [Capa de enlace - 8/6](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/d229a2a23736ed64601f03de677f06ac557f8239-1654724694422)
+
+
+---
+
 ## Practica 1 Introducción
 
 - [Ejercicio 1) ¿Qué es una red? ¿Cuál es el principal objetivo para construir una red?](#ejercicio-1)
@@ -515,6 +535,9 @@ El comando `curl` es una herramienta de línea de comandos utilizada para transf
 
 Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes HTTP de diversas maneras para satisfacer diferentes necesidades de prueba y comunicación con servidores web y servicios en línea.
 
+<audio controls><source src="../redes/practica2/7.mp3" type="audio/mpeg"></audio>
+
+
 ---
 
 ### Ejercicio 8
@@ -592,19 +615,17 @@ curl -I -v -s www.redes.unlp.edu.ar
 
 `Observe la salida y luego repita la prueba, pero previamente inicie una nueva captura en wireshark.`
 
-
-
 `Utilice la opción Follow Stream. ¿Qué se transmitió en cada caso?`
 
 `¿A que se debió esta diferencia entre lo que se transmitió y lo que se mostró en pantalla?`
 
-> Preguntar
+> Hice un blog de wireshark entender un poco mejor este asunto
 
 ---
 
 ### Ejercicio 10
 
-Investigue cómo define las cabeceras la RFC
+`Investigue cómo define las cabeceras la RFC`
 
 Las Request for Comments (RFC) relacionadas con el Protocolo de Transferencia de Hipertexto (HTTP) definen un conjunto de cabeceras (headers) estándar que pueden ser utilizadas en las solicitudes y respuestas HTTP. Estas cabeceras están documentadas en varias RFC, siendo las más relevantes para HTTP/1.1 las RFC 7230 a la RFC 7235.
 
@@ -612,7 +633,7 @@ Las Request for Comments (RFC) relacionadas con el Protocolo de Transferencia de
 
 No, las RFCs no establecen todas las cabeceras posibles. Mientras que las RFCs definen un conjunto estándar de cabeceras conocidas y ampliamente utilizadas, también permiten el uso de cabeceras no estándar o personalizadas. Esto significa que los desarrolladores pueden definir sus propias cabeceras para casos de uso específicos que no están cubiertos por el conjunto estándar.
 
-***¿Cuántas cabeceras viajaron en el requerimiento y en la respuesta del ejercicio anterior?***
+`¿Cuántas cabeceras viajaron en el requerimiento y en la respuesta del ejercicio anterior?`
 
 - En el ejercicio anterior, en la **respuesta** se proporcionaron 7 cabeceras: `Date`, `Server`, `Last-Modified`, `ETag`, `Accept-Ranges`, `Content-Length`, y `Content-Type`.
 - En cuanto al **requerimiento** hecho por `curl`, sin parámetros adicionales, generalmente incluiría al menos las cabeceras `Host` y potencialmente `User-Agent`, entre otras que `curl` podría incluir automáticamente. El número exacto y cuáles cabeceras depende de la versión de `curl` y de la configuración específica.
@@ -1204,31 +1225,59 @@ En HTTP/2, el mismo pedido realizado en HTTP/1.1 se traduce a un flujo de comuni
 
 ### Ejercicio 1
 
-Investigue y describa cómo funciona el DNS. ¿Cuál es su objetivo?
+`Investigue y describa cómo funciona el DNS.`
+
+El Sistema de Nombres de Dominio (DNS) traduce nombres de dominio amigables para el humano (como "www.example.com") a direcciones IP numéricas (como "192.0.2.1") que las computadoras utilizan para identificar entre sí en la red. 
+
+`¿Cuál es su objetivo?`
+
+El objetivo del DNS es permitir a las personas acceder a sitios web utilizando nombres de dominio fáciles de recordar en lugar de las complicadas direcciones IP, facilitando así la navegación en internet. Funciona a través de una red distribuida de servidores que resuelven nombres de dominio a direcciones IP.
 
 ---
 
 ### Ejercicio 2
 
-¿Qué es un root server? ¿Qué es un generic top-level domain (gtld)?
+`¿Qué es un root server?`
+
+Un **servidor raíz** (root server) en el contexto del DNS es uno de los servidores DNS que contiene una lista completa de los nombres de dominio y sus direcciones IP asociadas para los dominios de nivel superior (TLDs). Es la primera parada en la resolución de nombres de dominio en Internet, dirigida a encontrar la dirección IP de un TLD específico. Los root servers son una parte crítica de la infraestructura de Internet, asegurando que la resolución de nombres funcione de manera eficiente y efectiva .
+
+`¿Qué es un generic top-level domain (gtld)?`
+
+Un **dominio de nivel superior genérico** (generic top-level domain o gTLD) es una categoría de dominios de nivel superior en el DNS que no está asociada a un país específico. Originalmente, los gTLDs incluían dominios como .com, .org, .net, entre otros, destinados a entidades comerciales, organizaciones y redes. Desde 2012, el número de gTLDs se ha expandido significativamente para incluir una amplia variedad de nombres como .academy, .bike, .beer, entre otros, permitiendo una mayor personalización y especificación para las direcciones de sitios web .
 
 ---
 
 ### Ejercicio 3
 
-¿Qué es una respuesta del tipo autoritativa?
+`¿Qué es una respuesta del tipo autoritativa?`
+
+Una **respuesta autoritativa** en DNS es aquella que proviene de un servidor de nombres que tiene la autoridad directa sobre el nombre de dominio consultado. Esto significa que el servidor de nombres puede proporcionar una respuesta definitiva a una consulta de nombre de dominio sin tener que referirse a otro servidor de nombres. Las respuestas autoritativas se utilizan para confirmar la existencia de un registro de dominio y su correspondiente información, como la dirección IP asociada. En el proceso de resolución de nombres de DNS, una respuesta autoritativa se considera la fuente definitiva y fiable para la información solicitada sobre un dominio .
 
 ---
 
 ### Ejercicio 4
 
-¿Qué diferencia una consulta DNS recursiva de una iterativa?
+`¿Qué diferencia una consulta DNS recursiva de una iterativa?`
+
+La diferencia principal entre una consulta DNS recursiva y una iterativa radica en el método de resolución y el grado de trabajo realizado por los servidores de nombres involucrados:
+
+**Consulta DNS recursiva**:
+En una consulta recursiva, el cliente (generalmente el resolver DNS del sistema operativo del usuario) solicita una resolución completa del nombre a un servidor DNS. Si este servidor no tiene la respuesta en su caché, se hace cargo de la tarea completa de resolver la dirección, realizando tantas consultas adicionales como sean necesarias a otros servidores DNS en la jerarquía para obtener la respuesta definitiva. Una vez que tiene la respuesta completa, se la devuelve al cliente original. Este método es más cómodo para el cliente, ya que solo tiene que hacer una solicitud y esperar la respuesta sin realizar más acciones.
+
+**Consulta DNS iterativa**:
+En una consulta iterativa, el cliente solicita una dirección a un servidor DNS, pero si este servidor no tiene la respuesta exacta, en lugar de resolver la consulta por completo, devuelve la mejor referencia que tiene a otro servidor DNS más cercano a la información solicitada. Luego, el cliente es responsable de consultar a este nuevo servidor DNS. Este proceso se repite iterativamente: el cliente va de servidor en servidor hasta que encuentra uno que pueda responder la pregunta directamente (con una respuesta autoritativa) o hasta que se agotan los servidores a consultar. En este caso, el trabajo de resolver el nombre se distribuye entre el cliente y varios servidores DNS.
+
+La consulta recursiva es generalmente utilizada por los clientes finales ya que simplifica el proceso de resolución, mientras que la iterativa es utilizada entre servidores DNS para distribuir la carga y controlar el flujo de información.
 
 ---
 
 ### Ejercicio 5
 
-¿Qué es el resolver?
+`¿Qué es el resolver?`
+
+Un **servidor raíz** (root server) en el sistema DNS es el servidor de más alto nivel. Es el punto de partida para la resolución de nombres en DNS, conteniendo la información completa de todos los dominios de nivel superior. Actúa como referencia final en la jerarquía de DNS para dirigir las consultas hacia los servidores de nombres específicos de los dominios de nivel superior (TLDs) .
+
+Un **dominio de nivel superior genérico (gTLD)** se refiere a los dominios de nivel superior que no están asociados con países específicos. Incluyen categorías amplias como .com, .org, .net, entre otros. Los gTLDs son parte de la estructura jerárquica del DNS y están destinados a ciertos grupos o usos comerciales generales. Desde 2012, la introducción de nuevos gTLDs ha permitido una mayor variedad y personalización de nombres de dominio .
 
 ---
 
@@ -1236,65 +1285,135 @@ Investigue y describa cómo funciona el DNS. ¿Cuál es su objetivo?
 
 Describa para qué se utilizan los siguientes tipos de registros de DNS:
 
-***A***
+`A (Address Record)`
 
+Asocia un nombre de dominio con una dirección IPv4. Este registro se utiliza para traducir nombres de dominio a sus correspondientes direcciones IP para que los navegadores puedan encontrar y acceder a los sitios web.
 
+`MX (Mail Exchange Record)`
 
-***MX***
+Indica el servidor de correo que debe ser utilizado para entregar el correo electrónico a un dominio. Este registro es esencial para la configuración del correo electrónico y dirige el correo entrante a los servidores de correo adecuados.
 
+`PTR (Pointer Record)`
 
+Realiza la función opuesta a la de los registros A y AAAA; asocia una dirección IP con un nombre de dominio canónico. Se utiliza principalmente para la resolución inversa de DNS, es decir, cuando se traduce una dirección IP en un nombre de dominio.
 
-***PTR***
+`AAAA (IPv6 Address Record)`
 
+Similar al registro A, pero se utiliza para asociar un nombre de dominio con una dirección IPv6.
 
+`SRV (Service Record)`
 
-***AAAA***
+Proporciona información sobre los servicios disponibles en un dominio. Especifica el nombre de host y el puerto para servicios específicos (como VoIP o mensajería instantánea), permitiendo a los dominios definir la localización de servidores y servicios específicos.
 
+`NS (Name Server Record)`
 
+Especifica los servidores DNS autorizados para un dominio. Estos servidores DNS son los que contienen los registros DNS de ese dominio y pueden responder consultas relativas a él.
 
-***SRV***
+`CNAME (Canonical Name Record)`
 
+Permite que un dominio se asocie con otro nombre de dominio, el "nombre canónico". Se utiliza para apuntar varios nombres de dominio a un mismo lugar, facilitando la gestión de sitios que pueden ser accedidos mediante múltiples nombres.
 
+`SOA (Start of Authority Record)`
 
-***NS***
+Contiene información esencial sobre el dominio y la zona, como el servidor DNS principal, el correo electrónico del administrador, el intervalo de actualización y la caducidad. Es el registro inicial de cualquier zona de DNS y establece la autoridad del dominio.
 
+`TXT (Text Record)`
 
-
-***CNAME***
-
-
-
-***SOA***
-
-
-
-***TXT***
-
+Permite que los administradores inserten texto arbitrario en un registro DNS. Comúnmente se utiliza para verificar la propiedad del dominio, implementar políticas de seguridad del correo electrónico como SPF (Sender Policy Framework) y DKIM (DomainKeys Identified Mail), y otras aplicaciones que requieren leer datos en forma de texto de los registros DNS.
 
 ---
 
 ### Ejercicio 7
 
-En Internet, un dominio suele tener más de un servidor DNS. ¿Por qué cree que esto es así?
+`En Internet, un dominio suele tener más de un servidor DNS.`
+
+`¿Por qué cree que esto es así?`
+
+1. **Redundancia y Alta Disponibilidad**: La presencia de múltiples servidores DNS asegura que si uno falla debido a problemas técnicos, mantenimiento o ataques de denegación de servicio (DDoS), otro puede continuar resolviendo las solicitudes de nombres de dominio, manteniendo el sitio web o servicio accesible para los usuarios.
+
+2. **Balanceo de carga**: Distribuir las solicitudes entre varios servidores DNS puede ayudar a manejar mejor el volumen de tráfico, evitando la sobrecarga en un único servidor y mejorando el tiempo de respuesta para las solicitudes de los usuarios.
+
+3. **Resiliencia ante ataques**: Tener múltiples servidores DNS, idealmente en diferentes ubicaciones geográficas, puede ofrecer una mejor protección contra ataques dirigidos. Si un servidor es atacado, los otros pueden seguir funcionando, minimizando el impacto del ataque.
+
+4. **Mejora del rendimiento y la velocidad de respuesta**: La presencia de servidores DNS en diferentes ubicaciones geográficas puede reducir la latencia al responder solicitudes de usuarios cercanos a esos servidores, mejorando así la experiencia general del usuario al acceder a un dominio.
+
+5. **Descentralización**: La distribución de los servidores DNS contribuye a la descentralización de la infraestructura de Internet, haciéndola menos vulnerable a fallos o ataques que podrían afectar a un punto centralizado.
+
+En resumen, tener múltiples servidores DNS mejora la robustez, seguridad y eficiencia del sistema de nombres de dominio en Internet, contribuyendo a una experiencia de usuario más fiable y rápida.
 
 ---
 
 ### Ejercicio 8
 
-Cuando un dominio cuenta con más de un servidor, uno de ellos es el primario (o maestro) y todos los demás son los secundarios (o esclavos). ¿Cuál es la razón de que sea así?
+`Cuando un dominio cuenta con más de un servidor, uno de ellos es el primario (o maestro) y todos los demás son los secundarios (o esclavos).`
+
+La configuración de servidores DNS primarios (maestros) y secundarios (esclavos) se utiliza para la gestión eficaz de los registros DNS y para asegurar la redundancia y consistencia de la información de dominio a través de Internet.
+
+`¿Cuál es la razón de que sea así?`
+
+1. **Sincronización y Consistencia de Datos**: El servidor DNS primario mantiene la versión autoritativa de los registros de zona del dominio. Cualquier cambio en la configuración del DNS, como añadir o modificar registros A, MX, CNAME, etc., se realiza primero en el servidor primario. Los servidores secundarios luego sincronizan estos cambios desde el primario, asegurando que todos los servidores proporcionen respuestas consistentes a las consultas DNS.
+
+2. **Redundancia y Disponibilidad**: Al tener múltiples servidores DNS secundarios, se garantiza que si el servidor primario falla o se vuelve inaccesible, los servidores secundarios pueden continuar respondiendo las consultas DNS, manteniendo la disponibilidad del servicio o sitio web asociado al dominio. Esto es crucial para la alta disponibilidad y la resistencia a fallos.
+
+3. **Distribución de Carga**: Los servidores secundarios también ayudan a distribuir la carga de las solicitudes DNS, especialmente para sitios web de alto tráfico. Al distribuir las consultas entre varios servidores, se reduce la carga en el servidor primario y se mejora el tiempo de respuesta para los usuarios finales.
+
+4. **Seguridad**: En algunos casos, mantener los servidores secundarios puede aumentar la seguridad. Por ejemplo, se puede configurar el servidor primario en una red segura, no accesible directamente desde Internet, y solo permitir que los servidores secundarios, ubicados en diferentes redes, sincronicen los datos y respondan a las solicitudes externas.
+
+5. **Eficiencia en la Actualización de Datos**: Al realizar cambios solo en el servidor primario, se simplifica la administración de los registros DNS. Los servidores secundarios automáticamente obtienen y replican estos cambios a través de un proceso llamado transferencia de zona, lo que facilita la gestión de los registros DNS para los administradores.
+
+Esta estructura de primario-secundario asegura que los cambios se propaguen de manera controlada y eficiente a través de la infraestructura de DNS, manteniendo la integridad y la disponibilidad de los datos críticos para el funcionamiento de Internet.
 
 ---
 
 ### Ejercicio 9
 
-Explique brevemente en qué consiste el mecanismo de transferencia de zona y cuál es su finalidad.
+`Explique brevemente en qué consiste el mecanismo de transferencia de zona y cuál es su finalidad.`
 
+El mecanismo de transferencia de zona en DNS es un proceso por el cual los registros DNS de una zona específica son copiados (transferidos) de un servidor DNS autoritativo (el servidor primario o maestro) a otro servidor DNS (el servidor secundario o esclavo). Este proceso se realiza para asegurar que los servidores secundarios tengan una copia exacta y actualizada de los registros DNS mantenidos por el servidor primario.
+
+La finalidad principal de la transferencia de zona es:
+
+1. **Redundancia y Disponibilidad**: Garantizar que múltiples servidores DNS puedan responder a las consultas sobre un dominio, incluso si el servidor primario está inaccesible debido a mantenimiento, fallas o ataques. Esto mejora la disponibilidad y la resiliencia del sistema DNS.
+
+2. **Consistencia de Datos**: Asegurar que todos los servidores secundarios tengan la misma información DNS que el servidor primario, manteniendo la consistencia de los datos a través de la red. Esto es crucial para evitar conflictos o respuestas incorrectas a las consultas DNS.
+
+3. **Balanceo de Carga**: Distribuir las consultas DNS entre varios servidores para manejar eficientemente el tráfico y reducir la carga en cualquier servidor individual. Esto puede mejorar el rendimiento general del sistema DNS y reducir los tiempos de respuesta para los usuarios finales.
+
+La transferencia de zona puede ocurrir de dos formas: transferencia completa de zona (AXFR), donde todos los registros de la zona son transferidos en su totalidad, o transferencia incremental de zona (IXFR), donde solo se transfieren los cambios realizados desde la última transferencia. Esto último ayuda a optimizar el ancho de banda y los recursos al minimizar la cantidad de datos transferidos entre servidores.
 
 ---
 
 ### Ejercicio 10
 
-Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar). A su vez, cada facultad de la UNLP cuenta con un administrador que gestiona su propio dominio (por ejemplo, en el caso dela Facultad de Informática se trata de info.unlp.edu.ar). Suponga que se crea una nueva facultad, Facultad de Redes, cuyo dominio será redes.unlp.edu.ar, y el administrador le indica que quiere poder manejar su propio dominio. ¿Qué debe hacer usted para que el administrador de la Facultad de Redes pueda gestionar el dominio de forma independiente? (Pista: investigue en qué consiste la delegación de dominios).
+Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar). A su vez, cada facultad de la UNLP cuenta con un administrador que gestiona su propio dominio (por ejemplo, en el caso dela Facultad de Informática se trata de info.unlp.edu.ar).
+
+Suponga que se crea una nueva facultad, Facultad de Redes, cuyo dominio será redes.unlp.edu.ar, y el administrador le indica que quiere poder manejar su propio dominio. 
+
+`¿Qué debe hacer usted para que el administrador de la Facultad de Redes pueda gestionar el dominio de forma independiente?`
+
+> (Pista: investigue en qué consiste la delegación de dominios).
+
+Para permitir que el administrador de la Facultad de Redes gestione el dominio `redes.unlp.edu.ar` de forma independiente, debería realizar una **delegación de dominio**. La delegación de dominio es un proceso en el sistema de nombres de dominio (DNS) por el cual la autoridad administrativa y de gestión de un subdominio se transfiere del administrador del dominio principal a otro servidor DNS, que generalmente es controlado por una organización o individuo diferente. En este caso, del dominio `unlp.edu.ar` al nuevo subdominio `redes.unlp.edu.ar`. Aquí están los pasos a seguir:
+
+1. **Crear registros NS en el dominio principal**: Debes agregar registros del tipo NS (Name Server) en la zona DNS de `unlp.edu.ar` para el subdominio `redes.unlp.edu.ar`. Estos registros NS indicarán los servidores DNS que tienen autoridad sobre el subdominio `redes.unlp.edu.ar`. Por ejemplo:
+
+   ```
+   redes.unlp.edu.ar. IN NS ns1.redes.unlp.edu.ar.
+   redes.unlp.edu.ar. IN NS ns2.redes.unlp.edu.ar.
+   ```
+
+2. **Especificar los servidores DNS para el subdominio**: Debes configurar o asegurarte de que los servidores DNS especificados en los registros NS (en este ejemplo, `ns1.redes.unlp.edu.ar` y `ns2.redes.unlp.edu.ar`) estén configurados correctamente para servir el subdominio `redes.unlp.edu.ar`. Esto implica configurar una nueva zona DNS en estos servidores para `redes.unlp.edu.ar`.
+
+3. **Agregar registros A para los servidores DNS del subdominio**: Si los servidores DNS del subdominio (`ns1.redes.unlp.edu.ar`, `ns2.redes.unlp.edu.ar`) no tienen aún una dirección IP asignada visible globalmente, necesitas agregar registros A en la zona DNS de `unlp.edu.ar` para resolver estas direcciones. Por ejemplo:
+
+   ```
+   ns1.redes.unlp.edu.ar. IN A 192.0.2.1
+   ns2.redes.unlp.edu.ar. IN A 192.0.2.2
+   ```
+
+4. **Configuración de la zona para el subdominio**: En los servidores DNS del subdominio, se debe configurar una zona para `redes.unlp.edu.ar`. Esta configuración incluirá todos los registros DNS necesarios para el subdominio, como registros A, MX, TXT, etc., permitiendo al administrador de la Facultad de Redes gestionar estos registros de forma independiente.
+
+Al completar estos pasos, habrás delegado con éxito la gestión del subdominio `redes.unlp.edu.ar` al administrador de la Facultad de Redes, permitiéndole controlar completamente los registros DNS dentro de su propio subdominio. Es crucial asegurarse de que todos los servidores DNS involucrados estén configurados correctamente y sincronizados para garantizar la resolución de nombres eficaz y sin interrupciones dentro del subdominio delegado.
 
 
 ---
@@ -1302,18 +1421,22 @@ Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar
 ### Ejercicio 11
 
 Responda y justifique los siguientes ejercicios.
-
+ 
 #### Parte a
 
-En la VM, utilice el comando dig para obtener la dirección IP del host www.redes.unlp.edu.ar y responda:
+`En la VM, utilice el comando dig para obtener la dirección IP del host www.redes.unlp.edu.ar y responda:`
 
 #### Parte b
 
-¿Cuáles son los servidores de DNS del dominio redes.unlp.edu.ar?
+`¿Cuáles son los servidores de DNS del dominio redes.unlp.edu.ar?`
 
 #### Parte c
 
-Repita la consulta anterior cuatro veces más. ¿Qué observa? ¿Puede explicar a qué se debe?
+`Repita la consulta anterior cuatro veces más.`
+
+`¿Qué observa?`
+
+`¿Puede explicar a qué se debe?`
 
 #### Parte d
 
