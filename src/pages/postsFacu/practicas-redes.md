@@ -5,14 +5,14 @@ author: Fabian Martinez Rincon
 description: ""
 image:
     url: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHRiaGVrbmIxZDhhYXl5M3ppNWVnbWcwNDllY2wwZnBtanIzNGM3ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnxpQ3ghPiB2Hp6/giphy.gif'
-    alt: "Orientación a OO2."
+    alt: "Redes."
 pubDate: 2024-03-12
 tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 ---
 
 - [Practica 1 Introducción](#practica-1-introducción)
-- [Practica 2 Capa de Aplicación](#practica-2-capa-de-aplicación---http)
-- [Practica 3 Capa de Transporte](#practica-3-capa-de-aplicación-dns)
+- [Practica 2 Capa de Aplicación HTTP](#practica-2-capa-de-aplicación---http)
+- [Practica 3 Capa de Aplicación DNS](#practica-3-capa-de-aplicación-dns)
 
 
 ---
