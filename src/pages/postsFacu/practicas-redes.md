@@ -537,7 +537,6 @@ Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes
 
 <audio controls><source src="../redes/practica2/7.mp3" type="audio/mpeg"></audio>
 
-
 ---
 
 ### Ejercicio 8
@@ -583,6 +582,8 @@ La página principal puede contener referencias a otros recursos como hojas de e
 `Diferencie como funcionaría un navegador respecto al comando curl ejecutado previamente`
 
 Un navegador automáticamente realiza todos estos requerimientos adicionales cuando carga una página, interpretando el HTML, descubriendo los recursos necesarios y solicitándolos al servidor. Por el contrario, el comando `curl` ejecutado anteriormente solo hace el requerimiento inicial y recupera el HTML, pero no carga ni interpreta los recursos adicionales. Por eso, si abres el HTML guardado localmente sin los recursos adicionales, la página podría no verse como se espera.
+
+<audio controls><source src="../redes/practica2/8.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -647,6 +648,8 @@ Sí, la cabecera `Date` está definida en las RFCs relacionadas con HTTP, como l
 
 Las cabeceras HTTP juegan un papel crucial en el control y la gestión de la comunicación entre clientes y servidores en la web, facilitando la transmisión de información importante que no forma parte del cuerpo de la solicitud o respuesta.
 
+<audio controls><source src="../redes/practica2/10.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 11
@@ -680,6 +683,7 @@ Apache/2.4.56 (Unix)
 - **500 Internal Server Error**: Indica que el servidor encontró una condición inesperada que le impidió cumplir con la solicitud.
 - **503 Service Unavailable**: El servidor no está listo para manejar la solicitud, generalmente debido a un mantenimiento temporal o a una sobrecarga.
 
+<audio controls><source src="../redes/practica2/11.mp3" type="audio/mpeg"></audio>
 
 `¿Cuándo fue la última vez que se modificó la página?`
 
@@ -702,6 +706,7 @@ En tu comando específico, recibiste una respuesta con el código de estado `304
 
 La cabecera `If-Modified-Since` se utiliza para hacer una solicitud condicional. Sirve para optimizar la transferencia de datos entre el cliente y el servidor. Al usar esta cabecera, le estás pidiendo al servidor que solo envíe el recurso (en este caso, la página web) si ha sido modificado después de la fecha especificada. Si el recurso no ha sido modificado desde esa fecha, el servidor responde con un código `304 Not Modified`, y no se transmite el cuerpo del recurso, lo que ahorra ancho de banda y mejora la eficiencia de la carga de páginas web, especialmente útil para la caché y la actualización de contenidos en la web.
 
+<audio controls><source src="../redes/practica2/11-2.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -724,6 +729,8 @@ En HTTP/1.1, esto se logra principalmente a través de dos mecanismos:
 2. **Transfer-Encoding chunked**: En casos donde el servidor no puede determinar el tamaño total del contenido de antemano (por ejemplo, para contenido generado dinámicamente), puede utilizar la codificación de transferencia "chunked". Esto implica enviar el cuerpo de la respuesta en una serie de segmentos (chunks), cada uno precedido por su tamaño. El final de la respuesta se indica mediante un segmento de tamaño cero, seguido por los encabezados finales (si los hay) y una línea en blanco. Esto permite al cliente saber que ha recibido todo el objeto solicitado, incluso sin una longitud de contenido predeterminada.
 
 Estos mecanismos permiten una transferencia de datos más eficiente y la reutilización de conexiones, mejorando el rendimiento general de la comunicación HTTP en la versión 1.1 respecto a la 1.0.
+
+<audio controls><source src="../redes/practica2/12.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -759,6 +766,8 @@ Sí, es muy útil que esta información esté detallada y clasificada en la RFC 
 
 En resumen, la clasificación y el detalle de los códigos de retorno en la RFC son fundamentales para la interoperabilidad de la web, permitiendo que clientes y servidores se comuniquen y entiendan entre sí de manera efectiva.
 
+<audio controls><source src="../redes/practica2/13.mp3" type="audio/mpeg"></audio>
+
 `Dentro de la VM, ejecute los siguientes comandos y evalue el estado que recibe.`
 
 ```bash
@@ -783,6 +792,8 @@ curl -I http://unlp.edu.ar
 7. **Location: https://unlp.edu.ar/**: Este es el encabezado más importante en el contexto de la redirección 301. Indica la nueva URL a la que el cliente debe dirigirse para obtener el recurso solicitado. En este caso, está redirigiendo de `http://unlp.edu.ar` a `https://unlp.edu.ar/`, esencialmente forzando una actualización a una conexión segura (HTTPS).
 
 En resumen, el estado de esta solicitud indica que la página ha sido movida permanentemente de HTTP a HTTPS, y el cliente (en este caso `curl`) debería seguir la redirección al nuevo URL para obtener el contenido solicitado. Esta es una práctica común para mejorar la seguridad al asegurar que los usuarios se conecten a través de HTTPS.
+
+<audio controls><source src="../redes/practica2/13-2.mp3" type="audio/mpeg"></audio>
 
 ```bash
 curl -I www.redes.unlp.edu.ar/restringido/index.php
@@ -810,6 +821,8 @@ curl -I www.redes.unlp.edu.ar/restringido/index.php
 
 En resumen, esta respuesta indica que para acceder al recurso `/restringido/index.php` en `www.redes.unlp.edu.ar`, se requiere autenticación. El servidor espera que el cliente proporcione credenciales válidas mediante el método de autenticación básica. Si deseas acceder al contenido, necesitarás proporcionar un nombre de usuario y una contraseña validados por el servidor.
 
+<audio controls><source src="../redes/practica2/13-3.mp3" type="audio/mpeg"></audio>
+
 ```bash
 curl -I www.redes.unlp.edu.ar/noexiste
 ```
@@ -826,11 +839,13 @@ curl -I www.redes.unlp.edu.ar/noexiste
 
 En resumen, esta respuesta indica que el recurso solicitado en la URL `www.redes.unlp.edu.ar/noexiste` no se pudo encontrar en el servidor (error 404). Esto podría deberse a un error tipográfico en la URL, a que el recurso haya sido movido o eliminado, o a que nunca haya existido. No se devuelve contenido HTML en la respuesta debido a que la solicitud utilizó el método HEAD, pero el servidor indica qué tipo de contenido habría devuelto si se hubiera utilizado GET.
 
+<audio controls><source src="../redes/practica2/13-4.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 14
 
-Utilizando curl, acceda al sitio www.redes.unlp.edu.ar/restringido/index.php y siga las instrucciones y las pistas que vaya recibiendo hasta obtener la respuesta final. Será de utilidad para resolver este ejercicio poder analizar tanto el contenido de cada página como los encabezados
+Utilizando curl, acceda al sitio `www.redes.unlp.edu.ar/restringido/index.php` y siga las instrucciones y las pistas que vaya recibiendo hasta obtener la respuesta final. Será de utilidad para resolver este ejercicio poder analizar tanto el contenido de cada página como los encabezados
 
 ```bash
 curl www.redes.unlp.edu.ar/restringido/index.php
@@ -895,7 +910,13 @@ Utilizando la VM, realice las siguientes pruebas:
 
 #### Parte a
 
-Ejecute el comando `curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt` y copie la salida completa (incluyendo los dos saltos de linea del final).
+Ejecute el comando
+
+```bash
+curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
+```
+
+Y copie la salida completa (incluyendo los dos saltos de linea del final).
 
 ```bash
 curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
@@ -905,9 +926,17 @@ curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
 
 #### Parte b
 
-Desde la consola ejecute el comando telnet www.redes.unlp.edu.ar 80 y luego pegue el contenido que tiene almacenado en el portapapeles. ¿Qué ocurre luego de hacerlo?
+Desde la consola ejecute el comando.
 
+```bash
+telnet www.redes.unlp.edu.ar 80
 ```
+
+Y luego pegue el contenido que tiene almacenado en el portapapeles. 
+
+`¿Qué ocurre luego de hacerlo?`
+
+```bash
 telnet www.redes.unlp.edu.ar 80
 ```
 
@@ -1020,6 +1049,8 @@ Aquí te explico lo que ocurrió luego de hacerlo:
 
 Lo que ocurrió después de pegar el contenido en Telnet es que el servidor procesó tu solicitud HTTP y te devolvió una respuesta que incluía el contenido HTML para el recurso solicitado. La conexión se cerró después, siguiendo el modelo de "una solicitud, una respuesta" de HTTP/1.0.
 
+<audio controls><source src="../redes/practica2/15.mp3" type="audio/mpeg"></audio>
+
 #### Parte c
 
 Repita el proceso anterior, pero copiando la salida del recurso /extras/prueba-http-1-1.txt. Verifique que debería poder pegar varias veces el mismo contenido sin tener que ejecutar telnet nuevamente.
@@ -1037,6 +1068,10 @@ Es lo mismo pero podes ingresar varios inputs
 ### Ejercicio 16
 
 En base a lo obtenido en el ejercicio anterior, responda:
+
+En HTTP/1.0, cada conexión se cierra después de que se envía una sola respuesta. Esto significa que cada vez que un cliente necesita enviar una nueva solicitud HTTP, debe establecer una nueva conexión TCP. Este es un proceso relativamente lento y ineficiente porque el establecimiento de una conexión TCP requiere varios pasos (el proceso de "handshake" o saludo).
+
+En cambio, en HTTP/1.1, se introdujo el concepto de "conexiones persistentes", que permiten que varias solicitudes y respuestas se envíen a través de la misma conexión TCP. Esto reduce la sobrecarga asociada con el establecimiento de nuevas conexiones y hace que la comunicación sea más eficiente. Por defecto, las conexiones en HTTP/1.1 son persistentes a menos que se especifique lo contrario
 
 `¿Qué está haciendo al ejecutar el comando telnet`
 
@@ -1076,6 +1111,8 @@ Piense en el ejercicio donde analizó la cantidad de requerimientos necesarios p
 
 Las conexiones persistentes (HTTP/1.1) pueden aumentar el uso de recursos del servidor porque las conexiones se mantienen abiertas más tiempo. Esto podría ser un problema para servidores con alto tráfico o recursos limitados. Sin embargo, en general, los beneficios en términos de eficiencia y rendimiento suelen superar estos inconvenientes.
 
+<audio controls><source src="../redes/practica2/16.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 17
@@ -1097,7 +1134,7 @@ En caso de querer ver de forma simplificada el contenido de una comunicación ht
 
 #### Parte a
 
-Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en la sección “Capa de Aplicación” llamado “Métodos HTTP”. En la página mostrada se visualizan dos nuevos links llamados: Método GET y Método POST. Ambos muestran un formulario como el siguiente:
+Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en la sección `Capa de Aplicación` llamado `Métodos HTTP`. En la página mostrada se visualizan dos nuevos links llamados: Método GET y Método POST. Ambos muestran un formulario como el siguiente:
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/dbe456ec-26a7-4528-a81e-b4d05a341908)
 
@@ -1130,6 +1167,8 @@ El principal uso de `Set-Cookie` (que el servidor utiliza para enviar cookies al
 
 El atributo de la RFC original que fue en parte aprovechado para la implementación de las cookies fue el concepto de **cabeceras de extensión HTTP**. Esto permitió a los servidores web y a los clientes HTTP (como los navegadores) comunicarse y almacenar información adicional a través de solicitudes y respuestas HTTP utilizando las cabeceras `Set-Cookie` y `Cookie`.
 
+<audio controls><source src="../redes/practica2/18.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 19
@@ -1147,21 +1186,28 @@ El atributo de la RFC original que fue en parte aprovechado para la implementaci
 
 - **HTTP/2**: A diferencia de sus predecesores, HTTP/2 es un protocolo principalmente binario. Aunque las solicitudes y respuestas HTTP siguen conceptualmente el mismo formato (métodos, cabeceras, cuerpos), en HTTP/2 estas son codificadas en estructuras binarias llamadas "frames". Esto permite un envío más eficiente, como la compresión de cabeceras y la multiplexación (enviar múltiples solicitudes y respuestas en paralelo a través de la misma conexión). Aunque los mensajes en HTTP/2 son binarios, las cabeceras y otros elementos todavía pueden representarse y enviarse en un formato legible por humanos cuando se visualizan a través de herramientas de depuración.
 
+<audio controls><source src="../redes/practica2/19.mp3" type="audio/mpeg"></audio>
+
 ---
 
 ### Ejercicio 20
 
 `Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push`
 
-HTTP/2 introduce mejoras significativas sobre HTTP/1.x para aumentar la eficiencia y la velocidad de las comunicaciones web:
+HTTP/2 introduce varias características nuevas diseñadas para mejorar la eficiencia, velocidad y rendimiento de las comunicaciones web. Aquí hay un resumen de las características que mencionaste:
 
-- **Stream**: Permite múltiples intercambios de datos simultáneos dentro de una sola conexión TCP, mejorando el uso del ancho de banda y reduciendo la latencia.
+**Stream**: 
+En HTTP/2, un "stream" es una secuencia independiente y bidireccional de frames intercambiados entre el cliente y el servidor dentro de una única conexión. Cada stream tiene un identificador único y puede llevar una o varias solicitudes o respuestas HTTP. Los streams permiten que múltiples solicitudes y respuestas se envíen de forma asincrónica y concurrente a través de una sola conexión TCP, lo que mejora el uso del ancho de banda y reduce la latencia.
 
-- **Frame**: Es la unidad básica de comunicación en HTTP/2, permitiendo una transmisión de datos más eficiente y soportando funcionalidades como la priorización y el control de flujo.
+**Frame**: 
+El "frame" es la unidad básica de comunicación en HTTP/2. Todos los mensajes (solicitudes y respuestas) en HTTP/2 se dividen en frames más pequeños antes de ser enviados a través de la conexión. Estos frames pueden ser de diferentes tipos, llevando diferentes tipos de datos, como cabeceras, carga útil de datos, y señales de control. El enmarcado binario de HTTP/2 reduce el overhead y permite nuevas funcionalidades como la priorización de solicitudes y el control de flujo a nivel de stream.
 
-- **Server Push**: Permite al servidor enviar recursos al cliente antes de que sean explícitamente solicitados, acelerando la carga de la página.
+**Server Push**: 
+"Server Push" es una funcionalidad de HTTP/2 que permite al servidor enviar recursos al cliente proactivamente, antes de que el cliente los haya solicitado explícitamente. Esto se puede utilizar para mejorar el tiempo de carga de la página al enviar recursos críticos como CSS, JavaScript o imágenes tan pronto como se solicita la página HTML principal, sin esperar a que el navegador analice la página y solicite estos recursos. Server Push puede reducir la cantidad de idas y vueltas entre el cliente y el servidor, acelerando la renderización de páginas web.
 
-En conjunto, estas características hacen que HTTP/2 sea más rápido y eficiente que sus predecesores.
+En resumen, HTTP/2 introduce streams para permitir múltiples intercambios de datos simultáneos dentro de la misma conexión, utiliza frames para una transmisión de datos más eficiente, y ofrece la funcionalidad de Server Push para que los servidores puedan enviar recursos anticipadamente, mejorando la velocidad de carga de las páginas web. Estas características están diseñadas para hacer que la web sea más rápida y eficiente.
+
+<audio controls><source src="../redes/practica2/20.mp3" type="audio/mpeg"></audio>
 
 ---
 
@@ -1192,6 +1238,9 @@ Host: www.info.unlp.edu.ar
 
 En HTTP/2, el mismo pedido realizado en HTTP/1.1 se traduce a un flujo de comunicación binario, no una solicitud de texto plano. Sin embargo, conceptos como el método, la ruta y los encabezados (incluido Host) se mantienen y se utilizan en la construcción de frames HTTP/2. Por ejemplo, la solicitud anterior se representaría en un frame de encabezado en HTTP/2, conservando la semántica pero codificada de manera diferente.
 
+<audio controls><source src="../redes/practica2/21.mp3" type="audio/mpeg"></audio>
+
+---
 
 ## Practica 3 Capa de Aplicación DNS
 
