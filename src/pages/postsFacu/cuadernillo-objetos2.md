@@ -14,6 +14,10 @@ tags: ["Objetos", "Uml", "Java", "Test Unit"]
 
 - [Ejercicio 1 Red Social](#ejercicio-1-red-social)
 - [Ejercicio 2 Piedra Papel o Tijera](#ejercicio-2-piedra-papel-o-tijera)
+- [](#ejercicio-3-friday-the-13th-en-java)
+- [](#ejercicio-3b-usando-la-librería-jsonsimple)
+- [](#ejercicio-4-cálculo-de-sueldos)
+- [](#ejercicio-5-media-player)
 
 ---
 
@@ -237,7 +241,7 @@ Tareas:
 
 ![Scan_20240319](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/272140cb-ada6-4b2c-a06c-11b377e61e03)
 
-### Jugada
+#### Jugada
 
 ```java
 public abstract class Jugada {
@@ -250,7 +254,7 @@ public abstract class Jugada {
 }
 ```
 
-### Lagarto
+#### Lagarto
 
 ```java
 public class Lagarto extends Jugada{
@@ -287,7 +291,7 @@ public class Lagarto extends Jugada{
 }
 ```
 
-### Papel
+#### Papel
 
 ```java
 public class Papel extends Jugada{
@@ -325,7 +329,7 @@ public class Papel extends Jugada{
 }
 ```
 
-### Piedra
+#### Piedra
 
 ```java
 public class Piedra extends Jugada{
@@ -362,7 +366,7 @@ public class Piedra extends Jugada{
 }
 ```
 
-### Spock
+#### Spock
 
 ```java
 public class Spock extends Jugada{
@@ -398,7 +402,7 @@ public class Spock extends Jugada{
 }
 ```
 
-### Tijera
+#### Tijera
 
 ```java
 public class Tijera extends Jugada{
@@ -434,7 +438,7 @@ public class Tijera extends Jugada{
 }
 ```
 
-### Test
+#### Test
 
 ```java
 public class JugadaTest {
@@ -530,7 +534,7 @@ Tareas:
 - Documente la implementación mediante un diagrama de clases UML.
 - Programe los Test de Unidad para la implementación propuesta.
 
-### Biblioteca
+#### Biblioteca
 
 ```java
 public class Biblioteca {
@@ -563,7 +567,7 @@ public class Biblioteca {
 }
 ```
 
-### Socio
+#### Socio
 
 ```java
 public class Socio {
@@ -599,7 +603,7 @@ public class Socio {
 }
 ```
 
-### VoorheesExporter
+#### VoorheesExporter
 
 ```java
 public class VoorheesExporter {
@@ -628,6 +632,35 @@ public class VoorheesExporter {
 		buffer.setLength(buffer.length() - (separator.length() + 1));
 		buffer.append(separator).append("]");
 		return buffer.toString();
+	}
+}
+```
+
+#### Test
+
+```java
+public class BibliotecaTest {
+
+	Biblioteca biblioteca;
+	Socio socio1;
+	Socio socio2;
+	
+	@BeforeEach
+	void setUp() throws Exception{
+		biblioteca = new Biblioteca();
+		socio1 = new Socio("Messi","messi@gmail.com","10");
+		socio2 = new Socio("Ronaldo","ronaldo@gmail.com","7");
+		biblioteca.agregarSocio(socio1);
+	}
+	
+	@Test
+	public void testExportar() {
+		String separator = System.lineSeparator();
+		assertEquals("[" + separator +"\t{" + separator
+				+ "\t\t\"nombre\": \"" + "Messi" + "\"," + separator
+				+ "\t\t\"email\": \"" + "messi@gmail.com" + "\"," + separator
+				+ "\t\t\"legajo\": \"" + "10" + "\"" + separator
+				+ "\t}"+ separator + "]", biblioteca.exportarSocios());	
 	}
 }
 ```
@@ -663,6 +696,86 @@ Tareas:
 
 Investigue sobre la librería Jackson, la cual también permite utilizar el formato JSON para serializar objetos Java. Extienda la implementación para soportar también esta librería.
 
+
+#### Adapter
+
+```java
+public class Adapter extends VoorheesExporter{
+	
+	@SuppressWarnings("unchecked")
+	private JSONObject exportarSocioToJson(Socio socio) {
+		JSONObject obj = new JSONObject();
+		obj.put("nombre", socio.getNombre());
+		obj.put("email", socio.getEmail());
+		obj.put("legajo", socio.getLegajo());
+		return obj;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public String exportar(List<Socio> socios) {
+		
+		JSONArray jsonArray = new JSONArray();
+		
+		for (Socio socio : socios) {
+	        jsonArray.add(exportarSocioToJson(socio));
+	    }
+	    return jsonArray.toJSONString();
+	}
+}
+```
+
+#### Test
+
+```java
+public class BibliotecaTest {
+
+	Biblioteca biblioteca;
+	Socio socio1;
+	Socio socio2;
+	Adapter adapter;
+	JSONParser parser;
+	
+	@BeforeEach
+	void setUp() throws Exception{
+		biblioteca = new Biblioteca();
+		socio1 = new Socio("Messi","messi@gmail.com","10");
+		socio2 = new Socio("Ronaldo","ronaldo@gmail.com","7");
+		adapter = new Adapter();
+		
+		biblioteca.agregarSocio(socio1);
+		parser = new JSONParser();
+	}
+	
+	@Test
+	public void testExportarJson() throws ParseException {
+		biblioteca.setExporter(adapter);
+		String separator = System.lineSeparator();
+		
+		String socio = "[" + separator +"\t{" + separator
+			+ "\t\t\"nombre\": \"" + "Messi" + "\"," + separator
+			+ "\t\t\"email\": \"" + "messi@gmail.com" + "\"," + separator
+			+ "\t\t\"legajo\": \"" + "10" + "\"" + separator
+			+ "\t}"+ separator + "]";
+		
+		assertEquals("[{\"legajo\":\"10\",\"nombre\":\"Messi\",\"email\":\"messi@gmail.com\"}]", 
+				biblioteca.exportarSocios());
+
+		assertEquals(parser.parse(socio), parser.parse(biblioteca.exportarSocios()));
+	}
+	
+	@Test
+	public void testExportar() {
+		String separator = System.lineSeparator();
+		assertEquals("[" + separator +"\t{" + separator
+				+ "\t\t\"nombre\": \"" + "Messi" + "\"," + separator
+				+ "\t\t\"email\": \"" + "messi@gmail.com" + "\"," + separator
+				+ "\t\t\"legajo\": \"" + "10" + "\"" + separator
+				+ "\t}"+ separator + "]", biblioteca.exportarSocios());	
+	}
+
+}
+```
+
 ---
 
 ## Ejercicio 4 Cálculo de sueldos
@@ -682,6 +795,189 @@ Sea una empresa que paga sueldos a sus empleados, los cuales están organizados 
 - Desarrolle los test cases necesarios para probar todos los casos posibles.
 - Implemente en Java.
 
+---
+
+#### Empleado
+
+```java
+public abstract class Empleado {
+	private String nombre;
+	protected double cantidadHijos;
+	protected Boolean estaCasado;
+	
+	public Empleado(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public double calcularSueldo() {
+		return this.getBasico() + getAdicional() - getDescuento();
+	}
+	
+	abstract double getBasico();
+	abstract double getAdicional();
+	
+	double getDescuento() {
+		return this.getBasico() * 0.13 + this.getAdicional() * 0.05;
+	}
+	
+	public void setCasado(Boolean estaCasado) {
+		this.estaCasado = estaCasado;
+	}
+	
+	public void cantidadHijos(double cantidadHijos) {
+		this.cantidadHijos = cantidadHijos;
+	}
+}
+```
+
+#### Empresa
+
+```java
+public class Empresa {
+	List<Empleado> empleados = new ArrayList<Empleado>();
+	
+	public void agregarEmpleado(Empleado e) {
+		this.empleados.add(e);
+	}
+}
+```
+
+#### Pasante
+
+```java
+public class Pasante extends Empleado{
+	private double examenesRendidos;
+	
+	public Pasante(String nombre) {
+		super(nombre);
+	}
+
+	@Override
+	double getBasico() {
+		return 20000;
+	}
+
+	@Override
+	double getAdicional() {
+		return 2000 * this.examenesRendidos;
+	}
+	
+	public void setExamenesRendidos(double cantidadExamenes) {
+		this.examenesRendidos = cantidadExamenes;
+	}
+}
+```
+
+#### Planta
+
+```java
+public class Planta extends Empleado{
+	private double antiguedad;
+	
+	public Planta(String nombre) {
+		super(nombre);
+		// TODO Auto-generated constructor stub
+	}
+
+	public void setAntiguedad(double antiguedad) {
+		this.antiguedad = antiguedad;
+	}
+	
+	@Override
+	double getBasico() {
+		return 50000;
+	}
+
+	@Override
+	double getAdicional() {
+		double total = 0;
+		if (this.estaCasado) {
+			total = total + 5000;
+		}
+		return total + (2000 * this.cantidadHijos) + (2000 * this.antiguedad);  
+		
+	}
+}
+```
+
+#### Temporal
+
+```java
+public class Temporal extends Empleado{
+	private double cantidadHoras;
+	
+	public Temporal(String nombre) {
+		super(nombre);
+	}  
+
+	public void setCantidadHoras(double horas) {
+		this.cantidadHoras = horas;
+	}
+	
+	@Override
+	double getBasico() {
+		return 20000 + (this.cantidadHoras * 300);
+	}
+
+	@Override
+	double getAdicional() {
+		if (this.estaCasado) {
+			return 5000 + (2000 * this.cantidadHijos);
+		}
+		return 2000 * this.cantidadHijos;
+		
+	}
+}
+```
+
+#### Test
+
+```java
+public class EmpleadoTest {
+	
+	Pasante pasante;
+	Planta planta;
+	Temporal temporal;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		temporal = new Temporal("Temporal");
+		pasante = new Pasante("Pasante");
+		planta = new Planta("Planta");		
+	}
+	
+    @Test
+    public void testTemporal() {
+    	temporal.setCantidadHoras(10);
+    	temporal.setCasado(true);
+    	temporal.cantidadHijos(1);
+    	
+        assertEquals(23000, temporal.getBasico());
+        assertEquals(7000, temporal.getAdicional());
+        assertEquals((23000 * 0.13) + (7000 * 0.05), temporal.getDescuento());
+    }
+    
+    @Test
+    public void testPasante() {
+    	pasante.setExamenesRendidos(10);
+    	
+        assertEquals(20000, pasante.getBasico());
+        assertEquals(20000, pasante.getAdicional());
+        assertEquals((20000 * 0.13) + (20000 * 0.05), pasante.getDescuento());
+    }
+    
+    @Test
+    public void testPlanta() {
+    	planta.setCasado(true);
+    	planta.cantidadHijos(1);
+    	planta.setAntiguedad(1);
+    	
+        assertEquals(50000, planta.getBasico());
+        assertEquals(9000, planta.getAdicional());
+        assertEquals((50000 * 0.13) + (9000 * 0.05), planta.getDescuento());
+    }
+}
+```
 
 ---
 
@@ -697,6 +993,119 @@ La situación se resume en el siguiente diagrama UML:
 - Modifique el diagrama de clases UML para considerar los cambios necesarios. Si utiliza patrones de diseño indique los roles en las clases utilizando estereotipos.
 - Implemente en Java
 
+#### adapterVideoStream
+
+```java
+public class adapterVideoStream extends VideoFile{
+	private VideoStream vs = new VideoStream();
+	
+	public String play() {
+		return vs.reproduce();
+	}
+}
+```
+
+#### Audio
+
+```java
+public class Audio extends Media{
+	
+	public String play() {
+		String nombre = "audio";
+		return nombre;
+	}
+}
+```
+
+#### Media
+
+```java
+public class Media {
+	public String play() {
+		String nombre = "media";
+		return nombre;
+	}
+}
+```
+
+#### MediaPlayer
+
+```java
+public class MediaPlayer {
+	private List<Media> media = new ArrayList<Media>(); 
+	
+	public void play() {
+		System.out.println("Play");
+	}
+	
+	public void agregarMedia(Media m) {
+		this.media.add(m);
+	}
+	
+	public String concatenarNombresMedia() {
+        String nombresConcatenados = "";
+        for (int i = 0; i < media.size(); i++) {
+            nombresConcatenados += media.get(i).play(); 
+            if (i < media.size() - 1) {
+                nombresConcatenados += ", "; 
+            }
+        }
+        return nombresConcatenados;
+    }
+}
+```
+
+#### VideoFile
+
+```java
+public class VideoFile extends Media{
+	public String play() {
+		String nombre = "video file";
+		return nombre;
+	}
+}
+```
+
+#### VideoStream
+
+```java
+public class VideoStream extends VideoFile{
+	public String reproduce() {
+		String nombre = "video stream";
+		return nombre;
+	}
+}
+```
+
+#### Test
+
+```java
+public class MediaPlayerTest {
+	
+	MediaPlayer mp;
+	Audio a;
+	VideoFile vf;
+	VideoStream vs;
+	AdapterVideoStream adapter;
+	
+	@BeforeEach
+	void setUp() throws Exception {
+		mp = new MediaPlayer();
+		a = new Audio();
+		vf = new VideoFile();
+		adapter = new AdapterVideoStream();
+		
+		mp.agregarMedia(a);
+		mp.agregarMedia(vf);
+		mp.agregarMedia(adapter);
+	}
+	
+    @Test
+    public void testNombreCompleto() {
+    	assertEquals("audio, video file, video stream", mp.concatenarNombresMedia());
+    }
+}
+```
 
 ---
 
