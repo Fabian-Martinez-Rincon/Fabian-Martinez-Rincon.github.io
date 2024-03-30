@@ -553,11 +553,38 @@ Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.un
 
 Cuando ejecutas el comando `curl` sin ningún parámetro adicional accediendo a `www.redes.unlp.edu.ar`, estás realizando un solo requerimiento HTTP GET hacia el servidor. Este requerimiento pide al servidor que devuelva el contenido completo de la página principal del sitio.
 
+Para ver todos los requerimientos que tu navegador realizaría normalmente al visitar una página web (como cargas de imágenes, CSS, JavaScript, etc.), necesitarías una herramienta que analice el contenido de la página y realice las solicitudes adicionales correspondientes. `curl` por sí solo no realiza este tipo de análisis y seguimiento de contenidos. Por defecto, `curl` solo hace una petición para el recurso específico que le indiques, generalmente el documento HTML principal.
+
+Sin embargo, puedes utilizar `curl` para descargar los recursos individuales si conoces sus URLs exactas. Para hacer un seguimiento de todas las peticiones que un navegador haría, necesitarías una herramienta más avanzada que pueda interpretar HTML y realizar las peticiones adicionales, como un navegador en modo headless o una herramienta de línea de comandos como `wget` con ciertas opciones activadas.
+
+Aquí tienes algunas maneras en las que puedes aproximarte a este proceso:
+
+**Descarga recursiva con `wget`**:
+Puedes usar `wget` para descargar recursivamente todos los recursos de una página web. Esto es más cercano a lo que hace un navegador:
+
+```bash
+wget -r -l1 -p -k -E http://www.redes.unlp.edu.ar
+```
+
+Este comando intentará descargar la página principal y todos los recursos necesarios para su visualización, como CSS, JavaScript e imágenes. Las opciones son:
+- `-r`: Recursivo.
+- `-l1`: Profundidad de nivel 1.
+- `-p`: Descarga todos los recursos necesarios para mostrar la página HTML.
+- `-k`: Convierte los enlaces para que funcionen localmente.
+- `-E`: Asegura que los archivos HTML tengan la extensión .html.
+
+
+---
+
 `Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.`
 
 ```bash
 curl www.redes.unlp.edu.ar > index.html
 ```
+
+#### Esta imagen la dejo por aca solo para no perderla
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4536cb29-b612-4d96-9a30-748774544724)
 
 #### Parte b
 
