@@ -120,15 +120,24 @@ curl -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-valores.php \
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6cf3b5eb-2cbe-4e52-8ccd-c1ae7bca44c4)
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/bd7a61f9-cf46-4b4e-bd07-68ac1761185d)
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15a4c967-beb1-4ffc-926a-3dd681e1ddc9)
 
 Una vez que lo realizamos lo podemos chequear de la siguiente forma:
 
+
 ```bash
-curl -o file2.html -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-valores.php -d "form_nombre=Juan" -d "form_apellido=Perez" -d "form_mail=juan.perez@email.com" -d "form_sexo=sexo_masc" -d "form_pass=contraseña123" -d "form_confirma_mail=on"
+curl -o file2.html -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-valores.php \
+-d "form_nombre=Juan" \
+-d "form_apellido=Perez" \
+-d "form_mail=juan.perez@email.com" \
+-d "form_sexo=sexo_masc" \
+-d "form_pass=contraseña123" \
+-d "form_confirma_mail=on"
 ```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/bd7a61f9-cf46-4b4e-bd07-68ac1761185d)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15a4c967-beb1-4ffc-926a-3dd681e1ddc9)
 
 ---
 
