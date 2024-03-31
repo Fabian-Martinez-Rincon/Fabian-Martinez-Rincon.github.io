@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Practica 1,2 y 3 ISO
+title: Sis Operativos
 author: Alumno de Astro
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
