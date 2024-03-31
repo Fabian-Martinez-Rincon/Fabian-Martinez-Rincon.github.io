@@ -130,3 +130,5 @@ Una vez que lo realizamos lo podemos chequear de la siguiente forma:
 curl -o file2.html -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-valores.php -d "form_nombre=Juan" -d "form_apellido=Perez" -d "form_mail=juan.perez@email.com" -d "form_sexo=sexo_masc" -d "form_pass=contraseña123" -d "form_confirma_mail=on"
 ```
 
+---
+
