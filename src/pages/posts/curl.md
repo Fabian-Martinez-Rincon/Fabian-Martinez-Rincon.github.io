@@ -20,7 +20,8 @@ tags: ["linux", "vim", "bash"]
 - [curl -I -L http://unlp.edu.ar](#sigue-redireccionamientos-http)
 - [curl -u redes:RYC www.redes.unlp.edu.ar/restringido/index.php](#para-autenticación-básica-http)
 - [curl -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-valores.php](#post-usando-el-curl)
-
+- [curl -v -I http://www.redes.unlp.edu.ar](#para-obtener-solo-los-encabezados-head-request-de-una-respuesta-de-manera-detallada-verbose)
+- [curl -s http://www.redes.unlp.edu.ar1](#modo-silencioso)
 
 ---
 
@@ -139,5 +140,107 @@ curl -o file2.html -X POST http://www.redes.unlp.edu.ar/http/metodos-lectura-val
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15a4c967-beb1-4ffc-926a-3dd681e1ddc9)
 
+
 ---
 
+#### Para obtener solo los encabezados (HEAD request) de una respuesta de manera detallada (verbose)
+
+```bash
+curl -v -I http://www.redes.unlp.edu.ar
+```
+Este comando es útil para inspeccionar encabezados de respuesta como `Content-Type`, `Content-Length`, Server, Last-Modified y cualquier cookie o política de seguridad aplicada.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a9d5c9ce-2736-47b7-93e5-d1256016eadc)
+
+
+El comando `curl -v -I http://www.redes.unlp.edu.ar` que ejecutaste realiza una solicitud HTTP `HEAD` a la URL especificada y muestra una salida detallada (verbose) del proceso. Aquí te explico cada parte de la salida:
+
+### Inicio de la Conexión
+
+- **`Trying 172.28.0.50:80...`**: `curl` intenta establecer una conexión TCP al servidor en la dirección IP `172.28.0.50` en el puerto `80`, que es el puerto estándar para el protocolo HTTP.
+
+- **`Connected to www.redes.unlp.edu.ar (172.28.0.50) port 80 (#0)`**: La conexión TCP ha sido establecida exitosamente al servidor en la dirección IP y puerto especificados.
+
+### Envío de la Solicitud HEAD
+
+- **`HEAD / HTTP/1.1`**: `curl` envía una solicitud `HEAD` al servidor. Una solicitud `HEAD` es similar a `GET`, pero el servidor devuelve solo los encabezados y no el cuerpo del documento. Esto es útil para obtener metadatos sin descargar todo el contenido.
+
+- **`Host: www.redes.unlp.edu.ar`**: Especifica el host al que se está haciendo la solicitud. Es necesario para servidores que alojan múltiples dominios (hosting virtual).
+
+- **`User-Agent: curl/7.74.0`**: Identifica el agente del usuario que realiza la solicitud. En este caso, es `curl` con su versión.
+
+- **`Accept: */*`**: Indica que el cliente aceptará cualquier tipo de contenido como respuesta.
+
+### Respuesta del Servidor
+
+- **`HTTP/1.1 200 OK`**: El servidor responde con un código de estado `200`, lo que indica que la solicitud ha sido procesada con éxito.
+
+- **`Date: Sun, 31 Mar 2024 17:07:45 GMT`**: La fecha y hora en que la respuesta fue enviada.
+
+- **`Server: Apache/2.4.56 (Unix)`**: Información sobre el software del servidor que está manejando la solicitud.
+
+- **`Last-Modified: Sun, 19 Mar 2023 19:04:46 GMT`**: La última vez que el recurso solicitado fue modificado.
+
+- **`ETag: "1322-5f7457bd64f80"`**: Un identificador único asignado al contenido actual del recurso, que puede ser utilizado para futuras solicitudes condicionales (cache validation).
+
+- **`Accept-Ranges: bytes`**: Indica que el servidor acepta solicitudes de rangos de bytes, lo cual es útil para reanudar descargas interrumpidas o para descargar partes de un contenido.
+
+- **`Content-Length: 4898`**: El tamaño en bytes del cuerpo del documento que habría sido enviado en una solicitud `GET`.
+
+- **`Content-Type: text/html`**: El tipo de contenido que habría sido devuelto, en este caso `text/html`.
+
+### Finalización de la Conexión
+
+- **`* Connection #0 to host www.redes.unlp.edu.ar left intact`**: Indica que la conexión con el servidor se ha dejado intacta después de la respuesta. En el caso de las solicitudes `HEAD`, como no hay cuerpo de respuesta, la conexión se puede reutilizar para futuras solicitudes.
+
+Este desglose te muestra cómo `curl` establece una conexión, envía una solicitud, recibe y muestra la respuesta del servidor, proporcionando una visión detallada del intercambio de datos entre el cliente y el servidor web.
+
+---
+
+#### Modo Silencioso
+
+```bash
+curl -s http://www.redes.unlp.edu.ar1
+```
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5a2bb50e-f029-4a22-94f1-b5302e51a04a)
+
+El parámetro `-s` en `curl` se utiliza para activar el modo "silencioso" o "silencio". Cuando se utiliza este parámetro, `curl` no muestra el indicador de progreso ni los errores que normalmente se imprimirían en la terminal durante la ejecución del comando. Esto hace que `-s` sea especialmente útil en scripts o cuando deseas capturar la salida de `curl` sin incluir información adicional que normalmente se muestra.
+
+Aquí tienes un ejemplo básico de cómo se vería un comando `curl` sin el parámetro `-s`:
+
+```bash
+curl http://www.ejemplo.com
+```
+
+Al ejecutar este comando, dependiendo de la configuración y el contexto, `curl` podría mostrar el progreso de la descarga, lo cual incluiría información sobre la cantidad de datos transferidos y la velocidad de transferencia. Si hubiera algún problema con la solicitud, como una URL no válida o problemas de conexión, `curl` también mostraría mensajes de error en la salida estándar.
+
+Ahora, veamos cómo se utilizaría el parámetro `-s`:
+
+```bash
+curl -s http://www.ejemplo.com
+```
+
+Al agregar `-s`, `curl` ejecuta la solicitud sin mostrar ningún mensaje de progreso o error. La única salida en la terminal será el contenido obtenido de `http://www.ejemplo.com`, si la solicitud fue exitosa.
+
+### Usos adicionales y combinaciones
+
+A menudo, el parámetro `-s` se combina con otros para lograr comportamientos específicos:
+
+- **-S** (`--show-error`): Muestra el mensaje de error en caso de fallo, incluso en modo silencioso. Es útil cuando quieres un entorno silencioso pero aún necesitas capturar errores.
+
+  ```bash
+  curl -s -S http://www.ejemplo.com
+  ```
+
+- **-o** (`--output`): Especifica un archivo donde guardar la salida en lugar de imprimirla en la terminal.
+
+  ```bash
+  curl -s -o ejemplo.html http://www.ejemplo.com
+  ```
+
+  Aquí, la combinación de `-s` y `-o` significa que `curl` no mostrará progreso ni errores (salvo que también uses `-S`), y guardará el contenido de la página en `ejemplo.html`.
+
+El modo silencioso es especialmente valioso en scripts donde solo te interesa el resultado de la operación `curl` y deseas evitar salidas innecesarias que podrían obstruir el flujo normal o el procesamiento de la salida. También es útil cuando se integra `curl` en aplicaciones que invocan comandos externos y donde el manejo de la salida se realiza a través de la captura y análisis de la misma por la aplicación.
+
+---
