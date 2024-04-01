@@ -194,9 +194,22 @@ Las otras dos opciones aunque se pueden aplicar, no son rentables en este caso y
 
 </details>
 
-
-
 ### Capitulo 12. `Modelado Fisico (Relacional)`
+
+<details><summary>Eliminación de identificadores externos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f5b486ac-c482-4d37-8928-ca9c070480fc)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/ddacd0b4-ebbf-4f3f-8b49-14fdf1701cae)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3ee482c9-9b62-42f8-8072-9d61088e80ae)
+</td></table>
+</details>
+
+Super Clave (No creo que lo tomen)
 
 ### Capitulo 13. `Conceptos de Normalización`
 

@@ -244,3 +244,35 @@ A menudo, el parámetro `-s` se combina con otros para lograr comportamientos es
 El modo silencioso es especialmente valioso en scripts donde solo te interesa el resultado de la operación `curl` y deseas evitar salidas innecesarias que podrían obstruir el flujo normal o el procesamiento de la salida. También es útil cuando se integra `curl` en aplicaciones que invocan comandos externos y donde el manejo de la salida se realiza a través de la captura y análisis de la misma por la aplicación.
 
 ---
+
+### Ejercicio de Parcial
+
+```bash
+curl -X ?? www.redes.unlp.edu.ar/??
+> HEAD /metodos/ HTTP/??
+> Host: www.redes.unlp.edu.ar
+> User-Agent: curl/7.54.0
+< HTTP/?? 200 OK
+< Server: nginx/1.4.6 (Ubuntu)
+< Date: Wed, 31 Jan 2018 22:22:22 GMT
+< Last-Modified: Sat, 20 Jan 2018 13:02:41 GMT
+< Content-Type: text/html; charset=UTF-8
+< Connection: close
+```
+
+### a. ¿Qué versión de HTTP podría estar utilizando el servidor?
+La versión de HTTP que el servidor está utilizando no se especifica directamente en el fragmento que proporcionaste, pero dado que la respuesta incluye un código de estado HTTP sin una versión específica en la línea de estado (`< HTTP/?? 200 OK`), podemos inferir que se omitió por simplicidad en el ejemplo. Sin embargo, podemos hacer una suposición educada de que se trata de HTTP/1.1, ya que es la versión más comúnmente utilizada que soporta encabezados como "Host" y un comportamiento de conexión como el descrito. HTTP/2 cambiaría significativamente la forma en que se formatea la respuesta (es decir, es binario), y la solicitud no parece estar utilizando la sintaxis específica de HTTP/2.
+
+### b. ¿Qué método está utilizando? Dicho método, ¿retorna el recurso completo solicitado?
+El método que se está utilizando es `HEAD`, como se indica en la primera línea de la solicitud (`HEAD /metodos/ HTTP/??`). El método `HEAD` solicita los encabezados de respuesta que se enviarían para una solicitud `GET` al mismo recurso, pero sin incluir el cuerpo del recurso en la respuesta. Por lo tanto, no, el método `HEAD` no retorna el recurso completo solicitado, solo los metadatos asociados con el recurso.
+
+### c. ¿Cuál es el recurso solicitado?
+El recurso solicitado parece ser `/metodos/`, como se indica en la línea de solicitud. Hay una pequeña confusión en la forma en que se formatea la solicitud (`/metodos/ HTTP/??`), lo cual sugiere un error tipográfico o una omisión intencional de la versión de HTTP. Normalmente, se esperaría algo como `HEAD /metodos/ HTTP/1.1`.
+
+### d. ¿El método funcionó correctamente?
+Sí, el método funcionó correctamente. La respuesta del servidor indica un código de estado `200 OK`, lo que significa que la solicitud se procesó con éxito y los metadatos del recurso están siendo devueltos en los encabezados.
+
+### e. Si la solicitud hubiera llevado un encabezado que diga: If-Modified-Since: Sat, 20 Jan 2018 13:02:41 GMT ¿Cuál habría sido la respuesta del servidor web? ¿Qué habría hecho el navegador en este caso?
+Si la solicitud incluyera el encabezado `If-Modified-Since: Sat, 20 Jan 2018 13:02:41 GMT`, y el recurso no se ha modificado desde esa fecha y hora (lo cual es cierto basado en el encabezado `Last-Modified` de la respuesta), el servidor habría respondido con un código de estado `304 Not Modified`. Esto indica al cliente que la versión del recurso que tiene en caché sigue siendo válida y puede ser reutilizada.
+
+En este caso, el navegador no descargaría el recurso nuevamente; en su lugar, utilizaría la versión que ya tiene en su caché, mejorando la eficiencia al reducir la necesidad de transferir datos innecesariamente.
