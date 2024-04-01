@@ -209,15 +209,194 @@ Las otras dos opciones aunque se pueden aplicar, no son rentables en este caso y
 </td></table>
 </details>
 
-Super Clave (No creo que lo tomen)
+<details><summary>Conversión de Entidades</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/96bcdbd2-122f-4240-8e6a-ba3accaabf5d)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/e46fb735-5e36-41a2-ab26-1f5c6b41d2eb)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f624fa1c-5f5b-4c9f-aa50-d65927167c85)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/b5095bcc-2777-475b-a8b6-b0e637966d0b)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/847f4d34-39bf-4725-af39-ce1114bc7e50)
+</details>
+
+<details><summary>Conversión de Relaciones (Cardinalidad)</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/2319e63c-0211-45f9-8407-3fb969f33392)
+</details>
+
+<details><summary>Cardinalidad Muchos a Muchos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f1237f7d-cdb2-42f2-9902-1b58d844eb2d)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4775229c-d4c1-41bf-b449-94cf22d3ec95)
+</details>
+
+<details><summary>Cardinalidad Uno a Muchos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8e04e746-fac7-4f47-90b7-437150b9bfb2)
+</details>
+
+<details><summary>Uno a Muchos con participación total</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5a0d9073-8a69-4e60-ad3f-94cbff645cf3)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9b6d6e8c-f63a-4cf8-a72c-7fef727d861e)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a9406746-8f58-44d3-ac11-2d0b7bfbded3)
+</details>
+
+<details><summary>Uno a Muchos con participación parcial del lado de muchos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5f35607f-9fbf-4c21-89a0-bc37bede0377)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5a410b48-90de-44d2-8ab1-4724472ddedf)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c40ebe41-3b33-4c43-aec7-3bb097a0bd11)
+</details>
+
+<details><summary>Uno a Muchos con participación parcial del lado de uno</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/b38d61b6-843e-4e18-a836-8acf6d0246f7)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15569a2c-9c1b-46b1-b221-59f19c29c9ac)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c3aaf951-f3ba-4298-8566-8b77ab0424e2)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/71cfb10a-32ab-4cfc-945b-92a2161b04d4)
+</details>
+
+<details><summary>Uno a Muchos con cobertura parcial de ambos lados</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/019dd03e-6dcc-487d-a3e5-ffecaf0a7ce0)
+</details>
+
+<details><summary>Cardinalidad Uno a Uno</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3caa6244-05bf-41f1-8c45-dc7ca81a8a4f)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/b7d40c38-df13-430e-9893-ab62179ba856)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/fe282b50-14da-4cea-acc9-5cdb238b007a)
+</details>
+
+No entiendo muy bien cuando hablan de un id Auto Incremental
 
 ### Capitulo 13. `Conceptos de Normalización`
 
+<details><summary>Definición</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/10312851-8abf-4ca3-a73c-4a395518219a)
+</details>
+
+<details><summary>Anomalías de Inserción</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/37192650-6f13-4903-87ab-a354f2d64ce0)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/96d234ac-158e-4f7a-b136-c00a3a8338f1)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5c4096e8-7bfb-4568-a89d-cd9a9147f723)
+</details>
+
+<details><summary>Anomalías de Borrado</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/40bb4730-2c35-4d47-9928-5c73e5d0accb)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/96d234ac-158e-4f7a-b136-c00a3a8338f1)
+</details>
+
+<details><summary>Anomalías de Modificación</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3dfc3b3e-d372-461b-8bdc-6fe7337b6b55)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/96d234ac-158e-4f7a-b136-c00a3a8338f1)
+</details>
+
+<details><summary>Dependencia Funcional (Voy a rezar para que no tomen esto)</summary>
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExajhmb2ViYTQ4MTd3Z25nYWU2Y2N2OTV2Mm1sa2E1YXZxemtqNTN4dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1yMQsiA60rrjMD3vSk/giphy.gif'>
+</details>
+
+<details><summary>Formas Normales (Definición)</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5fc57b5c-bb4f-4387-866d-930ea28c39f2)
+</details>
+
+<details><summary>Primera Forma Normal</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4805cd4d-bcb4-4ffd-8cca-3fc2d0df7b3a)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6f30c8c2-0376-49b0-a314-481a9123ce98)
+</details>
+
+<details><summary>Segunda Forma Normal</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a8d2b6b5-0c83-4acf-8f19-e3a30aa36395)
+</details>
+
+<details><summary>Tercera Forma Normal</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/ab047be1-97c9-46a7-91ef-39166a44d480)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/faf87410-e7d0-4238-9d58-8fa0856dd802)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/95ee5640-dd54-4c19-8903-6f65b683e091)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7c0da7d4-a847-4f1a-9705-3d8215a5fa04)
+</details>
+
 ---
 
-## procesamiento de Consultas
+## Procesamiento de Consultas
 
 ### Capitulo 14. `Lenguajes de Procesamientom de Datos (Algebra y Calculo)`
+
+<details><summary>Definición</summary>
+
+Los lenguajes de procesamiento de datos permiten operar con la información contenida en una BD
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/ebaabdb3-8079-41ab-89c7-e11d47d16135)
+
+</details>
+
+<details><summary>Álgebra relacional</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a0f3d6d8-3acb-443b-b559-61f2c9716f28)
+</details>
+
+<details><summary>Operadores Basicos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/55a17f2a-02ca-4284-88ee-72f7240055d5)
+
+### Selección
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/26d82211-698a-42c9-87c9-99b8a7e5e6e1)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5486427c-a274-49b6-9a71-170d8191f746)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/beaef63d-ebc0-47c4-b152-6df97222138f)
+</td></table>
+
+
+### Proyección
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/23865cd1-d1e6-4feb-b83d-1df50f984056)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f77ba88e-f755-4542-b580-16664349233e)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/bce22b96-a207-4627-a4d0-9fed0847f29a)
+</td></table>
+
+### Producto Cartesiano
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5fd9042e-733f-462d-9904-3336940dcdac)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/68f89435-fe31-4412-b399-6074df552902)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f9ea231d-6821-4060-88e3-6f2b99b025c4)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f047b7f7-1407-46d3-a25b-0ddd89ec5e21)
+</td></table>
+
+#### Resultado
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9704040f-9693-4f72-9411-e64a4f40488c)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/36a9c303-d2b4-460d-982d-a27e9a28275e)
+
+### Renombre
+
+</details>
+
+> Puedo consultar sobre el producto cartesiano que tengo algunas dudas
+
 
 ### Capitulo 15. `SQL y QBE`
 
