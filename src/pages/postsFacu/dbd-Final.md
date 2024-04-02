@@ -504,6 +504,22 @@ Seria esto sin las tablas repetidas
 
 </details>
 
+<details><summary>Actualizaciones utilizando AR (Altas, Bajas, Modificaciones)</summary>
+
+### Altas
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/30b1a46a-e535-4643-abfa-225850d1a897)
+
+### Bajas
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/dc40371e-a64d-4f07-bb72-f22213b91dcf)
+
+### Modificaciones
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/442e77f5-6684-4d87-8491-9c5a7b5740fa)
+
+</details>
+
 ### Capitulo 15. `SQL y QBE`
 
 ### Capitulo 16. `Optimización de Consultas`

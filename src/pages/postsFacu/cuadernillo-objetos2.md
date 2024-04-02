@@ -14,10 +14,10 @@ tags: ["Objetos", "Uml", "Java", "Test Unit"]
 
 - [Ejercicio 1 Red Social](#ejercicio-1-red-social)
 - [Ejercicio 2 Piedra Papel o Tijera](#ejercicio-2-piedra-papel-o-tijera)
-- [](#ejercicio-3-friday-the-13th-en-java)
-- [](#ejercicio-3b-usando-la-librería-jsonsimple)
-- [](#ejercicio-4-cálculo-de-sueldos)
-- [](#ejercicio-5-media-player)
+- [Ejercicio 3 Friday The 13th en Java](#ejercicio-3-friday-the-13th-en-java)
+- [Ejercicio 3b Usando la librería JsonSimple](#ejercicio-3b-usando-la-librería-jsonsimple)
+- [Ejercicio 4 Cálculo de sueldos](#ejercicio-4-cálculo-de-sueldos)
+- [Ejercicio 5 Media Player](#ejercicio-5-media-player)
 
 ---
 
