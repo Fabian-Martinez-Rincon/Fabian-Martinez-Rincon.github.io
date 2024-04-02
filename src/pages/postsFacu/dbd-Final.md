@@ -343,7 +343,7 @@ Los lenguajes de procesamiento de datos permiten operar con la información cont
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/a0f3d6d8-3acb-443b-b559-61f2c9716f28)
 </details>
 
-<details><summary>Operadores Basicos</summary>
+<details><summary>Operadores Basicos (Selección, Proyección, Producto Cartesiano, Renombre, Union, Diferencia)</summary>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/55a17f2a-02ca-4284-88ee-72f7240055d5)
 
@@ -393,10 +393,116 @@ Los lenguajes de procesamiento de datos permiten operar con la información cont
 
 ### Renombre
 
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/21479ea2-09cc-4b85-ad32-0a14a78b3054)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/707049bd-4a64-46ee-bfb0-5c723441cd90)
+
+#### Resultado
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/ca8ade51-3800-4504-9229-28d2bdaea84f)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/fb120440-ffa9-45af-8a53-0f70ffe7fc2a)
+</td></table>
+
+### Union
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/63cb07c0-f663-4579-bd8e-2baab048d065)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/28b69d3b-1b83-4afb-846e-509f2aa81f0c)
+
+#### Tablas
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/14562c37-bcd8-4be0-80a7-6e5684d46466)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/82673347-f1a2-46e4-93ac-4db6c219d9f8)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7a30fac2-982c-4ee8-80fa-17fe7f3e96e8)
+</td></table>
+
+#### Resultado
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/50510ba8-219f-4154-bea1-ba3cd954e4a5)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/1c059871-12fb-4aee-8177-428fb058c700)
+
+### Diferencia
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/776fdb23-47b6-4a9c-be03-8cf92dffacb0)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c36e0f93-ae5c-4035-97d3-5c8925194cc8)
+
+#### Tablas
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/14562c37-bcd8-4be0-80a7-6e5684d46466)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/82673347-f1a2-46e4-93ac-4db6c219d9f8)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7a30fac2-982c-4ee8-80fa-17fe7f3e96e8)
+</td></table>
+
+#### Resultado
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3265ba61-2467-4ca7-be08-14b503bf0f08)
+
 </details>
 
-> Puedo consultar sobre el producto cartesiano que tengo algunas dudas
+<details><summary>Operadores adicionale (Producto Natural, Intersección, Asignación, División)</summary>
 
+### Producto Natural
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6f12af31-fa5c-4ad8-9d96-2e0d52b80680)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/36f3f46e-fca5-490b-a792-2ae0f2661d22)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f9ea231d-6821-4060-88e3-6f2b99b025c4)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f047b7f7-1407-46d3-a25b-0ddd89ec5e21)
+</td></table>
+
+#### Resultado
+
+Seria esto sin las tablas repetidas
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9704040f-9693-4f72-9411-e64a4f40488c)
+
+### Intersección
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8c3df123-9993-4b80-b1ac-11924426e15a)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/89bba6b0-e8c8-4d25-907f-05ba58bb7f8b)
+
+<table><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/14562c37-bcd8-4be0-80a7-6e5684d46466)
+</td><td>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/82673347-f1a2-46e4-93ac-4db6c219d9f8)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7a30fac2-982c-4ee8-80fa-17fe7f3e96e8)
+</td></table>
+
+#### Resultado
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3d1a2f65-4617-4671-8f1b-6ffcfad9348e)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c7bfa7cd-868d-4a24-b5fb-e63ff0cb55dd)
+
+### Asignación
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/0dafdca6-6694-473b-bf4e-d197ce16242c)
+
+### División
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/dd4e0285-41ca-46ac-99f2-9288b75695d1)
+
+</details>
 
 ### Capitulo 15. `SQL y QBE`
 
