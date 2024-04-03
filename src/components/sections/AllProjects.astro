@@ -1,0 +1,186 @@
+---
+import GitHub from "../icons/IconGitHub.astro"
+//import NextJS from "../badge/BadgeNextJS.astro"
+//import Tailwind from "../badge/BadgeTailwind.astro"
+//import Python from "../badge/BadgePython.astro"
+import Link from "../icons/IconLink.astro"
+import LinkButton from "../LinkButton.astro"
+import Postfit from "../Postfit.astro"
+
+const PROJECTS = [
+  {
+    title: "Mega Conversor OC",
+    description:
+      "👾 Automatización de muchas conversiones y operaciones en la materia “Organización de computadoras”. Usando JavaScript, Html y Css",
+    link: "https://fabian-martinez-rincon.github.io/Mega-Conversor-OC/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Mega-Conversor-OC",
+    image: "/projects/conversor.webp",
+    tags: [],
+  },
+  {
+    title: "Ei-Materias",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "https://fabian-martinez-rincon.github.io/EI-Materias/",
+    github: "https://github.com/MITH-arg/EI-Materias",
+    image: "/projects/eimaterias.webp",
+    tags: [],
+  },
+  {
+    title: "Emuti | Gaming Labs Sudamerica",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    github: "https://github.com/Fabian-Martinez-Rincon/EmuTi",
+    image: "https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6467ee19-9d81-4b26-9907-72a4ad206e5d",
+    tags: [],
+  },
+  {
+    title: "Base de Datos",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    github: "https://github.com/Fabian-Martinez-Rincon/EmuTi",
+    image: "./allProjecs/base_de_datos.jpg",
+    tags: [],
+  },
+  {
+    title: "Converter OC",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Converter-OC/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Converter-OC",
+    image: "./allProjecs/converter-oc.jpg",
+    tags: [],
+  },
+  {
+    title: "Eficiencia X",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Efficiency_X/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Efficiency_X",
+    image: "./allProjecs/eficiencia_x.jpg",
+    tags: [],
+  },
+  {
+    title: "Fablog",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fablogg.vercel.app/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Fablog",
+    image: "./allProjecs/fablog.jpg",
+    tags: [],
+  },
+  {
+    title: "Gallerix",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    github: "https://github.com/Fabian-Martinez-Rincon/Galleriix-Frontend",
+    image: "./allProjecs/gallerix.jpg",
+    tags: [],
+  },
+  {
+    title: "Keypad | Aduino",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Keypad/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Keypad",
+    image: "./allProjecs/keypad.jpg",
+    tags: [],
+  },
+  {
+    title: "Linktree",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://github.com/Fabian-Martinez-Rincon/Linktree",
+    github: "https://linktree-fabian.vercel.app/",
+    image: "./allProjecs/linktree.jpg",
+    tags: [],
+  },
+  {
+    title: "Lock | Aduino",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Lock/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Lock",
+    image: "./allProjecs/lock.jpg",
+    tags: [],
+  },
+  {
+    title: "Nomadiix",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://nomadiix-website.vercel.app/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Nomadiix-Website",
+    image: "./allProjecs/nomadiix.jpg",
+    tags: [],
+  },
+  {
+    title: "Old Portfolio",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Old_Portfolio/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Old_Portfolio",
+    image: "./allProjecs/oldPortfolio.jpg",
+    tags: [],
+  },
+  {
+    title: "Space Apps 2022",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://cuestion-de-espacio.github.io/Frontend/",
+    github: "https://github.com/Cuestion-de-Espacio",
+    image: "./allProjecs/spaceApps.jpg",
+    tags: [],
+  },
+  {
+    title: "Transform Pokemon Resolution",
+    description:
+      "Procesamiento de datos en Excel para su mismo ingreso de forma automática, usando Python, junto con sus respectivas librerías. Junto con un amplio manejo de excepciones en el programa.",
+    link: "https://fabian-martinez-rincon.github.io/Transform-Pokemon-Resolution/",
+    github: "https://github.com/Fabian-Martinez-Rincon/Transform-Pokemon-Resolution",
+    image: "./allProjecs/transform-pokemon.jpg",
+    tags: [],
+  }
+]
+---
+
+<div class="flex flex-col gap-y-16 pt-10">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 rounded-xl lg:border ">
+      <img alt="" class="object-cover object-top w-full h-56  md:scale-110 border-4 border-black" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl  text-blue-400 text-center mx-auto">
+      <span>
+        {title}
+      </span>
+      
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <Postfit description={description} color=""/>
+      
+      <footer class="flex items-end justify-start center  mt-2 gap-x-4 mx-auto">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6 flex " />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-6 flex" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
