@@ -522,6 +522,40 @@ Seria esto sin las tablas repetidas
 
 ### Capitulo 15. `SQL y QBE`
 
+<details><summary>Crear o borrar una BD</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/67504e79-25c4-4237-bdfd-187b39f3a610)
+</details>
+
+<details><summary>Lenguaje de Manipulación de Datos</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/58a3d666-e379-43e2-bb7a-af25749aaa22)
+</details>
+
+<details><summary>Estructura Basica</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/22fd98d6-4ce1-4d77-bba3-5364182db56e)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/d869ba0c-8c47-4b3a-8288-6888be4ad3e1)
+</details>
+
+<details><summary>Operaciones de Consulta</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/1dcc3ea3-0fe8-4666-b3ab-937b54464163)
+</details>
+
+<details><summary>Consultas de funciones de agregación</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/cc3ae613-a1d4-451e-b653-3a3b703b388e)
+</details>
+
+<details><summary>Funciones de Agrupación</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/118a9c8a-4d57-4bf6-bf7a-a404207ff632)
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c28ee4bb-3736-4258-b9b3-317e76b2807f)
+</details>
+
+> Me tengo que hacer algun apunte sobre todo SQL no porque sea mucho que lo es, sino que es mucho de forma muy distina, muchas operaciones.
+
 ### Capitulo 16. `Optimización de Consultas`
 
 ---
