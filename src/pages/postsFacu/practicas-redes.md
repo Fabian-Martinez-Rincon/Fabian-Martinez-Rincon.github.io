@@ -14,9 +14,7 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 - [Practica 2 Capa de Aplicación HTTP](#practica-2-capa-de-aplicación---http)
 - [Practica 3 Capa de Aplicación DNS](#practica-3-capa-de-aplicación-dns)
 
-
 ---
-
 
 ## Clases grabadas
 
@@ -33,29 +31,28 @@ tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
 - [Capa de enlace- 1/6](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/85f68a320bfb3f9801a19eb5c92d05bcaa7ec28b-1654120460566)
 - [Capa de enlace - 8/6](https://bigbluebutton.linti.unlp.edu.ar/playback/presentation/2.3/d229a2a23736ed64601f03de677f06ac557f8239-1654724694422)
 
-
 ---
 
 ## Practica 1 Introducción
 
-- [Ejercicio 1) ¿Qué es una red? ¿Cuál es el principal objetivo para construir una red?](#ejercicio-1)
-- [Ejercicio 2) ¿Qué es Internet? Describa los principales componentes que permiten su funcionamiento.](#ejercicio-2)
-- [Ejercicio 3) ¿Qué son las RFCs?](#ejercicio-3)
-- [Ejercicio 4) ¿Qué es un protocolo?](#ejercicio-4)
-- [Ejercicio 5) ¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte de una misma red?](#ejercicio-5)
-- [Ejercicio 6) ¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas finales o End Systems? Dé unejemplo del rol de cada uno en alguna aplicación distribuida que corra sobre Internet.](#ejercicio-6)
-- [Ejercicio 7) ¿Cuál es la diferencia entre una red conmutada de paquetes de una red conmutada de circuitos?](#ejercicio-7)
-- [Ejercicio 8) Analice qué tipo de red es una red de telefonía y qué tipo de red es Internet.](#ejercicio-8)
-- [Ejercicio 9) Describa brevemente las distintas alternativas que conoce para acceder a Internet en su hogar.](#ejercicio-9)
-- [Ejercicio 10) ¿Qué ventajas tiene una implementación basada en capas o niveles?](#ejercicio-10)
-- [Ejercicio 11) ¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?](#ejercicio-11)
-- [Ejercicio 12) ¿Qué es la encapsulación? Si una capa realiza la encapsulación de datos, ¿qué capa del nodo receptorrealizará el proceso inverso?](#ejercicio-12)
-- [Ejercicio 13) Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.](#ejercicio-13)
-- [Ejercicio 14). Compare el modelo OSI con la implementación TCP/IP](#ejercicio-14)
+- [Ejercicio 1) ¿Qué es una red? ¿Cuál es el principal objetivo para construir una red?](#practica-1-ejercicio-1)
+- [Ejercicio 2) ¿Qué es Internet? Describa los principales componentes que permiten su funcionamiento.](#practica-1-ejercicio-2)
+- [Ejercicio 3) ¿Qué son las RFCs?](#practica-1-ejercicio-3)
+- [Ejercicio 4) ¿Qué es un protocolo?](#practica-1-ejercicio-4)
+- [Ejercicio 5) ¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte de una misma red?](#practica-1-ejercicio-5)
+- [Ejercicio 6) ¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas finales o End Systems? Dé unejemplo del rol de cada uno en alguna aplicación distribuida que corra sobre Internet.](#practica-1-ejercicio-6)
+- [Ejercicio 7) ¿Cuál es la diferencia entre una red conmutada de paquetes de una red conmutada de circuitos?](#practica-1-ejercicio-7)
+- [Ejercicio 8) Analice qué tipo de red es una red de telefonía y qué tipo de red es Internet.](#practica-1-ejercicio-8)
+- [Ejercicio 9) Describa brevemente las distintas alternativas que conoce para acceder a Internet en su hogar.](#practica-1-ejercicio-9)
+- [Ejercicio 10) ¿Qué ventajas tiene una implementación basada en capas o niveles?](#practica-1-ejercicio-10)
+- [Ejercicio 11) ¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?](#practica-1-ejercicio-11)
+- [Ejercicio 12) ¿Qué es la encapsulación? Si una capa realiza la encapsulación de datos, ¿qué capa del nodo receptorrealizará el proceso inverso?](#practica-1-ejercicio-12)
+- [Ejercicio 13) Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.](#practica-1-ejercicio-13)
+- [Ejercicio 14). Compare el modelo OSI con la implementación TCP/IP](#practica-1-ejercicio-14)
 
 ---
 
-### Ejercicio 1
+### Practica 1 Ejercicio 1
 
 `¿Qué es una red?`
 
@@ -69,7 +66,7 @@ El principal objetivo de construir una red es compartir recursos, como dispositi
 
 ---
 
-### Ejercicio 2
+### Practica 1 Ejercicio 2
 
 `¿Qué es Internet?`
 
@@ -101,7 +98,7 @@ Estos componentes trabajan en conjunto para permitir la comunicación y transfer
 
 ---
 
-### Ejercicio 3
+### Practica 1 Ejercicio 3
 
 `¿Qué son las RFCs?`
 
@@ -125,7 +122,7 @@ Las RFCs son fundamentales para el desarrollo y funcionamiento de Internet, prop
 
 ---
 
-### Ejercicio 4
+### Practica 1 Ejercicio 4
 
 `¿Qué es un protocolo?`
 
@@ -141,7 +138,7 @@ Los protocolos son fundamentales para el funcionamiento de las redes de computad
 
 ---
 
-### Ejercicio 5
+### Practica 1 Ejercicio 5
 
 `¿Por qué dos máquinas con distintos sistemas operativos pueden formar parte de una misma red?`
 
@@ -155,7 +152,7 @@ Los sistemas operativos están diseñados para implementar estos protocolos de r
 
 ---
 
-### Ejercicio 6
+### Practica 1 Ejercicio 6
 
 
 - `¿Cuáles son las 2 categorías en las que pueden clasificarse a los sistemas finales o End Systems? `
@@ -173,7 +170,7 @@ Esta clasificación en clientes y servidores facilita el diseño, la implementac
 
 ---
 
-### Ejercicio 7
+### Practica 1 Ejercicio 7
 
 `¿Cuál es la diferencia entre una red conmutada de paquetes de una red conmutada de circuitos?`
 
@@ -195,7 +192,7 @@ La elección entre una red conmutada de paquetes y una red conmutada de circuito
 
 ---
 
-### Ejercicio 8
+### Practica 1 Ejercicio 8
 
 `Analice qué tipo de red es una red de telefonía y qué tipo de red es Internet.`
 
@@ -213,7 +210,7 @@ En resumen:
 
 ---
 
-### Ejercicio 9
+### Practica 1 Ejercicio 9
 
 `Describa brevemente las distintas alternativas que conoce para acceder a Internet en su hogar.`
 
@@ -239,7 +236,7 @@ Al elegir el tipo de conexión, considera factores como la velocidad de conexió
 
 ---
 
-### Ejercicio 10
+### Practica 1 Ejercicio 10
 
 `¿Qué ventajas tiene una implementación basada en capas o niveles?`
 
@@ -267,7 +264,7 @@ En resumen, la implementación basada en capas ofrece una estructura organizada 
 
 ---
 
-### Ejercicio 11
+### Practica 1 Ejercicio 11
 
 `¿Cómo se llama la PDU de cada una de las siguientes capas: Aplicación, Transporte, Red y Enlace?`
 
@@ -287,7 +284,7 @@ Cada una de estas PDUs contiene información específica necesaria para la funci
 
 ---
 
-### Ejercicio 12
+### Practica 1 Ejercicio 12
 
 `¿Qué es la encapsulación?` 
 
@@ -310,7 +307,7 @@ El proceso de desencapsulación implica quitar las cabeceras (y colas si las hay
 
 ---
 
-### Ejercicio 13
+### Practica 1 Ejercicio 13
 
 `Describa cuáles son las funciones de cada una de las capas del stack TCP/IP o protocolo de Internet.`
 
@@ -342,7 +339,7 @@ Cada capa del modelo TCP/IP proporciona un conjunto de funciones específicas qu
 
 ---
 
-### Ejercicio 14
+### Practica 1 Ejercicio 14
 
 `Compare el modelo OSI con la implementación TCP/IP`
 
@@ -384,35 +381,35 @@ En resumen, mientras que el modelo OSI proporciona una estructura teórica detal
 
 ### Introducción
 
-- [Ejercicio 2 ¿Cuál es la función de la capa de aplicación?](#ejercicio-2)
-- [Ejercicio 3 Si dos procesos deben comunicarse](#ejercicio-3)
-- [Ejercicio 4 Explique brevemente el cómo es el modelo Cliente/Servidor](#ejercicio-4)
-- [Ejercicio 5 Describa la funcionalidad de la entidad genérica "Agente de usuario" o "User Agent"](#ejercicio-5)
+- [Ejercicio 2 ¿Cuál es la función de la capa de aplicación?](#practica-2-ejercicio-2)
+- [Ejercicio 3 Si dos procesos deben comunicarse](#practica-2-ejercicio-3)
+- [Ejercicio 4 Explique brevemente el cómo es el modelo Cliente/Servidor](#practica-2-ejercicio-4)
+- [Ejercicio 5 Describa la funcionalidad de la entidad genérica "Agente de usuario" o "User Agent"](#practica-2-ejercicio-5)
 
 ---
 
 ### HTTP
 
-- [Ejerccio 6. Observe el indice de la RFC2616](#ejercicio-6)
-- [Ejerccio 7. Utilizando la VM, abra una terminal e investigue sobre el comando curl](#ejercicio-7)
-- [Ejerccio 8. Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.unlp.edu.ar.](#ejercicio-8)
-- [Ejerccio 9. Ejecute a continuación los siguientes comandos](#ejercicio-9)
-- [Ejerccio 10. Investigue cómo define las cabeceras la RFC](#ejercicio-10)
-- [Ejerccio 11. Utilizando curl, realice un requerimiento con el método HEAD al sitio www.redes.unlp.edu.ar e indique](#ejercicio-11)
-- [Ejerccio 12. En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?](#ejercicio-12)
-- [Ejerccio 13. Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.](#ejercicio-13)
-- [Ejerccio 14. Utilizando curl, acceda al sitio www.redes.unlp.edu.ar/restringido/index.php y siga las instrucciones](#ejercicio-14)
-- [Ejerccio 15. Utilizando la VM, realice las siguientes pruebas](#ejercicio-15)
-- [Ejerccio 16. En base a lo obtenido en el ejercicio anterior, responda.](#ejercicio-16)
-- [Ejerccio 17. En el siguiente ejercicio veremos la diferencia entre los métodos POST y GET](#ejercicio-17)
-- [Ejerccio 18. HTTP es un protocolo stateless, para sortear esta carencia muchos servicios se apoyan en el uso deCookies.](#ejercicio-18)
-- [Ejerccio 19. ¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?](#ejercicio-19)
-- [Ejerccio 20. Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push](#ejercicio-20)
-- [Ejerccio 21. Responder las siguientes preguntas](#ejercicio-21)
+- [Ejerccio 6. Observe el indice de la RFC2616](#practica-2-ejercicio-6)
+- [Ejerccio 7. Utilizando la VM, abra una terminal e investigue sobre el comando curl](#practica-2-ejercicio-7)
+- [Ejerccio 8. Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.unlp.edu.ar.](#practica-2-ejercicio-8)
+- [Ejerccio 9. Ejecute a continuación los siguientes comandos](#practica-2-ejercicio-9)
+- [Ejerccio 10. Investigue cómo define las cabeceras la RFC](#practica-2-ejercicio-10)
+- [Ejerccio 11. Utilizando curl, realice un requerimiento con el método HEAD al sitio www.redes.unlp.edu.ar e indique](#practica-2-ejercicio-11)
+- [Ejerccio 12. En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?](#practica-2-ejercicio-12)
+- [Ejerccio 13. Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.](#practica-2-ejercicio-13)
+- [Ejerccio 14. Utilizando curl, acceda al sitio www.redes.unlp.edu.ar/restringido/index.php y siga las instrucciones](#practica-2-ejercicio-14)
+- [Ejerccio 15. Utilizando la VM, realice las siguientes pruebas](#practica-2-ejercicio-15)
+- [Ejerccio 16. En base a lo obtenido en el ejercicio anterior, responda.](#practica-2-ejercicio-16)
+- [Ejerccio 17. En el siguiente ejercicio veremos la diferencia entre los métodos POST y GET](#practica-2-ejercicio-17)
+- [Ejerccio 18. HTTP es un protocolo stateless, para sortear esta carencia muchos servicios se apoyan en el uso deCookies.](#practica-2-ejercicio-18)
+- [Ejerccio 19. ¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?](#practica-2-ejercicio-19)
+- [Ejerccio 20. Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push](#practica-2-ejercicio-20)
+- [Ejerccio 21. Responder las siguientes preguntas](#practica-2-ejercicio-21)
 
 ---
 
-### Ejercicio 2
+### Practica 2 Ejercicio 2
 
 `¿Cuál es la función de la capa de aplicación?`
 
@@ -424,7 +421,7 @@ Además, la capa de aplicación actúa como una interfaz entre el usuario o las 
 
 ---
 
-### Ejercicio 3
+### Practica 2 Ejercicio 3
 
 Si dos procesos deben comunicarse:
 
@@ -447,7 +444,7 @@ Si dos procesos deben comunicarse:
 
 ---
 
-### Ejercicio 4
+### Practica 2 Ejercicio 4
 
 `Explique brevemente cómo es el modelo Cliente/Servidor.`
 
@@ -473,7 +470,7 @@ El modelo Cliente/Servidor es una arquitectura de red donde el servidor es una m
 
 ---
 
-### Ejercicio 5
+### Practica 2 Ejercicio 5
 
 `Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”`
 
@@ -499,7 +496,7 @@ Ejemplos de agentes de usuario incluyen navegadores web, clientes de correo elec
 
 ---
 
-### Ejercicio 6
+### Practica 2 Ejercicio 6
 
 Observe el indice de la RFC2616, busque el apartado donde se describe el requerimiento y la respuesta.
 
@@ -517,7 +514,7 @@ En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de apl
 
 ---
 
-### Ejercicio 7
+### Practica 2 Ejercicio 7
 
 `Utilizando la VM, abra una terminal e investigue sobre el comando curl.`
 
@@ -540,7 +537,7 @@ Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes
 
 ---
 
-### Ejercicio 8
+### Practica 2 Ejercicio 8
 
 Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.unlp.edu.ar. Luego responda:
 
@@ -615,7 +612,7 @@ Un navegador automáticamente realiza todos estos requerimientos adicionales cua
 
 ---
 
-### Ejercicio 9
+### Practica 2 Ejercicio 9
 
 Ejecute a continuación los siguientes comandos:
 
@@ -652,7 +649,7 @@ curl -I -v -s www.redes.unlp.edu.ar
 
 ---
 
-### Ejercicio 10
+### Practica 2 Ejercicio 10
 
 `Investigue cómo define las cabeceras la RFC`
 
@@ -680,7 +677,7 @@ Las cabeceras HTTP juegan un papel crucial en el control y la gestión de la com
 
 ---
 
-### Ejercicio 11
+### Practica 2 Ejercicio 11
 
 Utilizando curl, realice un requerimiento con el método HEAD al sitio www.redes.unlp.edu.ar e indique:
 
@@ -738,7 +735,7 @@ La cabecera `If-Modified-Since` se utiliza para hacer una solicitud condicional.
 
 ---
 
-### Ejercicio 12
+### Practica 2 Ejercicio 12
 
 `En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?`
 
@@ -762,7 +759,7 @@ Estos mecanismos permiten una transferencia de datos más eficiente y la reutili
 
 ---
 
-### Ejercicio 13
+### Practica 2 Ejercicio 13
 
 `Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.`
 
@@ -871,7 +868,7 @@ En resumen, esta respuesta indica que el recurso solicitado en la URL `www.redes
 
 ---
 
-### Ejercicio 14
+### Practica 2 Ejercicio 14
 
 Utilizando curl, acceda al sitio `www.redes.unlp.edu.ar/restringido/index.php` y siga las instrucciones y las pistas que vaya recibiendo hasta obtener la respuesta final. Será de utilidad para resolver este ejercicio poder analizar tanto el contenido de cada página como los encabezados
 
@@ -932,7 +929,7 @@ curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/the-end.php
 
 ---
 
-### Ejercicio 15
+### Practica 2 Ejercicio 15
 
 Utilizando la VM, realice las siguientes pruebas:
 
@@ -1093,7 +1090,7 @@ Es lo mismo pero podes ingresar varios inputs
 
 ---
 
-### Ejercicio 16
+### Practica 2 Ejercicio 16
 
 En base a lo obtenido en el ejercicio anterior, responda:
 
@@ -1143,7 +1140,7 @@ Las conexiones persistentes (HTTP/1.1) pueden aumentar el uso de recursos del se
 
 ---
 
-### Ejercicio 17
+### Practica 2 Ejercicio 17
 
 En el siguiente ejercicio veremos la diferencia entre los métodos POST y GET. Para ello, será necesario utilizar la VM y la herramienta **Wireshark**. Antes de iniciar considere:
 
@@ -1179,7 +1176,7 @@ Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en
 
 ---
 
-### Ejercicio 18
+### Practica 2 Ejercicio 18
 
 HTTP es un protocolo stateless, para sortear esta carencia muchos servicios se apoyan en el uso de Cookies. 
 
@@ -1199,7 +1196,7 @@ El atributo de la RFC original que fue en parte aprovechado para la implementaci
 
 ---
 
-### Ejercicio 19
+### Practica 2 Ejercicio 19
 
 `¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?`
 
@@ -1218,7 +1215,7 @@ El atributo de la RFC original que fue en parte aprovechado para la implementaci
 
 ---
 
-### Ejercicio 20
+### Practica 2 Ejercicio 20
 
 `Analice de que se tratan las siguientes características de HTTP/2: stream, frame, server-push`
 
@@ -1239,7 +1236,7 @@ En resumen, HTTP/2 introduce streams para permitir múltiples intercambios de da
 
 ---
 
-### Ejercicio 21
+### Practica 2 Ejercicio 21
 
 Responder las siguientes preguntas
 
@@ -1274,25 +1271,25 @@ En HTTP/2, el mismo pedido realizado en HTTP/1.1 se traduce a un flujo de comuni
 
 ### DNS
 
-- [Ejercicio 1 Investigue y describa cómo funciona el DNS. ¿Cuál es su objetivo?](#ejercicio-1)
-- [Ejercicio 2 ¿Qué es un root server? ¿Qué es un generic top-level domain (gtld)?](#ejercicio-2)
-- [Ejercicio 3 ¿Qué es una respuesta del tipo autoritativa?](#ejercicio-3)
-- [Ejercicio 4 ¿Qué diferencia una consulta DNS recursiva de una iterativa?](#ejercicio-4)
-- [Ejercicio 5 ¿Qué es el resolver?](#ejercicio-5)
-- [Ejercicio 6 Describa para qué se utilizan los siguientes tipos de registros de DNS](#ejercicio-6)
-- [Ejercicio 7 En Internet, un dominio suele tener más de un servidor DNS](#ejercicio-7)
-- [Ejercicio 8 Cuando un dominio cuenta con más de un servidor](#ejercicio-8)
-- [Ejercicio 9 Explique brevemente en qué consiste el mecanismo de transferencia de zona](#ejercicio-9)
-- [Ejercicio 10  Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar)](#ejercicio-10)
-- [Ejercicio 11 Responda y justifique los siguientes ejercicios.](#ejercicio-11)
-- [Ejercicio 12 Investigue los comando nslookup y host.](#ejercicio-12)
-- [Ejercicio 13 ¿Qué función cumple en Linux/Unix.](#ejercicio-13)
-- [Ejercicio 14 Abra el programa Wireshark para comenzar a capturar el tráfico](#ejercicio-14)
-- [Ejercicio 15 Dada la siguiente situación](#ejercicio-15)
-- [Ejercicio 16  Relacione DNS con HTTP.](#ejercicio-16)
-- [Ejercicio 17  Observar el siguiente gráfico y contestar](#ejercicio-17)
-- [Ejercicio 18  ¿A quién debería consultar para que la respuesta sobre www.google.com sea autoritativa?](#ejercicio-18)
-- [Ejercicio 19 ¿Qué sucede si al servidor elegido en el paso anterior se lo consulta por www.info.unlp.edu.ar?](#ejercicio-19)
+- [Ejercicio 1 Investigue y describa cómo funciona el DNS. ¿Cuál es su objetivo?](#practica-3-ejercicio-1)
+- [Ejercicio 2 ¿Qué es un root server? ¿Qué es un generic top-level domain (gtld)?](#practica-3-ejercicio-2)
+- [Ejercicio 3 ¿Qué es una respuesta del tipo autoritativa?](#practica-3-ejercicio-3)
+- [Ejercicio 4 ¿Qué diferencia una consulta DNS recursiva de una iterativa?](#practica-3-ejercicio-4)
+- [Ejercicio 5 ¿Qué es el resolver?](#practica-3-ejercicio-5)
+- [Ejercicio 6 Describa para qué se utilizan los siguientes tipos de registros de DNS](#practica-3-ejercicio-6)
+- [Ejercicio 7 En Internet, un dominio suele tener más de un servidor DNS](#practica-3-ejercicio-7)
+- [Ejercicio 8 Cuando un dominio cuenta con más de un servidor](#practica-3-ejercicio-8)
+- [Ejercicio 9 Explique brevemente en qué consiste el mecanismo de transferencia de zona](#practica-3-ejercicio-9)
+- [Ejercicio 10  Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar)](#practica-3-ejercicio-10)
+- [Ejercicio 11 Responda y justifique los siguientes ejercicios.](#practica-3-ejercicio-11)
+- [Ejercicio 12 Investigue los comando nslookup y host.](#practica-3-ejercicio-12)
+- [Ejercicio 13 ¿Qué función cumple en Linux/Unix.](#practica-3-ejercicio-13)
+- [Ejercicio 14 Abra el programa Wireshark para comenzar a capturar el tráfico](#practica-3-ejercicio-14)
+- [Ejercicio 15 Dada la siguiente situación](#practica-3-ejercicio-15)
+- [Ejercicio 16  Relacione DNS con HTTP.](#practica-3-ejercicio-16)
+- [Ejercicio 17  Observar el siguiente gráfico y contestar](#practica-3-ejercicio-17)
+- [Ejercicio 18  ¿A quién debería consultar para que la respuesta sobre www.google.com sea autoritativa?](#practica-3-ejercicio-18)
+- [Ejercicio 19 ¿Qué sucede si al servidor elegido en el paso anterior se lo consulta por www.info.unlp.edu.ar?](#practica-3-ejercicio-19)
 
 ### Ejerciccio Parcial
 
@@ -1300,7 +1297,7 @@ En HTTP/2, el mismo pedido realizado en HTTP/1.1 se traduce a un flujo de comuni
 
 ---
 
-### Ejercicio 1
+### Practica 3 Ejercicio 1
 
 `Investigue y describa cómo funciona el DNS.`
 
@@ -1312,7 +1309,7 @@ El objetivo del DNS es permitir a las personas acceder a sitios web utilizando n
 
 ---
 
-### Ejercicio 2
+### Practica 3 Ejercicio 2
 
 `¿Qué es un root server?`
 
@@ -1324,7 +1321,7 @@ Un **dominio de nivel superior genérico** (generic top-level domain o gTLD) es 
 
 ---
 
-### Ejercicio 3
+### Practica 3 Ejercicio 3
 
 `¿Qué es una respuesta del tipo autoritativa?`
 
@@ -1332,7 +1329,7 @@ Una **respuesta autoritativa** en DNS es aquella que proviene de un servidor de 
 
 ---
 
-### Ejercicio 4
+### Practica 3 Ejercicio 4
 
 `¿Qué diferencia una consulta DNS recursiva de una iterativa?`
 
@@ -1348,7 +1345,7 @@ La consulta recursiva es generalmente utilizada por los clientes finales ya que 
 
 ---
 
-### Ejercicio 5
+### Practica 3 Ejercicio 5
 
 `¿Qué es el resolver?`
 
@@ -1358,7 +1355,7 @@ Un **dominio de nivel superior genérico (gTLD)** se refiere a los dominios de n
 
 ---
 
-### Ejercicio 6
+### Practica 3 Ejercicio 6
 
 Describa para qué se utilizan los siguientes tipos de registros de DNS:
 
@@ -1400,7 +1397,7 @@ Permite que los administradores inserten texto arbitrario en un registro DNS. Co
 
 ---
 
-### Ejercicio 7
+### Practica 3 Ejercicio 7
 
 `En Internet, un dominio suele tener más de un servidor DNS.`
 
@@ -1420,7 +1417,7 @@ En resumen, tener múltiples servidores DNS mejora la robustez, seguridad y efic
 
 ---
 
-### Ejercicio 8
+### Practica 3 Ejercicio 8
 
 `Cuando un dominio cuenta con más de un servidor, uno de ellos es el primario (o maestro) y todos los demás son los secundarios (o esclavos).`
 
@@ -1442,7 +1439,7 @@ Esta estructura de primario-secundario asegura que los cambios se propaguen de m
 
 ---
 
-### Ejercicio 9
+### Practica 3 Ejercicio 9
 
 `Explique brevemente en qué consiste el mecanismo de transferencia de zona y cuál es su finalidad.`
 
@@ -1460,7 +1457,7 @@ La transferencia de zona puede ocurrir de dos formas: transferencia completa de 
 
 ---
 
-### Ejercicio 10
+### Practica 3 Ejercicio 10
 
 Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar). A su vez, cada facultad de la UNLP cuenta con un administrador que gestiona su propio dominio (por ejemplo, en el caso dela Facultad de Informática se trata de info.unlp.edu.ar).
 
@@ -1495,7 +1492,7 @@ Al completar estos pasos, habrás delegado con éxito la gestión del subdominio
 
 ---
 
-### Ejercicio 11
+### Practica 3 Ejercicio 11
 
 Responda y justifique los siguientes ejercicios.
  
@@ -1847,7 +1844,7 @@ Los códigos de respuesta extendidos se pueden encontrar en la sección OPT PSEU
 
 ---
 
-### Ejercicio 12
+### Practica 3 Ejercicio 12
 
 `Investigue los comando nslookup y host. ¿Para qué sirven?`
 
@@ -1918,7 +1915,7 @@ Al igual que con `nslookup`, el flag `-t NS` le dice a `host` que busque los reg
 
 ---
 
-### Ejercicio 13
+### Practica 3 Ejercicio 13
 
 `¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo \WINDOWS\system32\drivers\etc\hosts?`
 
@@ -1942,7 +1939,7 @@ El archivo `hosts` tiene una estructura simple, donde cada entrada consta de una
 
 ---
 
-### Ejercicio 14
+### Practica 3 Ejercicio 14
 
 Abra el programa Wireshark para comenzar a capturar el tráfico de red en la interfaz con IP `172.28.0.1`.
 
@@ -1966,7 +1963,7 @@ dig ns redes.unlp.edu.ar +noall +answer
 
 ---
 
-### Ejercicio 15
+### Practica 3 Ejercicio 15
 
 Dada la siguiente situación: “Una PC en una red determinada, con acceso a Internet, utiliza los servicios de DNS de un servidor de la red”. Analice
 
@@ -1988,7 +1985,7 @@ El servidor DNS local continuará esta serie de consultas iterativas hasta que e
 
 ---
 
-### Ejercicio 16
+### Practica 3 Ejercicio 16
 
 `Relacione DNS con HTTP`
 
@@ -2010,7 +2007,7 @@ Aunque técnicamente es posible navegar sin DNS, la conveniencia, la escalabilid
 
 ---
 
-### Ejercicio 17
+### Practica 3 Ejercicio 17
 
 Observar el siguiente gráfico y contestar:
 
@@ -2049,7 +2046,7 @@ En este proceso, la consulta recursiva se realiza entre el cliente (PC-A) y su s
 
 ---
 
-### Ejercicio 18
+### Practica 3 Ejercicio 18
 
 `¿A quién debería consultar para que la respuesta sobre www.google.com sea autoritativa?`
 
@@ -2097,7 +2094,7 @@ Con estos comandos puedes obtener información tanto de dominios específicos co
 
 ---
 
-### Ejercicio 19
+### Practica 3 Ejercicio 19
 
 ¿Qué sucede si al servidor elegido en el paso anterior se lo consulta por www.info.unlp.edu.ar?
 
@@ -2106,7 +2103,7 @@ Con estos comandos puedes obtener información tanto de dominios específicos co
 
 ---
 
-### Ejerciccio Parcial
+### Ejercicio Parcial
 
 En base a la siguiente salida de dig, conteste las consignas. Justifique en todos los casos.
 
