@@ -4,6 +4,8 @@ import SectionContainer from "../components/SectionContainer.astro"
 import Title from "../components/Title.astro"
 
 import Gallery from "../components/sections/Gallery.astro"
+import Certificaciones from "../components/sections/Certificaciones.astro"
+import Presentaciones from "../components/sections/Presentaciones.astro"
 
 ---
 
@@ -13,9 +15,27 @@ import Gallery from "../components/sections/Gallery.astro"
 >
   <main class="px-4 ">
     <div class="space-y-20">
+
       <SectionContainer class="py-16 md:py-36">
+        <Title title="Presentaciones" emoji="🤖"/>
+        <Presentaciones/>
+        
+      </SectionContainer>
+
+      <SectionContainer >
         <Title title="Galleria" emoji="🤖"/>
         <Gallery/>
+        
+      </SectionContainer>
+
+      
+
+      
+
+
+      <SectionContainer>
+        <Title title="Certificados" emoji="🤖"/>
+        <Certificaciones/>
         
       </SectionContainer>
   </div>

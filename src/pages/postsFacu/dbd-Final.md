@@ -574,12 +574,38 @@ Seria esto sin las tablas repetidas
 
 ### Final de Marzo 2024
 
-- `1)` Por que se debe remover la jerarquia del modelo logico relacional
-- `2)` Que cardinalidad deben poseer los atributos derivados?
-- `3)` Para que se define la Integridad Referencial y que ventajas trae?
-- `4)` porque el modelo conceptual es independiente del tipo de dbms?
-- `5)` Por que el DBMS es el encargado de hacer la optimizacion
-- `6)` Que diferencia hay entre lenguaje procedural y no procedural
-- `7)` Durabilidad en entornos monousuario
-- `8)` Por que no hay agregacion en el Where
-- `9)`  crear tu pregunta
+`1)` Por que se debe remover la jerarquia del modelo logico relacional
+
+<details><summary>Respuesta</summary></details>
+
+`2)` Que cardinalidad deben poseer los atributos derivados?
+
+<details><summary>Respuesta</summary></details>
+
+`3)` Para que se define la Integridad Referencial y que ventajas trae?
+
+<details><summary>Respuesta</summary></details>
+
+`4)` porque el modelo conceptual es independiente del tipo de dbms?
+
+<details><summary>Respuesta</summary></details>
+
+`5)` Por que el DBMS es el encargado de hacer la optimizacion
+
+<details><summary>Respuesta</summary></details>
+
+`6)` Que diferencia hay entre lenguaje procedural y no procedural
+
+<details><summary>Respuesta</summary></details>
+
+`7)` Durabilidad en entornos monousuario
+
+
+
+`8)` Por que no hay agregacion en el Where
+
+
+
+`9)`  crear tu pregunta
+
+

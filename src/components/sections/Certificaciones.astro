@@ -1,0 +1,109 @@
+---
+import 'photoswipe/style.css';
+import { Image } from 'astro:assets'
+
+const GALLERY = [
+  {
+    src: '/certificaciones/spaceApps.png',
+    width: 1501,
+    height: 1126,
+  },
+  {
+    src: '/certificaciones/unidea.png',
+    width: 1501,
+    height: 1126,
+  },
+  {
+    src: '/certificaciones/tecnico.png',
+    width: 1501,
+    height: 1126,
+  },
+  {
+    src: '/certificaciones/unitec.PNG',
+    width: 1501,
+    height: 1126,
+  }
+];
+
+
+---
+
+<style>
+  .image-container {
+    position: relative;
+  }
+
+  .image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--hover-color);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+  }
+
+  .image-container:hover::after {
+    opacity: 0;
+  }
+
+  
+</style>
+
+<section class="max-w-screen-lg mx-auto pb-12" id="gallery">
+    <ul class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-white">
+      {GALLERY.map((image) => (
+        <li class="">
+          <a
+            href={image.src}
+            target="_blank"
+            class="border-4 border-black relative top-0 block overflow-hidden image-container"
+            data-pswp-width={image.width}
+            data-pswp-height={image.height}
+            
+          >
+            <figure>
+              <Image
+                alt={image.src}
+                src={image.src}
+                class="h-44 w-full object-cover"
+                width={309}
+                height={176}
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+
+<script>
+    import PhotoSwipeLightbox from 'photoswipe/lightbox';
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      pswpModule: () => import('photoswipe')
+    });
+    lightbox.init();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
