@@ -1313,7 +1313,7 @@ El objetivo del DNS es permitir a las personas acceder a sitios web utilizando n
 
 `¿Qué es un root server?`
 
-Un **servidor raíz** (root server) en el contexto del DNS es uno de los servidores DNS que contiene una lista completa de los nombres de dominio y sus direcciones IP asociadas para los dominios de nivel superior (TLDs). Es la primera parada en la resolución de nombres de dominio en Internet, dirigida a encontrar la dirección IP de un TLD específico. Los root servers son una parte crítica de la infraestructura de Internet, asegurando que la resolución de nombres funcione de manera eficiente y efectiva .
+Un **servidor raíz** (root server) en el contexto del DNS es uno de los servidores DNS que contiene una lista completa de los nombres de dominio y sus direcciones IP asociadas para los dominios de nivel superior (TLDs). Es la primera parada en la resolución de nombres de dominio en Internet, dirigida a encontrar la dirección IP de un TLD específico. Los root servers son una parte crítica de la infraestructura de Internet, asegurando que la resolución de nombres funcione de manera eficiente y efectiva.
 
 `¿Qué es un generic top-level domain (gtld)?`
 
@@ -1612,7 +1612,6 @@ En resumen, esta salida de `dig` muestra que la consulta DNS para `redes.unlp.ed
 `¿Qué observa?`
 
 `¿Puede explicar a qué se debe?`
-
 
 
 #### Parte d
