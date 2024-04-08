@@ -5,7 +5,7 @@ pubDate: 2022-10-04
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: 'https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2R0Z3BkYzJsd3c5N3FqbWh4OTVkZXQzMXE0dDUwNTMwbnE4amRubCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2jMtpIi8mhE8ctiMtK/giphy.gif'
+    url: '/posts/curl.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
 
