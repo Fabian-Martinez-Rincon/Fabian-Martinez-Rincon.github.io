@@ -161,6 +161,7 @@ Permite que los administradores inserten texto arbitrario en un registro DNS. Co
 
 - [dig www.redes.unlp.edu.ar A](#registro-a)
 - [dig redes.unlp.edu.ar NS](#registro-ns)
+- [dig redes.unlp.edu.ar SOA](#registro-soa)
 
 ---
 
@@ -170,7 +171,29 @@ Permite que los administradores inserten texto arbitrario en un registro DNS. Co
 dig www.redes.unlp.edu.ar A
 ```
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/6cfae24c-e2bf-4c02-8b9c-b49675bf434b)
+```bash
+redes@debian:~$ dig www.redes.unlp.edu.ar A
+
+; <<>> DiG 9.16.27-Debian <<>> www.redes.unlp.edu.ar A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57307
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 6df89cfa69fa329b0100000066135ae75d8578ee82028b7d (good)
+;; QUESTION SECTION:
+;www.redes.unlp.edu.ar.		IN	A
+
+;; ANSWER SECTION:
+www.redes.unlp.edu.ar.	300	IN	A	172.28.0.50
+
+;; Query time: 0 msec
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+;; WHEN: Sun Apr 07 23:48:07 -03 2024
+;; MSG SIZE  rcvd: 94
+```
 
 Esta salida del comando `dig` muestra los resultados de una consulta DNS para obtener el registro A (dirección IPv4) de `www.redes.unlp.edu.ar`. Aquí te desgloso la información:
 
@@ -183,7 +206,7 @@ Esta salida del comando `dig` muestra los resultados de una consulta DNS para ob
 - **HEADER**: Muestra los detalles de la respuesta:
   - `opcode: QUERY`: Es una consulta estándar.
   - `status: NOERROR`: La consulta se completó sin errores.
-  - `id: 52809`: Es el identificador de la sesión de la consulta, útil para emparejar solicitudes y respuestas.
+  - `id: 57307`: Es el identificador de la sesión de la consulta, útil para emparejar solicitudes y respuestas.
   - `flags`: 
     - `qr`: Indica que la respuesta es un resultado de consulta.
     - `aa`: Autoritativo Answer (respuesta autoritativa), lo que significa que el servidor que respondió tiene autoridad directa sobre el dominio.
@@ -213,7 +236,73 @@ La salida proporciona una visión detallada de cómo se resuelve una dirección 
 dig redes.unlp.edu.ar NS
 ```
 
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c0571a90-f08d-42b7-b51e-5715aa4be098)
+```bash
+redes@debian:~$ dig www.redes.unlp.edu.ar NS
+
+; <<>> DiG 9.16.27-Debian <<>> www.redes.unlp.edu.ar NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 10661
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: d4e9ac68ddcc83a00100000066135b1dd8e4fc49567742d0 (good)
+;; QUESTION SECTION:
+;www.redes.unlp.edu.ar.		IN	NS
+
+;; AUTHORITY SECTION:
+redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
+
+;; Query time: 0 msec
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+;; WHEN: Sun Apr 07 23:49:01 -03 2024
+;; MSG SIZE  rcvd: 127
+```
+
+Esta salida del comando `dig` refleja el intento de obtener registros NS (Name Server, o Servidores de Nombres) para el subdominio `www.redes.unlp.edu.ar`. Desglosemos la información proporcionada:
+
+- **Línea de comando**: Indica el uso de la versión 9.16.27 de `dig` en Debian para consultar los registros NS del subdominio `www.redes.unlp.edu.ar`.
+
+- **Global options**: Señala las opciones globales aplicadas, aquí `+cmd`, que muestra el comando ejecutado.
+
+- **Got answer**: Confirma que se ha recibido una respuesta a la consulta.
+
+### HEADER Section
+- **opcode: QUERY**: La operación realizada fue una consulta estándar.
+- **status: NOERROR**: La consulta se completó exitosamente sin reportar errores.
+- **id: 10661**: Identificador único de la consulta, útil para emparejar solicitudes con respuestas en entornos de múltiples consultas simultáneas.
+- **flags**: 
+  - **qr**: Indica que este mensaje es una respuesta.
+  - **aa**: Respuesta autoritativa, significando que el servidor consultado tiene autoridad directa sobre el dominio.
+  - **rd**: Recursión deseada, solicitando al servidor que realice consultas adicionales si no tiene la respuesta.
+  - **ra**: Recursión disponible, indicando que el servidor puede hacer consultas recursivas.
+
+### OPT PSEUDOSECTION
+- **EDNS (Extension Mechanisms for DNS) version: 0**: Muestra el uso de extensiones EDNS para soportar funcionalidades adicionales, como un tamaño de paquete UDP mayor (1232 bytes en este caso).
+- **COOKIE**: Un mecanismo de seguridad para autenticar solicitudes y respuestas, reduciendo la posibilidad de ataques de amplificación.
+
+### QUESTION SECTION
+- **www.redes.unlp.edu.ar. IN NS**: La consulta realizada, solicitando los registros NS para el subdominio `www.redes.unlp.edu.ar`.
+
+### AUTHORITY SECTION
+No se encontraron registros NS específicamente para `www.redes.unlp.edu.ar` (`ANSWER: 0`), pero se proporciona un registro SOA (Start of Authority) para el dominio `redes.unlp.edu.ar`, indicando la autoridad para la zona DNS. El registro SOA contiene:
+- **ns-sv-b.redes.unlp.edu.ar.**: El servidor de nombres primario para el dominio.
+- **root.redes.unlp.edu.ar.**: El correo electrónico del administrador de la zona, con el primer punto sustituido por un `@`.
+- **2020031700**: El número de serie de la zona DNS, utilizado para la gestión de cambios.
+- **604800**: El intervalo de refresco, en segundos, para que los servidores esclavos verifiquen actualizaciones.
+- **86400**: El tiempo de reintento, en segundos, para intentar una actualización tras un fallo.
+- **2419200**: El tiempo de expiración, en segundos, después del cual los datos se consideran obsoletos si no se puede contactar al servidor primario.
+- **86400**: El valor mínimo de TTL, en segundos, que se debe aplicar a los registros en esta zona.
+
+### Información Adicional
+- **Query time**: El tiempo de respuesta de la consulta, 0 milisegundos, indicando una respuesta inmediata.
+- **SERVER**: La dirección IP y puerto del servidor DNS que respondió (`172.28.0.29#53`).
+- **WHEN**: La fecha y hora de la consulta.
+
+- **MSG SIZE rcvd**: El tamaño del mensaje recibido, 127 bytes.
+
+En resumen, la consulta buscaba registros NS para el subdominio `www.redes.unlp.edu.ar`, pero en lugar de encontrarlos, se obtuvo información sobre la autoridad para el dominio principal `redes.unlp.edu.ar` a través de un registro SOA. Esto sugiere que no hay servidores de nombres delegados específicamente para `www.redes.unlp.edu.ar`, y la gestión DNS se realiza a nivel del dominio `redes.unlp.edu.ar`.
 
 ### Consulta
 
@@ -222,3 +311,149 @@ dig redes.unlp.edu.ar NS
 ### Respuesta
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/1ad414e9-537e-4828-8d63-3d6576a41359)
+
+---
+
+## Registro SOA
+
+```bash
+redes@debian:~$ dig redes.unlp.edu.ar SOA
+```
+
+```bash
+redes@debian:~$ dig redes.unlp.edu.ar SOA
+
+; <<>> DiG 9.16.27-Debian <<>> redes.unlp.edu.ar SOA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56877
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 7bd1c774cf6a7d920100000066135a6d5d9d14b02aa8c4b7 (good)
+;; QUESTION SECTION:
+;redes.unlp.edu.ar.		IN	SOA
+
+;; ANSWER SECTION:
+redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
+
+;; Query time: 0 msec
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+;; WHEN: Sun Apr 07 23:46:05 -03 2024
+;; MSG SIZE  rcvd: 123
+```
+
+Este resultado de `dig` muestra la respuesta a una consulta DNS del tipo SOA (Start of Authority) para el dominio `redes.unlp.edu.ar`. La respuesta contiene varias secciones que proveen información detallada sobre el proceso de la consulta y la respuesta obtenida. Aquí te explico cada parte:
+
+#### HEADER Section
+- **opcode: QUERY**: Indica que la operación realizada fue una consulta.
+- **status: NOERROR**: Significa que la consulta se completó sin errores.
+- **id: 56877**: Es un identificador de la consulta, útil para emparejar respuestas con consultas cuando se realizan múltiples consultas simultáneamente.
+- **flags**:
+  - **qr (Query Response)**: Indica que este mensaje es una respuesta a una consulta.
+  - **aa (Authoritative Answer)**: Significa que la respuesta viene de un servidor que tiene autoridad directa sobre el dominio consultado.
+  - **rd (Recursion Desired)**: La consulta pedía que, si el servidor no tenía la respuesta, realizara consultas adicionales para resolverla.
+  - **ra (Recursion Available)**: El servidor puede realizar consultas recursivas.
+- **QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1**: Indica que hubo una pregunta realizada, una respuesta dada, ninguna autoridad informada adicionalmente y una sección adicional.
+
+#### OPT PSEUDOSECTION
+- **EDNS (Extension Mechanisms for DNS)**: Versión 0, sin flags especiales. EDNS permite opciones adicionales como un tamaño mayor de paquete UDP (1232 bytes en este caso).
+- **COOKIE**: Es un mecanismo de seguridad para reducir la posibilidad de ataques de amplificación y reflejo.
+
+#### QUESTION SECTION
+- **redes.unlp.edu.ar.	IN	SOA**: La consulta realizada, preguntando por el registro SOA del dominio `redes.unlp.edu.ar`.
+
+#### ANSWER SECTION
+Aquí se muestra el registro SOA (Start of Authority) encontrado para el dominio `redes.unlp.edu.ar`. Un registro SOA contiene información esencial sobre el dominio y la zona DNS, incluyendo:
+- **ns-sv-b.redes.unlp.edu.ar.**: El servidor de nombres primario para la zona.
+- **root.redes.unlp.edu.ar.**: La dirección de correo electrónico del administrador de la zona, donde el primer punto se reemplaza por una @ y el último punto denota el final del dominio (en la práctica sería root@redes.unlp.edu.ar).
+- **2020031700**: El número de serie del archivo de zona, usado para gestionar actualizaciones.
+- **604800**: El intervalo de refresco (en segundos) para que los servidores esclavos consulten al primario por cambios (7 días).
+- **86400**: El tiempo de reintento (en segundos) en caso de fallo al consultar al primario (1 día).
+- **2419200**: El tiempo de expiración (en segundos) tras el cual un servidor esclavo considerará sus datos obsoletos si no ha podido comunicarse con el primario (28 días).
+- **86400**: El valor TTL (Time To Live) mínimo para los registros de la zona, que indica cuánto tiempo un servidor de nombres puede cachear cualquier registro de esta zona (1 día).
+
+#### Additional Information
+- **Query time: 0 msec**: El tiempo que tomó realizar la consulta.
+- **SERVER: 172.28.0.29#53(172.28.0.29)**: La dirección IP y puerto del servidor DNS que respondió a la consulta.
+- **WHEN**: La fecha y hora en que se realizó la consulta.
+- **MSG SIZE rcvd: 123**: El tamaño en bytes de la respuesta recibida.
+
+Esta respuesta SOA es crucial para entender cómo se administran y actualizan los registros DNS de un dominio, y cómo se configuran los tiempos de vida y refresco de los datos DNS.
+
+---
+
+### Registro TXT
+
+```bash
+dig redes.unlp.edu.ar TXT
+```
+
+```bash
+redes@debian:~$ dig www.redes.unlp.edu.ar TXT
+
+; <<>> DiG 9.16.27-Debian <<>> www.redes.unlp.edu.ar TXT
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 60088
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 924f899d4f35a97f0100000066135f724ecbd98262016eb9 (good)
+;; QUESTION SECTION:
+;www.redes.unlp.edu.ar.		IN	TXT
+
+;; AUTHORITY SECTION:
+redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
+
+;; Query time: 0 msec
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+;; WHEN: Mon Apr 08 00:07:30 -03 2024
+;; MSG SIZE  rcvd: 127
+```
+
+Esta salida del comando `dig` representa la respuesta a una consulta DNS para registros de tipo TXT para el subdominio `www.redes.unlp.edu.ar`. A continuación, se desglosan los componentes principales de esta respuesta:
+
+- **Línea de comando**: Indica el uso de `dig` versión 9.16.27 en Debian para consultar registros TXT del subdominio especificado.
+
+- **Global options**: Las opciones globales aplicadas, aquí `+cmd`, muestran que se ha ejecutado el comando especificado.
+
+- **Got answer**: Confirma la recepción de una respuesta a la consulta realizada.
+
+#### HEADER Section
+- **opcode: QUERY**: Se efectuó una consulta estándar DNS.
+- **status: NOERROR**: La consulta se completó con éxito sin errores reportados.
+- **id: 60088**: Es el identificador único para esta sesión de consulta, facilitando el emparejamiento de consultas y respuestas en múltiples interacciones.
+- **flags**:
+  - **qr**: Indica que este mensaje es una respuesta a una consulta.
+  - **aa**: Respuesta Autoritativa (Authoritative Answer), lo que significa que el servidor consultado tiene autoridad directa sobre el dominio.
+  - **rd**: Recursión Deseada (Recursion Desired), solicitando que el servidor realice consultas adicionales si no tiene la respuesta directa.
+  - **ra**: Recursión Disponible (Recursion Available), el servidor puede realizar consultas recursivas.
+
+#### OPT PSEUDOSECTION
+- **EDNS version: 0**: Indica el uso de Extension Mechanisms for DNS, permitiendo características adicionales como un tamaño mayor de paquete UDP (1232 bytes en este caso).
+- **COOKIE**: Un mecanismo de seguridad para autenticar las solicitudes y respuestas, minimizando el riesgo de ataques de amplificación.
+
+#### QUESTION SECTION
+- **www.redes.unlp.edu.ar. IN TXT**: La consulta solicitó registros de tipo TXT para el subdominio especificado.
+
+#### AUTHORITY SECTION
+En lugar de una respuesta directa con registros TXT (`ANSWER: 0`), se provee un registro SOA (Start of Authority) para el dominio `redes.unlp.edu.ar`, que incluye:
+- **ns-sv-b.redes.unlp.edu.ar.**: El servidor de nombres primario para la zona.
+- **root.redes.unlp.edu.ar.**: La dirección de correo electrónico del administrador de la zona, sustituyendo el primer punto por `@`.
+- **2020031700**: El número de serie de la zona DNS, que se utiliza para gestionar las actualizaciones.
+- **604800**: El intervalo de refresco en segundos, durante el cual los servidores esclavos deben verificar cambios.
+- **86400**: El tiempo de reintento en segundos, tras un fallo al intentar la actualización.
+- **2419200**: El tiempo de expiración en segundos, después del cual los datos se consideran obsoletos si no se logra la comunicación con el servidor primario.
+- **86400**: El tiempo mínimo en segundos que los datos deben ser almacenados en caché.
+
+### Información Adicional
+- **Query time**: El tiempo que tomó realizar la consulta, en este caso, 0 milisegundos.
+- **SERVER**: La dirección IP y puerto del servidor DNS que proporcionó la respuesta (`172.28.0.29#53`).
+- **WHEN**: La fecha y hora exacta de la consulta.
+
+- **MSG SIZE rcvd**: El tamaño del mensaje recibido, 127 bytes.
+
+Este resultado indica que no se encontraron registros TXT para el subdominio `www.redes.unlp.edu.ar`, pero se proporcionó información sobre la autoridad del dominio a través del registro SOA, sugiriendo dónde pueden gestionarse o actualizarse los registros DNS para este dominio.

@@ -4,7 +4,7 @@ title: Practicas Redes
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: 'https://media1.tenor.com/m/CSYobPI_emUAAAAd/avatar.gif'
+    url: '/posts/redes.webp'
     alt: "Redes."
 pubDate: 2024-03-12
 tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
