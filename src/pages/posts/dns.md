@@ -7,12 +7,11 @@ image:
     url: '/posts/dns.webp'
     alt: "Redes."
 pubDate: 2024-04-07
-tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]
+tags: ["DNS", "EDNS"]
 ---
 
 
 Queria tener un resumen a medida que voy haciendo la practica, separando bien la teoria de la practica
-
 
 ## Conceptos antes de la practica
 
@@ -160,9 +159,15 @@ Permite que los administradores inserten texto arbitrario en un registro DNS. Co
 ---
 
 - [dig www.redes.unlp.edu.ar A](#registro-a)
+- [dig www.redes.unlp.edu.ar MX (Falta)](#registro-mx)
+- [dig www.redes.unlp.edu.ar PTR](#registro-ptr)
+- [dig www.redes.unlp.edu.ar SRV](#registro-srv)
 - [dig redes.unlp.edu.ar NS](#registro-ns)
+- [dig redes.unlp.edu.ar CNAME](#registro-cname)
 - [dig redes.unlp.edu.ar SOA](#registro-soa)
 - [dig redes.unlp.edu.ar TXT](#registro-txt)
+- [Ejemplos Varios](#ejemplos-de-varios-comandos)
+- [Ver los registros configurados para una URL](#ver-registros-para-una-url)
 
 ---
 
@@ -258,6 +263,10 @@ www.redes.unlp.edu.ar.	300	IN	A	172.28.0.50
 ;; MSG SIZE  rcvd: 94
 # El tamaño del mensaje de respuesta recibido, en este caso, 94 bytes.
 ```
+
+---
+
+### Registro 
 
 ---
 
@@ -583,5 +592,89 @@ redes@debian:~$ dig redes.unlp.edu.ar SOA +noall +answer
 redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
 redes@debian:~$ dig redes.unlp.edu.ar TXT +noall +answer
 redes@debian:~$ 
-
 ```
+
+Mira, lo que esta pasando aca chiquiFabo, es que la url no tiene configurado ciertos registros, no es que estes loco :D
+
+---
+
+### Ver registros para una url
+
+```bash
+dig redes.unlp.edu.ar any
+```
+
+```bash
+;; QUESTION SECTION:
+;redes.unlp.edu.ar.		IN	ANY
+
+;; ANSWER SECTION:
+redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
+redes.unlp.edu.ar.	86400	IN	NS	ns-sv-a.redes.unlp.edu.ar.
+redes.unlp.edu.ar.	86400	IN	NS	ns-sv-b.redes.unlp.edu.ar.
+redes.unlp.edu.ar.	86400	IN	MX	10 mail2.redes.unlp.edu.ar.
+redes.unlp.edu.ar.	86400	IN	MX	5 mail.redes.unlp.edu.ar.
+
+;; ADDITIONAL SECTION:
+ns-sv-a.redes.unlp.edu.ar. 604800 IN	A	172.28.0.30
+ns-sv-b.redes.unlp.edu.ar. 604800 IN	A	172.28.0.29
+mail.redes.unlp.edu.ar.	86400	IN	A	172.28.0.90
+mail2.redes.unlp.edu.ar. 86400	IN	A	172.28.0.91
+
+;; Query time: 0 msec
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+;; WHEN: Tue Apr 09 16:03:51 -03 2024
+;; MSG SIZE  rcvd: 266
+```
+
+
+### Resultado desglozado
+
+```bash
+;; QUESTION SECTION:
+;redes.unlp.edu.ar.		IN	ANY
+# Esta sección muestra la consulta realizada. Se pidió información "IN ANY", lo que significa que se solicitó cualquier tipo de registro DNS disponible para el dominio 'redes.unlp.edu.ar'.
+
+;; ANSWER SECTION:
+redes.unlp.edu.ar.	86400	IN	SOA	ns-sv-b.redes.unlp.edu.ar. root.redes.unlp.edu.ar. 2020031700 604800 86400 2419200 86400
+# Un registro SOA (Start of Authority), que proporciona información esencial sobre el dominio, incluyendo el servidor de nombres principal (ns-sv-b.redes.unlp.edu.ar), el contacto administrativo (root.redes.unlp.edu.ar), el número de serie de la zona, y varios temporizadores relacionados con la actualización y la caducidad de los registros.
+
+redes.unlp.edu.ar.	86400	IN	NS	ns-sv-a.redes.unlp.edu.ar.
+# Un registro NS (Name Server), que indica que 'ns-sv-a.redes.unlp.edu.ar' es un servidor de nombres autoritativo para el dominio 'redes.unlp.edu.ar'.
+
+redes.unlp.edu.ar.	86400	IN	NS	ns-sv-b.redes.unlp.edu.ar.
+# Otro registro NS, señalando a 'ns-sv-b.redes.unlp.edu.ar' como otro servidor de nombres autoritativo para el dominio.
+
+redes.unlp.edu.ar.	86400	IN	MX	10 mail2.redes.unlp.edu.ar.
+# Un registro MX (Mail Exchange), que especifica 'mail2.redes.unlp.edu.ar' como servidor de correo para el dominio, con una prioridad de 10.
+
+redes.unlp.edu.ar.	86400	IN	MX	5 mail.redes.unlp.edu.ar.
+# Otro registro MX, que indica 'mail.redes.unlp.edu.ar' como servidor de correo para el dominio, con una prioridad de 5 (mayor prioridad que el anterior).
+
+;; ADDITIONAL SECTION:
+ns-sv-a.redes.unlp.edu.ar. 604800 IN	A	172.28.0.30
+# La sección adicional proporciona direcciones IP para los servidores mencionados. Aquí, 'ns-sv-a.redes.unlp.edu.ar' se asocia con la dirección IP 172.28.0.30.
+
+ns-sv-b.redes.unlp.edu.ar. 604800 IN	A	172.28.0.29
+# Proporciona la dirección IP para 'ns-sv-b.redes.unlp.edu.ar', que es 172.28.0.29.
+
+mail.redes.unlp.edu.ar.	86400	IN	A	172.28.0.90
+# Da la dirección IP del servidor de correo 'mail.redes.unlp.edu.ar', que es 172.28.0.90.
+
+mail2.redes.unlp.edu.ar. 86400	IN	A	172.28.0.91
+# Proporciona la dirección IP para otro servidor de correo, 'mail2.redes.unlp.edu.ar', que es 172.28.0.91.
+
+;; Query time: 0 msec
+# El tiempo que tomó realizar la consulta, en este caso, fue instantáneo (0 milisegundos).
+
+;; SERVER: 172.28.0.29#53(172.28.0.29)
+# Indica el servidor DNS que respondió a la consulta, con su dirección IP y el puerto utilizado (53, el puerto estándar para DNS).
+
+;; WHEN: Tue Apr 09 16:03:51 -03 2024
+# Muestra la fecha y hora exactas en que se realizó la consulta.
+
+;; MSG SIZE  rcvd: 266
+# El tamaño total del mensaje de respuesta recibido, en bytes (266 en este caso).
+```
+
+Este resultado detalla los registros DNS recuperados para `redes.unlp.edu.ar` al solicitar cualquier tipo de registro (`ANY`). Proporciona una visión general de la configuración DNS del dominio, incluyendo servidores de nombres, servidores de correo, y la autoridad de inicio del dominio, junto con las direcciones IP asociadas a cada uno de estos servicios. La sección adicional ayuda a resolver nombres a direcciones IP sin necesidad de consultas adicionales.
