@@ -1324,7 +1324,7 @@ Un **dominio de nivel superior genérico** (generic top-level domain o gTLD) es 
 
 `¿Qué es una respuesta del tipo autoritativa?`
 
-Una **respuesta autoritativa** en DNS es aquella que proviene de un servidor de nombres que tiene la autoridad directa sobre el nombre de dominio consultado. Esto significa que el servidor de nombres puede proporcionar una respuesta definitiva a una consulta de nombre de dominio sin tener que referirse a otro servidor de nombres. Las respuestas autoritativas se utilizan para confirmar la existencia de un registro de dominio y su correspondiente información, como la dirección IP asociada. En el proceso de resolución de nombres de DNS, una respuesta autoritativa se considera la fuente definitiva y fiable para la información solicitada sobre un dominio .
+Una **respuesta autoritativa** en DNS es aquella que proviene de un servidor de nombres que tiene la autoridad directa sobre el nombre de dominio consultado. Esto significa que el servidor de nombres puede proporcionar una respuesta definitiva a una consulta de nombre de dominio sin tener que referirse a otro servidor de nombres. Las respuestas autoritativas se utilizan para confirmar la existencia de un registro de dominio y su correspondiente información, como la dirección IP asociada. En el proceso de resolución de nombres de DNS, una respuesta autoritativa se considera la fuente definitiva y fiable para la información solicitada sobre un dominio.
 
 ---
 
@@ -1718,8 +1718,6 @@ La presencia de dos registros SOA al principio y al final de la lista es estánd
 - **XFR size**: Informa sobre el tamaño de la transferencia, que en este caso incluyó 17 registros, con un tamaño total de 441 bytes.
 
 La finalidad de esta transferencia es sincronizar los registros de zona entre el servidor DNS principal y los secundarios. En un entorno de producción, las transferencias de zona suelen estar restringidas a los servidores que han sido explícitamente autorizados para recibir estos datos, con el fin de proteger contra el acceso no autorizado a la configuración del dominio.
-
----
 
 `¿Qué significan los números que aparecen antes de la palabra IN?`
 
