@@ -10,14 +10,14 @@ image:
 tags: ["linux", "vim", "bash"]
 ---
 
-- [Ejercicio 1]()
-- [Ejercicio 2]()
-- [Ejercicio 3]()
-- [Ejercicio 4]()
-- [Ejercicio 5]()
-- [Ejercicio 6]()
-- [Ejercicio 7]()
-- [Ejercicio 8]()
+- [Ejercicio 1 Protocolos de Envio]()
+- [Ejercicio 2 Protocolos de Recepción]()
+- [Ejercicio 3 Usando la VM]()
+- [Ejercicio 4 Protocolo POP]()
+- [Ejercicio 5 Protocolo IMAP]()
+- [Ejercicio 6 IMAP VS POP]()
+- [Ejercicio 7 Mandar más de un correo por la misma conexión TCP]()
+- [Ejercicio 8 MSA escuche en un puerto TCP diferente]()
 - [Ejercicio 9]()
 - [Ejercicio 10]()
 - [Ejercicio 11]()
