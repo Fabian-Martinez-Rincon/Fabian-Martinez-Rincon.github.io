@@ -91,11 +91,11 @@ const { frontmatter } = Astro.props;
   }
   .markdown-body hr {
     line-height: 16px;
-    border: none;
-    border-top: 3px solid rgb(121, 121, 121); /* Ajusta el grosor del separador aquí */
-    color: white;
-    overflow: visible;
-    width: 100%;
+      border: none;
+      border-top: 3px solid rgb(154, 0, 0); /* Ajusta el grosor del separador aquí */
+      color: rgb(219, 0, 0);
+      overflow: visible;
+      width: 100%;
   }
   .markdown-body h2 {
     font-size: 1.5em;
@@ -247,6 +247,16 @@ const { frontmatter } = Astro.props;
   .markdown-body details {
     cursor: pointer;
     padding-bottom: 10px;
+  }
+
+  
+  .markdown-body hr.change-color {
+    line-height: 16px;
+      border: none;
+      border-top: 3px solid rgb(154, 0, 0); /* Ajusta el grosor del separador aquí */
+      color: rgb(219, 0, 0);
+      overflow: visible;
+      width: 100%;
   }
 
 

@@ -71,7 +71,6 @@ detallada, teléfono y mail.
 <br>
 Por último de los clientes se conoce D.N.I, apellidos, nombres y C.U.1,T. Los empleados de la papelera pueden ser clientes.
 
-
 </details>
 
 #### 📚 Contexto Resuelto

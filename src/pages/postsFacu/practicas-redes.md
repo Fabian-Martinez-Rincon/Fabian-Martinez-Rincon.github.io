@@ -1128,7 +1128,6 @@ Esto se debe al diseño de los protocolos: HTTP/1.1 fue diseñado para ser más 
 
 HTTP/1.1 es más eficiente en términos de uso de la red debido a las conexiones persistentes.
 
----
 
 Piense en el ejercicio donde analizó la cantidad de requerimientos necesarios para obtener una página con estilos, javascripts e imágenes. 
 
