@@ -433,31 +433,295 @@ Si queres dejarlo en el escritorio, hacete un ls y despues un cd Desktop y lo ej
 
 ## Ejercicio 4
 
+**Análisis del protocolo POP**
+
+### Parte a
+
+Utilizando Wireshark, capture el tráfico de red contra el servidor de correo mientras desde la cuenta alumnoimap@redes.unlp.edu.ar le envía una correo a alumnopop@redes.unlp.edu.ar y mientras alumnopop@redes.unlp.edu.ar recepciona dicho correo.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/241cee54-1ac9-49e5-978a-4c0562941a19)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/e9d9817b-167d-4a17-b139-557d5e597bdf)
+
+### Parte b
+
+Utilice el filtro POP para observar los paquetes del protocolo POP en la captura generada y analice el intercambio de dicho protocolo entre el cliente y el servidor para observar los distintos comandos utilizados y su correspondiente respuesta.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/e07d258c-8488-4dc9-b1e1-84e3f18a25bc)
+
+#### Salida
+
+```bash
+24	15.815362054	172.28.0.90	172.28.0.1	POP	86	S: +OK Dovecot ready.
+26	15.815692388	172.28.0.1	172.28.0.90	POP	72	C: CAPA
+28	15.815751368	172.28.0.90	172.28.0.1	POP	155	S: +OK
+30	15.815864015	172.28.0.1	172.28.0.90	POP	78	C: AUTH PLAIN
+32	15.816150185	172.28.0.90	172.28.0.1	POP/IMF	70	+   
+34	15.816293615	172.28.0.1	172.28.0.90	POP	124	C: AGFsdW1ub3BvcEByZWRlcy51bmxwLmVkdS5hcgBhbHVtbm9wb3BwYXNz
+36	15.820537730	172.28.0.90	172.28.0.1	POP	82	S: +OK Logged in.
+38	15.821232208	172.28.0.1	172.28.0.90	POP	72	C: STAT
+40	15.821305252	172.28.0.90	172.28.0.1	POP	79	S: +OK 4 77565
+42	15.822101933	172.28.0.1	172.28.0.90	POP	72	C: LIST
+44	15.822222780	172.28.0.90	172.28.0.1	POP	117	S: +OK 4 messages:
+46	15.822359564	172.28.0.1	172.28.0.90	POP	72	C: UIDL
+48	15.822493963	172.28.0.90	172.28.0.1	POP	154	S: +OK
+50	15.823820392	172.28.0.1	172.28.0.90	POP	72	C: QUIT
+52	15.824108415	172.28.0.90	172.28.0.1	POP	84	S: +OK Logging out.
+285	74.349487529	172.28.0.90	172.28.0.1	POP	86	S: +OK Dovecot ready.
+287	74.350007804	172.28.0.1	172.28.0.90	POP	72	C: CAPA
+289	74.350128832	172.28.0.90	172.28.0.1	POP	155	S: +OK
+291	74.350386703	172.28.0.1	172.28.0.90	POP	78	C: AUTH PLAIN
+293	74.350693542	172.28.0.90	172.28.0.1	POP/IMF	70	+   
+295	74.350834556	172.28.0.1	172.28.0.90	POP	124	C: AGFsdW1ub3BvcEByZWRlcy51bmxwLmVkdS5hcgBhbHVtbm9wb3BwYXNz
+297	74.354636341	172.28.0.90	172.28.0.1	POP	82	S: +OK Logged in.
+299	74.355850493	172.28.0.1	172.28.0.90	POP	72	C: STAT
+301	74.358377472	172.28.0.90	172.28.0.1	POP	79	S: +OK 5 91538
+302	74.359257624	172.28.0.1	172.28.0.90	POP	72	C: LIST
+304	74.359439633	172.28.0.90	172.28.0.1	POP	126	S: +OK 5 messages:
+305	74.359647918	172.28.0.1	172.28.0.90	POP	72	C: UIDL
+307	74.359889160	172.28.0.90	172.28.0.1	POP	174	S: +OK
+308	74.360192871	172.28.0.1	172.28.0.90	POP	74	C: RETR 5
+310	74.360561095	172.28.0.90	172.28.0.1	POP	2962	S: +OK 13973 octets
+312	74.360688337	172.28.0.90	172.28.0.1	POP	4410	S: DATA fragment, 4344 bytes
+314	74.360753542	172.28.0.90	172.28.0.1	POP	4410	S: DATA fragment, 4344 bytes
+316	74.360817283	172.28.0.90	172.28.0.1	POP	1514	S: DATA fragment, 1448 bytes
+317	74.360846553	172.28.0.90	172.28.0.1	POP	1028	S: DATA fragment, 962 bytes
+319	74.368747868	172.28.0.1	172.28.0.90	POP	72	C: QUIT
+321	74.370858388	172.28.0.90	172.28.0.1	POP	84	S: +OK Logging out.
+```
+
+El texto que has proporcionado parece ser un registro de una sesión de captura de tráfico utilizando el protocolo POP (Post Office Protocol), que se usa para recuperar correos electrónicos de un servidor de correo electrónico. A continuación, explicaré cada línea en detalle:
+
+- `S: +OK Dovecot ready.`: El servidor (S) responde con "OK", lo que significa que está listo para comenzar la comunicación. Dovecot es el nombre del servidor de correo.
+
+- `C: CAPA`: El cliente (C) envía el comando "CAPA" para solicitar las capacidades del servidor, como soporte para comandos adicionales o características de seguridad.
+
+- `S: +OK`: El servidor responde positivamente, indicando que está listo para listar sus capacidades.
+
+- `C: AUTH PLAIN`: El cliente solicita autenticarse con el método "PLAIN", que envía el nombre de usuario y la contraseña en texto claro.
+
+- `S: +`: El servidor indica que está listo para recibir los datos de autenticación.
+
+- `C: AGFsd...`: El cliente envía los datos de autenticación codificados en Base64. La cadena de texto después de "C:" es el nombre de usuario y la contraseña en Base64.
+
+- `S: +OK Logged in.`: El servidor responde que la autenticación fue exitosa y que el usuario ha iniciado sesión.
+
+- `C: STAT`: El cliente envía el comando "STAT" para solicitar información sobre la cantidad de mensajes y el tamaño total del buzón.
+
+- `S: +OK 4 77565`: El servidor responde que hay 4 mensajes con un tamaño total de 77565 bytes en el buzón.
+
+- `C: LIST`: El cliente solicita una lista de los mensajes y sus tamaños.
+
+- `S: +OK 4 messages:`: El servidor responde con la cantidad de mensajes.
+
+- `C: UIDL`: El cliente solicita una lista de los mensajes y sus identificadores únicos.
+
+- `S: +OK`: El servidor responde positivamente.
+
+- `C: QUIT`: El cliente envía el comando "QUIT" para cerrar la conexión.
+
+- `S: +OK Logging out.`: El servidor confirma que está cerrando la conexión.
+
+Las líneas `302` a `316` muestran la recuperación de un mensaje específico (en este caso, el mensaje número 5) con el comando "RETR", seguido de la respuesta del servidor que incluye el mensaje real (datos del mensaje) fragmentado en varias partes, indicando que está transmitiendo el mensaje que tiene un tamaño de 13973 bytes.
+
+El tráfico posterior de `POP` muestra que el cliente sigue interactuando con el servidor para recuperar y gestionar los mensajes en el buzón. Finalmente, el cliente envía de nuevo el comando "QUIT" para cerrar la sesión (`C: QUIT`), y el servidor responde que la sesión está cerrando (`S: +OK Logging out.`).
 
 ---
 
 ## Ejercicio 5
 
 
+**Análisis del protocolo IMAP**
+
+#### Parte a
+
+Utilizando Wireshark, capture el tráfico de red contra el servidor de correo mientras desde la cuenta alumnopop@redes.unlp.edu.ar le envía una correo a alumnoimap@redes.unlp.edu.ar y mientras alumnoimap@redes.unlp.edu.ar recepciona dicho correo.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5b050f2a-bed2-4199-80ae-dbf6e8b2bdc3)
+
+#### Parte b
+
+Utilice el filtro IMAP para observar los paquetes del protocolo IMAP en la captura generada y analice el intercambio de dicho protocolo entre el cliente y el servidor para observar los distintos comandos utilizados y su correspondiente respuesta.
+
+```bash
+3	0.000226978	172.28.0.90	172.28.0.1	IMAP	121	Response: 68 OK Idle completed (68.782 + 68.782 + 68.781 secs).
+5	0.000740257	172.28.0.1	172.28.0.90	IMAP	75	Request: 69 noop
+7	0.000952501	172.28.0.90	172.28.0.1	IMAP	110	Response: 69 OK NOOP completed (0.001 + 0.000 secs).
+9	0.001157266	172.28.0.1	172.28.0.90	IMAP	92	Request: 70 UID fetch 8:* (FLAGS)
+11	0.001387314	172.28.0.90	172.28.0.1	IMAP	154	Response: 70 OK Fetch completed (0.001 + 0.000 secs).
+13	0.002704380	172.28.0.1	172.28.0.90	IMAP	75	Request: 71 IDLE
+15	0.002941722	172.28.0.90	172.28.0.1	IMAP	76	Response: + idling
+60	15.722543546	172.28.0.90	172.28.0.1	IMAP	90	Response: * 6 EXISTS
+62	15.723339767	172.28.0.1	172.28.0.90	IMAP	72	Request: DONE
+64	15.723507614	172.28.0.90	172.28.0.1	IMAP	121	Response: 71 OK Idle completed (15.721 + 15.718 + 15.720 secs).
+66	15.723901320	172.28.0.1	172.28.0.90	IMAP	75	Request: 72 noop
+68	15.724435617	172.28.0.90	172.28.0.1	IMAP	110	Response: 72 OK NOOP completed (0.001 + 0.000 secs).
+70	15.724680116	172.28.0.1	172.28.0.90	IMAP	92	Request: 73 UID fetch 8:* (FLAGS)
+72	15.725029146	172.28.0.90	172.28.0.1	IMAP	146	Response: 73 OK Fetch completed (0.001 + 0.000 secs).
+74	15.725698775	172.28.0.1	172.28.0.90	IMAP	248	Request: 74 UID fetch 8 (UID RFC822.SIZE FLAGS BODY.PEEK[HEADER.FIELDS (From To Cc Bcc Subject Date Message-ID Priority X-Priority References Newsgroups In-Reply-To Content-Type Reply-To)])
+76	15.727543896	172.28.0.90	172.28.0.1	IMAP/IMF	585	from: alumnopop <alumnopop@redes.unlp.edu.ar>, subject: hola cabron,  (text/plain)
+78	15.759640063	172.28.0.1	172.28.0.90	IMAP	112	Request: 75 UID fetch 8 (UID RFC822.SIZE BODY.PEEK[])
+80	15.760120544	172.28.0.90	172.28.0.1	IMAP/IMF	935	from: alumnopop <alumnopop@redes.unlp.edu.ar>, subject: hola cabron,  (text/plain)
+82	15.777713054	172.28.0.1	172.28.0.90	IMAP	178	Request: 76 UID fetch 8 (UID BODY.PEEK[HEADER.FIELDS (Content-Type Content-Transfer-Encoding)] BODY.PEEK[TEXT]<0.2048>)
+84	15.778617088	172.28.0.90	172.28.0.1	IMAP/IMF	322	(text/plain)
+86	15.789742688	172.28.0.1	172.28.0.90	IMAP	75	Request: 77 IDLE
+88	15.790254483	172.28.0.90	172.28.0.1	IMAP	76	Response: + idling
+124	50.826116147	172.28.0.90	172.28.0.1	IMAP	83	Response: * OK Still here
+126	50.827134065	172.28.0.1	172.28.0.90	IMAP	72	Request: DONE
+128	50.827301220	172.28.0.90	172.28.0.1	IMAP	121	Response: 77 OK Idle completed (35.038 + 35.037 + 35.037 secs).
+130	50.827765081	172.28.0.1	172.28.0.90	IMAP	75	Request: 78 noop
+132	50.828498371	172.28.0.90	172.28.0.1	IMAP	110	Response: 78 OK NOOP completed (0.001 + 0.000 secs).
+134	50.828829187	172.28.0.1	172.28.0.90	IMAP	92	Request: 79 UID fetch 9:* (FLAGS)
+136	50.829174468	172.28.0.90	172.28.0.1	IMAP	146	Response: 79 OK Fetch completed (0.001 + 0.000 secs).
+138	50.832179591	172.28.0.1	172.28.0.90	IMAP	75	Request: 80 IDLE
+140	50.832654708	172.28.0.90	172.28.0.1	IMAP	76	Response: + idling
+```
+
+Esta salida de Wireshark muestra una serie de comunicaciones entre un cliente y un servidor utilizando el protocolo IMAP (Internet Message Access Protocol), que es utilizado para acceder y manejar correos electrónicos de forma remota en un servidor. Veamos lo que está ocurriendo en cada línea:
+
+1. **IDLE y NOOP:**
+   - El comando `IDLE` es utilizado por el cliente para notificar al servidor que va a estar inactivo y espera notificaciones de nuevos mensajes o cambios en el buzón.
+   - `NOOP` es un comando que se utiliza para mantener la conexión abierta sin realizar ninguna acción.
+
+2. **UID FETCH:**
+   - El cliente utiliza el comando `UID fetch 8:* (FLAGS)` para solicitar información sobre los mensajes desde el número 8 hasta el último del buzón, específicamente, sus marcadores (FLAGS).
+
+3. **FETCH Response:**
+   - El servidor responde a los comandos `FETCH`, indicando que la acción solicitada se ha completado con éxito.
+
+4. **FETCH de Encabezados y Cuerpo del Mensaje:**
+   - El cliente realiza un `FETCH` detallado para el mensaje número 8, solicitando diferentes campos de los encabezados (`HEADER.FIELDS`) y un vistazo al cuerpo del mensaje (`BODY.PEEK[]`).
+
+5. **Texto del Mensaje y Continuación del IDLE:**
+   - El servidor responde con el contenido del mensaje número 8, mostrando el texto en formato MIME (Multipurpose Internet Mail Extensions) con los campos `From`, `To`, `Subject`, etc.
+   - Después, el cliente vuelve a enviar un comando `IDLE` para mantenerse en espera de nuevos mensajes o cambios.
+
+6. **Still Here:**
+   - El servidor envía una confirmación de que todavía está ahí, lo cual es una forma de mantener la conexión activa durante el comando `IDLE`.
+
+7. **DONE:**
+   - Cuando el cliente está listo para finalizar el estado de `IDLE`, envía el comando `DONE`.
+
+8. **FETCH de Mensajes Nuevos:**
+   - Finalmente, el cliente solicita con `UID fetch 9:* (FLAGS)` información sobre los mensajes nuevos que podrían haber llegado desde la última verificación.
+
+En resumen, la captura muestra el intercambio de comandos y respuestas estándar en una sesión IMAP, donde el cliente verifica la existencia de nuevos mensajes, solicita detalles de mensajes específicos, y espera activamente por nuevas llegadas con el comando `IDLE`.
+
 ---
 
 ## Ejercicio 6
 
+`IMAP vs POP`
+
+### Parte A
+
+Marque como leídos todos los correos que tenga en el buzón de entrada de alumnopop y de alumnoimap. Luego, cree una carpeta llamada POP en la cuenta de alumnopop y una llamada IMAP en la cuenta de alumnoimap.
+
+Asegurese que tiene mails en el inbox y en la carpeta recientemente creada en cada una de las cuentas.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/e5da1f1c-0884-47c9-8a04-a20504012efc)
+
+### Parte B
+
+Cierre la sesión iniciada e ingrese nuevamente identificandose como usuario root y password packer, ejecute el cliente de correos.
+
+De esta forma, iniciará el cliente de correo con el perfil del superusuario (diferente del usuario con el que ya configuró las cuentas antes mencionadas).
+
+Luego configure las cuentas POP e IMAP de los usuarios alumnopop y alumnoimap como se describió anteriormente pero desde el cliente de correos ejecutado con el usuario root.
+
+Luego responda:
+
+`¿Qué correos ve en el buzón de entrada de ambas cuentas?`
+
+`¿Están marcados como leídos o como no leídos?`
+
+`¿Por qué?`
+ 
+`¿Qué pasó con las carpetas POP e IMAP que creó en el paso anterior?`
+
+
+#### No pude hacer andar la parte b :,(
+
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWF6ZWoyeHZjMmI4Zm1mbWRhMjBxbDd5YjZsdDZmaTFrNHl1MTJtbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5AVgmIw7iAzdK/giphy.gif">
 
 ---
 
 ## Ejercicio 7
 
+`¿En algún caso es posible enviar más de un correo durante una misma conexión tcp?`
+
+**Considere**:
+
+- Destinatarios múltiples del mismo dominio entre MUA-MSA y entre MTA-MTA
+- Destinatarios múltiples de diferentes dominios entre MUA-MSA y entre MTA-MTA
+
+Sí, es posible enviar más de un correo durante una misma conexión TCP en varios escenarios del proceso de envío de correo electrónico. Estos escenarios incluyen tanto la comunicación entre el Agente de Usuario de Correo (MUA) y el Agente de Envío de Correo (MSA), como entre Agentes de Transferencia de Correo (MTA).
+
+1. **Destinatarios múltiples del mismo dominio entre MUA-MSA:**
+   Cuando un usuario envía un correo electrónico a través de su cliente de correo (MUA) a su servidor (MSA), puede especificar varios destinatarios en los campos "Para", "CC" o "CCO". El MUA enviará una sola transacción SMTP al MSA que incluye todos estos destinatarios si pertenecen al mismo dominio.
+
+2. **Destinatarios múltiples de diferentes dominios entre MUA-MSA:**
+   Incluso cuando los destinatarios son de diferentes dominios, el MUA puede enviar todos los destinatarios en una sola transacción SMTP al MSA. Es responsabilidad del MSA clasificar y reenviar estos correos a los MTA correspondientes para los diferentes dominios.
+
+3. **Destinatarios múltiples del mismo dominio entre MTA-MTA:**
+   Cuando un MTA está enviando correos a otro MTA y todos los destinatarios pertenecen al mismo dominio, puede enviar todos esos correos en una única conexión TCP utilizando una única transacción SMTP. El protocolo SMTP permite enviar múltiples comandos "RCPT TO" durante la misma sesión para indicar múltiples destinatarios.
+
+4. **Destinatarios múltiples de diferentes dominios entre MTA-MTA:**
+   Si bien es técnicamente posible enviar correos a destinatarios de diferentes dominios en una sola conexión TCP, generalmente no se hace de esta manera debido a las políticas de enrutamiento y los posibles problemas de entrega. En la práctica, el MTA establecerá conexiones separadas para cada dominio de destino para manejar la entrega de correos electrónicos, a menos que tenga una configuración específica que permita el relaying o haya un acuerdo entre los dominios (como ocurre en federaciones o servicios internos de una empresa).
+
+En todos los casos, el protocolo SMTP que se utiliza para enviar correos electrónicos entre MUAs, MSAs y MTAs admite transacciones con múltiples destinatarios en una sola sesión de conexión TCP, lo que puede mejorar la eficiencia al reducir el número de conexiones necesarias para enviar varios correos electrónicos. Sin embargo, la capacidad de hacerlo también puede estar limitada por políticas específicas de los servidores de correo o por medidas antispam.
 
 ---
 
 ## Ejercicio 8
 
+`Indique sí es posible que el MSA escuche en un puerto TCP diferente a los convencionales y qué implicancias tendría.`
+
+Sí, es posible que un Mail Submission Agent (MSA), o cualquier servidor, escuche en un puerto TCP que no sea uno de los convencionales. Los puertos estándar para la sumisión de correo SMTP son el 25 para el intercambio entre servidores de correo (MTA a MTA), el 587 para la sumisión de correo desde un cliente de correo (MUA) a un MSA, y en algunos casos el 465 para conexiones seguras SMTP sobre SSL (aunque este último es informal y no está oficializado por la IETF).
+
+Cambiar el puerto en el que un MSA escucha puede tener varias implicancias:
+
+1. **Configuración del cliente:** Los clientes de correo electrónico que necesiten enviar correo a través de este MSA tendrán que configurarse para usar el nuevo puerto. Esto significa que el puerto no estándar debe ser comunicado a todos los usuarios y correctamente configurado en sus clientes de correo electrónico.
+
+2. **Compatibilidad y usabilidad:** Muchos clientes de correo tienen preconfigurados los puertos estándar y los usuarios pueden no saber cómo cambiar esta configuración. Esto podría resultar en problemas de usabilidad y soporte técnico.
+
+3. **Seguridad:** Algunos administradores de red pueden optar por cambiar el puerto de escucha de un servicio para evitar ataques automatizados que se dirigen a los puertos estándar. Sin embargo, este tipo de "seguridad por oscuridad" no es una medida de seguridad sólida y no debe ser la única protección.
+
+4. **Firewalls y filtros de red:** Los firewalls y sistemas de seguridad de red pueden necesitar ser reconfigurados para permitir tráfico a través del nuevo puerto. Además, si los usuarios están detrás de firewalls corporativos que solo permiten tráfico a través de puertos conocidos, podrían experimentar problemas para conectarse al MSA.
+
+5. **Interoperabilidad:** En el caso de comunicaciones entre servidores (MTA a MTA), cambiar el puerto podría llevar a que los correos no puedan ser entregados, ya que los servidores remotos esperarán que el MTA esté escuchando en el puerto estándar (25). Esto no aplica para MSA ya que la sumisión de correo normalmente es MUA a MSA.
+
+En resumen, aunque es técnicamente posible cambiar el puerto, hacerlo se desvía de las convenciones y puede crear complicaciones adicionales tanto para los usuarios como para la administración de la red. Si se hace, es crucial que se gestione adecuadamente y que se informe y apoye a los usuarios en el proceso de cambio.
 
 ---
 
 ## Ejercicio 9
 
+`Indique sí es posible que el MTA escuche en un puerto TCP diferente a los convencionales y qué implicancias tendría.`
+
+Sí, es posible que un Mail Transfer Agent (MTA) escuche en un puerto TCP que no sea uno de los convencionales, aunque esto no es habitual y puede tener varias implicaciones prácticas y técnicas.
+
+Los puertos estándar para el MTA son el puerto 25 para la transmisión de mensajes entre servidores de correo (intercambio MTA a MTA) y, en algunos casos, el 587 para la recepción de mensajes de un cliente de correo o un MSA, aunque este último se usa principalmente para la sumisión de correo desde un MUA al MTA y no para la transferencia entre servidores.
+
+### Implicancias de un MTA en un Puerto No Convencional:
+
+1. **Configuración de Otros Servidores:**
+   - Otros servidores que intenten enviar correo a este MTA necesitarán saber que deben conectarse a un puerto no estándar. Esto generalmente requiere configuración manual y acuerdos entre administradores de los sistemas implicados, lo cual puede complicar las relaciones y las configuraciones predeterminadas.
+
+2. **Firewalls y Routers:**
+   - Los firewalls y routers que filtran el tráfico de red a menudo están configurados para permitir el tráfico SMTP a través del puerto 25. Cambiar a un puerto diferente podría requerir una reconfiguración significativa de estas políticas de seguridad, lo que podría ser problemático si la red es grande o si está gestionada por múltiples entidades.
+
+3. **Compatibilidad y Interoperabilidad:**
+   - Utilizar un puerto no estándar puede afectar la interoperabilidad con otros sistemas de correo que esperan que el MTA esté disponible en el puerto 25. Esto podría resultar en errores de entrega o en la incapacidad de comunicarse con ciertos dominios que no reconocen la configuración personalizada.
+
+4. **Administración y Soporte:**
+   - Los problemas de conectividad y entrega pueden ser más difíciles de diagnosticar si el MTA está operando en un puerto no estándar. Los administradores de sistemas y soporte técnico deben estar conscientes de esta configuración y preparados para manejar problemas que no seguirán los flujos de resolución de problemas estándar.
+
+5. **Seguridad:**
+   - Cambiar el puerto de escucha de un servicio es a veces visto como una medida de seguridad para evitar ataques dirigidos a los puertos comunes. Sin embargo, esta forma de "seguridad por oscuridad" generalmente no ofrece una protección real contra adversarios determinados y no debe ser la única defensa contra amenazas de seguridad.
+
+### Conclusión:
+Aunque técnicamente es posible configurar un MTA para que escuche en un puerto diferente al 25, hacerlo puede conducir a problemas de interoperabilidad, administración y seguridad. La mayoría de las organizaciones y administradores optan por adherirse a los estándares establecidos para garantizar la compatibilidad y minimizar problemas operativos. Si se considera necesario un cambio de este tipo, se deben tomar medidas cuidadosas para asegurarse de que todos los socios y sistemas implicados estén adecuadamente configurados y sean conscientes de esta desviación del estándar.
 
 ---
 

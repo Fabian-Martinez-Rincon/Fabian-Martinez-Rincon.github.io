@@ -2276,9 +2276,13 @@ Luego configure las cuentas POP e IMAP de los usuarios alumnopop y alumnoimap co
 
 Luego responda:
 
-i. ¿Qué correos ve en el buzón de entrada de ambas cuentas? ¿Están marcados como leídos o como no leídos? ¿Por qué?
+`¿Qué correos ve en el buzón de entrada de ambas cuentas?`
+
+`¿Están marcados como leídos o como no leídos?`
+
+`¿Por qué?`
  
-ii. ¿Qué pasó con las carpetas POP e IMAP que creó en el paso anterior?
+`¿Qué pasó con las carpetas POP e IMAP que creó en el paso anterior?`
 
 #### Parte c
 
@@ -2311,7 +2315,7 @@ Indique sí es posible que el MTA escuche en un puerto TCP diferente a los conve
 
 ### Ejercicio 10
 
-***Ejercicio integrador HTTP, DNS y MAIL***
+`Ejercicio integrador HTTP, DNS y MAIL`
 
 Suponga que registró bajo su propiedad el dominio redes2022.com.ar y dispone de 4 servidores:
 
