@@ -2165,7 +2165,7 @@ Complete las líneas donde aparece __ con el registro correcto
 
 ### Ejercicio 2
 
-¿Quéprotocolos se utilizan para la recepción de mails? Enumere y explique características y diferencias entre las alternativas posibles.
+¿Qué protocolos se utilizan para la recepción de mails? Enumere y explique características y diferencias entre las alternativas posibles.
 
 ---
 
