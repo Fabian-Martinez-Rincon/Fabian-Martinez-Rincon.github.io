@@ -18,6 +18,16 @@ tags: ["Objetos", "Uml", "Java", "Test Unit"]
 - [Ejercicio 3b Usando la librería JsonSimple](#ejercicio-3b-usando-la-librería-jsonsimple)
 - [Ejercicio 4 Cálculo de sueldos](#ejercicio-4-cálculo-de-sueldos)
 - [Ejercicio 5 Media Player](#ejercicio-5-media-player)
+- [Ejercicio 6 Topografías](#ejercicio-6-topografías)
+- [Ejercicio 6b Mas Topografías](#ejercicio-6b-más-topografías)
+- [Ejercicio 7 Filesystem](#ejercicio-7-filesystem)
+- [Ejercicio 8 Todo Item](#ejercicio-8-todoitem)
+- [Ejercicio 9 Excursiones](#ejercicio-9-excursiones)
+- [Ejercicio 10 Encriptador](#ejercicio-10-encriptador)
+
+
+
+
 
 ---
 
@@ -1109,8 +1119,204 @@ public class MediaPlayerTest {
 
 ---
 
-## Ejercicio 6
+## Ejercicio 6 Topografías
+
+Un uso común de imágenes satelitales es el estudio de las cuencas hídricas que incluye saber la proporción entre la parte seca y la parte bajo agua. En general las imágenes satelitales están divididas en celdas. Las celdas son imágenes digitales (con píxeles) de las cuales se quiere extraer su “topología”. 
+
+Un objeto Topografía representa la distribución de agua y tierra de una celda satelital, la cual está formada por porciones de “agua” y de “tierra”. La siguiente figura muestra:
+
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8b496b34-29e1-47b8-b4db-c4f60b764799)
+
+Una topografía mixta está formada por partes de agua y partes de tierra (4 partes en total). Estas a su vez, podrían descomponerse en 4 más y así siguiendo.
+					
+La proporción de agua de una topografía sólo agua es 1. La proporción de agua de una topografía sólo tierra es 0. La proporción de agua de una topografía compuesta está dada por la suma de la proporción de agua de sus componentes dividida por 4. En el ejemplo, la proporción de agua es: (1 +0+0 + 1) / 4 = 1/2. La proporción siempre es un valor entre 0 y 1. 
+
+### Tareas:
+Diseñe e implemente las clases necesarias para que sea posible:
+- crear Topografías,
+- calcular su proporción de agua y tierra,
+- comparar igualdad entre topografías. Dos topografías son iguales si tienen exactamente la misma composición. Es decir, son iguales las proporciones de agua y tierra, y además, para aquellas que son mixtas, la disposición de sus partes es igual. 
+
+> Pista: notar que la definición de igualdad para topografías mixtas corresponde exactamente a la misma que implementan las listas en Java. https://docs.oracle.com/javase/8/docs/api/java/util/AbstractList.html#equals-java.lang.Object-
+
+Diseñe e implemente test cases para probar la funcionalidad implementada. Incluya en el set up de los tests, la topografía compuesta del ejemplo. 
 
 ---
 
-## Ejercicio 6b
+## Ejercicio 6b Más Topografías
+
+Extienda el ejercicio anterior para soportar (además de Agua y Tierra) el terreno Pantano. Un pantano tiene una proporción de agua de 0.7 y una proporción de tierra de 0.3. No olvide hacer las modificaciones necesarias para responder adecuadamente la comparación por igualdad.
+
+---
+
+## Ejercicio 7 FileSystem
+
+Un File System es un componente que forma parte del sistema operativo. Este está estructurado jerárquicamente en forma de árbol, comenzando con un directorio raíz.
+
+Los elementos del file system pueden ser directorios o archivos. Los archivos contienen datos y los directorios contienen archivos u otros directorios. De cada archivo se conoce el nombre, fecha de creación y tamaño en bytes. De cada directorio se conoce el nombre, fecha de creación y contenido (el tamaño es siempre la cantidad inicial de 32kb más la suma del tamaño de su contenido). Modele el file system y provea la siguiente funcionalidad:
+
+```java
+public class FileSystem {
+	/**
+	* Retorna el espacio total ocupado, incluyendo todo su contenido.
+	*/
+    public int tamanoTotalOcupado()
+
+	/**
+	* Retorna el archivo con mayor cantidad de bytes en cualquier nivel del 
+	* filesystem 
+	*/
+	
+	public Archivo archivoMasGrande()
+	/**
+	* Retorna el archivo con fecha de creación más reciente en cualquier nivel 
+	* del filesystem
+	*/
+
+	public Archivo archivoMasNuevo()
+
+	/**
+	* Retorna el primer elemento con el nombre solicitado contenido en cualquier
+	* nivel del filesystem
+	*/
+    public ?? buscar(String nombre)
+
+	/**
+	* Retorna la lista con los elementos que coinciden con el nombre solicitado 
+	* contenido en cualquier nivel del filesystem
+	*/
+    
+	public List<??> buscarTodos(String nombre)
+
+	/**
+	* Retorna un String con los nombres de los elementos contenidos en todos los 
+	* niveles del filesystem. De cada elemento debe retornar el path completo
+	* (similar al comando pwd de linux) siguiendo el modelo presentado a
+	* continuación
+	/Directorio A
+	/Directorio A/Directorio A.1
+	/Directorio A/Directorio A.1/Directorio A.1.1
+	/Directorio A/Directorio A.1/Directorio A.1.2 	
+	/Directorio A/Directorio A.2
+	/Directorio B
+	*/
+    
+	public String listadoDeContenido()
+
+}
+```
+
+### Tareas:
+- `1)`Diseñe y represente un modelo UML de clases de su aplicación, identifique el patrón de diseño empleado (utilice estereotipos UML para indicar los roles de cada una de las clases en ese patrón). 
+- `2)`Diseñe, implemente y ejecute test cases para verificar el funcionamiento de su aplicación.  
+- `3)`Implemente completamente en Java.
+
+---
+
+## Ejercicio 8 ToDoItem
+
+Se desea definir un sistema de seguimiento de tareas similar a Jira. 
+
+En este sistema hay tareas en las cuales se puede definir el nombre y una serie de comentarios. Las tareas atraviesan diferentes etapas a lo largo de su ciclo de vida y ellas son: pending, in-progress, paused y finished. Cada tarea debe estar modelada mediante la clase ToDoItem con el siguiente protocolo:
+
+```java
+public class ToDoItem {
+	/**
+	* Instancia un ToDoItem nuevo en estado pending con <name> como nombre.
+	*/
+	public ToDoItem(String name)
+
+	/**
+	* Pasa el ToDoItem a in-progress, siempre y cuando su estado actual sea
+	* pending. Si se encuentra en otro estado, no hace nada.
+	*/
+	public void start()
+
+	/**
+	* Pasa el ToDoItem a paused si su estado es in-progress, o a in-progress si su
+	* estado es paused. Caso contrario (pending o finished) genera un error
+	* informando la causa específica del mismo.
+	*/
+	public void togglePause()
+
+
+	/**
+	* Pasa el ToDoItem a finished, siempre y cuando su estado actual sea 
+	* in-progress o paused. Si se encuentra en otro estado, no hace nada.
+	*/
+	public void finish()
+
+
+	/**
+	* Retorna el tiempo que transcurrió desde que se inició el ToDoItem (start)
+	* hasta que se finalizó. En caso de que no esté finalizado, el tiempo que
+	* haya transcurrido hasta el momento actual. Si el ToDoItem no se inició,
+	* genera un error informando la causa específica del mismo.
+	*/
+	public Duration workedTime()
+
+
+	/**
+	* Agrega un comentario al ToDoItem siempre y cuando no haya finalizado. Caso
+	* contrario no hace nada."
+	*/
+	public void addComment(String comment)
+}
+```
+
+> Nota: para generar o levantar un error debe utilizar la expresión 
+
+```java
+throw new RuntimeException("Este es mi mensaje de error");
+```
+
+El mensaje de error específico que se espera en este ejercicio debe ser descriptivo del caso. Por ejemplo, para el método togglePause() , el mensaje de error debe indicar que el ToDoItem no se encuentra en in-progress o paused: 
+
+```java
+throw new RuntimeException("El objeto ToDoItem no se encuentra en pause o in-progress");
+```
+
+### Tareas:
+- `1)` Modele una solución orientada a objetos para el problema planteado utilizando un diagrama de clases UML. Si utilizó algún patrón de diseño indique cuáles son los participantes en su modelo de acuerdo a Gamma et al.
+- `2)` Implemente su solución en Java. Para comprobar cómo funciona recomendamos usar test cases.
+
+
+---
+
+## Ejercicio 9 Excursiones
+
+Sea una aplicación que ofrece excursiones como por ejemplo “dos días en kayak bajando el Paraná”. Una excursión posee nombre, fecha de inicio, fecha de fin, punto de encuentro, costo, cupo mínimo y cupo máximo.
+
+La aplicación ofrece las excursiones pero éstas sólo se realizan si alcanzan el cupo mínimo de inscriptos. Un usuario se inscribe a una excursión y si aún no se alcanzó el cupo mínimo, la inscripción se considera provisoria. Luego, cuando se alcanza el cupo mínimo, la inscripción se considera definitiva y podrá llevarse a cabo. Finalmente, cuando se alcanza el cupo máximo, la excursión solo registrará nuevos inscriptos en su lista de espera.
+
+De los usuarios inscriptos, la aplicación registra su nombre, apellido e email.
+
+Por otro lado, en todo momento la excursión ofrece información de la misma, la cual consiste en una serie de datos que varían en función de la situación.
+
+- Si la excursión no alcanza el cupo mínimo, la información es la siguiente: nombre, costo, fechas, punto de encuentro, cantidad de usuarios faltantes para alcanzar el cupo mínimo.
+- Si la excursión alcanzó el cupo mínimo pero aún no el máximo, la información es la siguiente: nombre, costo, fechas, punto de encuentro, los mails de los usuarios inscriptos y cantidad de usuarios faltantes para alcanzar el cupo máximo.
+- Si la excursión alcanzó el cupo máximo, la información solamente incluye nombre, costo, fechas y punto de encuentro.
+
+En una primera versión, al no contar con una interfaz de usuario y a los efectos de debugging, este comportamiento puede implementarlo en un método que retorne un String con la información solicitada.
+
+### Tareas:
+- `1)` Realice un diseño UML. Si utiliza algún patrón indique cuál(es) y justifique su uso.
+- `2)` Implemente lo necesario para instanciar una excursión y para instanciar un usuario.
+- `3)` Implemente los siguientes mensajes de la clase Excursion: 
+	- (i) public void inscribir (Usuario unUsuario) 
+	- (ii) public String obtenerInformacion().
+- `4)` Escriba un test para inscribir a un usuario en la excursión “Dos días en kayak bajando el Paraná”, con cupo mínimo de 1 persona y cupo máximo 2, con dos personas ya inscriptas. Implemente todos los mensajes que considere necesarios.
+
+
+---
+
+## Ejercicio 10: Encriptador
+
+En un sistema de mensajes instantáneos (como WhatsApp) se envían mensajes de una máquina a otra a través de una red. Para asegurar que la información que pasa por la red no es espiada, el sistema utiliza una conexión segura. Este tipo de conexión encripta la información antes de enviarla y la desencripta al recibirla. La siguiente figura ilustra un posible diseño para este enunciado.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/3a184b23-158e-4b71-ab30-599084babc0d)
+
+### Tareas:
+- Modifique el diseño para que el objeto Encriptador pueda encriptar mensajes usando los algoritmos Blowfish y RC4, además del ya soportado RSA.
+- Documente mediante un diagrama de clases UML indicando los roles de cada clase.
