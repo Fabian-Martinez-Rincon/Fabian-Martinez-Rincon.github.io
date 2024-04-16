@@ -22,6 +22,7 @@ tags: ["linux", "vim", "bash"]
 - [Ejercicio 10 Integrador HTTP, DNS y MAIL](#ejercicio-10)
 - [Ejercicio 11 Usando Swaks](#ejercicio-11)
 - [Ejercicio 12 Observe el gráfico a continuación](#ejercicio-12)
+- [Consultas](#consultas)
 
 ---
 
@@ -832,3 +833,6 @@ Suponga que contratamos un servidor de correo electrónico en la nube para integ
 
 
 ---
+
+
+## Consultas

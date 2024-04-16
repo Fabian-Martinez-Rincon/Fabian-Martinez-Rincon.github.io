@@ -31,6 +31,7 @@ tags: ["linux", "vim", "bash"]
 - [Ejercicio 18 Respuesta sobre www.google.com](#ejercicio-18)
 - [Ejercicio 19 Servidor elegido en el paso anterior](#ejercicio-19)
 - [Ejercicio Parcial](#ejercicio-parcial)
+- [Consultas](#consultas)
 
 ---
 
@@ -1413,6 +1414,10 @@ Los números `10` y `5` representan las prioridades de los servidores de correo 
 
 Estas prioridades ayudan a dirigir el tráfico de correo electrónico de manera eficiente, asegurando que se utilice primero el servidor más deseable o más confiable.
 
+
+---
+
+## Consultas
 
 
 

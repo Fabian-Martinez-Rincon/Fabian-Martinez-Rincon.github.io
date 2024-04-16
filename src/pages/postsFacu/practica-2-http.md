@@ -34,6 +34,7 @@ tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]
 - [Ejercicio 20 Responder Preguntas Random](#ejercicio-20)
 - [Ejercicio Parcial](#ejercicio-parcial)
 - [Cuestionario de Teoria](#cuestionario)
+- [Consultas](#consultas)
 
 
 ---
@@ -1261,3 +1262,8 @@ Seleccione una:
 
 - Verdadero ✔️
 - Falso
+
+
+---
+
+## Consultas
