@@ -33,6 +33,7 @@ tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]
 - [Ejercicio 19 Protocolo Binario vs Basado en texto](#ejercicio-19)
 - [Ejercicio 20 Responder Preguntas Random](#ejercicio-20)
 - [Ejercicio Parcial](#ejercicio-parcial)
+- [Cuestionario de Teoria](#cuestionario)
 
 
 ---
@@ -1211,3 +1212,52 @@ En el caso de recibir un `304 Not Modified`, el navegador habría utilizado la v
 
 ---
 
+## Cuestionario
+
+### Pregunta 1
+
+`Indicar de forma breve la diferencia entre el método GET y el PUT`
+- El get es para solicitar datos de un recurso (una url por ejemplo)
+- Put se usa para enviar datos al servido
+
+### Pregunta 2
+
+`Indicar cuales características mejoran el rendimiento de HTTP`
+
+Seleccione una o más de una:
+
+- `a)` Uso de SSL
+- `b)` Compresión de headers ✔️
+- `c)` Pipelining ✔️
+- `d)` Conexiones persistentes ✔️
+- `e)` Binary Framing ✔️
+
+> Las respuestas correctas son: Pipelining, Conexiones persistentes, Compresión de headers, Binary Framing
+
+### Pregunta 3
+
+`En HTTP 1.0 no se pueden usar conexiones persistentes`
+
+Seleccione una:
+
+- Verdadero 
+- Falso ✔️
+
+
+### Pregunta 4
+
+`Los códigos HTTP 3XX están relacionados con re direcciones`
+
+Seleccione una:
+
+- Verdadero ✔️
+- Falso
+
+### Pregunta 5
+
+`HTTP no mantiene estados, por más que tenga conexiones persistentes`
+
+Seleccione una:
+
+- Verdadero ✔️
+- Falso
