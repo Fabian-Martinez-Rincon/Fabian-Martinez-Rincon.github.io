@@ -727,6 +727,99 @@ Aunque técnicamente es posible configurar un MTA para que escuche en un puerto 
 
 ## Ejercicio 10
 
+`Ejercicio integrador HTTP, DNS y MAIL`
+
+Suponga que registró bajo su propiedad el dominio redes2022.com.ar y dispone de 4 servidores:
+
+- Un servidor DNS instalado configurado como primario de la zona redes2022.com.ar. (hostname: ns1 / ip: 203.0.113.65).
+- Un servidor DNS instalado configurado como secundario de la zona redes2022.com.ar. (hostname: ns2 / ip: 203.0.113.66).
+- Un servidor de correo electrónico (hostname: mail / ip: 203.0.113.111). Permitirá a los usuarios envíar y recibir correos a cualquier dominio de Internet.
+- Un servidor WEB para el acceso a un webmail (hostname: correo / ip: 203.0.113.8). Permitirá a los usuarios gestionar vía web sus correos electrónicos a través de la URL https://webmail.redes2022.com.ar
+
+### Parte a
+
+`¿Qué información debería informar al momento del registro para hacer visible a Internet el dominio registrado?`
+
+### Parte b
+
+`¿Qué registros sería necesario configurar en el servidor de nombres?`
+
+`Indique toda la información necesaria del archivo de zona.`
+
+Puede utilizar la siguiente tabla de referencia (evalúe la necesidad de usar cada caso los siguientes campos): 
+- Nombre del registro
+- Tipo de registro
+- Prioridad
+- TTLValor del registro.
+
+### Parte c
+
+`¿Es necesario que el servidor de DNS acepte consultas recursivas? Justifique.`
+
+### Parte d
+
+`¿Qué servicios/protocolos de capa de aplicación configuraría en cada servidor?`
+
+### Parte e
+
+`Para cada servidor, ¿qué puertos considera necesarios dejar abiertos a Internet?.`
+
+`A modo de referencia, para cada puerto indique: servidor, protocolo de transporte y número de puerto.`
+
+### Parte f
+
+`¿Cómo cree que se conectaría el webmail del servidor web con el servidor de correo?`
+
+`¿Qué protocolos usaría y para qué?`
+
+### Parte g
+
+`¿Cómo se podría hacer para que cualquier MTA reconozca como válidos los mails provienentes del dominio redes2022.com.ar solamente a los que llegan de la dirección 203.0.113.111?`
+
+`¿Afectaría esto a los mails enviados desde el Webmail? Justifique.`
+
+### Parte h
+
+`¿Qué característica propia de SMTP, IMAP y POP hace que al adjuntar una imagen o un ejecutable sea necesario aplicar un encoding (ej. base64)?`
+
+### Parte i
+
+`¿Se podría enviar un mail a un usuario de modo que el receptor vea que el remitente es un usuario distinto? `
+
+`En caso afirmativo, ¿Cómo?` 
+
+`¿Es una indicación de una estafa? Justifique`
+
+### Parte j
+
+`¿Sepodría enviar un mail a un usuario de modo queel receptor vea que el destinatario es un usuario distinto?` 
+
+`En caso afirmativo, ¿Cómo?` 
+
+`¿Por qué no le llegaría al destinatario que el receptor vé?` 
+
+`¿Es esto una indicación de una estafa? Justifique`
+
+### Parte k
+
+`¿Qué protocolo usará nuestro MUA para enviar un correo con remitente redes@info.unlp.edu.ar?`
+
+`¿Con quién se conectará?`
+
+`¿Qué información será necesaria y cómo la obtendría?`
+
+### Parte l
+
+Dado que solo disponemos de un servidor de correo
+
+`¿qué sucederá con los mails que intenten ingresar durante un reinicio del servidor?`
+
+### Parte m
+
+Suponga que contratamos un servidor de correo electrónico en la nube para integrarlo con nuestra arquitectura de servicios.
+ 
+`¿Cómo configuraría el DNS para que ambos servidores de correo se comporten de manera de dar un servicio de correo tolerante a fallos?`
+
 
 ---
 
