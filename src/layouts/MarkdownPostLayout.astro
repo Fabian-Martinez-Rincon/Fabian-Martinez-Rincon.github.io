@@ -203,38 +203,54 @@ const { frontmatter } = Astro.props;
   }
 
   .markdown-body table {
-    display: block;
+    display: table; /* Cambiado de block a table para manejar correctamente el layout de tablas */
     width: 100%;
-    overflow: auto;
+    max-width: none; /* Elimina cualquier restricción de ancho máximo */
+    overflow: visible; /* Asegura que el contenido no se recorte si se expande más de lo esperado */
     margin-top: 0;
     margin-bottom: 16px;
     border-collapse: collapse;
-  }
+}
 
-  .markdown-body table th,
-  .markdown-body table td {
-    
-    padding: 8px;
+.markdown-body table th,
+.markdown-body table td {
+    padding: 10px;
     line-height: 1.6;
-    vertical-align: top;
+    vertical-align: middle; 
+}
 
-  }
-
-  .markdown-body table th {
+.markdown-body table th {
     font-weight: 600;
-  }
+}
 
-  .markdown-body table thead th {
+.markdown-body table thead th {
     vertical-align: bottom;
-  }
+}
 
-  .markdown-body table tbody + tbody {
-    border-top: 2px solid #dfe2e5d3;
-  }
+.markdown-body table tbody + tbody {
+    border-top: 2px solid #dfe2e5;
+}
 
-  .markdown-body table table {
-    background-color: #ffffff00;
-  }
+.markdown-body table code { 
+    white-space: pre-wrap; 
+    display: block; 
+}
+
+.markdown-body table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dddddd58;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 1px rgba(0,0,0,0.02);
+}
+
+.markdown-body table th, .markdown-body table td {
+  border: 1px solid #dddddd58;
+  padding: 10px;
+  text-align: left;
+}
+
 
   .markdown-body audio {
     
