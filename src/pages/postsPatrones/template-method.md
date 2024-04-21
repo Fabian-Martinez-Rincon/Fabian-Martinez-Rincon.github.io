@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Template Method'
+title: '📃TemplateMethod'
 pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'

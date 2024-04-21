@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Patrón Strategy'
+title: '🔑 Strategy'
 pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
