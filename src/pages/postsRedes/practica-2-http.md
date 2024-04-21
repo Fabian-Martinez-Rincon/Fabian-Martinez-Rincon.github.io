@@ -10,54 +10,23 @@ pubDate: 2024-03-30
 tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]
 ---
 
+## Introducción
 
-
-- [Ejercicio 1 Capa de Aplicación](#ejercicio-1)
-- [Ejercicio 2 Si dos Procesos deben Comunicarse](#ejercicio-2)
-- [Ejercicio 3 Modelo Cliente/Servidor](#ejercicio-3)
-- [Ejercicio 4 User agent](#ejercicio-4)
-- [Ejercicio 5 Diferencias HTML y HTTP](#ejercicio-5)
-- [Ejercicio 6 Formato de Mensajes para requerimientos y respuestas HTTP](#ejercicio-6)
-- [Ejercicio 7 Curl con parametros](#ejercicio-7)
-- [Ejercicio 8 Curl sin parametros](#ejercicio-8)
-- [Ejercicio 9 Curl Randoms](#ejercicio-9)
-- [Ejercicio 10 Cabecera Date](#ejercicio-10)
-- [Ejercicio 11 Como sabe el cliente que recibio el objeto completo](#ejercicio-11)
-- [Ejercicio 12 Retornos de un servidor](#ejercicio-12)
-- [Ejercicio 13 Curl HEAD](#ejercicio-13)
-- [Ejercicio 14 Curl Pistas](#ejercicio-14)
-- [Ejercicio 15 Curl HTTP/1.0 y HTTP/1.1 + Telnet](#ejercicio-15)
-- [Ejercicio 16 Preguntas sobre el ejercicio 15](#ejercicio-16)
-- [Ejercicio 17 POST y GET diferencias](#ejercicio-17)
-- [Ejercicio 18 Cabecera Set-Cookie y Cookie](#ejercicio-18)
-- [Ejercicio 19 Protocolo Binario vs Basado en texto](#ejercicio-19)
-- [Ejercicio 20 Responder Preguntas Random](#ejercicio-20)
-- [Ejercicio Parcial](#ejercicio-parcial)
-- [Cuestionario de Teoria](#cuestionario)
-- [Consultas](#consultas)
-
-
----
-
-# Introducción
-
-## Ejercicio 1
-
-`¿Cuál es la función de la capa de aplicación?`
+<details><summary>¿Cuál es la función de la capa de aplicación?</summary>
 
 La función de la capa de aplicación en las redes de computadoras es proporcionar servicios de comunicación a los usuarios y a las aplicaciones. Esta capa incluye las propias aplicaciones que utilizan la red, como navegadores web, clientes de correo electrónico y aplicaciones de mensajería instantánea. En el contexto de Machine to Machine (M2M), la capa de aplicación facilita la comunicación entre máquinas sin intervención humana.
 
 Además, la capa de aplicación actúa como una interfaz entre el usuario o las aplicaciones/servicios y la red. Es responsable de la definición del formato de los mensajes, de establecer las reglas para el intercambio de mensajes y de asegurar que los mensajes se transmitan de manera que cumplan con los requisitos de la aplicación. También se encarga de la conversión y codificación de datos, la compresión y descompresión, y el cifrado y descifrado, integrando funciones de lo que en el modelo OSI corresponden a las capas de Aplicación, Presentación y Sesión.
 
----
+</details>
 
-## Ejercicio 2
 
-Si dos procesos deben comunicarse:
+<details><summary>Si dos procesos deben comunicarse:</summary>
 
 `¿Cómo podrían hacerlo si están en diferentes máquinas?`
 
 **A través de la red**: Utilizan la comunicación de red, intercambiando mensajes a través de un protocolo de la capa de aplicación adecuado (como HTTP, FTP, SMTP, etc.). Cada proceso utiliza un socket, que es un punto final de comunicación que proporciona la puerta de enlace para enviar y recibir datos. Los sockets se basan en la dirección IP de la máquina y un número de puerto específico para identificar el proceso de destino, permitiendo que los procesos en diferentes hosts se comuniquen entre sí a través de la red.
+
 
 `Y si están en la misma máquina, ¿qué alternativas existen?`
 
@@ -70,21 +39,24 @@ Si dos procesos deben comunicarse:
 - **Semáforos y mutexes**: Se utilizan para manejar el acceso concurrente a recursos compartidos, como la memoria.
 - **Colas de mensajes**: Permiten el intercambio de mensajes entre procesos, donde los mensajes se almacenan en una cola hasta que el proceso receptor está listo para procesarlos.
 
----
+</details>
 
-## Ejercicio 3
 
-`Explique brevemente cómo es el modelo Cliente/Servidor.`
+<details><summary>Explique brevemente cómo es el modelo Cliente/Servidor.</summary>
 
 El modelo Cliente/Servidor es una arquitectura de red donde el servidor es una máquina que proporciona servicios o recursos, mientras que el cliente es una máquina o proceso que solicita esos servicios o recursos. En este modelo, el servidor está siempre activo, escuchando las solicitudes de los clientes. Cuando recibe una solicitud, el servidor la procesa y luego envía una respuesta de vuelta al cliente. Los clientes pueden conectarse o desconectarse de la red en cualquier momento y pueden tener direcciones IP dinámicas. En esta arquitectura, los clientes no se comunican directamente entre sí.
 
-`De un ejemplo de un sistema Cliente/Servidor en la “vida cotidiana” y un ejemplo de un sistema informático que siga el modelo Cliente/Servidor.`
+</details>
+
+<details><summary>De un ejemplo de un sistema Cliente/Servidor en la “vida cotidiana” y un ejemplo de un sistema informático que siga el modelo Cliente/Servidor.</summary>
 
 **Ejemplo en la “vida cotidiana”**: Un ejemplo cotidiano podría ser un usuario navegando en internet; el navegador actúa como el cliente y el servidor web como el servidor. El usuario (a través del navegador) solicita una página web (cliente) y el servidor web responde enviando los archivos de esa página web al navegador.
 
 **Ejemplo de un sistema informático**: En el contexto de los sistemas informáticos, un ejemplo típico es el servicio de correo electrónico, donde un servidor de correo maneja y almacena los correos electrónicos, mientras que el cliente de correo electrónico (como Microsoft Outlook o Mozilla Thunderbird) permite al usuario enviar y recibir correos electrónicos.
 
-`¿Conoce algún otro modelo de comunicación?`
+</details>
+
+<details><summary>¿Conoce algún otro modelo de comunicación?</summary>
 
 **Otros modelos de comunicación**:
 1. **Peer-to-Peer (P2P)**: En este modelo, cada nodo o participante actúa tanto como cliente como servidor. Los nodos se comunican directamente entre sí sin la necesidad de un servidor central. Esto se utiliza comúnmente en la compartición de archivos y redes de comunicación descentralizadas.
@@ -93,11 +65,10 @@ El modelo Cliente/Servidor es una arquitectura de red donde el servidor es una m
 
 3. **Modelo de Publicación/Suscripción**: En este modelo, los clientes se suscriben a un tema y reciben actualizaciones automáticamente de un servidor cuando hay nuevos contenidos o mensajes relacionados con ese tema. Esto es común en sistemas de mensajería y notificaciones en tiempo real.
 
----
+</details>
 
-## Ejercicio 4
 
-`Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”`
+<details><summary>Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”</summary>
 
 Un "Agente de Usuario" o "User Agent" se refiere a cualquier software que actúa en nombre de un usuario. La función principal de un agente de usuario es servir como intermediario entre el usuario y las aplicaciones de red, facilitando la interacción del usuario con la red o los servicios de Internet.
 
@@ -117,19 +88,21 @@ Las funcionalidades de un agente de usuario incluyen:
 
 Ejemplos de agentes de usuario incluyen navegadores web, clientes de correo electrónico, y aplicaciones de mensajería instantánea. En la práctica, el término "user agent" se utiliza a menudo específicamente para referirse al navegador web del usuario.
 
----
+</details>
 
-## Ejercicio 5
-
-`¿Qué son y en qué se diferencian HTML y HTTP?`
+<details><summary>¿Qué son y en qué se diferencian HTML y HTTP?</summary>
 
 1. **HTML**: Es un lenguaje de marcado utilizado para crear y estructurar páginas web. HTML utiliza etiquetas y atributos para definir cómo se muestra el contenido en un navegador web, como textos, imágenes, enlaces, tablas, listas, etc. HTML se ocupa de la presentación y la estructura del contenido en la web.
 
 2. **HTTP**: Es un protocolo de la capa de aplicación utilizado para la transmisión de documentos hipermedia, como HTML. Es el fundamento de cualquier intercambio de datos en la Web y es un protocolo basado en solicitudes y respuestas entre clientes (por ejemplo, un navegador web) y servidores (el lugar donde se aloja la página web). HTTP define cómo se deben transmitir los mensajes y los datos entre cliente y servidor.
 
-`¿En que entidad ubicaría a HTML?`
+</details>
 
-En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de aplicación del modelo TCP/IP o en las capas de presentación y aplicación del modelo OSI, ya que está directamente relacionado con la forma en que se presentan los datos al usuario final en aplicaciones de red, específicamente en navegadores web .
+<details><summary>¿En que entidad ubicaría a HTML?</summary>
+
+En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de aplicación del modelo TCP/IP o en las capas de presentación y aplicación del modelo OSI, ya que está directamente relacionado con la forma en que se presentan los datos al usuario final en aplicaciones de red, específicamente en navegadores web.
+
+</details>
 
 ---
 
@@ -137,12 +110,7 @@ En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de apl
 
 HTTP tiene definido un formato de mensaje para los requerimientos y las respuestas. 
 
-> (Ayuda: apartado “Formato de mensaje HTTP”, Kurose).
-
-
-### Ejercicio a
-
-`¿Qué información de la capa de aplicación nos indica si un mensaje es de requerimiento o de respuesta para HTTP? `
+<details><summary>¿Qué información de la capa de aplicación nos indica si un mensaje es de requerimiento o de respuesta para HTTP?</summary>
 
 En HTTP, los mensajes de requerimiento y respuesta se diferencian principalmente por la línea de inicio, que es la primera línea del mensaje HTTP.
 
@@ -193,7 +161,9 @@ Ejemplo de una línea de inicio de respuesta: `HTTP/1.1 200 OK`. En este caso, `
 # Continua  la pagina pero no lo pongo porque es demasiado largo
 ```
 
-`¿Cómo está compuesta dicha información?`
+</details>
+
+<details><summary>¿Cómo está compuesta dicha información?</summary>
 
 El formato detallado de los mensajes HTTP tanto para los requerimientos como para las respuestas incluye varios componentes además de la línea de inicio:
 
@@ -203,7 +173,9 @@ El formato detallado de los mensajes HTTP tanto para los requerimientos como par
 
 - **Cuerpo (Body):** Opcional en algunos tipos de mensajes, contiene los datos transmitidos. En los requerimientos puede incluir datos a ser procesados por el servidor (como en POST), y en las respuestas usualmente lleva el recurso solicitado o un mensaje de error.
 
-`¿Para qué sirven las cabeceras?`
+</details>
+
+<details><summary>¿Para qué sirven las cabeceras?</summary>
 
 Las cabeceras HTTP cumplen roles cruciales en la funcionalidad del protocolo:
 
@@ -215,11 +187,10 @@ Las cabeceras HTTP cumplen roles cruciales en la funcionalidad del protocolo:
 
 Estos componentes permiten que HTTP sea un protocolo flexible y poderoso, adecuado para las diversas necesidades del mundo web moderno.
 
-### Ejercicio b
+</details>
 
-`¿Cuál es su formato?`
 
-> (Ayuda:https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+<details><summary>¿Cuál es su formato?</summary>
 
 El formato de un mensaje HTTP, ya sea un mensaje de requerimiento (solicitud) o un mensaje de respuesta, está compuesto de la siguiente manera:
 
@@ -287,15 +258,16 @@ El formato de un mensaje HTTP, ya sea un mensaje de requerimiento (solicitud) o 
 
 En resumen, tanto los mensajes de requerimiento como de respuesta HTTP están estructurados en una línea de inicio seguida por cabeceras, y opcionalmente un cuerpo de mensaje. Las cabeceras son fundamentales para proporcionar metadatos y controlar el comportamiento del intercambio HTTP.
 
-### Ejercicio c
+</details>
 
 Suponga que desea enviar un requerimiento con la versión de HTTP 1.1 desde curl/7.74.0 a un sitio de ejemplo como www.misitio.com para obtener el recurso /index.html. En base a lo indicado,
 
 ```bash
-redes@debian:~$ curl -v -H "User-Agent: curl/7.74.0" -H "Accept: text/html" http://www.misitio.com/index.html
+curl -v -H "User-Agent: curl/7.74.0" -H "Accept: text/html" http://www.misitio.com/index.html
 ```
 
-`¿qué información debería enviarse mediante encabezados? `
+<details><summary>¿qué información debería enviarse mediante encabezados?</summary>
+
 
 ```bash
 *   Trying 108.61.73.182:80...
@@ -389,22 +361,27 @@ curl -v https://www.misitio.com/index.html
 
 La opción `-L` instruirá a `curl` para que siga cualquier redirección HTTP hasta que alcance el recurso final o hasta que se exceda el número máximo de redirecciones permitidas.
 
+</details>
 
 
-`Indique cómo quedaría el requerimiento.`
+<details><summary>Indique cómo quedaría el requerimiento.</summary>
+``
 
 > Queda para preguntar porque es un re quilombo
+
+</details>
 
 ---
 
 ## Ejercicio 7
 
-`Utilizando la VM, abra una terminal e investigue sobre el comando curl.`
+<details><summary>Utilizando la VM, abra una terminal e investigue sobre el comando curl.</summary>
 
 El comando `curl` es una herramienta de línea de comandos utilizada para transferir datos desde o hacia un servidor. Se utiliza para trabajar con diversos protocolos, incluidos HTTP, HTTPS, FTP, SMTP, entre otros. `curl` es útil para probar, depurar y trabajar con API web o servicios de red.
 
-`Analice para qué sirven los siguientes parámetros (-I, -H, -X, -s).`
+</details>
 
+<details><summary>Analice para qué sirven los siguientes parámetros (-I, -H, -X, -s).</summary>
 
 1. **-I** (o --head): Este parámetro se utiliza para hacer una solicitud HTTP HEAD, lo que significa que `curl` recuperará solo los encabezados de una respuesta HTTP. Es útil para ver metadatos de la respuesta como el tipo de contenido, estado, cookies, y otros encabezados de respuesta sin descargar todo el cuerpo del documento.
 
@@ -416,6 +393,8 @@ El comando `curl` es una herramienta de línea de comandos utilizada para transf
 
 Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes HTTP de diversas maneras para satisfacer diferentes necesidades de prueba y comunicación con servidores web y servicios en línea.
 
+</details>
+
 ---
 
 ## Ejercicio 8
@@ -426,9 +405,7 @@ Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.un
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/37102b10-935b-4061-b8ea-cc6e96ce24e2)
 
-#### Parte a
-
-`¿Cuántos requerimientos realizó y qué recibió?`
+<details><summary>¿Cuántos requerimientos realizó y qué recibió?</summary>
 
 Cuando ejecutas el comando `curl` sin ningún parámetro adicional accediendo a `www.redes.unlp.edu.ar`, estás realizando un solo requerimiento HTTP GET hacia el servidor. Este requerimiento pide al servidor que devuelva el contenido completo de la página principal del sitio.
 
@@ -452,10 +429,10 @@ Este comando intentará descargar la página principal y todos los recursos nece
 - `-k`: Convierte los enlaces para que funcionen localmente.
 - `-E`: Asegura que los archivos HTML tengan la extensión .html.
 
+</details>
 
 
-
-`Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.`
+<details><summary>Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.</summary>
 
 ```bash
 curl www.redes.unlp.edu.ar > index.html
@@ -465,17 +442,19 @@ curl www.redes.unlp.edu.ar > index.html
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4536cb29-b612-4d96-9a30-748774544724)
 
-#### Parte b
+</details>
 
-`¿Cómo funcionan los atributos href de los tags link e img en html?`
+<details><summary>¿Cómo funcionan los atributos href de los tags link e img en html?</summary>
 
 - **`<link href="./bootstrap/css/bootstrap.css" rel="stylesheet">`**: El atributo `href` en un elemento `link` generalmente se utiliza para enlazar hojas de estilo externas a la página HTML. Aquí, `href` apunta a la ubicación de una hoja de estilo CSS que el navegador debería cargar y aplicar a la página.
 
 - **`<img src="image.jpg" alt="Descripción">`**: Aunque en tu ejemplo no tienes un tag `img` explícito, típicamente el atributo `src` (similar en propósito al `href` para los elementos `img`) indica la ubicación de una imagen que debe ser mostrada en la página. El navegador solicita y muestra la imagen desde esta ubicación.
 
-#### Parte c
+</details>
 
-Para visualizar la página completa con imágenes como en un navegador
+<details><summary>Para visualizar la página completa con imágenes como en un navegador</summary>
+
+
 
 `¿alcanza con realizar un único requerimiento?`
 
@@ -489,6 +468,8 @@ La página principal puede contener referencias a otros recursos como hojas de e
 
 Un navegador automáticamente realiza todos estos requerimientos adicionales cuando carga una página, interpretando el HTML, descubriendo los recursos necesarios y solicitándolos al servidor. Por el contrario, el comando `curl` ejecutado anteriormente solo hace el requerimiento inicial y recupera el HTML, pero no carga ni interpreta los recursos adicionales. Por eso, si abres el HTML guardado localmente sin los recursos adicionales, la página podría no verse como se espera.
 
+</details>
+
 ---
 
 ## Ejercicio 9
@@ -499,6 +480,10 @@ Ejecute a continuación los siguientes comandos:
 ```bash
 curl -v -s www.redes.unlp.edu.ar > /dev/null
 ```
+
+<details>
+<summary>Resultado</summary>
+
 ```bash
 *   Trying 172.28.0.50:80...
 * Connected to www.redes.unlp.edu.ar (172.28.0.50) port 80 (#0)
@@ -518,13 +503,16 @@ curl -v -s www.redes.unlp.edu.ar > /dev/null
 < Content-Type: text/html
 < 
 { [4898 bytes data]
-* Connection #0 to host www.redes.unlp.edu.ar left intact
-
+* Connection #0 to host www.redes.unlp.edu.ar left intac
 ```
+</details>
 
 ```bash
 curl -I -v -s www.redes.unlp.edu.ar
 ```
+
+<details>
+<summary>Resultado</summary>
 
 ```bash
 *   Trying 172.28.0.50:80...
@@ -556,9 +544,10 @@ Content-Type: text/html
 * Connection #0 to host www.redes.unlp.edu.ar left intact
 ```
 
-#### Ejercicio a
+</details>
 
-`¿Qué diferencias nota entre cada uno?`
+
+<details><summary>¿Qué diferencias nota entre cada uno?</summary>
 
 1. `curl -v -s www.redes.unlp.edu.ar > /dev/null`:
    - `-v` activa el modo verboso, que muestra la solicitud y la respuesta detalladas en la terminal.
@@ -573,19 +562,21 @@ Content-Type: text/html
 
 La principal diferencia es que el primer comando realiza una solicitud `GET` y descarta el cuerpo de la respuesta, mientras que el segundo realiza una solicitud `HEAD` y no recibe ni necesita descartar ningún cuerpo de respuesta.
 
-#### Ejercicio b. 
+</details>
 
-`¿Qué ocurre si en el primer comando se quita la redirección a /dev/null?`
+<details><summary>¿Qué ocurre si en el primer comando se quita la redirección a /dev/null?</summary>
 
 Si se quita la redirección a `/dev/null` del primer comando, el cuerpo de la respuesta del servidor (que es el contenido de la página web solicitada) se mostrará en la terminal en lugar de ser descartado. Esto podría generar mucho texto en la terminal si la página solicitada tiene un contenido extenso.
 
-`¿Por qué no es necesaria en el segundo comando?`
+</details>
+
+<details><summary>¿Por qué no es necesaria en el segundo comando?</summary>
 
 En el segundo comando, la redirección a `/dev/null` no es necesaria porque el método `HEAD` no devuelve un cuerpo en la respuesta, por lo que no hay contenido para mostrar o descartar.
 
-#### Ejercicio c. 
+</details>
 
-`¿Cuántas cabeceras viajaron en el requerimiento? ¿Y en la respuesta?`
+<details><summary>¿Cuántas cabeceras viajaron en el requerimiento? ¿Y en la respuesta?</summary>
 
 
 En ambos casos, la cantidad de cabeceras en el requerimiento es la misma:
@@ -606,6 +597,8 @@ La respuesta en ambos comandos también contiene el mismo número de cabeceras, 
 - `Content-Type`: el tipo de contenido del recurso.
 
 En resumen, el número de cabeceras que viajan en la respuesta es el mismo en ambos comandos. La diferencia principal entre los comandos es si el cuerpo de la respuesta se descarta (`GET` con redirección a `/dev/null`) o simplemente no se solicita (`HEAD`).
+
+</details>
 
 ---
 
