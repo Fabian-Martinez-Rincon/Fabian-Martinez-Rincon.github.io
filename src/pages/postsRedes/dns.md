@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Practicando DNS
+title: dig registros
 author: Fabian Martinez Rincon
 description: ""
 image:

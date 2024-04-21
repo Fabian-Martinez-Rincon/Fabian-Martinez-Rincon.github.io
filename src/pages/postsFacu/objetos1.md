@@ -4,7 +4,7 @@ title: Parciales Objetos 1
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/java.webp'
+    url: '/posts/objetos1.jpg'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-06-11
 tags: ["Objetos", "Uml", "Java", "Test Unit"]

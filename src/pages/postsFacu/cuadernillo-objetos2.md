@@ -4,7 +4,7 @@ title: Cuadernillo OO2
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/oo1.webp'
+    url: '/posts/oo2.jpg'
     alt: "Orientación a OO2."
 pubDate: 2024-03-12
 tags: ["Objetos", "Uml", "Java", "Test Unit"]
