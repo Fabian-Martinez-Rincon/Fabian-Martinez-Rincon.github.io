@@ -604,7 +604,7 @@ En resumen, el número de cabeceras que viajan en la respuesta es el mismo en am
 
 ## Ejercicio 10
 
-`¿Qué indica la cabecera Date?`
+<details><summary>¿Qué indica la cabecera Date?</summary>
 
 La cabecera `Date` en los mensajes HTTP indica la fecha y la hora en la que el mensaje fue generado por el servidor. La fecha y la hora están siempre expresadas en formato GMT (Greenwich Mean Time), según lo establecido por el protocolo HTTP.
 
@@ -625,17 +625,25 @@ Date: Sat, 13 Apr 2024 17:12:55 GMT
 
 En resumen, la cabecera `Date` es un componente estándar en las respuestas HTTP que brinda una marca de tiempo oficial del servidor para el mensaje de respuesta. Es útil para los procesos de gestión de caché, seguridad y sincronización de tiempos en la comunicación entre clientes y servidores.
 
+</details>
+
 ---
 
 ## Ejercicio 11
 
-`En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?`
+
+
+<details><summary>En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?</summary>
+
 
 En HTTP, la forma en que un cliente sabe que ha recibido todo el objeto solicitado completamente varía entre las versiones HTTP/1.0 y HTTP/1.1 debido a las diferencias en cómo gestionan las conexiones y transmiten los datos.
 
 En HTTP/1.0, la forma principal de determinar que todo el objeto solicitado ha sido completamente recibido es a través del cierre de la conexión TCP por parte del servidor. HTTP/1.0 no tiene un mecanismo estándar para mantener la conexión abierta después de que se haya enviado una respuesta; por lo tanto, una vez que el servidor termina de enviar los datos, cierra la conexión. Cuando el cliente detecta que la conexión se ha cerrado, sabe que ha recibido toda la respuesta. Sin embargo, este enfoque tiene varias desventajas, como la necesidad de abrir una nueva conexión TCP para cada solicitud, lo que aumenta la latencia y reduce la eficiencia de la red.
 
-`¿Y en HTTP/1.1?`
+</details>
+
+<details><summary>¿Y en HTTP/1.1?</summary>
+
 
 HTTP/1.1 introduce varias mejoras para superar las limitaciones de HTTP/1.0, incluyendo el concepto de conexiones persistentes. En HTTP/1.1, las conexiones se mantienen abiertas por defecto, lo que permite enviar múltiples solicitudes y respuestas a través de la misma conexión TCP. Esto plantea la pregunta de cómo el cliente sabe cuándo ha recibido una respuesta completa sin el cierre de la conexión como indicador.
 
@@ -647,11 +655,14 @@ En HTTP/1.1, esto se logra principalmente a través de dos mecanismos:
 
 Estos mecanismos permiten una transferencia de datos más eficiente y la reutilización de conexiones, mejorando el rendimiento general de la comunicación HTTP en la versión 1.1 respecto a la 1.0.
 
+</details>
+
 ---
 
 ## Ejercicio 12
 
-`Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.`
+
+<details><summary>Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.</summary>
 
 Los códigos de retorno de un servidor web, también conocidos como códigos de estado HTTP, están definidos y clasificados en varias RFC, principalmente en la RFC 7231, que es parte de la serie de documentos que actualizan y definen el protocolo HTTP/1.1. Estos códigos se clasifican en cinco categorías principales:
 
@@ -661,7 +672,9 @@ Los códigos de retorno de un servidor web, también conocidos como códigos de 
 4. **4xx (Errores del cliente)**: Indican que hubo un error y la solicitud no puede ser procesada debido a algo que se percibe como un error del cliente (por ejemplo, URL mal formada, falta de autenticación).
 5. **5xx (Errores del servidor)**: Indican que el servidor falló al intentar procesar una solicitud válida.
 
-`¿Qué parte se ve principalmente interesada de esta información, cliente o servidor?`
+</details>
+
+<details><summary>¿Qué parte se ve principalmente interesada de esta información, cliente o servidor?</summary>
 
 Ambas partes, el cliente y el servidor, están interesadas en los códigos de retorno:
 
@@ -669,7 +682,10 @@ Ambas partes, el cliente y el servidor, están interesadas en los códigos de re
 
 - **Servidor**: Debe enviar el código de estado adecuado como parte de su respuesta para comunicar el resultado de la solicitud al cliente. Esto es crucial para el correcto funcionamiento del protocolo HTTP y para proporcionar una experiencia de usuario adecuada.
 
-`¿Es útil que esté detallado y clasificado en la RFC?.`
+</details>
+
+
+<details><summary>¿Es útil que esté detallado y clasificado en la RFC?</summary>
 
 Sí, es muy útil que esta información esté detallada y clasificada en la RFC por varias razones:
 
@@ -680,6 +696,8 @@ Sí, es muy útil que esta información esté detallada y clasificada en la RFC 
 - **Interoperabilidad**: Asegura que diferentes aplicaciones y servicios web puedan trabajar juntos de manera efectiva, ya que todos siguen las mismas reglas para interpretar los códigos de estado.
 
 En resumen, la clasificación y el detalle de los códigos de retorno en la RFC son fundamentales para la interoperabilidad de la web, permitiendo que clientes y servidores se comuniquen y entiendan entre sí de manera efectiva.
+
+</details>
 
 ---
 
@@ -699,18 +717,17 @@ Connection: keep-alive
 Location: https://unlp.edu.ar/
 ```
 
-### Parte a
-
-`¿Qué información brinda la primera línea de la respuesta?`
+<details><summary>¿Qué información brinda la primera línea de la respuesta?</summary>
 
 La primera línea de la respuesta `HTTP/1.1 301 Moved Permanently` indica que:
 - **HTTP/1.1**: Es la versión del protocolo HTTP que el servidor está utilizando para responder.
 - **301**: Es el código de estado HTTP que informa que el recurso solicitado ha sido movido a otra URL de forma permanente.
 - **Moved Permanently**: Es la frase de razón asociada con el código de estado 301, que proporciona una explicación textual del código de estado para la claridad humana.
 
-### Parte b
+</details>
 
-`¿Cuántos encabezados muestra la respuesta?`
+<details><summary>¿Cuántos encabezados muestra la respuesta?</summary>
+
 
 La respuesta muestra 6 encabezados, que son:
 1. **Server**: Información sobre el servidor web.
@@ -720,21 +737,24 @@ La respuesta muestra 6 encabezados, que son:
 5. **Connection**: Gestión de la conexión.
 6. **Location**: La nueva URL a la que se ha movido el recurso solicitado.
 
-### Parte c
+</details>
 
-`¿Qué servidor web está sirviendo la página?`
+<details><summary>¿Qué servidor web está sirviendo la página?</summary>
 
 El servidor web que está sirviendo la página es `nginx/1.18.0`. Esto se indica en el encabezado `Server`.
 
-#### Parte d
+</details>
 
-`¿El acceso a la página solicitada fue exitoso o no?`
+
+
+<details><summary>¿El acceso a la página solicitada fue exitoso o no?</summary>
+
 
 El acceso a la página solicitada no fue exitoso en términos de recuperar el recurso originalmente solicitado; en cambio, se informa al cliente de que el recurso se ha movido a una nueva ubicación permanente, que es `https://unlp.edu.ar/`. Esto significa que la solicitud inicial de la página condujo a una redirección.
 
-#### Parte e
+</details>
 
-`¿Cuándo fue la última vez que se modificó la página?`
+<details><summary>¿Cuándo fue la última vez que se modificó la página?</summary>
 
 La información proporcionada no incluye cuándo fue la última vez que se modificó la página. El encabezado `Last-Modified`, que generalmente proporciona esta información, no está presente en la respuesta. Sin embargo, la presencia de un código de estado 301 sugiere que la URL original ha cambiado de ubicación, por lo que la "última modificación" puede referirse a cuando se realizó el cambio en la URL en lugar del contenido de la página en sí. En este caso, para obtener información sobre la última modificación del contenido real, tendrías que seguir la redirección a la nueva URL y realizar otra solicitud, posiblemente con el método `GET`, para obtener los encabezados relevantes.
 
@@ -773,6 +793,8 @@ via: 1.1 varnish (Varnish/7.0)
 
 No se proporciona un encabezado `Last-Modified`, por lo que no podemos determinar a partir de esta respuesta cuándo fue la última vez que se modificó el recurso. Tampoco se incluye un encabezado `ETag`, que a veces se utiliza junto con `Last-Modified` para el control de caché y la validación condicional.
 
+</details>
+
 #### Parte f
 
 Solicite la página nuevamente con curl usando GET, pero esta vez indique que quiere obtenerla sólo si la misma fue modificada en una fecha posterior a la que efectivamente fue modificada.
@@ -792,17 +814,27 @@ Solicite la página nuevamente con curl usando GET, pero esta vez indique que qu
 
 Utilizando curl, acceda al sitio `www.redes.unlp.edu.ar/restringido/index.php` y siga las instrucciones y las pistas que vaya recibiendo hasta obtener la respuesta final. Será de utilidad para resolver este ejercicio poder analizar tanto el contenido de cada página como los encabezados
 
+<details><summary>Paso 1</summary>
+
 ```bash
 curl www.redes.unlp.edu.ar/restringido/index.php
 ```
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/d44c6726-e3e9-43f4-a06a-c8dbedf93900)
 
+</details>
+
+<details><summary>Paso 2</summary>
+
 ```bash
 curl www.redes.unlp.edu.ar/obtener-usuario.php
 ```
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/1ab7dd69-bc87-4795-a417-07d6d63be0dc)
+
+</details>
+
+<details><summary>Paso 3</summary>
 
 ```bash
 curl -H "Usuario-Redes: obtener" www.redes.unlp.edu.ar/obtener-usuario.php
@@ -828,12 +860,19 @@ cmVkZXM6UllD
 
 Una vez que tienes la cadena codificada en base64, puedes hacer la solicitud con `curl` de la siguiente manera:
 
+</details>
+
+<details><summary>Paso 4</summary>
+
 ```bash
 curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/obtener-usuario.php
 ```
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/585f519d-b989-45d1-8cc2-af01dbb44afc)
 
+</details>
+
+<details><summary>Paso 5</summary>
 
 ```bash
 curl -I -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/obtener-usuario.php
@@ -841,11 +880,17 @@ curl -I -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/obtener-usu
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/67cffcc1-0090-400b-a7dc-fb3f9dc8ac7d)
 
+</details>
+
+<details><summary>Paso 6</summary>
+
 ```bash
 curl -H "Authorization: Basic cmVkZXM6UllD" www.redes.unlp.edu.ar/the-end.php
 ```
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/15f018e5-8770-4b32-a731-0531421e6957)
+
+</details>
 
 ---
 
@@ -863,10 +908,6 @@ curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
 
 Y copie la salida completa (incluyendo los dos saltos de linea del final).
 
-```bash
-curl www.redes.unlp.edu.ar/extras/prueba-http-1-0.txt
-```
-
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c2a1a58b-00fd-4d38-9282-33dac551fae0)
 
 #### Parte b
@@ -879,7 +920,7 @@ telnet www.redes.unlp.edu.ar 80
 
 Y luego pegue el contenido que tiene almacenado en el portapapeles. 
 
-`¿Qué ocurre luego de hacerlo?`
+<details><summary>¿Qué ocurre luego de hacerlo?</summary>
 
 ```bash
 telnet www.redes.unlp.edu.ar 80
@@ -994,7 +1035,7 @@ Aquí te explico lo que ocurrió luego de hacerlo:
 
 Lo que ocurrió después de pegar el contenido en Telnet es que el servidor procesó tu solicitud HTTP y te devolvió una respuesta que incluía el contenido HTML para el recurso solicitado. La conexión se cerró después, siguiendo el modelo de "una solicitud, una respuesta" de HTTP/1.0.
 
-<audio controls><source src="../redes/practica2/15.mp3" type="audio/mpeg"></audio>
+</details>
 
 #### Parte c
 
@@ -1018,42 +1059,63 @@ En HTTP/1.0, cada conexión se cierra después de que se envía una sola respues
 
 En cambio, en HTTP/1.1, se introdujo el concepto de "conexiones persistentes", que permiten que varias solicitudes y respuestas se envíen a través de la misma conexión TCP. Esto reduce la sobrecarga asociada con el establecimiento de nuevas conexiones y hace que la comunicación sea más eficiente. Por defecto, las conexiones en HTTP/1.1 son persistentes a menos que se especifique lo contrario
 
-`¿Qué está haciendo al ejecutar el comando telnet`
+<details><summary>¿Qué está haciendo al ejecutar el comando telnet?</summary>
 
 Estás iniciando una conexión manual a un servidor web y escribiendo directamente solicitudes HTTP en la terminal. En el contexto de HTTP/1.1, si envías varias solicitudes a través de una sesión de telnet, el servidor mantiene la conexión abierta, permitiéndote enviar varias solicitudes y recibir sus respectivas respuestas sin necesidad de reconectar cada vez.
 
-`¿Qué lo diferencia con curl?`
+</details>
+
+<details><summary>¿Qué lo diferencia con curl?</summary>
 
 `curl` por defecto hace una sola solicitud y cierra la conexión (a menos que se especifique lo contrario con opciones como `--keepalive`). `curl` es más automatizado y manejable para solicitudes únicas, mientras que con `telnet` estás manejando la conexión manualmente, lo que te permite ver el comportamiento de la conexión persistente en HTTP/1.1.
 
+</details>
+
 Observe la definición de método y recurso en la RFC. Luego responda
 
-`¿Qué método HTTP utilizó?`
+
+
+<details><summary>¿Qué método HTTP utilizó?</summary>
 
 Get
 
-`¿Qué recurso solicitó?`
+</details>
+
+
+<details><summary>¿Qué recurso solicitó?</summary>
 
 > Preguntar
 
-`¿Qué diferencias notó entre los dos casos?`
+</details>
+
+
+<details><summary>¿Qué diferencias notó entre los dos casos?</summary>
 
 La diferencia principal es que con HTTP/1.0, la conexión se cierra después de cada respuesta, mientras que con HTTP/1.1, la conexión se mantiene abierta para solicitudes adicionales.
 
-`¿Puede explicar por qué?`
+</details>
+
+
+<details><summary>¿Puede explicar por qué?</summary>
+
 
 Esto se debe al diseño de los protocolos: HTTP/1.1 fue diseñado para ser más eficiente al permitir múltiples transacciones por conexión, reduciendo la sobrecarga de la conexión.
 
-`¿Cuál de los dos casos le parece más eficiente?`
+</details>
+
+<details><summary>¿Cuál de los dos casos le parece más eficiente?</summary>
 
 HTTP/1.1 es más eficiente en términos de uso de la red debido a las conexiones persistentes.
 
-
 Piense en el ejercicio donde analizó la cantidad de requerimientos necesarios para obtener una página con estilos, javascripts e imágenes. 
 
-`El caso elegido, ¿puede traer asociado algún problema?`
+</details>
+
+<details><summary>¿El caso elegido, ¿puede traer asociado algún problema?</summary>
 
 Las conexiones persistentes (HTTP/1.1) pueden aumentar el uso de recursos del servidor porque las conexiones se mantienen abiertas más tiempo. Esto podría ser un problema para servidores con alto tráfico o recursos limitados. Sin embargo, en general, los beneficios en términos de eficiencia y rendimiento suelen superar estos inconvenientes.
+
+</details>
 
 ---
 
@@ -1096,26 +1158,32 @@ Abra un navegador e ingrese a la URL: www.redes.unlp.edu.ar e ingrese al link en
 ## Ejercicio 18
 
 
-`Investigue cuál es el principal uso que se le da a Set-Cookie y Cookie en HTTP.`
+<details><summary>Investigue cuál es el principal uso que se le da a Set-Cookie y Cookie en HTTP.</summary>
 
 El principal uso de `Set-Cookie` (que el servidor utiliza para enviar cookies al cliente) y `Cookie` (que el cliente utiliza para enviar cookies de vuelta al servidor) en HTTP es para la gestión del estado de la sesión. Esto incluye mantener a los usuarios autenticados, rastrear preferencias del usuario, gestionar carritos de compras en sitios de comercio electrónico, y más. Las cookies permiten que la información persista entre diferentes solicitudes HTTP en un protocolo que por diseño es sin estado.
+
+</details>
 
 ---
 
 ## Ejercicio 19
 
-`¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?`
+<details><summary>¿Cuál es la diferencia entre un protocolo binario y uno basado en texto?</summary>
 
 - **Protocolo basado en texto**: Este tipo de protocolo utiliza texto legible por humanos para la comunicación entre dispositivos o programas. Los mensajes se componen de texto claro, lo que facilita su lectura y depuración sin necesidad de herramientas adicionales. Sin embargo, este tipo de protocolos puede resultar menos eficiente en términos de tamaño del mensaje y velocidad de procesamiento. Ejemplos incluyen HTTP/1.0 y HTTP/1.1.
 
 - **Protocolo binario**: Este tipo de protocolo utiliza estructuras de datos binarias para la comunicación. Los mensajes son compactos y están diseñados para ser procesados rápidamente por la máquina, pero no son legibles directamente por los humanos. Los protocolos binarios suelen ser más eficientes en términos de rendimiento y tamaño de mensaje que los basados en texto, pero pueden ser más difíciles de depurar sin herramientas especiales. Un ejemplo común es el Protocolo de Control de Transmisión (TCP) a nivel de transporte.
 
+</details>
 
-`¿de que tipo de protocolo se trata HTTP/1.0, HTTP/1.1 y HTTP/2?`
+
+<details><summary>¿de que tipo de protocolo se trata HTTP/1.0, HTTP/1.1 y HTTP/2?</summary>
 
 - **HTTP/1.0 y HTTP/1.1**: Estas versiones de HTTP son protocolos basados en texto. Utilizan texto claro para definir las solicitudes y respuestas, incluyendo métodos, URI, cabeceras y cuerpos del mensaje. Esto los hace fáciles de leer y escribir para los humanos, pero potencialmente más grandes en tamaño y más lentos de procesar que los mensajes binarios debido a la sobrecarga del texto.
 
 - **HTTP/2**: A diferencia de sus predecesores, HTTP/2 es un protocolo principalmente binario. Aunque las solicitudes y respuestas HTTP siguen conceptualmente el mismo formato (métodos, cabeceras, cuerpos), en HTTP/2 estas son codificadas en estructuras binarias llamadas "frames". Esto permite un envío más eficiente, como la compresión de cabeceras y la multiplexación (enviar múltiples solicitudes y respuestas en paralelo a través de la misma conexión). Aunque los mensajes en HTTP/2 son binarios, las cabeceras y otros elementos todavía pueden representarse y enviarse en un formato legible por humanos cuando se visualizan a través de herramientas de depuración.
+
+</details>
 
 ---
 
@@ -1161,48 +1229,54 @@ curl -X ?? www.redes.unlp.edu.ar/??
 < Content-Type: text/html; charset=UTF-8
 < Connection: close
 ```
-#### Parte a
 
-`¿Qué versión de HTTP podría estar utilizando el servidor?`
+<details><summary>¿Qué versión de HTTP podría estar utilizando el servidor?</summary>
 
 La versión de HTTP que probablemente esté utilizando el servidor es HTTP/1.1, como se indica en la línea de respuesta `< HTTP/1.1 200 OK`. HTTP/1.1 es una versión común que soporta características como la conexión persistente y el host virtual, lo cual es indicado por el uso de la cabecera `Host`.
 
-#### Parte b
+</details>
 
-`¿Qué método está utilizando?`
+<details><summary>¿Qué método está utilizando?</summary>
 
 El método que se está utilizando es `HEAD`. 
 
-`Dicho método, ¿retorna el recurso completo solicitado?`
+</details>
+
+
+<details><summary>¿Dicho método, ¿retorna el recurso completo solicitado?</summary>
 
 Este método es utilizado para recuperar las cabeceras que un `GET` habría obtenido, pero sin el cuerpo del mensaje, es decir, no retorna el recurso completo, solo los metadatos del recurso. Es útil para obtener información sobre el recurso sin descargar todo el contenido.
 
-#### Parte c
+</details>
 
-`¿Cuál es el recurso solicitado?`
+<details><summary>¿Cuál es el recurso solicitado?</summary>
 
 El recurso solicitado es `/metodos/` en el host `www.redes.unlp.edu.ar`. Esta es una URI que probablemente apunta a un directorio o sección específica en el servidor web de `redes.unlp.edu.ar`.
 
-#### Parte d
+</details>
 
-`¿El método funcionó correctamente?`
+<details><summary>¿El método funcionó correctamente?</summary>
 
 Sí, el método funcionó correctamente. Esto se evidencia por el código de estado `200 OK` en la respuesta del servidor, que indica que la solicitud fue exitosa y que el servidor pudo responder adecuadamente a la solicitud `HEAD`.
 
-#### Parte e
+</details>
 
 Si la solicitud hubiera llevado un encabezado que diga: If-Modified-Since: Sat, 20 Jan 2018 13:02:41 GMT
 
-`¿Cuál habría sido la respuesta del servidor web?`
+<details><summary>¿Cuál habría sido la respuesta del servidor web?</summary>
 
 Si la solicitud incluyera el encabezado `If-Modified-Since: Sat, 20 Jan 2018 13:02:41 GMT`, la respuesta del servidor web habría dependido de si el recurso fue modificado después de esa fecha y hora:
 
 - Si el recurso no fue modificado después de `Sat, 20 Jan 2018 13:02:41 GMT`, el servidor habría respondido con un código `304 Not Modified`. Esto indica que no hay necesidad de retransmitir el recurso porque la copia que el cliente tiene en caché todavía es válida.
 - Si el recurso fue modificado después de esa fecha y hora, el servidor habría respondido con `200 OK` y habría enviado los metadatos actualizados (o el contenido completo si se hubiera utilizado `GET`).
 
-`¿Qué habría hecho el navegador en este caso?`
+</details>
+
+
+<details><summary>¿Qué habría hecho el navegador en este caso?</summary>
 
 En el caso de recibir un `304 Not Modified`, el navegador habría utilizado la versión en caché del recurso, ahorrando ancho de banda y mejorando la velocidad de carga al no tener que descargar nuevamente el recurso completo.
+</details>
 
 ---
 
