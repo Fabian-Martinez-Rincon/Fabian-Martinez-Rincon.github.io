@@ -38,10 +38,12 @@ tags: ["linux", "vim", "bash"]
 ## Ejercicio 1
 
 `Investigue y describa cómo funciona el DNS.`
+<details><summary></summary></details>
 
 El Sistema de Nombres de Dominio (DNS) traduce nombres de dominio amigables para el humano (como "www.example.com") a direcciones IP numéricas (como "192.0.2.1") que las computadoras utilizan para identificar entre sí en la red. 
 
 `¿Cuál es su objetivo?`
+<details><summary></summary></details>
 
 El objetivo del DNS es permitir a las personas acceder a sitios web utilizando nombres de dominio fáciles de recordar en lugar de las complicadas direcciones IP, facilitando así la navegación en internet. Funciona a través de una red distribuida de servidores que resuelven nombres de dominio a direcciones IP.
 
@@ -50,6 +52,7 @@ El objetivo del DNS es permitir a las personas acceder a sitios web utilizando n
 ## Ejercicio 2
 
 `¿Qué es un root server?`
+<details><summary></summary></details>
 
 Un servidor raíz (root server) en el contexto del Sistema de Nombres de Dominio (DNS) es uno de los servidores DNS clave que contienen las direcciones de los servidores de nombres para todos los dominios de nivel superior (TLDs) como `.com`, `.org`, `.net`, `.gov`, entre otros. Los servidores raíz son una parte crítica de la infraestructura de Internet porque son la primera parada en la resolución de nombres de dominio cuando la información no está ya en la caché del servidor DNS local.
 
@@ -121,6 +124,8 @@ com.			172800	IN	NS	c.gtld-servers.net.
 
 Este ejemplo muestra cómo los servidores raíz dirigen las consultas hacia los servidores de nombres específicos para los TLDs, facilitando así la resolución de nombres en toda la red global de Internet.
 
+<details><summary></summary></details>
+
 `¿Qué es un generic top-level domain (gtld)?`
 
 Un **Generic Top-Level Domain (gTLD)** es una categoría de dominios de nivel superior en el Sistema de Nombres de Dominio (DNS) de Internet que no está asociada con un país específico. Los gTLDs son uno de los tipos de dominios más reconocidos y utilizados en Internet. Están destinados a usos generales por comunidades de usuarios, generalmente organizados por tema o tipo de entidad, a diferencia de los ccTLDs (Country Code Top-Level Domains) que están específicamente asociados a países o territorios.
@@ -155,7 +160,10 @@ En resumen, los gTLDs son una parte esencial de la estructura de DNS, proporcion
 
 ## Ejercicio 3
 
+
 `¿Qué es una respuesta del tipo autoritativa?`
+
+<details><summary></summary></details>
 
 Una respuesta autoritativa en el contexto del Sistema de Nombres de Dominio (DNS) es una respuesta que proviene directamente de un servidor DNS que tiene autoridad sobre el dominio específico que está siendo consultado. Es decir, el servidor DNS que responde tiene datos directos y oficiales sobre los registros DNS del dominio, sin necesidad de referirse a otro servidor DNS para obtener esa información.
 
@@ -210,6 +218,7 @@ En resumen, las respuestas autoritativas del DNS son fundamentales para el funci
 ## Ejercicio 4
 
 `¿Qué diferencia una consulta DNS recursiva de una iterativa?`
+<details><summary></summary></details>
 
 En el Sistema de Nombres de Dominio (DNS), las consultas pueden procesarse de dos formas principales: **recursiva** e **iterativa**. Estas dos modalidades difieren en cómo un servidor DNS maneja las solicitudes de resolución de nombres de dominio cuando no tiene la información requerida en su caché.
 
@@ -401,6 +410,9 @@ La salida del comando `dig +trace` muestra el camino completo que recorre una co
 
 ## Ejercicio 5
 
+¿Qué es el resolver?
+<details><summary></summary></details>
+
 En el contexto del Sistema de Nombres de Dominio (DNS), un **resolver** es un componente crucial que actúa como intermediario entre el usuario y los servidores DNS complejos para traducir los nombres de dominio en direcciones IP. El resolver, también conocido como "cliente DNS", es esencial para el funcionamiento diario de Internet, permitiendo a los usuarios acceder a los recursos web mediante nombres de dominio legibles por humanos en lugar de las direcciones IP numéricas.
 
 ### Funciones del Resolver
@@ -432,38 +444,47 @@ En resumen, el resolver DNS es una pieza fundamental de la infraestructura de In
 Describa para qué se utilizan los siguientes tipos de registros de DNS:
 
 `A (Address Record)`
+<details><summary></summary></details>
 
 Asocia un nombre de dominio con una dirección IPv4. Este registro se utiliza para traducir nombres de dominio a sus correspondientes direcciones IP para que los navegadores puedan encontrar y acceder a los sitios web.
 
 `MX (Mail Exchange Record)`
+<details><summary></summary></details>
 
 Indica el servidor de correo que debe ser utilizado para entregar el correo electrónico a un dominio. Este registro es esencial para la configuración del correo electrónico y dirige el correo entrante a los servidores de correo adecuados.
 
 `PTR (Pointer Record)`
+<details><summary></summary></details>
 
 Realiza la función opuesta a la de los registros A y AAAA; asocia una dirección IP con un nombre de dominio canónico. Se utiliza principalmente para la resolución inversa de DNS, es decir, cuando se traduce una dirección IP en un nombre de dominio.
 
 `AAAA (IPv6 Address Record)`
+<details><summary></summary></details>
 
 Similar al registro A, pero se utiliza para asociar un nombre de dominio con una dirección IPv6.
 
 `SRV (Service Record)`
+<details><summary></summary></details>
 
 Proporciona información sobre los servicios disponibles en un dominio. Especifica el nombre de host y el puerto para servicios específicos (como VoIP o mensajería instantánea), permitiendo a los dominios definir la localización de servidores y servicios específicos.
 
 `NS (Name Server Record)`
+<details><summary></summary></details>
 
 Especifica los servidores DNS autorizados para un dominio. Estos servidores DNS son los que contienen los registros DNS de ese dominio y pueden responder consultas relativas a él.
 
 `CNAME (Canonical Name Record)`
+<details><summary></summary></details>
 
 Permite que un dominio se asocie con otro nombre de dominio, el "nombre canónico". Se utiliza para apuntar varios nombres de dominio a un mismo lugar, facilitando la gestión de sitios que pueden ser accedidos mediante múltiples nombres.
 
 `SOA (Start of Authority Record)`
+<details><summary></summary></details>
 
 Contiene información esencial sobre el dominio y la zona, como el servidor DNS principal, el correo electrónico del administrador, el intervalo de actualización y la caducidad. Es el registro inicial de cualquier zona de DNS y establece la autoridad del dominio.
 
 `TXT (Text Record)`
+<details><summary></summary></details>
 
 Permite que los administradores inserten texto arbitrario en un registro DNS. Comúnmente se utiliza para verificar la propiedad del dominio, implementar políticas de seguridad del correo electrónico como SPF (Sender Policy Framework) y DKIM (DomainKeys Identified Mail), y otras aplicaciones que requieren leer datos en forma de texto de los registros DNS.
 
@@ -474,6 +495,7 @@ Permite que los administradores inserten texto arbitrario en un registro DNS. Co
 `En Internet, un dominio suele tener más de un servidor DNS.`
 
 `¿Por qué cree que esto es así?`
+<details><summary></summary></details>
 
 1. **Redundancia y Alta Disponibilidad**: La presencia de múltiples servidores DNS asegura que si uno falla debido a problemas técnicos, mantenimiento o ataques de denegación de servicio (DDoS), otro puede continuar resolviendo las solicitudes de nombres de dominio, manteniendo el sitio web o servicio accesible para los usuarios.
 
@@ -492,10 +514,12 @@ En resumen, tener múltiples servidores DNS mejora la robustez, seguridad y efic
 ## Ejercicio 8
 
 `Cuando un dominio cuenta con más de un servidor, uno de ellos es el primario (o maestro) y todos los demás son los secundarios (o esclavos).`
+<details><summary></summary></details>
 
 La configuración de servidores DNS primarios (maestros) y secundarios (esclavos) se utiliza para la gestión eficaz de los registros DNS y para asegurar la redundancia y consistencia de la información de dominio a través de Internet.
 
 `¿Cuál es la razón de que sea así?`
+<details><summary></summary></details>
 
 1. **Sincronización y Consistencia de Datos**: El servidor DNS primario mantiene la versión autoritativa de los registros de zona del dominio. Cualquier cambio en la configuración del DNS, como añadir o modificar registros A, MX, CNAME, etc., se realiza primero en el servidor primario. Los servidores secundarios luego sincronizan estos cambios desde el primario, asegurando que todos los servidores proporcionen respuestas consistentes a las consultas DNS.
 
@@ -514,6 +538,7 @@ Esta estructura de primario-secundario asegura que los cambios se propaguen de m
 ## Ejercicio 9
 
 `Explique brevemente en qué consiste el mecanismo de transferencia de zona y cuál es su finalidad.`
+<details><summary></summary></details>
 
 El mecanismo de transferencia de zona en DNS es un proceso por el cual los registros DNS de una zona específica son copiados (transferidos) de un servidor DNS autoritativo (el servidor primario o maestro) a otro servidor DNS (el servidor secundario o esclavo). Este proceso se realiza para asegurar que los servidores secundarios tengan una copia exacta y actualizada de los registros DNS mantenidos por el servidor primario.
 
@@ -537,6 +562,7 @@ Imagine que usted es el administrador del dominio de DNS de la UNLP (unlp.edu.ar
 Suponga que se crea una nueva facultad, Facultad de Redes, cuyo dominio será redes.unlp.edu.ar, y el administrador le indica que quiere poder manejar su propio dominio. 
 
 `¿Qué debe hacer usted para que el administrador de la Facultad de Redes pueda gestionar el dominio de forma independiente?`
+<details><summary></summary></details>
 
 > (Pista: investigue en qué consiste la delegación de dominios).
 
@@ -573,6 +599,8 @@ En la VM, utilice el comando dig para obtener la dirección IP del host `www.red
 dig www.redes.unlp.edu.ar
 ```
 
+<details><summary></summary></details>
+
 #### Respuesta
 
 ```bash
@@ -600,6 +628,7 @@ www.redes.unlp.edu.ar.	300	IN	A	172.28.0.50
 ### Parte A
 
 `¿La solicitud fue recursiva?`
+<details><summary></summary></details>
 
 - **Sí**, la solicitud fue recursiva. Esto se puede determinar observando el flag `rd` (Recursion Desired) en la sección de flags del encabezado de la respuesta. Este flag indica que el cliente (en este caso, el comando `dig`) solicitó que el servidor DNS realice una resolución recursiva si no tenía la respuesta disponible inmediatamente en su caché.
 
@@ -610,6 +639,7 @@ www.redes.unlp.edu.ar.	300	IN	A	172.28.0.50
   - `rd` (Recursion Desired): Este flag está presente y marcado, lo que significa que se solicitó una resolución recursiva.
 
 `¿Y la respuesta? ¿Cómo lo sabe?`
+<details><summary></summary></details>
 
 - La respuesta fue **autoritativa**, lo cual se deduce del flag `aa` (Authoritative Answer). Este flag indica que la respuesta proviene de un servidor que tiene autoridad directa sobre el dominio en cuestión, en este caso, `www.redes.unlp.edu.ar`.
 
@@ -629,6 +659,7 @@ En resumen:
 Estos detalles son clave para entender cómo operan las solicitudes y respuestas en el sistema DNS, proporcionando visibilidad sobre el comportamiento tanto del cliente como del servidor en el proceso de resolución de nombres de dominio.
 
 `¿Cuál es la dirección IP del resolver utilizado?`
+<details><summary></summary></details>
 
 La dirección IP del resolver que se utilizó para responder a tu consulta está indicada en la salida bajo la línea `SERVER:`. Aquí está el extracto relevante de tu comando `dig`:
 
@@ -642,6 +673,7 @@ La dirección IP del resolver que se utilizó para responder a tu consulta está
 - **`#53`**: Este número después del signo `#` representa el puerto utilizado por el servidor DNS. El puerto `53` es el puerto estándar utilizado para protocolos DNS.
 
 `¿Cómo Sabemos Que Esta es la Dirección del Resolver?`
+<details><summary></summary></details>
 
 En DNS, cuando realizas una consulta utilizando herramientas como `dig`, el servidor que responde puede ser un servidor configurado en tus ajustes de red como el servidor DNS predeterminado, o puede ser un servidor DNS intermedio si estás utilizando una red que redirige las consultas DNS, como una red corporativa o de una universidad.
 
@@ -650,6 +682,7 @@ El servidor listado en la línea `SERVER:` de la salida de `dig` es el último s
 ### Parte B
 
 `¿Cuáles son los servidores de correo del dominio redes.unlp.edu.ar?`
+<details><summary></summary></details>
 
 ```bash
 dig MX www.redes.unlp.edu.ar
@@ -726,16 +759,19 @@ Estos registros indican que hay dos servidores de correo configurados para el do
   - **mail2.redes.unlp.edu.ar. 86400 IN A 172.28.0.91**
 
 `¿Por qué hay más de uno y qué significan los números que aparecen entre MX y el nombre?`
+<details><summary></summary></details>
 
 La existencia de más de un servidor de correo (en este caso, `mail` y `mail2`) proporciona redundancia y mejora la fiabilidad del sistema de correo electrónico. En caso de que el servidor principal (`mail.redes.unlp.edu.ar`) falle o esté inaccesible por mantenimiento u otras razones, el tráfico de correo puede ser dirigido automáticamente al servidor secundario (`mail2.redes.unlp.edu.ar`).
 
 Los números entre `MX` y el nombre del servidor son las **prioridades de los servidores de correo**. El servidor con la prioridad más baja (en este caso, `5` para `mail.redes.unlp.edu.ar`) es el preferido y debe ser contactado primero. El servidor con una prioridad más alta (`10` para `mail2.redes.unlp.edu.ar`) actúa como respaldo y se utiliza cuando el principal no está disponible.
 
 `Si se quiere enviar un correo destinado a redes.unlp.edu.ar, ¿a qué servidor se le entregará?`
+<details><summary></summary></details>
 
 El correo destinado a `redes.unlp.edu.ar` se entregará primero a `mail.redes.unlp.edu.ar`, ya que tiene la prioridad más alta (más baja numéricamente, es decir, `5`).
 
 `¿En qué situación se le entregará al otro?`
+<details><summary></summary></details>
 
 Si `mail.redes.unlp.edu.ar` está caído, no responde o no puede manejar más tráfico, entonces el correo se entregará al servidor `mail2.redes.unlp.edu.ar`, que tiene una prioridad de `10`. Esto garantiza que aún en caso de fallo, el correo pueda ser recibido y gestionado adecuadamente.
 
@@ -744,6 +780,7 @@ Este sistema de prioridades y múltiples servidores de correo asegura la continu
 ### Parte C
 
 `¿Cuáles son los servidores de DNS del dominio redes.unlp.edu.ar?`
+<details><summary></summary></details>
 
 ```bash
 dig NS redes.unlp.edu.ar
@@ -811,6 +848,7 @@ Estos servidores están configurados para manejar todas las consultas DNS relaci
 Observe la información que obtuvo al consultar por los servidores de DNS del dominio. En base a la salida, 
 
 `¿es posible indicar cuál de ellos es el primario?`
+<details><summary></summary></details>
 
 Con la información proporcionada por una consulta DNS estándar como la que se muestra en los resultados de `dig`, no es posible determinar cuál de los servidores de nombres es el primario (maestro) y cuál es el secundario (esclavo). Los registros NS simplemente enumeran los servidores de nombres que son autoritativos para el dominio, sin indicar su rol dentro de la configuración maestro-esclavo.
 
@@ -821,23 +859,28 @@ Para determinar cuál es el servidor primario, normalmente se requiere acceso al
 ### Parte e
 
 `Consulte por el registro SOA del dominio y responda.`
+<details><summary></summary></details>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/2580a2e8-3cf6-48c7-bbb4-5acf1addb943)
 
 `¿Puede ahora determinar cuál es el servidor de DNS primario?`
+<details><summary></summary></details>
 
 En la sección "ANSWER SECTION", el primer campo después del `SOA` es el servidor de nombres principal o primario para el dominio `redes.unlp.edu.ar`. Según la salida proporcionada, el servidor DNS primario es `ns-sv-b.redes.unlp.edu.ar`.
 
 `¿Cuál es el número de serie, qué convención sigue y en qué casos es importante actualizarlo?`
+<details><summary></summary></details>
 
 El número de serie en el registro SOA es `2020031700`. La convención de numeración puede variar, pero comúnmente sigue un patrón de AAAAMMDDnn, donde AAAA es el año, MM es el mes, DD es el día y nn es un número de revisión. Este número se actualiza cada vez que se hace un cambio significativo en la zona DNS. Es importante para la replicación de la zona hacia los servidores secundarios, ya que los servidores secundarios comparan el número de serie con el que tienen localmente para decidir si necesitan actualizar su copia de la zona.
 
 `¿Qué valor tiene el segundo campo del registro? Investigue para qué se usa y como se interpreta el valor.`
+<details><summary></summary></details>
 
 El segundo campo es `root.redes.unlp.edu.ar.` y es la dirección de contacto para el administrador de la zona DNS. Normalmente se utiliza en la forma de un correo electrónico, donde el primer punto (.) se reemplaza por una arroba (@) y los demás puntos se interpretan normalmente. Por ejemplo, `root@redes.unlp.edu.ar`.
 
 `¿Qué valor tiene el TTL de caché negativa y qué significa?`
 
+<details><summary></summary></details>
 El último número en el registro SOA, `86400`, es el TTL de caché negativa. Esto dicta cuánto tiempo los resolvers de DNS deben cachear la respuesta a una consulta fallida (es decir, cuando NO hay un registro para el nombre solicitado). Un TTL de 86400 segundos (24 horas) significa que una respuesta negativa será cacheada durante 24 horas antes de que se realice otra consulta para ese nombre. El objetivo de esta caché es reducir la cantidad de tráfico generado por consultas repetitivas a nombres que no existen y mejorar la eficiencia del DNS.
 
 #### Resumen
@@ -847,9 +890,12 @@ A partir de la consulta SOA, se ha identificado `ns-sv-b.redes.unlp.edu.ar` como
 
 `Indique qué valor tiene el registro TXT para el nombre saludo.redes.unlp.edu.ar.`
 
+<details><summary></summary></details>
+
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/8500d8e2-d178-4dc1-beb6-dbdc2108e06b)
 
 `Investigue para qué es usado este registro.`
+<details><summary></summary></details>
 
 El registro TXT en DNS es utilizado para insertar cualquier texto en el sistema de nombres de dominio. Aquí hay varios propósitos comunes para los registros TXT:
 
@@ -864,6 +910,8 @@ En el resultado del `dig` que has proporcionado, se muestra que no hay un regist
 ### Parte g
 
 `Utilizando dig, solicite la transferencia de zona de redes.unlp.edu.ar, analice la salida y responda.`
+
+<details><summary></summary></details>
 
 ```bash
 dig @ns-sv-a.redes.unlp.edu.ar redes.unlp.edu.ar AXFR
@@ -913,6 +961,7 @@ La presencia de dos registros SOA al principio y al final de la lista es estánd
 La finalidad de esta transferencia es sincronizar los registros de zona entre el servidor DNS principal y los secundarios. En un entorno de producción, las transferencias de zona suelen estar restringidas a los servidores que han sido explícitamente autorizados para recibir estos datos, con el fin de proteger contra el acceso no autorizado a la configuración del dominio.
 
 `¿Qué significan los números que aparecen antes de la palabra IN?`
+<details><summary></summary></details>
 
 Los números que aparecen antes de la palabra "IN" en una salida de `dig` corresponden al **TTL (Time To Live)** de ese registro específico. El TTL es un valor en segundos que indica cuánto tiempo debe un servidor DNS cachear la respuesta antes de volver a consultar al servidor DNS autoritativo para una actualización. Es una forma de gestionar el rendimiento y la carga en los servidores DNS, equilibrando la actualización oportuna de la información con la necesidad de reducir el tráfico DNS en la red.
 
@@ -921,10 +970,12 @@ Por ejemplo, un TTL de 86400 significa que una vez que un resolver DNS ha consul
 En el registro SOA, el TTL es de 86400 segundos, y para los registros A de los servidores de nombres (ns-sv-a y ns-sv-b), es de 604800 segundos, o 7 días.
 
 `¿Cuál es su finalidad?`
+<details><summary></summary></details>
 
 **Su finalidad** es mejorar la eficiencia del sistema DNS reduciendo el número de consultas necesarias para la misma información y asegurando que los datos no válidos o antiguos se eliminen de las cachés en un período razonable.
 
 `¿Cuántos registros NS observa? `
+<details><summary></summary></details>
 
 En cuanto a la **cantidad de registros NS**, se observan dos registros NS:
 1. `ns-sv-a.redes.unlp.edu.ar`
@@ -937,18 +988,21 @@ Estos son los servidores de nombres que están autorizados a responder por el do
 Compare la respuesta con los servidores de DNS del dominio redes.unlp.edu.ar que dio anteriormente.
 
 `¿Puede explicar a qué se debe la diferencia y qué significa?`
+<details><summary></summary></details>
 
 > Consultar
 
 ### Parte h
 
 Consulte por el registro A de www.redes.unlp.edu.ar y luego por el registro A de www.practica.redes.unlp.edu.ar. 
+<details><summary></summary></details>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9962fc8f-7afd-4918-a3e0-8891ed7343d3)
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/63e4b5a6-a78d-43a0-9df1-a764675b858b)
 
 `Observe los TTL de ambos. Repita la operación y compare el valor de los TTL de cada uno respecto de la respuesta anterior. `
+<details><summary></summary></details>
 
 Las imágenes que proporcionaste muestran los resultados de dos consultas `dig` para los registros A de `www.redes.unlp.edu.ar` y `www.practica.redes.unlp.edu.ar`. 
 
@@ -961,6 +1015,7 @@ Si repites las consultas después de un intervalo de tiempo y observas los TTL e
 La diferencia en los TTL entre `www.redes.unlp.edu.ar` y `www.practica.redes.unlp.edu.ar` indica posiblemente que `www.practica` podría cambiar más frecuentemente o que es un subdominio con menos tráfico, donde mantener la información en caché por un tiempo más corto no impactaría significativamente en el rendimiento del resolver.
 
 `¿Puede explicar qué está ocurriendo?`
+<details><summary></summary></details>
 
 > (Pista: observar los flags será de ayuda).
 
@@ -969,10 +1024,12 @@ La diferencia en los TTL entre `www.redes.unlp.edu.ar` y `www.practica.redes.unl
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/447ad9a1-ef62-4158-adab-1ecbda15165d)
 
 `Consulte por el registro A de www.practica2.redes.unlp.edu.ar.`
+<details><summary></summary></details>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4dfa0f35-1279-45f5-96ee-ba68ae5083f5)
 
 `¿Obtuvo alguna respuesta?`
+<details><summary></summary></details>
 
 La salida del comando `dig` que proporcionaste indica que se realizó una consulta DNS para el registro A de `www.practica2.redes.unlp.edu.ar`, y la respuesta contiene varios elementos clave que nos informan sobre el resultado de la consulta:
 
@@ -984,12 +1041,14 @@ La salida del comando `dig` que proporcionaste indica que se realizó una consul
 
 
 `Investigue sobre los codigos de respuesta de DNS.`
+<details><summary></summary></details>
 
 - **NXDOMAIN**: Se utiliza para indicar que el nombre de dominio especificado no existe. Es una respuesta definitiva que informa al cliente que el dominio que está buscando no se puede encontrar en el sistema de nombres de dominio.
 
 - **NOERROR**: Se utiliza para indicar que la consulta se completó con éxito, pero no necesariamente significa que se encontró una respuesta. En el caso de una consulta que devuelve registros válidos, la sección de respuestas tendrá una o más entradas y el estado será `NOERROR`.
 
 `¿Para qué son utilizados los mensajes NXDOMAIN y NOERROR?`
+<details><summary></summary></details>
 
 - **NXDOMAIN**: Específicamente útil para informar a los resolvers DNS y a los usuarios que el nombre de dominio que están tratando de alcanzar no existe y que deberían verificar si lo han escrito correctamente.
 
@@ -1034,6 +1093,7 @@ Los códigos de respuesta extendidos se pueden encontrar en la sección OPT PSEU
 ## Ejercicio 12
 
 `Investigue los comando nslookup y host. ¿Para qué sirven?`
+<details><summary></summary></details>
 
 **nslookup** y **host** son herramientas de línea de comandos utilizadas para consultar el sistema de nombres de dominio (DNS) y obtener información sobre registros DNS de dominios específicos. Ambas pueden ser usadas para realizar una variedad de consultas DNS.
 
@@ -1041,6 +1101,7 @@ Los códigos de respuesta extendidos se pueden encontrar en la sección OPT PSEU
 Intente con ambos comandos obtener:
 
 `Dirección IP de www.redes.unlp.edu.ar.`
+<details><summary></summary></details>
 
 <table>
 <tr><td>
@@ -1066,6 +1127,7 @@ host www.redes.unlp.edu.ar
 
 
 `Servidores de correo del dominio redes.unlp.edu.ar.`
+<details><summary></summary></details>
 
 ```bash
 nslookup -query=MX redes.unlp.edu.ar
@@ -1083,6 +1145,7 @@ El flag `-t MX` especifica que queremos buscar los registros MX.
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/ae05a8ad-e016-4e81-a8d7-2ab8af8a1ba8)
 
 `Servidores de DNS del dominio redes.unlp.edu.ar` // (registros NS)?
+<details><summary></summary></details>
 
 ```bash
 nslookup -query=NS redes.unlp.edu.ar
@@ -1106,6 +1169,7 @@ Al igual que con `nslookup`, el flag `-t NS` le dice a `host` que busque los reg
 ## Ejercicio 13
 
 `¿Qué función cumple en Linux/Unix el archivo /etc/hosts o en Windows el archivo \WINDOWS\system32\drivers\etc\hosts?`
+<details><summary></summary></details>
 
 En los sistemas operativos Linux/Unix, el archivo `/etc/hosts` y en Windows, el archivo `\WINDOWS\system32\drivers\etc\hosts`, tienen una función muy importante: proporcionar una tabla de nombres de host a direcciones IP localmente estática.
 
