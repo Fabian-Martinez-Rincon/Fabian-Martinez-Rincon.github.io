@@ -4,13 +4,26 @@ export interface Props {
   title?: string;
   description: string[];
   subTitle?: string;
+  link?: string;
 }
 
-const { description, name, title, subTitle } = Astro.props;
+const { description, name, title, subTitle, link} = Astro.props;
 ---
 
 <div class="flex flex-row dark:text-black my-4">
-  <div class="mr-2 w-32 font-bold">{name}</div>
+  <div class="mr-2 w-32 font-bold">{name}
+
+  
+  {link &&
+    <a
+      class="text-blue-500 hover:underline"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link
+    </a>
+  }</div>
   <div class="flex-1">
     <div>
       {title && <span class="font-bold text-lg">{title}</span>}

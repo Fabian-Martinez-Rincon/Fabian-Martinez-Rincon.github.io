@@ -28,30 +28,40 @@ import "../styles/global.css";
     
 
     <div id="Links" class="mb-6">
-        <strong>Mail </strong><a
+        <strong>Mail </strong><a 
           href="mailto:fabianmartinezrincon.123@gmail.com"
           class="hover:text-red-500 dark:text-dark dark:hover:text-red-500"
           >fabianmartinezrincon.123@gmail.com</a
         >
       <br> <strong>Github</strong> 
-            <a
+            <a target="_blank"
+            rel="noopener noreferrer"
         href="https://github.com/Fabian-Martinez-Rincon"
         class="hover:text-red-500 dark:text-black dark:hover:text-red-500"
         >https://github.com/Fabian-Martinez-Rincon
       </a></br>
       <strong>Portfolio</strong> 
-       <a
+       <a target="_blank"
+       rel="noopener noreferrer"
       href="https://rincondelfabo.vercel.app/"
       class="hover:text-red-500 dark:text-black dark:hover:text-red-500"
       >https://rincondelfabo.vercel.app/
     </a>
+  </br>
+    <strong>Linkedin</strong> 
+    <a target="_blank"
+    rel="noopener noreferrer"
+    href="https://www.linkedin.com/in/fabian-martinez-rincon/"
+    class="hover:text-red-500 dark:text-black dark:hover:text-red-500"
+    >https://www.linkedin.com/in/fabian-martinez-rincon/
+  </a>
     </div>
 
     <div id="work" class="mb-6">
       <SectionTitle title="Working experience" />
 
       <RowEntry
-        name="01/09/2023 - Present"
+        name="2023-Present"
         title="Testing Engineer"
         subTitle="Gaming Labs Sudamerica"
         description={[
@@ -70,28 +80,24 @@ import "../styles/global.css";
         subTitle="UNLP | Informatica"
       />
 
-      <RowEntry
-        description="During my internship, I mastered Arduino tools and modules for project implementation and created a static webpage using CSS, HTML, and JavaScript on GitHub Pages."
-        name="01/03/2020 - 01/03/2021"
-        title="Backend Developer Intern"
-        subTitle="UNITEC - Project Arduino"
-      /> -->
+       -->
     </div>
 
     <div id="education" class="mb-6">
        <SectionTitle title="Education" />
     
        <RowEntry
-            name="01/02/2021 - Present"
+            name="2021-Present"
             title="Bachelor of Systems"
             subTitle="UNLP | Informatica"
             description={[
-                "Skilled in Java and design patterns, Agile methodologies (Scrum), PostgreSQL, SQL, Linux, and relational databases. Proficient in Bash scripting, Python, Flask, and front-end technologies including HTML, CSS, JavaScript, React, Tailwind and Vue.js"
+                "Skilled in Java and design patterns, Agile methodologies (Scrum), PostgreSQL, SQL, Linux, and relational databases. Proficient in Bash Scripting, Python, Flask, and front-end technologies including HTML, CSS, JavaScript, React, Tailwind and Vue.js"
             ]}
         />
 
         <RowEntry
-            name="01/03/2014 - 01/10/2020"
+            name="2014-2020"
+            link="https://rincondelfabo.vercel.app/certificaciones/tecnico.png"
             title="Electronic Technician"
             subTitle="Albert Thomas EEPT N° 6"
             description={[
@@ -106,18 +112,67 @@ import "../styles/global.css";
       <RowEntry
             name="24/12/2022"
             title="Midflash"
+            subTitle="Github"
             description={[
                 "I developed an automated system using Python, Selenium, and Pyautogui to optimize image manipulation and enhancement on Zyro, including automated uploading/downloading and resolution enhancement through AI."
-            ]}
+            ]},
+            link="https://github.com/Fabian-Martinez-Rincon/MidFlash"
         />
 
         <RowEntry
             name="01/05/2022"
-            title="DATASETS-PROCESSOR"
+            title="Datasets-Processor"
+            subTitle="Github"
             description={[
-                "Automated data processing using Python and Pandas for various datasets, achieving: translation of potentials and positions in the FIFA dataset, conversion of geographical coordinates in the Lagos de Argentina dataset, and standardization of musical genres and artist names in the Spotify dataset, enhancing the consistency and readability of the information."
+                "Automated data processing with Python and Pandas streamlined the FIFA, Lagos de Argentina, and Spotify datasets by translating player data, converting coordinates, and standardizing musical genres, improving data consistency and readability."
             ]}
+            link="https://gist.github.com/Fabian-Martinez-Rincon/54706afe9badc6848135b37dd0f30d30"
         />
+
+    </div>
+
+    <div id="education" class="mb-6">
+      <SectionTitle title="Achievements/Recognitions" />
+    
+      <RowEntry
+        description={["I gave a talk at the 'Solutions for Inclusion' hackathon, held at the UNLP Informatica"]}
+        name="27/10/2023"
+        link="https://www.extension.info.unlp.edu.ar/hackaton/"
+        title="Hackaton Soluciones para la inclusión"
+        subTitle="UNLP | Informatica"
+      />
+
+      <RowEntry
+        description={["I was recognized by the president of the UNLP for my outstanding performance at the event. For more details, please see the official UNLP note"]}
+        name="29/06/2023"
+        link="https://unlp.edu.ar/institucional/vinculacion_tecnologica/prosecretaria-vinculacion-tecnologica/lopez-armengol-recibio-a-la-delegacion-de-la-unlp-que-participo-en-unidea-65089/"
+        title="NOTE"
+        subTitle="UNLP | Informatica"
+      />
+
+      <RowEntry
+        description={["I served as the leader of the winning project at the UNIDEA 2023 entrepreneurship event, which saw participation from students and graduates from various universities."]}
+        name="31/05/2023"
+        link="https://rincondelfabo.vercel.app/certificaciones/unidea.png"
+        title="UNIDEA 2023"
+        subTitle="UNICEN | Tandil"
+      />
+
+      <RowEntry
+        description={["I participated in the 'Space-App Challenge' hackathon, where I presented and documented the software alongside a team of three people"]}
+        name="01/10/2022"
+        link="https://rincondelfabo.vercel.app/certificaciones/spaceApps.png"
+        title="Space-App Challengue"
+        subTitle="UNLP | Informatica"
+      />
+
+      <RowEntry
+        description={["During my internship, I mastered Arduino tools and modules for project implementation and created a static webpage using CSS, HTML, and JavaScript on GitHub Pages."]}
+        name="2020-2021"
+        link="https://rincondelfabo.vercel.app/certificaciones/unitec.PNG"
+        title="Project Arduino (Scored 10/10)"
+        subTitle="UNITEC"
+      />
 
     </div>
 
