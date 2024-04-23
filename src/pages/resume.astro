@@ -1,0 +1,145 @@
+---
+import RowEntry from "../components/RowEntry.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+
+//import { SITE_TITLE } from "../config";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Resume</title>
+  </head>
+  <body class="dark:bg-white">
+    <button id="dark-mode-toggle" class="mb-2 mt-2">
+    </button>
+
+    <div class="text-center mb-3">
+      <h1 class="text-2xl font-bold mb-1 dark:text-dark">Python Developer</h1>
+      <h2 class="text-1xl font-bold mb-1 dark:text-dark">Fabian Martinez Rincon</h2>
+      <h3 class="text-base dark:text-black">
+        
+      </h3>
+    </div>
+
+    
+
+    <div id="Links" class="mb-6">
+        <strong>Mail </strong><a
+          href="mailto:fabianmartinezrincon.123@gmail.com"
+          class="hover:text-red-500 dark:text-dark dark:hover:text-red-500"
+          >fabianmartinezrincon.123@gmail.com</a
+        >
+      <br> <strong>Github</strong> 
+            <a
+        href="https://github.com/Fabian-Martinez-Rincon"
+        class="hover:text-red-500 dark:text-black dark:hover:text-red-500"
+        >https://github.com/Fabian-Martinez-Rincon
+      </a></br>
+      <strong>Portfolio</strong> 
+       <a
+      href="https://rincondelfabo.vercel.app/"
+      class="hover:text-red-500 dark:text-black dark:hover:text-red-500"
+      >https://rincondelfabo.vercel.app/
+    </a>
+    </div>
+
+    <div id="work" class="mb-6">
+      <SectionTitle title="Working experience" />
+
+      <RowEntry
+        name="01/09/2023 - Present"
+        title="Testing Engineer"
+        subTitle="Gaming Labs Sudamerica"
+        description={[
+            "Developed software in Python using Pandas, PyGetWindow, OpenPyXL, PyAutoGUI, and Tkinter to automate data entry on gaming machines, saving significant time for the company.",
+            "Managed and automated permission administration in Linux using ACL and Bash Scripting.",
+            "I designed an automated report generator using Python,OpenPyXL, Pandas, and OS to streamline and secure content comparison between folders, optimizing data review processes within the company."
+        ]}
+        />
+
+
+
+      <!-- <RowEntry
+        description="Served as an advanced tutor, facilitating the adaptation of new students and providing essential academic and administrative guidance"
+        name="01/03/2022 - 12/2022"
+        title="Tutor"
+        subTitle="UNLP | Informatica"
+      />
+
+      <RowEntry
+        description="During my internship, I mastered Arduino tools and modules for project implementation and created a static webpage using CSS, HTML, and JavaScript on GitHub Pages."
+        name="01/03/2020 - 01/03/2021"
+        title="Backend Developer Intern"
+        subTitle="UNITEC - Project Arduino"
+      /> -->
+    </div>
+
+    <div id="education" class="mb-6">
+       <SectionTitle title="Education" />
+    
+       <RowEntry
+            name="01/02/2021 - Present"
+            title="Bachelor of Systems"
+            subTitle="UNLP | Informatica"
+            description={[
+                "Skilled in Java and design patterns, Agile methodologies (Scrum), PostgreSQL, SQL, Linux, and relational databases. Proficient in Bash scripting, Python, Flask, and front-end technologies including HTML, CSS, JavaScript, React, Tailwind and Vue.js"
+            ]}
+        />
+
+        <RowEntry
+            name="01/03/2014 - 01/10/2020"
+            title="Electronic Technician"
+            subTitle="Albert Thomas EEPT N° 6"
+            description={[
+                "Basic knowledge of C++, developed temperature converters in Visual Basic, and practical projects with Arduino."
+            ]}
+        />
+    </div>
+
+    <div id="education" class="mb-6">
+      <SectionTitle title="Projects" />
+        
+      <RowEntry
+            name="24/12/2022"
+            title="Midflash"
+            description={[
+                "I developed an automated system using Python, Selenium, and Pyautogui to optimize image manipulation and enhancement on Zyro, including automated uploading/downloading and resolution enhancement through AI."
+            ]}
+        />
+
+    </div>
+
+
+    <script is:inline>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      window.onload = function () {
+        const element = document.getElementById("dark-mode-toggle");
+
+        if (element) {
+          element.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+
+            localStorage.theme = document.documentElement.classList.contains(
+              "dark"
+            )
+              ? "dark"
+              : "light";
+          });
+        }
+      };
+    </script>
+  </body>
+</html>
