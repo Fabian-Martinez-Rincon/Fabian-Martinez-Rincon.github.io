@@ -5,7 +5,7 @@ pubDate: 2022-10-04
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/vim.jpg'
+    url: '/posts/linux/vim.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
 

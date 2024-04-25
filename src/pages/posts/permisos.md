@@ -5,7 +5,7 @@ pubDate: 2024-03-07
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/permisos.jpg'
+    url: '/posts/linux/permisos.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["ACL", "Permisos", "Linux"]
 

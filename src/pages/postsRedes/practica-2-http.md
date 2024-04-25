@@ -4,7 +4,7 @@ title: HTTP
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/practicahttp.webp'
+    url: '/posts/Redes/practicahttp.webp'
     alt: "Redes."
 pubDate: 2024-03-30
 tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]

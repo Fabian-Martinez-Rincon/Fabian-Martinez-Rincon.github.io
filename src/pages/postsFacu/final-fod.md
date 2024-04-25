@@ -4,7 +4,7 @@ title: Final FOD
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/fod.jpg'
+    url: '/posts/Materias/fod.webp'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-12-12
 tags: ["bash", "nvim", "linux", "debian"]

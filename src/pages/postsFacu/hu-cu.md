@@ -4,7 +4,7 @@ title: Parciales ING1
 author: Fabian Martinez Rincon
 description: "Historias de Usuario y Casos de uso. Tuve que ir todas las practicas y consultas para poder entender con mejor detalle."
 image:
-    url: '/posts/hu.jpg'
+    url: '/posts/Materias/hu.webp'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-05-07
 tags: ["bash", "nvim", "linux", "debian"]

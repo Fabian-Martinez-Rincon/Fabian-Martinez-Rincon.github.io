@@ -4,7 +4,7 @@ title: Entrevistas ING2
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/ing2.jpg'
+    url: '/posts/Materias/ing2.webp'
     alt: ""
 pubDate: 2024-03-10
 tags: []

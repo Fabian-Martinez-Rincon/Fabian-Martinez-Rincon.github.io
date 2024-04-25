@@ -4,7 +4,7 @@ title: Final AYED
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/ayed.jpg'
+    url: '/posts/Materias/ayed.webp'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-12-23
 tags: ["bash", "nvim", "linux", "debian"]

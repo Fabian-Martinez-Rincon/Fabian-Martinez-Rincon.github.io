@@ -5,7 +5,7 @@ pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/state.webp'
+    url: '/posts/Objetos/state.webp'
     alt: ''
 tags: ["POO"]
 

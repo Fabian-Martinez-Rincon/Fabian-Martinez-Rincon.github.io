@@ -4,7 +4,7 @@ title: Sis Operativos
 author: Alumno de Astro
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
-    url: '/posts/shell.jpg'
+    url: '/posts/Materias/shell.webp'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2022-07-15
 tags: ["bash", "nvim", "linux", "debian"]

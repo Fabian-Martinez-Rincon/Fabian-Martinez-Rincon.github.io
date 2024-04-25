@@ -5,7 +5,7 @@ pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/capa-aplicacion.webp'
+    url: '/posts/Redes/capa-aplicacion.webp'
     alt: ''
 tags: ["Capa de Aplicación"]
 

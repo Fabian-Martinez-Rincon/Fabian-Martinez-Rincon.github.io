@@ -4,7 +4,7 @@ title: Final TALLER
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/taller.jpg'
+    url: '/posts/Materias/taller.webp'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-12-12
 tags: ["bash", "nvim", "linux", "debian"]
