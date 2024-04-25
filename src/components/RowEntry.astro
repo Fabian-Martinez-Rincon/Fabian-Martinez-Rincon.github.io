@@ -11,20 +11,17 @@ const { description, name, title, subTitle, link} = Astro.props;
 ---
 
 <div class="flex flex-row dark:text-black my-4">
-  <div class="mr-2 w-32 font-bold">{name}
-
-  
+  <div class="mr-2 "><span class="font-bold">{name}</span>
   {link &&
     <a
-      class="text-blue-500 hover:underline"
+      class="text-blue-500 hover:underline font-bold"
       href={link}
       target="_blank"
       rel="noopener noreferrer"
     >
       Link
     </a>
-  }</div>
-  <div class="flex-1">
+  }
     <div>
       {title && <span class="font-bold text-lg">{title}</span>}
       {subTitle && <span class="ml-2 text-sm text-gray-600">({subTitle})</span>}
