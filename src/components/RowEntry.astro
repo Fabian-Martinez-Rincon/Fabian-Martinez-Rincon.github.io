@@ -11,7 +11,12 @@ const { description, name, title, subTitle, link} = Astro.props;
 ---
 
 <div class="flex flex-row dark:text-black my-4">
-  <div class="mr-2 "><span class="font-bold">{name}</span>
+  <div class="mr-2 ">
+    <div>
+      {title && <span class="font-bold text-lg">{title}</span>}
+      {subTitle && <span class="ml-2 text-sm text-gray-600">({subTitle})</span>}
+    </div>
+    <span class=" ml-2 text-lg text-gray-600">{name}</span>
   {link &&
     <a
       class="text-blue-500 hover:underline font-bold"
@@ -22,11 +27,7 @@ const { description, name, title, subTitle, link} = Astro.props;
       Link
     </a>
   }
-    <div>
-      {title && <span class="font-bold text-lg">{title}</span>}
-      {subTitle && <span class="ml-2 text-sm text-gray-600">({subTitle})</span>}
-    </div>
-    <ul class="list-disc pl-5 mt-1">
+    <ul class="list-disc pl-5 mt-1 text-lg">
       {description.map(item => (
         <li>{item.split(" ").map(word => 
             /Python|Java|Pandas|Selenium|Pyautogui|PyGetWindow|PyAutoGUI|Tkinter|Bash|OS|Tkinter|OpenPyXL|Scripting|Flask|C\+\+|Visual\ Basic|Arduino|PostgreSQL|GIT|SQL|Linux/.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
