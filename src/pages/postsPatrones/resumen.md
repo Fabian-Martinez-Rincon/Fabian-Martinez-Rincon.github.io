@@ -27,7 +27,36 @@ El patrón Adapter es un patrón de diseño estructural que permite a objetos co
 <details><summary>Estructura</summary>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Rincon-De-Fabo/assets/55964635/7e5f0109-93bb-48da-a8c2-232d8f279c56)
+
 </details>
+
+<details><summary>Componentes</summary>
+
+1. **Client (Cliente)**: Es la clase que interactúa con la interfaz `Target`. Esta clase necesita una operación específica y espera poder llamarla a través de una interfaz conocida (`Request()`).
+
+2. **Target (Objetivo)**: Es la interfaz que define el dominio de métodos que el `Client` utiliza. En este caso, tiene un método `Request()` que el cliente llama para realizar alguna acción.
+
+3. **Adapter (Adaptador)**: Es la clase que implementa la interfaz `Target` y traduce las llamadas del cliente a una interfaz comprensible para el `Adaptee`. En este caso, el método `Request()` es implementado por el `Adapter` de manera que pueda invocar el método `SpecificRequest()` del `Adaptee`.
+
+4. **Adaptee (Adaptado)**: Es la clase que tiene una interfaz diferente (`SpecificRequest()`) que necesita ser adaptada. Esta clase realiza una función necesaria, pero su interfaz no es compatible con la que el cliente espera.
+
+5. **Relaciones**:
+    - **Client -> Target**: El cliente realiza llamadas al `Target`.
+    - **Adapter -> Adaptee**: El adaptador conoce al adaptado y puede invocar sus métodos.
+    - **Target <- Adapter**: El adaptador implementa la interfaz objetivo y traduce las llamadas de `Request()` a `SpecificRequest()`.
+</details>
+
+<details><summary>Como Funciona</summary>
+
+Cuando el `Client` quiere hacer una llamada a `Request()`, realmente quiere que se ejecute la funcionalidad de `SpecificRequest()` que está en el `Adaptee`. Sin embargo, el cliente no puede hacer esto directamente porque las dos interfaces son incompatibles. Aquí es donde entra el `Adapter`:
+
+1. El `Client` llama a `Request()` en el `Adapter`.
+2. El `Adapter` recibe esta llamada y la "adapta" o traduce a una o más llamadas a `SpecificRequest()` del `Adaptee`.
+3. El `Adaptee` no sabe que el `Adapter` está involucrado; simplemente ve que se llama a su método `SpecificRequest()` y responde como de costumbre.
+4. El `Adapter` puede hacer cualquier trabajo adicional necesario para transformar los datos o el formato de llamada entre `Request()` y `SpecificRequest()`, si es necesario.
+</details>
+
+
 
 ### Ejemplo Practico: Sistema de Audios
 
@@ -41,7 +70,7 @@ La situación se resume en el siguiente diagrama UML:
 
 
 
-<details open><summary>Resultado</summary>
+<details><summary>Resultado</summary>
 
 ![image](/posts/Objetos/adapterExample.PNG)
 </details>
@@ -118,10 +147,12 @@ public class VideoStreamAdapter extends Media {
 ```
 </details>
 
-
 ---
 
 ## Template Method
+
+
+El patrón Template Method es un patrón de diseño de comportamiento que define el esqueleto de un algoritmo en una operación, postergando algunos pasos a las subclases. Permite a las subclases redefinir ciertas etapas de un algoritmo sin cambiar su estructura.
 
 ---
 
@@ -144,3 +175,4 @@ public class VideoStreamAdapter extends Media {
 ## Adapter
 
 ---
+
