@@ -11,7 +11,7 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Python Developer</title>
+    <title>Python Developer </title>
     <meta name="description" content="Python Developer" />
     <meta name="author" content="Fabian Martinez Rincon" />
     <meta name="keywords" content="Python Developer" />
@@ -21,82 +21,101 @@ import "../styles/global.css";
     <button id="dark-mode-toggle" class="mb-2 mt-2">
     </button>
 
-    <div class="text-center mb-3">
-      <h1 class="text-2xl font-bold mb-1 dark:text-dark">Fabian Martinez Rincon</h1>
-      <h2 class="text-1xl font-bold mb-1 dark:text-dark">Python Developer</h2>
-      <h3 class="text-base dark:text-black">
-        
-      </h3>
-    </div>
-
-    
-
-    <div id="Links" class="flex justify-between items-center w-full">
+  
+    <div id="Links" class="flex items-center justify-start gap-6 w-full">
       <div class="flex items-center">
         <strong>Mail:</strong>
-        <a href="mailto:fabianmartinezrincon.123@gmail.com" class="ml-2 text-red-500 hover:text-red-700">
+        <a href="mailto:fabianmartinezrincon.123@gmail.com" class="ml-2 text-red-700">
           fabianmartinezrincon.123@gmail.com
         </a>
       </div>
       <div class="flex items-center">
         <strong>Github:</strong>
-        <a href="https://github.com/Fabian-Martinez-Rincon" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-500 hover:text-red-700">
+        <a href="https://github.com/Fabian-Martinez-Rincon" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-700">
           Fabian-Martinez-Rincon
+        </a>
+      </div>
+      <div class="flex items-center">
+        <strong>Portfolio:</strong>
+        <a href="https://rincondelfabo.vercel.app/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-700">
+          rincondelfabo.vercel.app
+        </a>
+      </div>
+
+    </div>
+    
+    <div id="Links" class="flex items-center justify-start gap-6 w-full">
+
+      <div class="flex items-center">
+        <strong>Linkedin:</strong>
+        <a href="https://www.linkedin.com/in/fabian-martinez-rincon/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-700">
+          fabian-martinez-rincon
+        </a>
+      </div>
+      <div class="flex items-center">
+        <strong>Phone:</strong>
+        <a href="tel:+542213529440" class="ml-2 text-red-700">
+          +54 221-3529440
         </a>
       </div>
     </div>
     
     
-    
 
-    <div id="work" class="mb-6">
-      <SectionTitle title="Working experience" />
+    <div class=" mb-3">
+      <h1 class="text-3xl  mb-1 dark:text-dark">Fabian Martinez Rincon</h1>
+      <h2 class="text-2xl font-bold mb-1 dark:text-dark">PYTHON DEVELOPER</h2>
+    
+    </div>
+
+    <div id="work" class="mb-2">
+      <SectionTitle title="WORK EXPERIENCE" />
 
       <RowEntry
-        name="2023-Present"
+        name="September 2023 - Present"
         title="Testing Engineer"
         subTitle="Gaming Labs Sudamerica"
         description={[
-            "Developed software in Python using Pandas, PyGetWindow, OpenPyXL, PyAutoGUI and Tkinter to automate data entry into gaming machines, significantly improving efficiency, reducing testing time from three weeks to just five hours.",
-            "Managed and automated permission administration in Linux using ACL and Bash Scripting.",
-            "I designed an automated report generator using Python,OpenPyXL, Pandas, and OS to streamline and secure content comparison between folders, optimizing data review processes within the company."
+            "Desarrollé un software en Python usando Pandas, PyGetWindow, OpenPyXL, PyAutoGUI y Tkinter para automatizar la entrada de datos en máquinas de juego, mejorando notablemente la eficiencia, reduciendo el tiempo de pruebas de 60hs a solo 5hs con un margen de error del 0%.",
+            "Optimicé la gestión de permisos de usuario implementando y administrando Listas de Control de Acceso (ACL) en un entorno Linux. Posteriormente, automatice el proceso mediante Bash Scripting desarrollado en Vim, que asigna eficientemente los permisos necesarios a los grupos correspondientes en toda la infraestructura empresarial.",
+            "Desarrollé una herramienta en Python utilizando la biblioteca Difflib para comparar dos bases de datos y detectar diferencias entre ellas, optimizando el tiempo de comparación de aproximadamente 5 horas a solo unos minutos. Para la gestión de archivos y directorios, implementé funciones con OS, y para la generación de informes detallados, utilicé Xlsxwriter, creando hojas de cálculo en Excel que resumen visualmente las modificaciones realizadas."
         ]}
         />
 
     </div>
 
-    <div id="education" class="mb-6">
-       <SectionTitle title="Education" />
+    <div id="education" class="mb-2">
+       <SectionTitle title="Educación" />
     
        <RowEntry
-            name="2021-Present"
-            title="Bachelor of Systems"
+            name="2021 - Actualidad"
+            title="Licenciado en Sistemas"
             subTitle="UNLP | Informatica"
             description={[
-                "Skilled in Java and design patterns, Agile methodologies (Scrum), PostgreSQL, SQL, Linux, and relational databases. Proficient in Bash Scripting, Python, Flask, and front-end technologies including HTML, CSS, JavaScript, React, Tailwind and Vue.js"
+                "Competente en Java y patrones de diseño, metodologías ágiles (Scrum), PostgreSQL, SQL, Linux y bases de datos relacionales. Hábil en Bash Scripting, Python, Flask y tecnologías de front-end incluyendo HTML, CSS, JavaScript, React, Tailwind y Vue.js."
             ]}
         />
 
         <RowEntry
             name="2014-2020"
-            link="https://rincondelfabo.vercel.app/certificaciones/tecnico.png"
-            title="Electronic Technician"
-            subTitle="Albert Thomas EEPT N° 6 | Scored 08/10"
+            link="https://rincondelfabo.vercel.app/certificaciones/tecnico.webp"
+            title="Tecnico en Electronica"
+            subTitle="Albert Thomas EEPT N° 6 | Promedio 08/10"
             description={[
-                "Basic knowledge of C++, developed temperature converters in Visual Basic, and practical projects with Arduino."
+                "Conocimientos básicos de C++, desarrollé convertidores de temperatura en Visual Basic y proyectos prácticos con Arduino."
             ]}
         />
     </div>
 
-    <div id="education" class="mb-6">
-      <SectionTitle title="Projects" />
+    <div id="education" class="mb-2">
+      <SectionTitle title="Proyectos" />
         
       <RowEntry
             name="24/12/2022"
             title="Midflash"
             subTitle="Github"
             description={[
-                "I developed an automated system using Python, Selenium, and Pyautogui to optimize image manipulation and enhancement on Zyro, including automated uploading/downloading and resolution enhancement through AI."
+                "Desarrollé un un software con Python, Selenium y Pyautogui para optimizar la manipulación de imágenes en Zyro, facilitando las cargas/descargas y mejorando la resolución con IA."
             ]},
             link="https://github.com/Fabian-Martinez-Rincon/MidFlash"
         />
@@ -106,72 +125,43 @@ import "../styles/global.css";
             title="Datasets-Processor"
             subTitle="Github"
             description={[
-                "Automated data processing with Python and Pandas streamlined the FIFA, Lagos de Argentina, and Spotify datasets by translating player data, converting coordinates, and standardizing musical genres, improving data consistency and readability."
+                "La automatización del procesamiento de datos con Python y Pandas optimizó los conjuntos de datos de FIFA, Lagos de Argentina y Spotify mediante la traducción de datos de jugadores, la conversión de coordenadas y la estandarización de géneros musicales, mejorando la consistencia y legibilidad de los datos."
             ]}
             link="https://gist.github.com/Fabian-Martinez-Rincon/54706afe9badc6848135b37dd0f30d30"
         />
 
     </div>
 
-    <div id="education" class="mb-6">
-      <SectionTitle title="Achievements/Recognitions" />
+    <div id="education" class="mb-2">
+      <SectionTitle title="LOGROS/RECONOCIMIENTOS" />
     
       <RowEntry
-        description={["I gave a talk at the 'Solutions for Inclusion' hackathon, held at the UNLP Informatica"]}
-        name="27/10/2023"
-        link="https://www.extension.info.unlp.edu.ar/hackaton/"
-        title="Hackathon Solutions for Inclusion"
-        subTitle="UNLP | Informatica"
-      />
-
-      <RowEntry
-        description={["I was recognized by the president of the UNLP for my outstanding performance at the event. For more details, please see the official UNLP note"]}
+        description={["Fui reconocido por el presidente de la UNLP por mi destacada actuación en el evento. Para más detalles, por favor consulta la nota oficial de la UNLP."]}
         name="29/06/2023"
         link="https://unlp.edu.ar/institucional/vinculacion_tecnologica/prosecretaria-vinculacion-tecnologica/lopez-armengol-recibio-a-la-delegacion-de-la-unlp-que-participo-en-unidea-65089/"
-        title="NOTE"
+        title="Nota de Reconocimiento"
         subTitle="UNLP | Informatica"
       />
 
       <RowEntry
-        description={["I served as the leader of the winning project at the UNIDEA 2023 entrepreneurship event, which saw participation from students and graduates from various universities."]}
+        description={["Fui el líder del proyecto ganador en el evento de emprendimiento UNIDEA 2023, que contó con la participación de estudiantes y graduados de diversas universidades."]}
         name="31/05/2023"
-        link="https://rincondelfabo.vercel.app/certificaciones/unidea.png"
-        title="UNIDEA 2023 Winner"
+        link="https://rincondelfabo.vercel.app/certificaciones/unidea.webp"
+        title="UNIDEA 2023 Ganador"
         subTitle="UNICEN | Tandil"
       />
 
       <RowEntry
-        description={["I participated in the 'Space-App Challenge' hackathon, where I presented and documented the software alongside a team of three people"]}
-        name="01/10/2022"
-        link="https://rincondelfabo.vercel.app/certificaciones/spaceApps.png"
-        title="Space-App Challengue"
-        subTitle="UNLP | Informatica"
-      />
-
-      <RowEntry
-        description={["During my internship, I mastered Arduino tools and modules for project implementation and created a static webpage using CSS, HTML, and JavaScript on GitHub Pages."]}
+        description={["Pasantía de 200hs en las que trabaje con herramientas y módulos de Arduino para la implementación de proyectos. Documente todo en una página web estática usando CSS, HTML y JavaScript en GitHub Pages."]}
         name="2020-2021"
-        link="https://rincondelfabo.vercel.app/certificaciones/unitec.PNG"
-        title="Project Arduino "
-        subTitle="UNITEC | Scored 10/10"
+        link="https://rincondelfabo.vercel.app/certificaciones/unitec.webp"
+        title="Proyecto Arduino"
+        subTitle="UNITEC | Nota 10/10"
       />
 
     </div>
 
-    <div id="Links" class="flex justify-between items-center w-full">
-      <div class="flex items-center">
-        <strong>Portfolio:</strong>
-        <a href="https://rincondelfabo.vercel.app/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-500 hover:text-red-700">
-          rincondelfabo.vercel.app
-        </a>
-      </div>
-      <div class="flex items-center">
-        <strong>Linkedin:</strong>
-        <a href="https://www.linkedin.com/in/fabian-martinez-rincon/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-500 hover:text-red-700">
-          fabian-martinez-rincon
-        </a>
-      </div>
-    </div>
+    
 
 
     <script is:inline>
