@@ -8,14 +8,16 @@ export interface Props {
 }
 
 const { description, name, title, subTitle, link} = Astro.props;
+
+const keywords = /Python|Excel|AI|ACL|Script|Vim|Difflib|OS|Xlsxwriter|HTML|CSS|React|Tailwind|Vue.js|expresiones|regulares|Java|Pandas|Selenium|Pyautogui|PyGetWindow|PyAutoGUI|Tkinter|Bash|OS|Tkinter|OpenPyXL|Scripting|Flask|C\+\+|Visual\ Basic|Arduino|PostgreSQL|GIT|SQL|Linux/
 ---
 
-<div class="flex flex-row dark:text-black my-4">
+<div class="flex flex-row dark:text-black">
   <div class="mr-2 ">
     <div>
-      {title && <span class="font-bold text-lg">{title}</span>}
+      {title && <span class="font-bold text-xl">{title}</span>}
       {subTitle && <span class="ml-2 text-sm text-gray-600">({subTitle})</span>}
-    </div>
+    
     <span class=" ml-2 text-lg text-gray-600">{name}</span>
   {link &&
     <a
@@ -27,14 +29,23 @@ const { description, name, title, subTitle, link} = Astro.props;
       Link
     </a>
   }
-    <ul class="list-disc pl-5 mt-1 text-lg">
-      {description.map(item => (
-        <li>{item.split(" ").map(word => 
-            /Python|Java|Pandas|Selenium|Pyautogui|PyGetWindow|PyAutoGUI|Tkinter|Bash|OS|Tkinter|OpenPyXL|Scripting|Flask|C\+\+|Visual\ Basic|Arduino|PostgreSQL|GIT|SQL|Linux/.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
+  </div>
+
+    {description.length === 1 ? (
+      <p class="text-lg">{description[0].split(" ").map(word => 
+            keywords.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
+          )
+      }</p>
+    ) : (
+      <ul class="list-disc pl-5 mt-1 text-lg">
+        {description.map(item => (
+          <li>{item.split(" ").map(word => 
+            keywords.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
           )}
         </li>
-      ))}
-    </ul>
+        ))}
+      </ul>
+    )}
   </div>
 </div>
 

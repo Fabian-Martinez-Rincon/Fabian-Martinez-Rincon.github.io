@@ -333,11 +333,279 @@ Los elementos del file system pueden ser `directorios` o `archivos`. Los archivo
 
 </details>
 
+<details><summary>FileSystem</summary>
 
+```java
+public abstract class FileSystem{
+	private String nombre;
+	private LocalDate fecha;
+	
+	public FileSystem(String nombre, LocalDate fecha) {
+		this.nombre = nombre;
+		this.fecha = fecha;
+	}
+	
+	public String getNombre() {return this.nombre;}
+	public LocalDate getFecha() {return this.fecha;}
+	
+	public abstract int tamanoTotalOcupado();
+    public abstract Archivo archivoMasGrande();
+    public abstract Archivo archivoMasNuevo();
+}
+```
+</details>
+
+<details><summary>File</summary>
+
+```java
+public class File extends FileSystem{
+	private int tamanio;
+	
+	public File(String nombre, LocalDate fecha, int tamanio) {
+		super(nombre, fecha);
+		this.tamanio = tamanio;
+	}
+	
+	public File archivoMasGrande() {return this;}
+
+	public File archivoMasNuevo() { return this;}
+
+	public int tamanoTotalOcupado() { return this.tamano;}
+}
+```
+</details>
+
+<details><summary>Directory</summary>
+
+```java
+public class Directorio extends FileSystem {
+	private List<FileSystem> files;
+
+	public Directorio(String nombre, LocalDate fecha) {
+		super(nombre, fecha);
+		this.files = new ArrayList<>();
+	}
+	
+	public void agregar(FileSystem archivo) {this.files.add(archivo);}
+	
+	public File tamanoTotalOcupado() {
+		return (this.files.stream()
+				.mapToInt(file -> file.tamanoTotalOcupado())
+				.sum()
+		) + 32;
+	}
+	
+    public File archivoMasGrande() {
+    	return this.files.stream()
+				.map(file -> file.archivoMasGrande())
+				.max((a1,a2) -> Integer.compare(
+					a1.tamanoTotalOcupado(),
+					a2.tamanoTotalOcupado()
+				)).orElse(null);	
+    }
+    
+    public File archivoMasNuevo() {
+		return this.files.stream()
+				.map(file -> file.archivoMasNuevo())
+				.max((a1,a2) -> a1.getFecha()
+				.compareTo(a2.getFecha()))
+				.orElse(null);
+    }
+}
+```
+</details>
 
 ---
 
 ## State
+
+El patrón de diseño State permite a un objeto alterar su comportamiento cuando su estado interno cambia, pareciendo que su clase ha cambiado. Es muy útil para casos en los que el comportamiento de un objeto depende fuertemente de su estado interno, y queremos evitar sentencias condicionales complejas que seleccionen el comportamiento basado en el estado del objeto.
+
+<details><summary>Estructura</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f6296652-d325-4932-976b-851239c0ff87)
+</details>
+
+<details><summary>Componentes</summary>
+
+1. **Context (Contexto)**: 
+   - Es la clase que tiene un estado interno que puede variar a lo largo de su vida. En el diagrama, `Context` tiene un método `Request()`, que es probablemente la forma en que el cliente interactúa con el estado. Internamente, este método delegará la petición al estado actual.
+
+2. **State (Estado)**:
+   - Es una interfaz o clase abstracta que define un método `Handle()`. Este método es utilizado por el `Context` para delegar operaciones basadas en su estado interno.
+
+3. **ConcreteStateA / ConcreteStateB**:
+   - Son clases concretas que implementan la interfaz `State`. Cada una representa un estado específico del `Context`. Al cambiar el objeto `State` en el `Context` a diferentes subclases de `State`, cambias el comportamiento del `Context` cuando se llama a `Request()`.
+
+4. **Transiciones**:
+   - El estado del `Context` se cambia mediante la asignación de una nueva instancia de `ConcreteState` al atributo `state` del `Context`. Cuando se invoca `Request()`, la llamada se delega a `state->Handle()`, lo que resulta en comportamientos diferentes dependiendo del objeto `ConcreteState` actual asignado en `state`.
+</details>
+
+<details><summary>Como Funciona</summary>
+
+- El `Client` hace una llamada a `Request()` en un objeto `Context`.
+- El objeto `Context` delega la llamada a `Handle()` en su atributo `state`, que es del tipo `State`.
+- Dependiendo de la implementación concreta de `State` (ya sea `ConcreteStateA` o `ConcreteStateB`), el comportamiento de la llamada a `Request()` puede variar significativamente.
+- Cuando es necesario cambiar el comportamiento del `Context`, su atributo `state` se asigna a una instancia diferente de una clase que implementa la interfaz `State`.
+</details>
+
+### Ejemplo Practico: ToDoItem
+
+Se desea definir un sistema de seguimiento de tareas similar a Jira. 
+En este sistema hay tareas en las cuales se puede definir el nombre y una serie de comentarios. Las tareas atraviesan diferentes etapas a lo largo de su ciclo de vida y ellas son: pending, in-progress, paused y finished. Cada tarea debe estar modelada mediante la clase ToDoItem con el siguiente protocolo: 
+
+<details><summary>UML</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/9c6ce682-1229-43fd-88e4-efb642ac5b23)
+
+</details>
+
+<details><summary>ToDoItem</summary>
+
+```java
+public class ToDoItem {
+	private String name;
+	private State state;
+	private List<String> comentarios;
+	private LocalDateTime fechaInicio;
+	private LocalDateTime fechaFin;
+
+	public ToDoItem(String name) {
+		this.name = name;
+		this.comentarios = new ArrayList<>();
+		this.setState(new Pending(this));
+	}
+	
+	public void start() { this.state.start();}
+
+	public void togglePause() {this.state.togglePause();}
+
+	public void finish() {this.state.finish();}
+
+	 public Duration workedTime() { return this.state.workedTime();}
+
+	public void addComment(String comment) {this.state.addComment(comment);}
+}
+```
+</details>
+
+<details><summary>State</summary>
+
+```java
+public abstract class State {
+	private ToDoItem task;
+	
+	public State (ToDoItem task) {
+		this.task = task;
+	}
+
+	public abstract void start();
+	public abstract void togglePause();
+	public abstract void finish();
+
+	public Duration workedTime() {
+		return Duration.between(this.task.getStart(),this.task.getEnd());
+	}
+	
+	public void addComment(String comment) {
+		this.task.getCommentaries().add(comment);
+	}
+}
+```
+</details>
+
+
+
+<details><summary>Pending</summary>
+
+```java
+public class Pending extends State{
+	public Pending(ToDoItem task) {
+		super(task);
+	}
+
+	public void start() {
+		this.getTask().setState(new InProgress(this.getTask()));
+		this.getTask().setStart(LocalDateTime.now());
+	}
+
+	public void togglePause() {
+		throw new RuntimeException("ERROR: you can't pause (or unpause) in pending state");
+	}
+
+	public void finish() {}
+
+	public Duration workedTime() {
+		throw new RuntimeException("ERROR: the task never started");
+	}
+}
+```
+</details>
+
+<details><summary>Paused</summary>
+
+```java
+public class Paused extends State{
+	public Paused(ToDoItem task) {
+		super(task);
+	}
+
+	public void start() {}
+
+	public void togglePause() {
+		this.getTask().setState(new InProgress(this.getTask()));
+		
+	}
+
+	public void finish() {
+		this.getTask().setState(new Finished(this.getTask()));
+		this.getTask().setEnd(LocalDateTime.now());
+	}
+}
+```
+</details>
+
+<details><summary>InProgress</summary>
+
+```java
+public class InProgress extends State{
+	public InProgress(ToDoItem task) {
+		super(task);
+	}
+
+	public void start() {}
+
+	public void togglePause() {
+		this.getTask().setState(new Paused(this.getTask()));
+	}
+
+	public void finish() {
+		this.getTask().setState(new Finished(this.getTask()));
+		this.getTask().setEnd(LocalDateTime.now());
+	}
+}
+```
+</details>
+
+<details><summary>Finished</summary>
+
+```java
+public class Finished extends State{
+	public Finished(ToDoItem task) {
+		super(task);
+	}
+
+	public void start() {}
+
+	public void togglePause() {
+		throw new RuntimeException("ERROR: you can't pause (or unpause) in finished state");
+	}
+
+	public void finish() {}
+	public void addComment(String comment) {}
+}
+```
+</details>
 
 ---
 
