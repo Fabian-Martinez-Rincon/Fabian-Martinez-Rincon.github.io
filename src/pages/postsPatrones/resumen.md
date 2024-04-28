@@ -16,7 +16,7 @@ tags: ["POO"]
 - [State](#state)
 - [Strategy](#strategy)
 - [Proxy](#proxy)
-- [Adapter](#adapter)
+- [Decorator](#decorator)
 
 ---
 
@@ -57,11 +57,14 @@ Cuando el `Client` quiere hacer una llamada a `Request()`, realmente quiere que 
 </details>
 
 
+<details><summary>Ejemplo Practico</summary>
 
 ### Ejemplo Practico: Sistema de Audios
 
 Usted ha implementado una clase `Media player`, para `reproducir` archivos de `audio` y `video` en formatos que usted ha diseñado. Cada `Media` se puede `reproducir` con el mensaje `play()`. Para continuar con el desarrollo, usted desea incorporar la posibilidad de reproducir `Video Stream`. Para ello, dispone de la clase `VideoStream` que pertenece a una librería de terceros y usted no puede ni debe modificarla. El desafío que se le presenta es hacer que la clase `MediaPlayer` pueda interactuar con la clase `VideoStream`. 
 La situación se resume en el siguiente diagrama UML:
+
+</details>
 
 <details><summary>Diagrama</summary>
 
@@ -180,11 +183,15 @@ El patrón Template Method es un patrón de diseño de comportamiento que define
 - Las operaciones primitivas `PrimitiveOperation1()` y `PrimitiveOperation2()` son llamadas desde el `TemplateMethod()` en el orden definido por la lógica del algoritmo. Estas operaciones se ejecutan según las implementaciones específicas proporcionadas en `ConcreteClass`.
 </details>
 
+<details><summary>Ejemplo Practico</summary>
+
 ### Ejemplo Practico: Calculo de sueldos
 
 Sea una empresa que paga sueldos a sus empleados, los cuales están organizados en tres tipos: Temporarios, Pasantes y Planta. El sueldo se compone de 3 elementos: sueldo básico, adicionales y descuentos. 
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/0d6fe056-3568-4d28-b23d-e50cfbf00617)
+
+</details>
 
 <details><summary>UML</summary>
 
@@ -322,10 +329,14 @@ El patrón Composite es un patrón de diseño estructural que permite componer o
 
 </details>
 
+<details><summary>Ejemplo Practico</summary>
+
 ### Ejemplo Practico: FileSystem
 
 Un `File System` es un componente que forma parte del sistema operativo. Este está estructurado jerárquicamente en forma de árbol, comenzando con un directorio raíz.
 Los elementos del file system pueden ser `directorios` o `archivos`. Los archivos contienen datos y los directorios contienen archivos u otros directorios. De cada `archivo` se conoce el `nombre`, `fecha de creación` y `tamaño en bytes`. De cada `directorio` se conoce el `nombre`, `fecha de creación` y `contenido` (el tamaño es siempre la cantidad inicial de 32kb más la suma del tamaño de su contenido).
+
+</details>
 
 <details><summary>UML</summary>
 
@@ -449,10 +460,14 @@ El patrón de diseño State permite a un objeto alterar su comportamiento cuando
 - Cuando es necesario cambiar el comportamiento del `Context`, su atributo `state` se asigna a una instancia diferente de una clase que implementa la interfaz `State`.
 </details>
 
+<details><summary>Ejemplo Practico</summary>
+
 ### Ejemplo Practico: ToDoItem
 
 Se desea definir un sistema de seguimiento de tareas similar a Jira. 
 En este sistema hay tareas en las cuales se puede definir el nombre y una serie de comentarios. Las tareas atraviesan diferentes etapas a lo largo de su ciclo de vida y ellas son: pending, in-progress, paused y finished. Cada tarea debe estar modelada mediante la clase ToDoItem con el siguiente protocolo: 
+
+</details>
 
 <details><summary>UML</summary>
 
@@ -640,22 +655,526 @@ El patrón Strategy es un patrón de diseño de comportamiento que define una fa
 
 </details>
 
+<details><summary>Ejemplo Practico</summary>
+
 ### Ejemplo Practico: Codificador
 
+Sea una empresa de cable on demand que entrega decodificadores a sus clientes para que miren las películas que ofrece. El `decodificador` muestra la grilla de películas y también sugiere películas. 
 
+Usted debe implementar la aplicación para que el decodificador sugiera películas. El `decodificador` conoce la `grilla de películas` (lista completa que ofrece la empresa), como así también las `películas que reproduce`. De cada `película` se conoce `título`, `año de estreno`, `películas similares` y `puntaje`. La similaridad establece una relación recíproca entre dos películas, por lo que si A es similar a B entonces también B es similar a A. 
+
+Cada decodificador puede ser configurado para que sugiera 3 películas (que no haya reproducido) por alguno de los siguientes criterios:
+- (i) `novedad`: las películas más recientes. 
+- (ii) `similaridad`: las películas similares a alguna película que reprodujo, ordenadas de más a menos reciente.
+- (iii) `puntaje`: las películas de mayor puntaje, para igual puntaje considera las más recientes.
+
+Tenga en cuenta que la configuración del criterio de sugerencia del decodificador no es fija, sino que el usuario la debe poder cambiar en cualquier momento. El sistema debe soportar agregar nuevos tipos de sugerencias aparte de las tres mencionadas.
+
+Sea un decodificador que reprodujo Thor y Rocky, y posee la siguiente lista de películas:
+- Thor, 7.9, 2007 (Similar a Capitan America, Iron Man)
+- Capitan America, 7.8, 2016 (Similar a Thor, Iron Man)
+- Iron man, 7.9, 2010 (Similar a Thor, Capitan America)
+- Dunkirk, 7.9, 2017
+- Rocky, 8.1, 1976 (Similar a Rambo)
+- Rambo, 7.8, 1979 (Similar a Rocky)
+
+Las películas que debería sugerir son:
+- (i) Dunkirk, Capitan America,  Iron man
+- (ii) Capitán América,  Iron man, Rambo
+- (iii) Dunkirk, Iron man, Capitan America
+
+</details>
 
 <details><summary>UML</summary>
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/25bb268c-db88-48ee-ac1a-0b203dfa0ae6)
 </details>
 
+<details><summary>Decodificador</summary>
+
+```java
+public class Decodificador {
+	private List<Pelicula> grilla;
+	private List<Pelicula> reproducidas;
+	private Sugerencia criterioSugerencia;
+	
+	public Decodificador() {
+		this.grilla = new ArrayList<>();
+		this.reproducidas = new ArrayList<>();
+		this.criterioSugerencia = new SugerenciaNovedad();
+	}
+	
+	public List<Pelicula> obtenerSugerencias() {
+		return this.criterioSugerencia.obtenerSugerencias(this);
+	}
+}
+```
+
+</details>
+<details><summary>Pelicula</summary>
+
+```java
+public class Pelicula {
+	private String titulo;
+	private Year anioEstreno;
+	private double puntaje;
+	private List<Pelicula> peliculasSimilares;
+	
+	public Pelicula(String titulo, double puntaje, Year anioEstreno) {
+		this.titulo = titulo;
+		this.anioEstreno = anioEstreno;
+		this.puntaje = puntaje;
+		this.peliculasSimilares = new ArrayList<>();
+	}
+
+	public void establecerSimilitud(Pelicula pelicula) {
+		if (!this.peliculasSimilares.contains(pelicula)) {
+			this.peliculasSimilares.add(pelicula);
+			pelicula.establecerSimilitud(this);
+		}
+	}
+}
+```
+</details>
+<details><summary>Sugerencia</summary>
+
+```java
+public abstract class Sugerencia {
+	public List<Pelicula> obtenerSugerencias(Decodificador decodificador){
+		return this.sugerirPeliculas(decodificador).stream()
+				.filter(pelicula -> !decodificador.getReproducidas().contains(pelicula))
+				.limit(3).collect(Collectors.toList());
+	}
+	
+	public abstract List<Pelicula> sugerirPeliculas(Decodificador decodificador);
+}
+```
+</details>
+
+<details><summary>SugerenciaNovedad</summary>
+
+```java
+public class SugerenciaNovedad extends Sugerencia {
+
+	public List<Pelicula> sugerirPeliculas(Decodificador decodificador) {
+		return decodificador.getGrilla().stream()
+					.sorted((p2,p1) -> p1.getAnioEstreno().compareTo(p2.getAnioEstreno()))
+					.collect(Collectors.toList());
+	}
+}
+```
+</details>
+
+<details><summary>SugerenciaPuntaje</summary>
+
+```java
+public class SugerenciaPuntaje extends Sugerencia {
+	public List<Pelicula> sugerirPeliculas(Decodificador decodificador) {
+		return decodificador.getGrilla().stream()
+			.sorted((p1,p2) -> Double.compare(p2.getPuntaje(), p1.getPuntaje()))
+			.collect(Collectors.toList());
+	}
+}
+```
+</details>
+
+<details><summary>SugerenciaSimilaridad</summary>
+
+```java
+public class SugerenciaSimilaridad extends Sugerencia {
+
+	public List<Pelicula> sugerirPeliculas(Decodificador decodificador) {
+		return decodificador.getReproducidas().stream()
+				.map(pelicula -> pelicula.getPeliculasSimilares())
+				.flatMap(lista -> lista.stream())
+				.distinct()
+				.collect(Collectors.toList());
+	} 
+}
+```
+</details>
+
 ---
 
 ## Proxy
 
+El patrón de diseño Proxy proporciona un sustituto o marcador de posición para otro objeto para controlar el acceso a este último. Se utiliza en situaciones donde queremos agregar cierta funcionalidad adicional cuando un objeto es accedido. Hay varias variantes del patrón Proxy, cada una optimizada para un caso de uso diferente, como el manejo de operaciones costosas, la implementación de controles de seguridad, o la interacción con objetos que residen en diferentes espacios de direcciones (como en aplicaciones distribuidas).
+
+Aquí se describen algunas variantes comunes del patrón Proxy:
+
+#### Proxy Virtual:
+Es utilizado para realizar optimizaciones, como la carga perezosa (lazy loading) de un objeto que es muy pesado o costoso de crear. Un ejemplo clásico sería el de objetos de imágenes que no se cargan en memoria hasta que no se necesitan realmente para la visualización.
+
+#### Proxy de Protección:
+Controla el acceso al objeto original, proporcionando un tipo de seguridad y comprobando que el cliente tenga los permisos necesarios para realizar una acción.
+
+#### Proxy Remoto:
+Proporciona una representación local de un objeto que reside en un espacio de direcciones diferente, como un servidor remoto. Esto es común en sistemas distribuidos, donde el proxy se encarga de la comunicación a través de la red, la serialización y deserialización de datos, y la entrega de llamadas entre el cliente y el objeto remoto.
+
+<details><summary>Estructura</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/2962596c-0ad0-480c-a623-d1b7513d12cc)
+</details>
+
+
+<details><summary>Componentes</summary>
+
+1. **Subject (Sujeto)**:
+   - Es una interfaz que declara operaciones comunes para `RealSubject` y `Proxy`. Asegura que tanto el objeto real como el proxy puedan ser utilizados de forma intercambiable.
+
+2. **RealSubject**:
+   - Es la clase que define el objeto real que el proxy representa. Implementa la interfaz `Subject` y define la lógica real de negocio que se quiere ejecutar.
+
+3. **Proxy**:
+   - Es una clase que mantiene una referencia a `RealSubject` y también implementa la interfaz `Subject`. El `Proxy` intercepta todas las llamadas que se hacen al `RealSubject` y puede realizar operaciones antes o después de pasar la llamada al `RealSubject` (como control de acceso, lazy loading, logging, etc.).
+
+4. **Client (Cliente)**:
+   - Es el usuario del objeto `Subject`. Interactúa con `RealSubject` a través de la interfaz `Subject`, sin saber si está trabajando con un `RealSubject` o con un `Proxy`.
+
+</details>
+
+<details><summary>Como Funciona</summary>
+
+- El `Client` realiza una llamada al método `Request()` del `Subject`.
+- Si el `Client` tiene una referencia a un `Proxy`, es el `Proxy` quien recibe inicialmente esta llamada.
+- El `Proxy` realiza cualquier operación previa que necesite (por ejemplo, chequear si el `Client` tiene permisos para realizar la solicitud).
+- Posteriormente, el `Proxy` hace la llamada al método `Request()` del `RealSubject` referenciado dentro del `Proxy` (`realSubject->Request()`).
+- El `RealSubject` realiza la operación y devuelve el resultado al `Proxy`, si es necesario.
+- El `Proxy` puede entonces realizar cualquier operación posterior antes de pasar el resultado al `Client`.
+
+</details>
+
+<details><summary>Ejemplo Practico</summary>
+
+### Ejemplo Practico: Acceso a la base de datos
+
+Queremos acceder a una base de datos que contiene información sobre cómics. Este acceso está dado por el comportamiento de la clase DatabaseRealAccess con el siguiente protocolo y modelado como muestra la siguiente figura.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4300eeea-553f-4de3-941d-410c45580adb)
+
+```java
+public interface DatabaseAccess {
+   /*Realiza la inserción de nueva información en la base de datos y retorna el id que recibe la nueva inserción */
+   public int insertNewRow(List<String> rowData);
+   /* Retorna una colección de acuerdo al texto que posee "queryString" */
+   public Collection<String> getSearchResults(String queryString);
+}
+```
+
+</details>
+
+<details><summary>UML</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/56fc2c45-1171-4397-ae0a-15a5fa6455bb)
+
+</details>
+
+<details><summary>DatabaseAccess</summary>
+
+```java
+public interface DatabaseAccess {
+    Collection<String> getSearchResults(String queryString);
+    int insertNewRow(List<String> rowData);
+}
+```
+</details>
+
+<details><summary>DatabaseProxy</summary>
+
+```java
+public class DatabaseProxy implements DatabaseAccess{
+	private DatabaseAccess database;
+	private boolean isLog;
+	
+	public DatabaseProxy (DatabaseAccess database) {
+		this.database = database;
+		this.isLog = false;
+	}
+
+	public void logIn () {
+		this.isLog = true;
+	}
+	
+	public void closeSession() {
+		this.isLog = false;
+	}
+
+	public Collection<String> getSearchResults(String queryString) {
+		if (!this.isLog) {
+			throw new RuntimeException("access denied"); 
+		}
+		return this.database.getSearchResults(queryString);
+	}
+
+	public int insertNewRow(List<String> rowData) {
+		if (!this.isLog) {
+			throw new RuntimeException("access denied"); 
+		}
+		return this.database.insertNewRow(rowData);
+	}
+}
+```
+</details>
+
+<details><summary>DatabaseRealAccess</summary>
+
+```java
+public class DatabaseRealAccess implements DatabaseAccess {
+    private Map<String, List<String>> data;
+    private int currentId;
+
+    public DatabaseRealAccess() {
+        super();
+        this.data = new HashMap<>();
+        this.currentId = 3;
+        this.data.put("select * from comics where id=1", Arrays.asList("Spiderman", "Marvel"));
+        this.data.put("select * from comics where id=2", Arrays.asList("Batman", "DC comics"));
+    }
+
+    public Collection<String> getSearchResults(String queryString) {
+        return this.data.getOrDefault(queryString, Collections.emptyList());
+    }
+
+    public int insertNewRow(List<String> rowData) {
+        this.data.put("select * from comics where id=" + this.currentId, rowData);
+        this.currentId = this.currentId + 1;
+
+        return this.currentId - 1;
+    }
+}
+```
+</details>
+
 ---
 
-## Adapter
+## Decorator
+
+El patrón Decorator es una solución de diseño estructural que permite agregar funcionalidades adicionales a objetos específicos de forma dinámica sin alterar su estructura. Esto es especialmente útil cuando extender una clase a través de la herencia no es viable o resulta menos flexible que componer comportamientos. El patrón Decorator "envuelve" el objeto original, proporcionando una envoltura mejorada.
+
+<details><summary>Estructura</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/b187a5dd-2b8d-4871-8588-bf357a8f614c)
+</details>
+
+<details><summary>Componentes</summary>
+
+1. **Component (Componente)**:
+   - Es la interfaz que define la operación que puede ser dinámicamente mejorada por los decoradores. En el diagrama, tiene un método `Operation()` que se supone es la acción que puede ser decorada.
+
+2. **ConcreteComponent (Componente Concreto)**:
+   - Es una clase que implementa `Component`. Proporciona el comportamiento básico que los decoradores pueden alterar. Tiene su propia implementación de `Operation()` que es la funcionalidad básica antes de que cualquier decoración se aplique.
+
+3. **Decorator (Decorador)**:
+   - Es una clase abstracta que implementa la interfaz `Component` y tiene una referencia a un objeto `Component`. Actúa como la clase base para todos los decoradores concretos. Tiene su propio método `Operation()` que por lo general llamará al `Operation()` del componente que está decorando, permitiendo así que los decoradores concretos agreguen comportamiento antes o después de la llamada al método del componente.
+
+4. **ConcreteDecoratorA / ConcreteDecoratorB (Decoradores Concretos)**:
+   - Son clases que extienden `Decorator`. Cada una agrega funcionalidades específicas al `Component` en el método `Operation()`. `ConcreteDecoratorA` tiene una variable de estado `addedState`, mientras que `ConcreteDecoratorB` tiene un método adicional `AddedBehavior()` que podría invocar dentro de su implementación de `Operation()`.
+</details>
+<details><summary>Como Funciona</summary>
+
+- Un `ConcreteComponent` inicia con su operación básica.
+- Un `ConcreteDecoratorA` o `ConcreteDecoratorB` envuelve el `ConcreteComponent`.
+- Cuando se llama a `Operation()` en un decorador, este puede realizar acciones adicionales y, en algún momento dentro de este método, llamar a `Operation()` en el `Component` que está decorando.
+- Los decoradores pueden agregarse en cascada, es decir, un `ConcreteDecoratorA` puede envolver otro `ConcreteDecoratorB`, y así sucesivamente, cada uno agregando su comportamiento en el proceso.
+
+</details>
+
+<details><summary>Ejemplo Practico</summary>
+
+### Ejemplo Practico: FileManager
+
+En un File Manager se muestran los archivos. De los archivos se conoce:
+
+- Nombre
+- Extensión 
+- Tamaño
+- Fecha de creación
+- Fecha de modificación
+- Permisos
+
+Implemente la clase FileOO2, con las correspondientes variables de instancia y accessors.
+
+En el File Manager el usuario debe poder elegir cómo se muestra un archivo (instancia de la clase FileOO2), es decir, cuáles de los aspectos mencionados anteriormente se muestran,  y en qué orden.  Esto quiere decir que un usuario podría querer ver los archivos de muchas maneras. Algunas de ellas son:
+
+- nombre - extensión
+- nombre - extensión - fecha de creación
+- permisos - nombre - extensión - tamaño
+
+Para esto, el objeto o los objetos que representen a los archivos en el FileManager debe(n) entender el mensaje prettyPrint(). 
+
+Es decir, un objeto cliente (digamos el FileManager) le enviará al objeto que Ud. determine, el mensaje prettyPrint(). **De acuerdo a cómo el usuario lo haya configurado se deberá retornar un String con los aspectos seleccionados por el usuario en el orden especificado por éste**. Considere que un mismo archivo podría verse de formas diferentes desde distintos puntos del sistema, y que el usuario podría cambiar la configuración del sistema (qué y en qué orden quiere ver) en runtime.
+
+#### Tareas:
+- Discuta los requerimientos y diseñe una solución. Si aplica un patrón de diseño, indique cuál es y justifique su aplicabilidad.
+- Implemente en Java.
+- Instancie un objeto para cada uno de los ejemplos citados anteriormente y verifique escribiendo tests de unidad.
+
+</details>
+
+<details><summary>UML</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5284edc6-beaf-47bc-bee6-026526eb123c)
+</details>
+
+<details><summary>Aspect</summary>
+
+```java
+public class Aspect implements FileOO2{
+	private FileOO2 component;
+
+	public Aspect(FileOO2 component) {
+		this.component = component;
+	}
+
+	public String prettyPrint() {return this.component.prettyPrint() + " ";}
+	public String getName() {return this.component.getName();}
+	public String getExtension() {return this.component.getExtension();}
+	public String getSize() {return this.component.getSize();}
+	public String getDateCreated() {return this.component.getDateCreated();}
+	public String getDateModified() {return this.component.getDateModified();}
+	public String getPermissions() {return this.component.getPermissions();}
+}
+```
+</details>
+
+<details><summary>AspectDateCreated</summary>
+
+```java
+public class AspectDateCreated extends Aspect{
+	public AspectDateCreated(FileOO2 component) {
+		super(component);
+	}
+	
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getDateCreated();
+	}
+}
+```
+</details>
+
+<details><summary>AspectDateModified</summary>
+
+```java
+public class AspectDateModified extends Aspect {
+
+	public AspectDateModified(FileOO2 component) {
+		super(component);
+	}
+
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getDateModified();
+	}
+}
+```
+</details>
+
+<details><summary>AspectExtension</summary>
+
+```java
+public class AspectExtension extends Aspect {
+	public AspectExtension(FileOO2 component) {
+		super(component);
+	}
+	
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getExtension();
+	}
+}
+```
+</details>
+
+<details><summary>AspectName</summary>
+
+```java
+public class AspectName extends Aspect{
+	public AspectName(FileOO2 component) {
+		super(component);
+	}
+	
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getName();
+	}
+}
+```
+</details>
+
+<details><summary>AspectPermissions</summary>
+
+```java
+public class AspectPermissions extends Aspect {
+	public AspectPermissions(FileOO2 component) {
+		super(component);
+	}
+	
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getPermissions();
+	}
+}
+```
+</details>
+
+<details><summary>AspectSize</summary>
+
+```java
+public class AspectSize extends Aspect {
+	public AspectSize(FileOO2 component) {
+		super(component);
+	}
+
+	public String prettyPrint() {
+		return super.prettyPrint() + this.getSize() + " MB";
+	}
+}
+```
+</details>
+
+<details><summary>File</summary>
+
+```java
+public class File implements FileOO2 {
+	private String name;
+	private String extension;
+	private double size;
+	private LocalDate dateCreated;
+	private LocalDate dateModified;
+	private String permissions;
+	
+	public File(String name, String extension, double size, LocalDate dateCreated, LocalDate dateModified,
+			String permissions) {
+		this.name = name;
+		this.extension = extension;
+		this.size = size;
+		this.dateCreated = dateCreated;
+		this.dateModified = dateModified;
+		this.permissions = permissions;
+	}
+
+	public String prettyPrint() {return "Datos del archivo:\n";}
+	public String getName() {return this.name;}
+	public String getExtension() {return this.extension;}
+	public String getSize() {return Double.toString(this.size);}
+	public String getDateCreated() {return this.dateCreated.toString();}
+	public String getDateModified() {return this.dateModified.toString();}
+	public String getPermissions() {return this.permissions;}
+}
+```
+</details>
+
+<details><summary>FileOO2</summary>
+
+```java
+public interface FileOO2 {
+	public abstract String prettyPrint();
+	public abstract String getName();
+	public abstract String getExtension();
+	public abstract String getSize();
+	public abstract String getDateCreated();
+	public abstract String getDateModified();
+	public abstract String getPermissions();
+}
+```
+</details>
+
 
 ---
 
