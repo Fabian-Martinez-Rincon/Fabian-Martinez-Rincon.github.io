@@ -611,6 +611,44 @@ public class Finished extends State{
 
 ## Strategy
 
+El patrón Strategy es un patrón de diseño de comportamiento que define una familia de algoritmos, encapsula cada uno de ellos y los hace intercambiables. Este patrón permite que la estrategia varíe independientemente de los clientes que la usan y es ideal cuando se tienen múltiples clases que difieren solo en su comportamiento. Las estrategias permiten configurar una clase con uno de muchos comportamientos.
+
+<details><summary>Estructura</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/467fbd17-a864-4177-80b8-73ba31d52951)
+
+</details>
+
+<details><summary>Componentes</summary>
+
+1. **Context (Contexto)**: 
+   - Es la clase que contiene una referencia a una estrategia `Strategy`. Tiene un método `ContextInterface()`, que se supone es la forma en que el cliente interactúa con la estrategia. Este método es probablemente lo que inicia el algoritmo dentro de la `Strategy`.
+
+2. **Strategy (Estrategia)**: 
+   - Es una interfaz o clase abstracta que define una operación común para todas las estrategias concretas, en este caso, `AlgorithmInterface()`. Es la interfaz común que todas las estrategias implementarán.
+
+3. **ConcreteStrategyA, ConcreteStrategyB, ConcreteStrategyC**:
+   - Son las implementaciones concretas de la interfaz `Strategy`. Cada una de estas clases implementa el método `AlgorithmInterface()` para realizar un comportamiento específico o un algoritmo.
+
+</details>
+
+<details><summary>Como Funciona</summary>
+
+- El `Context` mantiene una referencia a la `Strategy` y delega el trabajo a esta interfaz `Strategy` cuando necesita ejecutar el algoritmo.
+- Dependiendo de la `ConcreteStrategy` que actualmente esté referenciada en el `Context`, la llamada a `ContextInterface()` dará lugar a diferentes comportamientos.
+- El `Context` puede cambiar la `Strategy` en cualquier momento, lo que le permite cambiar dinámicamente el comportamiento del algoritmo que está utilizando.
+
+</details>
+
+### Ejemplo Practico: Codificador
+
+
+
+<details><summary>UML</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/25bb268c-db88-48ee-ac1a-0b203dfa0ae6)
+</details>
+
 ---
 
 ## Proxy
