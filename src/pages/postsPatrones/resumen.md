@@ -17,6 +17,9 @@ tags: ["POO"]
 - [Strategy](#strategy)
 - [Proxy](#proxy)
 - [Decorator](#decorator)
+- [Factory Method](#factory-method)
+- [Null Object](#null-object)
+- [Builder](#builder)
 
 ---
 
@@ -1178,3 +1181,6 @@ public interface FileOO2 {
 
 ---
 
+## Factory Method
+## Null Object
+## Builder
