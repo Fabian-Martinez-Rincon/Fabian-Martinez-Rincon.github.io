@@ -33,14 +33,14 @@ const keywords = /Python|Scrum|Excel|AI|ACL|Script|Vim|Difflib|OS|Xlsxwriter|HTM
 
     {description.length === 1 ? (
       <p class="text-lg">{description[0].split(" ").map(word => 
-            keywords.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
+            keywords.test(word) ? <span class="bold">{word} </span> : word + " "
           )
       }</p>
     ) : (
       <ul class="list-disc pl-5 mt-1 text-lg">
         {description.map(item => (
           <li>{item.split(" ").map(word => 
-            keywords.test(word) ? <span class="bold">{word} </span> : <span>{word} </span>
+            keywords.test(word) ? <span class="bold">{word} </span> : word + " "
           )}
         </li>
         ))}

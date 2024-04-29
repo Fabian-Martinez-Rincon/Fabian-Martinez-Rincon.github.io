@@ -1182,5 +1182,55 @@ public interface FileOO2 {
 ---
 
 ## Factory Method
+
+El patrón de diseño Factory Method es un patrón creacional que proporciona una interfaz para crear objetos en una superclase, pero permite a las subclases cambiar el tipo de objetos que se crearán. Esto se hace definiendo un método de fábrica, que las subclases pueden sobrescribir para crear objetos específicos.
+
+<details><summary>Estructura</summary>
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/eedfd6ec-2cb4-4aa2-b40e-8a71b906b9cb)
+</details>
+
+<details><summary>Componentes</summary>
+
+1. **Product**: 
+   - Es una interfaz o clase abstracta que define el contrato para los objetos que la fábrica creará.
+
+2. **ConcreteProduct**: 
+   - Es una clase que implementa o extiende `Product`, y representa un objeto específico que se produce en la fábrica.
+
+3. **Creator**: 
+   - Es una clase abstracta que declara el método de fábrica `FactoryMethod()`, que es responsable de retornar un objeto `Product`. También puede definir un método `AnOperation()` que necesita un `Product` y que utiliza `FactoryMethod()` para obtenerlo. `Creator` puede contener algún comportamiento predeterminado que se base en objetos `Product`.
+
+4. **ConcreteCreator**: 
+   - Es una clase que implementa o sobrescribe el método `FactoryMethod()` para devolver una instancia de `ConcreteProduct`. Esto significa que `ConcreteCreator` decide qué clase concreta instanciar y devolver.
+</details>
+
+<details><summary>Como funciona</summary>
+
+- El `Creator` tiene un método `FactoryMethod()` que devuelve un objeto de tipo `Product`. Este método generalmente es abstracto y debe ser implementado por las subclases, pero puede tener una implementación por defecto.
+
+- El `Creator` también puede tener otros métodos que operan en productos, como `AnOperation()`. Este método haría uso del producto creado por `FactoryMethod()`.
+
+- El `ConcreteCreator` sobrescribe el método `FactoryMethod()` y crea y retorna una instancia de `ConcreteProduct`. Al hacer esto, el `ConcreteCreator` encapsula la creación de instancias de `ConcreteProduct`, y el código cliente que usa el `Creator` no necesita saber acerca de la clase concreta que está siendo instanciada.
+
+- El cliente que utiliza el `Creator` solo conoce la interfaz `Product`, lo que significa que el cliente se mantiene desacoplado de las clases concretas. Esto facilita añadir nuevas variantes de `Product` sin alterar el cliente.
+</details>
+
+<details><summary>Estructura</summary></details>
+<details><summary>Estructura</summary></details>
+<details><summary>Estructura</summary></details>
+<details><summary>Estructura</summary></details>
+<details><summary>Estructura</summary></details>
+
+
+
+
+### Funcionamiento representado en el diagrama:
+
+
+
+
 ## Null Object
+
+
 ## Builder
