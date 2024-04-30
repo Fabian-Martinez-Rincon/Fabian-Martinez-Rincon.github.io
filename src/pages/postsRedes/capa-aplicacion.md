@@ -514,21 +514,17 @@ Por tanto, la opción correcta es la **b. GET**.
 
 <details><summary>👀 Respuesta</summary>
 
-La delegación de autoridad en una red tiene varios propósitos, principalmente relacionados con la administración y seguridad de la red. Las respuestas correctas en este caso serían:
+La delegación de autoridad en una red tiene varios propósitos clave que pueden ayudar a mejorar la eficiencia y la seguridad de la gestión de la red. Aquí están las opciones correctas y por qué:
 
-- [x] **d. Mejorar la seguridad de la red.**
-  - **Justificación**: Al delegar autoridad, se pueden establecer controles y políticas de seguridad específicas en diferentes niveles o áreas de la red, permitiendo una mejor gestión de los accesos y recursos.
+- [x] **b. Reducir la carga de trabajos en servidores centrales.** Al delegar autoridad a servidores o administradores regionales o específicos del dominio, se reduce la carga en los servidores centrales, permitiendo que manejen otras tareas críticas más eficientemente.
 
-- [ ] **a. Facilitar la administración centralizada de la red.**
-  - **Justificación**: Aunque la delegación podría parecer que facilita la administración centralizada, su propósito principal es, en realidad, permitir una administración descentralizada pero controlada, donde diferentes administradores pueden gestionar sus secciones asignadas de la red bajo directrices centrales. No obstante, esto puede ser interpretado como facilitar la gestión central en cuanto a establecimiento de políticas y supervisión.
+- [x] **c. Permitir que los servidores tomen decisiones autónomas.** La delegación de autoridad permite que diferentes partes de la red tomen decisiones localizadas sin necesidad de referir constantemente a un centro de comando central, facilitando respuestas más rápidas a problemas locales y reduciendo la latencia en la toma de decisiones.
 
-- [ ] **b. Permitir la carga de trabajos en servidores centrales.**
-  - **Justificación**: Esta opción no describe directamente un beneficio de la delegación de autoridad en redes. La delegación de autoridad no se refiere necesariamente a la carga de trabajo en servidores centrales, sino más bien a la distribución de responsabilidades de gestión.
+- [x] **d. Mejorar la seguridad de la red.** La delegación puede ayudar a mejorar la seguridad al permitir una administración más granular de los derechos y responsabilidades. Esto significa que las políticas de seguridad pueden ser más específicas y ajustadas a las necesidades locales, en lugar de aplicar un enfoque único para toda la red.
 
-- [ ] **c. Reducir que los servidores tomen decisiones autónomas.**
-  - **Justificación**: Este enunciado es algo confuso porque en contextos de red, los "servidores" usualmente no "toman decisiones" de manera autónoma en el sentido administrativo o de gestión de red. La delegación de autoridad más bien afecta cómo se gestionan las políticas y los controles de seguridad a través de la red.
+- [ ] **a. Facilitar la administración centralizada de la red.** Esta opción parece contraria a la naturaleza de la delegación. La delegación típicamente busca descentralizar el control en lugar de centralizarlo. Aunque una estructura bien delegada puede hacer que la supervisión central sea más manejable, no es el objetivo principal de la delegación de autoridad.
 
-Por lo tanto, la opción **d** es definitivamente correcta, y la opción **a** podría ser considerada correcta dependiendo de la interpretación de cómo facilita la administración dentro de una estructura de red más grande y compleja.
+Por lo tanto, las opciones b, c y d son correctas en el contexto de cómo la delegación de autoridad beneficia a la administración de una red.
 </details>
 
 ---
