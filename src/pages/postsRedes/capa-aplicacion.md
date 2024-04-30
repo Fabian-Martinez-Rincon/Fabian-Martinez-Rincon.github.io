@@ -531,7 +531,7 @@ Por lo tanto, las opciones b, c y d son correctas en el contexto de cómo la del
 
 ¿Cuáles de las siguientes consultas DNS debe realizar un MTA al enviar un correo electrónico del dominio usuario@dominio.uno.com al dominio usuario@dominiodos.com? Marque todas las opciones correctas:
 
-- [ ] Consulte el registro MX del dominio dominiodos.com para encontrar el servidor de correo entrante (SMTP) del dominio receptor.
+- [ ] Consultar el registro MX del dominio dominiodos.com para encontrar el servidor de correo entrante (SMTP) del dominio receptor.
 - [ ] Consultar el registro NS del dominio dominiodos.com para obtener el nombre del servidor de correo saliente.
 - [ ] Consultar el registro TXT del dominio dominiodos.com para obtener información adicional sobre las políticas de recepción de correo y las claves de cifrado.
 - [ ] Consultar el registro A y/o AAAA para obtener la dirección IP del servidor de correo del dominio dominiodos.com.
