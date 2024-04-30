@@ -508,8 +508,8 @@ Por tanto, la opción correcta es la **b. GET**.
 ¿Cuál es el propósito de la delegación de autoridad en una red? Selecciona todas las respuestas correctas.
 
 - [ ] a. Facilitar la administración centralizada de la red.
-- [ ] b. Permitir la carga de trabajos en servidores centrales.
-- [ ] c. Reducir que los servidores tomen decisiones autónomas.
+- [ ] b. Reducir la carga de trabajos en servidores centrales.
+- [ ] c. Permitir que los servidores tomen decisiones autónomas.
 - [ ] d. Mejorar la seguridad de la red.
 
 <details><summary>👀 Respuesta</summary>
