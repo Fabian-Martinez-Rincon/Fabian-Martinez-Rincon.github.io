@@ -224,48 +224,472 @@ En resumen, el MSS es un parámetro negociado al inicio de una conexión TCP que
 
 Utilice el comando ss (reemplazo de netstat) para obtener la siguiente información de su PC:
 
-#### a) Para listar las comunicaciones TCP establecidas.
+Para obtener la información requerida utilizando el comando `ss` en Linux, que es una herramienta moderna y rápida para monitorizar las conexiones de sockets, aquí están los comandos específicos para cada situación:
+
+#### Comandos con `ss`
+
+`a) Para listar las comunicaciones TCP establecidas:`
+```bash
+ss -t state established
+
+Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process  
+```
+
+<details><summary>Detalles</summar>
+
+El comando `ss -t state established` es utilizado para ver las conexiones TCP que están actualmente establecidas en tu sistema. Aquí te explico en detalle cada parte del comando y lo que muestra en su salida:
+
+### Detalles del Comando:
+
+- `ss`: Es el comando que se usa para obtener estadísticas de los sockets.
+- `-t`: Filtra para mostrar solo los sockets TCP.
+- `state established`: Muestra solo las conexiones que están en el estado "ESTABLISHED", lo que significa que hay una sesión TCP activa y operativa entre dos dispositivos.
+
+### Salida del Comando:
+
+La salida típica de este comando incluye varias columnas que proporcionan información detallada sobre cada conexión:
+
+- **Recv-Q**: Muestra la cantidad de bytes que están en la cola de recepción y que aún no han sido recogidos por el proceso que maneja esta conexión. Si hay datos esperando ser leídos por la aplicación, este valor será mayor que cero.
+
+- **Send-Q**: Muestra la cantidad de bytes en la cola de envío que todavía no han sido transmitidos a la red. Un número mayor que cero aquí indica que hay datos esperando ser enviados.
+
+- **Local Address:Port**: Muestra la dirección IP local y el puerto asociado con la conexión. Esta es la dirección en tu máquina.
+
+- **Peer Address:Port**: Muestra la dirección IP y el puerto del otro extremo de la conexión. Esta es la dirección del dispositivo remoto con el que se ha establecido la conexión TCP.
+
+- **Process**: Esta columna muestra información sobre el proceso que está utilizando la conexión. Esto incluye el ID del proceso (PID) y el nombre del programa que utiliza el socket. Esta información es muy útil para determinar qué aplicación específica está manejando la conexión. Sin embargo, es posible que necesites usar opciones adicionales (`-p` con privilegios de superusuario) para ver detalles del proceso si no aparecen por defecto.
+
+Este comando es especialmente útil para los administradores de sistemas y desarrolladores que necesitan diagnosticar problemas de red, monitorear el rendimiento de las aplicaciones de red o simplemente obtener un resumen de todas las conexiones TCP activas en un sistema.
+
+</detais>
+
+`b) Para listar las comunicaciones UDP establecidas:`
+```bash
+ss -u state established
+
+Recv-Q   Send-Q        Local Address:Port       Peer Address:Port     Process   
+0        0          10.0.2.15%enp0s3:bootpc         10.0.2.2:bootps     
+```
+
+<details><summary>Detalles</summary>
+
+El comando `ss -u state established` es un poco inusual cuando se aplica a protocolos sin conexión como UDP, porque UDP, a diferencia de TCP, no tiene un estado "establecido" como tal. Sin embargo, el comando intentará mostrar las conexiones UDP que se pueden describir como activas o abiertas, aunque UDP en sí mismo no establece una conexión persistente entre dos puntos.
+
+### Explicación del Comando:
+
+- `ss`: Es el comando para obtener estadísticas de los sockets, sustituyendo al antiguo `netstat`.
+- `-u`: Filtra para mostrar solo los sockets UDP.
+- `state established`: Intenta listar conexiones UDP que están "activas". Aunque en UDP no aplicaría realmente el término "establecido", en algunos contextos, como las conexiones DHCP (bootp en el ejemplo), se puede considerar que hay un intercambio activo de paquetes.
+
+### Salida del Comando:
+
+- **Recv-Q**: Muestra la cantidad de bytes que están esperando ser recogidos por el proceso en la cola de recepción. Para UDP, esto generalmente indica si hay datos recibidos que aún no han sido procesados por la aplicación.
+
+- **Send-Q**: Muestra la cantidad de bytes que están esperando ser enviados. En UDP, debido a que no hay confirmación de la recepción de los paquetes, esto normalmente debería ser cero a menos que el buffer de salida esté momentáneamente lleno.
+
+- **Local Address:Port**: Esta columna muestra la dirección IP local y el puerto utilizado por tu máquina para esta comunicación UDP. En el ejemplo dado, `10.0.2.15%enp0s3:bootpc` indica que la dirección IP local es 10.0.2.15 (con el interfaz de red `enp0s3`) y el puerto local es `bootpc` (67, usado típicamente para solicitudes DHCP).
+
+- **Peer Address:Port**: Muestra la dirección IP y el puerto del otro extremo con el que se está comunicando el socket UDP. En tu ejemplo, `10.0.2.2:bootps` representa el servidor DHCP desde el cual el cliente (en este caso, la máquina local) espera recibir una respuesta.
+
+- **Process**: Detalles del proceso que usa este socket UDP, si están disponibles y si se ejecuta `ss` con los privilegios adecuados. En el ejemplo que has proporcionado, esta columna no muestra ningún proceso, lo que puede ser típico para las transmisiones de bajo nivel como DHCP donde el proceso puede ser parte del sistema operativo en lugar de un proceso de usuario visible.
+
+En resumen, aunque el uso de `state established` con UDP puede no ser conceptualmente correcto debido a la naturaleza sin conexión de UDP, este comando puede ser útil para identificar los puertos UDP activos y la dirección de sus comunicaciones en situaciones específicas como transacciones DHCP o DNS.
+</details>
+
+`c) Obtener sólo los servicios TCP que están esperando comunicaciones:`
+```bash
+ss -tln
+
+State   Recv-Q  Send-Q        Local Address:Port    Peer Address:Port  Process  
+LISTEN  0       128                 0.0.0.0:22           0.0.0.0:*              
+LISTEN  0       128               127.0.0.1:631          0.0.0.0:*              
+LISTEN  0       5                 127.0.0.1:4038         0.0.0.0:*              
+LISTEN  0       128                    [::]:22              [::]:*              
+LISTEN  0       128                   [::1]:631             [::]:*              
+LISTEN  0       4096                  [::1]:50051           [::]:*              
+LISTEN  0       4096     [::ffff:127.0.0.1]:50051              *:*     
+```
+
+<details><summary>Detalles</summary>
+
+El comando `ss -tln` es utilizado para listar todos los sockets TCP en estado `LISTEN`, lo cual indica que estos sockets están configurados para aceptar conexiones entrantes. Esta es una herramienta crucial para los administradores de sistemas y de redes para verificar qué servicios están activos y escuchando en qué puertos. Aquí está un desglose detallado de lo que muestra cada columna en la salida de este comando:
+
+### Explicación de las Opciones del Comando:
+
+- `ss`: Es el comando para obtener estadísticas de sockets.
+- `-t`: Filtra para mostrar solo sockets TCP.
+- `-l`: Muestra solo los sockets que están en estado de escucha (listen).
+- `-n`: Muestra los números de puerto y las direcciones IP en formato numérico, evitando la resolución de nombres, lo que puede hacer que la ejecución del comando sea más rápida y clara en su salida.
+
+### Desglose de las Columnas:
+
+- **State**: Muestra el estado actual del socket. Aquí, todos están en `LISTEN`, lo que significa que están esperando activamente conexiones entrantes.
+
+- **Recv-Q y Send-Q**: Estas columnas muestran el tamaño de la cola de recepción y envío respectivamente. Para los sockets en estado `LISTEN`, `Recv-Q` siempre será `0` porque no están recibiendo datos en ese momento. `Send-Q` también es normalmente `0` en este estado, indicando que no hay datos pendientes de envío.
+
+- **Local Address:Port**: Indica la dirección IP local y el puerto en los cuales el servicio está escuchando. Si ves `0.0.0.0` o `[::]`, significa que el servicio está escuchando en todas las interfaces de red para IPv4 o IPv6 respectivamente. Si ves una dirección específica, como `127.0.0.1` o `[::1]`, el servicio está escuchando solo en la interfaz de loopback, que es accesible solo desde la misma máquina.
+
+- **Peer Address:Port**: En el estado `LISTEN`, esta columna siempre muestra `*` o `0.0.0.0:*`, lo que indica que el socket está listo para aceptar conexiones de cualquier dirección IP.
+
+- **Process**: Esta columna normalmente no aparece a menos que se especifique con opciones adicionales (`-p`). Muestra el identificador del proceso que está utilizando cada socket.
+
+### Ejemplos de la Salida:
+
+- `0.0.0.0:22` y `[::]:22` indican que el servicio SSH está escuchando en todas las interfaces IPv4 e IPv6 en el puerto 22.
+- `127.0.0.1:631` y `[::1]:631` muestran que el servicio de impresión (CUPS) está escuchando en la interfaz de loopback, tanto en IPv4 como en IPv6, solo accesible localmente.
+- `127.0.0.1:4038` muestra otro servicio que está escuchando solo en la interfaz de loopback de IPv4.
+- `[::1]:50051` muestra un servicio que está escuchando en el puerto 50051 solo en IPv6 en la interfaz de loopback.
+
+Estos detalles son esenciales para la gestión de la seguridad y la configuración del servidor, ya que permiten a los administradores saber qué puertos están abiertos y listos para recibir conexiones, lo cual es vital para asegurar y optimizar el servidor.
+</details>
+
+El flag `-l` lista los sockets que están en estado de escucha, y `-n` evita la resolución de nombres, mostrando las direcciones IP y números de puerto en formato numérico.
+
+`d) Obtener sólo los servicios UDP que están esperando comunicaciones:`
+```bash
+ss -uln
+
+State   Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  Process  
+UNCONN  0        0                0.0.0.0:5353           0.0.0.0:*              
+UNCONN  0        0                0.0.0.0:59816          0.0.0.0:*              
+UNCONN  0        0                0.0.0.0:631            0.0.0.0:*              
+UNCONN  0        0              127.0.0.1:4038           0.0.0.0:*              
+UNCONN  0        0                   [::]:5353              [::]:*              
+UNCONN  0        0                   [::]:40448             [::]:*      
+```
+
+<details><summary>Detalles</summary>
+
+El comando `ss -uln` se utiliza para mostrar información sobre los sockets UDP que están en estado de espera (es decir, no están conectados pero están listos para recibir datos). Este comando es esencial para la administración de redes y la seguridad, ya que permite a los administradores verificar qué servicios UDP están activos y escuchando en la máquina local. A continuación, se detalla el significado de las opciones del comando y de cada columna en la salida:
+
+### Explicación de las Opciones del Comando:
+
+- `ss`: Es el comando para obtener estadísticas de sockets.
+- `-u`: Filtra para mostrar solo sockets UDP.
+- `-l`: Muestra solo los sockets que están en estado de escucha (listen).
+- `-n`: Muestra los números de puerto y las direcciones IP en formato numérico, lo que evita la resolución de nombres y agiliza la visualización.
+
+### Desglose de las Columnas:
+
+- **State**: Muestra el estado del socket. `UNCONN` (unconnected) indica que el socket no está conectado pero está listo para recibir paquetes UDP.
+
+- **Recv-Q y Send-Q**: Representan la cantidad de datos en la cola de recepción y envío, respectivamente. Para los sockets UDP en estado `UNCONN`, estas colas suelen estar en `0` porque los sockets simplemente están esperando para recibir datos.
+
+- **Local Address:Port**: Indica la dirección IP local y el puerto en los cuales el servicio está escuchando. Si la dirección es `0.0.0.0` o `[::]`, el servicio está escuchando en todas las interfaces de red, tanto para IPv4 como IPv6. Direcciones específicas como `127.0.0.1` indican que el servicio solo acepta tráfico local (loopback).
+
+- **Peer Address:Port**: Dado que estos sockets están en estado `UNCONN`, esta columna siempre mostrará `0.0.0.0:*` o `[::]:*`, lo que significa que están preparados para recibir datos desde cualquier dirección IP.
+
+### Ejemplos de la Salida:
+
+- `0.0.0.0:5353` y `[::]:5353`: Muestra que el servicio mDNS está escuchando en todos los interfaces disponibles en el puerto 5353, tanto para IPv4 como para IPv6. Este servicio se utiliza comúnmente para la resolución de nombres en redes locales.
+
+- `0.0.0.0:59816` y `[::]:40448`: Estos son puertos UDP dinámicos o efímeros que están escuchando en todas las interfaces. Estos puertos pueden ser utilizados por aplicaciones que esperan recibir datos específicos.
+
+- `0.0.0.0:631` y `127.0.0.1:4038`: Indica que estos servicios están escuchando para tráfico UDP, en el caso de `631` en todas las interfaces y para `4038` solo en la interfaz de loopback.
+
+Estos detalles permiten a los administradores monitorizar y gestionar los servicios que utilizan el protocolo UDP, asegurándose de que solo los servicios deseados están accesibles y que no hay puertos abiertos innecesarios que podrían ser explotados por agentes maliciosos.
+
+</details>
+
+`e) Repetir los anteriores para visualizar el proceso del sistema asociado a la conexión:`
+Para TCP:
+```bash
+ss -tlnp
+
+State   Recv-Q  Send-Q        Local Address:Port    Peer Address:Port  Process  
+LISTEN  0       128                 0.0.0.0:22           0.0.0.0:*              
+LISTEN  0       128               127.0.0.1:631          0.0.0.0:*              
+LISTEN  0       5                 127.0.0.1:4038         0.0.0.0:*              
+LISTEN  0       128                    [::]:22              [::]:*              
+LISTEN  0       128                   [::1]:631             [::]:*              
+LISTEN  0       4096                  [::1]:50051           [::]:*              
+LISTEN  0       4096     [::ffff:127.0.0.1]:50051              *:*     
+```
+
+<details><summary>Detalles</summary>
+
+El comando `ss -tlnp` es una herramienta poderosa para administradores de sistemas y de redes. Se utiliza para mostrar información detallada sobre las conexiones TCP en estado de escucha (LISTEN), incluyendo qué procesos están asociados con cada socket. Esto es fundamental para la gestión y la seguridad de la red, ya que permite identificar qué aplicaciones están utilizando los puertos de red. Aquí desglosaré las opciones del comando y explicaré cada columna en la salida:
+
+### Explicación de las Opciones del Comando:
+
+- `ss`: Comando para obtener estadísticas de los sockets.
+- `-t`: Filtra para mostrar solo conexiones TCP.
+- `-l`: Muestra solo los sockets que están en estado de escucha.
+- `-n`: Muestra números de puerto y direcciones IP en formato numérico, sin resolver nombres para acelerar la respuesta.
+- `-p`: Muestra el proceso que está asociado con cada socket.
+
+### Desglose de las Columnas:
+
+- **State**: Indica el estado del socket. `LISTEN` significa que el socket está esperando conexiones entrantes.
+
+- **Recv-Q y Send-Q**: Representan la cantidad de datos en las colas de recepción y envío, respectivamente. Para sockets en estado `LISTEN`, estos valores generalmente son cero porque no hay datos siendo enviados o recibidos aún.
+
+- **Local Address:Port**: Dirección y puerto locales en los que el servicio está escuchando. Por ejemplo, `0.0.0.0:22` indica que el servicio está escuchando en todas las interfaces de red disponibles en el puerto 22 (usualmente SSH). Si la dirección es específica, como `127.0.0.1:631`, el servicio solo acepta conexiones locales.
+
+- **Peer Address:Port**: Muestra las direcciones a las que el socket puede aceptar conexiones. En el caso de sockets en estado `LISTEN`, típicamente se muestra como `0.0.0.0:*` o `[::]:*`, indicando que pueden aceptar conexiones desde cualquier dirección IP.
+
+- **Process**: Esta columna muestra información sobre el proceso que utiliza el socket. Por ejemplo, puede incluir el nombre del proceso y el ID del proceso (PID). Esta información es crucial para identificar qué aplicación está utilizando cada puerto y es especialmente útil para resolver problemas o auditar la seguridad de los servicios de red.
+
+### Ejemplos de la Salida:
+
+- **0.0.0.0:22 y [::]:22**: Estos sockets están escuchando en todas las interfaces IPv4 e IPv6 respectivamente para conexiones SSH. El hecho de que estén escuchando en `0.0.0.0` y `[::]` significa que aceptan conexiones desde cualquier IP.
+
+- **127.0.0.1:631 y [::1]:631**: Estos están escuchando solo para conexiones locales (loopback) para el servicio de impresión (puerto 631, comúnmente usado por CUPS).
+
+- **[::1]:50051 y [::ffff:127.0.0.1]:50051**: Estos podrían ser servicios desarrollados internamente o específicos de aplicaciones que escuchan en IPv6 y mapeados IPv4-a-IPv6, respectivamente, solo accesibles localmente.
+
+Esta información te permite entender qué servicios están corriendo en tu servidor, en qué puertos están escuchando, y a través de qué interfaces están disponibles, así como identificar qué aplicación o proceso es responsable de cada uno de estos servicios. Esto es vital para la gestión adecuada de los recursos de red y la seguridad informática.
+</details>
+
+Para UDP:
+```bash
+ss -ulnp
+
+State   Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  Process  
+UNCONN  0        0                0.0.0.0:5353           0.0.0.0:*              
+UNCONN  0        0                0.0.0.0:59816          0.0.0.0:*              
+UNCONN  0        0                0.0.0.0:631            0.0.0.0:*              
+UNCONN  0        0              127.0.0.1:4038           0.0.0.0:*              
+UNCONN  0        0                   [::]:5353              [::]:*              
+UNCONN  0        0                   [::]:40448             [::]:*   
+```
+
+<detais><summary>Detalles</summary>
+
+El comando `ss -ulnp` es una herramienta útil para mostrar detalles sobre los sockets UDP que están actualmente abiertos y en estado de escucha en un sistema. Aquí te explico cada parte de este comando y la información que muestra:
+
+### Explicación de las Opciones del Comando:
+
+- `ss`: Es el comando para obtener estadísticas de los sockets.
+- `-u`: Filtra para mostrar solo conexiones UDP.
+- `-l`: Muestra solo los sockets que están en estado de escucha, es decir, esperando recibir paquetes de datos.
+- `-n`: Muestra números de puerto y direcciones IP en formato numérico, lo cual evita la demora de resolver los nombres.
+- `-p`: Muestra el proceso asociado con cada socket, incluyendo el ID del proceso y el nombre del programa que lo ha abierto.
+
+### Desglose de las Columnas:
+
+- **State**: Muestra el estado del socket. `UNCONN` (unconnected) indica que el socket está abierto pero no conectado, lo cual es típico para UDP, que es un protocolo sin conexión.
+
+- **Recv-Q y Send-Q**: Representan la cantidad de datos en las colas de recepción y envío, respectivamente. En UDP, estos valores suelen ser cero porque UDP es un protocolo sin conexión y no garantiza la entrega de paquetes.
+
+- **Local Address:Port**: Muestra la dirección IP local y el puerto en los que el servicio está escuchando. Por ejemplo, `0.0.0.0:5353` indica que el servicio está escuchando en todas las interfaces de red para el puerto 5353, que es comúnmente utilizado por servicios como mDNS.
+
+- **Peer Address:Port**: Para sockets UDP en estado de escucha, esta columna generalmente muestra `0.0.0.0:*` o `[::]:*`, indicando que el socket puede recibir datagramas de cualquier dirección IP.
+
+- **Process**: Esta columna brinda detalles sobre el proceso que usa el socket, incluyendo el nombre del programa y el PID. Esto es especialmente útil para identificar qué aplicación está utilizando cada puerto UDP.
+
+### Ejemplos de la Salida:
+
+- **0.0.0.0:5353 y [::]:5353**: Estos sockets están escuchando en todas las interfaces IPv4 e IPv6, respectivamente, para el Multicast DNS (mDNS), que permite la resolución de nombres en redes locales sin necesidad de un servidor DNS centralizado.
+
+- **0.0.0.0:59816 y [::]:40448**: Estos puertos están abiertos para recibir datagramas UDP en cualquier interfaz. Los números de puerto altos son típicamente seleccionados aleatoriamente por aplicaciones que necesitan recibir respuestas a consultas o comandos enviados a otros servicios.
+
+- **127.0.0.1:4038 y 0.0.0.0:631**: Estos sockets están escuchando para tráfico local (`127.0.0.1:4038`) o en todas las interfaces (`0.0.0.0:631`), el puerto 631 generalmente está asociado con el sistema de impresión de red (CUPS).
+
+Esta información es crucial para la administración de la red, ayudando a identificar qué servicios están usando los puertos UDP, y es fundamental para tareas como la resolución de problemas de red, auditorías de seguridad, y la configuración del firewall.
+
+</details>
+
+El flag `-p` muestra el proceso asociado a cada socket.
+
+#### Comandos con `netstat`
+
+El comando `netstat`, aunque en desuso en las distribuciones modernas de Linux que favorecen `ss`, todavía está disponible en muchos sistemas y puede ser utilizado para las mismas tareas:
+
+`a) Para listar las comunicaciones TCP establecidas:`
+```bash
+netstat -tn
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State    
+```
+
+<details><summary>Detalles</summary>
+
+El comando `netstat -tn` es una herramienta de diagnóstico que se utiliza para mostrar las conexiones de red TCP establecidas en un sistema. Aquí te detallo cada parte del comando y la información que proporciona:
+
+### Explicación de las Opciones del Comando:
+
+- `netstat`: Es el comando para obtener estadísticas de la red y del estado de los sockets.
+- `-t`: Filtra para mostrar solo conexiones TCP.
+- `-n`: Muestra números de puerto y direcciones IP en formato numérico, evitando la demora que implica resolver los nombres a direcciones.
+
+### Desglose de las Columnas:
+
+- **Proto**: Indica el protocolo de la conexión. En este caso, por el uso de la opción `-t`, solo se mostrarán las conexiones que utilizan el protocolo TCP.
+
+- **Recv-Q**: Representa la cantidad de datos que han sido recibidos por el sistema local pero aún no han sido leídos por la aplicación. En otras palabras, muestra la cantidad de datos en la cola de recepción que aún no han sido procesados por la aplicación local.
+
+- **Send-Q**: Indica la cantidad de datos que la aplicación local ha enviado pero que aún no han sido confirmados por el receptor. Es decir, muestra los datos que están en la cola de envío esperando ser reconocidos por el otro extremo de la conexión.
+
+- **Local Address**: Muestra la dirección IP local y el puerto asociado a la conexión. Esta dirección es la del equipo en el que se ejecuta `netstat`.
+
+- **Foreign Address**: Muestra la dirección IP y el puerto del sistema remoto con el que está establecida la conexión. Esta es la dirección del otro dispositivo involucrado en la comunicación.
+
+- **State**: Muestra el estado actual de la conexión. Los estados comunes incluyen:
+  - `ESTABLISHED`: La conexión ha sido establecida y está activa.
+  - `SYN_SENT` o `SYN_RECEIVED`: Etapas del inicio de la conexión TCP.
+  - `FIN_WAIT1` o `FIN_WAIT2`: Etapas de la terminación de la conexión TCP.
+  - `TIME_WAIT`: Indica que el lado local ha cerrado la conexión, pero se espera por si llegan aún paquetes retrasados del otro lado.
+
+### Ejemplo de Uso y Salida:
+
+Cuando ejecutas `netstat -tn`, puedes ver algo como esto:
+
+```
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 192.168.1.100:45678     93.184.216.34:80        ESTABLISHED
+tcp        0      0 192.168.1.100:22        203.0.113.25:53792      ESTABLISHED
+```
+
+Esta salida indica que hay dos conexiones TCP activas:
+1. Una conexión desde el puerto local 45678 a la dirección IP 93.184.216.34 en el puerto 80 (HTTP), que está en estado `ESTABLISHED`.
+2. Una conexión SSH desde el puerto local 22 a la dirección IP 203.0.113.25 en el puerto 53792, también en estado `ESTABLISHED`.
+
+Este comando es útil para monitorear qué aplicaciones están comunicándose activamente a través de la red, identificar posibles conexiones no deseadas y ayudar en la resolución de problemas de red y aplicaciones.
+
+</details>
+
+`b) Para listar las comunicaciones UDP establecidas:`
+```bash
+netstat -un
+
+Active Internet connections (w/o servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 10.0.2.15:68            10.0.2.2:67             ESTABLISHED
+```
+
+<details><summary>Detalles</summary>
+
+El comando `netstat -un` se utiliza para mostrar conexiones de red, específicamente aquellas que utilizan el protocolo UDP. Detallaré cada opción y la información proporcionada en este comando:
+
+### Explicación de las Opciones del Comando:
+
+- **netstat**: Es una herramienta de diagnóstico que ofrece información sobre conexiones de red, tablas de enrutamiento, estadísticas de interfaces, masquerade connections, y estadísticas multicast.
+- **-u**: Filtra para mostrar sólo conexiones UDP.
+- **-n**: Muestra direcciones y números de puerto en formato numérico, evitando la resolución de nombres, lo que acelera la presentación de los datos.
+
+### Desglose de las Columnas:
+
+- **Proto**: Indica el protocolo de la conexión, en este caso, `udp` para UDP.
+
+- **Recv-Q**: Representa la cantidad de datos recibidos por el sistema local que aún no han sido procesados por la aplicación. En UDP, este campo suele ser 0 ya que UDP no tiene control de flujo ni garantiza la entrega de paquetes.
+
+- **Send-Q**: Indica la cantidad de datos enviados por la aplicación local que aún no han sido enviados por el sistema operativo. Similar a Recv-Q, en UDP, este campo generalmente también es 0.
+
+- **Local Address**: Muestra la dirección IP local y el puerto usado por la conexión. Representa el punto final en el dispositivo local.
+
+- **Foreign Address**: Muestra la dirección IP y el puerto del sistema remoto con el que se establece la conexión. En UDP, dado que es un protocolo sin conexión, es menos común ver direcciones extranjeras asociadas excepto durante la transmisión de datos.
+
+- **State**: En UDP, el estado generalmente no se muestra porque UDP es un protocolo sin conexión, lo que significa que no mantiene un estado de conexión establecida como TCP. Sin embargo, si se muestra, puede ser `ESTABLISHED` indicando que la comunicación está activa en ambos sentidos (esto es raro y puede ser específico de la implementación).
+
+### Ejemplo de Uso y Salida:
+
+Cuando ejecutas `netstat -un`, puedes ver algo así:
+
+```
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 10.0.2.15:68            10.0.2.2:67             ESTABLISHED
+```
+
+Esta salida indica que hay una comunicación UDP entre el puerto 68 del dispositivo local y el puerto 67 de un dispositivo remoto. Este tipo de conexión es típicamente usado por el protocolo DHCP (Dynamic Host Configuration Protocol), donde un cliente (en el puerto 68) recibe información de configuración de red de un servidor DHCP (en el puerto 67).
+
+### Importancia:
+
+Este comando es útil para diagnosticar la actividad de las aplicaciones que utilizan UDP, como los juegos en línea, aplicaciones de streaming y protocolos de red como DHCP y DNS. Permite a los administradores de red verificar qué aplicaciones están usando UDP y con qué otros sistemas están comunicando.
+</details>
 
 
+`Obtener sólo los servicios TCP que están esperando comunicaciones:`
+```bash
+netstat -tln
 
-#### b) Para listar las comunicaciones UDP establecidas.
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:4038          0.0.0.0:*               LISTEN     
+tcp6       0      0 :::22                   :::*                    LISTEN     
+tcp6       0      0 ::1:631                 :::*                    LISTEN     
+tcp6       0      0 ::1:50051               :::*                    LISTEN     
+tcp6       0      0 127.0.0.1:50051         :::*                    LISTEN  
+```
+
+<details><summary>Detalles<summary></details>
+
+`d) Obtener sólo los servicios UDP que están esperando comunicaciones:`
+```bash
+netstat -uln
+
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                          
+udp        0      0 0.0.0.0:59816           0.0.0.0:*                          
+udp        0      0 0.0.0.0:631             0.0.0.0:*                          
+udp        0      0 127.0.0.1:4038          0.0.0.0:*                          
+udp6       0      0 :::5353                 :::*                               
+udp6       0      0 :::40448                :::*     
+```
+<details><summary>Detalles<summary></details>
+
+`e) Repetir los anteriores para visualizar el proceso del sistema asociado a la conexión:`
+Para TCP y UDP con procesos:
+```bash
+netstat -tlnp
+
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:59816           0.0.0.0:*                           -                   
+udp        0      0 0.0.0.0:631             0.0.0.0:*                           -                   
+udp        0      0 127.0.0.1:4038          0.0.0.0:*                           -                   
+udp6       0      0 :::5353                 :::*                                -                   
+udp6       0      0 :::40448                :::*       
+```
 
 
+<details><summary>Detalles<summary></details>
 
-#### c) Obtener sólo los servicios TCP que están esperando comunicaciones
+```bash
+netstat -ulnp
 
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      -                   
+tcp        0      0 127.0.0.1:4038          0.0.0.0:*               LISTEN      -                   
+tcp6       0      0 :::22                   :::*                    LISTEN      -                   
+tcp6       0      0 ::1:631                 :::*                    LISTEN      -                   
+tcp6       0      0 ::1:50051               :::*                    LISTEN      -                   
+tcp6       0      0 127.0.0.1:50051         :::*                    LISTEN      -  
+```
 
+<details><summary>Detalles<summary></details>
 
-#### d) Obtener sólo los servicios UDP que están esperando comunicaciones.
-
-
-
-#### e) Repetir los anteriores para visualizar el proceso del sistema asociado a la conexión.
-
-
-
-#### f) Obtenga la misma información planteada en los items anteriores usando el comando netstat.
-
-
+Estos comandos proporcionan información detallada sobre el estado de las conexiones de red en tu sistema, mostrando tanto las conexiones activas como las que están en escucha para posibles nuevas conexiones.
 
 
 ---
 
 ### Ejercicio 10
 
-¿Qué sucede si llega un segmento TCP con el flag SYN activo a un host que no tiene ningún proceso esperando en el puerto destino de dicho segmento (es decir, que dicho puerto no está en estado LISTEN)?
+`¿Qué sucede si llega un segmento TCP con el flag SYN activo a un host que no tiene ningún proceso esperando en el puerto destino de dicho segmento (es decir, que dicho puerto no está en estado LISTEN)?`
 
-#### Parte a
 
-Utilice **hping3** para enviar paquetes TCP al puerto destino 22 de la máquina virtual con el flag SYN activado.
+`Utilice **hping3** para enviar paquetes TCP al puerto destino 22 de la máquina virtual con el flag SYN activado.`
 
-#### Parte b
 
-Utilice **hping3** para enviar paquetes TCP al puerto destino 40 de la máquina virtual con el flag SYN activado.
+`Utilice **hping3** para enviar paquetes TCP al puerto destino 40 de la máquina virtual con el flag SYN activado.`
 
-#### Parte c
+`¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores?`
 
-¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores? ¿Puede explicar a qué se debe? (Ayuda: utilice el comando ss visto anteriormente)
+`¿Puede explicar a qué se debe? `
+
+> (Ayuda: utilice el comando ss visto anteriormente)
 
 ---
 
