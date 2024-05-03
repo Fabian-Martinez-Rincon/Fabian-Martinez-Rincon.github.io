@@ -10,6 +10,11 @@ pubDate: 2023-12-12
 tags: ["bash", "nvim", "linux", "debian"]
 ---
 
+## ANUNCIO
+
+En esta pagina tenes preguntas para poder simular el final
+
+[![Quiz FOD](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4f839366-b9b3-4de2-a1fe-bdfa75f5782b)](https://josu-dev.github.io/Depende-Quiz-Datos/)
 
 El objetivo de este blog es poder tener la información necesaria para aprobar el final y que no dependa de si conseguiste finales o si no sabes donde encontrar información para estudiar.
 

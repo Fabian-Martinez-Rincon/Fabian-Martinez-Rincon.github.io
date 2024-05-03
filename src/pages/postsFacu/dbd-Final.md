@@ -10,6 +10,14 @@ pubDate: 2024-03-31
 tags: ["Modelado de Datos", "Procesamiento de Consultas", "Seguridad e Integridad de los Datos"]
 ---
 
+## ANUNCIO
+
+En esta pagina tenes preguntas para poder simular el final (Las preguntas de DBD estan sacadas de este blog, solo que en este no las respondi)
+
+[![Quiz DBD](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4f839366-b9b3-4de2-a1fe-bdfa75f5782b)](https://josu-dev.github.io/Depende-Quiz-Datos/)
+
+---
+
 - [Modelado De Datos](#modelado-de-datos)
     - [Capitulo 9. `Introducción al modelado de Datos`](#capitulo-9-introducción-al-modelado-de-datos)
     - [Capitulo 10. `Modelado Entidad Relación Conceptual`](#capitulo-10-modelado-entidad-relación-conceptual)
