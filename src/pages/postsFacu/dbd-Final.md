@@ -10,7 +10,7 @@ pubDate: 2024-03-31
 tags: ["Modelado de Datos", "Procesamiento de Consultas", "Seguridad e Integridad de los Datos"]
 ---
 
-## ANUNCIO
+## 😎 ESPACIO PUBLICITARIO 😎
 
 En esta pagina tenes preguntas para poder simular el final (Las preguntas de DBD estan sacadas de este blog, solo que en este no las respondi)
 

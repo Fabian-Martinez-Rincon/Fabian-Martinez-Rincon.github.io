@@ -10,7 +10,7 @@ pubDate: 2023-12-12
 tags: ["bash", "nvim", "linux", "debian"]
 ---
 
-## ANUNCIO
+## 😎 ESPACIO PUBLICITARIO 😎
 
 En esta pagina tenes preguntas para poder simular el final
 
