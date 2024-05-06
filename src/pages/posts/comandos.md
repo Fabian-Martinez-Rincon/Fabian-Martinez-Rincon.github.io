@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Comandos Linux   
+title: Comandos Linux
 author: Fabian Martinez Rincon
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:

@@ -1,17 +1,13 @@
 ---
-
-const { url, image, title, date } = Astro.props
+// Asegúrate de que estas propiedades son pasadas al componente cuando lo usas
+const { url, image, title, date } = Astro.props;
 ---
 
-
-<a href={url ?? '#'} class="transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-xl overflow-hidden astro-DOHJNAO5 border border-black" data-test="article-card">
-    <img class="squiggle astro-DOHJNAO5" src={image?.url ?? 'https://docs.astro.build/assets/arc.webp'} alt="Introducing Astro: Ship Less JavaScript" width="360" height="192">
-    <div class="py-6 px-8 astro-DOHJNAO5 bg-font-blog">
-        <h2 class=" text-2xl leading-tight astro-DOHJNAO5 text-blue-300">
+<a href={url ?? '#'} class="transition-all duration-75 ease-in-out h-full block relative top-0 hover:-top-2 shadow-lg hover:shadow-xl overflow-hidden border border-black" data-test="article-card">
+    <img class="w-full h-auto" src={image?.url ?? 'https://docs.astro.build/assets/arc.webp'} alt={title ?? 'Untitled Post'}>
+    <div class="p-4 bg-font-blog">
+        <h2 class="text-lg leading-tight text-blue-300 overflow-hidden">
             {title ?? 'Untitled Post'}
         </h2>
-        <p class="text-xs text-custom-text mt-4 flex items-center astro-DOHJNAO5">
-            {date.toString().slice(0,10) ?? 'Unknown Date'}
-        </p>
     </div>
 </a>

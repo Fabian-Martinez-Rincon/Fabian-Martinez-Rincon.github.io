@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/Layout.astro';
+import SectionContainer from "../../components/SectionContainer.astro"
 import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
-  const allPosts: any = await Astro.glob('../posts/*.md');
+  const allPosts: any = await Astro.glob('../*posts*/**/*.md');
   const uniqueTags: any = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 
   return uniqueTags.map((tag: any) => {
@@ -19,15 +20,19 @@ const { tag }: { tag: any } = Astro.params;
 const { posts }: { posts: any } = Astro.props;
 ---
 
+
+
 <BaseLayout title={tag}
   description="Backend Developer Python">
   
-  
+  <SectionContainer class="py-16 md:py-36">
 
   <p>Entradas etiquetadas con {tag}</p>
   <ul>
     {posts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
     
   </ul>
+  </SectionContainer>
   
 </BaseLayout>
+
