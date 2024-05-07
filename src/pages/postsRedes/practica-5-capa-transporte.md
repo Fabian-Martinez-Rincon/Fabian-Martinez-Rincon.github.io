@@ -8,7 +8,6 @@ image:
     url: '/posts/Redes/capa-transporte.webp'
     alt: ''
 tags: ["Capa de Aplicación"]
-
 ---
 
 
@@ -691,6 +690,40 @@ Estos comandos proporcionan información detallada sobre el estado de las conexi
 
 > (Ayuda: utilice el comando ss visto anteriormente)
 
+Cuando un segmento TCP con el flag SYN llega a un host, pero no hay ningún proceso escuchando en el puerto destino (es decir, el puerto no está en estado LISTEN), el sistema operativo del host generalmente responde con un segmento TCP que tiene los flags RST (Reset) y ACK (Acknowledgment) activados. Esto se hace para indicar al remitente que el puerto destino no está disponible o que no hay un proceso que pueda aceptar la conexión.
+
+### Experimento con hping3
+
+Para ilustrar este comportamiento, puedes usar **hping3** para enviar paquetes TCP al puerto 22 y al puerto 40 de una máquina virtual. Supongamos que el puerto 22 está abierto y escuchando (estado LISTEN), mientras que el puerto 40 está cerrado.
+
+**Comando para el puerto 22:**
+```bash
+sudo hping3 -S -p 22 <dirección IP de la VM>
+```
+Donde `-S` activa el flag SYN y `-p 22` especifica que el puerto destino es el 22.
+
+**Comando para el puerto 40:**
+```bash
+sudo hping3 -S -p 40 <dirección IP de la VM>
+```
+De manera similar, este comando intenta iniciar una conexión TCP al puerto 40 con el flag SYN.
+
+### Diferencias en las respuestas
+
+Las respuestas obtenidas pueden diferir en los siguientes aspectos:
+- **Respuesta al puerto 22**: Si el puerto 22 está en estado LISTEN, la respuesta esperada del host es un paquete con los flags SYN y ACK activados, indicando que el host está dispuesto a establecer la conexión.
+- **Respuesta al puerto 40**: Si el puerto 40 no está en estado LISTEN (cerrado), la respuesta esperada es un paquete con los flags RST y ACK, indicando que la conexión no puede ser establecida porque el puerto está cerrado o no hay un servicio que escuche en ese puerto.
+
+### Explicación
+
+La diferencia en las respuestas se debe al estado de los puertos en el host de destino. Los puertos que están activos y en estado LISTEN están preparados para aceptar nuevas conexiones, lo cual se señaliza con una respuesta SYN-ACK. Por otro lado, los puertos que no tienen servicios asociados que los escuchen se consideran cerrados y el host informa esto mediante una respuesta RST-ACK.
+
+Para verificar el estado de los puertos en el host, puedes utilizar el comando `ss` en la máquina virtual:
+```bash
+ss -tuln
+```
+Este comando te mostrará una lista de todos los puertos en uso y sus estados, ayudándote a confirmar si un puerto específico está escuchando o no.
+
 ---
 
 ### Ejercicio 11
@@ -709,6 +742,48 @@ Utilice hping3 para enviar datagramas UDP al puerto destino 40 de la máquina vi
 
 ¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores? ¿Puede explicar a qué se debe? (Ayuda: utilice el comando ss visto anteriormente).
 
+Cuando un datagrama UDP llega a un host en un puerto en el que no hay ningún proceso esperando (es decir, que dicho puerto no está en estado LISTEN), el comportamiento es ligeramente diferente al de TCP debido a la naturaleza sin conexión de UDP. En TCP, se recibe un paquete con los flags RST y ACK para indicar que el puerto está cerrado, pero en UDP, la respuesta típica a un datagrama enviado a un puerto cerrado es un mensaje de error ICMP de tipo "Destination Unreachable", específicamente con el código "Port Unreachable".
+
+### Experimento con hping3
+
+Vamos a ilustrar este comportamiento enviando datagramas UDP a dos puertos diferentes de una máquina virtual usando **hping3**.
+
+#### Parte a: Puerto 5353
+
+**Comando para el puerto 5353:**
+```bash
+sudo hping3 --udp -p 5353 <dirección IP de la VM>
+```
+El puerto 5353 se usa comúnmente para mDNS (Multicast DNS), y es posible que esté abierto en algunas configuraciones.
+
+#### Parte b: Puerto 40
+
+**Comando para el puerto 40:**
+```bash
+sudo hping3 --udp -p 40 <dirección IP de la VM>
+```
+Este puerto probablemente esté cerrado, a menos que se haya configurado específicamente para alguna aplicación.
+
+### Diferencias en las respuestas
+
+#### Respuestas esperadas
+
+- **Respuesta al puerto 5353**: Si el puerto 5353 está siendo utilizado por algún servicio como mDNS, es posible que no recibas ningún mensaje ICMP de "Destination Unreachable". En cambio, podrías recibir una respuesta del servicio mDNS si está configurado para responder a solicitudes generales.
+- **Respuesta al puerto 40**: Si no hay ningún servicio escuchando en el puerto 40, la respuesta esperada desde el host sería un mensaje ICMP "Destination Unreachable", con el código "Port Unreachable", indicando que no hay un proceso que pueda recibir el datagrama.
+
+#### Explicación de las diferencias
+
+Las diferencias en las respuestas se deben al estado de los puertos en el host de destino y a cómo están configurados los servicios en esos puertos. Si un puerto está en uso por un servicio que responde a datagramas UDP, podrías no recibir un mensaje ICMP de error. Por otro lado, un puerto que no tiene un servicio asociado o que no está en estado LISTEN típicamente responderá con un error ICMP indicando que el puerto es inalcanzable.
+
+#### Verificación con `ss`
+
+Para entender mejor por qué se reciben estas respuestas, puedes usar el comando `ss` en la máquina virtual para verificar el estado de los puertos:
+```bash
+ss -u -a
+```
+Este comando muestra todos los puertos UDP y su estado. Esto te permitirá ver si los puertos 5353 o 40 están activos y si hay algún proceso asociado escuchándolos.
+
+
 ---
 
 ### Ejercicio 12
@@ -716,6 +791,36 @@ Utilice hping3 para enviar datagramas UDP al puerto destino 40 de la máquina vi
 Investigue los distintos tipos de estado que puede tener una conexión TCP.
 
 Ver https://users.cs.northwestern.edu/~agupta/cs340/project2/TCPIP_State_Transition_Diagram.pdf
+
+Parece que hubo un error al intentar recuperar la información directamente desde la página de la Universidad Northwestern, ya que el contenido está en formato PDF, que no puedo procesar directamente. Sin embargo, puedo proporcionarte una descripción general de los estados por los que puede pasar una conexión TCP basada en el conocimiento estándar del diagrama de transición de estados de TCP.
+
+### Estados de una Conexión TCP
+
+1. **CLOSED**: El estado inicial, donde no hay conexión activa ni pendiente.
+
+2. **LISTEN**: El servidor espera una conexión entrante, es decir, está listo para aceptar solicitudes.
+
+3. **SYN-SENT**: El cliente ha enviado un paquete SYN para iniciar una conexión y está esperando un paquete SYN-ACK del servidor.
+
+4. **SYN-RECEIVED**: El servidor ha recibido el SYN del cliente y ha enviado un SYN-ACK como respuesta, esperando un ACK final para establecer la conexión.
+
+5. **ESTABLISHED**: Ambos, cliente y servidor, han recibido los reconocimientos necesarios y la conexión está establecida y abierta para la comunicación bidireccional.
+
+6. **FIN-WAIT-1**: El host ha enviado un FIN para cerrar su lado de la conexión y está esperando un ACK de FIN.
+
+7. **FIN-WAIT-2**: El host ha recibido un ACK de su FIN y espera un FIN del otro extremo.
+
+8. **CLOSE-WAIT**: El host ha recibido un FIN de la otra parte, ha enviado un ACK y está esperando la aplicación para que cierre la conexión.
+
+9. **CLOSING**: Ambos lados han enviado FIN y están esperando el ACK del FIN opuesto.
+
+10. **LAST-ACK**: El host está esperando el ACK final después de enviar un FIN.
+
+11. **TIME-WAIT**: Después de recibir el último ACK en respuesta a un FIN enviado, el host espera un tiempo suficiente para asegurarse de que el remitente ha recibido el ACK antes de cerrar completamente la conexión.
+
+12. **CLOSED**: El estado final después de cerrar la conexión.
+
+Este conjunto de estados asegura que la conexión TCP sea confiable y que todos los paquetes se transmitan de manera ordenada y segura. Si necesitas una explicación más detallada o específica sobre alguno de estos estados o sus transiciones, estaré encantado de ayudar.
 
 ---
 
