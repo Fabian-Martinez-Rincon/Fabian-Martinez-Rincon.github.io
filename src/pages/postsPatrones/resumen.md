@@ -20,6 +20,7 @@ tags: ["POO"]
 - [Factory Method](#factory-method)
 - [Null Object](#null-object)
 - [Builder](#builder)
+- [Type Object](#)
 
 ---
 
