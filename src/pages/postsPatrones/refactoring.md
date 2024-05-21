@@ -142,3 +142,157 @@ public class Juego {
     }
 }
 ```
+
+### 2.3 Publicaciones
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4d86ff12-bd2b-477f-95a6-402b1ec88e0d)
+
+```java
+/**
+* Retorna los últimos N posts que no pertenecen al usuario user
+*/
+public List<Post> ultimosPosts(Usuario user, int cantidad) {
+        
+    List<Post> postsOtrosUsuarios = new ArrayList<Post>();
+    for (Post post : this.posts) {
+        if (!post.getUsuario().equals(user)) {
+            postsOtrosUsuarios.add(post);
+        }
+    }
+        
+   // ordena los posts por fecha
+   for (int i = 0; i < postsOtrosUsuarios.size(); i++) {
+       int masNuevo = i;
+       for(int j= i +1; j < postsOtrosUsuarios.size(); j++) {
+           if (postsOtrosUsuarios.get(j).getFecha().isAfter(
+     postsOtrosUsuarios.get(masNuevo).getFecha())) {
+              masNuevo = j;
+           }    
+       }
+      Post unPost = postsOtrosUsuarios.set(i,postsOtrosUsuarios.get(masNuevo));
+      postsOtrosUsuarios.set(masNuevo, unPost);    
+   }
+        
+    List<Post> ultimosPosts = new ArrayList<Post>();
+    int index = 0;
+    Iterator<Post> postIterator = postsOtrosUsuarios.iterator();
+    while (postIterator.hasNext() &&  index < cantidad) {
+        ultimosPosts.add(postIterator.next());
+    }
+    return ultimosPosts;
+}
+```
+
+### 2.4 Carrito de compras
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c07d6dfc-c4ec-4e24-954a-a8b46c7d2efd)
+
+
+```java
+public class Producto {
+    private String nombre;
+    private double precio;
+    
+    public double getPrecio() {
+        return this.precio;
+    }
+}
+
+public class ItemCarrito {
+    private Producto producto;
+    private int cantidad;
+        
+    public Producto getProducto() {
+        return this.producto;
+    }
+    
+    public int getCantidad() {
+        return this.cantidad;
+    }
+
+}
+
+public class Carrito {
+    private List<ItemCarrito> items;
+    
+    public double total() {
+return this.items.stream().mapToDouble(item -> item.getProducto().getPrecio() * item.getCantidad()).sum();
+    }
+}
+```
+
+### 2.5 Envío de pedidos
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/231d6eaa-7c62-4f42-b86a-df34e24f9820)
+
+
+```java
+public class Supermercado {
+   public void notificarPedido(long nroPedido, Cliente cliente) {
+     String notificacion = MessageFormat.format(“Estimado cliente, se le informa que hemos recibido su pedido con número {0}, el cual será enviado a la dirección {1}”, new Object[] { nroPedido, cliente.getDireccionFormateada() });
+
+     // lo imprimimos en pantalla, podría ser un mail, SMS, etc..
+    System.out.println(notificacion);
+  }
+}
+
+public class Cliente {
+   public String getDireccionFormateada() {
+	return 
+		this.direccion.getLocalidad() + “, ” +
+		this.direccion.getCalle() + “, ” +
+		this.direccion.getNumero() + “, ” +
+		this.direccion.getDepartamento()
+      ;
+}
+}
+```
+
+### 2.6 Películas
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/62b58104-f497-4c47-a1f2-ba3cb5954d17)
+
+
+```java
+public class Usuario {
+    String tipoSubscripcion;
+    // ...
+
+    public void setTipoSubscripcion(String unTipo) {
+   	 this.tipoSubscripcion = unTipo;
+    }
+    
+    public double calcularCostoPelicula(Pelicula pelicula) {
+   	 double costo = 0;
+   	 if (tipoSubscripcion=="Basico") {
+   		 costo = pelicula.getCosto() + pelicula.calcularCargoExtraPorEstreno();
+   	 }
+   	 else if (tipoSubscripcion== "Familia") {
+   		 costo = (pelicula.getCosto() + pelicula.calcularCargoExtraPorEstreno()) * 0.90;
+   	 }
+   	 else if (tipoSubscripcion=="Plus") {
+   		 costo = pelicula.getCosto();
+   	 }
+   	 else if (tipoSubscripcion=="Premium") {
+   		 costo = pelicula.getCosto() * 0.75;
+   	 }
+   	 return costo;
+    }
+}
+
+public class Pelicula {
+    LocalDate fechaEstreno;
+    // ...
+
+    public double getCosto() {
+   	 return this.costo;
+    }
+    
+    public double calcularCargoExtraPorEstreno(){
+	// Si la Película se estrenó 30 días antes de la fecha actual, retorna un cargo de 0$, caso contrario, retorna un cargo extra de 300$
+   	return (ChronoUnit.DAYS.between(this.fechaEstreno, LocalDate.now()) ) > 30 ? 0 : 300;
+    }
+}
+```
+
+## Ejercicio 3 - Facturación de llamadas
