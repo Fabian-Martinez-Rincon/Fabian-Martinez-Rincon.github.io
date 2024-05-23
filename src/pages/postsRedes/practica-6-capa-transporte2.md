@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Cap. de Transporte - 2'
+title: 'Cap. de Transporte 2'
 pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
