@@ -198,16 +198,127 @@ Estos cálculos nos permiten entender cómo cada una de estas direcciones IP se 
 
 ---
 
-7. Su organización cuenta con la dirección de red 128.50.10.0. Indique:
-- a. ¿Es una dirección de red o de host?
-- b. Clase a la que pertenece y máscara de clase.
-- c. Cantidad de hosts posibles.
-- d. Se necesitan crear, al menos, 513 subredes. Indique:
-    - i. Máscara necesaria.
-    - ii. Cantidad de redes asignables.
-    - iii. Cantidad de hosts por subred.
-    - iv. Dirección de la subred 710.
-    - v. Dirección de broadcast de la subred 710.
+### Ejercicio 7
+
+`Su organización cuenta con la dirección de red 128.50.10.0. Indique:`
+
+#### a) ¿Es una dirección de red o de host?
+
+
+`¿Es una dirección de red o de host?`
+
+Para comprender si una dirección IP dada es una dirección de red o de host, necesitamos considerar cómo se estructuran las direcciones IP dentro del modelo de redes TCP/IP, especialmente bajo el esquema de direccionamiento por clases y subredes.
+
+`Estructura de las Direcciones IP`
+
+Una dirección IP está compuesta por 32 bits. En el sistema de clases (Clase A, B, C), estos bits están divididos en dos partes principales: una parte que identifica la red y una parte que identifica el host dentro de esa red. Cómo se dividen estos bits depende de la clase de la dirección:
+- **Clase A**: El primer octeto (8 bits) identifica la red y los otros tres octetos (24 bits) identifican el host.
+- **Clase B**: Los primeros dos octetos (16 bits) identifican la red y los últimos dos octetos (16 bits) identifican el host.
+- **Clase C**: Los primeros tres octetos (24 bits) identifican la red y el último octeto (8 bits) identifica el host.
+
+`Máscara de Subred`
+
+La máscara de subred ayuda a determinar cuántos bits de la dirección IP se utilizan para identificar la red y cuántos para identificar los hosts dentro de esa red. Para una dirección de Clase B como 128.50.10.0:
+- La máscara de subred predeterminada es 255.255.0.0, que también se puede representar como /16. Esto significa que los primeros 16 bits (los dos primeros octetos) son para la identificación de la red.
+
+`Determinación de una Dirección de Red`
+
+- **Dirección de Red**: Es la dirección que identifica únicamente a la red dentro de una infraestructura mayor. En términos técnicos, una dirección de red es donde todos los bits reservados para la identificación de host en la dirección IP están configurados a cero.
+- En el caso de la dirección 128.50.10.0 con una máscara /16, los bits del tercer y cuarto octeto son cero. Esto cumple con la característica de una dirección de red, donde la parte del host está completamente a cero, indicando que esta dirección es usada para representar la red entera y no un dispositivo específico dentro de esa red.
+
+`Importancia de la Diferenciación`
+
+- **Gestión de Redes**: Saber si una dirección es de red o de host es crucial para la configuración de rutas y para asegurar que el tráfico de datos está siendo dirigido correctamente.
+- **Seguridad**: Las direcciones de red a menudo son objetivos de escaneos y ataques, ya que modificando los bits de host se pueden explorar todos los dispositivos dentro de esa subred.
+
+En resumen, 128.50.10.0 es una dirección de red en una configuración de Clase B con una máscara de subred /16 debido a que todos los bits reservados para los hosts (tercer y cuarto octeto) están configurados a cero, representando así la red completa en lugar de un host individual.
+
+---
+
+#### b) Clase a la que pertenece y máscara de clase.
+
+Para determinar a qué clase pertenece una dirección IP y cuál es su máscara de subred de clase asociada, podemos analizar el primer octeto de la dirección IP, que es crítico para identificar la clase bajo el esquema de clases original de IPv4. Aquí, nos centramos en la dirección 128.50.10.0.
+
+`Clase a la que pertenece`
+
+La clase de una dirección IP se determina por los primeros bits del primer octeto. Las direcciones de Clase A, B, y C se definen de la siguiente manera:
+
+- **Clase A**: El primer bit es 0. Esto significa que cualquier dirección IP cuyo primer octeto esté entre 1 y 126 es Clase A (128.0.0.0 es el primer octeto posible para Clase B, ya que el primer bit de 128 es 1 cuando se considera en binario: 10000000).
+- **Clase B**: Los dos primeros bits son 10. Las direcciones Clase B van desde 128.0.0.0 hasta 191.255.255.255. 
+- **Clase C**: Los tres primeros bits son 110. Las direcciones Clase C comienzan en 192.0.0.0 y van hasta 223.255.255.255.
+
+Dado que el primer octeto de 128.50.10.0 es 128, y observando los primeros bits de este valor (10000000), podemos ver que los dos primeros bits son "10", lo que indica que esta dirección IP es una **Clase B**.
+
+`Máscara de clase`
+
+Cada clase de dirección IP tiene una máscara de subred predeterminada que define cómo los bits de la dirección IP están divididos entre la red y los host. La máscara de subred de clase define claramente la porción de red de la dirección:
+
+- **Clase A**: La máscara de subred predeterminada es 255.0.0.0, o /8. Esto significa que el primer octeto representa la red, y los tres octetos restantes representan los hosts dentro de esa red.
+- **Clase B**: La máscara de subred predeterminada es 255.255.0.0, o /16. Esto implica que los primeros dos octetos están reservados para la red, y los dos últimos octetos son para los hosts dentro de esa red.
+- **Clase C**: La máscara de subred predeterminada es 255.255.255.0, o /24, asignando los primeros tres octetos a la red y el último octeto a los hosts.
+
+Para la dirección 128.50.10.0, siendo una dirección de Clase B, su máscara de subred de clase asociada es **255.255.0.0** o **/16**.
+
+Estos detalles son fundamentales no solo para la configuración de redes sino también para la planificación y diseño de redes, asegurando que las subredes se creen y manejen eficazmente dentro de los límites de la arquitectura de red deseada.
+
+---
+
+#### c) Cantidad de hosts posibles.
+
+#### d) Se necesitan crear, al menos, 513 subredes. Indique:
+
+`i. Máscara necesaria.`
+
+
+`ii. Cantidad de redes asignables.`
+
+
+`iii. Cantidad de hosts por subred.`
+
+
+`iv. Dirección de la subred 710.`
+
+
+`v. Dirección de broadcast de la subred 710.`
+
+
+
+Claro, vamos a profundizar en cada uno de los puntos acerca de la dirección de red 128.50.10.0:
+
+### a. ¿Es una dirección de red o de host?
+Una dirección de red es una identificación única asignada a una subred que sirve para distinguirla dentro de una red más grande, mientras que una dirección de host se refiere a un dispositivo específico (como una computadora o un servidor) dentro de esa subred. En el caso de 128.50.10.0, cuando se considera con su máscara de subred predeterminada de clase B (/16), representa una dirección de red porque el tercer y cuarto octeto están configurados a cero, lo cual es típico para denotar la red en sí y no un host específico dentro de esa red.
+
+### b. Clase a la que pertenece y máscara de clase.
+- **Clase**: La dirección 128.50.10.0 pertenece a la **Clase B**. Esto se puede determinar por el primer octeto (128), que cae en el rango de 128 a 191, específico para las direcciones de Clase B.
+- **Máscara de subred predeterminada**: La máscara de subred estándar para la Clase B es 255.255.0.0, también conocida como /16. Esto significa que los primeros 16 bits de la dirección IP se utilizan para identificar la red, y los 16 bits restantes son para los hosts dentro de esa red.
+
+### c. Cantidad de hosts posibles.
+Con una máscara de subred /16 en una red de Clase B, se asignan 16 bits para los hosts (los bits restantes después de los 16 bits de red). Teóricamente, esto permite \(2^{16} = 65,536\) direcciones en total, pero se deben restar dos direcciones:
+- Una para la dirección de red (donde todos los bits de host son cero).
+- Una para la dirección de broadcast (donde todos los bits de host son uno).
+Esto deja \(65,536 - 2 = 65,534\) direcciones disponibles para asignar a dispositivos individuales (hosts).
+
+### d. Creación de al menos 513 subredes.
+Para segmentar una red de Clase B en subredes, necesitas ajustar la máscara de subred estándar para permitir más bits para identificar cada subred. A continuación se detallan las necesidades:
+
+#### i. Máscara necesaria.
+Se requieren al menos 10 bits adicionales para subredes para crear 513 subredes, ya que \(2^{9} = 512\) subredes no serían suficientes, y \(2^{10} = 1024\) es el siguiente paso que cumple con la necesidad. Esto significa que la nueva máscara de subred es /26 (16 bits originales + 10 bits adicionales = 26 bits).
+
+#### ii. Cantidad de redes asignables.
+Con 10 bits para subredes, puedes tener hasta \(2^{10} = 1024\) subredes distintas.
+
+#### iii. Cantidad de hosts por subred.
+Con los 6 bits restantes asignados a los hosts (32 - 26 = 6), cada subred puede tener \(2^{6} - 2 = 62\) hosts, restando una dirección para la red y otra para el broadcast.
+
+#### iv. Dirección de la subred 710.
+Para calcular la dirección de inicio de la subred 710, multiplicas 710 por 64 (el número de direcciones por subred con una máscara /26), obteniendo 45,440. Añadiendo este número a 128.50.0.0 (base de la red ampliada a partir de la dirección 128.50.10.0 y ajustando a la máscara de red más grande), nos da la dirección 128.50.177.128.
+
+#### v. Dirección de broadcast de la subred 710.
+Sumando 63 (64 direcciones por subred menos uno) a la dirección inicial de la subred 710 (128.50.177.128), obtenemos la dirección de broadcast, 128.50.177.191.
+
+Estos cálculos proporcionan una comprensión detallada de cómo funcionan las subredes dentro de una red de Clase B, utilizando una máscara de subred modificada para cumplir con requisitos específicos de diseño de red y administración.
+
+---
 
 8. Si usted estuviese a cargo de la administración del bloque IP 195.200.45.0/24
 - a. ¿Qué máscara utilizaría si necesita definir al menos 9 subredes?
