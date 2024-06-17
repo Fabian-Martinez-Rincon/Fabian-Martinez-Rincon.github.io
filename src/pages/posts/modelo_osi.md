@@ -13,7 +13,7 @@ category: Linux
 #https://docs.astro.build/assets/arc.webp
 ---
 
-## Para TODOS
+## ⚠️ Para TODOS
 
 
 
@@ -26,7 +26,7 @@ category: Linux
 ## Parciales
 - [Redes y comunicaciones - 1ra fecha (21/06/2022)](#redes-y-comunicaciones---1ra-fecha-21062022)
 - [Redes y comunicaciones - 2da fecha (05/07/2022)](#redes-y-comunicaciones---2da-fecha-05072022)
-- [2022-S1-3RA Resuelto](#2022-s1-3ra-resuelto)
+- [Redes y comunicaciones - 3ra fecha (02/08/2022)](#redes-y-comunicaciones---3ra-fecha-02082022)
 - [2022-S2-1RA Resuelto](#2022-s2-1ra-resuelto)
 - [2022-S2-2DA Resuelto](#2022-s2-2da-resuelto)
 - [2023-S1-2DA Resuelto](#2023-s1-2da-resuelto)
@@ -155,19 +155,144 @@ La persona encargada de la organización redes.edu.ar requiere de su servicio de
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/0ce6824b-683f-406a-8ddc-dfc4f1ef596b)
 
 Considerar sobre los DNS servers:
-- ns1: servidor autoritativo para redes.edu.ar
-- ns-res: servidor resolver interno.
-- a.riu.edu.ar: server autoritativo de la
+- **ns1**: servidor autoritativo para redes.edu.ar
+- **ns-res**: servidor resolver interno.
+- **a.riu.edu.ar**: server autoritativo de la
 zona edu.ar
 
-Considerar sobre web servers:
-- web-prin: tiene definido 2 sitios web.
-wp1.redes.edu.ar y wp2.redes.edu.ar.
+Considerar sobre web servers: web-prin: tiene definido 2 sitios web. 
+- wp1.redes.edu.ar
+- wp2.redes.edu.ar.
 
+
+a) Detalle las configuraciones necesarias en a.riu.edu.ar para hacer alcanzable en Internet el dominio redes.edu.ar.
+
+b) Explique si considera que ns1 y ns-res tendrán algún tipo de intercambio DNS.
+
+c) ¿Por qué SMTP, IMAP y POP para adjuntar una imagen o un ejecutable necesitan aplicar un encoding (ej. base64)?
+
+d) Describa el requerimiento HTTP que se realizaría para acceder al homepage de wp1.redes.edu.ar.
+
+e) Usando FTP Activo, ¿pueden los usuarios D y E intercambiar datos con el servidor FTP?
 
 ---
 
-## 2022-S1-3RA Resuelto
+### Ejercicio 2
+
+Dadas las salidas de los siguientes comandos ejecutados en el cliente y el servidor, responder
+
+> Aclaración: grep es un comando de linux que filtra la salida en pantalla dejando solo aquellas entradas que incluyan la palabra pasada como parámetro. 
+> En este caso, sobre la salida de ss -natu, se filtran para mostrar sólo las
+lineas que contienen 110.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/acbbd639-e100-4409-a168-643afbfba4b6)
+
+A. ¿Qué segmentos llegaron y cuáles se perdieron o están en camino? ¿Qué flags tendría seteado el segmento perdido o en camino?
+
+B. ¿A qué protocolo de capa de aplicación y de transporte se está intentando conectar el cliente?
+
+C. Dada la siguiente captura en un host, indique cuál sería la respuesta a los siguientes paquetes observados.
+
+Incluya toda la información posible: 
+- direcciones IP
+- puertos
+- flags
+- números de secuencia y confirmación
+
+```bash
+a. 190.0.11.1.35794 > 190.0.0.1.110: Flags [S], seq 920152, ack 0
+b. 127.0.0.1.12345 > 127.0.0.1.110: Flags [S], seq 110012, ack 0
+c. 190.0.11.1.45678 > 192.168.22.1.110: UDP, length 1024
+```
+
+---
+
+### Ejercicio 3
+
+Dada la sesión TCP de la figura, completar los valores faltantes
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/16736da1-85e8-403d-8069-e69d1ee4e435)
+
+---
+
+### Ejercicio 4
+
+Indique la última dirección de red de clase B que está incluida en el siguiente bloque CIDR 180.96.0.0/11
+
+---
+
+### Ejercicio 5
+
+Usar el bloque 206.58.192.0/19 para generar la mayor cantidad de redes que alojen 700 hosts. Indique la dirección de las primeras 3 subredes.
+
+---
+
+### Ejercicio 6
+
+En base al siguiente diagrama:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5b4af42b-67db-4f50-ad42-9d2d18ddbfb7)
+
+A. Indique qué camino toman los paquetes enviados desde pc-A hacia pc-B.
+
+B. Indique qué camino toman los paquetes enviados desde pc-A hacia WWW.
+
+C. ¿Cómo queda la tabla de asociación del SW2, luego de comunicaciones exitosas entre pc-A y pc-B?
+
+D. Complete la información del primer ARP-Reply recibido por pc-A. Incluya la información de los protocolos ethernet y ARP de dicha respuesta.
+
+---
+
+## Redes y comunicaciones - 3ra fecha (02/08/2022)
+
+La persona encargada de la organización redes.edu.ar requiere de su servicio de
+consultoría. Además, le presenta una explicación con el siguiente diagrama:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5f26c0b7-ce9b-4c45-83a5-0516a572e25e)
+
+Considerar sobre los DNS servers:
+- ns1: servidor autoritativo para redes.edu.ar
+- ns-res: servidor resolver interno.
+- a.riu.edu.ar: server autoritativo de la zona edu.ar
+
+Considerar sobre web servers:
+- web-prin: tiene definido 2 sitios web. wp1.redes.edu.ar y wp2.redes.edu.ar
+
+a) Su primera tarea es asistir en la migración del servidor web principal con una nueva dirección IP: 203.0.113.229. Se le pide encontrar una manera en la que pueda ayudar a reducir el tiempo de propagación a 1 hora luego de que se efectivice la modificación de los registros DNS afectados. Indique qué solución propone, en cúal/cuáles servidores realizaría el cambio y para cada uno la configuración completa de los registros afectados.
+
+b) El administrador capturó tráfico HTTP en web-prin y observó que los recursos solicitados por un user-agent fueron respondidos en orden, secuencialmente durante una misma conexión TCP. Indique qué versión HTTP capturó y cuál es la característica de HTTP observada.
+
+c) Se le indica instalar un servidor de correo completo para los usuarios de ambas sedes en mail-1. Además instalar mail-2 para que en caso de que mail-1 deje de prestar servicio no se pierdan correos entrantes. El único requisito es que se utilicen los menores recursos de hardware posible. Indique qué protocolos configurará en cada servidor y adicionalmente incluya los registros DNS que intervienen en la solución.
+
+d) El usuario de PC-D al conectarse al servicio ftp.redes.edu.ar logra ejecutar comandos pero falla al solicitar la descarga de
+un archivo. Previamente comprobó que el servicio FTP está debidamente configurado y que el usuario de PC-E puede
+utilizar el servicio sin problemas. Indique qué ocasiona el problema de PC-D y cómo solucionarlo de la manera más
+sencilla.
+
+---
+
+### Ejercicio 2
+
+Dada la siguiente información obtenida del host Z,
+
+```bash
+# ss -tnu
+Proto Dirección local Dirección remota State
+1. tcp 192.168.99.123:33692 13.107.42.11:443 Established
+2. tcp 192.168.8.5:45042 149.154.175.16:3306 Established
+3. tcp 192.168.99.123:45043 149.154.175.16:3306 Established
+4. udp 192.168.99.123:68 192.168.2.1:67
+```
+
+a) Entrada 1: El host 192.168.99.123 envió varios ACK indicando win=0. ¿Qué está indicando?
+
+b) Entrada 2 y 3, ¿podría el host Z establecer una nueva conexión dados los siguientes parámetros?: 
+
+```bash
+192.168.8.5:45043 > 149.154.175.16:3306 Flags[S] , seq 100
+```
+
+c) Entrada 4: se pierde el quinto mensaje enviado desde el comienzo de la comunicación. ¿Qué acción tomará el protocolo con ese mensaje?
 
 ---
 
