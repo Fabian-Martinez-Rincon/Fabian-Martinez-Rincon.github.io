@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2024-03-31
 tags: ["Modelado de Datos", "Procesamiento de Consultas", "Seguridad e Integridad de los Datos"]
+category: Facultad
 ---
 
 ## 😎 ESPACIO PUBLICITARIO 😎

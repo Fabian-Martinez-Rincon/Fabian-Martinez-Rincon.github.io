@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/template-method.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 ## Ejemplo WTF

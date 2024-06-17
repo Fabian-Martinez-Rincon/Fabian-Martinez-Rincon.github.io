@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-12-23
 tags: ["bash", "nvim", "linux", "debian"]
+category: Facultad
 ---
 
 Bueno, por lo que me dijeron este final es full teorico. Aca dejo uno que me pasaron.

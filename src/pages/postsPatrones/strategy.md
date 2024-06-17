@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/strategy.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 ## [Video de BettaTech](https://youtu.be/VQ8V0ym2JSo?si=TQ_pmyrfQPNl2bGn)

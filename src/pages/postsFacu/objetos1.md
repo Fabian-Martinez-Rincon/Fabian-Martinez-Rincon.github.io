@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-06-11
 tags: ["Objetos", "Uml", "Java", "Test Unit"]
+category: Facultad
 ---
 
 Bueno, como primer paso, identificamos todos los objetos, sin los metodos. No hace falta crear el objeto sistema. Con sistema se refiere al conjunto completo de objetos. Una forma de darnos cuenta de que hicimos una buena distribución es que podamos ejecutar todos los metodos desde los test.

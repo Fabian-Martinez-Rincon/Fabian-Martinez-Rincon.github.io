@@ -6,10 +6,32 @@ import Blogs from "../../components/sections/Blogs.astro"
 import BlogsFacu from "../../components/sections/BlogsFacu.astro"
 import BlogsPatrones from "../../components/sections/BlogsPatrones.astro"
 import BlogsRedes from "../../components/sections/BlogsRedes.astro"
-import BlogsPersonal from "../../components/sections/BlogsPersonal.astro"
+// import BlogsPersonal from "../../components/sections/BlogsPersonal.astro"
+
 
 const allPosts = await Astro.glob('../*posts*/**/*.md');
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+type Post = {
+  frontmatter: {
+    title: string;
+    category?: string;
+  };
+  url: string;
+};
+
+type CategorizedPosts = {
+  [key: string]: Post[];
+};
+
+const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) => {
+  const category = post.frontmatter.category || "Otros";
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(post);
+  return acc;
+}, {});
+
 import Github from "../../components/sections/Github.astro"
 import Title from "../../components/Title.astro"
 
@@ -20,15 +42,23 @@ import Title from "../../components/Title.astro"
   description="Backend Developer Python"
 >
 
-  <SectionContainer class="  text-green-400">
-    <!-- <div class="flex flex-wrap mt-8">
-      {tags.map((tag) => (
-        <p class="mr-2 mb-2 px-3 py-1 bg-gray-800 rounded-md">
-          <a href={`/tags/${tag}`} class="hover:underline">{tag}</a>
-        </p>
+  <SectionContainer class="mt-16 py-8 md:py-12">
+    <Title title="Índice" emoji="📑"/>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {Object.keys(categorizedPosts).map((category) => (
+        <div>
+          <h2 class="text-lg font-bold text-gray-200">{category}</h2>
+          <ul class="ml-4 list-disc">
+            {categorizedPosts[category].map((post) => (
+              <li class="mb-1">
+                <a href={post.url} class="text-blue-600 hover:underline">{post.frontmatter.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
-    </div> -->
-
+    </div>
+  </SectionContainer>
   <main class="px-4 ">
     <div class="space-y-20">
       <SectionContainer class="py-16 md:py-26">
@@ -47,11 +77,11 @@ import Title from "../../components/Title.astro"
         <Title title="Redes y Comunicaciones" emoji="👨🏽‍🎓"/>
         <BlogsRedes/>
         
-
+<!-- 
         <br ><div class="h-4"></div>
 
         <Title title="Personal" emoji="👨🏽‍🎓"/>
-        <BlogsPersonal/>
+        <BlogsPersonal/> -->
 
         <br ><div class="h-4"></div>
         <Github/>

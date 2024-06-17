@@ -8,6 +8,7 @@ image:
     url: '/posts/Redes/capa-transporte.webp'
     alt: ''
 tags: ["Capa de Aplicación"]
+category: Redes
 ---
 
 1. ¿Cuál es el puerto por defecto que se utiliza en los siguientes servicios?

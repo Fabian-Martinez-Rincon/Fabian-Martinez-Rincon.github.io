@@ -3,7 +3,7 @@ const allPosts = await Astro.glob('../../pages/postsFacu/*.md');
 import CardBlog from '../CardBlog.astro';
 ---
 
-<ul class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2 lg:mx-0 lg:max-w-none lg:grid-cols-4 text-black">
+<ul class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 text-black">
     {allPosts.map((post) => (
         <CardBlog url={post.url} image={post.frontmatter.image} title={post.frontmatter.title} date={post.frontmatter.pubDate} />
     ))}

@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/decorator.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 El patrón de diseño **Decorator** se utiliza para agregar responsabilidades adicionales a un objeto de manera dinámica y transparente, es decir, sin afectar a otros objetos de la misma clase. A diferencia de la herencia, donde el comportamiento es estático y no se puede cambiar después de la compilación, el Decorator permite la adición y eliminación dinámica de comportamientos.

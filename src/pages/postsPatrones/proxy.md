@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/proxy.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 

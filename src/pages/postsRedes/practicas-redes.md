@@ -8,6 +8,7 @@ image:
     alt: "Redes."
 pubDate: 2024-03-12
 tags: ["Capa de Aplicación", "Capa de Transporte", "Capa de Red", "Ruteo"]
+category: Redes
 ---
 
 - [Practica 1 Introducción](#practica-1-introducción)

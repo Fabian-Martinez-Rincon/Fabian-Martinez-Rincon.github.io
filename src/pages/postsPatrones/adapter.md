@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/adapter.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 ## Ejemplo Practico

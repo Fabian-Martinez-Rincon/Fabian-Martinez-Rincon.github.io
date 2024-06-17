@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/state.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 ## Introducción

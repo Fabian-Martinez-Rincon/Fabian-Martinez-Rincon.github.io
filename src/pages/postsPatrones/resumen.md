@@ -8,6 +8,7 @@ image:
     url: '/posts/Objetos/resumen.webp'
     alt: ''
 tags: ["POO"]
+category: Patrones
 ---
 
 - [Adapter](#adapter)

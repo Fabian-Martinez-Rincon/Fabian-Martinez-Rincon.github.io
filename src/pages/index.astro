@@ -1,7 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 
-import Experience from "@/components/sections/Experience.astro"
+import Link from "../components/icons/IconLink.astro"
+import LinkButton from "@/components/LinkButton.astro"
 import Education from "@/components/sections/Education.astro"
 import Projects from "@/components/sections/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
@@ -28,12 +29,12 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
     <div class="space-y-20  ">
 
       <SectionContainer id="timelabs">
-        <Title title="Timelabs De Algunos Proyectos" emoji="💻"/>
+        <Title title="💡 Timelabs De Algunos Proyectos" emoji="💻"/>
         <CustomImageScroll />
       </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <Title title=" ⭐ Proyectos Destacados Python" emoji="🗃️"/>
+      <Title title=" 🗃️ Trabajos Realizados con Python" emoji="🗃️"/>
       <Projects />
     </SectionContainer>
 
@@ -52,22 +53,32 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
       <Video path="/gif/ACL_Manager.mp4"/>
     </SectionContainer>
     
-    <SectionContainer id="experiencia">
-      <Title title="Experiencia Laboral" emoji="💻"/>
-      <Experience />
-    </SectionContainer>
-
+    <!-- <SectionContainer id="experiencia">
+      
+      <div class="flex flex-col items-center justify-center mb-6">
+        <div class="w-full h-1 bg-yellow-500 my-2"></div>
+        <Title title="🗃️ Ver Experiencia completa" emoji="💻"/>
+        
+        <div class="flex font-bold gap-x-3 text-gray-500 items-center justify-center">
+          <LinkButton href="/resumeES">
+            <Link />
+            Curriculum
+          </LinkButton>
+        </div>
+        <div class="w-full h-1 bg-yellow-500 my-2"></div>
+      </div>
+    </SectionContainer> -->
     
 
     <SectionContainer id="blogs">
-      <Title title="Blogs" emoji="🤖"/>
+      <Title title="👀 Blogs" emoji="🤖"/>
       <Blogs/>
     </SectionContainer>
 
     
 
     <SectionContainer id="education">
-      <Title title="Educación" emoji="🎓"/>
+      <Title title="🎓 Educación" emoji="🎓"/>
       <Education />
     </SectionContainer>
 

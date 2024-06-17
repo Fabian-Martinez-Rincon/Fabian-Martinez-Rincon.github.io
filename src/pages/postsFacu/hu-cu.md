@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2023-05-07
 tags: ["bash", "nvim", "linux", "debian"]
+category: Facultad
 ---
 
 Podemos extraer todos los datos de nuestro enunciado de la siguiente forma. Tener en cuenta que los roles y actores son los mismos, solo que en HU no tomamos en cuenta el servidor y los actores que surgen por herencia.

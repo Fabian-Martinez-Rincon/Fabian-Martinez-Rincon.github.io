@@ -8,6 +8,7 @@ image:
     alt: "Orientación a OO2."
 pubDate: 2024-03-12
 tags: ["Objetos", "Uml", "Java", "Test Unit"]
+category: Facultad
 ---
 
 # Indice

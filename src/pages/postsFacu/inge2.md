@@ -8,6 +8,7 @@ image:
     alt: ""
 pubDate: 2024-03-10
 tags: []
+category: Facultad
 ---
 
 Entrevista para ING2

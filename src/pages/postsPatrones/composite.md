@@ -8,7 +8,7 @@ image:
     url: '/posts/Objetos/composite.webp'
     alt: ''
 tags: ["POO"]
-
+category: Patrones
 ---
 
 ## [Video de BettaTech](https://youtu.be/ES3DnAPted0?si=rXTAYg96uVkFsYAq)

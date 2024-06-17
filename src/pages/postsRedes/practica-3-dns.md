@@ -8,7 +8,7 @@ image:
     url: '/posts/Redes/dns.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
-
+category: Redes
 ---
 
 ## Introducción

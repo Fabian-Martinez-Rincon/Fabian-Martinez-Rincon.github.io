@@ -8,6 +8,7 @@ image:
     url: '/posts/Redes/correo.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
+category: Redes
 ---
 
 - [Ejercicio 1 Protocolos de Envio](#ejercicio-1)

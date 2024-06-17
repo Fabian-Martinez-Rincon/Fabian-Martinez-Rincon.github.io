@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2022-07-15
 tags: ["bash", "nvim", "linux", "debian"]
+category: Facultad
 ---
 
 <h1 align="center"> 📒 Practica 1

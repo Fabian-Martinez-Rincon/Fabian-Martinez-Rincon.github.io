@@ -8,6 +8,7 @@ image:
     url: '/posts/Redes/capa-red.webp'
     alt: ''
 tags: ["Capa de Aplicación"]
+category: Redes
 ---
 
 

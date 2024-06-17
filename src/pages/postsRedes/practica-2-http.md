@@ -8,6 +8,7 @@ image:
     alt: "Redes."
 pubDate: 2024-03-30
 tags: ["HTTP", "HTTP 1.0", "HTTP 1.1"]
+category: Redes
 ---
 
 ## Introducción

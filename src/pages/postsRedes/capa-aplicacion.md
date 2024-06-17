@@ -8,7 +8,7 @@ image:
     url: '/posts/Redes/capa-aplicacion.webp'
     alt: ''
 tags: ["Capa de Aplicación"]
-
+category: Redes
 ---
 
 ### Parcialito Promoción Redes y Comunicaciones 1er. sem 2023 (Aplicación)
