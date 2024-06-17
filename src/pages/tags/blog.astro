@@ -43,15 +43,15 @@ import Title from "../../components/Title.astro"
 >
 
   <SectionContainer class="mt-16 py-8 md:py-12">
-    <Title title="Índice" emoji="📑"/>
+    <Title title="📑 Índice" emoji="📑"/>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {Object.keys(categorizedPosts).map((category) => (
         <div>
-          <h2 class="text-lg font-bold text-gray-200">{category}</h2>
-          <ul class="ml-4 list-disc">
+          <h2 class="text-lg font-bold text-gray-200 underline ">{category}</h2>
+          <ul class="ml-4 list-disc  text-gray-200">
             {categorizedPosts[category].map((post) => (
               <li class="mb-1">
-                <a href={post.url} class="text-blue-600 hover:underline">{post.frontmatter.title}</a>
+                <a href={post.url} class="text-blue-500 hover:underline">{post.frontmatter.title}</a>
               </li>
             ))}
           </ul>
