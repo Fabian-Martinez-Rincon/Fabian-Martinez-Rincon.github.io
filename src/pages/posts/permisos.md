@@ -8,7 +8,7 @@ image:
     url: '/posts/linux/permisos.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["ACL", "Permisos", "Linux"]
-
+category: Linux
 ---
 
 

@@ -8,7 +8,7 @@ image:
     url: '/posts/linux/vim.webp'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
-
+category: Linux
 # url: '/posts/vim.jpg'
 #https://docs.astro.build/assets/arc.webp
 ---

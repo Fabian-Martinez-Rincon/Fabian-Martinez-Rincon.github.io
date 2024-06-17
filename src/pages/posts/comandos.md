@@ -8,6 +8,7 @@ image:
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
 tags: ["Bash", "Linux", "Comandos"]
+category: Linux
 ---
 
 
