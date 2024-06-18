@@ -1,0 +1,72 @@
+---
+import "photoswipe/style.css";
+import Postfit from "../Postfit.astro";
+
+const VIDEOS = [
+  {
+    title: "Emuti",
+    description:
+      "Desarrolle un Software en Python usando Pandas, PyGetWindow, OpenPyXL, PyAutoGUI y Tkinter para automatizar la entrada de datos en máquinas de juego, reduciendo el tiempo de pruebas de 60hs a solo 5hs con un margen de error del 0%.",
+    src: "/gif/emuti.mp4",
+  },
+  {
+    title: "Modify SQL",
+    description:
+      "Desarrolle una herramienta en Python usando Difflib, OS y Xlsxwriter para detectar diferencias entre dos bases de datos, optimizando el tiempo de comparación de 5 horas a solo unos minutos.",
+    src: "/gif/sql.mp4",
+  },
+  {
+    title: "ACL-Manager",
+    description:
+      "Proyecto para poder gestionar ACLs (Access Control List) en un entorno Linux, al tener muchos comandos repetidos basados en un excel se me ocurrio que seria mas comodo poder formater los comandos",
+    src: "/gif/ACL_Manager.mp4",
+  }
+];
+---
+
+
+<style>
+  #logo {
+    box-shadow: inset 0 0 0 4px black;
+  }
+
+</style>
+
+<section class="flex flex-col gap-y-10">
+  <div class="grid grid-cols-1 gap-5">
+    {VIDEOS.map((video, i) => (
+      <div class="flex flex-col gap-8 items-center">
+         <div class="flex flex-col items-center max-w-2xl">
+          <h2 class="text-xl font-bold text-yellow-500 text-center pb-4">
+            <span>{video.title}</span>
+          </h2>
+        </div>
+        <video
+          class="w-full max-w-3xl aspect-video object-cover"
+          autoplay
+          muted
+          controls
+          loop
+          src={video.src}
+          data-pswp-width="1280"
+          data-pswp-height="720"
+        ></video>
+        <div class="flex flex-col items-center max-w-3xl">
+          <p class="text-center text-custom-text">{video.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
+<script>
+  import PhotoSwipeLightbox from "photoswipe/lightbox";
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: "#gallery",
+    children: "a",
+    pswpModule: () => import("photoswipe"),
+  });
+  lightbox.init();
+</script>
