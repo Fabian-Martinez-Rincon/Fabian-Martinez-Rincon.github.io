@@ -18,7 +18,7 @@ const VIDEOS = [
   {
     title: "ACL-Manager",
     description:
-      "Proyecto para poder gestionar ACLs (Access Control List) en un entorno Linux, al tener muchos comandos repetidos basados en un excel se me ocurrio que seria mas comodo poder formater los comandos",
+      "Desarrollé un software en Python usando Tkinter, Pandas y OpenPyXL que proporciona comandos para formatear permisos de un archivo Excel a travez de una interfaz gráfica.",
     src: "/gif/ACL_Manager.mp4",
   }
 ];
@@ -32,15 +32,15 @@ const VIDEOS = [
 
 </style>
 
-<section class="flex flex-col gap-y-10">
+<section class="flex flex-col gap-y-10 ">
   <div class="grid grid-cols-1 gap-5">
     {VIDEOS.map((video, i) => (
       <div class="flex flex-col gap-8 items-center">
-         <div class="flex flex-col items-center max-w-2xl">
+         <div class="flex flex-col items-center max-w-3xl">
           <h2 class="text-xl font-bold text-yellow-500 text-center pb-4">
             <span>{video.title}</span>
           </h2>
-        </div>
+        
         <video
           class="w-full max-w-3xl aspect-video object-cover"
           autoplay
@@ -50,7 +50,7 @@ const VIDEOS = [
           src={video.src}
           data-pswp-width="1280"
           data-pswp-height="720"
-        ></video>
+        ></video></div>
         <div class="flex flex-col items-center max-w-3xl">
           <p class="text-center text-custom-text">{video.description}</p>
         </div>
