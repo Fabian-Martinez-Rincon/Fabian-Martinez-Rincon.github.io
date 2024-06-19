@@ -37,9 +37,9 @@ const keywords = /Python|BeautifulSoup|Scrum|Excel|AI|ACL|Script|Vim|Difflib|OS|
           )
       }</p>
     ) : (
-      <ul class="list-disc pl-5 mt-1 text-lg">
+      <ul class="list-disc mt-1 text-lg">
         {description.map(item => (
-          <li>{item.split(" ").map(word => 
+          <li class="pl-0 ml-0">{item.split(" ").map(word => 
             keywords.test(word) ? <span class="bold">{word} </span> : word + " "
           )}
         </li>
