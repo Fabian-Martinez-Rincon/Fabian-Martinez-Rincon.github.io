@@ -26,7 +26,8 @@ category: Linux
 - [Redes y comunicaciones - 2da fecha (05/07/2022)](#redes-y-comunicaciones---2da-fecha-05072022)
 - [Redes y comunicaciones - 3ra fecha (02/08/2022)](#redes-y-comunicaciones---3ra-fecha-02082022)
 - [Redes y comunicaciones - 1ra fecha (05/12/2022)](#redes-y-comunicaciones---1ra-fecha-05122022)
-- [2022-S2-2DA Resuelto](#2022-s2-2da-resuelto)
+- [Redes y comunicaciones - 2da fecha (06/02/2023)](#redes-y-comunicaciones---2da-fecha-06022023)
+- [Redes y comunicaciones - 1ra fecha (28/06/2023)](#redes-y-comunicaciones---1ra-fecha-28062023)
 - [2023-S1-2DA Resuelto](#2023-s1-2da-resuelto)
 
 ---
@@ -450,11 +451,129 @@ d) PC-D envía un ICMP (Echo Request) a PC-C.
 
 ---
 
-## 2022-S2-2DA Resuelto
+## Redes y comunicaciones - 2da fecha (06/02/2023)
+
+Siempre es necesario justificar, las respuestas no debidamente justificadas serán consideradas incorrectas. Considere que todas las tablas cachés están vacías para cada ejercicio.
+
+### Ejercicio 1
+
+En base a la siguiente topología y la tabla de ruteo del router C, responder:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/04e0e3c3-ea9b-4937-b22d-c330d635e323)
+
+Router C
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c6daae7a-bd0c-4b41-a05a-b61ea2fcc465)
+
+```bash
+1. IP 191.8.0.5:2323 > 191.8.0.35:80: Flags [S], seq 1363516609, win 512, length 0
+2. IP 191.8.0.35:80 > 191.8.0.5:2323: Flags [SA], seq 2407054621, ack 1363516610 win 6240, length 0
+3. IP 191.8.0.165:2836 > 191.8.0.35:80: Flags [S], seq 1273089217, win 512, length 0
+4. IP 191.8.0.35:80 > 191.8.0.165:2836: Flags [SA], seq 1949827, ack 127308218 win 6240, length 0
+5. IP 10.0.0.5 > 191.8.0.35: ICMP net 191.8.0.165 unreachable
+```
+
+a) Avisan de un problema de acceso entre los dispositivos y contamos la captura de tráfico realizada en el Web Server. Asumiendo que las IP están correctamente asignadas en los dispositivos de toda la topología, indique qué problemas podrían estar ocurriendo y cuáles serían las soluciones posibles
+
+b) Asumiendo que la red está funcionando correctamente, sin tener en cuenta lo evaluado en el punto a, indique de qué forma se podría reducir la tabla de ruteo del router C que se visualiza manteniendo el acceso a todas las redes.
+
+c) La empresa decidió migrar únicamente los servidores de la Red C a una nueva red, Red D, conectada al router B usando alguna de las redes disponibles teniendo en cuenta que la dirección inicial a partir de la cual se realizó el subnetting es 191.8.0.0/23. Se debe asignar una de las redes libres de forma que se pueda aplicar CIDR en el router A desperdiciando la menor cantidad posible de direcciones y con la capacidad de asignar direcciónes IPs como máximo a 14 hosts.
+
+- i) Indique la dirección de red que se asignará detallando el desarrollo para su obtención.
+- ii) Realice tabla de ruteo del router A de forma que se pueda acceder a todas las redes por el camino más corto, indicando las redes que se simplificaron.
 
 ---
 
-## 2023-S1-2DA Resuelto
+### Ejercicio 2
+
+¿Cómo quedaría la tabla CAM del switch S_red_C luego del intercambio de la captura del webserver? (solo tener en cuenta los mensajes que se muestran en la captura)
+
+---
+
+### Ejercicio 3
+
+Se desea agregar un servicio de mail para los usuarios de todas las redes. Para asegurarse un buen servicio se agregarán 2 servidores de mail.
+
+a) Indique todos los registros que se deberán agregar en el servidor de DNS teniendo en cuenta que el dominio es campeones.com y los servidores mailreda.campeones.com (principal) se encuentra en la red D y alt1.mailreda.campeones.com (secundario) en la red A
+
+b) Al momento que el cliente desea recibir sus mails el servicio deberá cumplir con los siguientes requisitos: no guardar copia de los mails en el servidor por defecto, permitir enviar correos cifrados. Indique cuál es el protocolo elegido.
+
+---
+
+### Ejercicio 4
+
+Teniendo en cuenta la tabla de ruteo y captura que se muestran en el punto 1, y asumiendo que desde el router B se accede a la Red C por router C, indique qué evento/s de la captura producirán tráfico ARP entre los routers B y C y cuáles serían los ARP Request (indicar datos de Ethernet y ARP) enviados.
+
+
+---
+
+### Ejercicio 5)
+
+En base a la siguiente salida de un comando ejecutado en PC-A, seleccione las opciones verdaderas
+
+
+| Proto |  Dirección | local | Dirección | remota | State |
+| --- | --- | --- | --- | --- | --- |
+| udp |  127.0.0.1:53 | 0.0.0.0:* | |
+| tcp |  0.0.0.0:25 | 0.0.0.0:* | Listen |
+| tcp |  127.0.0.1:143 | 0.0.0.0:* | Listen |
+| tcp |  127.0.0.1:110 | 0.0.0.0:* | Listen |
+| tcp |  0.0.0.0:993 | 0.0.0.0:* | Listen |
+| tcp |  127.0.0.1:25 | 127.0.0.1:31866 | Established |
+| tcp |  127.0.0.1:31866 | 127.0.0.1:25 | Established |
+| tcp |  202.1.2.2:17236 | 21.2.6.6:443 | Established |
+| tcp |  202.1.2.2:32232 | 21.2.6.6:443 | Established |
+| tcp |  202.1.2.2:25 | 21.2.6.6:8273 | Established |
+| tcp |  202.1.2.2:15647 | 21.2.6.6:110 | Established |
+
+
+- [ ] I. Si otra PC en la red de PC-A envía un segmento a PC-A con el flag SYN y puerto destino 110, recibirá como respuesta un RST/ACK.
+- [ ] II. La PC-A tiene establecida una conexión IMAP.
+- [ ] III. La PC-A tiene establecida una conexión POP.
+- [ ] IV. Hay un total de 6 conexiones TCP establecidas.
+- [ ] V. La PC-A tiene la IP 127.0.0.1
+- [ ] VI. La PC-A tiene la IP 21.2.6.6.
+
+---
+
+### Ejercicio 6
+
+En base a la salida completa, seleccione una o más de una respuesta correcta:
+
+```bash
+HTTP/1.1 200 OK
+Date: Mon, 03 May 2021 02:25:12 GMT
+Server: Apache
+Last-Modified: Thu, 27 Apr 2017 13:43:00 GMT
+Accept-Ranges: bytes
+Content-Length: 430
+X-XSS-Protection: 0;
+Content-Type: text/html
+```
+
+- [ ] I. Se utilizó el método HEAD para realizar la consulta.
+- [ ] II. Si la consulta hubiese llevado la cabecera “If-Modified-Since: Thu, 29 Apr 2017 17:31:00 GMT” el servidor habría respondido con el código “HTTP/1.1 304 Not Modified”.
+- [ ] III. Tiene un total de 8 cabeceras.
+- [ ] IV. Se utilizó el método GET para realizar la consulta.
+- [ ] V. La respuesta incluye el recurso solicitado.
+- [ ] VI. El servidor solo devolvió los encabezados de la página
+
+---
+
+### Ejercicio 7
+
+Indique cuáles de las siguientes opciones son correctas en relación a IPv6.
+
+- [ ] I. La dirección ff00::4437:39ff:fe65:f518 es una dirección IPv6 válida para asignar a un servidor web que deba ser accesible en Internet.
+- [ ] II. La dirección ::/128 hace referencia a la máquina local (localhost).
+- [ ] III. El checksum en IPv6 permite detectar errores en un paquete.
+- [ ] IV. El protocolo Neighbour Discovery requiere ICMPv6 para funcionar.
+- [ ] V. Es posible comunicar dos redes IPv6 por medio de una red IPv4.
+
+
+---
+
+## Redes y comunicaciones - 1ra fecha (28/06/2023)
 
 
 ---
