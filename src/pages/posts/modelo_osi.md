@@ -514,7 +514,7 @@ En base a la siguiente salida de un comando ejecutado en PC-A, seleccione las op
 
 | Proto |  Dirección | local | Dirección | remota | State |
 | --- | --- | --- | --- | --- | --- |
-| udp |  127.0.0.1:53 | 0.0.0.0:* | |
+| udp |  127.0.0.1:53 | 0.0.0.0:* | | |
 | tcp |  0.0.0.0:25 | 0.0.0.0:* | Listen |
 | tcp |  127.0.0.1:143 | 0.0.0.0:* | Listen |
 | tcp |  127.0.0.1:110 | 0.0.0.0:* | Listen |
@@ -591,4 +591,77 @@ Dada la siguiente topología y considerando que:
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f067c682-154e-4fb3-b15e-2b4f483f829e)
 
+a) El servidor unlp.unlp.edu.ar perdió conectividad con Internet. PC-A accede mediante un navegador a www.unlp.edu.ar.
+
+- i) ¿Qué respuestas TCP y HTTP obtendrá PC-A por parte del servidor?
+- ii) ¿Podría obtenerse de algún servidor DNS información autoritativa sobre el nombre unlp.edu.ar?
+
+b) El servidor unlp.unlp.edu.ar recuperó conectividad con Internet y se plantean mejoras a las que deberá indicar qué modificaciones son necesarias realizar tanto en la topología como las configuraciones (de red y registros DNS):
+
+- i) Incorporar en la Red A un segundo servidor DNS autoritativo para unlp.edu.ar.
+- ii) Incorporar en la misma red un servidor de correo saliente que será utilizado por la aplicación www.unlp.edu.ar.
+- iii) Incorporar en la misma red dos servidores (mail-uno y mail-dos) de correo entrante para los usuarios del dominio unlp.edu.ar. Mail-dos debe recibir los correos solo si mail-uno se encuentra fuera de servicio.
+- iv) Ayudar a servidores de correo de otros dominios a identificar servidores de correo autorizados para el envío de correo bajo el dominio unlp.edu.ar.
+
 ---
+
+### Ejercicio 2
+
+PC-A y PC-B disponen de múltiples adaptadores de red configuradas con una IP y la máscara de clase. Cada adaptador físico PC-A está conectado directamente con un cable a su respectivo PC-B.
+
+Adicionalmente tenemos los siguientes ejecutables que
+implementan un cliente y servidor TCP:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/711f1002-2738-4645-88f7-6e28defb917d)
+
+- cliente.exe: acepta los parámetros -s \<ip_servidor> -p \<puerto_servidor>
+- servidor.exe: acepta los parámetros -l \<ip_escucha> -p \<puerto_escucha>
+
+a) Indique todas las posibilidades en las que puede ejecutar tanto el cliente como el servidor en PC-A utilizando el puerto 3306 como puerto_escucha sin que sea alcanzable por PC-B.
+
+b) PC-B está ejecutando el servidor utilizando -p 80 y en -l se indicó la primera dirección alcanzable por PC-A.
+
+- La conexión iniciada por PC-A (ISN: 1000) a PC-B (ISN: 2000).
+- PC-A envía un segmento con 20 bytes.
+- PC-B reconoce el segmento de 20 bytes
+- PC-A envía dos segmentos de 30 bytes.
+- PC-B responde reconociendo el segmento nuevamente el segmento de 20 bytes.
+- PC-A envía un segmento de 50 bytes.
+- PC-B responde reconociendo el segmento nuevamente el segmento de 20 bytes.
+
+Haga un diagrama en el que se refleje el flujo de intercambios, indicando (seq, ack, flags, length). Y explique qué suceso está ocurriendo en la red ¿en que parte de la comunicación ubicaría el problema?.
+
+c) Haga un diagrama en el que se refleje el flujo de intercambios en el que PC-A envía un segmento a PC-B al puerto 88 en el que ningún proceso está escuchando.
+
+---
+
+### Ejercicio 3
+
+La siguiente organización dispone de dos bloques de direcciones libres: el primero es 190.10.2.0/23 y solo en caso agotarse disponible de un segundo bloque de direcciones 180.0.0.0/26.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/037c6766-c0cc-440e-8cd0-7b53c267b310)
+
+Asigne direcciones a todas las redes utilizando VLSM
+
+---
+
+### Ejercicio 4
+
+Sobre el mismo gráfico del ejercicio 3, escriba la tabla de ruteo de RTR-E.
+- El tráfico hacía y desde Red B no debe pasar por RTR-D.
+- El tráfico hacía y desde Red A debe pasar por RTR-D.
+
+---
+
+### Ejercicio 5
+
+Sobre el mismo gráfico del ejercicio 3, indique:
+
+a) Cantidad de dominios de broadcast y de colisión.
+
+b) PC-D envía un PING satisfactorio a PC-G. Enumere todos los mensajes recibidos por PC-E durante el evento mencionado
+
+c) PC-B envía un PING a PC-F. Indique los campos de capa de red (origen y destino) y de enlace (origen y destino) cuando el mensaje sale de RTR-A
+
+---
+
