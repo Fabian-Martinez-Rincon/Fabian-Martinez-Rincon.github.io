@@ -575,5 +575,20 @@ Indique cuáles de las siguientes opciones son correctas en relación a IPv6.
 
 ## Redes y comunicaciones - 1ra fecha (28/06/2023)
 
+Consideraciones:
+
+- Todas las respuestas deberán ser debidamente justificadas en cualquier otro caso serán consideradas incorrectas. La justificación debe constar de información que demuestre dominio del área.
+- Al comenzar cada ejercicio todas las tablas de caché, ARP, CAM… están vacías salvo que se indique lo contrario.
+
+
+### Ejercicio 1
+
+Dada la siguiente topología y considerando que:
+
+- DNS Server es resolver solo para su red.
+- unlp.unlp.edu.ar es resolver solo para su red y autoritativo para el espacio de nombres unlp.edu.ar.
+- El resto de servidores DNS son solo autoritativos para los dominios que indican
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f067c682-154e-4fb3-b15e-2b4f483f829e)
 
 ---
