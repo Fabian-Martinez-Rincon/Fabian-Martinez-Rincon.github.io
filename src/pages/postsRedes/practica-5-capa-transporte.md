@@ -235,7 +235,7 @@ ss -t state established
 Recv-Q    Send-Q       Local Address:Port       Peer Address:Port    Process  
 ```
 
-<details><summary>Detalles</summar>
+
 
 El comando `ss -t state established` es utilizado para ver las conexiones TCP que están actualmente establecidas en tu sistema. Aquí te explico en detalle cada parte del comando y lo que muestra en su salida:
 
@@ -261,7 +261,6 @@ La salida típica de este comando incluye varias columnas que proporcionan infor
 
 Este comando es especialmente útil para los administradores de sistemas y desarrolladores que necesitan diagnosticar problemas de red, monitorear el rendimiento de las aplicaciones de red o simplemente obtener un resumen de todas las conexiones TCP activas en un sistema.
 
-</detais>
 
 `b) Para listar las comunicaciones UDP establecidas:`
 ```bash
@@ -271,7 +270,7 @@ Recv-Q   Send-Q        Local Address:Port       Peer Address:Port     Process
 0        0          10.0.2.15%enp0s3:bootpc         10.0.2.2:bootps     
 ```
 
-<details><summary>Detalles</summary>
+
 
 El comando `ss -u state established` es un poco inusual cuando se aplica a protocolos sin conexión como UDP, porque UDP, a diferencia de TCP, no tiene un estado "establecido" como tal. Sin embargo, el comando intentará mostrar las conexiones UDP que se pueden describir como activas o abiertas, aunque UDP en sí mismo no establece una conexión persistente entre dos puntos.
 
@@ -294,7 +293,7 @@ El comando `ss -u state established` es un poco inusual cuando se aplica a proto
 - **Process**: Detalles del proceso que usa este socket UDP, si están disponibles y si se ejecuta `ss` con los privilegios adecuados. En el ejemplo que has proporcionado, esta columna no muestra ningún proceso, lo que puede ser típico para las transmisiones de bajo nivel como DHCP donde el proceso puede ser parte del sistema operativo en lugar de un proceso de usuario visible.
 
 En resumen, aunque el uso de `state established` con UDP puede no ser conceptualmente correcto debido a la naturaleza sin conexión de UDP, este comando puede ser útil para identificar los puertos UDP activos y la dirección de sus comunicaciones en situaciones específicas como transacciones DHCP o DNS.
-</details>
+
 
 `c) Obtener sólo los servicios TCP que están esperando comunicaciones:`
 ```bash
@@ -310,7 +309,6 @@ LISTEN  0       4096                  [::1]:50051           [::]:*
 LISTEN  0       4096     [::ffff:127.0.0.1]:50051              *:*     
 ```
 
-<details><summary>Detalles</summary>
 
 El comando `ss -tln` es utilizado para listar todos los sockets TCP en estado `LISTEN`, lo cual indica que estos sockets están configurados para aceptar conexiones entrantes. Esta es una herramienta crucial para los administradores de sistemas y de redes para verificar qué servicios están activos y escuchando en qué puertos. Aquí está un desglose detallado de lo que muestra cada columna en la salida de este comando:
 
@@ -341,7 +339,7 @@ El comando `ss -tln` es utilizado para listar todos los sockets TCP en estado `L
 - `[::1]:50051` muestra un servicio que está escuchando en el puerto 50051 solo en IPv6 en la interfaz de loopback.
 
 Estos detalles son esenciales para la gestión de la seguridad y la configuración del servidor, ya que permiten a los administradores saber qué puertos están abiertos y listos para recibir conexiones, lo cual es vital para asegurar y optimizar el servidor.
-</details>
+
 
 El flag `-l` lista los sockets que están en estado de escucha, y `-n` evita la resolución de nombres, mostrando las direcciones IP y números de puerto en formato numérico.
 
