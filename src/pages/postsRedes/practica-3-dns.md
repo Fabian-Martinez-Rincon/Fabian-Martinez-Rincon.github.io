@@ -5,7 +5,7 @@ pubDate: 2024-04-13
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/Redes/dns.webp'
+    url: '/posts/Redes/dns.jpg'
     alt: 'El logotipo completo de Astro.'
 tags: ["linux", "vim", "bash"]
 category: Redes

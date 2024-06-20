@@ -5,7 +5,7 @@ pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/Redes/capa-red.webp'
+    url: '/posts/Redes/red.jpg'
     alt: ''
 tags: ["Capa de Aplicación"]
 category: Redes

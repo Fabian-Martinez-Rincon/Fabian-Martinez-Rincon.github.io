@@ -5,7 +5,7 @@ pubDate: 2024-04-20
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/Redes/capa-transporte.webp'
+    url: '/posts/Redes/transporte.jpg'
     alt: ''
 tags: ["Capa de Aplicación"]
 category: Redes
