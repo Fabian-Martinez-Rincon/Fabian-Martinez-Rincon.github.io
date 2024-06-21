@@ -673,115 +673,301 @@ Estos comandos proporcionan información detallada sobre el estado de las conexi
 
 ---
 
-### Ejercicio 10
+### Ejercicio 10 CONSULTAR ESTE EJERCICIO
 
 `¿Qué sucede si llega un segmento TCP con el flag SYN activo a un host que no tiene ningún proceso esperando en el puerto destino de dicho segmento (es decir, que dicho puerto no está en estado LISTEN)?`
 
+Cuando un segmento TCP con el flag SYN activo llega a un puerto que no está en estado LISTEN en el host de destino (es decir, no hay ningún proceso escuchando en ese puerto), el sistema operativo generalmente responde con un paquete TCP que tiene el flag RST (Reset) activado. Esto indica al emisor que el puerto de destino no está disponible o que no hay un servicio esperando aceptar conexiones.
 
 `Utilice **hping3** para enviar paquetes TCP al puerto destino 22 de la máquina virtual con el flag SYN activado.`
 
+```bash
+hping3 -p 22 -S localhost
+```
+
+```bash
+redes@debian:~$ sudo hping3 -p 22 -S localhost
+HPING localhost (lo 127.0.0.1): S set, 40 headers + 0 data bytes
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=0 win=65495 rtt=8.0 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=1 win=65495 rtt=7.7 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=2 win=65495 rtt=6.2 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=3 win=65495 rtt=0.3 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=4 win=65495 rtt=4.1 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=5 win=65495 rtt=3.6 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=6 win=65495 rtt=7.3 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=7 win=65495 rtt=3.2 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=8 win=65495 rtt=10.7 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=9 win=65495 rtt=8.8 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=10 win=65495 rtt=2.6 ms
+len=44 ip=127.0.0.1 ttl=64 DF id=0 sport=22 flags=SA seq=11 win=65495 rtt=1.5 ms
+^C
+--- localhost hping statistic ---
+12 packets transmitted, 12 packets received, 0% packet loss
+round-trip min/avg/max = 0.3/5.3/10.7 ms
+```
+
+Cuando ejecutas el comando `hping3` con los parámetros que proporcionaste, estás realizando una serie de pruebas para enviar paquetes TCP con el flag SYN activado (indicado por `-S`) al puerto 22 del host local (`localhost` o `127.0.0.1`). Veamos en detalle qué significa cada parte de la salida y qué está ocurriendo:
+
+### Descripción del Comando y Salida
+- **Comando:** `sudo hping3 -p 22 -S localhost`
+  - `-p 22`: Esto especifica que el puerto destino de los paquetes es el 22, que es típicamente utilizado por el servicio SSH.
+  - `-S`: Indica que el flag SYN (synchronize) de TCP está activado. Este flag se utiliza para iniciar una conexión TCP, es la primera parte del "three-way handshake" que TCP usa para establecer una conexión.
+  - `localhost`: Es el nombre del host que se resuelve a la dirección IP `127.0.0.1`, que es la dirección de loopback. Esto significa que estás enviando paquetes a tu propio equipo.
+
+### Salida de `hping3`
+Cada línea de la salida muestra un paquete que ha sido enviado y la respuesta recibida:
+- `len=44`: Longitud del paquete, incluyendo cabeceras IP y TCP, que suman 40 bytes más algunos bytes de opciones de TCP, totalizando 44 bytes.
+- `ip=127.0.0.1`: La dirección IP de destino (y de origen, ya que es loopback).
+- `ttl=64`: Time to live, establecido por defecto en sistemas Linux. Indica el número máximo de saltos (routers) que un paquete puede hacer antes de ser descartado.
+- `DF`: Don't Fragment flag está activado, lo que significa que el paquete no debería ser fragmentado durante la transmisión.
+- `id=0`: Identificador del paquete, utilizado para la reensamblación de fragmentos.
+- `sport=22`: Puerto de origen, que es el puerto 22, aunque en realidad representa el puerto destino en este contexto.
+- `flags=SA`: Indica los flags TCP establecidos en la respuesta. 'S' es SYN, y 'A' es ACK. Esto significa que el host de destino ha recibido tu SYN y está respondiendo con SYN y ACK, que es el segundo paso en el establecimiento de una conexión TCP.
+- `seq=0` y así sucesivamente: Número de secuencia del paquete.
+- `win=65495`: Tamaño de la ventana TCP, que indica cuántos bytes están dispuestos a recibir antes de recibir un acuse de recibo.
+- `rtt=8.0 ms` y variaciones: Round-trip time, el tiempo que toma para que el paquete vaya y vuelva desde el origen al destino.
+
+### Estadísticas de `hping3`
+- `12 packets transmitted, 12 packets received, 0% packet loss`: Total de paquetes enviados y recibidos, mostrando que no hubo pérdida de paquetes, lo cual es esperado en una interfaz de loopback, donde los paquetes no necesitan viajar a través de redes externas.
+- `round-trip min/avg/max = 0.3/5.3/10.7 ms`: Estadísticas del tiempo de ida y vuelta mínimo, promedio y máximo.
+
+### Interpretación
+El hecho de que recibas respuestas con los flags SYN y ACK indica que hay un proceso (en este caso, probablemente el servidor SSH) escuchando en el puerto 22 de tu máquina local. La conexión de loopback es utilizada para probar servicios en tu propio equipo sin afectar la red externa, proporcionando una manera eficaz de asegurarse de que el servicio está operativo y responde como se espera.
 
 `Utilice **hping3** para enviar paquetes TCP al puerto destino 40 de la máquina virtual con el flag SYN activado.`
 
-`¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores?`
-
-`¿Puede explicar a qué se debe? `
-
-> (Ayuda: utilice el comando ss visto anteriormente)
-
-Cuando un segmento TCP con el flag SYN llega a un host, pero no hay ningún proceso escuchando en el puerto destino (es decir, el puerto no está en estado LISTEN), el sistema operativo del host generalmente responde con un segmento TCP que tiene los flags RST (Reset) y ACK (Acknowledgment) activados. Esto se hace para indicar al remitente que el puerto destino no está disponible o que no hay un proceso que pueda aceptar la conexión.
-
-### Experimento con hping3
-
-Para ilustrar este comportamiento, puedes usar **hping3** para enviar paquetes TCP al puerto 22 y al puerto 40 de una máquina virtual. Supongamos que el puerto 22 está abierto y escuchando (estado LISTEN), mientras que el puerto 40 está cerrado.
-
-**Comando para el puerto 22:**
 ```bash
-sudo hping3 -S -p 22 <dirección IP de la VM>
+redes@debian:~$ sudo hping3 -p 40 -S localhost
+HPING localhost (lo 127.0.0.1): S set, 40 headers + 0 data bytes
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=0 win=0 rtt=8.0 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=1 win=0 rtt=3.6 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=2 win=0 rtt=7.2 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=3 win=0 rtt=12.3 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=4 win=0 rtt=2.6 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=5 win=0 rtt=0.2 ms
+len=40 ip=127.0.0.1 ttl=64 DF id=0 sport=40 flags=RA seq=6 win=0 rtt=3.6 ms
+^C
+--- localhost hping statistic ---
+7 packets transmitted, 7 packets received, 0% packet loss
+round-trip min/avg/max = 0.2/5.4/12.3 ms
 ```
-Donde `-S` activa el flag SYN y `-p 22` especifica que el puerto destino es el 22.
 
-**Comando para el puerto 40:**
+La salida del comando `hping3` que ejecutaste al enviar paquetes TCP con el flag SYN al puerto 40 en tu propia máquina (`localhost` o `127.0.0.1`) muestra un comportamiento interesante, y algo diferente de lo que observaste cuando el puerto destino era el 22. Aquí está lo que cada parte de la salida significa y por qué es diferente:
+
+### Descripción del Comando y Salida
+- **Comando:** `sudo hping3 -p 40 -S localhost`
+  - `-p 40`: Especifica que el puerto destino de los paquetes es el 40, un puerto que no es comúnmente utilizado para servicios estándar.
+  - `-S`: Indica que el flag SYN está activado, que se usa para solicitar el inicio de una conexión TCP.
+
+### Salida de `hping3`
+Cada línea refleja la respuesta a cada paquete SYN enviado:
+- `len=40`: Longitud del paquete, solo incluye las cabeceras IP y TCP sin datos adicionales.
+- `ip=127.0.0.1`: Dirección IP de destino, que es la dirección de loopback.
+- `ttl=64`: Time to live, configurado por defecto en sistemas Linux.
+- `DF`: Don't Fragment flag está activado.
+- `id=0`: Identificador del paquete.
+- `sport=40`: Puerto de origen en la respuesta, que refleja el puerto destino que especificaste.
+- `flags=RA`: Los flags TCP establecidos en la respuesta. 'R' es RST (Reset) y 'A' es ACK. Esto indica que el host de destino (tu propia máquina) ha recibido tu solicitud SYN pero no tiene ningún proceso escuchando en el puerto 40, por lo que responde con un Reset para indicar que la conexión no puede ser establecida.
+- `seq=0` y así sucesivamente: Número de secuencia del paquete.
+- `win=0`: Tamaño de la ventana TCP es 0, lo que refuerza el hecho de que la conexión no se puede establecer porque no hay un proceso que acepte la conexión.
+- `rtt=8.0 ms` y variaciones: Tiempo de ida y vuelta del paquete.
+
+### Estadísticas de `hping3`
+- `7 packets transmitted, 7 packets received, 0% packet loss`: Todos los paquetes enviados fueron respondidos, lo que indica que los paquetes alcanzaron el destino y fueron procesados.
+- `round-trip min/avg/max = 0.2/5.4/12.3 ms`: Tiempos de respuesta mínimos, promedios y máximos.
+
+### Interpretación
+La diferencia clave aquí es que los paquetes fueron respondidos con el flag RST activado, indicando que el puerto 40 no está en estado de escucha y no hay ningún servicio disponible para aceptar la conexión en ese puerto. Este es un comportamiento normal cuando se intenta conectar a un puerto que no tiene un servicio asociado: el sistema operativo automáticamente responde con un paquete TCP con el flag RST para cerrar la conexión.
+
+El uso de RST es una manera eficiente de informar al emisor que no hay un receptor válido en el puerto especificado, permitiendo al emisor cerrar el intento de conexión inmediatamente en lugar de esperar tiempos de espera por respuestas que nunca llegarán.
+
+
+`¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores? ¿Puede explicar a qué se debe?`
+
+> (Ayuda: utilice el comando ss visto anteriormente)  
+
 ```bash
-sudo hping3 -S -p 40 <dirección IP de la VM>
+redes@debian:~$ ss -tuln
+Netid   State    Recv-Q   Send-Q          Local Address:Port      Peer Address:Port  Process  
+udp     UNCONN   0        0                     0.0.0.0:631            0.0.0.0:*              
+udp     UNCONN   0        0                     0.0.0.0:47816          0.0.0.0:*              
+udp     UNCONN   0        0                   127.0.0.1:4038           0.0.0.0:*              
+udp     UNCONN   0        0                     0.0.0.0:5353           0.0.0.0:*              
+udp     UNCONN   0        0                        [::]:44538             [::]:*              
+udp     UNCONN   0        0                        [::]:5353              [::]:*              
+tcp     LISTEN   0        128                   0.0.0.0:22             0.0.0.0:*              
+tcp     LISTEN   0        128                 127.0.0.1:631            0.0.0.0:*              
+tcp     LISTEN   0        5                   127.0.0.1:4038           0.0.0.0:*              
+tcp     LISTEN   0        128                      [::]:22                [::]:*              
+tcp     LISTEN   0        128                     [::1]:631               [::]:*              
+tcp     LISTEN   0        4096                    [::1]:50051             [::]:*              
+tcp     LISTEN   0        4096       [::ffff:127.0.0.1]:50051                *:*  
 ```
-De manera similar, este comando intenta iniciar una conexión TCP al puerto 40 con el flag SYN.
 
-### Diferencias en las respuestas
 
-Las respuestas obtenidas pueden diferir en los siguientes aspectos:
-- **Respuesta al puerto 22**: Si el puerto 22 está en estado LISTEN, la respuesta esperada del host es un paquete con los flags SYN y ACK activados, indicando que el host está dispuesto a establecer la conexión.
-- **Respuesta al puerto 40**: Si el puerto 40 no está en estado LISTEN (cerrado), la respuesta esperada es un paquete con los flags RST y ACK, indicando que la conexión no puede ser establecida porque el puerto está cerrado o no hay un servicio que escuche en ese puerto.
 
-### Explicación
 
-La diferencia en las respuestas se debe al estado de los puertos en el host de destino. Los puertos que están activos y en estado LISTEN están preparados para aceptar nuevas conexiones, lo cual se señaliza con una respuesta SYN-ACK. Por otro lado, los puertos que no tienen servicios asociados que los escuchen se consideran cerrados y el host informa esto mediante una respuesta RST-ACK.
+Para analizar las diferencias en las respuestas obtenidas al enviar paquetes SYN a los puertos 22 y 40 usando `hping3` y entender a qué se deben, primero recapitulemos los resultados:
 
-Para verificar el estado de los puertos en el host, puedes utilizar el comando `ss` en la máquina virtual:
+1. **Puerto 22 (SSH)**
+   - Recibiste respuestas con flags `SA` (SYN-ACK), indicando que el puerto está en estado LISTEN y que un proceso (el servidor SSH) está activo y listo para aceptar conexiones.
+
+2. **Puerto 40**
+   - Las respuestas tenían los flags `RA` (RST-ACK), indicando que no hay ningún proceso escuchando en ese puerto, y el sistema operativo responde automáticamente con un paquete de reset para cerrar el intento de conexión.
+
+### Uso del Comando `ss` para Confirmar
+
+Para entender mejor por qué ocurren estas diferencias, podemos usar el comando `ss` que proporciona estadísticas de los sockets. Ejecutar `ss -tuln` mostrará los puertos que están actualmente en escucha (LISTEN) en tu sistema:
+
 ```bash
 ss -tuln
 ```
-Este comando te mostrará una lista de todos los puertos en uso y sus estados, ayudándote a confirmar si un puerto específico está escuchando o no.
+
+- `-t` muestra sockets TCP.
+- `-u` muestra sockets UDP (no necesarios en este caso, pero útiles para una visión completa).
+- `-l` lista solo los sockets que están en estado LISTEN.
+- `-n` muestra números de puerto en lugar de nombres de servicio.
+
+Este comando te permitirá ver claramente qué puertos están activos y escuchando. Por ejemplo, verás el puerto 22 listado bajo TCP si SSH está activo, y no verás el puerto 40 si ningún servicio está vinculado a él.
+
+### Explicación de las Diferencias
+
+Las diferencias en las respuestas se deben a cómo el sistema operativo maneja los puertos sin servicios asignados comparado con los que sí tienen servicios escuchando:
+
+- **Puerto con Servicio (22):** Cuando un puerto está en estado LISTEN y recibe un paquete SYN, el protocolo TCP del sistema operativo responde con un paquete SYN-ACK, invitando al remitente a continuar con el establecimiento de la conexión (el three-way handshake de TCP).
+
+- **Puerto sin Servicio (40):** Cuando un paquete SYN llega a un puerto que no está en estado LISTEN, el sistema operativo envía un paquete RST-ACK para rechazar inmediatamente el intento de conexión, indicando que no hay ningún servicio que pueda manejar esa solicitud en el puerto especificado.
+
+Esta gestión ayuda a optimizar los recursos del sistema y proporciona retroalimentación inmediata a los clientes que intentan establecer conexiones, lo cual es crucial para aplicaciones y servicios que dependen de la disponibilidad de puertos específicos para funcionar correctamente.
+
 
 ---
 
 ### Ejercicio 11
 
-¿Qué sucede si llega un datagrama UDP a un host que no tiene a ningún proceso esperando en el puerto destino de dicho datagrama (es decir, que dicho puerto no está en estado LISTEN)
+¿Qué sucede si llega un datagrama UDP a un host que no tiene a ningún proceso esperando en el puerto destino de dicho datagrama (es decir, que dicho puerto no está en estado LISTEN)?
+
+Cuando un datagrama UDP llega a un puerto en un host donde no hay ningún proceso esperando (es decir, ningún proceso vinculado a ese puerto específico), el comportamiento típico del sistema es enviar un mensaje de error de tipo ICMP (Internet Control Message Protocol) de vuelta al emisor. Este mensaje de error generalmente es del tipo "Destination Unreachable", específicamente con un código que indica "Port Unreachable". Esto informa al emisor que no hay ninguna aplicación que pueda manejar el datagrama en el puerto destino.
 
 #### Parte a
 
-Utilice hping3 para enviar datagramas UDP al puerto destino 5353 de la máquina virtual.
+`Utilice hping3 para enviar datagramas UDP al puerto destino 5353 de la máquina virtual.`
+
+```bash
+redes@debian:~$ sudo hping3 -2 -p 5353 -S localhost
+HPING localhost (lo 127.0.0.1): udp mode set, 28 headers + 0 data bytes
+
+^C
+--- localhost hping statistic ---
+2 packets transmitted, 0 packets received, 100% packet loss
+round-trip min/avg/max = 0.0/0.0/0.0 ms
+redes@debian:~$ 
+```
 
 #### Parte b
 
 Utilice hping3 para enviar datagramas UDP al puerto destino 40 de la máquina virtual.
 
+```bash
+redes@debian:~$ sudo hping3 -2 -p 40 -S localhost
+HPING localhost (lo 127.0.0.1): udp mode set, 28 headers + 0 data bytes
+ICMP Port Unreachable from ip=127.0.0.1 name=localhost 
+status=0 port=2212 seq=0
+ICMP Port Unreachable from ip=127.0.0.1 name=localhost 
+status=0 port=2213 seq=1
+ICMP Port Unreachable from ip=127.0.0.1 name=localhost 
+status=0 port=2214 seq=2
+ICMP Port Unreachable from ip=127.0.0.1 name=localhost 
+status=0 port=2215 seq=3
+ICMP Port Unreachable from ip=127.0.0.1 name=localhost 
+status=0 port=2216 seq=4
+^C
+--- localhost hping statistic ---
+5 packets transmitted, 5 packets received, 0% packet loss
+round-trip min/avg/max = 4.3/6.8/10.8 ms
+```
+
+En este caso, utilizaste `hping3` para enviar paquetes UDP al puerto 40 de tu host local (`localhost`) y también has incluido el flag `-S` que, como mencionamos anteriormente, es inapropiado para UDP. Sin embargo, esta vez has recibido respuestas, así que vamos a examinar qué sucedió.
+
+### Comando y Configuración
+```bash
+sudo hping3 -2 -p 40 -S localhost
+```
+- `-2`: Configura `hping3` para usar el modo UDP.
+- `-p 40`: Especifica el puerto destino como el 40, que generalmente no es utilizado por servicios comunes.
+- `-S`: A pesar de ser un flag de TCP, en este contexto parece no afectar la formación del paquete UDP en `hping3`, aunque su presencia es innecesaria y puede ser confusa.
+
+### Salida de `hping3`
+- `ICMP Port Unreachable from ip=127.0.0.1 name=localhost`: Este es un mensaje de error del tipo ICMP, específicamente un "Destination Unreachable" con el código "Port Unreachable". Este mensaje es generado por el sistema operativo cuando un paquete UDP llega a un puerto en el cual no hay ningún proceso escuchando. 
+- `status=0 port=2212 seq=0` y las líneas similares indican el número de puerto desde el cual `hping3` está enviando los paquetes y la secuencia de los mismos. Los puertos mencionados (2212, 2213, etc.) son los puertos de origen seleccionados por `hping3` para enviar los paquetes, y no tienen que ver con el puerto destino (40).
+
+### Interpretación de la Respuesta
+El hecho de que recibas "ICMP Port Unreachable" confirma varias cosas:
+1. **No hay ningún proceso escuchando en el puerto 40**: Esto es esperado ya que el puerto 40 raramente es usado por servicios estándar.
+2. **Tu sistema está correctamente configurado para responder a paquetes UDP no solicitados con mensajes ICMP apropiados**: Esto es útil para diagnósticos de red y asegura que los sistemas emisores puedan saber cuando sus paquetes están siendo dirigidos a puertos inactivos.
+
+### Conclusión
+Este experimento muestra cómo `hping3` puede ser utilizado para diagnosticar el estado de los puertos en tu sistema usando UDP y cómo el sistema responde con mensajes de error ICMP cuando no encuentra un servicio escuchando en el puerto especificado. En futuras pruebas, para evitar confusiones, es mejor omitir el flag `-S` cuando estés enviando paquetes UDP con `hping3`.
+
 #### Parte c
 
-¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores? ¿Puede explicar a qué se debe? (Ayuda: utilice el comando ss visto anteriormente).
+`¿Qué diferencias nota en las respuestas obtenidas en los dos casos anteriores? ¿Puede explicar a qué se debe? (Ayuda: utilice el comando ss visto anteriormente).`
 
-Cuando un datagrama UDP llega a un host en un puerto en el que no hay ningún proceso esperando (es decir, que dicho puerto no está en estado LISTEN), el comportamiento es ligeramente diferente al de TCP debido a la naturaleza sin conexión de UDP. En TCP, se recibe un paquete con los flags RST y ACK para indicar que el puerto está cerrado, pero en UDP, la respuesta típica a un datagrama enviado a un puerto cerrado es un mensaje de error ICMP de tipo "Destination Unreachable", específicamente con el código "Port Unreachable".
+Para analizar las diferencias entre las respuestas obtenidas en los dos casos anteriores (usando `hping3` para enviar paquetes a los puertos 22 y 40) y determinar a qué se deben estas diferencias, es útil utilizar el comando `ss` que mencionaste. Este comando nos proporcionará información sobre los puertos que están actualmente en estado LISTEN en la máquina, es decir, aquellos puertos que tienen un servicio asociado escuchando conexiones entrantes.
 
-### Experimento con hping3
+### Recordatorio de los Comandos y Respuestas:
 
-Vamos a ilustrar este comportamiento enviando datagramas UDP a dos puertos diferentes de una máquina virtual usando **hping3**.
+1. **Puerto 22 (Conexión SSH)**
+   - Los paquetes TCP enviados al puerto 22 recibieron una respuesta con los flags `SA` (SYN-ACK), indicando que hay un servicio (SSH) listo y dispuesto a establecer una conexión TCP.
 
-#### Parte a: Puerto 5353
+2. **Puerto 40 (Sin Servicio Conocido)**
+   - Los paquetes UDP enviados al puerto 40 resultaron en respuestas ICMP de tipo "Port Unreachable", indicando que no hay un servicio escuchando en ese puerto.
 
-**Comando para el puerto 5353:**
+### Usando el Comando `ss`
+
+Ahora vamos a usar el comando `ss` para confirmar estos detalles:
+
 ```bash
-sudo hping3 --udp -p 5353 <dirección IP de la VM>
+ss -tuln
 ```
-El puerto 5353 se usa comúnmente para mDNS (Multicast DNS), y es posible que esté abierto en algunas configuraciones.
 
-#### Parte b: Puerto 40
-
-**Comando para el puerto 40:**
 ```bash
-sudo hping3 --udp -p 40 <dirección IP de la VM>
+redes@debian:~$ ss -tuln
+Netid State  Recv-Q Send-Q      Local Address:Port    Peer Address:Port Process 
+udp   UNCONN 0      0                 0.0.0.0:5353         0.0.0.0:*            
+udp   UNCONN 0      0                 0.0.0.0:50522        0.0.0.0:*            
+udp   UNCONN 0      0                 0.0.0.0:631          0.0.0.0:*            
+udp   UNCONN 0      0               127.0.0.1:4038         0.0.0.0:*            
+udp   UNCONN 0      0                    [::]:35837           [::]:*            
+udp   UNCONN 0      0                    [::]:5353            [::]:*            
+tcp   LISTEN 0      128             127.0.0.1:631          0.0.0.0:*            
+tcp   LISTEN 0      5               127.0.0.1:4038         0.0.0.0:*            
+tcp   LISTEN 0      128               0.0.0.0:22           0.0.0.0:*            
+tcp   LISTEN 0      128                 [::1]:631             [::]:*            
+tcp   LISTEN 0      4096                [::1]:50051           [::]:*            
+tcp   LISTEN 0      4096   [::ffff:127.0.0.1]:50051              *:*            
+tcp   LISTEN 0      128                  [::]:22              [::]:*   
 ```
-Este puerto probablemente esté cerrado, a menos que se haya configurado específicamente para alguna aplicación.
 
-### Diferencias en las respuestas
+Este comando te dará una lista de todos los puertos en estado LISTEN en tu sistema:
 
-#### Respuestas esperadas
+- **`-t`** muestra los sockets TCP.
+- **`-u`** muestra los sockets UDP.
+- **`-l`** filtra para mostrar solo aquellos en estado LISTEN.
+- **`-n`** muestra números de puerto, en lugar de intentar resolver los nombres de servicio.
 
-- **Respuesta al puerto 5353**: Si el puerto 5353 está siendo utilizado por algún servicio como mDNS, es posible que no recibas ningún mensaje ICMP de "Destination Unreachable". En cambio, podrías recibir una respuesta del servicio mDNS si está configurado para responder a solicitudes generales.
-- **Respuesta al puerto 40**: Si no hay ningún servicio escuchando en el puerto 40, la respuesta esperada desde el host sería un mensaje ICMP "Destination Unreachable", con el código "Port Unreachable", indicando que no hay un proceso que pueda recibir el datagrama.
+### Interpretación Esperada
 
-#### Explicación de las diferencias
+- Si ejecutas `ss -tuln`, esperarías ver el puerto 22 listado bajo TCP, indicando que SSH está activo y escuchando.
+- No esperarías ver el puerto 40 listado bajo TCP o UDP, lo que confirma por qué el sistema respondió con mensajes ICMP de "Port Unreachable" cuando intentaste enviar paquetes UDP a ese puerto.
 
-Las diferencias en las respuestas se deben al estado de los puertos en el host de destino y a cómo están configurados los servicios en esos puertos. Si un puerto está en uso por un servicio que responde a datagramas UDP, podrías no recibir un mensaje ICMP de error. Por otro lado, un puerto que no tiene un servicio asociado o que no está en estado LISTEN típicamente responderá con un error ICMP indicando que el puerto es inalcanzable.
+### ¿Por Qué las Diferencias en las Respuestas?
 
-#### Verificación con `ss`
+- **Puerto 22**: Al estar en estado LISTEN y tener un servicio activo (SSH), el sistema operativo responde a paquetes SYN con un SYN-ACK, facilitando la fase inicial de un three-way handshake de TCP, el proceso estándar para establecer una conexión TCP.
 
-Para entender mejor por qué se reciben estas respuestas, puedes usar el comando `ss` en la máquina virtual para verificar el estado de los puertos:
-```bash
-ss -u -a
-```
-Este comando muestra todos los puertos UDP y su estado. Esto te permitirá ver si los puertos 5353 o 40 están activos y si hay algún proceso asociado escuchándolos.
+- **Puerto 40**: Al no tener un servicio escuchando en ese puerto, no hay ningún proceso que pueda responder a paquetes UDP dirigidos a él, resultando en que el sistema operativo genere automáticamente respuestas ICMP de "Port Unreachable". Esto es un mecanismo estándar para informar al emisor que el puerto destino no está disponible para recibir o procesar paquetes.
 
+Estos resultados reflejan la configuración de los servicios en tu sistema y cómo el sistema operativo maneja los paquetes dirigidos a puertos inactivos o activos. Las respuestas ICMP "Port Unreachable" son una forma importante de proporcionar feedback a los emisores sobre la falta de disponibilidad de un puerto o servicio, permitiendo que los procesos de red se ajusten en consecuencia.
 
 ---
 
@@ -791,47 +977,176 @@ Investigue los distintos tipos de estado que puede tener una conexión TCP.
 
 Ver https://users.cs.northwestern.edu/~agupta/cs340/project2/TCPIP_State_Transition_Diagram.pdf
 
-Parece que hubo un error al intentar recuperar la información directamente desde la página de la Universidad Northwestern, ya que el contenido está en formato PDF, que no puedo procesar directamente. Sin embargo, puedo proporcionarte una descripción general de los estados por los que puede pasar una conexión TCP basada en el conocimiento estándar del diagrama de transición de estados de TCP.
+En TCP (Protocolo de Control de Transmisión), cada conexión pasa por varios estados durante su ciclo de vida. TCP es un protocolo de comunicación orientado a la conexión, lo que significa que establece una conexión explícita antes de la transferencia de datos y la cierra una vez completada la transferencia. Aquí están los principales estados de una conexión TCP:
 
-### Estados de una Conexión TCP
+##### 1. **CLOSED**
+Es el estado inicial y final de cada conexión. Indica que no hay conexión activa o pendiente.
 
-1. **CLOSED**: El estado inicial, donde no hay conexión activa ni pendiente.
+##### 2. **LISTEN**
+El servidor está esperando conexiones entrantes. En este estado, el servidor está listo para aceptar solicitudes de conexión de clientes.
 
-2. **LISTEN**: El servidor espera una conexión entrante, es decir, está listo para aceptar solicitudes.
+##### 3. **SYN-SENT**
+El cliente envía un segmento SYN para iniciar una conexión activa y pasa al estado SYN-SENT, esperando una respuesta del servidor.
 
-3. **SYN-SENT**: El cliente ha enviado un paquete SYN para iniciar una conexión y está esperando un paquete SYN-ACK del servidor.
+##### 4. **SYN-RECEIVED**
+El servidor recibe el segmento SYN del cliente y responde con un segmento SYN-ACK. El servidor entonces pasa al estado SYN-RECEIVED mientras espera la confirmación del cliente.
 
-4. **SYN-RECEIVED**: El servidor ha recibido el SYN del cliente y ha enviado un SYN-ACK como respuesta, esperando un ACK final para establecer la conexión.
+##### 5. **ESTABLISHED**
+Ambos sistemas (cliente y servidor) han recibido los segmentos SYN y ACK. En este estado, la conexión está abierta y los datos pueden ser enviados bidireccionalmente.
 
-5. **ESTABLISHED**: Ambos, cliente y servidor, han recibido los reconocimientos necesarios y la conexión está establecida y abierta para la comunicación bidireccional.
+##### 6. **FIN-WAIT-1**
+El estado FIN-WAIT-1 indica que la aplicación ha solicitado el cierre de la conexión, y el sistema espera que el segmento FIN sea acusado o que el servidor envíe su propio segmento FIN.
 
-6. **FIN-WAIT-1**: El host ha enviado un FIN para cerrar su lado de la conexión y está esperando un ACK de FIN.
+##### 7. **FIN-WAIT-2**
+En este estado, el sistema ha recibido un acuse de recibo del segmento FIN del otro extremo y espera un segmento FIN del otro extremo.
 
-7. **FIN-WAIT-2**: El host ha recibido un ACK de su FIN y espera un FIN del otro extremo.
+##### 8. **CLOSE-WAIT**
+El sistema ha recibido un segmento FIN del otro extremo y espera que la aplicación local responda con un segmento FIN.
 
-8. **CLOSE-WAIT**: El host ha recibido un FIN de la otra parte, ha enviado un ACK y está esperando la aplicación para que cierre la conexión.
+##### 9. **CLOSING**
+Ambos lados han solicitado el cierre de la conexión y esperan acusar recibo del cierre del otro extremo.
 
-9. **CLOSING**: Ambos lados han enviado FIN y están esperando el ACK del FIN opuesto.
+##### 10. **LAST-ACK**
+El sistema ha enviado un segmento FIN y espera el último acuse de recibo (ACK) del otro extremo.
 
-10. **LAST-ACK**: El host está esperando el ACK final después de enviar un FIN.
+##### 11. **TIME-WAIT**
+El sistema espera durante un tiempo suficiente para asegurarse de que el extremo remoto ha recibido el acuse de recibo final de su segmento FIN. Este estado también permite que los paquetes viejos en la red se disipen.
 
-11. **TIME-WAIT**: Después de recibir el último ACK en respuesta a un FIN enviado, el host espera un tiempo suficiente para asegurarse de que el remitente ha recibido el ACK antes de cerrar completamente la conexión.
+##### 12. **CLOSED**
+Después de que todos los segmentos FIN y ACK se han intercambiado adecuadamente, la conexión se cierra completamente.
 
-12. **CLOSED**: El estado final después de cerrar la conexión.
-
-Este conjunto de estados asegura que la conexión TCP sea confiable y que todos los paquetes se transmitan de manera ordenada y segura. Si necesitas una explicación más detallada o específica sobre alguno de estos estados o sus transiciones, estaré encantado de ayudar.
+Estos estados garantizan que TCP sea un protocolo confiable y orientado a la conexión, proporcionando gestión de errores, control de flujo, y garantías de entrega de datos en orden.
 
 ---
 
+
 ### Ejercicio 13
 
+Dada la siguiente salida del comando ss, responda:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5a859dc6-7ef3-4c7e-ba49-4cda4c4f85af)
+
+
+Dada la salida del comando `ss` que mostraste, podemos responder a las preguntas basándonos en la información de los estados de conexión TCP y los puertos listados:
+
+`a) ¿Cuántas conexiones hay establecidas?`
+El estado "ESTAB" indica que una conexión está establecida. De la salida, podemos contar:
+
+- Cinco conexiones establecidas (`ESTAB`) hacia el puerto 443.
+- Una conexión establecida hacia el puerto 22 desde `127.0.0.1` a `127.0.0.1:41220`.
+
+**Total: 6 conexiones establecidas**
+
+`b) ¿Cuántos puertos hay abiertos a la espera de posibles nuevas conexiones?`
+Los puertos en estado "LISTEN" están abiertos esperando nuevas conexiones. En la salida, los siguientes puertos están escuchando:
+
+- Puerto 22 (SSH)
+- Puerto 80 (HTTP)
+- Puerto 53 (DNS)
+- Puerto 25 (SMTP)
+
+**Total: 4 puertos escuchando**
+
+`c) El cliente y el servidor de las comunicaciones HTTPS (puerto 443), ¿residen en la misma máquina?`
+Las conexiones a HTTPS mostradas utilizan direcciones IP como `163.10.5.222` en el lado local y direcciones como `64.233.163.120`, `200.115.89.30`, y `64.233.190.99` en el lado remoto, indicando que el cliente y el servidor **no residen en la misma máquina**.
+
+`d) El cliente y el servidor de la comunicación SSH (puerto 22), ¿residen en la misma máquina?`
+Hay una conexión SSH desde `127.0.0.1:41220` a `127.0.0.1:22`, lo que indica que tanto el cliente como el servidor **residen en la misma máquina** (comunicación de loopback).
+
+`e) Liste los nombres de todos los procesos asociados con cada comunicación. Indique para cada uno si se trata de un proceso cliente o uno servidor.`
+- **SSH (puerto 22)**: `sshd` (servidor)
+- **HTTP (puerto 80)**: `apache2` (servidor)
+- **HTTPS (puerto 443)**: `x-www-browser` (cliente)
+- **DNS (puerto 53)**: `named` (servidor)
+- **SMTP (puerto 25)**: `postfix` (servidor)
+- **SSH (puerto 22, loopback)**: `sshd` (servidor) y cliente desde el mismo proceso `sshd` (cliente)
+
+`f) ¿Cuáles conexiones tuvieron el cierre iniciado por el host local y cuál es por el remoto?`
+El estado "CLOSE-WAIT" indica que el cierre fue iniciado por el host remoto, y el host local está esperando cerrar la conexión. Hay una conexión en estado "CLOSE-WAIT" hacia `200.115.89.30:443`, indicando que el cierre fue iniciado por el remoto.
+
+`g) ¿Cuántas conexiones están aún pendientes por establecerse?`
+El estado "SYN-SENT" indica que la conexión está en proceso de ser establecida, con el host local habiendo enviado un SYN y esperando un SYN-ACK en respuesta. Hay una conexión en estado "SYN-SENT" hacia `43.232.2.2:9500`.
+
+Estos análisis proporcionan una visión detallada de los estados y actividades de la red en la máquina en cuestión, basándonos en los estados de las conexiones TCP y los puertos en uso.
+
+---
+
+### Ejercicio 14
+
+Dadas las salidas de los siguientes comandos ejecutados en el cliente y el servidor, responder:
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/321bf1df-2fe4-4eae-8077-0c652ace3fc8)
+
+La información mostrada en las salidas de los comandos `ss` de ambos el servidor y el cliente revela detalles sobre el estado de la conexión TCP en el puerto 110, que comúnmente se usa para el servicio de correo electrónico POP3. Aquí está el análisis detallado de las preguntas planteadas:
+
+`a) ¿Qué segmentos llegaron y cuáles se están perdiendo en la red?`
+
+**Servidor:**
+- **Estado `LISTEN` en el puerto 110**: El servidor está escuchando en el puerto 110, esperando conexiones entrantes.
+- **Estado `SYN-RECV` desde `157.0.0.1:110` hacia `157.0.0.11:52843`**: Esto indica que el servidor ha recibido un segmento SYN del cliente y ha respondido con un segmento SYN-ACK, que está esperando ser confirmado (ACK) por el cliente.
+
+**Cliente:**
+- **Estado `SYN-SENT` desde `157.0.0.11:52843` hacia `157.0.0.1:110`**: Esto muestra que el cliente ha enviado un segmento SYN al servidor y está esperando una respuesta SYN-ACK del servidor.
+
+**Análisis de los segmentos perdidos:**
+- Dado que el servidor muestra `SYN-RECV`, ha enviado el SYN-ACK al cliente, pero el cliente aún está en `SYN-SENT`. Esto sugiere que el segmento SYN-ACK enviado por el servidor puede haberse perdido en la red, ya que el cliente no parece haberlo recibido.
+
+`b) ¿A qué protocolo de capa de aplicación y de transporte se está intentando conectar el cliente?`
+- **Capa de Aplicación:** El puerto 110 es típicamente usado por el protocolo POP3 (Post Office Protocol versión 3), que es un protocolo de capa de aplicación utilizado para recuperar correo electrónico desde un servidor de correo.
+- **Capa de Transporte:** Dado que estamos observando conexiones TCP (`ss -natu`), el cliente está utilizando el protocolo TCP (Protocolo de Control de Transmisión) para establecer una conexión segura y confiable con el servidor.
+
+`c) ¿Qué flags tendría seteado el segmento perdido?`
+- El segmento que probablemente se perdió es el **SYN-ACK**, que es la respuesta del servidor después de recibir un SYN del cliente. Este segmento SYN-ACK es crucial para el segundo paso en el proceso de handshake de tres vías de TCP. 
+- **Flags del segmento perdido:**
+  - **SYN (Synchronize):** Indica que es una sincronización durante el establecimiento de la conexión.
+  - **ACK (Acknowledgment):** Confirma la recepción del segmento SYN inicial del cliente.
+
+Este análisis indica que hay problemas de conectividad que podrían estar relacionados con la configuración de red, pérdida de paquetes, o problemas con firewalls o dispositivos intermediarios que están bloqueando o descartando paquetes específicos. Sería recomendable revisar la configuración de red y posiblemente realizar pruebas adicionales como `traceroute` o `tcpdump` para diagnosticar más a fondo el problema de conectividad.
+
+### Ejercicio 15 CONSULTAR ESTE SI HAY TIEMPO :(
+
 Use CORE para armar una topología como la siguiente, sobre la cual deberá realizar:
+
+Viendo tu captura de pantalla del emulador de red CORE, parece que ya has colocado dos nodos (computadoras) en tu topología. Ahora, para avanzar con el ejercicio y configurar la comunicación entre ellos, te guiaré paso a paso.
+
+### Paso 1: Conectar los Nodos
+1. **Conectar los Nodos**: Utiliza la herramienta de enlace (normalmente representada por un icono de cable) para conectar los dos nodos. Haz clic en un nodo, luego en el otro para establecer un enlace directo entre ellos.
+
+### Paso 2: Configurar las Interfaces de Red de los Nodos
+1. **Asignar Direcciones IP**: Haz doble clic en cada nodo para abrir su configuración. Necesitarás asignar direcciones IP estáticas a cada interfaz de red conectada. Asegúrate de que estén en la misma subred para que puedan comunicarse. Por ejemplo, puedes usar `192.168.1.1/24` para el primer nodo y `192.168.1.2/24` para el segundo.
+
+### Paso 3: Iniciar la Emulación
+1. **Iniciar la Emulación**: Una vez que los nodos están configurados y conectados, inicia la emulación. Esto generalmente se hace con un botón en la barra de herramientas que puede parecer un botón de "play".
+
+### Paso 4: Abrir Terminales en los Nodos
+1. **Abrir Terminales**: Haz clic derecho en cada nodo y selecciona "Open Terminal" o algo similar. Esto abrirá un terminal para cada nodo, donde podrás ejecutar comandos.
+
+### Parte a: Monitorear las Conexiones
+1. **Ejecutar el Comando para Monitorear**: En cada terminal de los nodos, ejecuta el siguiente comando para monitorear el estado de las conexiones en tiempo real:
+   ```bash
+   watch -n 1 'ss -nat'
+   ```
+   - `watch -n 1`: Este comando actualizará la salida cada segundo.
+   - `'ss -nat'`: Muestra todas las conexiones TCP activas y los puertos que están escuchando.
+
+### Explicación del Comando
+- **`watch`**: Este comando se utiliza para ejecutar otro comando de forma periódica, mostrando su salida en pantalla completa. Es útil para ver la evolución de la salida de un comando a lo largo del tiempo.
+- **`ss -nat`**:
+  - **`ss`** es una utilidad para inspeccionar sockets en el sistema.
+  - **`-n`** evita convertir direcciones en nombres.
+  - **`-a`** muestra todos los sockets.
+  - **`-t`** filtra para mostrar solo sockets TCP.
+
+Este comando proporcionará una vista en tiempo real de las conexiones y puertos, lo cual es ideal para tu ejercicio en CORE, ya que podrás ver cómo cambian los estados de las conexiones a medida que realizas configuraciones o pruebas de red.
+
 
 #### Parte a
 
 En ambos equipos inspeccionar el estado de las conexiones y mantener abiertas ambas ventanas con el comando corriendo para poder visualizar los cambios a medida que se realiza el ejercicio.
  
 Ayuda: watch-n1 ’ss-nat’
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/4989636f-935e-4d05-9f8e-b231a5b3756e)
 
 #### Parte b
 
@@ -862,31 +1177,3 @@ i. Cierra la última conexión establecida desde CLIENTE1. Evalúe los estados d
 ii. Corta el servicio de ncat en el servidor(Ctrl+C). Evalúe los estados de las conexiones en ambos equipos.
 
 iii. Cierra la conexión en el cliente. Evalúe nuevamente los estados de las conexiones.
-
----
-
-### Ejercicio 14
-
-Dada la siguiente salida del comando ss, responda:
-
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/5a859dc6-7ef3-4c7e-ba49-4cda4c4f85af)
-
-- **a)** ¿Cuántas conexiones hay establecidas?
-- **b)** ¿Cuántos puertos hay abiertos a la espera de posibles nuevas conexiones?
-- **c)** El cliente y el servidor de las comunicaciones HTTPS(puerto443),¿residen en la misma máquina?
-- **d)** El cliente y el servidor de la comunicación SSH (puerto22), ¿residen en la misma máquina?
-- **e)** Liste los nombres de todos los procesos asociados con cadac omunicación. Indique para cada uno si se trata de un proceso cliente o uno servidor.
-- **f)** ¿Cuáles conexiones tuvieron el cierre iniciado por el host local y cuál es por el remoto?
-- **g)** ¿Cuántas conexiones están aún pendientes por establecerse?
-
----
-
-### Ejercicio 15
-
-Dadas las salidas de los siguientes comandos ejecutados en el cliente y el servidor, responder:
-
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/321bf1df-2fe4-4eae-8077-0c652ace3fc8)
-
-- **a)** ¿Qué segmentos llegaron y cuáles se están perdiendo en la red?
-- **b)** ¿A qué protocolo de capa de aplicación y de transporte se está intentando conectar el cliente?
-- **c)** ¿Qué flags tendría seteado el segmento perdido?
