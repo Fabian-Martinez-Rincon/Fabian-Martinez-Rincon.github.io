@@ -353,54 +353,178 @@ En resumen, el RTT es un componente vital para la administración de rendimiento
 ---
 
 
-### Ejercicio 9
+### Ejercicio 9 Esto es un re quilombo
 
 Para la captura tcp-captura.pcap, responder las siguientes preguntas.
-- a. ¿Cuántos intentos de conexiones TCP hay?
-- b. ¿Cuáles son la fuente y el destino (IP:port) para c/u?
-- c. ¿Cuántas conexiones TCP exitosas hay en la captura? ¿Cómo diferencia las exitosas de las que no lo son? ¿Cuáles flags encuentra en cada una?
-- d. Dada la primera conexión exitosa responder:
-    - i. ¿Quién inicia la conexión?
-    - ii. ¿Quién es el servidor y quién el cliente?
-    - iii. ¿En qué segmentos se ve el 3-way handshake?
-    - iv. ¿Cuáles ISNs se intercambian?
-    - v. ¿Cuál MSS se negoció?
-    - vi. ¿Cuál de los dos hosts envía la mayor cantidad de datos (IP:port)?
-- e. Identificar primer segmento de datos (origen, destino, tiempo, número de fila y número de secuencia TCP).
-    - i. ¿Cuántos datos lleva?
-    - ii. ¿Cuándo es confirmado (tiempo, número de fila y número de secuencia TCP)?
-    - iii. La confirmación, ¿qué cantidad de bytes confirma?
-- f. ¿Quién inicia el cierre de la conexión? ¿Qué flags se utilizan? ¿En cuáles segmentos se ve (tiempo, número de fila y número de secuencia TCP)?
+
+#### a. ¿Cuántos intentos de conexiones TCP hay?
+
+Deberías contar el número de banderas SYN que no tienen un SYN-ACK correspondiente o que tienen múltiples retransmisiones del SYN para identificar intentos de conexión.
+
+#### b. ¿Cuáles son la fuente y el destino (IP:port) para c/u?
+
+Para cada intento de conexión, mira en los campos de fuente y destino del segmento TCP en los paquetes SYN.
+
+#### c. ¿Cuántas conexiones TCP exitosas hay en la captura? ¿Cómo diferencia las exitosas de las que no lo son? ¿Cuáles flags encuentra en cada una?
+
+Las conexiones exitosas se identifican por un handshake de tres vías completado, observable por la presencia de las banderas SYN, SYN-ACK, y ACK. Las conexiones no exitosas podrían tener solo SYN o SYN seguido por RST sin progresar a un handshake completo.
+
+#### d. Dada la primera conexión exitosa responder:
+
+- **¿Quién inicia la conexión?** Generalmente es el host que envía el primer SYN.
+- **¿Quién es el servidor y quién el cliente?** El servidor es el dispositivo que responde con SYN-ACK, y el cliente es el que envía el SYN inicial.
+- **¿En qué segmentos se observa el handshake de tres vías?** Busca el primer SYN, la respuesta SYN-ACK, y el ACK final.
+- **¿Cuáles son los números de secuencia iniciales (ISNs)?** Estos se encuentran en los campos de número de secuencia de los paquetes SYN y SYN-ACK.
+- **¿Qué MSS se negoció?** Esto se encuentra en el campo de opciones de los paquetes SYN, etiquetado como tamaño máximo de segmento.
+- **¿Qué host envía la mayor cantidad de datos?** Suma las longitudes de la carga útil de los segmentos TCP enviados por cada host después del handshake para determinar esto.
+
+
+
+#### e. Identificar primer segmento de datos (origen, destino, tiempo, número de fila y número de secuencia TCP).
+
+- **Origen, destino, tiempo, número de fila y número de secuencia TCP:** Busca el primer paquete después del handshake con una carga útil mayor que cero.
+- **¿Cuántos datos lleva?** Este es el tamaño de la carga útil, sin contar el encabezado TCP.
+- **¿Cuándo y cómo se confirma?** Se confirma por un segmento ACK, que reconocerá el número de secuencia igual al número de secuencia original más la longitud de los datos.
+- **¿Qué cantidad de bytes confirma la confirmación?** Sería el incremento en el campo de reconocimiento sobre el ACK anterior.
+
+
+#### f. ¿Quién inicia el cierre de la conexión? ¿Qué flags se utilizan? ¿En cuáles segmentos se ve (tiempo, número de fila y número de secuencia TCP)?
+
+- **¿Quién inicia el cierre?** Busca quién envía la primera bandera FIN.
+- **¿Qué banderas se utilizan?** Típicamente, FIN y ACK se usan.
+- **¿En qué segmentos se ve el cierre?** Estos son los segmentos con FIN y el ACK final.
+
+ 
+
+
+
+Para llevar a cabo este análisis, abrirías el archivo pcap en Wireshark, seguirías el flujo TCP y revisarías los detalles de los paquetes como se describió. Podrías filtrar tu vista en Wireshark con expresiones como `tcp.flags.syn == 1` para paquetes SYN, o `tcp.flags.fin == 1` para paquetes FIN, para aislar los paquetes relevantes para tu análisis.
+
+Para más detalles sobre cómo usar Wireshark para tal análisis, considera explorar recursos y tutoriales específicamente sobre cómo usar Wireshark, ya que te proporcionarán instrucciones paso a paso sobre cómo navegar e interpretar los datos.
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/7fd320f7-0482-41db-ba7a-856618a2a899)
+
+![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/f47904a5-bb45-4761-957b-58c46ca23e9e)
+
+---
 
 ### Ejercicio 10
 
-Responda las siguientes preguntas respecto del mecanismo de control de flujo.
-- a. ¿Quién lo activa? ¿De qué forma lo hace?
-- b. ¿Qué problema resuelve?
-- c. ¿Cuánto tiempo dura activo y qué situación lo desactiva?
+`Responda las siguientes preguntas respecto del mecanismo de control de flujo.`
+
+El control de flujo es un mecanismo fundamental en la gestión de comunicaciones en redes de computadoras, especialmente en protocolos de la capa de transporte como TCP (Protocolo de Control de Transmisión). Aquí se explica cómo funciona este mecanismo, quién lo activa, el problema que resuelve, y bajo qué condiciones opera.
+
+#### a. ¿Quién lo activa? ¿De qué forma lo hace?
+
+El control de flujo es activado tanto por el emisor como por el receptor en una comunicación de datos:
+
+- **Emisor**: Regula la cantidad de datos que envía al receptor antes de recibir un acuse de recibo (ACK), asegurándose de no saturar el buffer del receptor.
+- **Receptor**: Proporciona retroalimentación al emisor sobre cuántos datos puede recibir sin riesgo de perder información. Esto lo hace a través del campo "ventana" en los encabezados de los paquetes TCP, que indica la cantidad de bytes que está dispuesto a recibir.
+
+Por ejemplo, en TCP, cada segmento que un receptor recibe y procesa exitosamente es respondido con un ACK, donde se especifica la cantidad de espacio libre en el buffer del receptor, informando al emisor cuántos datos más puede enviar antes de que el receptor se sature.
+
+#### b. ¿Qué problema resuelve?
+
+El control de flujo resuelve varios problemas clave en la transmisión de datos en redes:
+
+- **Prevención de la saturación del receptor**: Evita que el emisor envíe más datos de los que el receptor puede procesar a la vez. Sin control de flujo, el buffer del receptor podría desbordarse, llevando a la pérdida de paquetes y a una reducción en la eficiencia de la red debido a la necesidad de retransmisiones.
+- **Optimización del uso del ancho de banda**: Asegura que la transmisión de datos se haga a una velocidad que ambos, emisor y receptor, puedan manejar eficientemente, adaptándose a las fluctuaciones en la disponibilidad del ancho de banda y en las capacidades de procesamiento del receptor.
+
+
+#### c. ¿Cuánto tiempo dura activo y qué situación lo desactiva?
+
+
+El control de flujo está activo durante toda la sesión de la conexión TCP y se ajusta dinámicamente según las condiciones de la red y el estado de los buffers de recepción:
+
+- **Duración**: Permanece activo mientras la conexión TCP está establecida. Cada paquete transmitido puede ajustar el estado del control de flujo según las necesidades actuales del receptor.
+- **Desactivación**: El mecanismo de control de flujo se desactiva automáticamente al cerrar la conexión TCP. Además, si el buffer del receptor se vacía (es decir, todos los datos han sido procesados y el espacio en el buffer es suficiente), el tamaño de la ventana comunicada al emisor puede incrementarse, permitiendo la transmisión de más datos.
+
+Este sistema adaptativo de control de flujo es crucial para mantener la estabilidad y eficiencia en las comunicaciones sobre redes que operan bajo el protocolo TCP, adaptándose continuamente a las condiciones cambiantes de la red y a la capacidad de procesamiento de los dispositivos conectados.
 
 ---
 
 ### Ejercicio 11
 
 Responda las siguientes preguntas respecto del mecanismo de control de congestión.
-- a. ¿Quién activa el mecanismo de control de congestión? ¿Cuáles son los posibles disparadores?
-- b. ¿Qué problema resuelve?
-- c. Diferencie slow start de congestion-avoidance.
+
+El control de congestión en redes de computadoras, particularmente en el Protocolo de Control de Transmisión (TCP), es un mecanismo fundamental diseñado para evitar la sobrecarga de la red, lo que puede llevar a una degradación del rendimiento general y pérdida de paquetes. A continuación, se exploran los aspectos fundamentales de este mecanismo.
+
+### a. ¿Quién activa el mecanismo de control de congestión? ¿Cuáles son los posibles disparadores?
+
+**Activación:**
+El mecanismo de control de congestión es activado por el emisor basándose en la percepción de eventos de la red que sugieren congestión.
+
+**Disparadores Posibles:**
+1. **Pérdida de Paquetes:** Identificada por la ausencia de un acuse de recibo (ACK) para un paquete enviado dentro del tiempo esperado, lo que puede llevar al emisor a retransmitir el paquete y ajustar su tasa de envío.
+2. **Aumento en el Tiempo de Ida y Vuelta (RTT):** Un incremento significativo en el RTT puede indicar que los paquetes están experimentando colas más largas en los routers, lo que es un síntoma de congestión.
+3. **Indicaciones Explícitas de Pérdida de Paquetes (ECN):** Algunas redes modernas utilizan señalizaciones explícitas como el ECN (Explicit Congestion Notification), que permite a los routers informar al emisor de la presencia de congestión antes de que se pierdan los paquetes.
+
+### b. ¿Qué problema resuelve?
+
+El control de congestión busca abordar varios problemas críticos en las redes:
+- **Prevención de la Caída del Rendimiento de la Red:** Cuando demasiados paquetes son enviados simultáneamente, los routers pueden empezar a perder paquetes porque sus buffers se llenan, lo que lleva a retransmisiones que, a su vez, agravan la congestión.
+- **Maximización del Uso del Ancho de Banda:** Ajustando la tasa de envío de datos, el control de congestión ayuda a utilizar el ancho de banda disponible de manera más eficiente, asegurando un flujo de datos constante sin sobrecargar la red.
+- **Equidad:** El control de congestión también busca asegurar que todos los usuarios de la red tengan un acceso justo al ancho de banda, evitando que cualquier emisor monopolice la capacidad de la red.
+
+### c. Diferencie slow start de congestion-avoidance.
+
+**Slow Start:**
+- **Función:** Slow Start es una fase de inicio en la gestión de control de congestión de TCP donde el emisor comienza con una tasa baja de envío de datos y aumenta exponencialmente esta tasa cada RTT hasta que ocurre una pérdida de paquetes o hasta alcanzar un umbral conocido como `ssthresh`.
+- **Objetivo:** Rápidamente encontrar un nivel seguro de utilización de ancho de banda.
+
+**Congestion Avoidance:**
+- **Función:** Una vez que se alcanza el umbral `ssthresh`, ya sea por la detección de pérdida de paquetes o al finalizar Slow Start, TCP entra en la fase de Congestion Avoidance. En esta fase, el incremento en la ventana de congestión es más conservador, típicamente aumentando linealmente, lo que significa que la ventana de congestión aumenta en 1 MSS (tamaño máximo de segmento) por cada RTT completo.
+- **Objetivo:** Mantener el envío de datos en un nivel cercano al punto de congestión de la red sin provocar una pérdida de paquetes, buscando un equilibrio entre eficiencia y estabilidad en el flujo de datos.
+
+En resumen, **Slow Start** es utilizado para rampar rápidamente la tasa de envío desde cero, mientras que **Congestion Avoidance** toma el control una vez que se ha encontrado una base de utilización y busca afinar el rendimiento sin saturar la red. Estos mecanismos son críticos para mantener la robustez y eficiencia de las comunicaciones en redes complejas y altamente utilizadas.
+
+---
 
 ### Ejercicio 12
 
 Para la captura udp-captura.pcap, responder las siguientes preguntas.
-- a. ¿Cuántas comunicaciones (srcIP,srcPort,dstIP,dstPort) UDP hay en la captura?
-- b. ¿Cómo se podrían identificar las exitosas de las que no lo son?
-- c. ¿UDP puede utilizar el modelo cliente/servidor?
-- d. ¿Qué servicios o aplicaciones suelen utilizar este protocolo?¿Qué requerimientos tienen?
-- e. ¿Qué hace el protocolo UDP en relación al control de errores?
-- f. Con respecto a los puertos vistos en las capturas, ¿observa algo particular que lo
-diferencie de TCP?
-- g. Dada la primera comunicación en la cual se ven datos en ambos sentidos (identificar el primer datagrama):
- - i. ¿Cuál es la dirección IP que envía el primer datagrama?,¿desde cuál puerto?
- - ii. ¿Cuántos datos se envían en un sentido y en el otro?
+### a. ¿Cuántas comunicaciones (srcIP,srcPort,dstIP,dstPort) UDP hay en la captura?
+
+En Wireshark, filtras los paquetes por protocolo UDP y luego utilizas las estadísticas de "Conversaciones" para ver cuántas comunicaciones únicas hay, clasificadas por dirección IP de origen y destino, así como los puertos.
+
+### b. ¿Cómo se podrían identificar las exitosas de las que no lo son?
+
+Para UDP, que es un protocolo sin conexión, no hay una confirmación explícita del receptor como los ACK en TCP. Por lo tanto, determinar si una comunicación fue "exitosa" puede depender de si el protocolo o aplicación de capa superior tiene algún método para confirmar la recepción de los datos. Podrías buscar respuestas correspondientes a las solicitudes en la misma sesión para determinar si una comunicación fue exitosa.
+
+### c. ¿UDP puede utilizar el modelo cliente/servidor?
+
+Sí, UDP puede ser usado en un modelo cliente/servidor. Por ejemplo, un servidor DNS utiliza UDP y opera en un modelo cliente/servidor donde el cliente envía una solicitud de resolución de DNS al servidor, y el servidor responde con la información solicitada.
+
+### d. ¿Qué servicios o aplicaciones suelen utilizar este protocolo? ¿Qué requerimientos tienen?
+
+Aplicaciones que requieren baja latencia y pueden tolerar alguna pérdida de paquetes a menudo utilizan UDP. Ejemplos incluyen:
+
+- DNS (Domain Name System)
+- Streaming de video y audio
+- Juegos en línea
+- VoIP (Voice over IP)
+
+Estos servicios requieren transferencias rápidas y, en caso de pérdida de paquetes, a menudo es mejor continuar sin retransmisión para evitar la latencia.
+
+### e. ¿Qué hace el protocolo UDP en relación al control de errores?
+
+UDP realiza un mínimo control de errores. Proporciona checksums para verificar la integridad de los datos del encabezado y la carga útil. Si un paquete tiene un checksum incorrecto, generalmente es descartado por el receptor, pero no hay retransmisión automática de paquetes erróneos.
+
+### f. Con respecto a los puertos vistos en las capturas, ¿observa algo particular que lo doferencie de TCP?
+
+En UDP, los puertos se utilizan para identificar las aplicaciones de destino de manera similar a TCP. Sin embargo, no hay una negociación de conexión, y los paquetes simplemente se envían a esos puertos esperando que la aplicación esté escuchando.
+
+### g. Dada la primera comunicación en la cual se ven datos en ambos sentidos (identificar el primer datagrama):
+
+
+- i. ¿Cuál es la dirección IP que envía el primer datagrama?,¿desde cuál puerto?
+- ii. ¿Cuántos datos se envían en un sentido y en el otro?
+
+Para estas preguntas, necesitarías revisar los detalles específicos de los paquetes en Wireshark, observando los campos de dirección IP y puerto en el encabezado UDP de los paquetes, así como la longitud de la carga útil de UDP que indica la cantidad de datos enviados.
+
+Para realizar un análisis práctico, abrirías el archivo pcap con Wireshark, aplicarías un filtro por UDP y examinarías las columnas y detalles de los paquetes para responder a estas preguntas específicas.
+
+---
 
 ### Ejercicio 13
 
@@ -411,9 +535,31 @@ Dada la salida que se muestra en la imagen, responda los ítems debajo
 Suponga que ejecuta los siguientes comandos desde un host con la IP
 10.100.25.90. Responda qué devuelve la ejecución de los siguientes comandos y, en caso que corresponda, especifique los flags.
 
-- a. hping3 -p 3306 –udp 10.100.25.135
-- b. hping3 -S -p 25 10.100.25.135
-- c. hping3 -S -p 22 10.100.25.135
-- d. hping3 -S -p 110 10.100.25.135
+#### a. `hping3 -p 3306 –udp 10.100.25.135`
+- **Qué devuelve:** Dado que el puerto 3306 (usualmente utilizado por MySQL) está en estado `LISTEN` en la captura, y el comando está enviando paquetes UDP, lo más probable es que no haya respuesta directa del host de destino, ya que MySQL escucha en TCP, no en UDP.
+- **Flags:** No aplica, ya que UDP no usa flags como TCP.
 
-¿Cuántas conexiones distintas hay establecidas? Justifique
+#### b. `hping3 -S -p 25 10.100.25.135`
+- **Qué devuelve:** No se espera que devuelva una respuesta, porque no hay ningún servicio listado como escuchando en el puerto 25 (SMTP) en TCP en la dirección IP dada. Es probable que el host envíe un paquete TCP RST en respuesta.
+- **Flags:** `S` (SYN) para iniciar la conexión TCP, pero probablemente recibirás un RST como respuesta.
+
+#### c. `hping3 -S -p 22 10.100.25.135`
+- **Qué devuelve:** Este comando intenta establecer una conexión TCP al puerto 22, que está en estado `LISTEN` y asociado a `sshd` en la captura. Deberías recibir un SYN-ACK en respuesta, indicando que el puerto está abierto y escuchando.
+- **Flags:** `S` (SYN) enviado y `SA` (SYN-ACK) recibido en caso de que el puerto esté abierto.
+
+#### d. `hping3 -S -p 110 10.100.25.135`
+- **Qué devuelve:** Similar al comando para el puerto 25, no hay evidencia en la captura de que el puerto 110 (POP3) esté abierto o en escucha en la IP especificada. Es probable que recibas un RST como respuesta.
+- **Flags:** `S` (SYN) enviado, probablemente un RST recibido.
+
+
+#### ¿Cuántas conexiones distintas hay establecidas? Justifique
+
+Para determinar **cuántas conexiones distintas están establecidas**, observamos las filas con estado `ESTAB` en la salida:
+
+- Hay conexiones establecidas entre `127.0.0.1:3306` y `127.0.0.1:34338` (MySQL local).
+- Entre `10.100.25.135:222` y `200.100.120.210:61576` (SSH).
+- Otra conexión local de SSH entre `127.0.0.1:34330` y `127.0.0.1:3306`.
+
+**Justificación:** Las conexiones en estado `ESTAB` indican que la conexión TCP ha completado el handshake y está activa, permitiendo el tráfico bidireccional de datos. Estas conexiones se han establecido y confirmado mediante el intercambio de paquetes SYN, SYN-ACK y ACK, mostrando que ambos extremos están comunicando activamente.
+
+Esto resume el estado de las conexiones basadas en los estados de los puertos y la IP mostrados en la captura, así como la previsión de resultados al ejecutar los comandos `hping3` especificados.
