@@ -11,13 +11,29 @@ tags: ["Capa de Aplicación"]
 category: Redes
 ---
 
+# Indice
 
-
-| Clase  | Rango de Direcciones     | Máscara de Subred Predeterminada | Bits para la Red | Bits para Hosts | Número Máximo de Redes | Número Máximo de Hosts por Red | Uso Típico                       |
-|--------|---------------------------|----------------------------------|------------------|-----------------|-------------------------|--------------------------------|----------------------------------|
-| **A**  | 1.0.0.0 a 126.255.255.255 | 255.0.0.0 (/8)                   | 8                | 24              | 126                     | 16,777,214                     | Grandes redes internacionales    |
-| **B**  | 128.0.0.0 a 191.255.255.255 | 255.255.0.0 (/16)                | 16               | 16              | 16,384                  | 65,534                         | Universidades, corporaciones medianas |
-| **C**  | 192.0.0.0 a 223.255.255.255 | 255.255.255.0 (/24)              | 24               | 8               | 2,097,152               | 254                            | Pequeñas empresas, redes locales |
+- [Ejercicio 1](#ejercicio-1)
+- [Ejercicio 2](#ejercicio-2)
+- [Ejercicio 3](#ejercicio-3)
+- [Ejercicio 4](#ejercicio-4)
+- [Ejercicio 5](#ejercicio-5)
+- [Ejercicio 6](#ejercicio-6)
+- [Ejercicio 7](#ejercicio-7)
+- [Ejercicio 8](#ejercicio-8)
+- [Ejercicio 9](#ejercicio-9)
+- [Ejercicio 10](#ejercicio-10)
+- [Ejercicio 11](#ejercicio-11)
+- [Ejercicio 12](#ejercicio-12)
+- [Ejercicio 13](#ejercicio-13)
+- [Ejercicio 14](#ejercicio-14)
+- [Ejercicio 15](#ejercicio-15)
+- [Ejercicio 16](#ejercicio-16)
+- [Ejercicio 17](#ejercicio-17)
+- [Ejercicio 18](#ejercicio-18)
+- [Ejercicio 19](#ejercicio-19)
+- [Ejercicio 20](#ejercicio-20)
+- [Ejercicio 21](#ejercicio-21)
 
 ---
 
@@ -25,25 +41,29 @@ category: Redes
 
 ### Ejercicio 1
 
-`¿Qué servicios presta la capa de red?`
+#### ¿Qué servicios presta la capa de red?
 
-La capa de red, generalmente referida como la capa 3 en el modelo OSI (Open Systems Interconnection), proporciona una variedad de servicios esenciales para el transporte de datos a través de redes complejas. Los servicios más destacados incluyen:
+La capa de red, también conocida como capa 3 del Modelo OSI, es fundamental para el funcionamiento de las redes de datos, especialmente en entornos de red extensos e interconectados como el Internet. Los principales servicios que ofrece la capa de red incluyen:
 
-1. **Direccionamiento Lógico**: A diferencia del direccionamiento físico (MAC) en la capa de enlace de datos, la capa de red utiliza direcciones lógicas (como las direcciones IP en IPv4 e IPv6) para identificar dispositivos de manera única en toda la red. Esto permite que los datos se envíen a través de múltiples redes y lleguen al destino correcto.
+1. **Encaminamiento (Routing):** La capa de red es responsable de determinar y gestionar la ruta que los paquetes de datos deben seguir desde el origen hasta el destino a través de la red. Utiliza protocolos de encaminamiento como RIP, OSPF e BGP para descubrir rutas eficientes.
 
-2. **Encaminamiento (Routing)**: La capa de red es responsable de determinar la ruta óptima que los paquetes deben seguir para llegar desde su origen hasta su destino. Esto se hace mediante routers que utilizan protocolos de encaminamiento para intercambiar información sobre la topología de la red y tomar decisiones de enrutamiento.
+2. **Direccionamiento Lógico:** A diferencia del direccionamiento físico (MAC) de la capa de enlace de datos, la capa de red implementa un sistema de direccionamiento lógico que permite una jerarquía y una estructura más organizada. IP (Protocolo de Internet) es el ejemplo más conocido de un protocolo de direccionamiento lógico.
 
-3. **Fragmentación y Reensamblado**: Debido a las variaciones en el tamaño máximo de transmisión (MTU) que pueden manejar diferentes redes, la capa de red puede fragmentar paquetes grandes en fragmentos más pequeños en el origen y luego reensamblarlos en el destino.
+3. **Segmentación y Reensamblaje:** La capa de red puede segmentar un bloque de datos más grande en paquetes más pequeños para el transporte y luego reensamblar estos paquetes en el destino. Esto es crucial para manejar los diferentes tamaños máximos de transmisión (MTU) que pueden tener diferentes segmentos de red.
 
-4. **Control de Congestión y Calidad de Servicio (QoS)**: Proporciona mecanismos para manejar el control de congestión en la red. Esto puede incluir la priorización de ciertos tipos de tráfico, lo que es crucial para aplicaciones que requieren alta disponibilidad y tiempo de respuesta rápido, como las transmisiones de video y las llamadas VoIP.
+4. **Control de Congestión y Calidad de Servicio (QoS):** Aunque el control de congestión es más visible en la capa de transporte, la capa de red puede participar en la gestión de la congestión y en la implementación de políticas de QoS para garantizar el rendimiento de la red según los requerimientos de los diferentes tipos de tráfico.
 
-`¿Cuál es la PDU en esta capa?`
+5. **Aislamiento de Fallos y Diagnóstico de Red:** Herramientas y protocolos a nivel de red, como ICMP (Internet Control Message Protocol), ayudan en la identificación y el diagnóstico de problemas en la red, facilitando la detección y reparación de fallos.
 
-La unidad de datos de protocolo (PDU) en la capa de red se llama **paquete**. Un paquete consiste en segmentos de datos encapsulados de la capa de transporte, a los cuales se les añade una cabecera de capa de red. Esta cabecera incluye información esencial como las direcciones IP de origen y destino, información sobre fragmentación y otros flags y campos necesarios para el enrutamiento y la gestión del tráfico en la red.
+#### ¿Cuál es la PDU en esta capa?
 
-`¿Qué dispositivo es considerado sólo de la capa de red?`
+La unidad de datos de protocolo (PDU) de la capa de red es el **paquete**. En el contexto de IP, un paquete incluye la cabecera IP que contiene información esencial como las direcciones IP de origen y destino, la versión del protocolo, la longitud del paquete, y otros flags y campos que facilitan el encaminamiento y la entrega eficiente del paquete a través de la red.
 
-El dispositivo más representativo que opera principalmente en la capa de red es el **router**. Los routers son responsables de recibir paquetes de datos y enviarlos hacia su destino final utilizando la mejor ruta disponible. Para hacer esto, los routers examinan la dirección IP de destino de cada paquete, toman decisiones de enrutamiento basadas en su tabla de ruteo y luego reenvían los paquetes a la interfaz de salida apropiada. A diferencia de los switches de capa 2, que utilizan direcciones MAC para tomar decisiones de reenvío, los routers utilizan direcciones lógicas (IP) para esta función.
+#### ¿Qué dispositivo es considerado sólo de la capa de red?
+
+El **router** es el dispositivo típicamente asociado con la capa de red. Su función principal es interconectar redes diferentes, determinando la mejor ruta para enviar los paquetes entre ellas basándose en la información de la capa de red. Los routers leen las direcciones incluidas en los paquetes de la capa de red para tomar decisiones de encaminamiento y dirigir el tráfico adecuadamente hacia su destino final.
+
+Estos componentes y funciones de la capa de red aseguran que los datos se transmitan de manera efectiva y eficiente a través de redes complejas y a gran escala, como el Internet.
 
 ---
 
@@ -51,356 +71,397 @@ El dispositivo más representativo que opera principalmente en la capa de red es
 
 `¿Por qué se lo considera un protocolo de mejor esfuerzo?`
 
-El término "protocolo de mejor esfuerzo" se refiere comúnmente al modo en que opera el Protocolo de Internet (IP), especialmente en su versión más utilizada, IPv4. Este término se usa para describir la naturaleza del servicio que IP proporciona al transmitir paquetes de datos entre hosts en diferentes redes. Aquí te detallo por qué se considera un protocolo de mejor esfuerzo:
+El término "protocolo de mejor esfuerzo" ("best effort protocol") se refiere comúnmente al Protocolo de Internet (IP), que es ampliamente utilizado en redes informáticas para la entrega de paquetes de datos. Este término describe la naturaleza del servicio que IP proporciona en términos de entrega de paquetes en una red.
 
-1. **No garantiza la entrega de paquetes**: El protocolo IP no asegura que los paquetes de datos enviados lleguen a su destino. No hay mecanismos integrados en el nivel de red para confirmar la recepción de paquetes, retransmitir paquetes perdidos o mantener el orden de los paquetes.
+#### Razones por las que IP es considerado un protocolo de mejor esfuerzo:
 
-2. **No hay control de errores más allá de la cabecera**: IP tiene un checksum de cabecera que solo verifica errores en la cabecera del paquete, no en el contenido del paquete en sí. Esto significa que si un paquete se corrompe en tránsito, IP por sí solo no puede detectar ni corregir estos errores en los datos transmitidos.
+1. **No garantiza la entrega**: IP no asegura que los paquetes lleguen a su destino. Los paquetes pueden perderse debido a congestionamientos, errores en los enrutadores, o rutas ineficientes. IP no implementa mecanismos para recuperar paquetes perdidos; esta responsabilidad recae en los protocolos de capas superiores, como TCP.
 
-3. **No hay garantías de calidad de servicio (QoS)**: IP no proporciona garantías en términos de retardo, ancho de banda o prioridad de tráfico. Aunque hay extensiones y técnicas como el DSCP (Differentiated Services Code Point) en el campo de servicios diferenciados de IPv4 que intentan abordar la calidad del servicio, estas no están garantizadas por el protocolo IP en sí.
+2. **No garantiza orden**: Los paquetes IP pueden llegar a su destino en un orden diferente al que fueron enviados. No hay mecanismos dentro de IP para reordenar los paquetes a medida que llegan; nuevamente, esto es manejado por protocolos en la capa de transporte, como TCP, que reensambla los paquetes en el orden correcto.
 
-4. **No previene la congestión de la red**: IP no tiene mecanismos para controlar o evitar la congestión de la red. Cuando la red está congestionada, IP no ajusta automáticamente la tasa de envío o la ruta de los paquetes para aliviar la congestión.
+3. **No garantiza integridad**: Aunque IP incluye un campo de suma de verificación en su cabecera que ayuda a detectar errores en los datos del encabezado, no protege la integridad del contenido del paquete en sí. Protocolos como TCP o UDP tienen sus propios mecanismos de suma de verificación que cubren todo el paquete.
 
-5. **Tratamiento equitativo de todos los paquetes**: En general, IP trata todos los paquetes de manera igual, sin importar su contenido o importancia. Sin embargo, esto también se puede ver como una ventaja en términos de simplicidad y flexibilidad, ya que permite que otras capas o protocolos manejen aspectos específicos como la confiabilidad y el control de congestión.
+4. **No previene la duplicación**: En algunas circunstancias, los paquetes IP pueden duplicarse, y más de una copia del mismo paquete puede llegar al destino. IP no tiene mecanismos para gestionar la eliminación de duplicados.
 
-Estas características reflejan el diseño de IP como un protocolo de mejor esfuerzo, donde la red hace su mejor intento para entregar paquetes, pero sin garantías. Esto simplifica el diseño y la implementación de la red, pero delega la responsabilidad de manejar la confiabilidad, el orden, la integridad de los datos y el control de la congestión a las capas superiores, especialmente al Protocolo de Control de Transmisión (TCP).
+5. **No controla la congestión**: IP no tiene mecanismos integrados para evitar o gestionar la congestión en la red. En su lugar, depende de la respuesta de los protocolos de las capas superiores y de la gestión activa de la red para controlar la congestión.
+
+#### Implicaciones de ser un protocolo de mejor esfuerzo
+
+Al ser un protocolo de "mejor esfuerzo", IP permite una implementación y operación relativamente sencillas y eficientes de la red. Esto contribuye a la escalabilidad y la flexibilidad de Internet. Sin embargo, también significa que la calidad del servicio (QoS) no puede garantizarse sin la ayuda de tecnologías adicionales que operen junto con IP, como MPLS para redes gestionadas o técnicas de control de congestión y corrección de errores en los extremos de la comunicación.
+
+Este enfoque de "mejor esfuerzo" permite que el núcleo de la red se mantenga simple y que la complejidad se maneje en los extremos, siguiendo el principio de diseño end-to-end, que es una característica fundamental de la arquitectura de Internet.
 
 ---
 
 ### Ejercicio 3
 
-`¿Cuántas redes clase A, B y C hay?`
 
-El sistema de clases de direcciones IP fue parte del diseño original de IPv4 para la asignación de direcciones IP. El sistema dividía el espacio de direcciones en clases A, B y C, cada una con una cantidad diferente de redes posibles y un número variable de hosts permitidos por red. Aquí está el desglose:
+`¿Cuántas redes clase A, B y C hay? ¿Cuántos hosts como máximo pueden tener cada una?`
 
-1. **Clase A**: Las direcciones de clase A utilizan el primer bit como `0`, lo que deja 7 bits para el número de red y 24 bits para los hosts. Como el primer bit es fijo y siempre es `0`, esto deja 2^7 posibles números de red. Sin embargo, el número de red `0` está reservado, reduciendo el número total de redes Clase A disponibles a 2^7 - 2 = 126 redes.
+Las direcciones IP originalmente se dividían en clases para organizar el rango de direcciones según el tamaño y las necesidades de las redes. Las clases A, B y C son las más comunes dentro de este esquema de clasificación. Aquí detallamos cuántas redes existen en cada clase y cuántos hosts pueden contener como máximo:
 
-2. **Clase B**: Las direcciones de clase B tienen los dos primeros bits establecidos como `10`, lo que deja 14 bits para el número de red y 16 bits para los hosts. Esto proporciona 2^14 = 16,384 redes posibles.
+#### Redes Clase A
 
-3. **Clase C**: Las direcciones de clase C comienzan con los bits `110`, dejando 21 bits para el número de red y 8 bits para los hosts. Esto resulta en 2^21 = 2,097,152 redes Clase C disponibles.
+- **Rango de Direcciones:** 1.0.0.0 a 126.0.0.0 (se excluyen ciertos rangos como 127.0.0.0, que está reservado para loopback).
+- **Cantidad de Redes Posibles:** 126 redes. El primer octeto define la red, y va de 1 a 126.
+- **Hosts por Red:** Cada red de Clase A puede tener hasta 16,777,214 hosts (2^24 - 2, donde se restan dos direcciones por la dirección de red y la de broadcast).
 
-`¿Cuántos hosts como máximo pueden tener cada una?`
+#### Redes Clase B
 
-La cantidad de hosts que puede soportar cada red varía según el número de bits disponibles para la dirección de host en cada clase de dirección:
+- **Rango de Direcciones:** 128.0.0.0 a 191.255.0.0.
+- **Cantidad de Redes Posibles:** 16,384 redes. El primer y segundo octeto definen la red, comenzando en 128.0 y terminando en 191.255.
+- **Hosts por Red:** Cada red de Clase B puede tener hasta 65,534 hosts (2^16 - 2, también restando la dirección de red y la de broadcast).
 
-1. **Clase A**: Con 24 bits disponibles para direcciones de host, cada red Clase A puede soportar hasta 2^24 - 2 hosts. Se restan dos direcciones: una para la dirección de red (`todos los bits de host a 0`) y una para la dirección de broadcast (`todos los bits de host a 1`), lo que da un total de 16,777,214 hosts por red.
+#### Redes Clase C
 
-2. **Clase B**: Con 16 bits para direcciones de host, cada red Clase B puede soportar hasta 2^16 - 2 hosts, lo que equivale a 65,534 hosts por red.
+- **Rango de Direcciones:** 192.0.0.0 a 223.255.255.0.
+- **Cantidad de Redes Posibles:** 2,097,152 redes. Los primeros tres octetos definen la red, desde 192.0.0 hasta 223.255.255.
+- **Hosts por Red:** Cada red de Clase C puede tener hasta 254 hosts (2^8 - 2, igualmente restando la dirección de red y la de broadcast).
 
-3. **Clase C**: Con 8 bits para direcciones de host, cada red Clase C puede soportar hasta 2^8 - 2 hosts, lo que resulta en 254 hosts por red.
+#### Contexto y Transición a CIDR
 
-Este sistema de clases fue útil para los primeros días de Internet pero eventualmente llevó a una asignación ineficiente del espacio de direcciones IP, llevando al desarrollo de CIDR (Classless Inter-Domain Routing) para una asignación más flexible y eficiente del espacio de direcciones IP.
+Es importante señalar que este método de clasificación basado en clases ha sido en gran parte reemplazado por el enfoque sin clases conocido como CIDR (Classless Inter-Domain Routing) a principios de los años 90. CIDR permite un uso más eficiente y flexible del espacio de direcciones IP mediante la asignación basada en "prefijos" que describen la máscara de subred, en lugar de estar restringido por las clases fijas. Esto ayuda a mejorar la eficiencia de la asignación de direcciones IP, especialmente frente a la escasez de direcciones IP bajo IPv4 y la necesidad de alojar múltiples redes de diferentes tamaños.
 
 ---
 
 ### Ejercicio 4
 
-`¿Qué son las subredes?`
+#### ¿Qué son las subredes?
 
-Las subredes son divisiones lógicas de una red más grande. Este proceso, conocido como subnetting, permite segmentar una red IP más extensa en redes más pequeñas, cada una con su propio espacio de direcciones IP. El subnetting se realiza cambiando la frontera entre la parte de la dirección IP que identifica la red y la parte que identifica al host o dispositivo específico dentro de esa red. Esto se logra mediante el uso de una máscara de subred, que define cuántos bits de la dirección IP corresponden a la red y cuántos al host.
+Las subredes, o subredes de red, son divisiones lógicas de una red de mayor tamaño. Este proceso de subdivisión permite una organización más eficiente y segura del espacio de direcciones IP dentro de una red más grande. Crear subredes implica segmentar una red en múltiples redes más pequeñas, cada una con su propio rango único de direcciones IP.
 
-La creación de subredes puede tener varios propósitos prácticos:
-- **Mejora la gestión de la red**: Al dividir una red grande en subredes más pequeñas, se facilita la administración y el mantenimiento.
-- **Mejora del rendimiento**: Al limitar los hosts en cada subred, se reduce el dominio de broadcast, disminuyendo así el tráfico innecesario y mejorando el rendimiento general de la red.
-- **Seguridad mejorada**: Las subredes pueden aislar segmentos de la red, lo que puede ayudar a limitar la propagación de tráfico malicioso y mejorar la seguridad.
-- **Optimización del uso del espacio de direcciones IP**: Permite un uso más eficiente de un espacio limitado de direcciones IP, asignando solo el número necesario de direcciones a cada subred.
+La subdivisión de una red en subredes puede hacerse por varias razones, tales como:
 
+1. **Mejora del Rendimiento**: Reducir el tamaño de una red puede disminuir el tráfico local en cada segmento, reduciendo así la contención y la sobrecarga de la red, y potencialmente aumentando el rendimiento general.
 
-`¿Por qué es importante siempre especificar la máscara de subred asociada?`
+2. **Administración Simplificada**: Las subredes permiten a los administradores de red gestionar y mantener segmentos de red de manera más efectiva. Esto es especialmente útil en redes grandes donde manejar una sola red extensa podría ser complejo y poco práctico.
 
-La máscara de subred es crucial porque define la porción de la dirección IP que pertenece a la red frente a la porción que pertenece a los hosts dentro de esa red. Específicamente, es importante especificar la máscara de subred asociada por varias razones:
+3. **Seguridad Mejorada**: Las subredes pueden proporcionar capas adicionales de seguridad. Limitar la comunicación entre subredes puede prevenir la propagación de actividades maliciosas dentro de la red.
 
-1. **Determina la red a la que pertenece un host**: Sin la máscara de subred, no se puede determinar con claridad la red a la que está conectado un dispositivo. Esto es fundamental para el enrutamiento de paquetes tanto dentro de una red como entre redes.
+4. **Optimización del Uso de Direcciones IP**: Al segmentar una red, se pueden asignar direcciones IP de manera más eficiente, reduciendo el desperdicio de direcciones en redes con pocos hosts.
 
-2. **Facilita el enrutamiento**: Los routers utilizan la máscara de subred para tomar decisiones de enrutamiento. Al saber cuál es la red destino de un paquete, el router puede reenviar el paquete de manera eficiente.
+#### ¿Por qué es importante siempre especificar la máscara de subred asociada?
 
-3. **Evita conflictos de direcciones IP**: La máscara de subred ayuda a identificar si dos dispositivos pueden tener la misma dirección IP dentro de la misma red o si deben estar en subredes separadas. Esto evita conflictos que podrían causar problemas de conectividad.
+La máscara de subred es fundamental porque define cómo se divide el espacio de direcciones de una red entre la dirección de red y los hosts. Específicamente, la máscara de subred determina qué parte de la dirección IP se utiliza para identificar la subred y qué parte se utiliza para identificar los dispositivos individuales (hosts) dentro de esa subred.
 
-4. **Segmentación de red**: La máscara de subred permite a los administradores de red controlar el tamaño de cada subred y optimizar el uso de las direcciones IP disponibles, adaptándose mejor a las necesidades específicas de cada segmento de la red.
+1. **Determinación de la Subred**: La máscara de subred es esencial para determinar a qué subred pertenece una dirección IP específica. Esto es crucial para el enrutamiento de paquetes dentro y entre redes, ya que los enrutadores utilizan la máscara de subred para dirigir el tráfico a la subred correcta.
 
-En resumen, la máscara de subred no solo es técnica sino también operativamente esencial para la correcta operación y gestión de redes en la infraestructura de TI.
+2. **Comunicación y Enrutamiento**: Los dispositivos dentro de una red utilizan la máscara de subred para determinar si otros dispositivos están en la misma subred o en una externa. Esto afecta cómo se envían los paquetes de datos: directamente entre dispositivos en la misma subred o a través de un enrutador para alcanzar dispositivos en subredes diferentes.
+
+3. **Evitar Conflictos de Direcciones**: Una máscara de subred incorrecta puede llevar a conflictos de direcciones y problemas de enrutamiento, donde los dispositivos podrían no ser capaces de comunicarse correctamente dentro de la red.
+
+4. **Planificación de la Red**: En la fase de diseño de una red, la máscara de subred ayuda a planificar cuántos hosts pueden ser soportados en cada subred y cómo se deben distribuir las direcciones IP para maximizar la eficiencia.
+
+En resumen, las subredes y las máscaras de subred son componentes esenciales del diseño y operación de redes modernas. Permiten una gestión más eficiente del espacio de direcciones IP, mejoran la seguridad y el rendimiento de la red, y son clave para el enrutamiento correcto y efectivo del tráfico de datos.
 
 ---
 
 ### Ejercicio 5
 
-`¿Cuál es la finalidad del campo Protocol en la cabecera IP?`
+El campo "Protocol" en la cabecera IP desempeña una función crucial al definir el protocolo de la capa de transporte que se utilizará para los datos encapsulados en el paquete IP. Este campo es esencial para asegurar que el paquete de datos se maneje correctamente en su llegada al destino, orientando al sistema sobre cómo interpretar los datos contenidos en el segmento de datos del paquete.
 
-El campo "Protocol" en la cabecera IP, también conocido como "Protocol Type", tiene la finalidad de especificar el protocolo de la capa de transporte que se utiliza para los datos contenidos en el segmento del paquete. Este campo informa al sistema receptor sobre cómo interpretar el conjunto de datos (payload) incluido en el paquete IP. En otras palabras, le dice al host destino qué protocolo de la capa de transporte se debe utilizar para procesar el paquete recibido adecuadamente.
+#### ¿Cuál es la finalidad del campo Protocol en la cabecera IP?
 
-Por ejemplo, el campo podría indicar que los datos deben ser manejados por TCP (Protocolo de Control de Transmisión), UDP (Protocolo de Datagrama de Usuario), ICMP (Protocolo de Mensajes de Control de Internet), entre otros. La identificación correcta es crucial para que el sistema de destino sepa qué aplicación debe procesar esos datos y cómo deben ser tratados. El valor del campo "Protocol" se define con un número, donde cada número está asignado a un protocolo específico; por ejemplo, TCP es 6, UDP es 17, e ICMP es 1.
+**Identificación del Protocolo de la Capa de Transporte:** El campo "Protocol" en la cabecera IP especifica el protocolo de la siguiente capa (capa de transporte) que se ha usado para segmentar los datos y que debe ser utilizado para reensamblar y procesar estos datos en el destino. Este campo es un número que identifica de manera única cada protocolo de la capa de transporte. Por ejemplo, el número 6 representa TCP (Transmission Control Protocol), mientras que el número 17 representa UDP (User Datagram Protocol).
 
-`¿A qué campos de la capa de transporte se asemeja en su funcionalidad?`
+#### ¿A qué campos de la capa de transporte se asemeja en su funcionalidad?
 
-En la capa de transporte, el campo que más se asemeja en funcionalidad al campo "Protocol" de la cabecera IP es el campo "Número de puerto". En los protocolos TCP y UDP, los números de puerto sirven para especificar las aplicaciones de destino y origen en las comunicaciones entre hosts. Al igual que el campo "Protocol" determina qué protocolo de la capa superior debe manejar el paquete, los números de puerto determinan qué aplicación específica o servicio dentro del host debe manejar los datos una vez que el paquete ha sido procesado por el protocolo de transporte.
+En términos de funcionalidad, el campo "Protocol" en la cabecera IP es similar a los campos como:
 
-- **TCP y UDP**: Utilizan números de puerto en sus cabeceras para dirigir los segmentos a la aplicación correcta mediante puertos de origen y destino.
-- **Multiplexación y demultiplexación**: Tanto el campo "Protocol" en la cabecera IP como los números de puerto en la cabecera TCP/UDP se utilizan para la multiplexación y demultiplexación, asegurando que los datos lleguen a la aplicación correcta y sean interpretados correctamente.
+1. **Puertos de Origen y Destino en TCP/UDP:** Aunque el campo "Protocol" no realiza la misma función que los puertos, que se utilizan para dirigir el tráfico a la aplicación correcta dentro de un host, ambos tipos de campos sirven como mecanismos de direccionamiento a niveles diferentes. Los puertos dirigen el tráfico al programa adecuado dentro del host, mientras que el campo "Protocol" indica cómo debe interpretarse el conjunto de datos a nivel de sistema.
 
-Este paralelismo subraya cómo cada capa del modelo OSI o del modelo de Internet maneja aspectos específicos del enrutamiento y la entrega de datos, desde el nivel de red hasta el nivel de aplicación.
+2. **Campo 'Next Header' en IPv6:** En IPv6, el campo "Next Header" realiza una función similar al campo "Protocol" en IPv4, indicando el tipo del siguiente encabezado en el paquete. Esto puede ser un encabezado de extensión o un encabezado de capa superior.
+
+El campo "Protocol" es, por lo tanto, vital para la interoperabilidad entre diferentes capas de red y es fundamental para el enrutamiento y procesamiento adecuados de los datos en redes de computadoras. Su rol asegura que los datos sean entregados y procesados por el protocolo correcto en el destino, facilitando así una comunicación efectiva entre dispositivos en una red.
 
 ---
 
-## División en subredes
+## Divisiónde subredes
 
 ### Ejercicio 6
 
-Para cada una de las siguientes direcciones IP (172.16.58.223/26, 163.10.5.49/27, 128.10.1.0/23, 10.1.0.0/24, 8.40.11.179/12) determine:
-- `a)` ¿De qué clase de red es la dirección dada (Clase A, B o C)?
-- `b)` ¿Cuál es la dirección de subred?
-- `c)` ¿Cuál es la cantidad máxima de hosts que pueden estar en esa subred?
-- `d)` ¿Cuál es la dirección de broadcast de esa subred?
-- `e)` ¿Cuál es el rango de direcciones IP válidas dentro de la subred?
+Para cada una de las siguientes direcciones IP determine
+- 172.16.58.223/26
+- 163.10.5.49/27
+- 128.10.1.0/23
+- 10.1.0.0/24
+- 8.40.11.179/12
 
-Para abordar el **Ejercicio 6**, necesitaremos desglosar cada dirección IP con su respectiva máscara de subred (dada en notación CIDR). Vamos a calcular la clase de red, dirección de subred, cantidad máxima de hosts, dirección de broadcast, y el rango de direcciones IP válidas para cada dirección dada. Empecemos con los cálculos:
+#### A) ¿De qué clase de red es la dirección dada (Clase A, B o C)?
 
-`Dirección IP 1: 172.16.58.223/26`
+`Paso 1: Observar el Primer Octeto`
+Para cada dirección IP, observa el primer número antes del primer punto. Por ejemplo, para la dirección 172.16.58.223, el primer octeto es 172.
 
-1. **Clase de red**: Las direcciones que comienzan con 128 hasta 191 pertenecen a la Clase B. Así que 172.16.58.223 es una dirección de Clase B.
-2. **Dirección de subred**: La máscara /26 indica que los primeros 26 bits son para la red. En binario, 172.16.58.223 es `10101100.00010000.00111010.11011111`. La subred será `10101100.00010000.00111010.11000000`, lo cual en decimal es 172.16.58.192.
-3. **Cantidad máxima de hosts**: Con una máscara /26, hay 6 bits para hosts (32 - 26 = 6). Esto permite 2^6 - 2 = 62 hosts.
-4. **Dirección de broadcast**: El broadcast se calcula poniendo todos los bits de host a 1, resultando en 172.16.58.255.
-5. **Rango de direcciones IP válidas**: Desde 172.16.58.193 hasta 172.16.58.254.
+`Paso 2: Comparar con los Rangos de Clases`
+Las clases de direcciones IP se definen por rangos específicos en el primer octeto:
+- **Clase A**: 1-126 (127 está reservado para loopback)
+- **Clase B**: 128-191
+- **Clase C**: 192-223
+- **Clase D** (multicast): 224-239 (no solicitado, pero para referencia)
+- **Clase E** (uso experimental): 240-255 (no solicitado, pero para referencia)
 
-`Dirección IP 2: 163.10.5.49/27`
+`Paso 3: Determinar la Clase de cada Dirección`
 
-1. **Clase de red**: Las direcciones que comienzan con 128 hasta 191 pertenecen a la Clase B.
-2. **Dirección de subred**: Con /27, la subred será `163.10.5.32`.
-3. **Cantidad máxima de hosts**: Con /27, hay 5 bits para hosts. Esto permite 2^5 - 2 = 30 hosts.
-4. **Dirección de broadcast**: El broadcast sería 163.10.5.63.
-5. **Rango de direcciones IP válidas**: Desde 163.10.5.33 hasta 163.10.5.62.
+Aplicando el rango del primer octeto:
 
-`Dirección IP 3: 128.10.1.0/23`
+1. **172.16.58.223**
+   - Primer octeto: 172
+   - **Clase B**: Ya que 172 está entre 128 y 191.
 
-1. **Clase de red**: Las direcciones que comienzan con 128 hasta 191 pertenecen a la Clase B.
-2. **Dirección de subred**: La dirección de subred es la misma que la dirección dada: 128.10.0.0.
-3. **Cantidad máxima de hosts**: Con /23, hay 9 bits para hosts. Esto permite 2^9 - 2 = 510 hosts.
-4. **Dirección de broadcast**: El broadcast sería 128.10.1.255.
-5. **Rango de direcciones IP válidas**: Desde 128.10.0.1 hasta 128.10.1.254.
+2. **163.10.5.49**
+   - Primer octeto: 163
+   - **Clase B**: Ya que 163 también está entre 128 y 191.
 
-`Dirección IP 4: 10.1.0.0/24`
+3. **128.10.1.0**
+   - Primer octeto: 128
+   - **Clase B**: Es el límite inferior de la Clase B.
 
-1. **Clase de red**: Las direcciones que comienzan con 1 hasta 126 pertenecen a la Clase A.
-2. **Dirección de subred**: La dirección de subred es 10.1.0.0.
-3. **Cantidad máxima de hosts**: Con /24, hay 8 bits para hosts. Esto permite 2^8 - 2 = 254 hosts.
-4. **Dirección de broadcast**: El broadcast sería 10.1.0.255.
-5. **Rango de direcciones IP válidas**: Desde 10.1.0.1 hasta 10.1.0.254.
+4. **10.1.0.0**
+   - Primer octeto: 10
+   - **Clase A**: Ya que 10 está entre 1 y 126.
 
-`Dirección IP 5: 8.40.11.179/12`
+5. **8.40.11.179**
+   - Primer octeto: 8
+   - **Clase A**: Ya que 8 está dentro del rango de la Clase A.
 
-1. **Clase de red**: Las direcciones que comienzan con 0 hasta 127 pertenecen a la Clase A.
-2. **Dirección de subred**: Con /12, la subred será `8.0.0.0`.
-3. **Cantidad máxima de hosts**: Con /12, hay 20 bits para hosts. Esto permite 2^20 - 2 = 1,048,574 hosts.
-4. **Dirección de broadcast**: El broadcast sería 8.15.255.255.
-5. **Rango de direcciones IP válidas**: Desde 8.0.0.1 hasta 8.15.255.254.
 
-Estos cálculos nos permiten entender cómo cada una de estas direcciones IP se configura dentro de sus respectivas redes, facilitando el manejo y la asignación de recursos dentro de una red más grande.
+#### b) ¿Cuál es la dirección de subred?
+
+#### 172.16.58.223/26
+
+`Convertir la máscara de subred de notación CIDR a formato decimal`
+
+Para determinar la dirección de subred de una dirección IP dada con su máscara de subred (en notación CIDR), se realiza un procedimiento lógico llamado "AND" entre la dirección IP y la máscara de subred. 
+
+`Paso 1.1 Determinar la cantidad de bits para la red`
+
+Tomemos por ejemplo `/26`. Esto significa que los primeros 26 bits de la dirección IP son para la red.
+
+`Paso 1.2 Convierte esos Bits a Binario`
+
+En binario, los primeros `26` bits se establecerán en `'1'` y el resto en `'0'`. Así, para `/26`:
+
+```
+11111111.11111111.11111111.11000000
+```
+
+Esto se lee como los primeros 26 bits son 1s y los últimos 6 bits son 0s.
+
+`Paso 1.3 Convierte el Binario a Decimal`
+
+Cada segmento de 8 bits (octeto) se convierte a su equivalente decimal:
+
+- `11111111` en binario es `255` en decimal.
+- `11000000` en binario es `192` en decimal.
+
+Así, la máscara de subred `/26` en formato decimal es `255.255.255.192`.
+
+`Aplicar la operación AND lógica entre la dirección IP y la máscara de subred`
+
+La operación AND compara cada bit de la dirección IP con el bit correspondiente en la máscara de subred. Si ambos bits son 1, el resultado es 1; de lo contrario, es 0.
+
+Ejemplo para calcular la dirección de subred: Tomemos la dirección `172.16.58.223/26`:
+
+Dirección IP en binario, podes usar esta web para pasar de decimal a binario: [Decimal a Binario](https://masterplc.com/calculadora/convertir-decimal-a-binario/)
+
+```
+10101100.00010000.00111010.11011111
+```
+
+Máscara de subred /26 en binario: 
+
+```
+11111111.11111111.11111111.11000000
+```
+
+Aplicamos la operación and
+
+```
+10101100.00010000.00111010.11011111
+AND
+11111111.11111111.11111111.11000000
+=
+10101100.00010000.00111010.11000000 = 172.16.58.192
+```
+
+Dirección de subred = `172.16.58.192`
+
+`Aplicamos lo mismo para todas las demas direcciones`
+
+`a. 172.16.58.223/26`
+- **Dirección de Subred**: 172.16.58.192
+
+`b. 163.10.5.49/27`
+- **Dirección de Subred**: 163.10.5.32
+  - Máscara de subred /27 en binario: 11111111.11111111.11111111.11100000
+  - Dirección IP y máscara AND resultan en 163.10.5.32
+
+`c. 128.10.1.0/23`
+- **Dirección de Subred**: 128.10.0.0
+  - Máscara de subred /23 en binario: 11111111.11111111.11111110.00000000
+  - Dirección IP y máscara AND resultan en 128.10.0.0
+
+`d. 10.1.0.0/24`
+- **Dirección de Subred**: 10.1.0.0
+  - Máscara de subred /24 en binario: 11111111.11111111.11111111.00000000
+  - Dirección IP y máscara AND resultan en 10.1.0.0
+
+`e. 8.40.11.179/12`
+- **Dirección de Subred**: 8.32.0.0
+  - Máscara de subred /12 en binario: 11111111.11110000.00000000.00000000
+  - Dirección IP y máscara AND resultan en 8.32.0.0
+
+Este proceso te permite identificar la red a la que pertenece una dirección IP y es fundamental para el diseño de redes y el enrutamiento de paquetes en Internet y otras redes de comunicaciones.
+
+#### c) ¿Cuál es la cantidad máxima de hosts que pueden estar en esa subred?
+
+Para determinar la cantidad máxima de hosts que pueden estar en cada subred dada, primero necesitamos entender cómo se calcula a partir de la máscara de subred asociada con cada dirección. La máscara de subred define cuántos bits de la dirección IP están reservados para identificar la subred y cuántos bits están disponibles para identificar hosts dentro de esa subred.
+
+`Paso 1: Determinar la Cantidad de Bits para Hosts`
+
+La cantidad de bits disponibles para los hosts en cada subred es igual a 32 menos el número de bits de la máscara de subred (el número después del `/`). Por ejemplo, si tienes una máscara de `/26`, entonces 32 - 26 = 6 bits están disponibles para los hosts.
+
+`Paso 2: Calcular la Cantidad Máxima de Hosts`
+
+La fórmula para calcular la cantidad máxima de hosts en una subred es \(2^{n} - 2\), donde \(n\) es el número de bits disponibles para hosts. Se restan dos para excluir la dirección de la red misma y la dirección de broadcast.
+
+`Aplicación del Cálculo para Cada Subred`
+
+`172.16.58.223/26`
+- **Bits para hosts:** \(32 - 26 = 6\)
+- **Cantidad máxima de hosts:** \(2^6 - 2 = 64 - 2 = 62\)
+
+`163.10.5.49/27`
+- **Bits para hosts:** \(32 - 27 = 5\)
+- **Cantidad máxima de hosts:** \(2^5 - 2 = 32 - 2 = 30\)
+
+`128.10.1.0/23`
+- **Bits para hosts:** \(32 - 23 = 9\)
+- **Cantidad máxima de hosts:** \(2^9 - 2 = 512 - 2 = 510\)
+
+`10.1.0.0/24`
+- **Bits para hosts:** \(32 - 24 = 8\)
+- **Cantidad máxima de hosts:** \(2^8 - 2 = 256 - 2 = 254\)
+
+`8.40.11.179/12`
+- **Bits para hosts:** \(32 - 12 = 20\)
+- **Cantidad máxima de hosts:** \(2^{20} - 2 = 1,048,576 - 2 = 1,048,574\)
+
+
+Cada subred tiene una capacidad máxima de hosts determinada por el número de bits disponibles para los hosts, que se calcula a partir de la máscara de subred en notación CIDR. Este cálculo es fundamental para el diseño de la red, asegurando que haya suficientes direcciones disponibles para todos los dispositivos previstos en cada segmento de la red sin desperdiciar espacio de direcciones IP.
+
+#### d) ¿Cuál es la dirección de broadcast de esa subred?
+
+Para calcular la dirección de broadcast de una subred, se sigue un proceso sistemático que implica determinar la máscara de subred en formato binario, aplicar operaciones lógicas sobre la dirección IP, y finalmente determinar la dirección de broadcast que es utilizada para enviar paquetes a todos los hosts dentro de esa subred específica.
+
+`Paso 1: Convertir la Máscara de Subred a Formato Binario`
+
+Primero, necesitamos convertir la notación CIDR de la máscara de subred a su forma binaria completa. Este es un ejemplo general de cómo hacerlo:
+
+- **/26** se convierte en 255.255.255.192, que en binario es `11111111.11111111.11111111.11000000`.
+- **/27**, **/23**, **/24**, **/12** se convierten de forma similar, rellenando con 1s hasta el bit especificado por el CIDR, y el resto son 0s.
+
+`Paso 2: Determinar la Dirección de Red`
+
+La dirección de red se obtiene haciendo un AND lógico entre la dirección IP y la máscara de subred. El resultado muestra qué parte de la dirección IP representa la red.
+
+`Paso 3: Calcular la Dirección de Broadcast`
+
+Para obtener la dirección de broadcast, se realiza una operación OR entre la dirección de red y el inverso de la máscara de subred (donde todos los bits de host son '1'):
+
+- Invierte la máscara de subred (los bits que eran '0' se convierten en '1', y viceversa).
+- Realiza una operación OR entre la dirección de red (resultado del Paso 2) y esta máscara invertida. Esto pondrá '1' en todos los bits de host, generando la dirección de broadcast.
+
+
+
+`a. 172.16.58.223/26`
+- **Dirección de Red:** 172.16.58.192 (calculado anteriormente).
+- **Invertir la Máscara de Subred /26:** `00000000.00000000.00000000.00111111`
+- **Dirección de Broadcast:** 172.16.58.255 (OR entre 172.16.58.192 y `00000000.00000000.00000000.00111111`).
+
+`b. 163.10.5.49/27`
+- **Dirección de Red:** 163.10.5.32 (calculado anteriormente).
+- **Invertir la Máscara de Subred /27:** `00000000.00000000.00000000.00011111`
+- **Dirección de Broadcast:** 163.10.5.63.
+
+`c. 128.10.1.0/23`
+- **Dirección de Red:** 128.10.0.0 (calculado anteriormente).
+- **Invertir la Máscara de Subred /23:** `00000000.00000000.00000001.11111111`
+- **Dirección de Broadcast:** 128.10.1.255.
+
+`d. 10.1.0.0/24`
+- **Dirección de Red:** 10.1.0.0.
+- **Invertir la Máscara de Subred /24:** `00000000.00000000.00000000.11111111`
+- **Dirección de Broadcast:** 10.1.0.255.
+
+`e. 8.40.11.179/12`
+- **Dirección de Red:** 8.32.0.0 (calculado anteriormente).
+- **Invertir la Máscara de Subred /12:** `00001111.11110000.11111111.11111111`
+- **Dirección de Broadcast:** 8.47.255.255.
+
+Este método asegura que la dirección de broadcast calculada pueda ser utilizada para enviar mensajes a todos los dispositivos en la subred especificada, lo cual es crucial para ciertas operaciones de red, como la distribución de información a todos los nodos de una vez.
+
+#### e. ¿Cuál es el rango de direcciones IP válidas dentro de la subred?
+
+Para calcular el rango de direcciones IP válidas dentro de cada subred especificada, primero debemos determinar las direcciones de red y de broadcast que ya calculamos en preguntas anteriores. Usando estas direcciones, podemos establecer el rango de direcciones IP que pueden ser asignadas a dispositivos dentro de la subred.
+
+`Paso 1: Identificar la Dirección de Red y de Broadcast`
+
+Como ya hemos calculado anteriormente, la dirección de red es el primer número IP en la subred y la dirección de broadcast es el último. La dirección de red se usa para identificar la subred y no se asigna a ningún dispositivo, mientras que la dirección de broadcast se usa para comunicación a todos los dispositivos de la subred y tampoco se asigna a dispositivos individuales.
+
+`Paso 2: Calcular el Rango de Direcciones IP Válidas`
+
+El rango de direcciones IP válidas para los dispositivos es todas las direcciones entre la dirección de red y la de broadcast, excluyendo estas dos direcciones.
+
+`a. 172.16.58.223/26`
+
+- **Dirección de Red:** 172.16.58.192
+- **Dirección de Broadcast:** 172.16.58.255
+- **Rango de Direcciones Válidas:** 172.16.58.193 a 172.16.58.254
+
+`b. 163.10.5.49/27`
+
+- **Dirección de Red:** 163.10.5.32
+- **Dirección de Broadcast:** 163.10.5.63
+- **Rango de Direcciones Válidas:** 163.10.5.33 a 163.10.5.62
+
+`c. 128.10.1.0/23`
+
+- **Dirección de Red:** 128.10.0.0
+- **Dirección de Broadcast:** 128.10.1.255
+- **Rango de Direcciones Válidas:** 128.10.0.1 a 128.10.1.254
+
+`d. 10.1.0.0/24`
+
+- **Dirección de Red:** 10.1.0.0
+- **Dirección de Broadcast:** 10.1.0.255
+- **Rango de Direcciones Válidas:** 10.1.0.1 a 10.1.0.254
+
+`e. 8.40.11.179/12`
+
+- **Dirección de Red:** 8.32.0.0
+- **Dirección de Broadcast:** 8.47.255.255
+- **Rango de Direcciones Válidas:** 8.32.0.1 a 8.47.255.254
+
+`Importancia de Conocer el Rango de Direcciones Válidas`
+
+Este rango es crítico para los administradores de redes para planificar adecuadamente la asignación de direcciones IP dentro de la red, evitar conflictos de direcciones, y asegurar que todos los dispositivos tengan conectividad adecuada. Además, ayuda a aplicar políticas de seguridad y configurar servicios de red como DHCP de manera efectiva.
 
 
 ---
 
 ### Ejercicio 7
-
-`Su organización cuenta con la dirección de red 128.50.10.0. Indique:`
-
-#### a) ¿Es una dirección de red o de host?
-
-
-`¿Es una dirección de red o de host?`
-
-Para comprender si una dirección IP dada es una dirección de red o de host, necesitamos considerar cómo se estructuran las direcciones IP dentro del modelo de redes TCP/IP, especialmente bajo el esquema de direccionamiento por clases y subredes.
-
-`Estructura de las Direcciones IP`
-
-Una dirección IP está compuesta por 32 bits. En el sistema de clases (Clase A, B, C), estos bits están divididos en dos partes principales: una parte que identifica la red y una parte que identifica el host dentro de esa red. Cómo se dividen estos bits depende de la clase de la dirección:
-- **Clase A**: El primer octeto (8 bits) identifica la red y los otros tres octetos (24 bits) identifican el host.
-- **Clase B**: Los primeros dos octetos (16 bits) identifican la red y los últimos dos octetos (16 bits) identifican el host.
-- **Clase C**: Los primeros tres octetos (24 bits) identifican la red y el último octeto (8 bits) identifica el host.
-
-`Máscara de Subred`
-
-La máscara de subred ayuda a determinar cuántos bits de la dirección IP se utilizan para identificar la red y cuántos para identificar los hosts dentro de esa red. Para una dirección de Clase B como 128.50.10.0:
-- La máscara de subred predeterminada es 255.255.0.0, que también se puede representar como /16. Esto significa que los primeros 16 bits (los dos primeros octetos) son para la identificación de la red.
-
-`Determinación de una Dirección de Red`
-
-- **Dirección de Red**: Es la dirección que identifica únicamente a la red dentro de una infraestructura mayor. En términos técnicos, una dirección de red es donde todos los bits reservados para la identificación de host en la dirección IP están configurados a cero.
-- En el caso de la dirección 128.50.10.0 con una máscara /16, los bits del tercer y cuarto octeto son cero. Esto cumple con la característica de una dirección de red, donde la parte del host está completamente a cero, indicando que esta dirección es usada para representar la red entera y no un dispositivo específico dentro de esa red.
-
-`Importancia de la Diferenciación`
-
-- **Gestión de Redes**: Saber si una dirección es de red o de host es crucial para la configuración de rutas y para asegurar que el tráfico de datos está siendo dirigido correctamente.
-- **Seguridad**: Las direcciones de red a menudo son objetivos de escaneos y ataques, ya que modificando los bits de host se pueden explorar todos los dispositivos dentro de esa subred.
-
-En resumen, 128.50.10.0 es una dirección de red en una configuración de Clase B con una máscara de subred /16 debido a que todos los bits reservados para los hosts (tercer y cuarto octeto) están configurados a cero, representando así la red completa en lugar de un host individual.
-
----
-
-#### b) Clase a la que pertenece y máscara de clase.
-
-Para determinar a qué clase pertenece una dirección IP y cuál es su máscara de subred de clase asociada, podemos analizar el primer octeto de la dirección IP, que es crítico para identificar la clase bajo el esquema de clases original de IPv4. Aquí, nos centramos en la dirección 128.50.10.0.
-
-`Clase a la que pertenece`
-
-La clase de una dirección IP se determina por los primeros bits del primer octeto. Las direcciones de Clase A, B, y C se definen de la siguiente manera:
-
-- **Clase A**: El primer bit es 0. Esto significa que cualquier dirección IP cuyo primer octeto esté entre 1 y 126 es Clase A (128.0.0.0 es el primer octeto posible para Clase B, ya que el primer bit de 128 es 1 cuando se considera en binario: 10000000).
-- **Clase B**: Los dos primeros bits son 10. Las direcciones Clase B van desde 128.0.0.0 hasta 191.255.255.255. 
-- **Clase C**: Los tres primeros bits son 110. Las direcciones Clase C comienzan en 192.0.0.0 y van hasta 223.255.255.255.
-
-Dado que el primer octeto de 128.50.10.0 es 128, y observando los primeros bits de este valor (10000000), podemos ver que los dos primeros bits son "10", lo que indica que esta dirección IP es una **Clase B**.
-
-`Máscara de clase`
-
-Cada clase de dirección IP tiene una máscara de subred predeterminada que define cómo los bits de la dirección IP están divididos entre la red y los host. La máscara de subred de clase define claramente la porción de red de la dirección:
-
-- **Clase A**: La máscara de subred predeterminada es 255.0.0.0, o /8. Esto significa que el primer octeto representa la red, y los tres octetos restantes representan los hosts dentro de esa red.
-- **Clase B**: La máscara de subred predeterminada es 255.255.0.0, o /16. Esto implica que los primeros dos octetos están reservados para la red, y los dos últimos octetos son para los hosts dentro de esa red.
-- **Clase C**: La máscara de subred predeterminada es 255.255.255.0, o /24, asignando los primeros tres octetos a la red y el último octeto a los hosts.
-
-Para la dirección 128.50.10.0, siendo una dirección de Clase B, su máscara de subred de clase asociada es **255.255.0.0** o **/16**.
-
-Estos detalles son fundamentales no solo para la configuración de redes sino también para la planificación y diseño de redes, asegurando que las subredes se creen y manejen eficazmente dentro de los límites de la arquitectura de red deseada.
-
----
-
-#### c) Cantidad de hosts posibles.
-
-#### d) Se necesitan crear, al menos, 513 subredes. Indique:
-
-`i. Máscara necesaria.`
-
-
-`ii. Cantidad de redes asignables.`
-
-
-`iii. Cantidad de hosts por subred.`
-
-
-`iv. Dirección de la subred 710.`
-
-
-`v. Dirección de broadcast de la subred 710.`
-
-
-
-Claro, vamos a profundizar en cada uno de los puntos acerca de la dirección de red 128.50.10.0:
-
-### a. ¿Es una dirección de red o de host?
-Una dirección de red es una identificación única asignada a una subred que sirve para distinguirla dentro de una red más grande, mientras que una dirección de host se refiere a un dispositivo específico (como una computadora o un servidor) dentro de esa subred. En el caso de 128.50.10.0, cuando se considera con su máscara de subred predeterminada de clase B (/16), representa una dirección de red porque el tercer y cuarto octeto están configurados a cero, lo cual es típico para denotar la red en sí y no un host específico dentro de esa red.
-
-### b. Clase a la que pertenece y máscara de clase.
-- **Clase**: La dirección 128.50.10.0 pertenece a la **Clase B**. Esto se puede determinar por el primer octeto (128), que cae en el rango de 128 a 191, específico para las direcciones de Clase B.
-- **Máscara de subred predeterminada**: La máscara de subred estándar para la Clase B es 255.255.0.0, también conocida como /16. Esto significa que los primeros 16 bits de la dirección IP se utilizan para identificar la red, y los 16 bits restantes son para los hosts dentro de esa red.
-
-### c. Cantidad de hosts posibles.
-Con una máscara de subred /16 en una red de Clase B, se asignan 16 bits para los hosts (los bits restantes después de los 16 bits de red). Teóricamente, esto permite \(2^{16} = 65,536\) direcciones en total, pero se deben restar dos direcciones:
-- Una para la dirección de red (donde todos los bits de host son cero).
-- Una para la dirección de broadcast (donde todos los bits de host son uno).
-Esto deja \(65,536 - 2 = 65,534\) direcciones disponibles para asignar a dispositivos individuales (hosts).
-
-### d. Creación de al menos 513 subredes.
-Para segmentar una red de Clase B en subredes, necesitas ajustar la máscara de subred estándar para permitir más bits para identificar cada subred. A continuación se detallan las necesidades:
-
-#### i. Máscara necesaria.
-Se requieren al menos 10 bits adicionales para subredes para crear 513 subredes, ya que \(2^{9} = 512\) subredes no serían suficientes, y \(2^{10} = 1024\) es el siguiente paso que cumple con la necesidad. Esto significa que la nueva máscara de subred es /26 (16 bits originales + 10 bits adicionales = 26 bits).
-
-#### ii. Cantidad de redes asignables.
-Con 10 bits para subredes, puedes tener hasta \(2^{10} = 1024\) subredes distintas.
-
-#### iii. Cantidad de hosts por subred.
-Con los 6 bits restantes asignados a los hosts (32 - 26 = 6), cada subred puede tener \(2^{6} - 2 = 62\) hosts, restando una dirección para la red y otra para el broadcast.
-
-#### iv. Dirección de la subred 710.
-Para calcular la dirección de inicio de la subred 710, multiplicas 710 por 64 (el número de direcciones por subred con una máscara /26), obteniendo 45,440. Añadiendo este número a 128.50.0.0 (base de la red ampliada a partir de la dirección 128.50.10.0 y ajustando a la máscara de red más grande), nos da la dirección 128.50.177.128.
-
-#### v. Dirección de broadcast de la subred 710.
-Sumando 63 (64 direcciones por subred menos uno) a la dirección inicial de la subred 710 (128.50.177.128), obtenemos la dirección de broadcast, 128.50.177.191.
-
-Estos cálculos proporcionan una comprensión detallada de cómo funcionan las subredes dentro de una red de Clase B, utilizando una máscara de subred modificada para cumplir con requisitos específicos de diseño de red y administración.
-
----
-
-8. Si usted estuviese a cargo de la administración del bloque IP 195.200.45.0/24
-- a. ¿Qué máscara utilizaría si necesita definir al menos 9 subredes?
-- b. Indique la dirección de subred de las primeras 9 subredes.
-- c. Seleccione una e indique dirección de broadcast y rango de direcciones asignables en esa subred.
-
-9. Dado el siguiente gráfico:
-
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/84bced02-ed1c-4d45-b301-8bcf124fd4a9)
-
-- a. Verifique si es correcta la asignación de direcciones IP y, en caso de no serlo, modifique la misma para que lo sea.
-- b. ¿Cuántos bits se tomaron para hacer subredes en la red 10.0.10.0/24? ¿Cuántas subredes se podrían generar?
-- c. Para cada una de las redes utilizadas indique si son públicas o privadas.
-
-
-CIDR
-10. ¿Qué es CIDR (Class Interdomain routing)? ¿Por qué resulta útil?
-
-11. ¿Cómo publicaría un router las siguientes redes si se aplica CIDR?
-- a. 198.10.1.0/24
-- b. 198.10.0.0/24
-- c. 198.10.3.0/24
-- d. 198.10.2.0/24
-
-
-12. Listar las redes involucradas en los siguientes bloques CIDR:
-- 200.56.168.0/21
-- 195.24.0.0/13
-- 195.24/13
-
-13. El bloque CIDR 128.0.0.0/2 o 128/2, ¿Equivale a listar todas las direcciones de red de clase B? ¿Cuál sería el bloque CIDR que agrupa todas las redes de clase A?
-
-VLSM
-
-14. ¿Qué es y para qué se usa VLSM?
-
-15. Describa, con sus palabras, el mecanismo para dividir subredes utilizando VLSM.
-
-16. Suponga que trabaja en una organización que tiene la red que se ve en el gráfico y debe armar el direccionamiento para la misma, minimizando el desperdicio de direcciones IP.
-
-Dicha organización posee la red 205.10.192.0/19, que es la que usted deberá utilizar.
-
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/06fab6ba-67c4-427f-b729-5845aec8f9ed)
-
-a. ¿Es posible asignar las subredes correspondientes a la topología utilizando subnetting sin VLSM? Indique la cantidad de hosts que se desperdicia en cada subred.
-
-b. Asigne direcciones a todas las redes de la topología. Tome siempre en cada paso la primera dirección de red posible.
-
-c. Para mantener el orden y el inventario de direcciones disponibles, haga un listado de todas las direcciones libres que le quedaron, agrupándolas utilizando CIDR.
-
-d. Asigne direcciones IP a todas las interfaces de la topología que sea posible.
-
-17. Utilizando la siguiente topología y el bloque asignado, arme el plan de direccionamiento IPv4 teniendo en cuenta las siguientes restricciones:
-
-![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/c39bd88d-e208-45cf-b70e-a764ac567c8b)
-
-- a. Utilizar el bloque IPv4 200.100.8.0/22.
-- b. La red A tiene 125 hosts y se espera un crecimiento máximo de 20 hosts.
-- c. La red X tiene 63 hosts.
-- d. La red B cuenta con 60 hosts
-- e. La red Y tiene 46 hosts y se espera un crecimiento máximo de 18 hosts.
-- f. En cada red, se debe desperdiciar la menor cantidad de direcciones IP posibles. En este sentido, las redes utilizadas para conectar los routers deberán utilizar segmentos de red /30 de modo de desperdiciar la menor cantidad posible de direcciones IP
-
-18. Asigne direcciones IP en los equipos de la topología según el plan anterior.
-
-ICMP y Configuraciones IP
-
-19. Describa qué es y para qué sirve el protocolo ICMP.
-- a. Analice cómo funciona el comando ping.
-    - i. Indique el tipo y código ICMP que usa el ping.
-    - ii. Indique el tipo y código ICMP que usa la respuesta de un ping
-- b. Analice cómo funcionan comandos como traceroute/tracert de Linux/Windows y cómo manipulan el campo TTL de los paquetes IP.
-- c. Indique la cantidad de saltos realizados desde su computadora hasta el sitio www.nasa.gov. Analice:
-    - i. Cómo hacer para que no muestre el nombre del dominio asociado a la IP de cada salto.
-    - ii. La razón de la aparición de * en parte o toda la respuesta de un salto.
-- d. Verifique el recorrido hacia los servidores de nombre del dominio unlp.edu.ar. En base al recorrido realizado, ¿podría confirmar cuál de ellos toma un camino distinto?
-
-20. ¿Para que se usa el bloque 127.0.0.0/8? ¿Qué PC responde a los siguientes comandos?
-- a. ping 127.0.0.1
-- b. ping 127.0.54.43
-
-21. Investigue para qué sirven los comandos ifconfig y route. ¿Qué comandos podría utilizar en su reemplazo? Inicie una topología con CORE, cree una máquina y utilice en ella los comandos anteriores para practicar sus diferentes opciones, mínimamente:
-- Configurar y quitar una dirección IP en una interfaz.
-- Ver la tabla de ruteo de la máquina
+### Ejercicio 8
+### Ejercicio 9
+### Ejercicio 10
+### Ejercicio 11
+### Ejercicio 12
+### Ejercicio 13
+### Ejercicio 14
+### Ejercicio 15
+### Ejercicio 16
+### Ejercicio 17
+### Ejercicio 18
+### Ejercicio 19
+### Ejercicio 20
+### Ejercicio 21
