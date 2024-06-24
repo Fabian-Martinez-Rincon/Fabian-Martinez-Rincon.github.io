@@ -309,12 +309,13 @@ El protocolo ARP (Address Resolution Protocol) desempeña un papel fundamental e
 
 La finalidad de ARP es esencial para la conexión y la eficiencia de las redes IP sobre tecnologías de enlace de datos como Ethernet, proporcionando la vinculación necesaria entre direcciones IP y direcciones MAC. Sin embargo, es importante ser consciente de sus limitaciones de seguridad y tomar medidas apropiadas para proteger las redes contra posibles ataques relacionados con ARP.
 
-
-
 ---
 
-
 ### Ejercicio 8
+
+
+
+
 ---
 ### Ejercicio 9
 ---
