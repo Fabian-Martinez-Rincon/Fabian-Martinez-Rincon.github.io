@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Sis Operativos
+title: Parciales ISO
 author: Alumno de Astro
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
