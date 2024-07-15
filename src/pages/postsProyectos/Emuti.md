@@ -4,7 +4,7 @@ title: Emuti
 author: Fabian Martinez Rincon
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
-    url: '/allProjecs/base_de_datos.webp'
+    url: '/allProjecs/emuti.png'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
 tags: ["Bash", "Linux", "Comandos"]

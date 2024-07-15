@@ -4,14 +4,12 @@ title: Char IT
 author: Fabian Martinez Rincon
 description: "Después de aprender un poco de Astro, ¡no podía parar!"
 image:
-    url: '/allProjecs/base_de_datos.webp'
+    url: '/allProjecs/hopetrade.webp'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
 tags: ["Bash", "Linux", "Comandos"]
 category: Proyectos
 ---
-
-
 
 ## Comandos Practica 1 
 
