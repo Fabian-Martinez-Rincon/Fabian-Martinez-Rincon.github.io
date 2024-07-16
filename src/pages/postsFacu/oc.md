@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: Parciales OC
+title: Finales OC
 author: Alumno de Astro
 description: ""
 image:
