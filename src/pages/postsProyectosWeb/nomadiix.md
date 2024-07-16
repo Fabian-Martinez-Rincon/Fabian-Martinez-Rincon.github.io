@@ -15,7 +15,3 @@ category: Proyectos Webs
 - [Repositorio](https://github.com/Fabian-Martinez-Rincon/Nomadiix-Website)
 
 ![image](https://github.com/user-attachments/assets/fb7ce7ec-a791-4f98-9960-71f6a94294cc)
-
-### Logo
-
-![image](https://github.com/user-attachments/assets/6ba0d503-29ba-4c93-9786-37cb3656dfec)
