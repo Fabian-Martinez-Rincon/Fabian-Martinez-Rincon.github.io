@@ -2,106 +2,83 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Lock
 author: Fabian Martinez Rincon
-description: "Después de aprender un poco de Astro, ¡no podía parar!"
+description: "🔒 In this report we will see both the circuit simulation and the actual programming of a safe."
 image:
     url: '/allProjecs/lock.webp'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
-tags: ["Bash", "Linux", "Comandos"]
+tags: ["Arduino"]
 category: Otros
 ---
 
+- [Link del Repositorio](https://github.com/Fabian-Martinez-Rincon/Lock)
+
+## Introduction
+In this report we will see both the circuit simulation and the actual programming of a safe. Next, we will look at both the general and individual flow diagrams.
+
+### General flow chart.
+![image](https://github.com/user-attachments/assets/bf4996f5-76aa-4d92-949d-ad6f53471110)
+
+### Circuit diagram.
+![image](https://github.com/user-attachments/assets/43836017-7c88-4fa2-bb83-2bfe3ae878bb)
+
+We read the voltage of the pins as follows.
+### Read push buttons.
+![image](https://github.com/user-attachments/assets/c789c3f0-5b2a-4254-9112-5dccf4d178c4)
+
+They would give us this data according to the buttons (from left to right).
+### Voltaje data.
+![image](https://github.com/user-attachments/assets/fb0ab49b-1b8a-4f44-becf-f21070158173)
+
+### The data read according to the voltage of the pins.
+![image](https://github.com/user-attachments/assets/2c5580f9-d244-4a7a-bb9e-fd65c1e91d71)
+
+Once we have all the data from the buttons, we configure the reading of pins
+
+### Lectura de pines
+![image](https://github.com/user-attachments/assets/3b9d2658-584b-4c76-9f5d-e0df877cfa16)
+
+The buttons are loaded as follows (There are two parts that we will explain later)
+
+### Load keyboard
+![image](https://github.com/user-attachments/assets/4cdcbb03-d868-41d5-98b5-50c1e096c6ac)
+
+We show the data pressed both on the display and in the virtual Proteus terminal
+### Example
+![image](https://github.com/user-attachments/assets/6497d8d0-e0fc-4c06-bd8e-f0de23f9cb80)
+
+First we have a special code, if the special code is inserted we have to enter a 4-digit password to our liking.
+We have to compare two arrangements. For this we have to load an array called against []. (this is the array that contains the momentary data). Once this fix is loaded, we have to go through both the fix that we load and the one we have as "Special Code".
+We compare each figure in the arrangement according to position. Every time a number matches in the same position of both, it will be incremented by one in a variable called "k". (This in the function called "FourNumbers" at the end of the report).
+
+### Part of the function
+![image](https://github.com/user-attachments/assets/c47400ec-e5b0-4384-b16a-d9e40b3334cc)
+
+In the event that the password is incorrect, it would show us the following on the screen
+### Wrong case
+
+![image](https://github.com/user-attachments/assets/5a9d674c-d85f-4f33-b998-335da5e2d04d)
+
+In the event that the four digits are equal, both in value and in position, the following function will be executed to be able to enter a new password.
+
+### Fuction
+![image](https://github.com/user-attachments/assets/1eb13431-7e49-4255-a7ef-ee31413a3e3a)
+
+### New password
+![image](https://github.com/user-attachments/assets/0f63ecb0-972a-47c6-bfd4-459d28cb7f68)
 
 
-## Comandos Practica 1 
+In the "Open" function, we set both the "change" and "changeContra" variables to true. 
+We use the "change" function to be able to use the "traverseContra" function and the keyboard takes "ChangeContra" as true to use the other part of the function.
 
-**Sudo**
+### Password update
+![image](https://github.com/user-attachments/assets/fa923f09-8bc5-4a7c-97e4-0d5067b5c30d)
 
-Sudo es un programa diseñado para facilitar a los administradores del sistema permitir a algunos usuarios ejecutar órdenes como root (u otro usuario).
+Once we choose the 4 numbers for our password, it restarts, but with our password saved. If we put the password that we choose after putting the special code, the servomotor has to be turned on.
 
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `apt install sudo`  | Instala el sudo en debian 11  |
-| `cat /var/log/syslog`  | Muestra el contenido dentro del fichero  |
-| `more /var/log/syslog`  | Igual que cat solo que muestra linea por linea   |
-| `less /var/log/syslog`  | Limita la cantidad de lineas visibles  |
-| `vi nomArchivo`  | i para cambiar de modo, escribirmos, luego `esc` y despues :wq  |
-| `file nombreArchivo`  | Muestra que tipo de contenido posee  |
-| `cd Desktop`  | Permite meternos en un directorio  |
-| `cd ..`  |  Para retroceder en el directorio  |
-| `mkdir "ISO 2022"`  | Crea carpetas  |
-| `touch ISO2022-1 ISO2022-2`  | Crea dos archivos  |
-| `ls`  | Lista el contenido del directorio actual  |
-| `pwd`  | Visualiza la ruta donde estoy situado  |
-| `find ./'ISO 2022' -name "ISO*"`  | Busca todos los archivos en los que su nombre contiene la cadena “iso*”   |
-| `df`  | Informa la cantidad de espacio libre en disco  |
-| `who`  | Verifica los usuarios conectados al sistema  |
-| `tail ISO2022-1`  | Muestra en pantalla las últimas líneas de un archivo  |
+### We check new password
+![image](https://github.com/user-attachments/assets/f3067443-c6fc-4de3-a7ff-ef3d5ba6a7aa)
 
-<br>
-
----
-
-### ⚠️ Peligrosos ⚠️ 
-Antes de usar un comando `sudo`, primero tenes que entrar como super-usuario con el comando `su`
-
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `shutdown`  | Permite apagar, reiniciar y detener tu sistema  |
-| `sudo shutdown`  | Apaga el sistema luego de 2 minutos aprox  |
-| `sudo shutdown now`  | Apaga el sistema ahora  |
-| `sudo shutdown -r`  | Reinicia el sistema luego de 2 minutos aprox  |
-| `sudo shutdown -c`  | Cancela el reinicio/apagado  |
-| `sudo reboot`  | Reinicia el equipo  |
-| `sudo halt`  | Detiene la CPU del ordenador  |
-| `locate nomArchivo`  | Como el find pero mas canchero |
-| `sudo apt install locate` | Instalar el locate |
-| `uname -letra`  | Verifica la información del sistema (s, r, v, n, m, p, i, o, **[a]()**)  |
-| `gmesg`  | No lo pude hacer funcionar (puede ser el `dmesg`?)  |
-| `lspci`  | Lista todos los componentes tipo pci    |
-| `at 10:00 PM accion`  | (se sale con Ctrl + D) Nos permite programar tareas|
-| `sudo apt update, sudo apt install at` | instalar el at |
-| `netstat`  | Muestra información sobre las conexiones de red|
-| `sudo apt install net-tools` | Instala netstat |
-| `mount`  | Permite montar dispositivos/particiones para su uso por el so|
-| `sudo apt install nfs-common` | Instala el mount |
-| `umount -V`  | Permite eliminar un sArch remoto que esté montando en la actualidad|
-| `head nomArchivo`  | Puestra el principio de un archivo |
-| `losetup`  | Se utiliza para fijar el dispositivo de bucle   |
-
-<br>
-
----
-
-## Comandos Practica 2
-
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `ls /etc/rc0.d` | miramos el conenido de la runlevel 0. Estos scripts |
-| `sudo runlevel` | nos muestra la runlevel actual |
-| `sudo telinit 2` | nos cambia a la runlevel 2 |
-| `sudo adduser usuarioNuevo` | Crea un usuario |
-| `sudo groupadd grupode5` | Crea un grupo |
-| `sudo groupdel grupode5` | Elimina un grupo |
-| `sudo usermod -a -G grupode5 pepe` | Agrega usuarios a un grupo |
-| `id -nG iso2022` | Muestra los grupos a los que pertenece un usuario |
-| `sudo login iso2022` | Logueo como otro usuario |
-| `sudo userdel iso2022` | Elimina un usuario |
-| `groups`  | Permite ver los grupos a los que pertenece mi usuario  |
-| `su`  | Entrar como super usuario  |
-| `who`  | Verifiqua los usuarios conectado al sistema  |
-| `passwd`  | Cambia la constraseña del usuario actual  |
-| `chmod (u,g,o)(+,=)(w,rw,rwx) archivo.txt` | Nos permite modificar cualquier permiso |
-| `chown nombreUsuario nombreArchivo` | Cambia el propietario de un archivo |
-| `chgrp` | Igual que chwon sintaxis mas simple |
-| `du` | Muestra tamaño de ficheros y carpetas (actual) |
-| `rmdir nombreCarpeta` | Elimina una carpeta |
-| `cp nombreArchivo nombreCarpeta` | Sirve para copiar archivos y directorios dentro del sArch |
-| `mv` | e utiliza para mover o renombrar los archivos y directorios |
-|`ps`  | posee algunas opciones para mostrar los procesos en ejecución |
-| `ls \| more ` | Se ejecuta el comando ls y la salida del mismo, es enviada como entrada del comanda more |
-| `grep -iRl .conf ` | Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf” |
-| `tar cvf ejercicio6.tar directorioNuevo` | Comprime el directorio o archivo marcado |
-| `gzip` | comprime/descomprime archivos ([Parametros que puede recibir](https://www.solvetic.com/tutoriales/article/11693-comprimir-o-descomprimir-archivos-con-gzip-en-linux/)) |
-| `zgrep` | lo mismo que grep pero puede estar comprimido el archivo |
-| `wc` | cuenta nuevas líneas, palabras y bytes para los archivos  |
+Since the servo part was in my topics, I left it to my partner. Even so, I printed a message of what would happen if it was activated.
+### Conclusion.
+EIn this job I had problems in the part where I had to load a new arrangement. I implemented all the tools that we saw these years in addition to some things that were personal research.

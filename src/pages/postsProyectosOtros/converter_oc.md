@@ -2,106 +2,42 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Converter OC
 author: Fabian Martinez Rincon
-description: "Después de aprender un poco de Astro, ¡no podía parar!"
+description: "📟 Shows all the characteristics of a decimal or binary number."
 image:
     url: '/allProjecs/converter-oc.webp'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
-tags: ["Bash", "Linux", "Comandos"]
+tags: ["Pascal", "Visual Studio"]
 category: Otros
 ---
 
+- [Link del Repositorio](https://github.com/Fabian-Martinez-Rincon/Converter-OC)
+
+[![HitCount](http://hits.dwyl.com/Fabian-Martinez1/Converter-OC.svg)](http://hits.dwyl.com/Fabian-Martinez1/Converter-OC)
 
 
-## Comandos Practica 1 
+## Diagrama.
+![image](https://github.com/user-attachments/assets/cf0c2559-2f71-4c8d-9633-a8c18e18728b)
 
-**Sudo**
+## Menu
+![image](https://github.com/user-attachments/assets/5fe59a94-0984-479c-ba84-c430359dc215)
 
-Sudo es un programa diseñado para facilitar a los administradores del sistema permitir a algunos usuarios ejecutar órdenes como root (u otro usuario).
+## Ejemplo con un binario que empieza con 1
 
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `apt install sudo`  | Instala el sudo en debian 11  |
-| `cat /var/log/syslog`  | Muestra el contenido dentro del fichero  |
-| `more /var/log/syslog`  | Igual que cat solo que muestra linea por linea   |
-| `less /var/log/syslog`  | Limita la cantidad de lineas visibles  |
-| `vi nomArchivo`  | i para cambiar de modo, escribirmos, luego `esc` y despues :wq  |
-| `file nombreArchivo`  | Muestra que tipo de contenido posee  |
-| `cd Desktop`  | Permite meternos en un directorio  |
-| `cd ..`  |  Para retroceder en el directorio  |
-| `mkdir "ISO 2022"`  | Crea carpetas  |
-| `touch ISO2022-1 ISO2022-2`  | Crea dos archivos  |
-| `ls`  | Lista el contenido del directorio actual  |
-| `pwd`  | Visualiza la ruta donde estoy situado  |
-| `find ./'ISO 2022' -name "ISO*"`  | Busca todos los archivos en los que su nombre contiene la cadena “iso*”   |
-| `df`  | Informa la cantidad de espacio libre en disco  |
-| `who`  | Verifica los usuarios conectados al sistema  |
-| `tail ISO2022-1`  | Muestra en pantalla las últimas líneas de un archivo  |
+![image](https://github.com/user-attachments/assets/8ddf3e65-d9ae-49fb-9a6e-1d5392a3777d)
 
-<br>
+## Ejemplo con un binario que empieza con 0
 
----
+![image](https://github.com/user-attachments/assets/93475411-650e-4a9c-b5cd-453d05770609)
 
-### ⚠️ Peligrosos ⚠️ 
-Antes de usar un comando `sudo`, primero tenes que entrar como super-usuario con el comando `su`
+## Ejemplo con un decimal positivo
 
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `shutdown`  | Permite apagar, reiniciar y detener tu sistema  |
-| `sudo shutdown`  | Apaga el sistema luego de 2 minutos aprox  |
-| `sudo shutdown now`  | Apaga el sistema ahora  |
-| `sudo shutdown -r`  | Reinicia el sistema luego de 2 minutos aprox  |
-| `sudo shutdown -c`  | Cancela el reinicio/apagado  |
-| `sudo reboot`  | Reinicia el equipo  |
-| `sudo halt`  | Detiene la CPU del ordenador  |
-| `locate nomArchivo`  | Como el find pero mas canchero |
-| `sudo apt install locate` | Instalar el locate |
-| `uname -letra`  | Verifica la información del sistema (s, r, v, n, m, p, i, o, **[a]()**)  |
-| `gmesg`  | No lo pude hacer funcionar (puede ser el `dmesg`?)  |
-| `lspci`  | Lista todos los componentes tipo pci    |
-| `at 10:00 PM accion`  | (se sale con Ctrl + D) Nos permite programar tareas|
-| `sudo apt update, sudo apt install at` | instalar el at |
-| `netstat`  | Muestra información sobre las conexiones de red|
-| `sudo apt install net-tools` | Instala netstat |
-| `mount`  | Permite montar dispositivos/particiones para su uso por el so|
-| `sudo apt install nfs-common` | Instala el mount |
-| `umount -V`  | Permite eliminar un sArch remoto que esté montando en la actualidad|
-| `head nomArchivo`  | Puestra el principio de un archivo |
-| `losetup`  | Se utiliza para fijar el dispositivo de bucle   |
+![image](https://github.com/user-attachments/assets/30513894-ca55-4457-8c87-e0d2ac9b5d5f)
 
-<br>
+## Ejemplo de un decimal negativo
 
----
+![image](https://github.com/user-attachments/assets/70b4660e-f066-4c17-861b-5e0eaacc5260)
 
-## Comandos Practica 2
+### Website
 
-| Comando  | Funcion |
-| ------------- | ------------- |
-| `ls /etc/rc0.d` | miramos el conenido de la runlevel 0. Estos scripts |
-| `sudo runlevel` | nos muestra la runlevel actual |
-| `sudo telinit 2` | nos cambia a la runlevel 2 |
-| `sudo adduser usuarioNuevo` | Crea un usuario |
-| `sudo groupadd grupode5` | Crea un grupo |
-| `sudo groupdel grupode5` | Elimina un grupo |
-| `sudo usermod -a -G grupode5 pepe` | Agrega usuarios a un grupo |
-| `id -nG iso2022` | Muestra los grupos a los que pertenece un usuario |
-| `sudo login iso2022` | Logueo como otro usuario |
-| `sudo userdel iso2022` | Elimina un usuario |
-| `groups`  | Permite ver los grupos a los que pertenece mi usuario  |
-| `su`  | Entrar como super usuario  |
-| `who`  | Verifiqua los usuarios conectado al sistema  |
-| `passwd`  | Cambia la constraseña del usuario actual  |
-| `chmod (u,g,o)(+,=)(w,rw,rwx) archivo.txt` | Nos permite modificar cualquier permiso |
-| `chown nombreUsuario nombreArchivo` | Cambia el propietario de un archivo |
-| `chgrp` | Igual que chwon sintaxis mas simple |
-| `du` | Muestra tamaño de ficheros y carpetas (actual) |
-| `rmdir nombreCarpeta` | Elimina una carpeta |
-| `cp nombreArchivo nombreCarpeta` | Sirve para copiar archivos y directorios dentro del sArch |
-| `mv` | e utiliza para mover o renombrar los archivos y directorios |
-|`ps`  | posee algunas opciones para mostrar los procesos en ejecución |
-| `ls \| more ` | Se ejecuta el comando ls y la salida del mismo, es enviada como entrada del comanda more |
-| `grep -iRl .conf ` | Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf” |
-| `tar cvf ejercicio6.tar directorioNuevo` | Comprime el directorio o archivo marcado |
-| `gzip` | comprime/descomprime archivos ([Parametros que puede recibir](https://www.solvetic.com/tutoriales/article/11693-comprimir-o-descomprimir-archivos-con-gzip-en-linux/)) |
-| `zgrep` | lo mismo que grep pero puede estar comprimido el archivo |
-| `wc` | cuenta nuevas líneas, palabras y bytes para los archivos  |
+Pagina web sobre el repositorio [link](https://fabianmartinez1234567.github.io/Converter-OC/)
