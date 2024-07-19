@@ -13,6 +13,8 @@ category: Redes
 
 ## Introducción
 
+### Ejercicio 1
+
 <details><summary>¿Cuál es la función de la capa de aplicación?</summary>
 
 La función de la capa de aplicación en las redes de computadoras es proporcionar servicios de comunicación a los usuarios y a las aplicaciones. Esta capa incluye las propias aplicaciones que utilizan la red, como navegadores web, clientes de correo electrónico y aplicaciones de mensajería instantánea. En el contexto de Machine to Machine (M2M), la capa de aplicación facilita la comunicación entre máquinas sin intervención humana.
@@ -21,6 +23,7 @@ Además, la capa de aplicación actúa como una interfaz entre el usuario o las 
 
 </details>
 
+### Ejercicio 2
 
 <details><summary>Si dos procesos deben comunicarse:</summary>
 
@@ -42,6 +45,7 @@ Además, la capa de aplicación actúa como una interfaz entre el usuario o las 
 
 </details>
 
+### Ejercicio 3
 
 <details><summary>Explique brevemente cómo es el modelo Cliente/Servidor.</summary>
 
@@ -68,6 +72,7 @@ El modelo Cliente/Servidor es una arquitectura de red donde el servidor es una m
 
 </details>
 
+### Ejercicio 4
 
 <details><summary>Describa la funcionalidad de la entidad genérica “Agente de usuario” o “User agent”</summary>
 
@@ -91,6 +96,8 @@ Ejemplos de agentes de usuario incluyen navegadores web, clientes de correo elec
 
 </details>
 
+### Ejercicio 5
+
 <details><summary>¿Qué son y en qué se diferencian HTML y HTTP?</summary>
 
 1. **HTML**: Es un lenguaje de marcado utilizado para crear y estructurar páginas web. HTML utiliza etiquetas y atributos para definir cómo se muestra el contenido en un navegador web, como textos, imágenes, enlaces, tablas, listas, etc. HTML se ocupa de la presentación y la estructura del contenido en la web.
@@ -105,11 +112,12 @@ En cuanto a la entidad donde se ubicaría HTML, este se sitúa en la capa de apl
 
 </details>
 
----
 
-## Ejercicio 6
+### Ejercicio 6
 
 HTTP tiene definido un formato de mensaje para los requerimientos y las respuestas. 
+
+#### Ejercicio 6.A)
 
 <details><summary>¿Qué información de la capa de aplicación nos indica si un mensaje es de requerimiento o de respuesta para HTTP?</summary>
 
@@ -190,6 +198,7 @@ Estos componentes permiten que HTTP sea un protocolo flexible y poderoso, adecua
 
 </details>
 
+#### Ejercicio 6.B)
 
 <details><summary>¿Cuál es su formato?</summary>
 
@@ -256,8 +265,6 @@ El formato de un mensaje HTTP, ya sea un mensaje de requerimiento (solicitud) o 
    </body>
    </html>
    ```
-
-En resumen, tanto los mensajes de requerimiento como de respuesta HTTP están estructurados en una línea de inicio seguida por cabeceras, y opcionalmente un cuerpo de mensaje. Las cabeceras son fundamentales para proporcionar metadatos y controlar el comportamiento del intercambio HTTP.
 
 </details>
 
@@ -374,7 +381,7 @@ La opción `-L` instruirá a `curl` para que siga cualquier redirección HTTP ha
 
 ---
 
-## Ejercicio 7
+### Ejercicio 7
 
 <details><summary>Utilizando la VM, abra una terminal e investigue sobre el comando curl.</summary>
 
@@ -398,13 +405,15 @@ Estos parámetros permiten a los usuarios de `curl` personalizar sus solicitudes
 
 ---
 
-## Ejercicio 8
+### Ejercicio 8
 
 Ejecute el comando curl sin ningún parámetro adicional y acceda a www.redes.unlp.edu.ar. Luego responda:
 
-### Resultado
+#### Resultado
 
 ![image](https://github.com/Fabian-Martinez-Rincon/Fabian-Martinez-Rincon/assets/55964635/37102b10-935b-4061-b8ea-cc6e96ce24e2)
+
+#### Ejercicio 8.A)
 
 <details><summary>¿Cuántos requerimientos realizó y qué recibió?</summary>
 
@@ -432,7 +441,6 @@ Este comando intentará descargar la página principal y todos los recursos nece
 
 </details>
 
-
 <details><summary>Pruebe redirigiendo la salida(>) del comando curl a un archivo con extensión html y abrirlo con un navegador.</summary>
 
 ```bash
@@ -445,6 +453,8 @@ curl www.redes.unlp.edu.ar > index.html
 
 </details>
 
+#### Ejercicio 8.B)
+
 <details><summary>¿Cómo funcionan los atributos href de los tags link e img en html?</summary>
 
 - **`<link href="./bootstrap/css/bootstrap.css" rel="stylesheet">`**: El atributo `href` en un elemento `link` generalmente se utiliza para enlazar hojas de estilo externas a la página HTML. Aquí, `href` apunta a la ubicación de una hoja de estilo CSS que el navegador debería cargar y aplicar a la página.
@@ -453,9 +463,9 @@ curl www.redes.unlp.edu.ar > index.html
 
 </details>
 
+#### Ejercicio 8.C)
+
 <details><summary>Para visualizar la página completa con imágenes como en un navegador</summary>
-
-
 
 `¿alcanza con realizar un único requerimiento?`
 
@@ -547,6 +557,7 @@ Content-Type: text/html
 
 </details>
 
+#### Ejercicio 9.A)
 
 <details><summary>¿Qué diferencias nota entre cada uno?</summary>
 
@@ -565,6 +576,8 @@ La principal diferencia es que el primer comando realiza una solicitud `GET` y d
 
 </details>
 
+#### Ejercicio 9.B)
+
 <details><summary>¿Qué ocurre si en el primer comando se quita la redirección a /dev/null?</summary>
 
 Si se quita la redirección a `/dev/null` del primer comando, el cuerpo de la respuesta del servidor (que es el contenido de la página web solicitada) se mostrará en la terminal en lugar de ser descartado. Esto podría generar mucho texto en la terminal si la página solicitada tiene un contenido extenso.
@@ -576,6 +589,8 @@ Si se quita la redirección a `/dev/null` del primer comando, el cuerpo de la re
 En el segundo comando, la redirección a `/dev/null` no es necesaria porque el método `HEAD` no devuelve un cuerpo en la respuesta, por lo que no hay contenido para mostrar o descartar.
 
 </details>
+
+#### Ejercicio 9.C)
 
 <details><summary>¿Cuántas cabeceras viajaron en el requerimiento? ¿Y en la respuesta?</summary>
 
@@ -603,7 +618,7 @@ En resumen, el número de cabeceras que viajan en la respuesta es el mismo en am
 
 ---
 
-## Ejercicio 10
+### Ejercicio 10
 
 <details><summary>¿Qué indica la cabecera Date?</summary>
 
@@ -630,12 +645,9 @@ En resumen, la cabecera `Date` es un componente estándar en las respuestas HTTP
 
 ---
 
-## Ejercicio 11
-
-
+### Ejercicio 11
 
 <details><summary>En HTTP/1.0, ¿cómo sabe el cliente que ya recibió todo el objeto solicitado completamente?</summary>
-
 
 En HTTP, la forma en que un cliente sabe que ha recibido todo el objeto solicitado completamente varía entre las versiones HTTP/1.0 y HTTP/1.1 debido a las diferencias en cómo gestionan las conexiones y transmiten los datos.
 
@@ -660,7 +672,7 @@ Estos mecanismos permiten una transferencia de datos más eficiente y la reutili
 
 ---
 
-## Ejercicio 12
+### Ejercicio 12
 
 
 <details><summary>Investigue los distintos tipos de códigos de retorno de un servidor web y su significado en la RFC.</summary>
@@ -702,7 +714,7 @@ En resumen, la clasificación y el detalle de los códigos de retorno en la RFC 
 
 ---
 
-## Ejercicio 13
+### Ejercicio 13
 
 Utilizando curl, realice un requerimiento con el método HEAD al sitio
 `www.redes.unlp.edu.ar` e indique:
@@ -718,6 +730,8 @@ Connection: keep-alive
 Location: https://unlp.edu.ar/
 ```
 
+#### Ejercicio 13 A)
+
 <details><summary>¿Qué información brinda la primera línea de la respuesta?</summary>
 
 La primera línea de la respuesta `HTTP/1.1 301 Moved Permanently` indica que:
@@ -727,8 +741,9 @@ La primera línea de la respuesta `HTTP/1.1 301 Moved Permanently` indica que:
 
 </details>
 
-<details><summary>¿Cuántos encabezados muestra la respuesta?</summary>
+#### Ejercicio 13 B)
 
+<details><summary>¿Cuántos encabezados muestra la respuesta?</summary>
 
 La respuesta muestra 6 encabezados, que son:
 1. **Server**: Información sobre el servidor web.
@@ -740,13 +755,15 @@ La respuesta muestra 6 encabezados, que son:
 
 </details>
 
+#### Ejercicio 13 C)
+
 <details><summary>¿Qué servidor web está sirviendo la página?</summary>
 
 El servidor web que está sirviendo la página es `nginx/1.18.0`. Esto se indica en el encabezado `Server`.
 
 </details>
 
-
+#### Ejercicio 13 D)
 
 <details><summary>¿El acceso a la página solicitada fue exitoso o no?</summary>
 
@@ -754,6 +771,8 @@ El servidor web que está sirviendo la página es `nginx/1.18.0`. Esto se indica
 El acceso a la página solicitada no fue exitoso en términos de recuperar el recurso originalmente solicitado; en cambio, se informa al cliente de que el recurso se ha movido a una nueva ubicación permanente, que es `https://unlp.edu.ar/`. Esto significa que la solicitud inicial de la página condujo a una redirección.
 
 </details>
+
+#### Ejercicio 13 E)
 
 <details><summary>¿Cuándo fue la última vez que se modificó la página?</summary>
 
@@ -796,7 +815,7 @@ No se proporciona un encabezado `Last-Modified`, por lo que no podemos determina
 
 </details>
 
-#### Parte f
+#### Ejercicio 13 D)
 
 Solicite la página nuevamente con curl usando GET, pero esta vez indique que quiere obtenerla sólo si la misma fue modificada en una fecha posterior a la que efectivamente fue modificada.
 
