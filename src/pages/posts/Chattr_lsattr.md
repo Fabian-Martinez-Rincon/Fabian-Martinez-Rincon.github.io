@@ -5,7 +5,7 @@ pubDate: 2024-03-07
 description: ''
 author: 'Fabian Martinez Rincon'
 image:
-    url: '/posts/linux/comandos2.webp'
+    url: '/posts/linux/Chattr_y_Lsattr.jpg'
     alt: 'El logotipo completo de Astro.'
 tags: ["ACL", "Permisos", "Linux"]
 category: Linux

@@ -1,0 +1,40 @@
+---
+import Layout from "../../layouts/Layout.astro"
+import SectionContainer from "../../components/SectionContainer.astro"
+
+import BlogsFacu from "../../components/sections/BlogsFacu.astro"
+import BlogsPatrones from "../../components/sections/BlogsPatrones.astro"
+import BlogsRedes from "../../components/sections/BlogsRedes.astro"
+
+import Github from "../../components/sections/Github.astro"
+import Title from "../../components/Title.astro"
+
+---
+
+<Layout
+  title="Fabian Martinez Rincon - Backend Developer Python"
+  description="Backend Developer Python"
+>
+
+  <main class="px-4 ">
+    <div class="space-y-20">
+      <SectionContainer class="mt-16 py-8 md:py-12">
+
+        <Title title="Facultad" emoji="👨🏽‍🎓"/>
+        <BlogsFacu/>
+        <br ><div class="h-4"></div>
+
+        <Title title="Patrones" emoji="👨🏽‍🎓"/>
+        <BlogsPatrones/>
+        <br ><div class="h-4"></div>
+
+        <Title title="Redes y Comunicaciones" emoji="👨🏽‍🎓"/>
+        <BlogsRedes/>
+
+        <br ><div class="h-4"></div>
+        <Github/>
+      </SectionContainer>
+  </div>
+  </main>
+</Layout>
+

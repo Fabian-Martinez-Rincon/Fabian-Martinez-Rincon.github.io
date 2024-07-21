@@ -2,9 +2,9 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Descriptores de Archivos
 author: Fabian Martinez Rincon
-description: "Después de aprender un poco de Astro, ¡no podía parar!"
+description: ""
 image:
-    url: '/posts/linux/archivos.png'
+    url: '/posts/linux/DESCRIPTORES.jpg'
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
 tags: ["Bash", "Linux", "Comandos"]
