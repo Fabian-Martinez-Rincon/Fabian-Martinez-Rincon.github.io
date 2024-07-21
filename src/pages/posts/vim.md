@@ -292,3 +292,4 @@ source $HOME/.config/nvim/keys/mappings.vim
 - [Instalar debian 11](https://www.youtube.com/watch?v=6PTjoSBdjok)
 - [Copiar y Pegar entre la virtual box y nuestro Sistema Operativo](https://www.nociones.de/como-activar-el-copiar-y-pegar-en-virtual-box/#:~:text=Para%20activarlo%2C%20tenemos%20que%20ir,la%20m%C3%A1quina%20virtual%20y%20viceversa.)
 - [Video de ayuda para preparar el blog](https://www.youtube.com/watch?v=6sdw6G78Jd0)
+- [CheatSheet](https://vim.rtorr.com/lang/es_es)
