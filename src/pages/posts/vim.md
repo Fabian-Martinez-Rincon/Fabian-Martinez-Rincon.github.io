@@ -293,3 +293,23 @@ source $HOME/.config/nvim/keys/mappings.vim
 - [Copiar y Pegar entre la virtual box y nuestro Sistema Operativo](https://www.nociones.de/como-activar-el-copiar-y-pegar-en-virtual-box/#:~:text=Para%20activarlo%2C%20tenemos%20que%20ir,la%20m%C3%A1quina%20virtual%20y%20viceversa.)
 - [Video de ayuda para preparar el blog](https://www.youtube.com/watch?v=6sdw6G78Jd0)
 - [CheatSheet](https://vim.rtorr.com/lang/es_es)
+
+---
+
+### Comandos basicos
+
+Para introducir datos presionamos `i` y para salir `esc`
+
+- **Es equivalente al Ctrl + Z**: Alt + U
+- **Eliminar Palabra** Ctrl + W
+- **Borrar toda una linea** DD
+
+Si queremos copiar y pegar muchas cosas hacemos 
+- `esc` + `v` y seleccionamos,
+  - Copiar `y`
+  - Cortar `d`
+  - Pegar `p`
+- `Repetir la accion anterior`: `esc` + `.`
+- Grabar accion `q` + `nombre de la accion` + d w para cortar por ejemplo ``+ `q` //no funca
+- **Modo busqueda**: `esc` + `/` + `palabra a buscar`
+- **Reemplazar**: `esc` + `:%s/palabra a buscar/palabra a reemplazar/g`
