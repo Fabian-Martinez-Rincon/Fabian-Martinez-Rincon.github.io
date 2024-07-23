@@ -232,3 +232,147 @@ export TERM=xter
 
 ### Nivel 13
 
+![image](https://github.com/user-attachments/assets/5b14d13f-bbe7-4378-90ad-fbc7c4679b0b)
+
+![image](https://github.com/user-attachments/assets/c97901e9-dd4e-442e-827f-703abe572088)
+
+![image](https://github.com/user-attachments/assets/295deae6-59be-45c8-9bc2-523497c92712)
+
+![image](https://github.com/user-attachments/assets/af6456ca-558a-4767-aa9a-b5e76aee8568)
+
+![image](https://github.com/user-attachments/assets/e52e3da7-4eb3-46ff-bd7f-8809af56b808)
+
+Y asi hasta el final
+
+```bash
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+first_file_name="data.gz"
+decompressed_file_name="$(7z l data.gz | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+
+7z x $first_file_name &>/dev/null
+
+while [ $decompressed_file_name ]; do
+  echo -e "\n[+] Nuevo archivo descomprimido: $decompressed_file_name"
+  7z x $decompressed_file_name &>/dev/null
+  decompressed_file_name="$(7z l $decompressed_file_name 2>/dev/null | tail -n 3 | head -n 1 | awk 'NF{print $NF}')"
+done
+
+```
+
+![image](https://github.com/user-attachments/assets/f2a995e4-2e8a-46fb-8ab0-3cb6999c7a71)
+
+### Nivel 14
+
+El manejo de pares de claves y las conexiones SSH son aspectos fundamentales para garantizar una comunicación segura entre dos máquinas en una red, especialmente en entornos de administración de sistemas y en la nube. Aquí te explico en detalle cómo funcionan los pares de claves, cómo se utilizan en conexiones SSH y cómo puedes gestionarlos.
+
+### Concepto de Pares de Claves
+
+#### 1. **Pares de Claves**
+Un par de claves SSH consiste en dos claves criptográficas:
+   - **Clave Privada**: La clave privada es secreta y debe ser guardada de forma segura por el usuario. Nunca debe ser compartida.
+   - **Clave Pública**: La clave pública puede ser compartida libremente con cualquier servidor al que el usuario desee conectarse.
+
+Estas claves se utilizan en un algoritmo criptográfico que asegura que la identidad del usuario pueda ser verificada por el servidor sin necesidad de enviar la clave privada a través de la red.
+
+#### 2. **Criptografía Asimétrica**
+Las claves SSH utilizan criptografía asimétrica. La clave privada genera una firma digital única que solo puede ser verificada por su correspondiente clave pública. Esto permite que las comunicaciones sean seguras y que solo el poseedor de la clave privada pueda iniciar una sesión segura.
+
+### Conexiones SSH Usando Pares de Claves
+
+#### Proceso de Conexión SSH
+1. **Generación de Par de Claves**: El primer paso es generar un par de claves usando `ssh-keygen`.
+   ```bash
+   ssh-keygen -t rsa -b 4096
+   ```
+   Esto genera una clave privada y una clave pública (por defecto, `id_rsa` y `id_rsa.pub`).
+
+2. **Copiar la Clave Pública al Servidor**: La clave pública debe ser colocada en el archivo `authorized_keys` del servidor.
+   ```bash
+   ssh-copy-id usuario@servidor
+   ```
+   Este comando copia automáticamente la clave pública al servidor en el archivo adecuado.
+
+3. **Inicio de Sesión SSH**: Cuando el usuario intenta iniciar sesión en el servidor, el servidor crea un mensaje, lo cifra con la clave pública y lo envía al cliente.
+   ```bash
+   ssh usuario@servidor
+   ```
+   El cliente usa la clave privada para descifrar el mensaje. Si el descifrado es exitoso, se demuestra la posesión de la clave privada y se establece la sesión sin necesidad de contraseña.
+
+### Ventajas del Uso de Pares de Claves en SSH
+
+- **Seguridad Mejorada**: Es mucho más difícil comprometer una clave criptográfica que adivinar una contraseña.
+- **Automatización**: Las conexiones pueden ser automatizadas sin intervención humana, ideal para scripts y tareas automatizadas.
+- **Control de Acceso**: Las claves pueden ser añadidas o revocadas fácilmente del servidor para permitir o restringir el acceso.
+
+### Mejores Prácticas de Seguridad
+
+- **Proteger la Clave Privada**: La clave privada debe ser guardada de forma segura, protegida por una frase de paso fuerte y solo accesible por el usuario.
+- **Permisos Adecuados**: Asegúrate de que los permisos de los archivos de claves privadas sean restrictivos (`chmod 600 ~/.ssh/id_rsa`).
+- **Rotación de Claves**: Las claves deben ser cambiadas regularmente para mitigar los riesgos asociados con el robo o compromiso de claves a largo plazo.
+- **Uso de `ssh-agent`**: Utiliza `ssh-agent` para mantener las claves cargadas en memoria y seguras, evitando tener que introducir la frase de paso cada vez.
+
+### Conclusión
+
+El manejo efectivo de pares de claves es esencial para mantener seguras las conexiones SSH. A través del uso de criptografía asimétrica, se puede asegurar que las conexiones entre el cliente y el servidor sean confiables y seguras, minimizando el riesgo de interceptación o acceso no autorizado. Con una configuración adecuada y siguiendo las mejores prácticas de seguridad, los pares de claves SSH proporcionan una herramienta robusta para la gestión segura de servidores y automatización de tareas.
+
+![image](https://github.com/user-attachments/assets/b8d1cb75-4461-4934-a15e-9c6be7334a51)
+
+![image](https://github.com/user-attachments/assets/57d5436a-da02-43b3-a1d5-a974380d1fa9)
+![image](https://github.com/user-attachments/assets/bd8818b0-1692-432a-b69b-3117947d5668)
+
+### Nivel 15
+
+![image](https://github.com/user-attachments/assets/8deac825-6587-4adc-ab45-8e09a8be1c11)
+
+### Nivel 16
+
+![image](https://github.com/user-attachments/assets/a91b4366-4e99-442e-8379-4d036b1c088b)
+
+### Nivel 17
+
+```bash
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+for i in $(seq 1 254); do
+  timeout 1 bash -c "ping -c 1 192.168.1.$i &>/dev/null" && echo "[+] Host 192.168.1.$i - ACTIVE" &
+done; wait
+
+```
+
+```bash
+#!/bin/bash
+
+function ctrl_c(){
+  echo -e "\n\n[!] Saliendo...\n"
+  tput cnorm; exit 1
+}
+
+# Ctrl+C
+trap ctrl_c INT
+
+tput civis # Ocultar el cursor
+for port in $(seq 1 65535); do
+  (echo '' > /dev/tcp/127.0.0.1/$port) 2>/dev/null && echo "[+] $port - OPEN" &
+done; wait
+
+# Recuperamos el cursor
+tput cnorm
+
+```
