@@ -28,6 +28,10 @@ category: Proyectos Python
   **Cuando** presiona en el botón "Ver Filiales"
   **Entonces** el sistema muestra un listado de las filiales
 ```
+
+![image](https://github.com/user-attachments/assets/8cd7633b-5afa-4fbb-9556-db644c10f59d)
+![image](https://github.com/user-attachments/assets/24a7e600-a7be-47d6-991e-a32fd748e2d0)
+
 </details>
 
 <details><summary>2) Cambiar Visibilidad</summary>
@@ -51,6 +55,10 @@ category: Proyectos Python
   **Entonces** el sistema cambia el estado de la publicación, la publica e informa "La publicación se ha actualizado correctamente."
 ```
 
+![image](https://github.com/user-attachments/assets/8b0daf04-d906-41bc-b98f-18d1a2262773)
+![image](https://github.com/user-attachments/assets/35663a80-913e-41e1-a94c-e909bdc6f7e4)
+![image](https://github.com/user-attachments/assets/7d14b8a1-e056-4960-84ac-66f99092589a)
+
 </details>
 
 <details><summary>3) Editar Publicación</summary>
@@ -69,6 +77,11 @@ category: Proyectos Python
   **Cuando** presiona el botón de "Editar Publicación", "Nueva Descripción": "Estado Perfecto" y presiona el botón de "Confirmar".
   **Entonces** el sistema informa "La publicación se ha actualizado correctamente."
 ```
+
+![image](https://github.com/user-attachments/assets/f6ea19a5-5ac2-4bcf-8611-1f5cf087c159)
+![image](https://github.com/user-attachments/assets/d46e15b8-624a-480d-a47c-7afb785aa482)
+![image](https://github.com/user-attachments/assets/1a314cfe-3bd9-4fac-9633-e512ea0f94d5)
+
 </details>
 
 <details><summary>4) Ver Perfil</summary>
@@ -85,6 +98,8 @@ category: Proyectos Python
   **Cuando** presiona el botón "Ver Perfil"
   **Entonces** el sistema muestra la información personal del usuario y el botón "Editar perfil"
 ```
+
+![image](https://github.com/user-attachments/assets/5bb97cad-5466-4de5-8078-5d6822425dde)
 
 </details>
 
@@ -117,6 +132,11 @@ category: Proyectos Python
   **Entonces** el sistema informa "Contraseña actual incorrecta. Inténtalo de nuevo."
 ```
 
+![image](https://github.com/user-attachments/assets/76e13b2a-0756-4153-82be-3bb59f7fd47f)
+![image](https://github.com/user-attachments/assets/8fba0fb0-b68c-43df-9988-2adf0aa8ab4d)
+![image](https://github.com/user-attachments/assets/0964c9bd-b860-4f45-9ae2-a80f938d9d12)
+![image](https://github.com/user-attachments/assets/9c3c805c-8c0b-4a11-bfe4-c6d7852527bf)
+
 </details>
 
 <details><summary>6) Cerrar Sesión</summary>
@@ -140,6 +160,10 @@ category: Proyectos Python
   **Cuando**  presiona el botón "Cerrar Sesión" y cancela el cierre 
   **Entonces** el sistema cancela la operación
 ```
+
+![image](https://github.com/user-attachments/assets/6273e639-2198-4f43-ab65-301ca4ebd2c6)
+![image](https://github.com/user-attachments/assets/510a7b03-f20e-4586-9820-af47fcdcb6fd)
+![image](https://github.com/user-attachments/assets/16db14ef-64de-476e-8c30-054dc6bdd046)
 
 </details>
 
@@ -168,6 +192,11 @@ category: Proyectos Python
    **Cuando** se ingresa Nombre: "Fabian", Apellido: "Martinez" y el Email:"gallardolucas003@gmail.com"
   **Entonces** el sistema informa "El mail ingresado ya se encuentra registrado." y lo redirige al listado de usuarios colaboradores
 ```
+
+![image](https://github.com/user-attachments/assets/6534797b-5048-4854-be89-9e5cb6364358)
+![image](https://github.com/user-attachments/assets/51643846-2555-43ef-a1c4-8de87a198b14)
+![image](https://github.com/user-attachments/assets/6a7f280e-be61-4b5c-afbc-b8a22ad48358)
+![image](https://github.com/user-attachments/assets/953d22ce-663d-4f99-8e30-4ca5c4c6361b)
 
 </details>
 
@@ -206,6 +235,11 @@ category: Proyectos Python
   **Entonces** el sistema le informa "El mail o contraseña son incorrectos"
 ```
 
+![image](https://github.com/user-attachments/assets/fb1a2134-e4d9-434b-afcb-73cc59e2e3e4)
+![image](https://github.com/user-attachments/assets/0295be0d-9abb-4dd6-aeec-a00f3cd3603c)
+![image](https://github.com/user-attachments/assets/f043d146-432b-4503-99be-544dfb4021f8)
+![image](https://github.com/user-attachments/assets/c7e483d8-8b6b-4181-8529-9ec09eec5fee)
+
 </details>
 
 <details><summary>9) Listar Usuarios</summary>
@@ -228,6 +262,9 @@ category: Proyectos Python
   **Entonces** El sistema informa que "No existen usuarios generales cargados en el sistema"
 ```
 
+![image](https://github.com/user-attachments/assets/56dd54d6-6e9e-4c06-9357-3ce1e5d24f7a)
+
+
 </details>
 
 <details><summary>10) Listar Colaboradores</summary>
@@ -249,6 +286,8 @@ category: Proyectos Python
   **Cuando**  presiona el botón "Listar Colaboradores"
   **Entonces** El sistema informa que "No existen usuarios colaboradores cargados en el sistema"
 ```
+
+![image](https://github.com/user-attachments/assets/ef8acccc-66f9-4603-9be6-b2a750a67609)
 
 </details>
 
@@ -282,6 +321,8 @@ category: Proyectos Python
   **Entonces** El sistema muestra las opciones del usuario Owner
 ```
 
+![image](https://github.com/user-attachments/assets/e89c02d9-44da-47bd-86de-c893d5820ba7)
+
 </details>
 
 
@@ -307,6 +348,8 @@ category: Proyectos Python
     **Entonces** El sistema muestra el mensaje 'No hay Publicaciones disponibles'
 ```
 
+![image](https://github.com/user-attachments/assets/49a12772-f116-42a9-9acc-cb1f844b549f)
+
 </details>
 
 <details><summary>13) Listar Publicaciones</summary>
@@ -328,6 +371,8 @@ category: Proyectos Python
   **Cuando**  se presiona el botón "Listar publicaciones"
   **Entonces** El sistema muestra el mensaje 'No hay Publicaciones disponibles'
 ```
+
+![image](https://github.com/user-attachments/assets/d9cf246c-3019-441f-9788-a6ff41c15a69)
 
 </details>
 
@@ -414,6 +459,15 @@ Para poder intercambiarlo en el futuro
   **Cuando**: Selecciona la imagen, ingresa Título: "Cafetera", Descripción: "En regular estado", Horarios Libres (opcional) : "de 13 a 18", selecciona la categoría "Electrodomésticos" y presiona el botón: "Publicar"
   **Entonces**: Sistema informa "Ya tienes una publicación con el mismo título."
 ```
+
+![image](https://github.com/user-attachments/assets/229ee4b1-53e5-491a-be2e-f6922a4f65e3)
+![image](https://github.com/user-attachments/assets/5744d939-58c6-4bc7-a739-036f8aa36c1a)
+![image](https://github.com/user-attachments/assets/43d1ea16-a672-4ffa-9720-6bbd4e8f01aa)
+![image](https://github.com/user-attachments/assets/dfcae9ae-4d07-4d81-bd3b-429f13bb0803)
+![image](https://github.com/user-attachments/assets/2213f17f-080c-4842-8e47-f2d88158c4e9)
+![image](https://github.com/user-attachments/assets/762f8e62-006c-4505-966f-2146ae548979)
+![image](https://github.com/user-attachments/assets/6aedf42d-c885-4ad9-a504-e90c71ae508a)
+
 </details>
 
 
