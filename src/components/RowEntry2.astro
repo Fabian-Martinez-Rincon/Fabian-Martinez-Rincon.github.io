@@ -1,0 +1,51 @@
+---
+export interface Props {
+  name: string;
+  title?: string;
+  description: string[];
+  subTitle?: string;
+  link?: string;
+}
+
+const { description, name, title, subTitle, link} = Astro.props;
+
+const keywords = /Python|BeautifulSoup|Scrum|Excel|AI|ACL|Script|Vim|Difflib|OS|Xlsxwriter|HTML|CSS|React|Tailwind|Vue.js|expresiones|regulares|Java|Pandas|Selenium|Pyautogui|PyGetWindow|PyAutoGUI|Tkinter|Bash|OS|Tkinter|OpenPyXL|Scripting|Flask|C\+\+|Visual\ Basic|Arduino|PostgreSQL|GIT|SQL|Linux/
+---
+
+<div class="flex flex-row dark:text-black">
+  <div class="mr-2 ">
+    <div>
+      {title && <span class="font-bold text-xl text-yellow-400">{title}</span>}
+      {subTitle && <span class="ml-2  text-gray-200">({subTitle})</span>}
+    
+    <span class=" ml-2 text-lg text-gray-200">{name}</span>
+  {link &&
+    <a
+      class="text-blue-500 hover:underline font-bold"
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Link
+    </a>
+  }
+  </div>
+
+    {description.length === 1 ? (
+      <p class=" text-gray-200">{description[0].split(" ").map(word => 
+            keywords.test(word) ? <span class="bold">{word} </span> : word + " "
+          )
+      }</p>
+    ) : (
+      <ul class="list-disc mt-1 text-gray-200">
+        {description.map(item => (
+          <li class="pl-0 ml-0 mt-5 ">{item.split(" ").map(word => 
+            keywords.test(word) ? <span class="bold text-lg text-blue-400">{word} </span> : word + " "
+          )}
+        </li>
+        ))}
+      </ul>
+    )}
+  </div>
+</div>
+
