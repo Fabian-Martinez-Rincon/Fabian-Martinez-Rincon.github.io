@@ -1813,7 +1813,6 @@ Epicas
   -	Abrir Menu
   -	Listar Notificaciones
   -	Listar Filiales
-
 -	Gestión de Usuarios
   -	Registrar Usuario
   -	Listar Usuarios
@@ -1824,7 +1823,6 @@ Epicas
   -	Filtrar Colaborador
   -	Eliminar Colaborador
   -	Penalizar Usuario
-
 -	Administración de Donaciones
   -	Donar con Tarjeta
   -	Registrar Donación en Efectivo
@@ -1832,7 +1830,6 @@ Epicas
   -	Listar Mi Historial de Donaciones
   -	Listar Historial de Donaciones
   -	Filtrar Donaciones
-
 -	Administración de publicaciones
   -	Subir Publicación
   -	Cambiar Visibilidad
@@ -1845,7 +1842,6 @@ Epicas
     -	Ofertar Publicación
     -	Comentar Publicación
   -	Eliminar Publicación
-
 -	Administración de intercambios
   -	 Listar Ofertas Recibidas
     -	Detallar oferta Recibida
@@ -1858,11 +1854,8 @@ Epicas
 Requisitos no funcionales
 
 -	Fiabilidad: El sistema deberá funcionar normalmente en condiciones normales. Los eventos como fallos de la red, fallos de energía eléctrica, entre otros eventos de la misma naturaleza, se consideran excepciones lo cual provocará que el sistema deje de funcionar hasta recuperar las condiciones normales. 
-
 -	Mantenibilidad: El sistema recibirá mantenimiento sin costo como garantía por un periodo de 2 meses luego del lanzamiento del mismo por la empresa Char-IT. Pasado este periodo de tiempo la empresa se compromete a establecer un acuerdo con remuneración monetaria para continuar con el mantenimiento.
-
 -	Multiplataforma:  El sistema al ser una página web, por definición es multiplataforma dado que puede ser utilizada en cualquier dispositivo con un navegador, como lo son un ordenador, tablet, móvil, entre otros. 
-
 -	Seguridad: El sistema cuenta con un sistema de autenticación para el acceso a funcionalidades específicas a través de cuentas, en las que se encuentran tres tipos: cuenta de usuario general, cuenta de usuario colaborador y cuenta del owner. Al momento de utilizar el sistema si no se inició sesión solo se puede efectuar las funcionalidades del rol usuario visitante. Si un usuario procede a iniciar sesión y lo logra, a través de las mismas credenciales se conoce el rol, ya sea usuario general,usuario colaborador o usuario owner, se le habilitaran las funcionalidades adecuadas.
 -	Privacidad: El sistema implementará estrictas medidas de privacidad para garantizar la protección de la información personal y los datos de los usuarios. Se aplicarán protocolos de encriptación avanzados para el almacenamiento y la transmisión de datos sensibles, asegurando que toda información personal se maneje de acuerdo con las normativas de protección de datos vigentes.
 
