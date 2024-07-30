@@ -186,3 +186,14 @@ print(operaciones )  # Output: 8
 print(operaciones )  # Output: 16
 ```
 
+![image](https://github.com/user-attachments/assets/552d17fe-15d7-4318-accc-f9004ad834ea)
+![image](https://github.com/user-attachments/assets/2d9dc045-6433-44f2-9949-b21affd7eff0)
+![image](https://github.com/user-attachments/assets/d1e5a336-d7a4-49c5-b6a7-926bd96db6e7)
+![image](https://github.com/user-attachments/assets/105a6a55-7db8-4f12-8f28-938d6bc78838)
+![image](https://github.com/user-attachments/assets/73a8242f-7693-4467-b3ce-ea242c079733)
+![image](https://github.com/user-attachments/assets/2717f8da-3355-44ee-9202-60172238b50a)
+![image](https://github.com/user-attachments/assets/4e936956-e8d6-4c35-9554-94eb0eca3228)
+![image](https://github.com/user-attachments/assets/79eefa88-bb08-4bd6-99db-96681b9ead95)
+![image](https://github.com/user-attachments/assets/4069f1b6-a1df-407e-8e5c-cd526c15244b)
+![image](https://github.com/user-attachments/assets/d4bd1237-ed82-4aa4-be24-be14b4670680)
+![image](https://github.com/user-attachments/assets/7ce70c5a-c71a-4196-b6c8-b41c890d7bd5)
