@@ -46,10 +46,13 @@ Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada
 
 **Ejercicio 3**
 
-<details><summary>a) ¿Qué se representa con el formato de instrucción?</summary></details>
+<details><summary>a) ¿Qué se representa con el formato de instrucción?</summary>
+</details>
 
 
-<details><summary>b) Describa los pasos del ciclo de instrucción de un salto incondicional</summary></details>
+<details><summary>b) Describa los pasos del ciclo de instrucción de un salto incondicional</summary>
+
+</details>
 
 ---
 
@@ -273,106 +276,113 @@ Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit i
 
 ---
 
-**Ejercicio 3**3)
+**Ejercicio 3**
 
 <details><summary>a) MSX88 representa una máquina de 2 direcciones?</summary></details>
 
 <details><summary>b) Explicar máquina de 1 dirección.</summary></details>
 
+---
 
-4)
+**Ejercicio 4**
 
 <details><summary>a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)</summary></details>
 
-
 <details><summary>b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de jerarquía de memoria.</summary></details>
 
+---
 
-5) Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
+**Ejercicio 5**
+
+Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
 
 <details><summary>a) Cuantos bytes se necesitan por cada imagen?</summary></details>
 
-
-
 <details><summary>b) Que velocidad de transferencia a periférico debe haber si cada imagen debe ser cambiada 25 veces en 1 segundo?</summary></details>
-
 
 ---
 
 #### Organización de Computadoras 08-23
 
-1) Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
+**Ejercicio 1**
+
+Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
 <details><summary>A) ¿Cuál es el rango de representación del sistema?</summary></details>
 
-
 <details><summary>B) Represente en punto flotante el número decimal 32,2.</summary></details>
-
-2) 
-
-<details><summary>A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?</summary></details>
-
-
-<details><summary>B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.</summary></details>
-
-
-3) 
-
-<details><summary>A) ¿Qué es un ciclo de instrucción?</summary></details>
-
-
-<details><summary>B) Describa los pasos del ciclo de instrucción de una operación aritmética.</summary></details>
-
-
-4)
-
-<details><summary>A) ¿Cómo está compuesta una "jerarquía de memoria"?</summary></details>
-
-
-<details><summary>B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresco'?</summary></details>
-
-
-5) Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
-   
-<details><summary>A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?</summary></details>
-
-
-<details><summary>B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?</summary></details>
-
 
 ---
 
-### Final de Organización - Abril 2023 (10/04)
+**Ejercicio 2**
 
-1)
+<details><summary>A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?</summary></details>
+
+<details><summary>B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.</summary></details>
+
+---
+
+**Ejercicio 3** 
+
+<details><summary>A) ¿Qué es un ciclo de instrucción?</summary></details>
+
+<details><summary>B) Describa los pasos del ciclo de instrucción de una operación aritmética.</summary></details>
+
+---
+
+**Ejercicio 4**
+
+<details><summary>A) ¿Cómo está compuesta una "jerarquía de memoria"?</summary></details>
+
+<details><summary>B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresco'?</summary></details>
+
+---
+
+**Ejercicio 5**
+
+Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
+   
+<details><summary>A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?</summary></details>
+
+<details><summary>B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?</summary></details>
+
+---
+
+#### Final de Organización - Abril 2023 (10/04)
+
+**Ejercicio 1**
 
 <details><summary>a) Características de coma flotante IEEE 754 simple precisión.</summary></details>
 
-
 <details><summary>b) Representar el número 1 en el modelo del inciso a).</summary></details>
 
+---
 
-2)
+**Ejercicio 2**
 
 <details><summary>a) Explicar qué es la suma de productos.</summary></details>
 
-
 <details><summary>b) Usar suma de productos para representar una función de cuatro entradas (A,B,C,D) cuya salida de 1 cuando dos de las entradas sea cero (cabeza ecuación gráfico).</summary></details>
 
+---
 
-3)
+**Ejercicio 3**
 
 <details><summary>a) Explicar el modo de direccionamiento indirecto por registro con desplazamiento.</summary></details>
 
 <details><summary>b) Dar ejemplos de instrucciones de sus variantes.</summary></details>
 
-4)
+---
+
+**Ejercicio 4**
 
 <details><summary>a) Explicar los principios de la jerarquía de memoria.</summary></details>
 
 <details><summary>b) Describir la organización 2^(1/2) D y realizar el gráfico para esa memoria con capacidad de almacenamiento de 1024 bits.</summary></details>
 
-5)
+---
+
+**Ejercicio 5**
 
 <details><summary>a) Describir el disco rígido teniendo en cuenta su comunicación con la CPU, el formato de almacenamiento, cantidad de información, etc.</summary></details>
 
@@ -380,96 +390,97 @@ Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit i
 
 #### Organización de Computadoras 23-Feb1
 
-1) Dada la representación A188H (en BCH) de un sistema en punto flotante con 8 bits de mantisa en BCS y bit implícito y exponente de 8 bits en exceso 128 (en ese orden de izq a der):
+**Ejercicio 1**
+
+Dada la representación A188H (en BCH) de un sistema en punto flotante con 8 bits de mantisa en BCS y bit implícito y exponente de 8 bits en exceso 128 (en ese orden de izq a der):
 
 <details><summary>A) Determine el valor decimal representado en ese sistema.</summary></details>
 
-
 <details><summary>B) Calcule el Error Absoluto Máximo de esa representación.</summary></details>
 
+---
 
-2) 
+**Ejercicio 2** 
 
 <details><summary>A) ¿Qué es un circuito combinatorio?</summary></details>
 
-
 <details><summary>B) Describa el circuito lógico denominado “sumador completo”. Realice la tabla de verdad y un gráfico de interconexión de puertas lógicas que lo represente.</summary></details>
 
+---
 
-3) 
+**Ejercicio 3**
 
 <details><summary>A) ¿El MSX88 simula una máquina de 2 direcciones? Justifique.</summary></details>
 
 <details><summary>B) Describa el formato de instrucción de una máquina de 1 dirección.</summary></details>
 
-4) 
+---
+
+**Ejercicio 4**
 
 <details><summary>A) Describa 3 características fundamentales de un ‘chip’ de memoria semiconductor para una organización 2 1/2D</summary></details>
 
-
 <details><summary>B) En una tabla, escriba los valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de una jerarquía de memoria.</summary></details>
 
+---
 
-5) Un video monocromático de Tik-Tok dura 15 segundos y cada imagen es de 500 por 800 píxeles.
+**Ejercicio 5**
+
+Un video monocromático de Tik-Tok dura 15 segundos y cada imagen es de 500 por 800 píxeles.
    
 <details><summary>A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen del video?</summary></details>
 
-
 <details><summary>B) ¿Cuál debe ser la velocidad de transferencia a periférico (en bytes/segundo) si para 'percibir movimiento' cada imagen 'visible' debe ser cambiada 25 veces en un segundo?</summary></details>
-
 
 ---
 
 #### Final Organización de Computadoras Feb20b 
 
-1- 
+**Ejercicio 1**
 
 <details><summary>¿Qué define el Teorema Fundamental de la Numeración?.</summary></details>
-
 
 Determine el rango de representación y resoluciones de:
    
 <details><summary>a) Un sistema en Punto Fijo en BCS con 4 bits para parte entera y 4 bits para parte fraccionaria</summary></details>
 
-
 <details><summary>b) Un sistema en Punto Flotante con 4 bits para mantisa con bit implícito en BCS y 4 bits para exponente en BCS</summary></details>
 
+---
 
-2- 
+**Ejercicio 2**
 
 <details><summary>a) Describa las diferencias entre un circuito combinatorio y uno secuencial.</summary></details>
 
-
 <details><summary>b) Describa el método ‘Suma de Productos’ para determinar la ecuación algebraica de un circuito lógico.</summary></details>
-
 
 <details><summary>c) Ejemplifique el uso de SOP con la función OR Exclusiva.</summary></details>
 
+---
 
-3-
+**Ejercicio 3**
 
 <details><summary>Describa las características que tienen las máquinas que ejecutan instrucciones con 1 dirección. </summary></details>
-
 
 Suponiendo que se poseen las instrucciones adecuadas y que varA, varB, varC y varD son las direcciones de memoria donde se almacenan los valores A, B, C y D respectivamente:
 
 <details><summary>a) Resuelva mediante programa en pseudo-assembly la ecuación D = (A-B)*(C+A) para la máquina de una dirección.</summary></details>
 
-
 <details><summary>b) Determine la cantidad de instrucciones y la de accesos a memoria (de instrucciones y de datos) requeridos por la solución programada.</summary></details>
 
+---
 
-4- 
+**Ejercicio 4**
+
 <details><summary>¿Cuáles son los principios que sustentan el funcionamiento de la jerarquía de un sistema de memoria?.</summary></details>
-
 
 <details><summary>En una tabla, escriba valores típicos de capacidad de almacenamiento en bytes, tiempo de acceso y tecnología de soporte de cada nivel.</summary></details>
 
+---
 
-5- 
+**Ejercicio 5** 
 
 <details><summary>a) ¿Qué son y para qué sirven los modos de direccionamiento?.</summary></details>
-
 
 <details><summary>b) Explique el funcionamiento que tendrán las instrucciones en assembly JMP Dir y POP AX. La CPU es la del MSX88, Dir es una dirección de 16 bit y AX un registro de 16 bits.</summary></details>
 
@@ -478,33 +489,39 @@ Suponiendo que se poseen las instrucciones adecuadas y que varA, varB, varC y va
 
 #### Octubre del 2023
 
-1)
+**Ejercicio 1**
 
 <details><summary>a- Describa características de IEEE 754 simple precisión.</summary></details>
 
 <details><summary>b- Representar el valor hexadecimal 62000000H en el sistema.</summary></details>
 
-2)
+---
+
+**Ejercicio 2**
 
 <details><summary>a- ¿Que es un circuito lógico combinatorial?</summary></details>
 
 <details><summary>b- Describa suma de productos e implemente la función XOR utilizando el mismo.</summary></details>
 
-3)
+---
+
+**Ejercicio 3**
 
 <details><summary>a- Describa el funcionamiento de las instrucciones de Mov. de datos.</summary></details>
 
 <details><summary>b- ¿Qué modos de direccionamiento pueden ser utilizados en ellos?</summary></details>
 
+---
 
-4)
+**Ejercicio 4**
 
 <details><summary>a- ¿Cuáles son los principios que permiten el funcionamiento de un sistema de memoria basado en jerarquía?</summary></details>
 
-
 <details><summary>b- Describa y realice un esquema de organización 2D y con capacidad de almacenamiento de 1024 palabras de 16 bits</summary></details>
 
-5)
+---
+
+**Ejercicio 5**
 
 <details><summary>a- Describa características de un disco rígido. Mencione medio de almacenamiento, tiempo de acceso, formato y capacidad, etc.</summary></details>
 
@@ -514,37 +531,41 @@ Suponiendo que se poseen las instrucciones adecuadas y que varA, varB, varC y va
 
 #### ORGANIZACIÓN DE COMPUTADORAS 23Dicb
 
-1- 
+**Ejercicio 1**
 
 <details><summary>a) Describa las características del sistema de representación en coma flotante estándar IEEE 754 de simple precisión.</summary></details>
 
 <details><summary>b) Represente el número decimal 1 en el formato de la parte a).</summary></details>
 
-2- 
+---
+
+**Ejercicio 2**
 
 <details><summary>a) Describa el método de implementación de funciones booleanas denominado SoP.</summary></details>
 
-
 <details><summary>b) Use el método descrito en a) para la función lógica S con 4 entradas (A, B, C, D) cuya salida es '1' cuando dos de las entradas están en '1' (Tabla-Ecuación-Gráfico).</summary></details>
 
+---
 
-3- 
+**Ejercicio 3**
+
 <details><summary>a) Describa el modo de direccionamiento indirecto por Registro con desplazamiento.</summary></details>
 
 <details><summary>b) Use el método descrito en a) para el modo de direccionamiento Sim) que usen las variantes de la parte a).</summary></details>
 
-4- 
+---
+
+**Ejercicio 4** 
 
 <details><summary>a) Describa el funcionamiento del proceso (para MSX88 o Viento) de un sistema de memoria basado en jerarquía?</summary></details>
 
-
 <details><summary>b) ¿Cuáles son los principios que permiten el funcionamiento 2 ½ D con capacidad de almacenamiento de 1024 bits.</summary></details>
 
+---
 
-5- 
+**Ejercicio 5**
 
 <details><summary>Describa las características del almacenamiento externo conocido como disco rígido. Considerar el tipo de comunicación entre CPU y el periférico, el formato de almacenamiento, cantidad de información almacenada etc..</summary></details>
-
 
 ---
 
