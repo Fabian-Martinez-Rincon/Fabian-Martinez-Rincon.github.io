@@ -11,82 +11,148 @@ tags: ["bash", "nvim", "linux", "debian"]
 category: Facultad
 ---
 
-## Parcial 1
+- [Final 1](#final-1)
+- [Final 2 08-2022](#final-2-08-22)
 
-### Ejercicio 1
+---
+
+#### Final 1
+
+**Ejercicio 1**
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der)
 
+<details><summary></summary></details>
 - a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
+
+<details><summary></summary></details>
 - b) Representante en punto flotante el número decimal 32.25
 
 
-### Ejercicio 2
+**Ejercicio 2**
 
-- a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
-- b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".
+<details><summary></summary></details>
+a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
-### Ejercicio 3
+<details><summary></summary></details>
+b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".
 
+**Ejercicio 3**
+
+<details><summary></summary></details>
 - a) ¿Qué se representa con el formato de instrucción?
+
+<details><summary></summary></details>
 - b) Describa los pasos del ciclo de instrucción de un salto incondicional
 
-### Ejercicio 4
+**Ejercicio 4**
 
+<details><summary></summary></details>
 - a) ¿Cuales son los valores típicos de tiempo de acceso a los niveles de una "jerarquia de memoria"?
+
+<details><summary></summary></details>
 - b) ¿Porque la organización 2 1/2D de memoria semiconductora requiere 'refresco'?
 
-### Ejercicio 5
+**Ejercicio 5**
 
 Una imagen de pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centimetro:
 
+<details><summary></summary></details>
 - a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+
+<details><summary></summary></details>
 - b) Cuantas imágenes podria almacenar en esa memoría si la imagen a almacenar fuera monocromatica?
 
 ---
 
-### Organización de Computadoras 08-22
+#### Final 2 08-22
 
-1) Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8
-(en ese orden de izq a der):
-   A) ¿Cuál es el rango de representación del sistema?.
-   B) Represente en punto flotante el número decimal 322.
+1) Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
-2) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
+<details><summary></summary></details>
+A) ¿Cuál es el rango de representación del sistema?.
 
-   A) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
+<details><summary></summary></details>
+B) Represente en punto flotante el número decimal 322.
 
-3) A) ¿Qué es el ciclo de instrucción?
-   B) Describa los pasos del ciclo de instrucción de una operación aritmética.
+2) 
 
-4) A) ¿Cómo está compuesta una "jerarquía de memoria"?
-   B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'?
+<details><summary></summary></details>
+¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
+
+<details><summary></summary></details>
+A) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
+
+3) 
+<details><summary></summary></details>
+A) ¿Qué es el ciclo de instrucción?
+
+<details><summary></summary></details>
+B) Describa los pasos del ciclo de instrucción de una operación aritmética.
+
+4) 
+
+<details><summary></summary></details>
+A) ¿Cómo está compuesta una "jerarquía de memoria"?
+
+<details><summary></summary></details>   
+B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'?
 
 5) Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
-   A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
-   B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?
+
+<details><summary></summary></details>
+A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+
+<details><summary></summary></details>
+B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?
 
 
 ---
 
-### Final sin fecha
+#### Final sin fecha
 
 1. 4186H (en hexadecimal) punto flotante 8 bits mantisa BCS y bit implícito y exponente 8 bits en exceso 128 (de izq a der)
+
+<details><summary></summary></details>
 - a. Determine el valor decimal representado
+
+<details><summary></summary></details>
 - b. Calcule el error absoluto máximo
 
-2. ¿Qué es una puerta lógica? Describa el circuito lógico secuencial "Biestable RS".
+2. 
+
+<details><summary></summary></details>
+¿Qué es una puerta lógica? Describa el circuito lógico secuencial "Biestable RS".
+
+<details><summary></summary></details>
 - Realice la tabla de comportamiento y un gráfico de interconexión de puertas lógicas que lo represente
 
-3. ¿Qué es un ciclo de instrucción? Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento
+3. 
+
+<details><summary></summary></details>
+¿Qué es un ciclo de instrucción? 
+
+<details><summary></summary></details>
+Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento
 
 4. 
+
+<details><summary></summary></details>
+
 - a. Describa las características principales de la organización 2D de memoria semiconductora
+
+<details><summary></summary></details>
 - b. Realice el esquema del chip con esta organización
+
+<details><summary></summary></details>
 - c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso
 
 Un video musical monocromático de youtube dura 200 seg
+
+<details><summary></summary></details>
 - a. Calcule cuántos bytes de memoria se necesitan para almacenar el video completo si cada imagen es de 800 x 500 px
+
+<details><summary></summary></details>
 - b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la imagen debe ser cambiada 25 veces en 1 seg?
 
 ---
@@ -94,71 +160,131 @@ Un video musical monocromático de youtube dura 200 seg
 ### Final 11-22
 
 1) Dado un sistema en punto flotante con 5 bits de mantisa en BCS con bit implicito y exponente de 5 bits en exceso 16 (en ese orden de izq a der):
+
+
+<details><summary></summary></details>
 - A) ¿Cuál es el valor decimal del mínimo positivo representable por el sistema?
+
+<details><summary></summary></details>
 - B) Represente en el sistema de punto flotante dado el número decimal 2,625
 
-2) ¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?
+2) 
+
+<details><summary></summary></details>
+¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?
+
+<details><summary></summary></details>
 - b) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos"
 
-3) A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?
+3) 
+
+<details><summary></summary></details>
+A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?
+
+<details><summary></summary></details>
 b) Describa la diferencia en los pasos del ciclo de instrucción de una instrucción SUB y una CMP
 
-4) A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoría"?
+4) 
+
+<details><summary></summary></details>
+A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoría"?
+
+<details><summary></summary></details>
 b) ¿Porqué la organización 2 1/2D de memoria semiconductora utiliza 2 decodificadores?
 
 5) Una imagen en una pantalla de 100cm por 50cm posee una resolución de 100 puntos por centímetro:
+
+<details><summary></summary></details>
 a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+
+<details><summary></summary></details>
 b) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?
 
 ---
 
 ### Mesa febrero 2º llamado | 21/02/2022
 
-1) Sistema de punto flotante 
-   7 bits mantisa BCS y bit implícito 
-   y 8 bits exponente en exceso /128
-   (en ese orden de izq a der)
+1) Sistema de punto flotante 7 bits mantisa BCS y bit implícito y 8 bits exponente en exceso /128 (en ese orden de izq a der)
 
-   a) Representar tu número de alumno (sin el nro después de la barra "/6").
-   b) Calcular error absoluto.
+<details><summary></summary></details>
+a) Representar tu número de alumno (sin el nro después de la barra "/6").
 
-2) a) Las 3 formas que se pueden utilizar para representar una función lógica.
-   b) Suma de productos.
+<details><summary></summary></details>
+b) Calcular error absoluto.
 
-3) Elementos que debe poseer una instrucción.
-   b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.
+2) 
 
-4) a) ¿Qué función debe cumplir un "punto de memoria"?
-   b) ¿Por qué la organización 2/1D requiere refresco?
+<details><summary></summary></details>
+a) Las 3 formas que se pueden utilizar para representar una función lógica.
 
+<details><summary></summary></details>
+b) Suma de productos.
 
----
+3) 
 
-### FEBRERO 2022 1ERA FECHA
+<details><summary></summary></details>
+Elementos que debe poseer una instrucción.
 
-1) Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit implícito y 8 bits para exponente en exceso 128.
-   a) Calcular el valor en decimal.
-   b) Calcular el error absoluto máximo.
-
-2)
-   a) ¿Qué es un circuito combinatorio?
-   b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
-
-3)
-   a) MSX88 representa una máquina de 2 direcciones?
-   b) Explicar máquina de 1 dirección.
+<details><summary></summary></details>
+b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.
 
 4)
-   a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)
-   b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de jerarquía de memoria.
 
-5) Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
-   a) Cuantos bytes se necesitan por cada imagen?
-   b) Que velocidad de transferencia a periférico debe haber si cada imagen debe ser cambiada 25 veces en 1 segundo?
+<details><summary></summary></details>
+a) ¿Qué función debe cumplir un "punto de memoria"?
+
+<details><summary></summary></details>
+b) ¿Por qué la organización 2/1D requiere refresco?
+
 
 ---
 
-### Organización de Computadoras 08-23
+#### FEBRERO 2022 1ERA FECHA
+
+1) Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit implícito y 8 bits para exponente en exceso 128.
+
+<details><summary></summary></details>
+a) Calcular el valor en decimal.
+
+<details><summary></summary></details>
+b) Calcular el error absoluto máximo.
+
+2)
+
+<details><summary></summary></details>
+a) ¿Qué es un circuito combinatorio?
+
+<details><summary></summary></details>
+b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
+
+3)
+
+<details><summary></summary></details>
+a) MSX88 representa una máquina de 2 direcciones?
+
+<details><summary></summary></details>
+b) Explicar máquina de 1 dirección.
+
+4)
+
+<details><summary></summary></details>
+a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)
+
+<details><summary></summary></details>
+b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de jerarquía de memoria.
+
+5) Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
+
+<details><summary></summary></details>
+a) Cuantos bytes se necesitan por cada imagen?
+
+
+<details><summary></summary></details>
+b) Que velocidad de transferencia a periférico debe haber si cada imagen debe ser cambiada 25 veces en 1 segundo?
+
+---
+
+#### Organización de Computadoras 08-23
 
 1) Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8
    (en ese orden de izq a der):
