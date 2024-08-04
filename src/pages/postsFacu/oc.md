@@ -22,7 +22,7 @@ category: Facultad
 
 
 
-## Indice
+# Indice
 
 - [Finales Echos por mi](#finales-echos-por-mi)
 	- [Final 1](#final-1)
@@ -52,11 +52,17 @@ category: Facultad
 
 ---
 
-# Finales Echos por mi
+### Finales Echos por mi
 
-## Final 1
+<div align='center'>
 
-### Ejercicio 1
+# Final 1
+
+</div>
+
+<hr class="yellow">
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der)
 
@@ -68,19 +74,17 @@ a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
 
 </details>
 
-
-
 b) Representante en punto flotante el número decimal 32.25
 
 <details><summary>🧠 Respuesta</summary>
 
 
-
 ![image](https://github.com/user-attachments/assets/00259749-a119-4092-ab2d-1ccc45429af1)
 </details>
 
+<hr class="yellow">
 
-### Ejercicio 2
+#### Ejercicio 2
 
 a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
@@ -115,9 +119,9 @@ El método SOP garantiza que todas las combinaciones de entradas que producen un
 
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 a) ¿Qué se representa con el formato de instrucción?
 
@@ -129,9 +133,9 @@ b) Describa los pasos del ciclo de instrucción de un salto incondicional
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a) ¿Cuales son los valores típicos de tiempo de acceso a los niveles de una "jerarquia de memoria"?
 
@@ -143,9 +147,9 @@ b) ¿Porque la organización 2 1/2D de memoria semiconductora requiere 'refresco
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen de pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centimetro:
 
@@ -161,9 +165,13 @@ b) Cuantas imágenes podria almacenar en esa memoría si la imagen a almacenar f
 
 ---
 
-## Final 2 08-22
+<div align='center'>
 
-### Ejercicio 1
+# Final 2 08-22
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
@@ -177,9 +185,9 @@ B) Represente en punto flotante el número decimal 322.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
@@ -191,9 +199,9 @@ A) Describa el método de diseño de circuitos lógicos combinacionales denomina
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué es el ciclo de instrucción?
 
@@ -205,9 +213,9 @@ B) Describa los pasos del ciclo de instrucción de una operación aritmética.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cómo está compuesta una "jerarquía de memoria"?
 
@@ -219,9 +227,9 @@ B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 
@@ -237,9 +245,13 @@ B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacena
 
 ---
 
-## Final 3 sin fecha
+<div align='center'>
 
-### Ejercicio 1
+# Final 3 sin fecha
+
+</div>
+
+#### Ejercicio 1
 
 4186H (en hexadecimal) punto flotante 8 bits mantisa BCS y bit implícito y exponente 8 bits en exceso 128 (de izq a der)
 
@@ -253,9 +265,9 @@ b) Calcule el error absoluto máximo
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 ¿Qué es una puerta lógica?
 
@@ -272,9 +284,9 @@ Realice la tabla de comportamiento y un gráfico de interconexión de puertas l�
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 ¿Qué es un ciclo de instrucción?
 
@@ -286,9 +298,9 @@ Describa el funcionamiento del modo de direccionamiento indirecto vía registro 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a. Describa las características principales de la organización 2D de memoria semiconductora
 
@@ -305,9 +317,9 @@ c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acces
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Un video musical monocromático de youtube dura 200 seg
 
@@ -323,9 +335,13 @@ b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la image
 
 ---
 
-## Final 4 11-22
+<div align='center'>
 
-### Ejercicio 1
+# Final 4 11-22
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 5 bits de mantisa en BCS con bit implicito y exponente de 5 bits en exceso 16 (en ese orden de izq a der):
 
@@ -339,9 +355,9 @@ B) Represente en el sistema de punto flotante dado el número decimal 2,625
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 ¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?
 
@@ -353,17 +369,17 @@ b) Describa el método de diseño de circuitos lógicos combinacionales denomina
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?
 
 b) Describa la diferencia en los pasos del ciclo de instrucción de una instrucción SUB y una CMP
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoría"?
 
@@ -375,9 +391,9 @@ b) ¿Porqué la organización 2 1/2D de memoria semiconductora utiliza 2 decodif
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100cm por 50cm posee una resolución de 100 puntos por centímetro:
 
@@ -393,9 +409,13 @@ b) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?
 
 ---
 
-## Final 5 Mesa febrero 2º llamado | 21/02/2022
+<div align='center'>
 
-### Ejercicio 1
+# Final 5 Mesa febrero 2º llamado | 21/02/2022
+
+</div>
+
+#### Ejercicio 1
 
 Sistema de punto flotante 7 bits mantisa BCS y bit implícito y 8 bits exponente en exceso /128 (en ese orden de izq a der)
 
@@ -409,9 +429,9 @@ b) Calcular error absoluto.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 a) Las 3 formas que se pueden utilizar para representar una función lógica.
 
@@ -423,9 +443,9 @@ b) Suma de productos.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 Elementos que debe poseer una instrucción.
 
@@ -434,9 +454,9 @@ b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a) ¿Qué función debe cumplir un "punto de memoria"?
 
@@ -450,9 +470,13 @@ b) ¿Por qué la organización 2/1D requiere refresco?
 
 ---
 
-## Final 6 FEBRERO 2022 1ERA FECHA
+<div align='center'>
 
-### Ejercicio 1
+# Final 6 FEBRERO 2022 1ERA FECHA
+
+</div>
+
+#### Ejercicio 1
 
 Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit implícito y 8 bits para exponente en exceso 128.
 
@@ -466,9 +490,9 @@ b) Calcular el error absoluto máximo.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 a) ¿Qué es un circuito combinatorio?
 
@@ -480,9 +504,9 @@ b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 a) MSX88 representa una máquina de 2 direcciones?
 
@@ -494,9 +518,9 @@ b) Explicar máquina de 1 dirección.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)
 
@@ -508,9 +532,9 @@ b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiem
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
 
@@ -526,9 +550,13 @@ b) Que velocidad de transferencia a periférico debe haber si cada imagen debe s
 
 ---
 
-## Final 7 Organización de Computadoras 08-23
+<div align='center'>
 
-### Ejercicio 1
+# Final 7 Organización de Computadoras 08-23
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
@@ -542,9 +570,9 @@ B) Represente en punto flotante el número decimal 32,2.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
@@ -556,9 +584,9 @@ B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué es un ciclo de instrucción?
 
@@ -570,9 +598,9 @@ B) Describa los pasos del ciclo de instrucción de una operación aritmética.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cómo está compuesta una "jerarquía de memoria"?
 
@@ -584,9 +612,9 @@ B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresc
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
    
@@ -602,9 +630,13 @@ B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacena
 
 ---
 
-## Final 8 - Abril 2023 (10/04)
+<div align='center'>
 
-### Ejercicio 1
+# Final 8 - Abril 2023 (10/04)
+
+</div>
+
+#### Ejercicio 1
 
 a) Características de coma flotante IEEE 754 simple precisión.
 
@@ -616,7 +648,7 @@ b) Representar el número 1 en el modelo del inciso a).
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 2
 
@@ -630,7 +662,7 @@ b) Usar suma de productos para representar una función de cuatro entradas (A,B,
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 3
 
@@ -644,7 +676,7 @@ b) Dar ejemplos de instrucciones de sus variantes.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 4
 
@@ -658,7 +690,7 @@ b) Describir la organización 2^(1/2) D y realizar el gráfico para esa memoria 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 5
 
@@ -669,7 +701,11 @@ a) Describir el disco rígido teniendo en cuenta su comunicación con la CPU, el
 
 ---
 
-## Final 9 Organización de Computadoras 23-Feb1
+<div align='center'>
+
+# Final 9 Organización de Computadoras 23-Feb1
+
+</div>
 
 #### Ejercicio 1
 
@@ -685,7 +721,7 @@ B) Calcule el Error Absoluto Máximo de esa representación.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 2
 
@@ -699,7 +735,7 @@ B) Describa el circuito lógico denominado “sumador completo”. Realice la ta
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 3
 
@@ -713,7 +749,7 @@ B) Describa el formato de instrucción de una máquina de 1 dirección.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 4
 
@@ -727,7 +763,7 @@ B) En una tabla, escriba los valores típicos de capacidad de almacenamiento y t
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 5
 
@@ -745,7 +781,11 @@ B) ¿Cuál debe ser la velocidad de transferencia a periférico (en bytes/segund
 
 ---
 
-## Final 10 Feb20b
+<div align='center'>
+
+# Final 10 Feb20b
+
+</div>
 
 #### Ejercicio 1
 
@@ -766,7 +806,7 @@ b) Un sistema en Punto Flotante con 4 bits para mantisa con bit implícito en BC
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 2
 
@@ -785,7 +825,7 @@ c) Ejemplifique el uso de SOP con la función OR Exclusiva.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 3
 
@@ -806,7 +846,7 @@ b) Determine la cantidad de instrucciones y la de accesos a memoria (de instrucc
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 4
 
@@ -820,7 +860,7 @@ En una tabla, escriba valores típicos de capacidad de almacenamiento en bytes, 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 5
 
@@ -836,7 +876,11 @@ b) Explique el funcionamiento que tendrán las instrucciones en assembly JMP Dir
 
 ---
 
-## Final 11 Octubre del 2023
+<div align='center'>
+
+# Final 11 Octubre del 2023
+
+</div>
 
 #### Ejercicio 1
 
@@ -850,7 +894,7 @@ b- Representar el valor hexadecimal 62000000H en el sistema.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 2
 
@@ -864,7 +908,7 @@ b- Describa suma de productos e implemente la función XOR utilizando el mismo.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 3
 
@@ -878,7 +922,7 @@ b- ¿Qué modos de direccionamiento pueden ser utilizados en ellos?
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 4
 
@@ -892,7 +936,7 @@ b- Describa y realice un esquema de organización 2D y con capacidad de almacena
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 5
 
@@ -908,7 +952,11 @@ b- ¿Qué son los RAID?
 
 ---
 
-## Final 12 23Dicb
+<div align='center'>
+
+# Final 12 23Dicb
+
+</div>
 
 #### Ejercicio 1
 
@@ -922,7 +970,7 @@ b) Represente el número decimal 1 en el formato de la parte a).
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-
+<hr class="yellow">
 
 #### Ejercicio 2
 
@@ -936,9 +984,9 @@ b) Use el método descrito en a) para la función lógica S con 4 entradas (A, B
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-**Ejercicio 3**
+#### Ejercicio 3
 
 a) Describa el modo de direccionamiento indirecto por Registro con desplazamiento.
 
@@ -950,9 +998,9 @@ b) Use el método descrito en a) para el modo de direccionamiento Sim) que usen 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-**Ejercicio 4** 
+#### Ejercicio 4
 
 a) Describa el funcionamiento del proceso (para MSX88 o Viento) de un sistema de memoria basado en jerarquía?
 
@@ -964,9 +1012,9 @@ b) ¿Cuáles son los principios que permiten el funcionamiento 2 ½ D con capaci
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-**Ejercicio 5**
+#### Ejercicio 5
 
 Describa las características del almacenamiento externo conocido como disco rígido. Considerar el tipo de comunicación entre CPU y el periférico, el formato de almacenamiento, cantidad de información almacenada etc..
 
@@ -975,9 +1023,13 @@ Describa las características del almacenamiento externo conocido como disco rí
 
 ---
 
-## Final 13 FEBRERO 2022 1ERA FECHA
+<div align='center'>
 
-### Ejercicio 1
+# Final 13 FEBRERO 2022 1ERA FECHA
+
+</div>
+
+#### Ejercicio 1
 
 Dado el numero A188 en BCH donde 8 bits representan la mantisa en BCS con bit implícito y 8 bits para exponente en exceso 128.
 
@@ -991,9 +1043,9 @@ b) Calcular el error absoluto máximo.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 a) ¿Que es un circuito combinatorio?
 
@@ -1005,9 +1057,9 @@ b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 a) MSX88 representa una maquina de 2 direcciones?
 
@@ -1019,9 +1071,9 @@ b) Explicar maquina de 1 direccion.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)
 
@@ -1033,9 +1085,9 @@ b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiem
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Dado un video monocromático de 15 segundos donde cada imagen tiene 500*800 píxeles
 
@@ -1051,9 +1103,13 @@ b) Que velocidad de transferencia a periférico debe haber si cada imagen debe s
 
 ---
 
-## Final 14 08-23
+<div align='center'>
 
-### Ejercicio 1
+# Final 14 08-23
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
@@ -1067,9 +1123,9 @@ B) Represente en el sistema de punto flotante dado el número decimal 32,2.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
@@ -1081,9 +1137,9 @@ B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué es un ciclo de instrucción?
 
@@ -1095,9 +1151,9 @@ B) Describa los pasos del ciclo de instrucción de una operación aritmética.
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cómo está compuesta una 'jerarquía de memoria'?
 
@@ -1109,9 +1165,9 @@ B) ¿Porqué la organización 2D de memoria semiconductor NO requiere 'refresco'
 <details><summary>🧠 Respuesta</summary>
 </details>
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 
@@ -1127,9 +1183,13 @@ B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacena
 
 ---
 
-## Final 15 11-22
+<div align='center'>
 
-### Ejercicio 1
+# Final 15 11-22
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 5 bits de mantisa en BCS con bit implícito y exponente de 5 bits en exceso 16 (en ese orden de izq a der):
 
@@ -1137,31 +1197,31 @@ A) ¿Cuál es el valor decimal del mínimo positivo representable por el sistema
 
 B) Represente en el sistema de punto flotante dado el número decimal 2,625.
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?
 
 B) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?
 B) Describa la diferencia en los pasos del ciclo de instrucción de una instrucción SUB y una CMP.
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoria"?
 B) ¿Porqué la organización 2 1/2D de memoria semiconductor utiliza 2 decodificadores?
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
@@ -1169,9 +1229,13 @@ B) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?
 
 ---
 
-## Final 16 04-24
+<div align='center'>
 
-### Ejercicio 1
+# Final 16 04-24
+
+</div>
+
+#### Ejercicio 1
 
 Dada la representación 4885H (en BCH) de un sistema en punto flotante con 8 bits de mantisa en BCS y bit implícito y exponente de 8 bits en exceso 128 (en ese orden de izq a der):
 
@@ -1179,17 +1243,17 @@ A) Determine el valor decimal representado.
 
 B) Calcule el Error Absoluto Máximo.
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las formas de representar o describir la función lógica NOR?
 
 B) Describa el circuito lógico secuencial denominado "biestable RS". Realice la tabla de comportamiento y el gráfico de interconexión de puertas lógicas que lo represente.
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué es el modo de direccionamiento de un operando?
 
@@ -1197,7 +1261,7 @@ B) Describa cómo se determina la dirección efectiva del operando cuando se uti
 
 
 
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Porqué funciona la jerarquía de memoria?
 
@@ -1205,7 +1269,7 @@ B) Describa 3 características principales de la organización 2 1/2D de memoria
 
 
 
-### Ejercicio 5
+#### Ejercicio 5
 
 Un video musical en blanco y negro dura 100 segundos y cada imagen es de 500 por 800 píxeles:
 
@@ -1215,9 +1279,13 @@ B) ¿Cuántos bytes de memoria se necesitan para almacenar el video completo?
 
 ---
 
-## Final 17 Abr23
+<div align='center'>
 
-### Ejercicio 1
+# Final 17 Abr23
+
+</div>
+
+#### Ejercicio 1
 
 a) Describa las características del sistema de representación en coma flotante estándar IEEE 754 de simple precisión.
 
@@ -1225,14 +1293,14 @@ b) Represente el número decimal 1 en el formato de la parte a).
 
 
 
-### Ejercicio 2
+#### Ejercicio 2
 a) Describa el método de implementación de funciones booleanas denominado SoP.
 
 b) Use el método descripto en a) para la función lógica S con 4 entradas (A, B, C, D) cuya salida es '1' cuando dos de las entradas están en '0' (Tabla-Ecuación-Gráfico).
 
 
 
-### Ejercicio 3
+#### Ejercicio 3
 
 a) Describa el funcionamiento del modo de direccionamiento Indirecto por Registro con desplazamiento.
 
@@ -1240,7 +1308,7 @@ b) Escriba instrucciones como ejemplo de uso de las variantes que conozca.
 
 
 
-### Ejercicio 4
+#### Ejercicio 4
 
 a) ¿Cuáles son los principios que permiten el funcionamiento de un sistema de memoria basado en jerarquía?
 
@@ -1248,15 +1316,19 @@ b) Describa y realice un esquema de memoria con organización 2 ½ D con capacid
 
 
 
-### Ejercicio 5
+#### Ejercicio 5
 
 Describa las características del almacenamiento externo conocido como disco rígido. Considerar el tipo de comunicación entre CPU y el periférico, el formato de almacenamiento, cantidad de información almacenada, etc.
 
 ---
 
-## Final 18 5-23
+<div align='center'>
 
-### Ejercicio 1
+# Final 18 5-23
+
+</div>
+
+#### Ejercicio 1
 
 Dada la representación 4185H (en hexadecimal) de un sistema en punto flotante con 8 bits de mantisa en BCS y bit implícito y exponente de 8 bits en exceso 128 (en ese orden de izq a der):
 
@@ -1264,9 +1336,9 @@ a) Determine el valor decimal representado.
 
 b) Calcule el Error Absoluto máximo.
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 ¿Qué es una puerta lógica?
 
@@ -1274,17 +1346,17 @@ Describa el circuito lógico secuencial denominado "biestable RS".
 
 Realice la tabla de comportamiento y un gráfico de interconexión de puertas lógicas que lo represente.
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 ¿Qué es un ciclo de instrucción?
 
 Describa el funcionamiento del modo de direccionamiento indirecto via registro con desplazamiento.
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 a) Describa las características principales de la organización 21/2D de memoria semiconductor.
 
@@ -1294,9 +1366,9 @@ b) Realice un esquema del chip con esta organización.
 
 c) Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso.
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Un video musical monocromático de youtube dura 200 segundos.
 
@@ -1305,15 +1377,19 @@ a) Calcule cuántos bytes de memoria se necesitan para almacenar el video comple
 b) ¿Cuál debe ser la velocidad de transferencia (en bytes/segundo) si la imagen debe ser cambiada 25 veces en un segundo?
 
 
-
+<hr class="yellow">
 
 
 
 ---
 
-## Final 19
+<div align='center'>
 
-### Ejercicio 1
+# Final 19
+
+</div>
+
+#### Ejercicio 1
 
 4185H (en hexadecimal) Punto flotante 8 bits mantisa BCS y bit implícito y exponente 8 bits en exceso 128 (de izq a der)
 
@@ -1321,15 +1397,15 @@ a. Determine el valor decimal representado
 
 b. Calcule el error absoluto máximo
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 ¿Qué es una puerta lógica? Describa el circuito lógico secuencial "Biestable RS". Realice la tabla de comportamiento y un gráfico de interconexión de puertas lógicas que lo represente.
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 ¿Qué es un ciclo de instrucción?
 
@@ -1337,7 +1413,7 @@ Describa el funcionamiento del modo de direccionamiento indirecto vía registro 
 
 
 
-### Ejercicio 4
+#### Ejercicio 4
 
 a. Describa las características principales de la organización 2D de memoria semiconductora
 
@@ -1345,9 +1421,9 @@ b. Realice el esquema del chip con esta organización
 
 c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso
 
+<hr class="yellow">
 
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Un video musical monocromático de Youtube dura 200 seg
 
@@ -1355,12 +1431,15 @@ a. Calcule cuántos bytes de memoria se necesitan para almacenar el video comple
 
 b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la imagen debe ser cambiada 25 veces en 1 seg?
 
-
 ---
 
-## Final 20 08-22
+<div align='center'>
 
-### Ejercicio 1
+# Final 20 08-22
+
+</div>
+
+#### Ejercicio 1
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
@@ -1368,34 +1447,33 @@ A) ¿Cuál es el rango de representación del sistema?
 
 B) Represente en el sistema de punto flotante dado el número decimal 32,2.
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
 B) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué es el ciclo de instrucción?
 
 B) Describa los pasos del ciclo de instrucción de una operación aritmética.
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cómo está compuesta una "jerarquía de memoria"?
 
 B) ¿Porqué la organización 2D de memoria semiconductor NO requiere "refresco"?
 
+<hr class="yellow">
 
-
-
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 
@@ -1406,9 +1484,14 @@ B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacena
 
 ---
 
-## Final 21 09-22
+<div align='center'>
 
-### Ejercicio 1
+# Final 21 09-22
+
+</div>
+
+#### Ejercicio 1
+
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
 A) ¿Cuál es el valor del mínimo positivo representable en ese sistema?
@@ -1416,34 +1499,34 @@ A) ¿Cuál es el valor del mínimo positivo representable en ese sistema?
 B) Represente en punto flotante el número decimal 32,25.
 
 
+<hr class="yellow">
 
-
-### Ejercicio 2
+#### Ejercicio 2
 
 A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
 B) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
 
 
+<hr class="yellow">
 
-
-### Ejercicio 3
+#### Ejercicio 3
 
 A) ¿Qué se representa con el formato de instrucción?
 
 B) Describa los pasos del ciclo de instrucción de un salto incondicional.
 
 
+<hr class="yellow">
 
-
-### Ejercicio 4
+#### Ejercicio 4
 
 A) ¿Cuáles son los valores típicos de tiempo de acceso en los niveles de una "jerarquía de memoria"?
 
 B) ¿Porqué la organización 2 1/2D de memoria semiconductor requiere "refresco"?
 
 
-### Ejercicio 5
+#### Ejercicio 5
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 
@@ -1943,3 +2026,10 @@ Parte B)
 Calcular El Rango
 
 ![image](https://github.com/user-attachments/assets/3284f9db-6bd8-46a1-aefc-701874c896e4)
+
+Esto es un ejemplo para ver el maximo anterior y lo demas continua en la siguiente clase
+
+![image](https://github.com/user-attachments/assets/0eadd8e8-6d71-4aae-a31f-2ba3f84237da)
+
+---
+
