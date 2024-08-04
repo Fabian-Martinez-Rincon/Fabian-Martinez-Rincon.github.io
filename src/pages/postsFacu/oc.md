@@ -54,14 +54,17 @@ Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada
 a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/a1077c78-fafe-448f-b473-32b864cb8576)
+
 </details>
 
 b) Representante en punto flotante el número decimal 32.25
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/00259749-a119-4092-ab2d-1ccc45429af1)
 </details>
-
-
 
 
 ### Ejercicio 2
@@ -69,11 +72,23 @@ b) Representante en punto flotante el número decimal 32.25
 a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
 
 <details><summary>🧠 Respuesta</summary>
+
+- Tablas de Verdad:
+   - Una tabla de verdad es una representación tabular que muestra todas las posibles combinaciones de las entradas a una función lógica y los correspondientes resultados de salida. Cada fila de la tabla representa una combinación única de las entradas y su resultado de salida asociado.
+- Diagramas de Circuitos Lógicos:
+   - Los diagramas de circuitos lógicos son representaciones gráficas de una función lógica usando compuertas lógicas. Estos diagramas muestran cómo se conectan las compuertas lógicas (AND, OR, NOT, NAND, NOR, XOR, etc.) para realizar una operación lógica específica. Cada compuerta tiene un símbolo estándar y las conexiones entre ellas indican el flujo de las señales lógicas.
+- Ecuaciones Booleanas:
+   - Las ecuaciones booleanas usan álgebra booleana para representar una función lógica. Estas ecuaciones describen la relación entre las variables de entrada y la salida usando operadores booleanos como AND (multiplicación), OR (suma), y NOT (complemento). Las expresiones booleanas se pueden simplificar usando las leyes del álgebra booleana para optimizar el diseño del circuito.
+
 </details>
 
 b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".
 
+https://www.youtube.com/watch?v=59DOU2mzdgE
+
 <details><summary>🧠 Respuesta</summary>
+
+
 </details>
 
 
@@ -1268,9 +1283,7 @@ b) ¿Cuál debe ser la velocidad de transferencia (en bytes/segundo) si la image
 
 
 
-> Sumador Completo
 
-![Sumador Compelto](https://github.com/user-attachments/assets/25c93217-8140-4114-9188-c95158b2ae84)
 
 ---
 
