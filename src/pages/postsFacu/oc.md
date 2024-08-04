@@ -59,9 +59,17 @@ a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
 
 </details>
 
+[Numeros en Punto Flotante Parte 1](https://youtu.be/lbf76DyolKI?si=DEQxUtXJvvjt9HJL)
+[Numeros en Punto Flotante Parte 2](https://youtu.be/O10ce7g59NI?si=2LlCO5TQizDLDIv6)
+
 b) Representante en punto flotante el número decimal 32.25
 
 <details><summary>🧠 Respuesta</summary>
+
+Ejemplo en decimal
+
+![image](https://github.com/user-attachments/assets/4f2ba0e9-bbae-429a-8a6e-25b4b37ab826)
+
 
 ![image](https://github.com/user-attachments/assets/00259749-a119-4092-ab2d-1ccc45429af1)
 </details>
@@ -84,10 +92,21 @@ a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una funci�
 
 b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".
 
-https://www.youtube.com/watch?v=59DOU2mzdgE
+[Video Explicativo](https://www.youtube.com/watch?v=59DOU2mzdgE)
 
 <details><summary>🧠 Respuesta</summary>
 
+![image](https://github.com/user-attachments/assets/338488b6-a8ec-4b33-8503-c154cd9b00af)
+
+![image](https://github.com/user-attachments/assets/6466a38d-d59e-417d-8d6e-360f94b4c826)
+![image](https://github.com/user-attachments/assets/88691704-f797-4467-81db-e6a6af4c8149)
+![image](https://github.com/user-attachments/assets/8119d5f9-fff2-42f3-a1b0-121061e35054)
+
+Resumen
+- **Tablas de Verdad**: Enumeran todas las combinaciones de entradas y salidas.
+- **Diagramas de Circuitos Lógicos**: Utilizan compuertas lógicas para representar visualmente la función.
+- **Ecuaciones Booleanas**: Describen la función lógica usando operadores booleanos.
+El método SOP garantiza que todas las combinaciones de entradas que producen una salida '1' se representen en el circuito final, asegurando la correcta implementación de la función lógica.
 
 </details>
 
@@ -1837,3 +1856,13 @@ Donde:
 - -k es la posición del dígito menos significativo, y n es la posición del dígito más significativo.
 
 </details>
+
+
+---
+
+# Ejemplos
+
+### Numeros en Punto Flotante
+
+- Mantisa Entera, BCS y restringido a 4 bits
+- Exponente BSS restringido a 3 bits
