@@ -63,6 +63,7 @@ b) Representante en punto flotante el número decimal 32.25
 
 
 
+
 ### Ejercicio 2
 
 a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
@@ -1648,5 +1649,178 @@ Esta distribución evita el cuello de botella que se produce el nivel 4, ya que 
 - NIVEL 6: El nivel 6 agrega otro algoritmo de comprobación de datos, y se distribuyen de la misma manera que el nivel 5. Uno es el algoritmo de los niveles 3, 4 y 5 que calcula la XOR, y otro es un algoritmo independiente. Esto hace posible la regeneración de los datos incluso si dos de los discos que contienen los datos de los usuarios fallan.
 
 Es una solución perfecta para aplicaciones con objetivos críticos, pero tiene un gran costo de cálculo y escritura de paridades.
+
+</details>
+
+Describa como se puede construir un sumador binario completo. Defina cuales son las funciones lógicas que se pueden utilizar, tabla de verdad y realice un esquema de interconexión de compuertas de dicho sumador.
+
+<details><summary>🧠 Respuesta</summary>
+
+
+Un  sumador binario completo se puede construir armando la tabla de verdad con los valores booleanos de la suma binaria, y la tabla de verdad de la suma con acarreo. Una vez realizadas estas tablas, se puede hacer las funciones de salida. 
+Para que funcione un sumador de varios bits cada uno de los sumadores de un bit deben tener 3 entradas, incluyendo el acarreo del sumador inmediato inferior.
+
+Suma = (-A . -B . C) + (-A . B . -C) + (A.B.C) + (A.-B.-C)
+Acarreo = A.B + A.C + B.C
+
+</details>
+
+¿Qué mejoras podemos obtener en el funcionamiento de máquina que ejecuta instrucciones debido al principio de localidad de referencia?
+
+<details><summary>🧠 Respuesta</summary>
+
+La principal mejora que podemos obtener cuando se cumple el principio de localidad de referencia es la disminución de la frecuencia de acceso a los niveles inferiores de la jerarquía de memoria. Es gracias a este principio que dicha jerarquía puede implementarse. 
+El principio de localidad de referencia nos dice que en el curso de la ejecución de un programa, las referencias a memoria por parte del procesador, tanto para instrucciones como para datos, tienden a estar agrupadas. Los programas normalmente contienen un numero de bucles iterativos y subrutinas. Cada vez que se entra en un bucle a una subrutina, hay repetidas referencias a un pequeño conjunto de instrucciones. Esto también se cumple al trabajar con matrices o arreglos.
+
+</details>
+
+¿En qué momento del ciclo de instrucciones se fija la CPU si hay pedido de interrupciones? ¿Por qué? Describa los pasos que se llevan a cabo cuando se encuentra el pedido.
+
+<details><summary>🧠 Respuesta</summary>
+
+Después de la ejecución de la instrucción.
+
+Pasos
+- 1.	Suspende la ejecución del programa en curso y guarda su contexto. Esto significa almacenar la dirección de la siguiente instrucción a ejecutar y cualquier otro dato relacionado con la actividad en curso del procesador.
+- 2.	Carga el PC con la dirección de comienzo de una rutina de gestión de interrupción.
+
+A continuación el procesador prosigue con el ciclo de captación y accede a la primera instrucción del programa de gestión de interrupción, que dará servicio a la interrupción. Generalmente el programa de gestión de interrupción forma parte del sistema operativo. Normalmente, este programa determina el origen de la interrupción y realiza todas las acciones que sea necesarias. Cuando la rutina de gestión de interrupción se completa, el procesador puede proseguir la ejecución del programa de usuario en el punto en el que se interrumpió. 
+
+</details>
+
+¿Qué objetivo persigue la existencia del registro puntero de pila (stack pointer) en el CPU? ¿Para qué serviría tener más de uno?
+
+<details><summary>🧠 Respuesta</summary>
+
+El objetivo del stack pointer es contener el valor de la dirección del tope de la pila.
+
+Tener más de un Stack Pointer serviría para poder tener una pila para el usuario y una para el sistema. Esto evitaría que el usuario tenga que estar pendiente de los cambios que realiza el sistema en la pila.
+
+</details>
+
+Completada la instrucción add AX, meno1. ¿Qué instrucción deberá ejecutar a continuación para determinar si el resultado obtenido es correcto o no? Considere los casos de representación de números sin signos y en ca2.
+
+<details><summary>🧠 Respuesta</summary>
+
+```Assembly
+Para números sin signo debería ejecutar: 
+		JNC correcto
+		MOV CX, 1
+		JMP fin
+correcto:	MOV CX, 0
+fin:		HLT
+
+Para números en ca2 debería ejecutar: 
+		JNO correcto
+		MOV CX, 1
+		JMP fin
+correcto:	MOV CX, 0
+fin:		HLT
+```
+
+</details>
+
+Describa los componentes que definen el tiempo de acceso de un disco magnético. ¿Cómo se podría calcular un tiempo de acceso promedio?
+
+<details><summary>🧠 Respuesta</summary>
+
+Los componentes que definen el tiempo de acceso son: Por un lado, la cabeza de lectura, que tiene una cierta velocidad para alcanzar el cilindro buscado (tiempo de seek). 
+También los discos en si, que tienen una determinada velocidad de giro. Esto determina el tiempo de latencia, que ocurre desde que la cabeza de lectura se posiciona sobre el cilindro, hasta que el sector buscado pasa por debajo de la cabeza.
+
+Para calcular el tiempo de acceso promedio debemos sumar el tiempo de seek y el tiempo de latencia promedio. Este último se puede calcular como el tiempo de giro de una pista dividido dos.
+Otra manera podría ser midiendo el tiempo de acceso de una gran cantidad de accesos y hacer un promedio.
+
+</details>
+
+¿Qué es un JK? Describa las características de funcionamiento con tabla de comportamiento y gráfico del circuito lógico.
+
+<details><summary>🧠 Respuesta</summary>
+
+Es un circuito secuencial, por lo tanto la salida depende de la entrada como del estado interno del circuito. Es un tipo de flip-flop que tiene dos entradas al igual que es SR, pero todas las combinaciones posibles son validas. La entrada J sola realiza la función de puesta a 1, causando que la salida sea 1. La entrada K solo realiza la función de puesta a 0. Cuando J y K son 1 la función realizada es de conmutación: la salida se invierte.
+
+</details>
+
+Describa paso a paso el ciclo de instrucción correspondiente a la ejecución JMP memo1. Dicha instrucción ocupa 3 bytes en memoria. La memoria almacena palabras de 8 bits y direcciona con 16 bits.
+
+<details><summary>🧠 Respuesta</summary>
+
+1) Busca el código de operación
+2) Incrementa el Program Counter
+3) Decodifica y detecta que se trata de un salto
+4) Busca la parte baja de la dirección a la que tiene que saltar
+5) Incrementa el PC
+6) Busca la parte alta de la dirección a la que tiene que saltar
+7) Incrementa el PC
+8) Carga el PC con el valor de la dirección a la que tiene que saltar
+
+</details>
+
+Enumere las instrucciones de tipo transferencia de control que posee el MSX-88 y explique el modo de direccionamiento de c/u de ellas.
+
+<details><summary>🧠 Respuesta</summary>
+
+Las instrucciones de tipo transferencia de control que posee el MSX-88 son: Los saltos (JMP, JZ, JNZ, JS, JNS, JC, JNC, JO, JNO)
+Las llamadas a subrutinas (Call, Ret)
+También son de transferencia de control las de interrupciones.
+
+Los modos de direccionamiento que usan son: 
+Relativos al PC, donde se tiene un número que debe ser sumado al contenido del PC.
+Directo, cuando la etiqueta representa una dirección a la que se debe saltar.
+
+</details>
+
+¿Que es un módem? Para que sirve, porque se utiliza? Cuales son los parámetros de un módem?
+
+<details><summary>🧠 Respuesta</summary>
+
+MODEM: MOdulador, DEModulador. Convierte señales '0' y'1' en tono de audio y viceversa. La tasa de Bits/seg (bps) es el numero de bits enviados por segundo. Tasa de baudio es el numero de cambio de señal por segundo.
+Su principal uso es para telecomunicaciones: convierte señales analógicas provenientes de un sistema telefónico a cadenas binarias. Es una de las tecnologías más usadas para conectarse a internet. 
+
+</details>
+
+Describa los mecanismos de impresión que conozca, compare calidad obtenible, cantidad de copias por vez, tamaño de papel utilizable, cantidad de colores y velocidad de impresión de los mecanismos que mencione.
+
+<details><summary>🧠 Respuesta</summary>
+
+- Impresora de impacto: Los caracteres son impresos golpeando los moldes de los caracteres o una cinta entintada sobre la hoja.
+En la disposición “Margarita” todos los caracteres sobre relieve están dispuestos en forma de flor e impactan de a uno contra la hoja, golpeando una cinta entintada que les permite marcar el carácter. La ventaja es que cada carácter individual se imprime con buena calidad, pero no puede imprimir nada que no sea cadenas de caracteres.
+En cambio, las impresoras por matriz de puntos, marcan los caracteres sobre una cinta al igual que las de margarita, pero usando punzones manejados por solenoides. Tiene tantos punzones como sea el alto de la matriz de caracteres. Produce muy baja resolución.
+Ambos tipos de impresoras son muy lentas y por lo general ruidosas. Según el fabricante, pueden usar algunos colores, pero muy limitados y de baja calidad y resolución.
+- Impresora láser: Es el tipo de impresora con mayor resolución, llegando hasta 1200dpi. Permite usar todos los colores y puede imprimir páginas completas de texto o gráfico a gran velocidad. Permite realizar muchas copias en menos tiempo que los demás sistemas. La desventaja es que son costosas.
+- Impresora Ink-jet ó de inyección de tinta: Tienen un trasductor ultrasónico que lanza pequeños chorros de tinta a los puntos correctos con la cabeza moviéndose sobre el papel.
+
+Permite tanto blanco y negro como color.
+El precio, resolución, y velocidad se encuentra entre las anteriores. Esto hace que sean las más comunes para uso cotidiano.
+
+Con respecto a al tamaño utilizable, puede que las impresoras de impacto estén limitadas por el tamaño físico de los punzones o martillos. En los otros tipos, depende del tamaño de bandeja que incorpore el fabricante. Los tamaños más comunes son los estándares “A4”, “Oficio”, “carta”, etc.
+
+La cantidad de copias por vez va depender de la velocidad de impresión del dispositivo, siendo las más rápidas las láser.
+
+</details>
+
+Describa las diferencias que tendremos entre una computadora con teclado y monitor como periféricos y una que posee un equipo denominado terminal como periférico. Puede considerar cantidad y ubicación de la memoria de video, cantidad y tipo de puertas de E/S, tipo de comunicación entre CPU y periférico.
+
+<details><summary>🧠 Respuesta</summary>
+
+En una computadora tradicional con teclado y monitor, tendremos un monitor de video con memoria de visualización que está mapeada en la memoria principal del equipo. En cambio, en un esquema con terminales, cada terminal se compone de un teclado y un monitor con su propia memoria de visualización dedicada a ese terminal. Esto evita que se llene la memoria principal del computador que centraliza a los terminales. 
+Cada terminal puede estar alejado físicamente del CPU, por ejemplo, se puede tener el computador principal en una habitación y poner un terminal en cada una de las demás habitaciones.
+
+La terminal conecta sus periféricos con la computadora a través de una conexión en serie, que tiene poco ancho de banda, por lo que los monitores de los terminales suelen estar orientados a caracteres para ahorrar transferencia de datos. En cambio, las computadoras con video mapeado en memoria conectan los periféricos directamente al bus de memoria, que permite cambios rápidos. Esto hace que tenga solo 1 E/S para el monitor, a diferencia de el computador con terminales, que va a tener 1 conexión de E/S para cada terminal, a pesar de que no necesite mapear la memoria de visualización en su memoria principal.
+
+</details>
+
+¿Qué define el Teorema fundamental de la numeración?
+
+<details><summary>🧠 Respuesta</summary>
+
+El teorema fundamental de la numeración establece la forma general de construir números en un sistema de numeración posicional.
+
+![1](https://github.com/user-attachments/assets/9444bbcd-3859-4012-81d7-878d78c006bf)
+
+Donde:
+- N es el número decimal 
+- d es un dígito que puede variar entre {0,1,..., (b-1)}
+- b es la base de representación
+- -k es la posición del dígito menos significativo, y n es la posición del dígito más significativo.
 
 </details>
