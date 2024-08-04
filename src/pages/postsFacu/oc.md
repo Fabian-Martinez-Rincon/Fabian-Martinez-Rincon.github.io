@@ -14,36 +14,45 @@ category: Facultad
 
 <div align='center'><img src='https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDR2ZGR0enZoYXF4cnhwZGc4dGRqN2VrcmdmeG16d2h4cnhjZHlzdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ubLIcHvitTa36/giphy.gif'></div>
 
+> ⚠️ Las Algunas preguntas estan hechas bajo mi criterio, pueden estar mal, si detectan que algo esta mal, no duden en contactarme por mail:fabianmartinezrincon.123@gmail.com o por discord: fabomartinez
+
 <br>
 
 ---
 
+
+
 ## Indice
 
-- [Final 1](#final-1)
-- [Final 2 08-22](#final-2-08-22)
-- [Final 3 sin fecha](#final-3-sin-fecha)
-- [Final 4 11-22](#final-4-11-22)
-- [Final 5 Mesa febrero 2º llamado | 21/02/2022](#final-5-mesa-febrero-2º-llamado--21022022)
-- [Final 6 FEBRERO 2022 1ERA FECHA](#final-6-febrero-2022-1era-fecha)
-- [Final 7 Organización de Computadoras 08-23](#final-7-organización-de-computadoras-08-23)
-- [Final 8 - Abril 2023 (10/04)](#final-8---abril-2023-1004)
-- [Final 9 Organización de Computadoras 23-Feb1](#final-9-organización-de-computadoras-23-feb1)
-- [Final 10 Feb20b](#final-10-feb20b)
-- [Final 11 Octubre del 2023](#final-11-octubre-del-2023)
-- [Final 12 23Dicb](#final-12-23dicb)
-- [Final 13 FEBRERO 2022 1ERA FECHA](#final-13-febrero-2022-1era-fecha)
-- [Final 14 08-23](#final-14-08-23)
-- [Final 15 11-22](#final-15-11-22)
-- [Final 16 04-24](#final-16-04-24)
-- [Final 17](#final-17-abr23)
-- [Final 18](#final-18-5-23)
-- [Final 19](#final-19)
-- [Final 20](#final-20-08-22)
-- [Final 21](#final-21-09-22)
+- [Finales Echos por mi](#finales-echos-por-mi)
+	- [Final 1](#final-1)
+	- [Final 2 08-22](#final-2-08-22)
+	- [Final 3 sin fecha](#final-3-sin-fecha)
+	- [Final 4 11-22](#final-4-11-22)
+	- [Final 5 Mesa febrero 2º llamado | 21/02/2022](#final-5-mesa-febrero-2º-llamado--21022022)
+	- [Final 6 FEBRERO 2022 1ERA FECHA](#final-6-febrero-2022-1era-fecha)
+	- [Final 7 Organización de Computadoras 08-23](#final-7-organización-de-computadoras-08-23)
+	- [Final 8 - Abril 2023 (10/04)](#final-8---abril-2023-1004)
+	- [Final 9 Organización de Computadoras 23-Feb1](#final-9-organización-de-computadoras-23-feb1)
+	- [Final 10 Feb20b](#final-10-feb20b)
+	- [Final 11 Octubre del 2023](#final-11-octubre-del-2023)
+	- [Final 12 23Dicb](#final-12-23dicb)
+	- [Final 13 FEBRERO 2022 1ERA FECHA](#final-13-febrero-2022-1era-fecha)
+	- [Final 14 08-23](#final-14-08-23)
+	- [Final 15 11-22](#final-15-11-22)
+	- [Final 16 04-24](#final-16-04-24)
+	- [Final 17](#final-17-abr23)
+	- [Final 18](#final-18-5-23)
+	- [Final 19](#final-19)
+	- [Final 20](#final-20-08-22)
+	- [Final 21](#final-21-09-22)
+- [Otros Finales Resueltos](#otros-finales-resueltos)
+- [Ejemplos de youtube](#ejemplos)
+	- [Punto Flotante](#numeros-en-punto-flotante)
 
 ---
 
+# Finales Echos por mi
 
 ## Final 1
 
@@ -59,16 +68,12 @@ a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
 
 </details>
 
-[Numeros en Punto Flotante Parte 1](https://youtu.be/lbf76DyolKI?si=DEQxUtXJvvjt9HJL)
-[Numeros en Punto Flotante Parte 2](https://youtu.be/O10ce7g59NI?si=2LlCO5TQizDLDIv6)
+
 
 b) Representante en punto flotante el número decimal 32.25
 
 <details><summary>🧠 Respuesta</summary>
 
-Ejemplo en decimal
-
-![image](https://github.com/user-attachments/assets/4f2ba0e9-bbae-429a-8a6e-25b4b37ab826)
 
 
 ![image](https://github.com/user-attachments/assets/00259749-a119-4092-ab2d-1ccc45429af1)
@@ -1734,7 +1739,7 @@ Completada la instrucción add AX, meno1. ¿Qué instrucción deberá ejecutar a
 
 <details><summary>🧠 Respuesta</summary>
 
-```Assembly
+```
 Para números sin signo debería ejecutar: 
 		JNC correcto
 		MOV CX, 1
@@ -1864,5 +1869,77 @@ Donde:
 
 ### Numeros en Punto Flotante
 
-- Mantisa Entera, BCS y restringido a 4 bits
-- Exponente BSS restringido a 3 bits
+
+<details><summary>Notación</summary>
+
+![image](https://github.com/user-attachments/assets/4f2ba0e9-bbae-429a-8a6e-25b4b37ab826)
+</details>
+
+
+Mantisa Entera BCS restringido a 4 bits y el Exponente BSS restringido a 3 bits. (0110010)
+
+[Explicación Numeros en Punto Flotante Parte 1](https://youtu.be/lbf76DyolKI?si=DEQxUtXJvvjt9HJL)
+
+![image](https://github.com/user-attachments/assets/9b61158b-ce27-4788-bcf4-649c88b72f09)
+
+---
+
+Mantisa Entera BCS restringido a 4 bits y el Exponente BSS restringido a 3 bits. (1011111)
+
+[ExplicaciónNumeros en Punto Flotante Parte 2](https://youtu.be/O10ce7g59NI?si=2LlCO5TQizDLDIv6)
+
+![image](https://github.com/user-attachments/assets/4f11d9df-ef12-4358-8945-4eaf231fe52f)
+
+---
+
+Mantisa Entera BCS restringido a 4 bits y el Exponente BSS restringido a 3 bits. (1010011)
+
+[Explicación Numeros en Punto Flotante Parte 3](https://youtu.be/EcgWg25SeZU?si=WKmM16BvpPtvhpLt)
+
+![image](https://github.com/user-attachments/assets/7fbd2ac9-e475-4af0-9e27-e76245d9ada4)
+
+---
+
+Mantisa Fraccionaria BCS restringido a 4 bits y el Exponente BSS restringido a 3 bits. (1010011)
+
+[Explicación Numeros En Punto Flotante Parte 4](https://youtu.be/be6uwcy1GT4?si=Nlhqgx7-QXwDG69A)
+
+![image](https://github.com/user-attachments/assets/aa135c5e-0f92-4a02-9df8-a348069ce43e)
+
+---
+
+Sistema en Punto Flotante cuya mantisa es fraccionaria, con 6 bits, está expresada en BSS (en el inciso a) o BCS (en el insciso b) y su exponente en BCS con 4 bits, escriba el significado de las siguientes cadenas de bits (mantisa a la izquierda) 
+
+[Explicación Practica Punto Flotante Parte 1](https://youtu.be/NNqgT0xH9Kg?si=6gpAC7r8ZpVMXEKq)
+
+![image](https://github.com/user-attachments/assets/c3f91b66-747b-46df-80b1-74d6be91fb3f)
+
+---
+
+Sistema en Punto Flotante cuya mantisa es fraccionaria, con 6 bits, está expresada en BSS (en el inciso a) o BCS (en el insciso b) y su exponente en BCS con 4 bits, escriba el significado de las siguientes cadenas de bits (mantisa a la izquierda) 
+
+[Explicación Practica Punto Flotante Parte 2](https://youtu.be/2X5Owj5l3po?si=d_4N4pF9kRZbDnEJ)
+
+![image](https://github.com/user-attachments/assets/f396aabc-2ea9-4461-8baa-fe5119122526)
+
+---
+
+Sistema en Punto Flotante cuya mantisa es fraccionaria, con 6 bits, está expresada en BSS (en el inciso a) o BCS (en el insciso b) y su exponente en BCS con 4 bits, escriba el significado de las siguientes cadenas de bits (mantisa a la izquierda) 
+
+[Explicación Practica Punto Flotante Parte 2](https://youtu.be/CxcN47BthFU?si=QjD6DulFumBWp5c8)
+
+Parte A)
+
+![image](https://github.com/user-attachments/assets/799a6276-bc4d-48ec-8975-6d726151f40f)
+
+Parte B)
+
+![image](https://github.com/user-attachments/assets/d24aaa58-5005-425f-9e28-dd58e56a01b6)
+
+---
+
+[Explicación Punto Flotante Ejercicio 1 Rango y Resolución](https://youtu.be/0P0NGutcPcA?si=9pnez6f-I7_6wPNL)
+
+Calcular El Rango
+
+![image](https://github.com/user-attachments/assets/3284f9db-6bd8-46a1-aefc-701874c896e4)
