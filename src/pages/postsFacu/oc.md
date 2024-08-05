@@ -2021,7 +2021,7 @@ Parte B)
 
 ---
 
-[Explicación Punto Flotante Ejercicio 1 Rango y Resolución](https://youtu.be/0P0NGutcPcA?si=9pnez6f-I7_6wPNL)
+[Explicación Punto Flotante Ejercicio 1 Rango y Resolución Parte 1](https://youtu.be/0P0NGutcPcA?si=9pnez6f-I7_6wPNL)
 
 Calcular El Rango
 
@@ -2032,4 +2032,8 @@ Esto es un ejemplo para ver el maximo anterior y lo demas continua en la siguien
 ![image](https://github.com/user-attachments/assets/0eadd8e8-6d71-4aae-a31f-2ba3f84237da)
 
 ---
+
+[Explicación Punto Flotante Ejercicio 1 Rango y Resolución Parte 2](https://youtu.be/pd-uk_Nrgus?si=QwrV6_4IiDForYep)
+
+![image](https://github.com/user-attachments/assets/76056776-892c-4e47-9e86-070cf6cf3315)
 
