@@ -11,7 +11,6 @@ tags: ["bash", "nvim", "linux", "debian"]
 category: Facultad
 ---
 
-
 <div align='center'><img src='https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZDR2ZGR0enZoYXF4cnhwZGc4dGRqN2VrcmdmeG16d2h4cnhjZHlzdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ubLIcHvitTa36/giphy.gif'></div>
 
 > ⚠️ Las Algunas preguntas estan hechas bajo mi criterio, pueden estar mal, si detectan que algo esta mal, no duden en contactarme por mail:fabianmartinezrincon.123@gmail.com o por discord: fabomartinez
@@ -19,8 +18,6 @@ category: Facultad
 <br>
 
 ---
-
-
 
 # Indice
 
@@ -66,7 +63,7 @@ category: Facultad
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria normalizada en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der)
 
-a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
+`a) ¿Cuál es el valor del minimo positivo representable en ese sistema?`
 
 <details><summary>🧠 Respuesta</summary>
 
@@ -74,7 +71,7 @@ a) ¿Cuál es el valor del minimo positivo representable en ese sistema?
 
 </details>
 
-b) Representante en punto flotante el número decimal 32.25
+`b) Representante en punto flotante el número decimal 32.25`
 
 <details><summary>🧠 Respuesta</summary>
 
@@ -86,7 +83,7 @@ b) Representante en punto flotante el número decimal 32.25
 
 #### Ejercicio 2
 
-a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
+`a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?`
 
 <details><summary>🧠 Respuesta</summary>
 
@@ -99,7 +96,7 @@ a) ¿Cuáles son las 3 formas que se pueden utilizar para representar una funci�
 
 </details>
 
-b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".
+`b) Describa el método de diseño de circuitos de circuitos lógicos combinacionales denominado "Suma de productos".`
 
 [Video Explicativo](https://www.youtube.com/watch?v=59DOU2mzdgE)
 
@@ -123,28 +120,123 @@ El método SOP garantiza que todas las combinaciones de entradas que producen un
 
 #### Ejercicio 3
 
-a) ¿Qué se representa con el formato de instrucción?
+`a) ¿Qué se representa con el formato de instrucción?`
 
 <details><summary>🧠 Respuesta</summary>
+
+El formato de instrucción es una representación específica que define cómo se codifican las instrucciones dentro de una computadora. Incluye varios componentes clave que son necesarios para que la Unidad Central de Procesamiento (CPU) pueda interpretar y ejecutar las instrucciones correctamente. Los componentes principales del formato de instrucción suelen incluir:
+
+1. **Código de Operación (Opcode):** Este es un conjunto de bits que especifica la operación que debe realizar la CPU (por ejemplo, adición, sustracción, carga, almacenamiento, etc.). El opcode indica a la CPU qué tipo de instrucción se debe ejecutar.
+
+2. **Operando(s):** Estos son los datos sobre los cuales se debe realizar la operación especificada por el opcode. Los operandos pueden ser:
+   - **Inmediatos:** Valores constantes incluidos en la instrucción.
+   - **Registros:** Direcciones de registros internos de la CPU.
+   - **Direcciones de memoria:** Ubicaciones en la memoria donde se encuentran los datos.
+
+3. **Modo de Direccionamiento:** Especifica cómo se deben interpretar los operandos. Hay varios modos de direccionamiento, como:
+   - **Directo:** La dirección del operando está explícitamente dada.
+   - **Indirecto:** La dirección del operando está en un registro o en otra dirección de memoria.
+   - **Inmediato:** El operando está incluido en la instrucción.
+   - **Indexado:** La dirección del operando es calculada sumando un desplazamiento a un registro base.
+
+Un ejemplo simplificado de una instrucción podría ser:
+
+```
+ADD R1, R2, R3
+```
+
+Donde `ADD` es el opcode que indica una operación de suma, y `R1`, `R2`, y `R3` son los operandos que indican los registros que contienen los valores a sumar y donde se almacenará el resultado.
 </details>
 
-b) Describa los pasos del ciclo de instrucción de un salto incondicional
+`b) Describa los pasos del ciclo de instrucción de un salto incondicional`
 
 <details><summary>🧠 Respuesta</summary>
+
+El ciclo de instrucción de un salto incondicional es el proceso que sigue la CPU para ejecutar una instrucción de salto que siempre se realiza sin condiciones. A continuación se detallan los pasos típicos de este ciclo:
+
+1. **Fetch (Búsqueda):**
+   - La CPU obtiene (fetch) la instrucción de salto desde la memoria. La dirección de la instrucción a ser buscada es indicada por el contador de programa (Program Counter, PC).
+
+2. **Decode (Decodificación):**
+   - La instrucción de salto obtenida es decodificada por la unidad de control de la CPU. Durante este paso, la CPU identifica que la instrucción es un salto incondicional y determina la dirección de salto (la dirección a la que se debe transferir el control).
+
+3. **Execution (Ejecución):**
+   - En el caso de un salto incondicional, la CPU simplemente carga la nueva dirección de la instrucción (especificada por la instrucción de salto) en el contador de programa (PC). Esto implica que la próxima instrucción a ser ejecutada no es la siguiente en secuencia, sino la instrucción ubicada en la dirección especificada por el salto.
+
+4. **Writeback (Escritura):**
+   - En un salto incondicional, generalmente no hay necesidad de una fase de escritura ya que no se está modificando el contenido de los registros o memoria, solo el valor del contador de programa (PC).
+
+5. **Increment Program Counter (Actualización del Contador de Programa):**
+   - Aunque en muchos ciclos de instrucción se incrementa el PC para apuntar a la siguiente instrucción, en un salto incondicional el PC es actualizado directamente con la dirección de salto especificada. 
+
+#### Ejemplo de Salto Incondicional
+
+Supongamos que la instrucción de salto es `JMP 0x0040`:
+
+1. **Fetch:** La CPU busca la instrucción `JMP 0x0040` desde la memoria.
+2. **Decode:** La instrucción es decodificada y se identifica como un salto incondicional a la dirección `0x0040`.
+3. **Execution:** La CPU actualiza el contador de programa (PC) con el valor `0x0040`.
+4. **Writeback:** No se realiza ninguna operación de escritura adicional.
+5. **Increment Program Counter:** En este caso, el PC ya se ha actualizado con la dirección de salto, por lo que el ciclo de instrucción continuará con la nueva dirección en el siguiente ciclo.
+
+Estos pasos aseguran que la CPU salte incondicionalmente a una nueva posición de memoria y continúe la ejecución desde allí.
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 4
 
-a) ¿Cuales son los valores típicos de tiempo de acceso a los niveles de una "jerarquia de memoria"?
+`a) ¿Cuales son los valores típicos de tiempo de acceso a los niveles de una "jerarquia de memoria"?`
 
 <details><summary>🧠 Respuesta</summary>
+
+La jerarquía de memoria en una computadora está diseñada para balancear la velocidad, costo y capacidad de almacenamiento. Cada nivel en la jerarquía tiene características diferentes en cuanto a estos aspectos. Aquí hay una lista de los niveles típicos de la jerarquía de memoria y sus tiempos de acceso aproximados:
+
+1. **Registros de la CPU:**
+   - Tiempo de acceso: 1 ciclo de reloj de la CPU (menos de 1 nanosegundo, típicamente en el rango de picosegundos a nanosegundos).
+
+2. **Caché L1:**
+   - Tiempo de acceso: 1-2 ciclos de reloj de la CPU (alrededor de 1-2 nanosegundos).
+
+3. **Caché L2:**
+   - Tiempo de acceso: 3-10 ciclos de reloj de la CPU (aproximadamente 3-10 nanosegundos).
+
+4. **Caché L3:**
+   - Tiempo de acceso: 10-20 ciclos de reloj de la CPU (aproximadamente 10-20 nanosegundos).
+
+5. **Memoria Principal (RAM, DRAM):**
+   - Tiempo de acceso: 50-100 nanosegundos.
+
+6. **Almacenamiento en estado sólido (SSD):**
+   - Tiempo de acceso: 50-150 microsegundos.
+
+7. **Disco Duro (HDD):**
+   - Tiempo de acceso: 10-15 milisegundos.
+
+8. **Memoria Secundaria (Cintas, almacenamiento en la nube, etc.):**
+   - Tiempo de acceso: segundos a minutos, dependiendo de la tecnología y la ubicación.
 </details>
 
-b) ¿Porque la organización 2 1/2D de memoria semiconductora requiere 'refresco'?
+`b) ¿Porque la organización 2 1/2D de memoria semiconductora requiere 'refresco'?`
 
 <details><summary>🧠 Respuesta</summary>
+
+La organización 2 1/2D de memoria semiconductora se refiere a un diseño en el que la memoria está estructurada en varios niveles (capas) y utiliza una técnica que permite una mayor densidad de almacenamiento. Este diseño es común en la memoria DRAM (Dynamic Random Access Memory). La razón por la que la memoria DRAM requiere "refresco" es fundamentalmente debido a la naturaleza de su tecnología de almacenamiento.
+
+#### Funcionamiento de la DRAM
+
+- **Almacenamiento de Datos en Capacitores:** En la DRAM, cada bit de información se almacena en un pequeño capacitor. Un capacitor puede estar cargado (representando un bit '1') o descargado (representando un bit '0').
+- **Pérdida de Carga:** Los capacitores en la DRAM no pueden retener su carga indefinidamente; la carga se fuga con el tiempo debido a la naturaleza de los materiales y las imperfecciones en los componentes electrónicos.
+- **Refresco de Datos:** Para evitar la pérdida de datos, cada bit de la DRAM debe ser refrescado periódicamente. Esto implica leer el estado del capacitor y luego reescribir el mismo valor para restaurar la carga completa.
+
+#### Organización 2 1/2D y Necesidad de Refresco
+
+- **Alta Densidad de Almacenamiento:** La organización 2 1/2D permite almacenar una mayor cantidad de datos en un área más pequeña, lo que implica que hay más capacitores por unidad de área.
+- **Más Capas y Mayor Integración:** Con más capas de almacenamiento y mayor integración, la complejidad del sistema aumenta y la tasa de fuga de los capacitores puede ser más pronunciada debido a la proximidad de los componentes y la interferencia potencial.
+- **Refresco Periódico Necesario:** Debido a la fuga de carga en los capacitores, la memoria DRAM en una configuración 2 1/2D, al igual que cualquier DRAM, requiere ciclos de refresco periódicos para asegurar que los datos almacenados no se pierdan. Estos ciclos de refresco son gestionados por el controlador de memoria y ocurren cientos de veces por segundo.
+
+En resumen, la necesidad de refresco en la organización 2 1/2D de memoria semiconductora se debe a la naturaleza inherente de la tecnología DRAM, donde los datos se almacenan en capacitores que pierden su carga con el tiempo y deben ser periódicamente recargados para mantener la integridad de los datos almacenados.
+
 </details>
 
 <hr class="yellow">
@@ -153,14 +245,55 @@ b) ¿Porque la organización 2 1/2D de memoria semiconductora requiere 'refresco
 
 Una imagen de pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centimetro:
 
-a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+`a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?`
 
 <details><summary>🧠 Respuesta</summary>
+
+1. **Dimensiones de la imagen:**
+   - Ancho: 100 cm
+   - Alto: 50 cm
+   - Resolución: 100 puntos por centímetro
+
+2. **Calcular la resolución total de la imagen en píxeles:**
+   - Ancho en píxeles: 100 cm * 100 puntos/cm = 10,000 píxeles
+   - Alto en píxeles: 50 cm * 100 puntos/cm = 5,000 píxeles
+   - Total de píxeles: 10,000 píxeles * 5,000 píxeles = 50,000,000 píxeles
+
+3. **True Color:**
+   - En True Color, cada píxel se representa con 24 bits (8 bits por canal para los colores rojo, verde y azul).
+   - Convertir 24 bits a bytes: 24 bits / 8 = 3 bytes por píxel
+
+4. **Calcular la memoria total en bytes:**
+   - Memoria total: 50,000,000 píxeles * 3 bytes/píxel = 150,000,000 bytes
+
+Por lo tanto, se necesitan 150,000,000 bytes de memoria para almacenar una imagen en True Color.
 </details>
 
-b) Cuantas imágenes podria almacenar en esa memoría si la imagen a almacenar fuera monocromatica?
+`b) Cuantas imágenes podria almacenar en esa memoría si la imagen a almacenar fuera monocromatica?`
 
 <details><summary>🧠 Respuesta</summary>
+
+1. **Monocromática:**
+   - Una imagen monocromática (en blanco y negro) se representa con 1 bit por píxel.
+
+2. **Calcular la memoria necesaria para una imagen monocromática:**
+   - Memoria necesaria por píxel: 1 bit
+   - Convertir bits a bytes: 1 bit / 8 = 0.125 bytes por píxel
+
+3. **Calcular la memoria total en bytes para una imagen monocromática:**
+   - Memoria total para una imagen: 50,000,000 píxeles * 0.125 bytes/píxel = 6,250,000 bytes
+
+4. **Calcular el número de imágenes monocromáticas que se pueden almacenar:**
+   - Memoria disponible: 150,000,000 bytes (de la parte a)
+   - Número de imágenes: 150,000,000 bytes / 6,250,000 bytes/imagen = 24 imágenes
+
+Por lo tanto, en la misma cantidad de memoria, se podrían almacenar 24 imágenes monocromáticas.
+
+#### Resumen
+
+a) Se necesitan 150,000,000 bytes de memoria para almacenar una imagen en True Color.
+
+b) Se podrían almacenar 24 imágenes monocromáticas en esa misma memoria.
 </details>
 
 ---
@@ -175,56 +308,205 @@ b) Cuantas imágenes podria almacenar en esa memoría si la imagen a almacenar f
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
-A) ¿Cuál es el rango de representación del sistema?.
+`A) ¿Cuál es el rango de representación del sistema?.`
 
 <details><summary>🧠 Respuesta</summary>
+
+Para determinar el rango de representación de un sistema en punto flotante, necesitamos entender cómo se representan tanto la mantisa como el exponente.
+
+1. **Mantisa fraccionaria en BCS (Binary Coded Sign):**
+   - La mantisa tiene 6 bits, con el formato 1.xxx...xx (donde x puede ser 0 o 1).
+   - Esto significa que la mantisa puede representar valores en el rango de 1 a 1.11111 en binario (equivalente a 1 a (2 - 2^-6) en decimal).
+
+2. **Exponente de 4 bits en exceso 8:**
+   - El exponente se representa con 4 bits en exceso 8.
+   - Esto significa que el exponente puede variar de 0000 a 1111 en binario, que en decimal representa de 0 a 15.
+   - En exceso 8, el exponente real se calcula restando 8. Por lo tanto, el exponente real varía de -8 a 7.
+
+![image](https://github.com/user-attachments/assets/41e47b50-255c-4ee8-9dd9-5f6e03c6df96)
+
 </details>
 
-B) Represente en punto flotante el número decimal 322.
+`B) Represente en punto flotante el número decimal 322.`
 
 <details><summary>🧠 Respuesta</summary>
+
+Para representar el número decimal 322 en el sistema de punto flotante dado:
+
+![image](https://github.com/user-attachments/assets/b64233cf-1970-4ca2-9614-f0c3a4138792)
+
+Entonces, la representación en punto flotante del número 322 es:
+
+> 0 1111 010000
+
+Espero que esto ayude a resolver el ejercicio. Si tienes más preguntas o necesitas más aclaraciones, no dudes en decírmelo.
+
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 2
 
-¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
+`A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?`
 
 <details><summary>🧠 Respuesta</summary>
+
+1. **Tablas de Verdad:**
+   - Una tabla de verdad es una representación tabular que muestra todas las posibles combinaciones de las entradas a una función lógica y los correspondientes resultados de salida. Cada fila de la tabla representa una combinación única de las entradas y su resultado de salida asociado.
+
+2. **Diagramas de Circuitos Lógicos:**
+   - Los diagramas de circuitos lógicos son representaciones gráficas de una función lógica utilizando compuertas lógicas. Estos diagramas muestran cómo se conectan las compuertas lógicas (AND, OR, NOT, NAND, NOR, XOR, etc.) para realizar una operación lógica específica. Cada compuerta tiene un símbolo estándar y las conexiones entre ellas indican el flujo de las señales lógicas.
+
+3. **Ecuaciones Booleanas:**
+   - Las ecuaciones booleanas usan álgebra booleana para representar una función lógica. Estas ecuaciones describen la relación entre las variables de entrada y la salida usando operadores booleanos como AND (multiplicación), OR (suma), y NOT (complemento). Las expresiones booleanas se pueden simplificar usando las leyes del álgebra booleana para optimizar el diseño del circuito.
 </details>
 
-A) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".
+`B) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos".`
 
 <details><summary>🧠 Respuesta</summary>
+
+El método de "Suma de productos" (SOP) es una técnica estándar en el diseño de circuitos lógicos combinacionales. Consiste en representar una función lógica como una suma (OR) de productos (AND) de variables de entrada. Aquí están los pasos generales para diseñar un circuito utilizando el método SOP:
+
+![image](https://github.com/user-attachments/assets/13980831-15a6-46dd-8a91-c7d7f7561df9)
+
+#### Ejemplo
+
+![image](https://github.com/user-attachments/assets/9e5b7876-a599-4507-899d-b650e7791986)
+![image](https://github.com/user-attachments/assets/8f43452a-a5d7-4111-a2de-229424b38dae)
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 3
 
-A) ¿Qué es el ciclo de instrucción?
+`A) ¿Qué es el ciclo de instrucción?`
 
 <details><summary>🧠 Respuesta</summary>
+
+El ciclo de instrucción es el proceso que sigue una CPU para ejecutar una instrucción de un programa almacenado en la memoria. Este ciclo es repetitivo y se compone de varios pasos que incluyen la búsqueda (fetch), decodificación (decode), ejecución (execute) y escritura (write back) de las instrucciones. Cada ciclo de instrucción permite que la CPU lea una instrucción de la memoria, la interprete y realice la operación correspondiente.
+
+El ciclo de instrucción se puede descomponer en las siguientes fases:
+
+1. **Fetch (Búsqueda):**
+   - La CPU obtiene la instrucción desde la memoria. La dirección de la instrucción a ser buscada es indicada por el contador de programa (PC).
+
+2. **Decode (Decodificación):**
+   - La instrucción buscada es decodificada por la unidad de control de la CPU para determinar qué operación debe realizarse y qué operandos son necesarios.
+
+3. **Execute (Ejecución):**
+   - La CPU realiza la operación especificada por la instrucción utilizando los operandos apropiados. Esto puede incluir operaciones aritméticas, lógicas, de control, etc.
+
+4. **Write Back (Escritura):**
+   - Los resultados de la operación se almacenan en la memoria o en los registros de la CPU según lo especificado por la instrucción.
+
+5. **Increment Program Counter (Actualización del Contador de Programa):**
+   - El contador de programa (PC) se incrementa para apuntar a la siguiente instrucción a ser ejecutada en el ciclo siguiente.
 </details>
 
-B) Describa los pasos del ciclo de instrucción de una operación aritmética.
+`B) Describa los pasos del ciclo de instrucción de una operación aritmética.`
 
 <details><summary>🧠 Respuesta</summary>
+
+Veamos los pasos del ciclo de instrucción para una operación aritmética, como una suma. Supongamos que tenemos una instrucción de suma `ADD R1, R2, R3`, donde `R1`, `R2`, y `R3` son registros de la CPU.
+
+1. **Fetch (Búsqueda):**
+   - La CPU busca la instrucción `ADD R1, R2, R3` desde la memoria. La dirección de la instrucción a ser buscada es indicada por el contador de programa (PC).
+
+2. **Decode (Decodificación):**
+   - La unidad de control decodifica la instrucción `ADD R1, R2, R3`. Se determina que la operación a realizar es una suma y que los operandos son los registros `R2` y `R3`, con el resultado que se almacenará en el registro `R1`.
+
+3. **Fetch Operands (Búsqueda de Operandos):**
+   - La CPU busca los valores almacenados en los registros `R2` y `R3`.
+
+4. **Execute (Ejecución):**
+   - La unidad aritmético-lógica (ALU) de la CPU realiza la operación de suma utilizando los valores de `R2` y `R3`. Por ejemplo, si `R2` tiene el valor 5 y `R3` tiene el valor 10, la ALU suma estos valores para obtener el resultado 15.
+
+5. **Write Back (Escritura):**
+   - El resultado de la operación (15) se almacena en el registro `R1`.
+
+6. **Increment Program Counter (Actualización del Contador de Programa):**
+   - El contador de programa (PC) se incrementa para apuntar a la siguiente instrucción a ser ejecutada.
+
+#### Ejemplo Visual del Ciclo de Instrucción de una Suma
+
+1. **Fetch:**
+   - `PC -> Memory[PC] -> Instruction Register (IR)` 
+   - Instrucción: `ADD R1, R2, R3`
+
+2. **Decode:**
+   - `IR -> Control Unit`
+   - Control Unit decodifica `ADD` y determina los operandos `R2`, `R3` y el destino `R1`.
+
+3. **Fetch Operands:**
+   - `R2 -> Operand 1`
+   - `R3 -> Operand 2`
+
+4. **Execute:**
+   - `ALU: Operand 1 + Operand 2`
+   - Resultado: 15
+
+5. **Write Back:**
+   - `Result (15) -> R1`
+
+6. **Increment PC:**
+   - `PC + 1 -> PC`
+
+Este ciclo se repite para cada instrucción del programa, permitiendo que la CPU ejecute secuencialmente todas las instrucciones almacenadas en la memoria.
+
+Si necesitas más detalles o ejemplos específicos, no dudes en decírmelo.
 </details>
 
 <hr class="yellow">
 
+
 #### Ejercicio 4
 
-A) ¿Cómo está compuesta una "jerarquía de memoria"?
+`A) ¿Cómo está compuesta una "jerarquía de memoria"?`
 
 <details><summary>🧠 Respuesta</summary>
+
+La jerarquía de memoria en una computadora está organizada en varios niveles que varían en velocidad, tamaño y costo. Cada nivel está diseñado para optimizar el rendimiento general del sistema al balancear estos factores. La jerarquía de memoria típica incluye los siguientes niveles, desde el más rápido y costoso hasta el más lento y económico:
+
+1. **Registros de la CPU:**
+   - Los registros son la forma más rápida de memoria dentro del procesador. Son muy pequeños y se utilizan para almacenar datos temporales que la CPU necesita de inmediato.
+
+2. **Caché:**
+   - **Caché L1:** Es la más rápida y está directamente integrada en el núcleo del procesador. Tiene una capacidad pequeña, típicamente entre 32KB y 256KB.
+   - **Caché L2:** También está integrada en el procesador pero es más grande y ligeramente más lenta que la L1, con capacidades típicas entre 256KB y 2MB.
+   - **Caché L3:** Puede estar compartida entre varios núcleos del procesador. Es más grande y más lenta que las cachés L1 y L2, con capacidades típicas entre 2MB y 64MB.
+
+3. **Memoria Principal (RAM):**
+   - La memoria RAM (DRAM) es más lenta que la caché, pero tiene una capacidad mucho mayor, típicamente en el rango de gigabytes (GB). Se utiliza para almacenar datos y programas que están siendo utilizados activamente por el sistema.
+
+4. **Almacenamiento Secundario:**
+   - **Discos Duros (HDD) y Unidades de Estado Sólido (SSD):** Estos dispositivos de almacenamiento son mucho más lentos que la memoria RAM, pero tienen una capacidad mucho mayor, en el rango de terabytes (TB). Se utilizan para almacenar datos y programas a largo plazo.
+   - **Memoria Externa (cintas, almacenamiento en la nube, etc.):** Estos son los medios de almacenamiento más lentos pero también los más grandes y económicos. Se utilizan para copias de seguridad y almacenamiento de archivos que no se necesitan con frecuencia.
 </details>
 
-B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'? 
+`B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'? `
 
 <details><summary>🧠 Respuesta</summary>
+
+La organización 2D de memoria semiconductora generalmente se refiere a la memoria **SRAM (Static Random Access Memory)**, en contraste con la memoria **DRAM (Dynamic Random Access Memory)**, que suele utilizar una organización más compleja (a veces denominada 2.5D o 3D debido a las múltiples capas de almacenamiento).
+
+**SRAM (2D) vs DRAM (2.5D o 3D):**
+
+1. **SRAM:**
+   - **Celdas de Memoria:** Las celdas de memoria SRAM están compuestas por flip-flops, que son circuitos de almacenamiento estático formados por transistores.
+   - **Estabilidad:** Una vez que los flip-flops almacenan un bit de información (0 o 1), mantienen su estado sin necesidad de ser refrescados periódicamente mientras haya alimentación eléctrica.
+   - **Velocidad y Consumo:** La SRAM es muy rápida y consume menos energía en estado activo, pero es más costosa y tiene menor densidad de almacenamiento en comparación con la DRAM.
+
+2. **DRAM:**
+   - **Celdas de Memoria:** Las celdas de memoria DRAM están formadas por un transistor y un capacitor. El capacitor almacena la carga eléctrica que representa el bit de información.
+   - **Pérdida de Carga:** Los capacitores pierden su carga con el tiempo debido a la fuga eléctrica, lo que significa que la información almacenada en una celda DRAM se degrada rápidamente.
+   - **Refresco Necesario:** Para evitar la pérdida de datos, cada bit en la DRAM debe ser refrescado periódicamente, lo que implica leer y reescribir el contenido del capacitor. Este proceso de refresco consume tiempo y energía adicionales.
+
+**Conclusión:**
+
+- **SRAM (Organización 2D):** No requiere refresco porque utiliza flip-flops que mantienen su estado de manera estable mientras haya energía. La organización 2D en SRAM es suficiente para mantener los datos sin necesidad de refresco periódico.
+- **DRAM (Organización 2.5D o 3D):** Requiere refresco debido a la naturaleza de los capacitores que pierden carga con el tiempo. La organización 2.5D o 3D en DRAM permite una mayor densidad de almacenamiento, pero a costa de la necesidad de refrescar los datos periódicamente.
+
+Por lo tanto, la organización 2D de memoria semiconductora (SRAM) no requiere refresco porque las celdas de memoria estática (flip-flops) mantienen su estado sin necesidad de intervención adicional.
 </details>
 
 <hr class="yellow">
@@ -233,15 +515,61 @@ B) ¿Porqué la organización 2D de memoria semicondutora NO requiere 'refresco'
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
 
-A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+`A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?`
 
 <details><summary>🧠 Respuesta</summary>
+
+Para calcular cuántos bytes de memoria se necesitan para almacenar una imagen en True Color, seguimos estos pasos:
+
+1. **Dimensiones de la imagen:**
+   - Ancho: 100 cm
+   - Alto: 50 cm
+   - Resolución: 100 puntos por centímetro
+
+2. **Calcular la resolución total de la imagen en píxeles:**
+   - Ancho en píxeles: 100 cm * 100 puntos/cm = 10,000 píxeles
+   - Alto en píxeles: 50 cm * 100 puntos/cm = 5,000 píxeles
+   - Total de píxeles: 10,000 píxeles * 5,000 píxeles = 50,000,000 píxeles
+
+3. **True Color:**
+   - En True Color, cada píxel se representa con 24 bits (8 bits por canal para los colores rojo, verde y azul).
+   - Convertir 24 bits a bytes: 24 bits / 8 = 3 bytes por píxel
+
+4. **Calcular la memoria total en bytes:**
+   - Memoria total: 50,000,000 píxeles * 3 bytes/píxel = 150,000,000 bytes
+
+Por lo tanto, se necesitan 150,000,000 bytes de memoria para almacenar una imagen en True Color.
 </details>
 
-B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?
+`B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacenar fuera 'monocromática'?`
 
 <details><summary>🧠 Respuesta</summary>
+
+Para calcular cuántas imágenes monocromáticas se pueden almacenar en la misma cantidad de memoria, seguimos estos pasos:
+
+1. **Monocromática:**
+   - Una imagen monocromática (en blanco y negro) se representa con 1 bit por píxel.
+
+2. **Calcular la memoria necesaria para una imagen monocromática:**
+   - Memoria necesaria por píxel: 1 bit
+   - Convertir bits a bytes: 1 bit / 8 = 0.125 bytes por píxel
+
+3. **Calcular la memoria total en bytes para una imagen monocromática:**
+   - Memoria total para una imagen: 50,000,000 píxeles * 0.125 bytes/píxel = 6,250,000 bytes
+
+4. **Calcular el número de imágenes monocromáticas que se pueden almacenar:**
+   - Memoria disponible: 150,000,000 bytes (de la parte a)
+   - Número de imágenes: 150,000,000 bytes / 6,250,000 bytes/imagen = 24 imágenes
+
+Por lo tanto, en la misma cantidad de memoria, se podrían almacenar 24 imágenes monocromáticas.
+
+#### Resumen
+
+A) Se necesitan 150,000,000 bytes de memoria para almacenar una imagen en True Color.
+
+B) Se podrían almacenar 24 imágenes monocromáticas en esa misma memoria.
 </details>
+
 
 ---
 
@@ -255,45 +583,58 @@ B) ¿Cuántas imágenes podría almacenar en esa memoria si la imagen a almacena
 
 4186H (en hexadecimal) punto flotante 8 bits mantisa BCS y bit implícito y exponente 8 bits en exceso 128 (de izq a der)
 
-a) Determine el valor decimal representado
+`a) Determine el valor decimal representado`
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/690377fd-5232-484b-b512-adab79f90550)
+![image](https://github.com/user-attachments/assets/3d6ad683-fbbe-4cb9-9eb5-bb23818a99a0)
 </details>
 
-b) Calcule el error absoluto máximo
+`b) Calcule el error absoluto máximo`
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/757bff0f-a6e6-4239-950d-b5c09776dad9)
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 2
 
-¿Qué es una puerta lógica?
+`¿Qué es una puerta lógica?`
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/f8d9ad37-e3ae-4521-ae21-d8d0098d0f14)
 </details>
 
-Describa el circuito lógico secuencial "Biestable RS".
+`Describa el circuito lógico secuencial "Biestable RS".`
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/df5b5e43-75b0-4a29-a1a1-1c0fe78e2116)
 </details>
 
-Realice la tabla de comportamiento y un gráfico de interconexión de puertas lógicas que lo represente
+`Realice la tabla de comportamiento y un gráfico de interconexión de puertas lógicas que lo represente`
 
 <details><summary>🧠 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/d430bed7-c12d-45fe-b0bb-f0db69c485ad)
+![image](https://github.com/user-attachments/assets/f7f377f4-9c2e-4eeb-8daa-9c5afe3d5923)
+![image](https://github.com/user-attachments/assets/cb8881e4-73ed-4abc-b695-1be4ec8fcf78)
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 3
 
-¿Qué es un ciclo de instrucción?
+`¿Qué es un ciclo de instrucción?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento
+`Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
