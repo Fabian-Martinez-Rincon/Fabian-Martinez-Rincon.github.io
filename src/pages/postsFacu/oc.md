@@ -657,8 +657,6 @@ Estas fases se repiten continuamente mientras el programa está en ejecución, p
 
 <details><summary>🧠 Respuesta</summary>
 
-#### Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento
-
 El modo de direccionamiento indirecto vía registro con desplazamiento es una técnica utilizada en la arquitectura de computadoras para acceder a datos en la memoria. Este modo de direccionamiento combina el uso de un registro base, un desplazamiento y la memoria principal para calcular la dirección efectiva del operando. Aquí está el funcionamiento detallado:
 
 1. **Registro Base:**
@@ -718,19 +716,84 @@ Donde `LOAD` es la operación que carga un valor en el registro `R1` desde la me
 
 #### Ejercicio 4
 
-`a. Describa las características principales de la organización 2D de memoria semiconductora`
+a) `Describa las características principales de la organización 2D de memoria semiconductora`
 
 <details><summary>🧠 Respuesta</summary>
+
+La organización 2D de memoria semiconductora se refiere a la disposición de celdas de memoria en una configuración bidimensional (filas y columnas) sobre un chip de silicio. Esta disposición es común en tecnologías de memoria como SRAM (Static Random Access Memory) y DRAM (Dynamic Random Access Memory). Las características principales son:
+
+1. **Disposición en Matriz:**
+   - Las celdas de memoria están organizadas en una matriz de filas y columnas, donde cada celda se encuentra en la intersección de una fila y una columna.
+
+2. **Acceso mediante Decodificadores:**
+   - La selección de una celda específica se realiza mediante decodificadores de fila y columna. El decodificador de fila selecciona una fila específica y el decodificador de columna selecciona una columna específica.
+
+3. **Tipos de Memoria:**
+   - **SRAM:** Utiliza celdas de memoria basadas en flip-flops (generalmente 6 transistores por celda), lo que permite un acceso muy rápido y sin necesidad de refresco.
+   - **DRAM:** Utiliza celdas de memoria basadas en un transistor y un capacitor. Requiere refresco periódico para mantener la carga en el capacitor y, por lo tanto, los datos.
+
+4. **Velocidad y Consumo de Energía:**
+   - **SRAM:** Es más rápida y consume menos energía durante la operación activa, pero ocupa más espacio y es más costosa de fabricar debido al mayor número de transistores por celda.
+   - **DRAM:** Tiene una mayor densidad de almacenamiento y es más económica, pero es más lenta y requiere energía adicional para los ciclos de refresco.
+
+5. **Aplicaciones:**
+   - **SRAM:** Utilizada en cachés de CPU y registros internos debido a su alta velocidad.
+   - **DRAM:** Utilizada como memoria principal (RAM) en computadoras debido a su alta densidad de almacenamiento y menor costo.
 </details>
 
-`b. Realice el esquema del chip con esta organización`
+b) `Realice el esquema del chip con esta organización`
 
 <details><summary>🧠 Respuesta</summary>
+
+Un esquema simplificado de un chip de memoria con organización 2D podría verse así:
+
+```plaintext
+       Columna 0  Columna 1  Columna 2  ...  Columna N
+       ---------------------------------------------
+Fila 0 |  Celda  |  Celda  |  Celda  |  ...  |  Celda  |
+       ---------------------------------------------
+Fila 1 |  Celda  |  Celda  |  Celda  |  ...  |  Celda  |
+       ---------------------------------------------
+Fila 2 |  Celda  |  Celda  |  Celda  |  ...  |  Celda  |
+       ---------------------------------------------
+...    |  ...    |  ...    |  ...    |  ...  |  ...    |
+       ---------------------------------------------
+Fila M |  Celda  |  Celda  |  Celda  |  ...  |  Celda  |
+       ---------------------------------------------
+```
+
+Cada "Celda" representa una celda de memoria que puede almacenar un bit de información (0 o 1).
 </details>
 
-`c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso`
+c) `Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso`
 
 <details><summary>🧠 Respuesta</summary>
+
+1. **Capacidad de Almacenamiento:**
+   - **SRAM:**
+     - Capacidades típicas varían desde unos pocos kilobytes (KB) hasta varios megabytes (MB). Ejemplos incluyen 32KB a 64MB.
+   - **DRAM:**
+     - Capacidades típicas varían desde 1 gigabyte (GB) hasta varios terabytes (TB). Ejemplos comunes son 4GB, 8GB, 16GB, y 32GB.
+
+2. **Tiempo de Acceso:**
+   - **SRAM:**
+     - Muy rápida, con tiempos de acceso típicos en el rango de 1 a 10 nanosegundos (ns).
+   - **DRAM:**
+     - Más lenta que SRAM, con tiempos de acceso típicos en el rango de 50 a 100 nanosegundos (ns). Las memorias DRAM modernas (como DDR4) pueden tener latencias menores, pero aún así son más lentas que las SRAM.
+
+#### Resumen
+
+- **Organización 2D de Memoria Semiconductora:**
+  - Disposición en matriz de celdas de memoria.
+  - Selección de fila y columna mediante decodificadores.
+  - Diferentes tecnologías como SRAM y DRAM con características específicas.
+
+- **Esquema del Chip:**
+  - Disposición de filas y columnas con celdas de memoria en cada intersección.
+
+- **Valores Típicos:**
+  - Capacidades de almacenamiento: Desde KB a MB para SRAM, y GB a TB para DRAM.
+  - Tiempos de acceso: 1-10 ns para SRAM, y 50-100 ns para DRAM.
 </details>
 
 <hr class="yellow">
