@@ -632,28 +632,103 @@ B) Se podrían almacenar 24 imágenes monocromáticas en esa misma memoria.
 `¿Qué es un ciclo de instrucción?`
 
 <details><summary>🧠 Respuesta</summary>
+
+El ciclo de instrucción es el proceso completo que sigue una CPU para ejecutar una instrucción de un programa almacenado en la memoria. Este ciclo es repetitivo y consta de varias fases, cada una de las cuales realiza una tarea específica para procesar y ejecutar una instrucción. Las fases del ciclo de instrucción son:
+
+1. **Fetch (Búsqueda):**
+   - La CPU obtiene la instrucción desde la memoria. La dirección de la instrucción a ser buscada es indicada por el contador de programa (PC).
+
+2. **Decode (Decodificación):**
+   - La instrucción buscada es decodificada por la unidad de control de la CPU. En esta fase, se determina qué operación debe realizarse y cuáles son los operandos necesarios.
+
+3. **Execute (Ejecución):**
+   - La CPU realiza la operación especificada por la instrucción utilizando los operandos apropiados. Esto puede incluir operaciones aritméticas, lógicas, de control, etc.
+
+4. **Write Back (Escritura):**
+   - Los resultados de la operación se almacenan en la memoria o en los registros de la CPU según lo especificado por la instrucción.
+
+5. **Increment Program Counter (Actualización del Contador de Programa):**
+   - El contador de programa (PC) se incrementa para apuntar a la siguiente instrucción a ser ejecutada en el ciclo siguiente.
+
+Estas fases se repiten continuamente mientras el programa está en ejecución, permitiendo que la CPU ejecute secuencialmente todas las instrucciones almacenadas en la memoria.
 </details>
 
 `Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento`
 
 <details><summary>🧠 Respuesta</summary>
+
+#### Describa el funcionamiento del modo de direccionamiento indirecto vía registro con desplazamiento
+
+El modo de direccionamiento indirecto vía registro con desplazamiento es una técnica utilizada en la arquitectura de computadoras para acceder a datos en la memoria. Este modo de direccionamiento combina el uso de un registro base, un desplazamiento y la memoria principal para calcular la dirección efectiva del operando. Aquí está el funcionamiento detallado:
+
+1. **Registro Base:**
+   - Un registro en la CPU (por ejemplo, el registro base o el registro índice) contiene una dirección base. Este registro se utiliza como punto de partida para calcular la dirección efectiva del operando.
+
+2. **Desplazamiento:**
+   - Un valor constante (desplazamiento) se suma al valor contenido en el registro base para obtener la dirección efectiva. El desplazamiento puede ser positivo o negativo y se especifica en la instrucción.
+
+3. **Dirección Indirecta:**
+   - La dirección efectiva calculada en el paso anterior apunta a una ubicación en la memoria. En esta ubicación de memoria se encuentra la dirección real del operando.
+
+4. **Acceso al Operando:**
+   - La CPU utiliza la dirección real obtenida en el paso anterior para acceder al operando en la memoria.
+
+#### Ejemplo de Funcionamiento
+
+Supongamos que tenemos la siguiente instrucción en ensamblador:
+```
+LOAD R1, [R2 + 10]
+```
+Donde `LOAD` es la operación que carga un valor en el registro `R1` desde la memoria.
+
+1. **Registro Base (`R2`):**
+   - El registro `R2` contiene la dirección base. Supongamos que `R2` tiene el valor `1000`.
+
+2. **Desplazamiento (`10`):**
+   - El desplazamiento es `10`.
+
+3. **Calcular la Dirección Efectiva:**
+   - Dirección efectiva = Valor de `R2` + Desplazamiento = `1000 + 10 = 1010`.
+
+4. **Dirección Indirecta:**
+   - La dirección efectiva `1010` apunta a una ubicación en la memoria. Supongamos que en la dirección `1010` en la memoria se encuentra el valor `2000`, que es la dirección real del operando.
+
+5. **Acceso al Operando:**
+   - La CPU utiliza la dirección real `2000` para acceder al operando en la memoria. Supongamos que en la dirección `2000` se encuentra el valor `50`.
+
+6. **Cargar el Operando:**
+   - El valor `50` se carga en el registro `R1`.
+
+#### Tabla de Ejemplo
+
+| Registro | Valor          |
+|----------|----------------|
+| R2       | 1000           |
+| Mem[1010]| 2000 (Dirección real) |
+| Mem[2000]| 50 (Valor del operando) |
+| R1       | 50 (Después de LOAD)    |
+
+#### Resumen
+
+- **Ciclo de Instrucción:** Es el proceso completo que sigue una CPU para buscar, decodificar, ejecutar y escribir una instrucción de un programa.
+- **Modo de Direccionamiento Indirecto Vía Registro con Desplazamiento:** Es un método que utiliza un registro base y un desplazamiento para calcular una dirección efectiva, la cual apunta a una dirección en memoria donde se encuentra la dirección real del operando. Este modo es útil para acceder a estructuras de datos como arreglos y tablas de manera eficiente.
 </details>
 
 <hr class="yellow">
 
 #### Ejercicio 4
 
-a. Describa las características principales de la organización 2D de memoria semiconductora
+`a. Describa las características principales de la organización 2D de memoria semiconductora`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b. Realice el esquema del chip con esta organización
+`b. Realice el esquema del chip con esta organización`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso
+`c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acceso`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -664,12 +739,12 @@ c. Mencione valores típicos de capacidad de almacenamiento y de tiempo de acces
 
 Un video musical monocromático de youtube dura 200 seg
 
-a. Calcule cuántos bytes de memoria se necesitan para almacenar el video completo si cada imagen es de 800 x 500 px
+`a. Calcule cuántos bytes de memoria se necesitan para almacenar el video completo si cada imagen es de 800 x 500 px`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la imagen debe ser cambiada 25 veces en 1 seg?
+`b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la imagen debe ser cambiada 25 veces en 1 seg?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -686,12 +761,12 @@ b. ¿Cuál debería ser la velocidad de transferencia (en bytes/seg) si la image
 
 Dado un sistema en punto flotante con 5 bits de mantisa en BCS con bit implicito y exponente de 5 bits en exceso 16 (en ese orden de izq a der):
 
-A) ¿Cuál es el valor decimal del mínimo positivo representable por el sistema?
+`A) ¿Cuál es el valor decimal del mínimo positivo representable por el sistema?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-B) Represente en el sistema de punto flotante dado el número decimal 2,625
+`B) Represente en el sistema de punto flotante dado el número decimal 2,625`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -700,12 +775,12 @@ B) Represente en el sistema de punto flotante dado el número decimal 2,625
 
 #### Ejercicio 2
 
-¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?
+`¿Cuáles son las 3 funciones lógicas elementales y cómo las puede representar?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos"
+`b) Describa el método de diseño de circuitos lógicos combinacionales denominado "Suma de productos"`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -714,20 +789,20 @@ b) Describa el método de diseño de circuitos lógicos combinacionales denomina
 
 #### Ejercicio 3
 
-A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?
+`A) ¿Cómo es el formato de instrucción de una máquina de 3 direcciones?`
 
-b) Describa la diferencia en los pasos del ciclo de instrucción de una instrucción SUB y una CMP
+`b) Describa la diferencia en los pasos del ciclo de instrucción de una instrucción SUB y una CMP`
 
 <hr class="yellow">
 
 #### Ejercicio 4
 
-A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoría"?
+`A) ¿Cuáles son los principios que rigen el funcionamiento de una "jerarquía de memoría"?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) ¿Porqué la organización 2 1/2D de memoria semiconductora utiliza 2 decodificadores?
+`b) ¿Porqué la organización 2 1/2D de memoria semiconductora utiliza 2 decodificadores?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -738,12 +813,12 @@ b) ¿Porqué la organización 2 1/2D de memoria semiconductora utiliza 2 decodif
 
 Una imagen en una pantalla de 100cm por 50cm posee una resolución de 100 puntos por centímetro:
 
-a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+`a) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?
+`b) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -760,12 +835,12 @@ b) ¿Cuántas imágenes "monocromo" se podrían almacenar en esa memoria?
 
 Sistema de punto flotante 7 bits mantisa BCS y bit implícito y 8 bits exponente en exceso /128 (en ese orden de izq a der)
 
-a) Representar tu número de alumno (sin el nro después de la barra "/6").
+`a) Representar tu número de alumno (sin el nro después de la barra "/6").`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Calcular error absoluto.
+`b) Calcular error absoluto.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -774,12 +849,12 @@ b) Calcular error absoluto.
 
 #### Ejercicio 2
 
-a) Las 3 formas que se pueden utilizar para representar una función lógica.
+`a) Las 3 formas que se pueden utilizar para representar una función lógica.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Suma de productos.
+`b) Suma de productos.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -790,7 +865,7 @@ b) Suma de productos.
 
 Elementos que debe poseer una instrucción.
 
-b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.
+`b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -799,12 +874,12 @@ b) Modo de direccionamiento utilizado en las instrucciones de salto condicional.
 
 #### Ejercicio 4
 
-a) ¿Qué función debe cumplir un "punto de memoria"?
+`a) ¿Qué función debe cumplir un "punto de memoria"?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) ¿Por qué la organización 2/1D requiere refresco?
+`b) ¿Por qué la organización 2/1D requiere refresco?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -821,12 +896,12 @@ b) ¿Por qué la organización 2/1D requiere refresco?
 
 Dado el número A188 en BCH donde 8 bits representan la mantisa en BCS con bit implícito y 8 bits para exponente en exceso 128.
 
-a) Calcular el valor en decimal.
+`a) Calcular el valor en decimal.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Calcular el error absoluto máximo.
+`b) Calcular el error absoluto máximo.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -835,12 +910,12 @@ b) Calcular el error absoluto máximo.
 
 #### Ejercicio 2
 
-a) ¿Qué es un circuito combinatorio?
+`a) ¿Qué es un circuito combinatorio?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
+`b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -849,12 +924,12 @@ b) Explicar que es "sumador completo". Realizar tabla de verdad y gráfico.
 
 #### Ejercicio 3
 
-a) MSX88 representa una máquina de 2 direcciones?
+`a) MSX88 representa una máquina de 2 direcciones?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Explicar máquina de 1 dirección.
+`b) Explicar máquina de 1 dirección.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -863,12 +938,12 @@ b) Explicar máquina de 1 dirección.
 
 #### Ejercicio 4
 
-a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)
+`a) Dar 3 características principales de la organización de memoria semiconductor (2^1/2 D)`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de jerarquía de memoria.
+`b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiempo de acceso de cada nivel de jerarquía de memoria.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -879,12 +954,12 @@ b) Realizar una tabla con valores típicos de capacidad de almacenamiento y tiem
 
 Dado un vídeo monocromático de 15 segundos donde cada imagen tiene 500*800 pixeles:
 
-a) Cuantos bytes se necesitan por cada imagen?
+`a) Cuantos bytes se necesitan por cada imagen?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-b) Que velocidad de transferencia a periférico debe haber si cada imagen debe ser cambiada 25 veces en 1 segundo?
+`b) Que velocidad de transferencia a periférico debe haber si cada imagen debe ser cambiada 25 veces en 1 segundo?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -901,12 +976,12 @@ b) Que velocidad de transferencia a periférico debe haber si cada imagen debe s
 
 Dado un sistema en punto flotante con 6 bits de mantisa fraccionaria en BCS y exponente de 4 bits en exceso 8 (en ese orden de izq a der):
 
-A) ¿Cuál es el rango de representación del sistema?
+`A) ¿Cuál es el rango de representación del sistema?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-B) Represente en punto flotante el número decimal 32,2.
+`B) Represente en punto flotante el número decimal 32,2.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -915,12 +990,12 @@ B) Represente en punto flotante el número decimal 32,2.
 
 #### Ejercicio 2
 
-A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?
+`A) ¿Cuáles son las 3 formas que se pueden utilizar para representar una función lógica?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.
+`B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -929,12 +1004,12 @@ B) Describa el funcionamiento del circuito lógico secuencial denominado 'D'.
 
 #### Ejercicio 3
 
-A) ¿Qué es un ciclo de instrucción?
+`A) ¿Qué es un ciclo de instrucción?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-B) Describa los pasos del ciclo de instrucción de una operación aritmética.
+`B) Describa los pasos del ciclo de instrucción de una operación aritmética.`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -943,12 +1018,12 @@ B) Describa los pasos del ciclo de instrucción de una operación aritmética.
 
 #### Ejercicio 4
 
-A) ¿Cómo está compuesta una "jerarquía de memoria"?
+`A) ¿Cómo está compuesta una "jerarquía de memoria"?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
 
-B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresco'?
+`B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresco'?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
@@ -959,7 +1034,7 @@ B) ¿Por qué la organización 2D de memoria semiconductora NO requiere 'refresc
 
 Una imagen en una pantalla de 100 cm por 50 cm posee una resolución de 100 puntos por centímetro:
    
-A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?
+`A) ¿Cuántos bytes de memoria se necesitan para almacenar una imagen en True Color?`
 
 <details><summary>🧠 Respuesta</summary>
 </details>
