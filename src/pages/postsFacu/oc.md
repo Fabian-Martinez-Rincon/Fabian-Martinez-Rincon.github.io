@@ -49,6 +49,378 @@ category: Facultad
 
 ---
 
+# Practica 1
+
+#### Ejercicio 1
+
+![image](https://github.com/user-attachments/assets/32794443-4aae-4f72-9ed2-d137e8f0fe26)
+
+
+Vamos a añadir el sistema **Ex2** a las representaciones. En el sistema Ex2, sumamos un exceso de \(2^{n-1}\) (en 8 bits, el exceso es 128) antes de representar el número en binario.
+
+1. **0**:
+   - **BSS**: `00000000`
+   - **BCS**: `00000000`
+   - **Ca1**: `00000000`
+   - **Ca2**: `00000000`
+   - **Ex2**: `10000000` (0 + 128)
+
+2. **1**:
+   - **BSS**: `00000001`
+   - **BCS**: `00000001`
+   - **Ca1**: `00000001`
+   - **Ca2**: `00000001`
+   - **Ex2**: `10000001` (1 + 128)
+
+3. **127**:
+   - **BSS**: `01111111`
+   - **BCS**: `01111111`
+   - **Ca1**: `01111111`
+   - **Ca2**: `01111111`
+   - **Ex2**: `11111111` (127 + 128)
+
+4. **128**: //Este esta mal
+   - **BSS**: No se puede representar, ya que el rango es de 0 a 255.
+   - **BCS**: No se puede representar.
+   - **Ca1**: No se puede representar.
+   - **Ca2**: No se puede representar.
+   - **Ex2**: `00000000` (128 + 128 = 256, pero en 8 bits es `00000000`)
+
+5. **255**:
+   - **BSS**: `11111111`
+   - **BCS**: No se puede representar.
+   - **Ca1**: No se puede representar.
+   - **Ca2**: No se puede representar.
+   - **Ex2**: `01111111` (255 + 128 = 383, pero en 8 bits es `01111111`)
+
+6. **256**: No se puede representar en ninguno de los sistemas de 8 bits.
+   - **BSS**: No se puede representar
+   - **BCS**: No se puede representar 
+   - **Ca1**: No se puede representar 
+   - **Ca2**: No se puede representar
+   - **Ex2**: No se puede representar
+
+7. **-1**:
+   - **BSS**: No se puede representar
+   - **BCS**: `11111111`
+   - **Ca1**: `11111110`
+   - **Ca2**: `11111111`
+   - **Ex2**: `01111111` (-1 + 128)
+
+8. **-7**:
+   - **BSS**: No se puede representar
+   - **BCS**: `11111001`
+   - **Ca1**: `11111000`
+   - **Ca2**: `11111001`
+   - **Ex2**: `01111001` (-7 + 128)
+
+9. **-127**:
+   - **BSS**: No se puede representar
+   - **BCS**: `10000001`
+   - **Ca1**: `10000000`
+   - **Ca2**: `10000001`
+   - **Ex2**: `00000001` (-127 + 128)
+
+10. **-128**:
+    - **BSS**: No se puede representar
+    - **BCS**: `10000000`
+    - **Ca1**: `01111111`
+    - **Ca2**: `10000000`
+    - **Ex2**: `00000000` (-128 + 128)
+
+11. **-139**: No se puede representar en ninguno de los sistemas de 8 bits.
+    - **BSS**: No se puede representar
+    - **BCS**: No se puede representar
+    - **Ca1**: No se puede representar
+    - **Ca2**: No se puede representar
+    - **Ex2**: No se puede representar
+
+12. **-56**:
+    - **BSS**: No se puede representar
+    - **BCS**: `11001000`
+    - **Ca1**: `10110111`
+    - **Ca2**: `10111000`
+    - **Ex2**: `01001000` (-56 + 128)
+
+13. **130**: No se puede representar en BCS, Ca1, ni Ca2 porque el rango permitido es de -128 a 127.
+    - **BSS**: `10000010`
+    - **BCS**: No se puede representar
+    - **Ca1**: No se puede representar
+    - **Ca2**: No se puede representar
+    - **Ex2**: `10000010` (130 + 128 = 258, pero en 8 bits es `00000010`)
+
+14. **45**:
+    - **BSS**: `00101101`
+    - **BCS**: `00101101`
+    - **Ca1**: `00101101`
+    - **Ca2**: `00101101`
+    - **Ex2**: `10101101` (45 + 128)
+
+15. **90**:
+    - **BSS**: `01011010`
+    - **BCS**: `01011010`
+    - **Ca1**: `01011010`
+    - **Ca2**: `01011010`
+    - **Ex2**: `11011010` (90 + 128)
+
+16. **-90**:
+    - **BSS**: No se puede representar
+    - **BCS**: `10100110`
+    - **Ca1**: `01011001`
+    - **Ca2**: `01011010`
+    - **Ex2**: `00100110` (-90 + 128)
+
+17. **0.75 y 2.5**: No se pueden representar en sistemas enteros de 8 bits.
+
+Ejemplo de Bogado
+
+![image](https://github.com/user-attachments/assets/3524dcb2-11ea-4c8c-b7c3-ea6291dbddae)
+![image](https://github.com/user-attachments/assets/dc7f7380-4126-4e88-914c-4a7cf68055cd)
+
+<hr class="yellow">
+
+### Ejercicio 2
+
+![image](https://github.com/user-attachments/assets/df84948f-6ea0-47d0-bb1e-42179e115c68)
+
+Para interpretar las cadenas de 8 bits en los sistemas BSS, BCS, Ca1, Ca2 y Ex2, vamos a analizar cada cadena por separado en cada sistema:
+
+1. **00000000**:
+   - **BSS**: 0
+   - **BCS**: 0
+   - **Ca1**: 0
+   - **Ca2**: 0
+   - **Ex2**: \(0 - 128 = -128\)
+
+2. **00000001**:
+   - **BSS**: 1
+   - **BCS**: 1
+   - **Ca1**: 1
+   - **Ca2**: 1
+   - **Ex2**: \(1 - 128 = -127\)
+
+3. **11111110**:
+   - **BSS**: No se puede representar (número negativo en BSS)
+   - **BCS**: -126
+   - **Ca1**: -1 (invertir bits de 00000001 que es 1)
+   - **Ca2**: -2 (invertir bits de 00000001 que es 1 y sumar 1)
+   - **Ex2**: \(254 - 128 = 126\)
+
+4. **01111111**:
+   - **BSS**: 127
+   - **BCS**: 127
+   - **Ca1**: 127
+   - **Ca2**: 127
+   - **Ex2**: \(127 - 128 = -1\)
+
+5. **11111111**:
+   - **BSS**: No se puede representar (número negativo en BSS)
+   - **BCS**: -127
+   - **Ca1**: -0 (invertir bits de 00000000 que es 0)
+   - **Ca2**: -1 (invertir bits de 00000000 que es 0 y sumar 1)
+   - **Ex2**: \(255 - 128 = 127\)
+
+6. **00010001**:
+   - **BSS**: 17
+   - **BCS**: 17
+   - **Ca1**: 17
+   - **Ca2**: 17
+   - **Ex2**: \(17 - 128 = -111\)
+
+7. **10011001**:
+   - **BSS**: No se puede representar (número negativo en BSS)
+   - **BCS**: -25
+   - **Ca1**: -102 (invertir bits de 01100110 que es 102)
+   - **Ca2**: -103 (invertir bits de 01100110 que es 102 y sumar 1)
+   - **Ex2**: \(153 - 128 = 25\)
+
+8. **10101010**:
+   - **BSS**: No se puede representar (número negativo en BSS)
+   - **BCS**: -86
+   - **Ca1**: -85 (invertir bits de 01010101 que es 85)
+   - **Ca2**: -86 (invertir bits de 01010100 que es 85 y sumar 1)
+   - **Ex2**: \(170 - 128 = 42\)
+
+9. **01100110**:
+   - **BSS**: 102
+   - **BCS**: 102
+   - **Ca1**: 102
+   - **Ca2**: 102
+   - **Ex2**: \(102 - 128 = -26\)
+
+#### Resumen de los resultados:
+
+| Cadena     | BSS       | BCS  | Ca1  | Ca2  | Ex2    |
+|------------|-----------|------|------|------|--------|
+| 00000000   | 0         | 0    | 0    | 0    | -128   |
+| 00000001   | 1         | 1    | 1    | 1    | -127   |
+| 11111110   | 254 | -126 | -1   | -2   | 126    |
+| 01111111   | 127       | 127  | 127  | 127  | -1     |
+| 11111111   | 255 | -127 | -0   | -1   | 127    |
+| 00010001   | 17        | 17   | 17   | 17   | -111   |
+| 10011001   | 153 | -25  | -102 | -103 | 25     |
+| 10101010   | 170 | -86  | -85  | -86  | 42     |
+| 01100110   | 102       | 102  | 102  | 102  | -26    |
+
+![image](https://github.com/user-attachments/assets/754f0570-f2c7-4232-b3b7-7b4a6afec1bb)
+
+<hr class="yellow">
+
+### Ejercicio 3
+
+![image](https://github.com/user-attachments/assets/680b8037-b8e0-478d-b37f-c9a69d5e9e5f)
+
+![image](https://github.com/user-attachments/assets/98828090-8176-463a-a107-e4d148a76504)
+![image](https://github.com/user-attachments/assets/d81fe7ec-8fc1-4079-a274-188d84568d45)
+![image](https://github.com/user-attachments/assets/a3175e4b-a336-4aff-bbec-54b4f0a94967)
+![image](https://github.com/user-attachments/assets/e75b277f-a587-43b6-bdfb-daa9424ea832)
+
+---
+
+### Ejercicio 4
+
+![image](https://github.com/user-attachments/assets/662416d2-8e3a-4bce-9466-6247c6b92300)
+
+Vamos a representar los números dados en los sistemas de punto fijo del ejercicio 3 y, si no es posible obtener una representación exacta, indicaremos cuál es la más próxima y calcularemos el error cometido. Si el número está fuera del rango del sistema, lo señalaremos.
+
+#### Sistema de punto fijo en BSS (7 bits de parte entera y 3 bits de parte fraccionaria)
+
+![image](https://github.com/user-attachments/assets/65334c81-1ca8-415d-a05a-cddf2aa5cfd8)
+
+1. **7**:
+   - Representación: 7
+   - Error: 0
+
+2. **15.125**:
+   - Representación: 15.125
+   - Error: 0
+
+3. **2.2**:
+   - Más próxima: 2.25
+   - Error: \(2.25 - 2.2 = 0.05\)
+
+4. **8.001**:
+   - Más próxima: 8
+   - Error: \(8 - 8.001 = -0.001\)
+
+5. **123.25**:
+   - Representación: 123.25
+   - Error: 0
+
+6. **50.50**:
+   - Más próxima: 50.5
+   - Error: 0
+
+7. **120**:
+   - Representación: 120
+   - Error: 0
+
+8. **1.2**:
+   - Más próxima: 1.25
+   - Error: \(1.25 - 1.2 = 0.05\)
+
+9. **1.25**:
+   - Representación: 1.25
+   - Error: 0
+
+10. **35**:
+    - Representación: 35
+    - Error: 0
+
+11. **-1.25**:
+    - No se puede representar (fuera del rango)
+
+12. **1.0625**:
+    - Más próxima: 1.125
+    - Error: \(1.125 - 1.0625 = 0.0625\)
+
+13. **-1.5625**:
+    - No se puede representar (fuera del rango)
+
+14. **-35.5**:
+    - No se puede representar (fuera del rango)
+
+#### Sistema de punto fijo en BCS (1 bit de signo, 5 bits de parte entera y 4 bits de parte fraccionaria)
+
+![image](https://github.com/user-attachments/assets/1654ecc6-c9c7-4fe8-bca1-07998857d06b)
+
+1. **7**:
+   - Representación: 7
+   - Error: 0
+
+2. **15.125**:
+   - Representación: 15.125
+   - Error: 0
+
+3. **2.2**:
+   - Más próxima: 2.1875
+   - Error: \(2.2 - 2.1875 = 0.0125\)
+
+4. **8.001**:
+   - Más próxima: 8
+   - Error: \(8 - 8.001 = -0.001\)
+
+5. **123.25**:
+   - No se puede representar (fuera del rango)
+
+6. **50.50**:
+   - No se puede representar (fuera del rango)
+
+7. **120**:
+   - No se puede representar (fuera del rango)
+
+8. **1.2**:
+   - Más próxima: 1.1875
+   - Error: \(1.2 - 1.1875 = 0.0125\)
+
+9. **1.25**:
+   - Representación: 1.25
+   - Error: 0
+
+10. **35**:
+    - No se puede representar (fuera del rango)
+
+11. **-1.25**:
+    - Representación: -1.25
+    - Error: 0
+
+12. **1.0625**:
+    - Representación: 1.0625
+    - Error: 0
+
+13. **-1.5625**:
+    - Representación: -1.5625
+    - Error: 0
+
+14. **-35.5**:
+    - No se puede representar (fuera del rango)
+
+### Resumen
+
+| Número   | BSS Representación | Error BSS | BCS Representación | Error BCS |   |
+|----------|--------------------|-----------|--------------------|-----------|---|
+| 7        | 7                  | 0         | 7                  | 0         |   |
+| 15.125   | 15.125             | 0         | 15.125             | 0         |   |
+| 2.2      | 2.25               | 0.05      | 2.1875             | 0.0125    |   |
+| 8.001    | 8                  | -0.001    | 8                  | -0.001    |   |
+| 123.25   | 123.25             | 0         | No se puede representar | -       |   |
+| 50.50    | 50.5               | 0         | No se puede representar | -       |   |
+| 120      | 120                | 0         | No se puede representar | -       |   |
+| 1.2      | 1.25               | 0.05      | 1.1875             | 0.0125    |   |
+| 1.25     | 1.25               | 0         | 1.25               | 0         |   |
+| 35       | 35                 | 0         | No se puede representar | -       |   |
+| -1.25    | No se puede representar | -       | -1.25              | 0         |   |
+| 1.0625   | 1.125              | 0.0625    | 1.0625             | 0         |   |
+| -1.5625  | No se puede representar | -       | -1.5625            | 0         |   |
+| -35.5    | No se puede representar | -       | No se puede representar | -       |   |
+
+Con esto, hemos representado los números en los sistemas de punto fijo de acuerdo a las restricciones y características mencionadas en el ejercicio 3.
+
+![image](https://github.com/user-attachments/assets/ffa7b418-cbb6-4e50-8e69-0ad721a48b5f)
+![image](https://github.com/user-attachments/assets/954f9e08-73db-4515-941a-6048c6e4aa7f)
+
+---
+
 ### Finales Echos por mi
 
 <div align='center'>
