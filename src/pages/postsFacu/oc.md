@@ -552,7 +552,9 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 ![image](https://github.com/user-attachments/assets/fe58b04f-7061-46e3-94dc-7f3e0550e8c1)
 ![image](https://github.com/user-attachments/assets/cd7fdcc3-5973-449e-bf9f-e9e9a28c837a)
 ![image](https://github.com/user-attachments/assets/288b308c-82e2-4e20-91c9-ce9a516b0928)
-
+![image](https://github.com/user-attachments/assets/de2904f2-907d-4a74-ac44-39b22641c952)
+![image](https://github.com/user-attachments/assets/a14ad105-142f-4c19-b2c5-554f0195caac)
+![image](https://github.com/user-attachments/assets/e4e11917-8a88-4149-bd8d-bb2c3fed1d6d)
 
 ---
 
