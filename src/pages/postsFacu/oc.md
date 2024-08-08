@@ -51,10 +51,11 @@ category: Facultad
 
 # Practica 1
 
-#### Ejercicio 1
+### Ejercicio 1
 
 ![image](https://github.com/user-attachments/assets/32794443-4aae-4f72-9ed2-d137e8f0fe26)
 
+<details><summary>🤖 Respuesta</summary>
 
 Vamos a añadir el sistema **Ex2** a las representaciones. En el sistema Ex2, sumamos un exceso de \(2^{n-1}\) (en 8 bits, el exceso es 128) antes de representar el número en binario.
 
@@ -177,11 +178,15 @@ Ejemplo de Bogado
 ![image](https://github.com/user-attachments/assets/3524dcb2-11ea-4c8c-b7c3-ea6291dbddae)
 ![image](https://github.com/user-attachments/assets/dc7f7380-4126-4e88-914c-4a7cf68055cd)
 
+</details>
+
 <hr class="yellow">
 
 ### Ejercicio 2
 
 ![image](https://github.com/user-attachments/assets/df84948f-6ea0-47d0-bb1e-42179e115c68)
+
+<details><summary>🤖 Respuesta</summary>
 
 Para interpretar las cadenas de 8 bits en los sistemas BSS, BCS, Ca1, Ca2 y Ex2, vamos a analizar cada cadena por separado en cada sistema:
 
@@ -264,22 +269,30 @@ Para interpretar las cadenas de 8 bits en los sistemas BSS, BCS, Ca1, Ca2 y Ex2,
 
 ![image](https://github.com/user-attachments/assets/754f0570-f2c7-4232-b3b7-7b4a6afec1bb)
 
+</details>
+
 <hr class="yellow">
 
 ### Ejercicio 3
 
 ![image](https://github.com/user-attachments/assets/680b8037-b8e0-478d-b37f-c9a69d5e9e5f)
 
+<details><summary>🤖 Respuesta</summary>
+
 ![image](https://github.com/user-attachments/assets/98828090-8176-463a-a107-e4d148a76504)
 ![image](https://github.com/user-attachments/assets/d81fe7ec-8fc1-4079-a274-188d84568d45)
 ![image](https://github.com/user-attachments/assets/a3175e4b-a336-4aff-bbec-54b4f0a94967)
 ![image](https://github.com/user-attachments/assets/e75b277f-a587-43b6-bdfb-daa9424ea832)
+
+</details>
 
 ---
 
 ### Ejercicio 4
 
 ![image](https://github.com/user-attachments/assets/662416d2-8e3a-4bce-9466-6247c6b92300)
+
+<details><summary>🤖 Respuesta</summary>
 
 Vamos a representar los números dados en los sistemas de punto fijo del ejercicio 3 y, si no es posible obtener una representación exacta, indicaremos cuál es la más próxima y calcularemos el error cometido. Si el número está fuera del rango del sistema, lo señalaremos.
 
@@ -419,11 +432,15 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 ![image](https://github.com/user-attachments/assets/ffa7b418-cbb6-4e50-8e69-0ad721a48b5f)
 ![image](https://github.com/user-attachments/assets/954f9e08-73db-4515-941a-6048c6e4aa7f)
 
+</details>
+
 ---
 
 ### Ejercicio 5
 
 ![image](https://github.com/user-attachments/assets/186fb92b-7c4e-452f-801c-abac779dda3e)
+
+<details><summary>🤖 Respuesta</summary>
 
 ![image](https://github.com/user-attachments/assets/618bac08-61d9-446e-b15d-872564f2e22c)
 
@@ -538,11 +555,15 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 | 01111111   | 63.875    | 31.9375    |
 | 01101101   | 54.75     | 27.375     |
 
+</details>
+
 ---
 
 ### Ejercicio 6
 
 ![image](https://github.com/user-attachments/assets/746d5cc9-c945-4646-9acc-19bfa23ed521)
+
+<details><summary>🤖 Respuesta</summary>
 
 [Link de la clase](https://www.youtube.com/watch?v=UUyhf9xzahI)
 [Link de la clase](https://www.youtube.com/watch?v=ncCl3qNUMPU)
@@ -558,8 +579,6 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 
 
 Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplos proporcionados.
-
-
 
 #### Números a representar:
 - 0, 1, 3, 8, 12, 13, 22, 35, 99, 100, 1255
@@ -620,12 +639,15 @@ Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplo
    - BCD empaquetado: `0001 0011 0000 0111 + 0111 0000 1000 = 0100 0011 1000 0111`
    - Decimal: 2015
 
+</details>
 
 ---
 
 ### Ejercicio 7
 
 ![image](https://github.com/user-attachments/assets/6f7b9b79-5691-418f-b48e-cfa5d60453a0)
+
+<details><summary>🤖 Respuesta</summary>
 
 Lamento la confusión. Entiendo que BSS es binario sin signo. Vamos a corregir las representaciones teniendo en cuenta que BSS utiliza el mínimo número de bits necesarios para representar los números sin signo.
 
@@ -741,6 +763,898 @@ Utilizamos el mínimo número de bits necesarios para representar el número en 
 2. **Errores de Redondeo:** Pueden ocurrir errores de redondeo en conversiones entre binario y decimal.
 
 En resumen, BCD es más adecuado para aplicaciones que requieren una interacción frecuente con números decimales, mientras que BSS es más eficiente para el almacenamiento y procesamiento de datos en sistemas digitales.
+
+</details>
+
+---
+
+### Ejercicio 8
+
+![image](https://github.com/user-attachments/assets/7fc30744-fd62-4503-80f9-e9646d2469cf)
+
+<details><summary>🤖 Respuesta</summary>
+
+Vamos a resolver el ejercicio de convertir de binario a hexadecimal y de hexadecimal a BCD en forma directa, sin utilizar el sistema decimal. También explicaremos por qué el sistema hexadecimal es muy utilizado.
+
+#### Conversión de binario a hexadecimal
+
+Para convertir de binario a hexadecimal, dividimos el número binario en grupos de 4 bits, empezando desde la derecha, y luego convertimos cada grupo de 4 bits en su equivalente hexadecimal.
+
+1. **101000001000**:
+   - Agrupamos: `1010 0000 1000`
+   - Convertimos:
+     - `1010` -> A
+     - `0000` -> 0
+     - `1000` -> 8
+   - Resultado: `A08`
+
+2. **1110001011101**:
+   - Agrupamos: `0001 1100 0101 1101`
+   - Convertimos:
+     - `0001` -> 1
+     - `1100` -> C
+     - `0101` -> 5
+     - `1101` -> D
+   - Resultado: `1C5D`
+
+3. **111010011001011**:
+   - Agrupamos: `0001 1101 0011 0011`
+   - Convertimos:
+     - `0001` -> 1
+     - `1101` -> D
+     - `0011` -> 3
+     - `0011` -> 3
+   - Resultado: `1D33`
+
+4. **1001111100000011**:
+   - Agrupamos: `1001 1111 0000 0011`
+   - Convertimos:
+     - `1001` -> 9
+     - `1111` -> F
+     - `0000` -> 0
+     - `0011` -> 3
+   - Resultado: `9F03`
+
+5. **1110101010101010**:
+   - Agrupamos: `1110 1010 1010 1010`
+   - Convertimos:
+     - `1110` -> E
+     - `1010` -> A
+     - `1010` -> A
+     - `1010` -> A
+   - Resultado: `EAAA`
+
+6. **101101101011010**:
+   - Agrupamos: `0001 0110 1101 1010`
+   - Convertimos:
+     - `0001` -> 1
+     - `0110` -> 6
+     - `1101` -> D
+     - `1010` -> A
+   - Resultado: `16DA`
+
+#### Conversión de hexadecimal a BCD
+
+Para convertir de hexadecimal a BCD (Binary Coded Decimal), convertimos cada dígito hexadecimal a su equivalente binario de 4 bits y luego concatenamos estos valores.
+
+1. **2801**:
+   - Convertimos cada dígito:
+     - `2` -> `0010`
+     - `8` -> `1000`
+     - `0` -> `0000`
+     - `1` -> `0001`
+   - Resultado: `0010 1000 0000 0001`
+
+2. **1C5D**:
+   - Convertimos cada dígito:
+     - `1` -> `0001`
+     - `C` -> `1100`
+     - `5` -> `0101`
+     - `D` -> `1101`
+   - Resultado: `0001 1100 0101 1101`
+
+3. **78AB**:
+   - Convertimos cada dígito:
+     - `7` -> `0111`
+     - `8` -> `1000`
+     - `A` -> `1010`
+     - `B` -> `1011`
+   - Resultado: `0111 1000 1010 1011`
+
+4. **F79A**:
+   - Convertimos cada dígito:
+     - `F` -> `1111`
+     - `7` -> `0111`
+     - `9` -> `1001`
+     - `A` -> `1010`
+   - Resultado: `1111 0111 1001 1010`
+
+5. **7EF1**:
+   - Convertimos cada dígito:
+     - `7` -> `0111`
+     - `E` -> `1110`
+     - `F` -> `1111`
+     - `1` -> `0001`
+   - Resultado: `0111 1110 1111 0001`
+
+6. **324A**:
+   - Convertimos cada dígito:
+     - `3` -> `0011`
+     - `2` -> `0010`
+     - `4` -> `0100`
+     - `A` -> `1010`
+   - Resultado: `0011 0010 0100 1010`
+
+#### Resumen de la conversión
+
+| Binario            | Hexadecimal |
+|--------------------|-------------|
+| 101000001000       | A08         |
+| 1110001011101      | 1C5D        |
+| 111010011001011    | 1D33        |
+| 1001111100000011   | 9F03        |
+| 1110101010101010   | EAAA        |
+| 101101101011010    | 16DA        |
+
+| Hexadecimal | BCH                    |
+|-------------|------------------------|
+| 2801        | 0010 1000 0000 0001    |
+| 1C5D        | 0001 1100 0101 1101    |
+| 78AB        | 0111 1000 1010 1011    |
+| F79A        | 1111 0111 1001 1010    |
+| 7EF1        | 0111 1110 1111 0001    |
+| 324A        | 0011 0010 0100 1010    |
+
+#### Utilización del sistema hexadecimal
+
+**Ventajas del sistema hexadecimal:**
+1. **Compacto y Legible:** El sistema hexadecimal es más compacto que el binario, reduciendo la longitud de las cadenas de bits, lo que facilita la lectura y escritura de valores binarios.
+2. **Conversión Directa:** La conversión entre hexadecimal y binario es directa y fácil, ya que cada dígito hexadecimal corresponde exactamente a 4 bits.
+3. **Utilización en Programación:** Es ampliamente utilizado en programación y sistemas digitales para representar direcciones de memoria, valores de colores en gráficos, y otros datos binarios.
+
+El sistema hexadecimal es muy utilizado debido a su eficiencia en la representación y facilidad de conversión con el sistema binario.
+
+</details>
+
+---
+
+### Ejercicio 9
+
+![image](https://github.com/user-attachments/assets/9d238750-6918-4e9d-ba9e-e58acbbeda97)
+
+<details><summary>🤖 Respuesta</summary>
+
+Vamos a realizar las operaciones de suma (ADD) y resta (SUB) indicadas y calcular los flags para cada operación.
+
+#### Notación de Flags:
+- **C**: Carry (acarreo)
+- **B**: Borrow (préstamo)
+- **Z**: Zero (resultado cero)
+- **V**: Overflow (desbordamiento)
+- **N**: Negative (negativo)
+
+#### Operaciones y Cálculos:
+
+#### 1. ADD 00011101 00110111
+```
+  00011101
++ 00110111
+-----------
+  01010010
+
+Flags: Carry=0, Zero=0, Negative=0, Overflow=0
+```
+
+#### 2. ADD 01110000 11110001
+```
+  01110000
++ 11110001
+-----------
+  01100001
+
+Flags: Carry=1, Zero=0, Negative=0, Overflow=1
+```
+
+#### 3. ADD 10011101 01101010
+```
+  10011101
++ 01101010
+-----------
+  00000111
+
+Flags: Carry=1, Zero=0, Negative=0, Overflow=1
+```
+
+#### 4. ADD 01010110 01110010
+```
+  01010110
++ 01110010
+-----------
+  11001000
+
+Flags: Carry=0, Zero=0, Negative=1, Overflow=0
+```
+
+#### 5. ADD 01101110 01100001
+```
+  01101110
++ 01100001
+-----------
+  11001111
+
+Flags: Carry=0, Zero=0, Negative=1, Overflow=0
+```
+
+#### 6. ADD 10111101 11100001
+```
+  10111101
++ 11100001
+-----------
+  10011110
+
+Flags: Carry=1, Zero=0, Negative=1, Overflow=1
+```
+
+#### 7. ADD 00001110 00001111
+```
+  00001110
++ 00001111
+-----------
+  00011101
+
+Flags: Carry=0, Zero=0, Negative=0, Overflow=0
+```
+
+#### Restas (SUB):
+
+#### 8. SUB 00111011 00101101
+```
+  00111011
+- 00101101
+-----------
+  00001110
+
+Flags: Borrow=0, Zero=0, Negative=0, Overflow=0
+```
+
+#### 9. SUB 01110000 11110001
+```
+  01110000
+- 11110001
+-----------
+  01111111
+
+Flags: Borrow=1, Zero=0, Negative=0, Overflow=1
+```
+
+#### 10. SUB 10101110 01110010
+```
+  10101110
+- 01110010
+-----------
+  00111100
+
+Flags: Borrow=0, Zero=0, Negative=0, Overflow=1
+```
+
+#### 11. SUB 10111101 11100001
+```
+  10111101
+- 11100001
+-----------
+  11011100
+
+Flags: Borrow=1, Zero=0, Negative=1, Overflow=0
+```
+
+#### 12. SUB 01101110 01100001
+```
+  01101110
+- 01100001
+-----------
+  00001111
+
+Flags: Borrow=0, Zero=0, Negative=0, Overflow=0
+```
+
+#### 13. SUB 10000000 10000000
+```
+  10000000
+- 10000000
+-----------
+  00000000
+
+Flags: Borrow=0, Zero=1, Negative=0, Overflow=0
+```
+
+#### Resumen de Resultados y Flags:
+
+| Operación              | Resultado | Flags                         |
+|------------------------|-----------|-------------------------------|
+| ADD 00011101 00110111  | 01010010  | Carry=0, Zero=0, Negative=0, Overflow=0 |
+| ADD 01110000 11110001  | 01100001  | Carry=1, Zero=0, Negative=0, Overflow=1 |
+| ADD 10011101 01101010  | 00000111  | Carry=1, Zero=0, Negative=0, Overflow=1 |
+| ADD 01010110 01110010  | 11001000  | Carry=0, Zero=0, Negative=1, Overflow=0 |
+| ADD 01101110 01100001  | 11001111  | Carry=0, Zero=0, Negative=1, Overflow=0 |
+| ADD 10111101 11100001  | 10011110  | Carry=1, Zero=0, Negative=1, Overflow=1 |
+| ADD 00001110 00001111  | 00011101  | Carry=0, Zero=0, Negative=0, Overflow=0 |
+| SUB 00111011 00101101  | 00001110  | Borrow=0, Zero=0, Negative=0, Overflow=0 |
+| SUB 01110000 11110001  | 01111111  | Borrow=1, Zero=0, Negative=0, Overflow=1 |
+| SUB 10101110 01110010  | 00111100  | Borrow=0, Zero=0, Negative=0, Overflow=1 |
+| SUB 10111101 11100001  | 11011100  | Borrow=1, Zero=0, Negative=1, Overflow=0 |
+| SUB 01101110 01100001  | 00001111  | Borrow=0, Zero=0, Negative=0, Overflow=0 |
+| SUB 10000000 10000000  | 00000000  | Borrow=0, Zero=1, Negative=0, Overflow=0 |
+
+Estos cálculos muestran los resultados de las operaciones y el estado de los diferentes flags (Carry, Zero, Negative, Overflow) después de cada operación.
+
+</details>
+
+---
+
+### Ejercicio 10
+
+![image](https://github.com/user-attachments/assets/1c998165-8456-4e56-a89a-45bc19836ad6)
+
+<details><summary>🤖 Respuesta</summary>
+
+Claro, aquí tienes un resumen de lo anterior:
+
+#### Representación y Verificación de Operaciones en Distintos Sistemas
+
+1. **BSS (Binario Sin Signo):**
+   - Representa números positivos sin signo.
+   - **Ejemplo Operación:** 
+     ```
+       01110000 (112) + 11110001 (241) = 11000111 (199)
+     ```
+   - **Flags:** Carry=0, Zero=0, Negative=0, Overflow=0
+
+2. **BCS (Binario Complemento de Signo):**
+   - Utiliza el bit más significativo como bit de signo (0 para positivo, 1 para negativo).
+   - **Ejemplo Operación:**
+     ```
+       01110000 (112) + 11110001 (-15) = 01100111 (71)
+     ```
+   - **Flags:** Carry=1, Zero=0, Negative=1, Overflow=1
+
+3. **Ca1 (Complemento a 1):**
+   - Se obtiene invirtiendo todos los bits del número en BCS.
+   - **Ejemplo Operación:**
+     ```
+       01110000 (112) + 11110001 (-14) = 01100110 (70)
+     ```
+   - **Flags:** Carry=1, Zero=0, Negative=1, Overflow=1
+
+4. **Ca2 (Complemento a 2):**
+   - Se obtiene sumando 1 al complemento a 1 del número.
+   - **Ejemplo Operación:**
+     ```
+       01110000 (112) + 11110001 (-15) = 01100111 (71)
+     ```
+   - **Flags:** Carry=1, Zero=0, Negative=1, Overflow=1
+
+5. **Exceso2:**
+   - Se suma un exceso fijo (generalmente 2^(n-1)) y luego se representa como BSS.
+   - **Ejemplo Operación:**
+     ```
+       01110000 (112-64) + 11110001 (-15-64) = 11000111 (199-128)
+     ```
+   - **Flags:** Carry=0, Zero=0, Negative=0, Overflow=0
+
+#### Conclusiones:
+- **BSS (Binario Sin Signo):**
+  - Representa números positivos sin signo.
+  - Fácil de interpretar y manipular.
+  - No se usa para números negativos.
+
+- **BCS (Binario Complemento de Signo):**
+  - Usa el bit más significativo como bit de signo.
+  - Representa números negativos.
+  - La aritmética requiere manejo del bit de signo.
+
+- **Ca1 (Complemento a 1):**
+  - Inversión de todos los bits para obtener el número negativo.
+  - Menos eficiente para aritmética de números negativos.
+
+- **Ca2 (Complemento a 2):**
+  - Agrega 1 al complemento a 1 para obtener el número negativo.
+  - Más eficiente para operaciones aritméticas.
+  - Común en sistemas binarios modernos.
+
+- **Exceso2:**
+  - Suma de un exceso fijo para representar números negativos.
+  - Utilizado en ciertas aplicaciones de hardware.
+
+Cada sistema de representación tiene ventajas y desventajas según el contexto de uso. La interpretación correcta de los resultados y el manejo de los flags son cruciales en operaciones aritméticas binarias.
+
+</details>
+
+---
+
+### Ejercicio 11
+
+![image](https://github.com/user-attachments/assets/a9053c1f-70e1-422a-928b-4ab31cd87010)
+
+<details><summary>🤖 Respuesta</summary>
+
+Para abordar el ejercicio 11, vamos a analizar las operaciones de suma (ADD) realizadas en el ejercicio 9 y establecer una regla para determinar la correctitud de la operación ADD en el sistema BSS observando solo los flags. En el sistema BSS (Binario Sin Signo), los números son siempre positivos, y el bit más significativo no es un bit de signo.
+
+#### Análisis de Resultados y Flags
+
+#### Resultados del Ejercicio 9 con Flags:
+
+1. **ADD 00011101 00110111**
+   - Resultado: 01010010
+   - Flags: Carry=0, Zero=0, Negative=0, Overflow=0
+
+2. **ADD 01110000 11110001**
+   - Resultado: 01100001
+   - Flags: Carry=1, Zero=0, Negative=0, Overflow=1
+
+3. **ADD 10011101 01101010**
+   - Resultado: 00000111
+   - Flags: Carry=1, Zero=0, Negative=0, Overflow=1
+
+4. **ADD 01010110 01110010**
+   - Resultado: 11001000
+   - Flags: Carry=0, Zero=0, Negative=1, Overflow=0
+
+5. **ADD 01101110 01100001**
+   - Resultado: 11001111
+   - Flags: Carry=0, Zero=0, Negative=1, Overflow=0
+
+6. **ADD 10111101 11100001**
+   - Resultado: 10011110
+   - Flags: Carry=1, Zero=0, Negative=1, Overflow=1
+
+7. **ADD 00001110 00001111**
+   - Resultado: 00011101
+   - Flags: Carry=0, Zero=0, Negative=0, Overflow=0
+
+#### Observaciones
+
+En el contexto de BSS, los números deben ser interpretados como valores sin signo. Aquí están las reglas y observaciones basadas en los flags:
+
+1. **Carry (C)**: Indica que hubo un acarreo fuera del bit más significativo. Para números sin signo, un carry (C=1) sugiere que la suma de los números excedió la capacidad del número de bits usados. Esto indica que el resultado es incorrecto para BSS.
+2. **Zero (Z)**: Indica que el resultado de la operación es cero. Este flag es menos relevante para verificar errores en BSS.
+3. **Negative (N)**: En BSS, este flag no se utiliza porque todos los números son positivos.
+4. **Overflow (V)**: Indica desbordamiento cuando el resultado excede la capacidad del sistema. En el contexto de BSS, esto puede ser indicativo de un error similar al carry.
+
+### Regla para Determinar la Correctitud de la Operación ADD en BSS
+
+Para determinar la correctitud de la operación ADD en el sistema BSS, la mera observación del flag **Carry (C)** es suficiente:
+- **Si C=1, el resultado es incorrecto.**
+- **Si C=0, el resultado es correcto.**
+
+#### Aplicación de la Regla
+
+- **ADD 00011101 00110111** (C=0) → Correcto
+- **ADD 01110000 11110001** (C=1) → Incorrecto
+- **ADD 10011101 01101010** (C=1) → Incorrecto
+- **ADD 01010110 01110010** (C=0) → Correcto
+- **ADD 01101110 01100001** (C=0) → Correcto
+- **ADD 10111101 11100001** (C=1) → Incorrecto
+- **ADD 00001110 00001111** (C=0) → Correcto
+
+#### Conclusión
+
+En el sistema BSS, la presencia de un acarreo (C=1) es suficiente para indicar que el resultado de una operación ADD es incorrecto. Esta regla es simple y efectiva para determinar la correctitud de las sumas en BSS sin necesidad de verificar la operación en el sistema decimal.
+
+</details>
+
+---
+
+### Ejercicio 12
+
+![image](https://github.com/user-attachments/assets/e1c18008-cc3c-4f65-abf2-e18a7a9ca59b)
+
+<details><summary>🤖 Respuesta</summary>
+
+Vamos a trabajar con las operaciones de resta (SUB) para el sistema Ca2 (Complemento a 2) y establecer reglas para determinar la correctitud de las operaciones ADD y SUB observando los flags.
+
+### Ejemplos de Operaciones SUB del Ejercicio 9
+
+#### Restas (SUB):
+
+1. **SUB 00111011 00101101**
+   - Operación: `00111011 - 00101101`
+   - Resultado: `00001110`
+   - Flags: Borrow=0, Zero=0, Negative=0, Overflow=0
+
+2. **SUB 01110000 11110001**
+   - Operación: `01110000 - 11110001`
+   - Resultado: `01111111`
+   - Flags: Borrow=1, Zero=0, Negative=0, Overflow=1
+
+3. **SUB 10101110 01110010**
+   - Operación: `10101110 - 01110010`
+   - Resultado: `00111100`
+   - Flags: Borrow=0, Zero=0, Negative=0, Overflow=1
+
+4. **SUB 10111101 11100001**
+   - Operación: `10111101 - 11100001`
+   - Resultado: `11011100`
+   - Flags: Borrow=1, Zero=0, Negative=1, Overflow=0
+
+5. **SUB 01101110 01100001**
+   - Operación: `01101110 - 01100001`
+   - Resultado: `00001111`
+   - Flags: Borrow=0, Zero=0, Negative=0, Overflow=0
+
+6. **SUB 10000000 10000000**
+   - Operación: `10000000 - 10000000`
+   - Resultado: `00000000`
+   - Flags: Borrow=0, Zero=1, Negative=0, Overflow=0
+
+### Análisis de Resultados y Flags en Ca2
+
+Para determinar la correctitud de las operaciones ADD y SUB en el sistema Ca2, observamos los flags de cada operación.
+
+#### Observaciones:
+
+1. **Borrow (B):**
+   - En las restas, el flag de Borrow indica que hubo un préstamo.
+   - Si Borrow (B=1), generalmente sugiere un problema en la operación para Ca2.
+
+2. **Zero (Z):**
+   - Indica que el resultado de la operación es cero.
+   - No es tan relevante para verificar errores en Ca2.
+
+3. **Negative (N):**
+   - En Ca2, el flag negativo indica que el resultado es negativo.
+   - Importante para operaciones con signo.
+
+4. **Overflow (V):**
+   - Indica desbordamiento cuando el resultado excede la capacidad del sistema.
+   - En Ca2, un overflow (V=1) puede sugerir un error en la operación.
+
+### Reglas para Determinar la Correctitud de ADD y SUB en Ca2
+
+#### Sumas (ADD):
+
+- **Si Overflow (V=1) y Carry (C=1), el resultado es incorrecto.**
+- **Si Overflow (V=0) y Carry (C=0), el resultado es correcto.**
+
+#### Restas (SUB):
+
+- **Si Borrow (B=1) o Overflow (V=1), el resultado es incorrecto.**
+- **Si Borrow (B=0) y Overflow (V=0), el resultado es correcto.**
+
+### Aplicación de las Reglas:
+
+#### Operaciones ADD:
+
+1. **ADD 00011101 00110111**:
+   - Flags: C=0, Z=0, N=0, V=0 → Correcto
+
+2. **ADD 01110000 11110001**:
+   - Flags: C=1, Z=0, N=0, V=1 → Incorrecto
+
+3. **ADD 10011101 01101010**:
+   - Flags: C=1, Z=0, N=0, V=1 → Incorrecto
+
+4. **ADD 01010110 01110010**:
+   - Flags: C=0, Z=0, N=1, V=0 → Correcto
+
+5. **ADD 01101110 01100001**:
+   - Flags: C=0, Z=0, N=1, V=0 → Correcto
+
+6. **ADD 10111101 11100001**:
+   - Flags: C=1, Z=0, N=1, V=1 → Incorrecto
+
+7. **ADD 00001110 00001111**:
+   - Flags: C=0, Z=0, N=0, V=0 → Correcto
+
+#### Operaciones SUB:
+
+1. **SUB 00111011 00101101**:
+   - Flags: B=0, Z=0, N=0, V=0 → Correcto
+
+2. **SUB 01110000 11110001**:
+   - Flags: B=1, Z=0, N=0, V=1 → Incorrecto
+
+3. **SUB 10101110 01110010**:
+   - Flags: B=0, Z=0, N=0, V=1 → Incorrecto
+
+4. **SUB 10111101 11100001**:
+   - Flags: B=1, Z=0, N=1, V=0 → Incorrecto
+
+5. **SUB 01101110 01100001**:
+   - Flags: B=0, Z=0, N=0, V=0 → Correcto
+
+6. **SUB 10000000 10000000**:
+   - Flags: B=0, Z=1, N=0, V=0 → Correcto
+
+### Conclusión
+
+En el sistema Ca2:
+- **Para ADD:**
+  - Si V=1 y C=1, el resultado es incorrecto.
+  - Si V=0 y C=0, el resultado es correcto.
+- **Para SUB:**
+  - Si B=1 o V=1, el resultado es incorrecto.
+  - Si B=0 y V=0, el resultado es correcto.
+
+Estas reglas permiten verificar la correctitud de las operaciones sin necesidad de convertir los resultados al sistema decimal.
+
+</details>
+
+---
+
+### Ejercicio 13
+
+![image](https://github.com/user-attachments/assets/3b3e8ab9-c7cf-48e3-9907-2aa208a15b82)
+
+<details><summary>🤖 Respuesta</summary>
+
+Para abordar el ejercicio 13, vamos a considerar las operaciones de suma (ADD) y resta (SUB) del ejercicio 9, suponiendo que el punto o coma fraccionaria se encuentra entre el bit 2 y el bit 3. Interpretaremos los valores de las cadenas de bits como BSS (Binario Sin Signo) y como Ca2 (Complemento a 2) y observaremos los flags correspondientes.
+
+### Operaciones del Ejercicio 9:
+
+1. **ADD 00011101 00110111**
+2. **ADD 01110000 11110001**
+3. **ADD 10011101 01101010**
+4. **ADD 01010110 01110010**
+5. **ADD 01101110 01100001**
+6. **ADD 10111101 11100001**
+7. **ADD 00001110 00001111**
+
+8. **SUB 00111011 00101101**
+9. **SUB 01110000 11110001**
+10. **SUB 10101110 01110010**
+11. **SUB 10111101 11100001**
+12. **SUB 01101110 01100001**
+13. **SUB 10000000 10000000**
+
+### Interpretación con Punto Fraccionario entre Bit 2 y Bit 3
+
+#### Operación 1: ADD 00011101 00110111
+
+- **Operandos:**
+  - `0001.1101` -> 1.78125 (BSS)
+  - `0011.0111` -> 3.4375 (BSS)
+- **Suma:**
+  - `0101.0100` -> 5.21875 (BSS)
+
+**Flags:**
+- **Carry:** 0
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 0
+
+#### Operación 2: ADD 01110000 11110001
+
+- **Operandos:**
+  - `0111.0000` -> 7.0 (BSS)
+  - `1111.0001` -> -1.9375 (Ca2)
+- **Suma:**
+  - `0110.0001` -> 6.0625 (Ca2)
+
+**Flags:**
+- **Carry:** 1
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 1
+
+#### Operación 3: ADD 10011101 01101010
+
+- **Operandos:**
+  - `1001.1101` -> -6.0625 (Ca2)
+  - `0110.1010` -> 6.625 (BSS)
+- **Suma:**
+  - `0000.0111` -> 0.4375 (Ca2)
+
+**Flags:**
+- **Carry:** 1
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 1
+
+#### Operación 4: ADD 01010110 01110010
+
+- **Operandos:**
+  - `0101.0110` -> 5.375 (BSS)
+  - `0111.0010` -> 7.125 (BSS)
+- **Suma:**
+  - `1100.1000` -> -4.5 (Ca2)
+
+**Flags:**
+- **Carry:** 0
+- **Zero:** 0
+- **Negative:** 1
+- **Overflow:** 0
+
+#### Operación 5: ADD 01101110 01100001
+
+- **Operandos:**
+  - `0110.1110` -> 6.875 (BSS)
+  - `0110.0001` -> 6.0625 (BSS)
+- **Suma:**
+  - `1100.1111` -> -4.125 (Ca2)
+
+**Flags:**
+- **Carry:** 0
+- **Zero:** 0
+- **Negative:** 1
+- **Overflow:** 0
+
+#### Operación 6: ADD 10111101 11100001
+
+- **Operandos:**
+  - `1011.1101` -> -4.125 (Ca2)
+  - `1110.0001` -> -1.9375 (Ca2)
+- **Suma:**
+  - `1001.1110` -> -6.0625 (Ca2)
+
+**Flags:**
+- **Carry:** 1
+- **Zero:** 0
+- **Negative:** 1
+- **Overflow:** 1
+
+#### Operación 7: ADD 00001110 00001111
+
+- **Operandos:**
+  - `0000.1110` -> 0.875 (BSS)
+  - `0000.1111` -> 0.9375 (BSS)
+- **Suma:**
+  - `0001.1101` -> 1.8125 (BSS)
+
+**Flags:**
+- **Carry:** 0
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 0
+
+#### Operación 8: SUB 00111011 00101101
+
+- **Operandos:**
+  - `0011.1011` -> 3.71875 (BSS)
+  - `0010.1101` -> 2.8125 (BSS)
+- **Resta:**
+  - `0000.1110` -> 0.90625 (BSS)
+
+**Flags:**
+- **Borrow:** 0
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 0
+
+#### Operación 9: SUB 01110000 11110001
+
+- **Operandos:**
+  - `0111.0000` -> 7.0 (BSS)
+  - `1111.0001` -> -1.9375 (Ca2)
+- **Resta:**
+  - `0111.1111` -> 7.9375 (BSS)
+
+**Flags:**
+- **Borrow:** 1
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 1
+
+#### Operación 10: SUB 10101110 01110010
+
+- **Operandos:**
+  - `1010.1110` -> -5.125 (Ca2)
+  - `0111.0010` -> 7.125 (BSS)
+- **Resta:**
+  - `0011.1100` -> 3.75 (BSS)
+
+**Flags:**
+- **Borrow:** 0
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 1
+
+#### Operación 11: SUB 10111101 11100001
+
+- **Operandos:**
+  - `1011.1101` -> -4.125 (Ca2)
+  - `1110.0001` -> -1.9375 (Ca2)
+- **Resta:**
+  - `1101.1100` -> -2.25 (Ca2)
+
+**Flags:**
+- **Borrow:** 1
+- **Zero:** 0
+- **Negative:** 1
+- **Overflow:** 0
+
+#### Operación 12: SUB 01101110 01100001
+
+- **Operandos:**
+  - `0110.1110` -> 6.875 (BSS)
+  - `0110.0001` -> 6.0625 (BSS)
+- **Resta:**
+  - `0000.1111` -> 0.8125 (BSS)
+
+**Flags:**
+- **Borrow:** 0
+- **Zero:** 0
+- **Negative:** 0
+- **Overflow:** 0
+
+#### Operación 13: SUB 10000000 10000000
+
+- **Operandos:**
+  - `1000.0000` -> -4.0 (Ca2)
+  - `1000.0000` -> -4.0 (Ca2)
+- **Resta:**
+  - `0000.0000` -> 0 (BSS)
+
+**Flags:**
+- **Borrow:** 0
+- **Zero:** 1
+- **Negative:** 0
+- **Overflow:** 0
+
+### Conclusión
+
+- **Flags en Ca2:** 
+  - **Carry (C)** y **Borrow (B)**: Importantes para determinar errores en operaciones aritméticas.
+  - **Overflow (V)**: Indica desbordamiento y posibles errores en representación.
+  - **Zero (Z)**: Indica que el resultado es cero.
+  - **Negative (N)**: Indica si el resultado es negativo.
+
+- **Interpretación en Ca2 y BSS con Punto Fraccionario:**
+  - Los valores fraccionarios permiten una precisión adicional en las operaciones.
+  - En Ca2, se necesita tener cuidado con los signos y desbordamientos.
+  - En BSS, el rango es más simple, y los resultados son siempre positivos.
+
+- **Reglas para Determinar Correctitud en Ca2:**
+  - **Si V=1 y C=1 en ADD, el resultado es incorrecto.**
+  - **Si B=1 o V=1 en SUB, el resultado es incorrecto.**
+
+Estas reglas son útiles para verificar la correctitud de las operaciones sin necesidad de convertir los resultados al sistema decimal, asegurando precisión en las operaciones binarias con punto fraccionario.
+
+</details>
+
+---
+
+### Ejercicio 14
+
+![image](https://github.com/user-attachments/assets/82d83bbb-53e4-43c7-9eef-2badf6648e57)
+
+<details><summary>🤖 Respuesta</summary>
+</details>
+
+---
+
+### Ejercicio 15
+
+![image](https://github.com/user-attachments/assets/2026bf7c-1f36-43ff-95f1-180c836b0bc2)
+
+<details><summary>🤖 Respuesta</summary>
+</details>
+
+---
+
+### Ejercicio 16
+
+![image](https://github.com/user-attachments/assets/dfe4c75d-0090-4d17-b5d8-3be27c417d84)
+
+<details><summary>🤖 Respuesta</summary>
+</details>
+
+---
+
+### Ejercicio 17
+
+![image](https://github.com/user-attachments/assets/24063b1a-2ab9-4b84-a4b9-3412471510b4)
+
+<details><summary>🤖 Respuesta</summary>
+</details>
+
+---
+
+### Ejercicio 18
+
+![image](https://github.com/user-attachments/assets/8939f4fd-9d60-4e60-9c04-ed2334abe726)
+
+<details><summary>🤖 Respuesta</summary>
+</details>
 
 ---
 
