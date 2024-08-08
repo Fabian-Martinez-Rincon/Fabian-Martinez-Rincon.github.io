@@ -1618,6 +1618,189 @@ Estas reglas son útiles para verificar la correctitud de las operaciones sin ne
 ![image](https://github.com/user-attachments/assets/82d83bbb-53e4-43c7-9eef-2badf6648e57)
 
 <details><summary>🤖 Respuesta</summary>
+
+Vamos a considerar todas las cadenas posibles en los sistemas BSS, BCS, Ca1, Ca2, y Exceso2, restringidos a 4 bits. Además, vamos a considerar el punto fijo en cada una de todas las posiciones posibles y obtener el rango y resolución de cada uno de los sistemas.
+
+#### Sistema BSS (Binario Sin Signo)
+En BSS, todos los números son positivos. Con 4 bits, los valores posibles son de 0 a 15.
+
+#### Posiciones del Punto Fijo:
+1. **A la izquierda del MSB (X.XXX):**
+   - Valores: `0.000`, `0.001`, `0.010`, ..., `1.111`
+   - Rango: 0 a 1.875
+   - Resolución: 0.125
+
+2. **Entre el MSB y el segundo bit (XX.XX):**
+   - Valores: `00.00`, `00.01`, `00.10`, ..., `11.11`
+   - Rango: 0 a 3.75
+   - Resolución: 0.25
+
+3. **Entre el segundo y tercer bit (XXX.X):**
+   - Valores: `000.0`, `000.1`, `001.0`, ..., `111.1`
+   - Rango: 0 a 7.5
+   - Resolución: 0.5
+
+4. **Entre el tercer y cuarto bit (XXXX.):**
+   - Valores: `0000.`, `0001.`, `0010.`, ..., `1111.`
+   - Rango: 0 a 15
+   - Resolución: 1
+
+5. **A la derecha del LSB (XXXX0):**
+   - Valores: `00000`, `00001`, `00010`, ..., `11111`
+   - Rango: 0 a 30
+   - Resolución: 2
+
+#### Sistema BCS (Binario Complemento de Signo)
+En BCS, el bit más significativo es el bit de signo. Con 4 bits, los valores posibles van de -8 a 7.
+
+#### Posiciones del Punto Fijo:
+1. **A la izquierda del MSB (X.XXX):**
+   - Valores: `0.000`, `0.001`, `0.010`, ..., `1.111`
+   - Rango: -1 a 0.875
+   - Resolución: 0.125
+
+2. **Entre el MSB y el segundo bit (XX.XX):**
+   - Valores: `00.00`, `00.01`, `00.10`, ..., `11.11`
+   - Rango: -2 a 1.75
+   - Resolución: 0.25
+
+3. **Entre el segundo y tercer bit (XXX.X):**
+   - Valores: `000.0`, `000.1`, `001.0`, ..., `111.1`
+   - Rango: -4 a 3.5
+   - Resolución: 0.5
+
+4. **Entre el tercer y cuarto bit (XXXX.):**
+   - Valores: `0000.`, `0001.`, `0010.`, ..., `1111.`
+   - Rango: -8 a 7
+   - Resolución: 1
+
+5. **A la derecha del LSB (XXXX0):**
+   - Valores: `00000`, `00001`, `00010`, ..., `11111`
+   - Rango: -16 a 14
+   - Resolución: 2
+
+#### Sistema Ca1 (Complemento a 1)
+En Ca1, los valores negativos se obtienen invirtiendo todos los bits del número en BCS.
+
+#### Posiciones del Punto Fijo:
+1. **A la izquierda del MSB (X.XXX):**
+   - Valores: `0.000`, `0.001`, `0.010`, ..., `1.111`
+   - Rango: -1 a 0.875
+   - Resolución: 0.125
+
+2. **Entre el MSB y el segundo bit (XX.XX):**
+   - Valores: `00.00`, `00.01`, `00.10`, ..., `11.11`
+   - Rango: -2 a 1.75
+   - Resolución: 0.25
+
+3. **Entre el segundo y tercer bit (XXX.X):**
+   - Valores: `000.0`, `000.1`, `001.0`, ..., `111.1`
+   - Rango: -4 a 3.5
+   - Resolución: 0.5
+
+4. **Entre el tercer y cuarto bit (XXXX.):**
+   - Valores: `0000.`, `0001.`, `0010.`, ..., `1111.`
+   - Rango: -8 a 7
+   - Resolución: 1
+
+5. **A la derecha del LSB (XXXX0):**
+   - Valores: `00000`, `00001`, `00010`, ..., `11111`
+   - Rango: -16 a 14
+   - Resolución: 2
+
+#### Sistema Ca2 (Complemento a 2)
+En Ca2, los valores negativos se obtienen sumando 1 al complemento a 1 del número.
+
+#### Posiciones del Punto Fijo:
+1. **A la izquierda del MSB (X.XXX):**
+   - Valores: `0.000`, `0.001`, `0.010`, ..., `1.111`
+   - Rango: -1 a 0.875
+   - Resolución: 0.125
+
+2. **Entre el MSB y el segundo bit (XX.XX):**
+   - Valores: `00.00`, `00.01`, `00.10`, ..., `11.11`
+   - Rango: -2 a 1.75
+   - Resolución: 0.25
+
+3. **Entre el segundo y tercer bit (XXX.X):**
+   - Valores: `000.0`, `000.1`, `001.0`, ..., `111.1`
+   - Rango: -4 a 3.5
+   - Resolución: 0.5
+
+4. **Entre el tercer y cuarto bit (XXXX.):**
+   - Valores: `0000.`, `0001.`, `0010.`, ..., `1111.`
+   - Rango: -8 a 7
+   - Resolución: 1
+
+5. **A la derecha del LSB (XXXX0):**
+   - Valores: `00000`, `00001`, `00010`, ..., `11111`
+   - Rango: -16 a 14
+   - Resolución: 2
+
+#### Sistema Exceso2
+En Exceso2, se suma un exceso (en n bits será \(2^{n-1}\)) y luego se representa como BSS.
+
+#### Posiciones del Punto Fijo:
+1. **A la izquierda del MSB (X.XXX):**
+   - Valores: `0.000`, `0.001`, `0.010`, ..., `1.111`
+   - Rango: -0.5 a 1.375
+   - Resolución: 0.125
+
+2. **Entre el MSB y el segundo bit (XX.XX):**
+   - Valores: `00.00`, `00.01`, `00.10`, ..., `11.11`
+   - Rango: -1 a 3.25
+   - Resolución: 0.25
+
+3. **Entre el segundo y tercer bit (XXX.X):**
+   - Valores: `000.0`, `000.1`, `001.0`, ..., `111.1`
+   - Rango: -2 a 7
+   - Resolución: 0.5
+
+4. **Entre el tercer y cuarto bit (XXXX.):**
+   - Valores: `0000.`, `0001.`, `0010.`, ..., `1111.`
+   - Rango: -4 a 15
+   - Resolución: 1
+
+5. **A la derecha del LSB (XXXX0):**
+   - Valores: `00000`, `00001`, `00010`, ..., `11111`
+   - Rango: -8 a 30
+   - Resolución: 2
+
+#### Resumen
+
+| Sistema | Posición del Punto | Rango             | Resolución |
+|---------|---------------------|-------------------|------------|
+| BSS     | X.XXX               | 0 a 1.875         | 0.125      |
+|         | XX.XX               | 0 a 3.75          | 0.25       |
+|         | XXX.X               | 0 a 7.5           | 0.5        |
+|         | XXXX.               | 0 a 15            | 1          |
+|         | XXXX0               | 0 a 30            | 2          |
+| BCS     | X.XXX               | -1 a 0.875        | 0.125      |
+|         | XX.XX               | -2 a 1.75         | 0.25       |
+|         | XXX.X               | -4 a 3.5          | 0.5        |
+|         | XXXX.               | -8 a 7            | 1          |
+|         | XXXX0               | -16 a 14          | 2          |
+| Ca1     | X.XXX               | -1 a 0
+
+.875        | 0.125      |
+|         | XX.XX               | -2 a 1.75         | 0.25       |
+|         | XXX.X               | -4 a 3.5          | 0.5        |
+|         | XXXX.               | -8 a 7            | 1          |
+|         | XXXX0               | -16 a 14          | 2          |
+| Ca2     | X.XXX               | -1 a 0.875        | 0.125      |
+|         | XX.XX               | -2 a 1.75         | 0.25       |
+|         | XXX.X               | -4 a 3.5          | 0.5        |
+|         | XXXX.               | -8 a 7            | 1          |
+|         | XXXX0               | -16 a 14          | 2          |
+| Exceso2 | X.XXX               | -0.5 a 1.375      | 0.125      |
+|         | XX.XX               | -1 a 3.25         | 0.25       |
+|         | XXX.X               | -2 a 7            | 0.5        |
+|         | XXXX.               | -4 a 15           | 1          |
+|         | XXXX0               | -8 a 30           | 2          |
+
+#### Conclusión
+
+Cada sistema tiene su propio rango y resolución dependiendo de la posición del punto fijo. La cantidad de cadenas y los números que se pueden representar varían según el sistema y la posición del punto fijo. En general, mientras más a la derecha se encuentre el punto fijo, mayor es el rango y menor la resolución, y viceversa.
 </details>
 
 ---
@@ -1627,6 +1810,10 @@ Estas reglas son útiles para verificar la correctitud de las operaciones sin ne
 ![image](https://github.com/user-attachments/assets/2026bf7c-1f36-43ff-95f1-180c836b0bc2)
 
 <details><summary>🤖 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/6c8e0f12-899e-4279-985f-be754c10f44f)
+![image](https://github.com/user-attachments/assets/82d05a69-6de9-41ac-9599-79d807c2ee43)
+![image](https://github.com/user-attachments/assets/eb5a09db-3836-4474-aefa-cb8a2c4d7dd5)
 </details>
 
 ---
@@ -1636,6 +1823,116 @@ Estas reglas son útiles para verificar la correctitud de las operaciones sin ne
 ![image](https://github.com/user-attachments/assets/dfe4c75d-0090-4d17-b5d8-3be27c417d84)
 
 <details><summary>🤖 Respuesta</summary>
+
+#### Mecanismos para Sumar y Restar en BCS, Ca1 y Exceso
+
+Para abordar este problema, vamos a describir los mecanismos para realizar operaciones de suma y resta en los sistemas BCS (Binario Complemento de Signo), Ca1 (Complemento a 1) y Exceso, utilizando el análisis de los resultados y flags del punto 9. 
+
+#### Sistema BCS (Binario Complemento de Signo)
+En BCS, el bit más significativo (MSB) se utiliza como bit de signo: 0 para positivo y 1 para negativo. Las operaciones aritméticas deben considerar este bit de signo para obtener resultados correctos.
+
+#### Suma en BCS:
+1. **Interprete los operandos:**
+   - Si el MSB es 0, el número es positivo.
+   - Si el MSB es 1, el número es negativo.
+
+2. **Realice la suma binaria normal de los operandos.**
+3. **Determine los flags:**
+   - **Carry (C):** Indica acarreo fuera del bit más significativo.
+   - **Overflow (V):** Se produce si hay un cambio de signo incorrecto.
+   - **Zero (Z):** El resultado es cero.
+   - **Negative (N):** El resultado es negativo.
+
+4. **Corrija el resultado si es necesario, considerando los flags.**
+
+#### Resta en BCS:
+1. **Interprete los operandos.**
+2. **Convierta la resta a suma del complemento:**
+   - Resta \(A - B\) se convierte en \(A + (-B)\).
+   - Encuentre el complemento a 2 de B y sume a A.
+3. **Determine los flags.**
+4. **Corrija el resultado si es necesario.**
+
+#### Sistema Ca1 (Complemento a 1)
+En Ca1, el complemento a 1 de un número se obtiene invirtiendo todos los bits. 
+
+#### Suma en Ca1:
+1. **Interprete los operandos.**
+2. **Realice la suma binaria normal de los operandos.**
+3. **Determine los flags.**
+4. **Corrija el resultado si es necesario, añadiendo 1 si hay un acarreo fuera del MSB.**
+
+#### Resta en Ca1:
+1. **Interprete los operandos.**
+2. **Convierta la resta a suma del complemento:**
+   - Resta \(A - B\) se convierte en \(A + (-B)\).
+   - Encuentre el complemento a 1 de B y sume a A.
+3. **Determine los flags.**
+4. **Corrija el resultado si es necesario.**
+
+#### Sistema Exceso
+En el sistema Exceso, un valor de exceso se suma a cada número para obtener su representación binaria.
+
+#### Suma en Exceso:
+1. **Convierta los números del formato Exceso a formato binario.**
+2. **Realice la suma binaria normal de los operandos.**
+3. **Ajuste el resultado sumando el valor del exceso.**
+4. **Determine los flags.**
+
+#### Resta en Exceso:
+1. **Convierta los números del formato Exceso a formato binario.**
+2. **Convierta la resta a suma del complemento:**
+   - Resta A - B se convierte en A + (-B).
+   - Encuentre el complemento a 2 de B y sume a A.
+3. **Ajuste el resultado restando el valor del exceso.**
+4. **Determine los flags.**
+
+#### Análisis de Resultados y Flags
+
+#### Operación de Ejemplo (ADD):
+
+- **ADD 01110000 11110001 (BCS)**
+  - **Paso 1:** Interprete los operandos.
+    - `01110000` (112)
+    - `11110001` (-15)
+  - **Paso 2:** Realice la suma binaria.
+    - `01110000` + `11110001` = `01100001`
+  - **Paso 3:** Determine los flags.
+    - Carry=1, Zero=0, Negative=0, Overflow=1
+  - **Paso 4:** Corrija el resultado si es necesario.
+    - La suma es correcta, considerando los flags.
+
+#### Operación de Ejemplo (SUB):
+
+- **SUB 10101110 01110010 (Ca1)**
+  - **Paso 1:** Interprete los operandos.
+    - `10101110` (-81)
+    - `01110010` (58)
+  - **Paso 2:** Convierta la resta a suma del complemento.
+    - `10101110` + `10001101` = `00111011`
+  - **Paso 3:** Determine los flags.
+    - Borrow=0, Zero=0, Negative=0, Overflow=1
+  - **Paso 4:** Corrija el resultado si es necesario.
+    - La suma es correcta, considerando los flags.
+
+#### Conclusiones
+
+- **BCS:** Utiliza el bit de signo para la representación y necesita manejar correctamente el overflow y carry.
+- **Ca1:** Requiere la inversión de todos los bits para representar números negativos y puede necesitar un ajuste adicional en la suma.
+- **Exceso:** Involucra un ajuste de exceso para representar los números y necesita correctas conversiones antes y después de las operaciones.
+
+#### Reglas para Determinar Correctitud:
+
+- **Suma en BCS y Ca1:**
+  - Si V=1 y C=1, el resultado es incorrecto.
+  - Si V=0 y C=0, el resultado es correcto.
+  
+- **Resta en BCS y Ca1:**
+  - Si B=1 o V=1, el resultado es incorrecto.
+  - Si B=0 y V=0, el resultado es correcto.
+
+Aplicar estas reglas permite verificar la correctitud de las operaciones sin necesidad de convertir los resultados al sistema decimal.
+
 </details>
 
 ---
@@ -1645,6 +1942,11 @@ Estas reglas son útiles para verificar la correctitud de las operaciones sin ne
 ![image](https://github.com/user-attachments/assets/24063b1a-2ab9-4b84-a4b9-3412471510b4)
 
 <details><summary>🤖 Respuesta</summary>
+
+![image](https://github.com/user-attachments/assets/51f3ea13-5999-41e2-badc-ebf595404648)
+![image](https://github.com/user-attachments/assets/9cdf0d4a-fed7-441d-8969-c1ec5e9dbbf5)
+
+El análisis demuestra cómo el sistema de complemento a 2 maneja la representación y el cálculo de números negativos y el caso especial del valor más negativo posible.
 </details>
 
 ---
@@ -1655,6 +1957,10 @@ Estas reglas son útiles para verificar la correctitud de las operaciones sin ne
 
 <details><summary>🤖 Respuesta</summary>
 </details>
+
+---
+
+# Practica 2
 
 ---
 
