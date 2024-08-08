@@ -1956,13 +1956,136 @@ El análisis demuestra cómo el sistema de complemento a 2 maneja la representac
 ![image](https://github.com/user-attachments/assets/8939f4fd-9d60-4e60-9c04-ed2334abe726)
 
 <details><summary>🤖 Respuesta</summary>
+
+
 </details>
 
 ---
 
 # Practica 2
 
+### Ejercicio 1
+
+![image](https://github.com/user-attachments/assets/e5348778-0e64-42f3-868c-27b765730349)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
 ---
+
+### Ejercicio 2
+
+![image](https://github.com/user-attachments/assets/cb3e3ce9-11d4-4df6-a0b3-5597efaddabc)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 3
+
+![image](https://github.com/user-attachments/assets/129a4526-d2b5-4a22-b9fc-2fb83892443f)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 4
+
+![image](https://github.com/user-attachments/assets/513febba-d1ca-4ad5-a2d6-c3cb58701075)
+
+<details><summary>🤖 Respuesta</summary>
+
+
+</details>
+
+---
+
+### Ejercicio 5
+
+![image](https://github.com/user-attachments/assets/8d6916c2-a1b4-4387-b74a-76612ef39fb9)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 6
+
+![image](https://github.com/user-attachments/assets/8f4f62df-221c-4d8b-aa26-15accfe3e7d9)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 7
+
+![image](https://github.com/user-attachments/assets/b2999b08-b326-4c6d-96e8-fbcf54145e55)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 8
+
+![image](https://github.com/user-attachments/assets/862ca2dc-db39-40e3-bab7-cf196ffb039f)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 9
+
+![image](https://github.com/user-attachments/assets/200ed8a9-aded-405a-ae05-62b8a1e59ded)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 10
+
+![image](https://github.com/user-attachments/assets/69387310-0d87-4b01-8e2f-a6f2a942deed)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 11
+
+![image](https://github.com/user-attachments/assets/f742fd5f-926c-4745-befd-6d6f585a04ec)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+### Ejercicio 12
+
+![image](https://github.com/user-attachments/assets/c09a3592-3221-41f4-aa9c-f66672bef3dd)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
+
+---
+
+
 
 ### Finales Echos por mi
 
