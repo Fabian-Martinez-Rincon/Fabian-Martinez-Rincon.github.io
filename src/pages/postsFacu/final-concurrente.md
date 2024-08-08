@@ -4,7 +4,7 @@ title: Final Concurrente
 author: Fabian Martinez Rincon
 description: ""
 image:
-    url: '/posts/Materias/fod.webp'
+    url: '/posts/Materias/finales-programación-concurrente.jpg'
     alt: "Miniatura de los rayos de Astro."
 pubDate: 2024-08-05
 tags: [""]
