@@ -559,7 +559,13 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 
 Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplos proporcionados.
 
-### Representación en BCD desempaquetado y BCD empaquetado
+#### Representación en BCD desempaquetado y BCD empaquetado
+
+![image](https://github.com/user-attachments/assets/7d8a2b58-bf8d-4a59-a150-91941ec3b949)
+
+![image](https://github.com/user-attachments/assets/e5c1acb1-1df5-4e13-9adc-2d16f9ad9624)
+
+![image](https://github.com/user-attachments/assets/4172076e-fb30-4dc1-a449-91895a96f727)
 
 #### Números a representar:
 - 0, 1, 3, 8, 12, 13, 22, 35, 99, 100, 1255
