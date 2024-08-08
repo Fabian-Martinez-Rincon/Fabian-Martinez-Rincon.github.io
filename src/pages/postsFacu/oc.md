@@ -395,7 +395,7 @@ Vamos a representar los números dados en los sistemas de punto fijo del ejercic
 14. **-35.5**:
     - No se puede representar (fuera del rango)
 
-### Resumen
+#### Resumen
 
 | Número   | BSS Representación | Error BSS | BCS Representación | Error BCS |   |
 |----------|--------------------|-----------|--------------------|-----------|---|
@@ -418,6 +418,141 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 
 ![image](https://github.com/user-attachments/assets/ffa7b418-cbb6-4e50-8e69-0ad721a48b5f)
 ![image](https://github.com/user-attachments/assets/954f9e08-73db-4515-941a-6048c6e4aa7f)
+
+---
+
+### Ejercicio 5
+
+![image](https://github.com/user-attachments/assets/186fb92b-7c4e-452f-801c-abac779dda3e)
+
+![image](https://github.com/user-attachments/assets/618bac08-61d9-446e-b15d-872564f2e22c)
+
+#### Interpretación de las cadenas
+
+1. **00000000**:
+
+   - **BSS**:
+     - Parte entera: 0000000 (0)
+     - Parte fraccionaria: 000 (0)
+     - Valor: 0
+   - **BCS**:
+     - Bit de signo: 0 (positivo)
+     - Parte entera: 00000 (0)
+     - Parte fraccionaria: 0000 (0)
+     - Valor: 0
+
+2. **01010101**:
+
+   - **BSS**:
+     - Parte entera: 0101010 (42)
+     - Parte fraccionaria: 101 (0.625)
+     - Valor: 42.625
+   - **BCS**:
+     - Bit de signo: 0 (positivo)
+     - Parte entera: 10101 (21)
+     - Parte fraccionaria: 0101 (0.3125)
+     - Valor: 21.3125
+
+3. **10000000**:
+
+   - **BSS**:
+     - Parte entera: 1000000 (64)
+     - Parte fraccionaria: 000 (0)
+     - Valor: 64
+   - **BCS**:
+     - Bit de signo: 1 (negativo)
+     - Parte entera: 00000 (0)
+     - Parte fraccionaria: 0000 (0)
+     - Valor: -16
+
+4. **11111110**:
+
+   - **BSS**:
+     - Parte entera: 1111111 (127)
+     - Parte fraccionaria: 110 (0.75)
+     - Valor: 127.75
+   - **BCS**:
+     - Bit de signo: 1 (negativo)
+     - Parte entera: 11111 (31)
+     - Parte fraccionaria: 1110 (0.9375)
+     - Valor: -0.0625
+
+5. **11111111**:
+
+   - **BSS**:
+     - Parte entera: 1111111 (127)
+     - Parte fraccionaria: 111 (0.875)
+     - Valor: 127.875
+   - **BCS**:
+     - Bit de signo: 1 (negativo)
+     - Parte entera: 11111 (31)
+     - Parte fraccionaria: 1111 (0.9375)
+     - Valor: -0.0625
+
+6. **10101010**:
+
+   - **BSS**:
+     - Parte entera: 1010101 (85)
+     - Parte fraccionaria: 010 (0.25)
+     - Valor: 85.25
+   - **BCS**:
+     - Bit de signo: 1 (negativo)
+     - Parte entera: 01010 (10)
+     - Parte fraccionaria: 1010 (0.625)
+     - Valor: -5.375
+
+7. **01111111**:
+
+   - **BSS**:
+     - Parte entera: 0111111 (63)
+     - Parte fraccionaria: 111 (0.875)
+     - Valor: 63.875
+   - **BCS**:
+     - Bit de signo: 0 (positivo)
+     - Parte entera: 11111 (31)
+     - Parte fraccionaria: 1111 (0.9375)
+     - Valor: 31.9375
+
+8. **01101101**:
+
+   - **BSS**:
+     - Parte entera: 0110110 (54)
+     - Parte fraccionaria: 110 (0.75)
+     - Valor: 54.75
+   - **BCS**:
+     - Bit de signo: 0 (positivo)
+     - Parte entera: 11011 (27)
+     - Parte fraccionaria: 0110 (0.375)
+     - Valor: 27.375
+
+#### Resumen de los resultados:
+
+| Cadena     | BSS       | BCS        |
+|------------|-----------|------------|
+| 00000000   | 0         | 0          |
+| 01010101   | 42.625    | 21.3125    |
+| 10000000   | 64        | -16        |
+| 11111110   | 127.75    | -0.0625    |
+| 11111111   | 127.875   | -0.0625    |
+| 10101010   | 85.25     | -5.375     |
+| 01111111   | 63.875    | 31.9375    |
+| 01101101   | 54.75     | 27.375     |
+
+---
+
+### Ejercicio 6
+
+![image](https://github.com/user-attachments/assets/746d5cc9-c945-4646-9acc-19bfa23ed521)
+
+[Link de la clase](https://www.youtube.com/watch?v=UUyhf9xzahI)
+[Link de la clase](https://www.youtube.com/watch?v=ncCl3qNUMPU)
+
+#### Ejemplo de Como deberia Ser
+
+![image](https://github.com/user-attachments/assets/fe58b04f-7061-46e3-94dc-7f3e0550e8c1)
+![image](https://github.com/user-attachments/assets/cd7fdcc3-5973-449e-bf9f-e9e9a28c837a)
+![image](https://github.com/user-attachments/assets/288b308c-82e2-4e20-91c9-ce9a516b0928)
+
 
 ---
 
