@@ -559,13 +559,7 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 
 Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplos proporcionados.
 
-#### Representación en BCD desempaquetado y BCD empaquetado
 
-![image](https://github.com/user-attachments/assets/7d8a2b58-bf8d-4a59-a150-91941ec3b949)
-
-![image](https://github.com/user-attachments/assets/e5c1acb1-1df5-4e13-9adc-2d16f9ad9624)
-
-![image](https://github.com/user-attachments/assets/4172076e-fb30-4dc1-a449-91895a96f727)
 
 #### Números a representar:
 - 0, 1, 3, 8, 12, 13, 22, 35, 99, 100, 1255
@@ -606,7 +600,11 @@ Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplo
 
 #### Sumas en BCD desempaquetado y empaquetado
 
+![image](https://github.com/user-attachments/assets/7d8a2b58-bf8d-4a59-a150-91941ec3b949)
 
+![image](https://github.com/user-attachments/assets/e5c1acb1-1df5-4e13-9adc-2d16f9ad9624)
+
+![image](https://github.com/user-attachments/assets/4172076e-fb30-4dc1-a449-91895a96f727)
 
 #### Sumas en BCD empaquetado:
 
@@ -622,7 +620,127 @@ Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplo
    - BCD empaquetado: `0001 0011 0000 0111 + 0111 0000 1000 = 0100 0011 1000 0111`
    - Decimal: 2015
 
-Estos cálculos deberían ser correctos de acuerdo a los sistemas BCD desempaquetado y empaquetado.
+
+---
+
+### Ejercicio 7
+
+![image](https://github.com/user-attachments/assets/6f7b9b79-5691-418f-b48e-cfa5d60453a0)
+
+Lamento la confusión. Entiendo que BSS es binario sin signo. Vamos a corregir las representaciones teniendo en cuenta que BSS utiliza el mínimo número de bits necesarios para representar los números sin signo.
+
+#### Representación en BCD, BCD empaquetado y BSS
+
+#### Números a representar:
+- 13160
+- 2988
+- 927
+- 87127
+
+#### BCD desempaquetado (cada dígito decimal utiliza 1 byte)
+Cada dígito decimal se representa con 4 bits (1 byte por dígito).
+
+1. **13160**:
+   - 1: `0000 0001`
+   - 3: `0000 0011`
+   - 1: `0000 0001`
+   - 6: `0000 0110`
+   - 0: `0000 0000`
+   - Total: `0000 0001 0000 0011 0000 0001 0000 0110 0000 0000` (40 bits)
+
+2. **2988**:
+   - 2: `0000 0010`
+   - 9: `0000 1001`
+   - 8: `0000 1000`
+   - 8: `0000 1000`
+   - Total: `0000 0010 0000 1001 0000 1000 0000 1000` (32 bits)
+
+3. **927**:
+   - 9: `0000 1001`
+   - 2: `0000 0010`
+   - 7: `0000 0111`
+   - Total: `0000 1001 0000 0010 0000 0111` (24 bits)
+
+4. **87127**:
+   - 8: `0000 1000`
+   - 7: `0000 0111`
+   - 1: `0000 0001`
+   - 2: `0000 0010`
+   - 7: `0000 0111`
+   - Total: `0000 1000 0000 0111 0000 0001 0000 0010 0000 0111` (40 bits)
+
+#### BCD empaquetado (1 byte representa 2 dígitos decimales)
+
+1. **13160**:
+   - 13: `0001 0011`
+   - 16: `0001 0110`
+   - 0: `0000 0000`
+   - Total: `0001 0011 0001 0110 0000 0000` (24 bits)
+
+2. **2988**:
+   - 29: `0010 1001`
+   - 88: `1000 1000`
+   - Total: `0010 1001 1000 1000` (16 bits)
+
+3. **927**:
+   - 09: `0000 1001`
+   - 27: `0010 0111`
+   - Total: `0000 1001 0010 0111` (16 bits)
+
+4. **87127**:
+   - 87: `1000 0111`
+   - 12: `0001 0010`
+   - 7: `0000 0111`
+   - Total: `1000 0111 0001 0010 0000 0111` (24 bits)
+
+#### BSS (Binario Sin Signo)
+Utilizamos el mínimo número de bits necesarios para representar el número en binario sin signo.
+
+1. **13160**: 
+   - Binario: `11001101111000`
+   - Total: `11001101111000` (14 bits)
+
+2. **2988**:
+   - Binario: `101110101100`
+   - Total: `101110101100` (12 bits)
+
+3. **927**:
+   - Binario: `1110011111`
+   - Total: `1110011111` (10 bits)
+
+4. **87127**:
+   - Binario: `10101010001101111`
+   - Total: `10101010001101111` (17 bits)
+
+#### Resumen de bits necesarios
+
+| Número  | BCD (bits) | BCD empaquetado (bits) | BSS (bits) |
+|---------|------------|-------------------------|------------|
+| 13160   | 40         | 24                      | 14         |
+| 2988    | 32         | 16                      | 12         |
+| 927     | 24         | 16                      | 10         |
+| 87127   | 40         | 24                      | 17         |
+
+#### Conclusiones sobre BCD y BSS
+
+**Ventajas de BCD:**
+1. **Facilidad de Conversión:** La conversión entre BCD y decimal es directa y sencilla.
+2. **Precisión:** No hay errores de redondeo como en las conversiones binario a decimal.
+3. **Compatibilidad:** Es útil en aplicaciones donde la salida debe ser en decimal, como en pantallas de siete segmentos.
+
+**Desventajas de BCD:**
+1. **Ineficiencia:** BCD no es eficiente en términos de uso de bits, ya que cada dígito decimal se representa con 4 bits, lo que resulta en una mayor cantidad de bits necesarios.
+2. **Operaciones Aritméticas:** Las operaciones aritméticas son más complejas y requieren ajustes adicionales para cada dígito mayor que 9.
+
+**Ventajas de BSS:**
+1. **Eficiencia de Bits:** La representación en BSS es más eficiente en términos de cantidad de bits utilizados.
+2. **Operaciones Aritméticas Simples:** Las operaciones aritméticas son más directas en binario.
+
+**Desventajas de BSS:**
+1. **Conversión:** La conversión entre BSS y decimal es menos intuitiva que BCD.
+2. **Errores de Redondeo:** Pueden ocurrir errores de redondeo en conversiones entre binario y decimal.
+
+En resumen, BCD es más adecuado para aplicaciones que requieren una interacción frecuente con números decimales, mientras que BSS es más eficiente para el almacenamiento y procesamiento de datos en sistemas digitales.
 
 ---
 
