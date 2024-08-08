@@ -556,6 +556,68 @@ Con esto, hemos representado los números en los sistemas de punto fijo de acuer
 ![image](https://github.com/user-attachments/assets/a14ad105-142f-4c19-b2c5-554f0195caac)
 ![image](https://github.com/user-attachments/assets/e4e11917-8a88-4149-bd8d-bb2c3fed1d6d)
 
+
+Vamos a revisar las sumas en BCD desempaquetado y empaquetado según los ejemplos proporcionados.
+
+### Representación en BCD desempaquetado y BCD empaquetado
+
+#### Números a representar:
+- 0, 1, 3, 8, 12, 13, 22, 35, 99, 100, 1255
+
+#### BCD desempaquetado (cada dígito decimal utiliza 1 byte)
+
+1. **0**: `0000 0000`
+2. **1**: `0000 0001`
+3. **3**: `0000 0011`
+4. **8**: `0000 1000`
+5. **12**: `0000 0001 0000 0010`
+6. **13**: `0000 0001 0000 0011`
+7. **22**: `0000 0010 0000 0010`
+8. **35**: `0000 0011 0000 0101`
+9. **99**: `0000 1001 0000 1001`
+10. **100**: `0000 0001 0000 0000 0000 0000`
+11. **1255**: `0000 0001 0000 0010 0000 0101 0000 0101`
+
+### BCD empaquetado (1 byte representa 2 dígitos decimales)
+
+1. **0**: `0000 0000`
+2. **1**: `0000 0001`
+3. **3**: `0000 0011`
+4. **8**: `0000 1000`
+5. **12**: `0001 0010`
+6. **13**: `0001 0011`
+7. **22**: `0010 0010`
+8. **35**: `0011 0101`
+9. **99**: `1001 1001`
+10. **100**: `0001 0000 0000`
+11. **1255**: `0001 0010 0101 0101`
+
+#### Procedimiento para calcular sumas en BCD empaquetado
+
+1. **Convertir los números decimales a BCD empaquetado**.
+2. **Sumar los números como si fueran números binarios normales**.
+3. **Si algún dígito excede 9 (1001 en binario), agregar 6 (0110 en binario) para corregirlo**.
+
+#### Sumas en BCD desempaquetado y empaquetado
+
+
+
+#### Sumas en BCD empaquetado:
+
+1. **32 + 45**:
+   - BCD empaquetado: `0011 0010 + 0100 0101 = 0111 0111`
+   - Decimal: 77
+
+2. **22 + 89**:
+   - BCD empaquetado: `0010 0010 + 1000 1001 = 0001 0100 0001`
+   - Decimal: 111
+
+3. **1307 + 708**:
+   - BCD empaquetado: `0001 0011 0000 0111 + 0111 0000 1000 = 0100 0011 1000 0111`
+   - Decimal: 2015
+
+Estos cálculos deberían ser correctos de acuerdo a los sistemas BCD desempaquetado y empaquetado.
+
 ---
 
 ### Finales Echos por mi
