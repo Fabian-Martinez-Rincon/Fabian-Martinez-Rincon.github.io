@@ -2085,7 +2085,13 @@ El análisis demuestra cómo el sistema de complemento a 2 maneja la representac
 
 ---
 
+### Ejercicio 13
 
+![image](https://github.com/user-attachments/assets/5ed26cef-a1e4-46dd-9f21-1e6da469a7be)
+
+<details><summary>🤖 Respuesta</summary>
+
+</details>
 
 ### Finales Echos por mi
 
