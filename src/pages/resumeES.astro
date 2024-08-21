@@ -108,9 +108,30 @@ import "../styles/global.css";
         />
     </div>
 
-     <div id="education" class="mb-2">
+     <div id="proyectos" class="mb-2">
       <SectionTitle title="Proyectos" />
-        
+      
+      <RowEntry
+            name="20/08/2024"
+            title="Web Scraping - PLUTO-TV"
+            subTitle="Github"
+            description={[
+                "Desarrollé un sistema de scraping en Python para Pluto TV, utilizando Selenium para la automatización de la navegación web, aiohttp y asyncio para solicitudes y tareas en paralelo, y BeautifulSoup para extraer datos del HTML. Los datos se almacenan en JSON. El proyecto incluye logging para monitoreo y manejo de errores, y otras dependencias como requests, trio, y websocket-client para asegurar una comunicación eficiente y segura."
+            ]},
+            link="https://github.com/Fabian-Martinez-Rincon/Scraping_PLUTO_TV"
+        />
+
+        <RowEntry
+        name="20/06/2024"
+        title="Char-IT"
+        subTitle="Github"
+        description={[
+            "Desarrollé en equipo una plataforma web con Flask, que permite a los usuarios registrarse, iniciar sesión, donar e intercambiar productos, con roles diferenciados y seguridad avanzada. Usamos SQLAlchemy para la base de datos PostgreSQL, Flask-Bcrypt para la seguridad de contraseñas, Flask-Session para sesiones, Flask-WTF para formularios, y Flask-Mail para notificaciones. Las API se aseguraron con Flask-JWT-Extended y Authlib. La app se desplegó con Gunicorn y se habilitó CORS con Flask-CORS."
+        ]}
+        link="https://github.com/Fabian-Martinez-Rincon/Char-IT"
+    />
+    
+
       <RowEntry
             name="24/12/2022"
             title="Midflash"
