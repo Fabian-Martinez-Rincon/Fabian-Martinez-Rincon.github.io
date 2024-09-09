@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Parciales ISO
-author: Alumno de Astro
+author: Fabian Martinez Rincon
 description: "Tuve algunos problemas, pero preguntar en la comunidad me ayudó mucho."
 image:
     url: '/posts/Materias/shell.webp'

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: Final OC
-author: Alumno de Astro
+author: Fabian Martinez Rincon
 description: ""
 image:
     url: '/posts/Materias/oc-finales.webp'
