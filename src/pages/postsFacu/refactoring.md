@@ -402,11 +402,12 @@ f(x,y) {
 
 #### Otro ejemplo
 
+
 ![image](https://github.com/user-attachments/assets/43dee6e5-e0d9-4615-a461-1653b5e2853a)
 
 #### Practica
 
-![image](https://github.com/user-attachments/assets/9b4002b7-6031-4e19-ba97-b52192c97ea5)
+#### Ejercicio 1.1
 
 1. **Nombres de Métodos Crípticos (Inconsistent Naming):**
    - Los nombres de los métodos (`lmtCrdt`, `mtFcE`, `mtCbE`) son crípticos y no son claros respecto a lo que hacen. Utilizan abreviaciones que dificultan la lectura y comprensión del código.
@@ -463,10 +464,9 @@ f(x,y) {
 
 ---
 
-![image](https://github.com/user-attachments/assets/fec8ac93-6dd6-4b35-9022-166d90237740)
-![image](https://github.com/user-attachments/assets/8d13d122-c3e3-4c07-8e5a-ba48c7ce6047)
+#### Ejercicio 1.2
 
-#### 1. Malos Olores Identificados en el Diseño Inicial (Figura 1)
+**`1. Malos Olores Identificados en el Diseño Inicial (Figura 1)`**
 
 1. **Inversión de Dependencia (Inappropriate Intimacy):**
    - En el diseño inicial, la clase `Persona` tiene un método `participaEnProyecto(Proyeto p)` que depende de la clase `Proyecto` para determinar si la persona participa en el proyecto. Esto significa que la clase `Persona` tiene conocimiento interno de la estructura y el funcionamiento de la clase `Proyecto`.
@@ -479,14 +479,14 @@ f(x,y) {
 3. **Violación del Principio de Responsabilidad Única (Single Responsibility Principle, SRP):**
    - La clase `Persona` está asumiendo más de una responsabilidad: representar a una persona y manejar la participación en proyectos. Esto viola el SRP, ya que la clase debería tener una única razón para cambiar.
 
-#### 2. Cambios Realizados en el Diseño Modificado (Figura 2)
+**`2. Cambios Realizados en el Diseño Modificado (Figura 2)`**
 
 En el diseño revisado, se realizaron los siguientes cambios:
 
 - Se movió el método `participaEnProyecto()` de la clase `Persona` a la clase `Proyecto`. El método ahora se llama `participa(Persona p)` y está dentro de la clase `Proyecto`.
 - La lógica de verificación de participación se ha simplificado y ahora la clase `Proyecto` contiene un método `participa(Persona p)` que verifica si la persona dada está contenida en la lista de `participantes`.
 
-#### 3. Refactorings Aplicados en el Diseño Modificado
+**`3. Refactorings Aplicados en el Diseño Modificado`**
 
 1. **Mover Método (Move Method):**
    - **Refactoring Aplicado:** El método `participaEnProyecto()` se movió de la clase `Persona` a la clase `Proyecto`.
@@ -500,7 +500,7 @@ En el diseño revisado, se realizaron los siguientes cambios:
    - **Refactoring Aplicado:** Separando las responsabilidades entre las dos clases. `Persona` ya no es responsable de la lógica del proyecto, y `Proyecto` maneja exclusivamente la lógica relacionada con la participación en proyectos.
    - **Justificación:** Esto alinea mejor el diseño de las clases con el SRP, haciendo que el sistema sea más fácil de mantener y modificar.
 
-#### 4. ¿Es Apropiado el Cambio Realizado?
+**`4. ¿Es Apropiado el Cambio Realizado?`**
 
 **Sí, el cambio es apropiado.** Las razones son:
 
@@ -512,24 +512,7 @@ En el diseño revisado, se realizaron los siguientes cambios:
 
 #### Ejercicio 1.3
 
-```java
-public void imprimirValores() {
-    int totalEdades = 0;
-    double promedioEdades = 0;
-    double totalSalarios = 0;
-
-    for (Empleado empleado : personal) {
-        totalEdades = totalEdades + empleado.getEdad();
-        totalSalarios = totalSalarios + empleado.getSalario();
-    }
-    promedioEdades = totalEdades / personal.size();
-
-    String message = String.format("El promedio de las edades es %s y el total de salarios es %s", promedioEdades, totalSalarios);
-    System.out.println(message);
-}
-```
-
-#### 1. Malos Olores Identificados en el Código Original
+**`1. Malos Olores Identificados en el Código Original`**
 
 1. **Método Largo (Long Method):**
    - El método `imprimirValores()` realiza múltiples operaciones:
@@ -549,7 +532,7 @@ public void imprimirValores() {
 4. **Cálculo de Promedio no Intuitivo:**
    - La división para calcular el promedio de edades es un poco críptica en el contexto del método `imprimirValores()`. Sería más claro si este cálculo se realizara en un método separado.
 
-#### 2. Refactorings Aplicados
+**`2. Refactorings Aplicados`**
 
 1. **Extracción de Métodos (Extract Method):**
    - **Refactoring Aplicado:** Extraer el código de cálculo de la suma de edades y la suma de salarios en métodos separados: `calcularSumaEdades()` y `calcularSumaSalarios()`.
@@ -583,44 +566,11 @@ public void imprimirValores() {
    - **Refactoring Aplicado:** Se dejó la conversión explícita a `double` al calcular el promedio (`(double) totalEdades / personal.size()`) para asegurar que el cálculo del promedio se realice correctamente.
    - **Justificación:** Este cambio asegura que el comportamiento del código sea el mismo que el original, sin perder precisión.
 
-![image](https://github.com/user-attachments/assets/6286c02f-8f3d-4d02-8b33-faa7c1505a68)
+---
 
-```java
-public class EmpleadoTemporario {
-    public String nombre;
-    public String apellido;
-    public double sueldoBasico = 0;
-    public double horasTrabajadas = 0;
-    public int cantidadHijos = 0;
-    // ......
-    public double sueldo() {
-        return this.sueldoBasico + (this.horasTrabajadas * 500) +
-        (this.cantidadHijos * 1000) - (this.sueldoBasico * 0.13);
-    }
-}
-public class EmpleadoPlanta {
-    public String nombre;
-    public String apellido;
-    public double sueldoBasico = 0;
-    public int cantidadHijos = 0;
-    // ......
-    public double sueldo() {
-        return this.sueldoBasico + (this.cantidadHijos * 2000) -
-        (this.sueldoBasico * 0.13);
-    }
-}
-public class EmpleadoPasante {
-    public String nombre;
-    public String apellido;
-    public double sueldoBasico = 0;
-    // ......
-    public double sueldo() {
-        return this.sueldoBasico - (this.sueldoBasico * 0.13);
-    }
-}
-```
+#### Ejercicio 2
 
-#### 1. Malos Olores Identificados
+**`1. Malos Olores Identificados`**
 
 1. **Duplicación de Código (Duplicated Code):**
    - Las clases `EmpleadoTemporario`, `EmpleadoPlanta` y `EmpleadoPasante` tienen atributos y métodos muy similares. Los atributos `nombre`, `apellido`, y `sueldoBasico` se repiten en cada clase.
@@ -636,7 +586,7 @@ public class EmpleadoPasante {
 4. **Interfaz Inflada (Bloated Class):**
    - Las clases pueden volverse más grandes y difíciles de mantener si se siguen agregando nuevos atributos o métodos específicos para diferentes tipos de empleados, en lugar de aprovechar la herencia y/o composición.
 
-#### Refactorings Sugeridos
+**`Refactorings Sugeridos`**
 
 1. **Extraer Clase Base Común (Extract Superclass):**
    - **Refactoring Aplicado:** Crear una clase base `Empleado` que contenga los atributos y métodos comunes (`nombre`, `apellido`, `sueldoBasico`, y un método abstracto `sueldo()`).
@@ -650,7 +600,7 @@ public class EmpleadoPasante {
    - **Refactoring Aplicado:** Utilizar métodos en la clase base `Empleado` para manejar la deducción de impuestos común a todos los empleados.
    - **Justificación:** Esto hace que el código sea más limpio, más fácil de mantener y menos propenso a errores.
 
-#### Código Refactorizado
+**`Código Refactorizado`**
 
 **Clase Base `Empleado`**
 
@@ -734,24 +684,7 @@ public class EmpleadoPasante extends Empleado {
 
 #### 2.2 Juego
 
-```java
-public class Juego {
-    // ......
-    public void incrementar(Jugador j) {
-        j.puntuacion = j.puntuacion + 100;
-    }
-    public void decrementar(Jugador j) {
-        j.puntuacion = j.puntuacion - 50;
-    }
-}
-public class Jugador {
-    public String nombre;
-    public String apellido;
-    public int puntuacion = 0;
-}
-```
-
-#### 1. Malos Olores Identificados
+**`1. Malos Olores Identificados`**
 
 1. **Datos Expuestos (Data Clump):**
    - La clase `Jugador` tiene sus atributos `nombre`, `apellido`, y `puntuacion` definidos como `public`, lo cual expone estos datos directamente a otras clases.
@@ -768,7 +701,7 @@ public class Jugador {
    - Los métodos `incrementar()` y `decrementar()` en la clase `Juego` muestran que esta clase está "celosa de características" de la clase `Jugador`, porque dependen del conocimiento interno de cómo manipular la puntuación del jugador.
    - Este es un mal olor de **"Abuso de Funcionalidad de Clase"**.
 
-#### Refactorings Sugeridos
+**`Refactorings Sugeridos`**
 
 1. **Encapsular Campos (Encapsulate Field):**
    - **Refactoring Aplicado:** Cambiar los campos `public` de la clase `Jugador` a `private` y proporcionar métodos `get` y `set` (si es necesario) para acceder a ellos.
@@ -782,7 +715,7 @@ public class Jugador {
    - **Refactoring Aplicado:** Asegurar que las clases externas no accedan directamente a los atributos de `Jugador` y que toda manipulación se haga a través de métodos de instancia de `Jugador`.
    - **Justificación:** Esto garantiza la integridad del objeto y hace que el código sea más fácil de mantener y modificar.
 
-**Código Refactorizado**
+**`Código Refactorizado`**
 
 #### Clase `Jugador`
 
@@ -845,47 +778,15 @@ public class Juego {
 }
 ```
 
-![image](https://github.com/user-attachments/assets/d9d36d60-0128-45ae-ba6b-760aaf8ec224)
+---
 
-```java
-/**
-* Retorna los últimos N posts que no pertenecen al usuario user
-*/
-public List<Post> ultimosPosts(Usuario user, int cantidad) {
-    List<Post> postsOtrosUsuarios = new ArrayList<Post>();
-    for (Post post : this.posts) {
-        if (!post.getUsuario().equals(user)) {
-            postsOtrosUsuarios.add(post);
-        }
-    }
-    // ordena los posts por fecha
-    for (int i = 0; i < postsOtrosUsuarios.size(); i++) {
-        int masNuevo = i;
-        for(int j= i +1; j < postsOtrosUsuarios.size(); j++) {
-            if (postsOtrosUsuarios.get(j).getFecha().isAfter(postsOtrosUsuarios.get(masNuevo).getFecha())) {
-                masNuevo = j;
-            }
-        }
-        Post unPost = postsOtrosUsuarios.set(i,postsOtrosUsuarios.get(masNuevo));
-        postsOtrosUsuarios.set(masNuevo, unPost);
-    }
-    List<Post> ultimosPosts = new ArrayList<Post>();
-    int index = 0;
-    Iterator<Post> postIterator = postsOtrosUsuarios.iterator();
-    while (postIterator.hasNext() && index < cantidad) {
-        ultimosPosts.add(postIterator.next());
-    }
-    return ultimosPosts;
-}
+#### Clase 2.3
 
-```
-
-
-#### Análisis del Código Proporcionado
+**`Análisis del Código Proporcionado`**
 
 El método `ultimosPosts(Usuario user, int cantidad)` en la clase `PostApp` devuelve una lista de los últimos `N` posts que no pertenecen al usuario especificado, ordenados por fecha de forma descendente.
 
-#### Malos Olores Identificados
+**`Malos Olores Identificados`**
 
 1. **Código Duplicado / Repetitivo (Duplicated Code):**
    - El código tiene dos bucles anidados que implementan manualmente el algoritmo de ordenación (un ordenamiento de selección, en este caso) para ordenar los posts por fecha. Este es un código repetitivo y es innecesario dado que Java proporciona métodos de ordenación más eficientes y legibles en su API estándar.
@@ -905,7 +806,7 @@ El método `ultimosPosts(Usuario user, int cantidad)` en la clase `PostApp` devu
 4. **Código Imperativo en Lugar de Declarativo (Imperative Programming):**
    - El uso de bucles y condiciones explícitas para filtrar y ordenar es más imperativo que declarativo. Con las modernas API de Java, como `Stream`, se puede hacer el código más declarativo y legible.
 
-#### Refactorings Sugeridos
+**`Refactorings Sugeridos`**
 
 1. **Usar API de Streams de Java (Replace Loop with Stream):**
    - **Refactoring Aplicado:** Utilizar la API de `Stream` de Java para filtrar, ordenar y limitar los posts. Esto hace el código más conciso, fácil de leer y mantener.
@@ -919,9 +820,9 @@ El método `ultimosPosts(Usuario user, int cantidad)` en la clase `PostApp` devu
    - **Refactoring Aplicado:** Usar el método `sort()` proporcionado por Java en lugar de implementar manualmente la ordenación.
    - **Justificación:** Reduce la duplicación de código y utiliza soluciones probadas y más eficientes.
 
-**Código Refactorizado**
+**`Código Refactorizado`**
 
-#### Clase `PostApp` Refactorizada
+**Clase `PostApp` Refactorizada**
 
 ```java
 import java.time.LocalDateTime;
@@ -953,7 +854,7 @@ public class PostApp {
 }
 ```
 
-#### Cambios Realizados:
+**`Cambios Realizados`:**
 
 1. **Uso de Streams:**
    - Reemplacé los bucles manuales y la lógica de ordenación con una combinación de `filter()`, `sorted()` y `limit()` de la API de `Stream`.
@@ -967,36 +868,9 @@ public class PostApp {
    - La lógica de ordenación ahora utiliza el método `sorted()` de la API de `Stream`, eliminando el código repetitivo.
    - **Beneficio:** El código se simplifica y utiliza métodos estándar, lo que también mejora el rendimiento.
 
-![image](https://github.com/user-attachments/assets/d3fa750f-a485-4b9f-b47d-42cebf350f83)
+---
 
-```java
-public class Producto {
-    private String nombre;
-    private double precio;
-    public double getPrecio() {
-        return this.precio;
-    }
-}
-public class ItemCarrito {
-    private Producto producto;
-    private int cantidad;
-    public Producto getProducto() {
-        return this.producto;
-    }
-    public int getCantidad() {
-        return this.cantidad;
-    }
-}
-public class Carrito {
-    private List<ItemCarrito> items;
-    public double total() {
-    return this.items.stream()
-            .mapToDouble(item ->
-            item.getProducto().getPrecio() * item.getCantidad())
-            .sum();
-    }
-}
-```
+#### Ejercicio 2.4
 
 1. **Feature Envy (Envidia de Características):**
    - El método `total()` en la clase `Carrito` depende de los detalles internos de la clase `ItemCarrito` para calcular el total del carrito. Está utilizando directamente `item.getProducto().getPrecio() * item.getCantidad()` en lugar de delegar esta responsabilidad a la clase `ItemCarrito`.
@@ -1014,7 +888,7 @@ public class Carrito {
    - La clase `Producto` es esencialmente una "clase de datos", ya que solo tiene atributos y getters, pero ningún comportamiento. Esto puede ser un mal olor cuando podría beneficiarse de agregar métodos que proporcionen comportamiento en lugar de solo datos.
    - **Refactoring:** Considerar si `Producto` necesita tener algún método de comportamiento (aunque en este caso puede ser más limitado y no necesariamente un problema).
 
-**Refactorings Aplicados**
+**`Refactorings Aplicados`**
 
 1. **Mover Método (Move Method):**
    - Se ha movido la lógica de cálculo de subtotal del carrito (`item.getProducto().getPrecio() * item.getCantidad()`) al propio `ItemCarrito`. Esto se ha logrado agregando un método `subtotal()` a la clase `ItemCarrito`.
@@ -1027,7 +901,7 @@ public class Carrito {
 
 **Código Refactorizado**
 
-#### Clase `Producto`
+**Clase `Producto`**
 
 El código de la clase `Producto` permanece igual, ya que no presenta malos olores críticos:
 
@@ -1042,7 +916,7 @@ public class Producto {
 }
 ```
 
-#### Clase `ItemCarrito`
+**Clase `ItemCarrito`**
 
 Se añade un método `subtotal()` que encapsula la lógica del cálculo del subtotal:
 
@@ -1066,7 +940,7 @@ public class ItemCarrito {
 }
 ```
 
-#### Clase `Carrito`
+**Clase `Carrito`**
 
 El método `total()` se simplifica para usar el método `subtotal()` de `ItemCarrito`:
 
@@ -1084,81 +958,124 @@ public class Carrito {
 }
 ```
 
-![image](https://github.com/user-attachments/assets/592db84a-5da3-47ce-80e0-fb498454c3d7)
+----
+
+#### Ejercicio 2.5
+
+**`Malos Olores Identificados`**
+
+1. **Envidia de Características (Feature Envy):**
+   - El método `getDireccionFormateada()` en la clase `Cliente` está utilizando intensamente los detalles internos de la clase `Direccion` (sus atributos `localidad`, `calle`, `numero`, `departamento`) para crear la dirección formateada. Esto muestra que `Cliente` está haciendo trabajo que debería ser responsabilidad de `Direccion`.
+   - Este es un mal olor llamado **"Feature Envy"** porque la lógica relacionada con `Direccion` debería estar encapsulada dentro de la propia clase `Direccion`.
+
+2. **Duplicación Potencial de Código (Potential Duplicate Code):**
+   - El formato de la dirección puede necesitar reutilización en otros contextos (por ejemplo, otros métodos que requieran una dirección formateada). Si esto no se mueve a `Direccion`, existe la posibilidad de que esta lógica de formateo se duplique.
+
+3. **Falta de Encapsulamiento (Lack of Encapsulation):**
+   - El método `getDireccionFormateada()` no está encapsulando la lógica donde pertenece; la lógica de formateo de dirección debería estar en la clase `Direccion`.
+
+**`Refactorings Sugeridos`**
+
+1. **Mover Método (Move Method):**
+   - **Refactoring Aplicado:** Mover el método `getDireccionFormateada()` de `Cliente` a `Direccion`.
+   - **Justificación:** Encapsula el comportamiento de formateo en la clase que contiene los datos necesarios (`Direccion`), mejorando la cohesión y reduciendo la envidia de características.
+
+2. **Renombrar Método para Mayor Claridad (Rename Method):**
+   - **Refactoring Aplicado:** Renombrar `getDireccionFormateada()` a `formatearDireccion()` para dejar claro que el método realiza una acción (formatear).
+   - **Justificación:** Mejora la legibilidad del código y hace que el nombre del método sea más descriptivo.
+
+**`Código Refactorizado`**
+
+**Clase `Direccion`**
+
+El método `getDireccionFormateada()` se mueve a la clase `Direccion` y se renombra a `formatearDireccion()`:
 
 ```java
+public class Direccion {
+    private String localidad;
+    private String calle;
+    private String numero;
+    private String departamento;
+
+    // Refactoring: Move Method and Rename Method
+    public String formatearDireccion() {
+        return localidad + ", " + calle + ", " + numero + ", " + departamento;
+    }
+
+    // Getters y setters para los atributos (si es necesario)
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+}
+```
+
+**Clase `Cliente`**
+
+El método `getDireccionFormateada()` se elimina de `Cliente` y se llama al método de `Direccion`:
+
+```java
+public class Cliente {
+    private Direccion direccion;
+
+    // Método para obtener la dirección formateada ahora delega a Direccion
+    public String getDireccionFormateada() {
+        return this.direccion.formatearDireccion();  // Refactoring: Delegación del método
+    }
+
+    // Otros métodos y atributos
+}
+```
+
+**Clase `Supermercado`**
+
+La clase `Supermercado` permanece igual, ya que no presenta malos olores significativos. La única modificación es el nombre del método que se llama para obtener la dirección formateada:
+
+```java
+import java.text.MessageFormat;
+
 public class Supermercado {
     public void notificarPedido(long nroPedido, Cliente cliente) {
         String notificacion = MessageFormat.format(
             "Estimado cliente, se le informa que hemos recibido su pedido con número {0}, el cual será enviado a la dirección {1}", 
-            new Object[] { nroPedido, cliente.getDireccionFormateada()
-        });
+            nroPedido, cliente.getDireccionFormateada()
+        );
         // lo imprimimos en pantalla, podría ser un mail, SMS, etc..
         System.out.println(notificacion);
     }
 }
-
-public class Cliente {
-    public String getDireccionFormateada() {
-        return
-        this.direccion.getLocalidad() + ", " +
-        this.direccion.getCalle() + ", " +
-        this.direccion.getNumero() + ", " +
-        this.direccion.getDepartamento();
-    }
-}
 ```
 
-![image](https://github.com/user-attachments/assets/fd8aca6b-0d2e-48c9-b6d4-bd92b304441f)
+**`Resultado Final`**
 
-```java
-public class Usuario {
-    String tipoSubscripcion;
-    // ...
-    public void setTipoSubscripcion(String unTipo) {
-        this.tipoSubscripcion = unTipo;
-    }
-    public double calcularCostoPelicula(Pelicula pelicula) {
-        double costo = 0;
-        if (tipoSubscripcion=="Basico") {
-            costo = pelicula.getCosto() +
-            pelicula.calcularCargoExtraPorEstreno();
-        }
-        else if (tipoSubscripcion== "Familia") {
-            costo = (pelicula.getCosto() +
-            pelicula.calcularCargoExtraPorEstreno()) * 0.90;
-        }
-        else if (tipoSubscripcion=="Plus") {
-            costo = pelicula.getCosto();
-        }
-        else if (tipoSubscripcion=="Premium") {
-            costo = pelicula.getCosto() * 0.75;
-        }
-        return costo;
-    }
-}
-public class Pelicula {
-    LocalDate fechaEstreno;
-    // ...
-    public double getCosto() {
-        return this.costo;
-    }
-    public double calcularCargoExtraPorEstreno(){
-        // Si la Película se estrenó 30 días antes de la fecha actual, retorna un cargo de 0$, caso contrario, retorna un cargo extra de 300$
-        return (ChronoUnit.DAYS.between(this.fechaEstreno, LocalDate.now()) ) > 30 ? 0 : 300;
-    }
-}
-```
+Con esta refactorización:
 
+1. **Eliminación de la "Envidia de Características" (Feature Envy):** El método `formatearDireccion()` se encuentra ahora en la clase que contiene los datos necesarios (`Direccion`), reduciendo la dependencia en los detalles internos de otras clases.
 
-#### Análisis del Código Proporcionado
+2. **Mejora de la Cohesión y Encapsulamiento:** La clase `Direccion` ahora es más cohesiva, ya que incluye la lógica relevante para su propósito (formateo de la dirección).
 
-En el diagrama de clases y código proporcionado, tenemos las siguientes clases:
-- `Usuario`: Representa a un usuario de la aplicación HBOO con diferentes tipos de suscripción.
-- `Pelicula`: Representa una película con detalles como nombre, género, fecha de estreno y costo.
-- `Subscripcion`: Clases derivadas de esta clase base representan diferentes tipos de suscripción (e.g., `Basico`, `Familia`, `Plus`, `Premium`).
+3. **Código más legible y mantenible:** La lógica se distribuye apropiadamente entre las clases, y el código es más fácil de entender y modificar.
 
-#### Malos Olores Identificados
+**`Conclusión`**
+
+Los malos olores de **Envidia de Características** y **Falta de Encapsulamiento** se resolvieron mediante los refactorings **Mover Método (Move Method)** y **Renombrar Método (Rename Method)**. El resultado es un código más limpio, modular y fácil de mantener.
+
+---
+
+#### Ejercicio 2.6
+
+**`Malos Olores Identificados`**
 
 1. **Condicionales Anidados (Long Conditional / Conditional Complexity):**
    - El método `calcularCostoPelicula()` en la clase `Usuario` utiliza una serie de condicionales (`if-else`) para determinar el costo de una película según el tipo de suscripción del usuario. Esto genera complejidad y es difícil de mantener.
@@ -1172,7 +1089,7 @@ En el diagrama de clases y código proporcionado, tenemos las siguientes clases:
 4. **Acoplamiento Fuerte (Feature Envy):**
    - La clase `Usuario` sabe demasiado sobre cómo calcular los costos adicionales de una película. Esto es responsabilidad de la suscripción o de la propia clase `Pelicula`.
 
-#### Refactorings Aplicados con Nombres Específicos
+**`Refactorings Aplicados con Nombres Específicos`**
 
 1. **Reemplazar Condicionales con Polimorfismo (Replace Conditional with Polymorphism):**
    - **Refactoring Aplicado:** Crear una jerarquía de clases para diferentes tipos de suscripciones (`Basico`, `Familia`, `Plus`, `Premium`), cada una con su propia implementación del cálculo de costos.
@@ -1190,9 +1107,7 @@ En el diagrama de clases y código proporcionado, tenemos las siguientes clases:
    - **Refactoring Aplicado:** El método `calcularCostoPelicula()` que pertenece a `Usuario` ahora se mueve a la jerarquía de clases `Subscripcion`. Esto se denomina **Mover Método** porque mueve la lógica al lugar correcto.
    - **Justificación:** Este refactoring ayuda a reducir el acoplamiento y la "envidia de características" (Feature Envy) entre las clases, y mejora la cohesión.
 
-#### Código Refactorizado con Nombres de Refactorings
-
-#### Clase `Usuario`
+**Clase `Usuario`**
 
 La clase `Usuario` ahora contiene una referencia a `Subscripcion`, que maneja el cálculo del costo:
 
@@ -1212,7 +1127,7 @@ public class Usuario {
 }
 ```
 
-#### Clase Base `Subscripcion` y Subclases Específicas
+**Clase Base `Subscripcion` y Subclases Específicas**
 
 Creamos una clase base `Subscripcion` y subclases para cada tipo de suscripción:
 
@@ -1256,7 +1171,7 @@ public class Premium extends Subscripcion {
 }
 ```
 
-#### Clase `Pelicula`
+**Clase `Pelicula`**
 
 La clase `Pelicula` permanece igual, ya que no presenta malos olores significativos:
 
@@ -1292,6 +1207,56 @@ Con esta refactorización:
 
 3. **Mover Método a la Clase Correcta:** Se movió la lógica del cálculo de costos a las clases de suscripción correspondientes, mejorando la cohesión y reduciendo el acoplamiento.
 
-#### Conclusión
+---
 
-Los malos olores de **Condicionales Anidados**, **Falta de Polimorfismo**, **Obsesión por Tipos Primitivos**, y **Envidia de Características** se resolvieron mediante refactorings como **Reemplazar Condicionales con Polimorfismo**, **Extraer Jerarquía de Clases**, **Reemplazar Comparación de `String` con Polimorfismo**, y **Mover Método a la Clase Correcta**. El resultado es un código más limpio, modular y fácil de mantener.
+#### Ejercicio 3
+
+
+**Requerimientos de Extensión**
+
+El diseño original tenía ciertas limitaciones que se hicieron evidentes con los nuevos requerimientos:
+
+1. **Flexibilidad insuficiente:** El diseño original no permite que una persona pueda tener múltiples roles (e.g., ser tanto `Profesor` como `Mentor`).
+2. **Dificultad para agregar nuevos roles:** En el diseño original, agregar un nuevo rol requeriría añadir nuevas subclases de `Person`, complicando la jerarquía de herencia.
+
+**Diseño Propuesto**
+
+1. **Nuevas Clases:**
+   - `Party`: Nueva clase abstracta que representa a una persona o entidad en el sistema.
+   - `Role`: Nueva clase que representa un rol que puede tener una `Party`.
+   - `Profesor` y `Student` ya no son subclases de `Person` sino que son `Role`.
+
+2. **Nuevas Relaciones:**
+   - `Party` puede tener uno o muchos `Role`.
+   - `Course` se relaciona con `Role` en lugar de con `Profesor` o `Student` directamente.
+
+**¿Por qué la Transformación no es un Refactoring?**
+
+1. **Se Añade Nueva Funcionalidad:**
+   - El nuevo diseño introduce la capacidad de que una `Party` pueda tener múltiples `Role` al mismo tiempo. Por ejemplo, una persona ahora puede ser `Profesor` y `Mentor`, lo cual no era posible en el diseño original.
+   - **Añadir esta funcionalidad va más allá del simple refactoring** porque un refactoring debe preservar el comportamiento existente sin agregar nuevas capacidades.
+
+2. **Cambio en el Modelo Conceptual:**
+   - El diseño original usaba una jerarquía de herencia para definir los roles (`Profesor` y `Student`) de una `Person`. El diseño propuesto cambia este modelo a una composición de `Party` y `Role`, lo que modifica significativamente cómo se entienden y representan las relaciones entre los objetos.
+   - Este cambio en la abstracción del modelo implica una nueva forma de operar y extender el sistema, más allá de lo que permite un refactoring.
+
+3. **Impacto en la Extensibilidad y Mantenimiento:**
+   - Aunque la propuesta mejora la extensibilidad y flexibilidad del sistema al permitir múltiples roles y facilita la adición de nuevos roles, estos cambios también introducen nuevas estructuras de datos y asociaciones que no existían en el diseño original. Esta mejora en la extensibilidad implica cambios significativos en cómo funciona el sistema.
+
+**Conclusión**
+
+La transformación propuesta **no es un refactoring** porque:
+
+- **Agrega nueva funcionalidad:** Permite que una `Party` tenga múltiples `Role`, lo cual es una nueva capacidad que no existía en el diseño original.
+- **Cambia la estructura conceptual del modelo:** Introduce nuevas clases (`Party` y `Role`) y modifica las relaciones existentes, lo que cambia el modelo conceptual del dominio.
+- **Impacto en el comportamiento:** Aunque la funcionalidad existente (e.g., cursos que tienen profesores y estudiantes) puede ser preservada, la forma de manejar esa funcionalidad cambia significativamente.
+
+**Alternativas de Diseño**
+
+En lugar de llamar a esto un "refactoring", sería más preciso considerarlo como una **reingeniería de diseño** o **rediseño del sistema** que permite nuevas funcionalidades y mejora la extensibilidad del sistema. Esto es parte de un proceso de mejora continua, pero no cae bajo la definición estricta de "refactoring" que implica no cambiar el comportamiento observable del sistema.
+
+Por lo tanto, la transformación es una mejora del diseño que agrega nuevas capacidades y flexibilidad, pero no puede considerarse un refactoring en sentido estricto.
+
+---
+
+### Ejercicio 4
