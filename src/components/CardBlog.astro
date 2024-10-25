@@ -4,14 +4,16 @@ const { url, image, title, date } = Astro.props;
 ---
 
 <a href={url ?? '#'} class="" data-test="article-card">
-    <div class="rounded-lg block overflow-hidden mb-4">
+    <div class="bg-gray-950 border-2 border-gray-900 ">
+    <div class=" block overflow-hidden mb-4">
         <figure class="w-auto h-auto md:h-[150px] object-cover">
             <img class="transition duration-300 ease-in-out hover:scale-110" src={image?.url ?? 'https://docs.astro.build/assets/arc.webp'} alt={title ?? 'Untitled Post'}>
         </figure>
     </div>
-    <div class="relative">
-        <h2 class="mt-3 text-xl font-semibold leading-6 text-white group-hover:text-zinc-600">
+    <div class="relative  flex items-center justify-center ">
+        <h2 class="mt-3 mb-3 text-xl font-semibold leading-6 text-white group-hover:text-zinc-600">
             {title ?? 'Untitled Post'}
         </h2>
     </div>
+</div>
 </a>

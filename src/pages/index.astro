@@ -1,14 +1,14 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import RowEntry2 from "../components/RowEntry2.astro";
-
+import Github from "../components/sections/GithubPopu.astro"
 import Link from "../components/icons/IconLink.astro"
 import LinkButton from "@/components/LinkButton.astro"
 import Education from "@/components/sections/Education.astro"
 import Projects from "@/components/sections/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/sections/Hero.astro"
-
+import Gallery from "../components/sections/Gallery.astro"
 import Youtube from "@/components/sections/Youtube.astro"
 import Trabajos from "@/components/sections/Trabajos.astro"
 import Video from "@/components/video/Video.astro"
@@ -28,12 +28,9 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-20  ">
+    <div class="space-y-20">
 
-      <SectionContainer id="timelabs">
-        <Title title="🎥 Timelabs De Algunos Proyectos 🎞️" emoji="💻"/>
-        <CustomImageScroll />
-      </SectionContainer>
+      
 
       <!-- <SectionContainer id="trabajos">
         <Title title="Trabajos en GLI-Sudamerica" emoji=""/>
@@ -77,35 +74,28 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
     </SectionContainer> -->
     
 
-    <!-- <SectionContainer id="blogs">
-      <Title title="👀 Blogs" emoji="🤖"/>
-      <Blogs/>
-    </SectionContainer> -->
+    <SectionContainer >
 
+      <Title title="Galleria" emoji="🤖"/>
+      <Gallery/>
+      <Title title="Repositorios Populares" emoji="🤖"/>
+      <Github/>
+      <Title title="🎥 Timelabs De Algunos Proyectos 🎞️" emoji="💻"/>
+      <CustomImageScroll />
+
+    </SectionContainer>
     
+    <SectionContainer id="timelabs">
+        
+      
+    </SectionContainer>
 
-     <SectionContainer id="education">
+     <!-- <SectionContainer id="education">
       <Title title="🎓 Educación" emoji="🎓"/>
       <Education />
-    </SectionContainer> 
-    <SectionContainer id="education">
-      <Title title="Experiencia Laboral" emoji=""/>
-      <div id="work" class="mb-2">
+    </SectionContainer>  -->
 
-        <RowEntry2
-          name="Septiembre 2023 - Actualidad"
-          title="Ingeniero en Testing"
-          subTitle="Gaming Labs Sudamerica"
-          description={[
-              "Desarrollé un software en Python usando Pandas, PyGetWindow, OpenPyXL, PyAutoGUI y Tkinter para automatizar la entrada de datos en máquinas de juego, mejorando notablemente la eficiencia, reduciendo el tiempo de pruebas de 60hs a solo 5hs con un margen de error del 0%.",
-              "Desarrollé una herramienta en Python utilizando la biblioteca Difflib para comparar dos bases de datos y detectar diferencias entre ellas, optimizando el tiempo de comparación de aproximadamente 5 horas a solo unos minutos. Para la gestión de archivos y directorios, implementé funciones con OS, y para la generación de informes detallados, utilicé Xlsxwriter, creando hojas de cálculo en Excel que resumen visualmente las modificaciones realizadas.",
-              "Desarrollé un programa en Python que proporciona comandos para formatear permisos a través de un archivo Excel. Este programa cuenta con una interfaz gráfica creada con Tkinter que permite cargar, consultar, setear y eliminar permisos de forma individual o recursiva. Utiliza bibliotecas como Pandas para la manipulación de datos y OpenPyXL para la creación y formateo de archivos Excel. Este software es aplicable a cualquier empresa que necesite gestionar permisos de forma eficiente y segura.",
-              "Desarrollé un programa en Python que extrae elementos HTML de una página web y los guarda en un archivo Excel para facilitar el trabajo del equipo de QA. Este programa utiliza bibliotecas como BeautifulSoup para el procesamiento de HTML, Pandas para la manipulación de datos y OpenPyXL para la creación y formateo de archivos Excel. Esto ha mejorado la eficiencia y precisión en la captura y manejo de datos relevantes.",
-              "Optimicé la gestión de permisos de usuario implementando y administrando Listas de Control de Acceso (ACL) en un entorno Linux. Posteriormente, automatice el proceso mediante Bash Scripting desarrollado en Vim, que asigna eficientemente los permisos necesarios a los grupos correspondientes en toda la infraestructura empresarial",
-          ]}
-          />
-      </div>
-    </SectionContainer>
+    
 
     <SectionContainer id="videos">
       <Title title="Youtube" emoji=""/>
