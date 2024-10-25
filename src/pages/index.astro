@@ -1,18 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro"
-import RowEntry2 from "../components/RowEntry2.astro";
 import Github from "../components/sections/GithubPopu.astro"
-import Link from "../components/icons/IconLink.astro"
-import LinkButton from "@/components/LinkButton.astro"
-import Education from "@/components/sections/Education.astro"
-import Projects from "@/components/sections/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/sections/Hero.astro"
-import Gallery from "../components/sections/Gallery.astro"
 import Youtube from "@/components/sections/Youtube.astro"
-import Trabajos from "@/components/sections/Trabajos.astro"
-import Video from "@/components/video/Video.astro"
-import Blogs from "../components/sections/BlogsRedes.astro"
 import Title from "@/components/Title.astro"
 import CustomImageScroll from "../components/CustomImageScroll.astro";
 
@@ -28,79 +19,18 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
       </slot>
     </Hero>
     </SectionContainer>
-    <div class="space-y-20">
-
-      
-
-      <!-- <SectionContainer id="trabajos">
-        <Title title="Trabajos en GLI-Sudamerica" emoji=""/>
-        <Trabajos />
-      </SectionContainer> -->
-
-    <!-- <SectionContainer id="proyectos">
-      <Title title=" 🗃️ Trabajos Realizados con Python" emoji="🗃️"/>
-      <Projects />
-    </SectionContainer> -->
-
-    <!-- <SectionContainer id="emuti">
-      <Title title="Emuti | Gaming Labs Sudamerica" emoji="⌨️"/>
-      <Video path="/gif/emuti.mp4"/>
-    </SectionContainer>
-
-    <SectionContainer id="Modify SQL">
-      <Title title="Modify SQL | Gaming Labs Sudamerica" emoji="⌨️"/>
-      <Video path="/gif/sql.mp4"/>
-    </SectionContainer>
-
-    <SectionContainer id="ACL Manager">
-      <Title title="ACL Manager | Gaming Labs Sudamerica" emoji="⌨️"/>
-      <Video path="/gif/ACL_Manager.mp4"/>
-    </SectionContainer> -->
-    
-    <!-- <SectionContainer id="experiencia">
-      
-      <div class="flex flex-col items-center justify-center mb-6">
-        <div class="w-full h-1 bg-yellow-500 my-2"></div>
-        <Title title="🗃️ Ver Experiencia completa" emoji="💻"/>
-        
-        <div class="flex font-bold gap-x-3 text-gray-500 items-center justify-center">
-          <LinkButton href="/resumeES">
-            <Link />
-            Curriculum
-          </LinkButton>
-        </div>
-        <div class="w-full h-1 bg-yellow-500 my-2"></div>
-      </div>
-    </SectionContainer> -->
-    
 
     <SectionContainer >
-
-      <Title title="Galleria" emoji="🤖"/>
-      <Gallery/>
       <Title title="Repositorios Populares" emoji="🤖"/>
       <Github/>
       <Title title="🎥 Timelabs De Algunos Proyectos 🎞️" emoji="💻"/>
       <CustomImageScroll />
-
     </SectionContainer>
-    
-    <SectionContainer id="timelabs">
         
-      
-    </SectionContainer>
-
-     <!-- <SectionContainer id="education">
-      <Title title="🎓 Educación" emoji="🎓"/>
-      <Education />
-    </SectionContainer>  -->
-
-    
-
     <SectionContainer id="videos">
       <Title title="Youtube" emoji=""/>
       <Youtube />
     </SectionContainer>
-  </div>
+
   </main>
 </Layout>

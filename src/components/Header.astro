@@ -40,13 +40,9 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 left-0 right-0  flex items-center justify-between mx-auto mt-5 gap-x-2 border-4 border-black rounded-2xl  bg-stone-900 px-12 shadow-md w-fit z-[9999] "
->
-  <nav
-    class="flex px-3 text-sm font-bold rounded-full text-white justify-center items-center"
-  >
-    {
-      navItems.map((link) => (
+  class="fixed top-0 left-0 right-0  flex items-center justify-between mx-auto mt-5 gap-x-2 border-4 border-black rounded-2xl  bg-stone-900 px-12 shadow-md w-fit z-[9999] ">
+  <nav class="flex px-3 text-sm font-bold rounded-full text-white justify-center items-center">
+    {navItems.map((link) => (
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 text-white"
           aria-label={link.label}
@@ -61,44 +57,42 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
+    const sections = document.querySelectorAll("section");
+    const navLinks = Array.from(document.querySelectorAll("header nav a"));
+    const linkMap = new Map();
 
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
-            } else {
-              item.classList.remove("text-yellow-500")
-            }
-          })
+    navLinks.forEach((link) => {
+      const label:any = link.getAttribute("aria-label");
+      const section = document.getElementById(label);
+      if (section) linkMap.set(section, link);
+    });
+
+    const callback = (entries:any) => {
+      entries.forEach((entry:any) => {
+        const link = linkMap.get(entry.target);
+        if (link && entry.isIntersecting) {
+          navLinks.forEach((item) => item.classList.remove("text-yellow-500"));
+          link.classList.add("text-yellow-500");
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
+    sections.forEach((section) => observer.observe(section));
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
+        sections.forEach((section) => observer.observe(section));
       }
-    }
-  })
+    };
+  });
 </script>
 
 <style>
@@ -107,10 +101,4 @@ const navItems = [
     animation-timeline: scroll();
     animation-range: 0 100px;
   }
-
-  /* @keyframes nav-shadown {
-    to {
-      @apply   bg-custom-color2 ;
-    }
-  } */
 </style>

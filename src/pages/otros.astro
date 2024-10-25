@@ -2,10 +2,10 @@
 import Layout from "../layouts/Layout.astro"
 import SectionContainer from "../components/SectionContainer.astro"
 import Title from "../components/Title.astro"
-
 import Gallery from "../components/sections/Gallery.astro"
 import Certificaciones from "../components/sections/Certificaciones.astro"
 import Presentaciones from "../components/sections/Presentaciones.astro"
+import Hero from "@/components/sections/Hero.astro"
 
 ---
 
@@ -14,19 +14,20 @@ import Presentaciones from "../components/sections/Presentaciones.astro"
   description="Backend Developer Python"
 >
   <main class="px-4 ">
-    <div class="space-y-20">
-
-      <SectionContainer class="py-16 md:py-36">
+      <SectionContainer class=" md:py-16 ">
+        <Hero>
+        </slot>
+      </Hero>
+      </SectionContainer>
+      <SectionContainer >
         <Title title="Presentaciones" emoji="🤖"/>
         <Presentaciones/>
-        <br ><div class="h-4"></div>
         <Title title="Galleria" emoji="🤖"/>
         <Gallery/>
         <br ><div class="h-4"></div>
         <Title title="Certificados" emoji="🤖"/>
         <Certificaciones/>
       </SectionContainer>
-  </div>
   </main>
 </Layout>
 

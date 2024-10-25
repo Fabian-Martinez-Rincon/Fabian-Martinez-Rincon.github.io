@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro"
 import SectionContainer from "../../components/SectionContainer.astro"
 import Blogs from "../../components/sections/Blogs.astro"
 import Title from "../../components/Title.astro"
-
+import Hero from "@/components/sections/Hero.astro"
 ---
 
 <Layout
@@ -12,8 +12,13 @@ import Title from "../../components/Title.astro"
 >
 
   <main class="px-4 ">
-    <div class="space-y-20">
-      <SectionContainer class="mt-16 py-8 md:py-12">
+    <SectionContainer class=" md:py-16 ">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+
+      <SectionContainer class="">
         <Title title="Linux" emoji="🤖"/>
         <Blogs/>
         <br ><div class="h-4"></div>
