@@ -58,8 +58,7 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16 pt-10">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    PROJECTS.map(({ image, title, link, github }) => (
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 rounded-xl lg:border ">
       <img alt="" class="object-cover object-top w-full h-56  md:scale-110 border-4 border-black" loading="lazy" src={image} />
