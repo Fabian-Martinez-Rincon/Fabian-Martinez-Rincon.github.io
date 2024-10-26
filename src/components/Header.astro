@@ -1,4 +1,6 @@
 ---
+import { url } from "dist/chunks/pages/dbd-Final_BOeyjueU.mjs";
+
 
 const navItems = [
   {
@@ -7,19 +9,26 @@ const navItems = [
     url: "/",
   },
   {
-    title: "📚Facultad",
-    label: "facultad",
-    url: "/tags/facultad",
-  },
-  {
-    title: "🐧Linux",
-    label: "linux",
-    url: "/tags/linux",
-  },
-  {
-    title: "🐍Python",
-    label: "python",
-    url: "/tags/python",
+    title: "Blogs",
+    label: "blogs",
+    url: "/tags/blog",
+    subItems: [
+      {
+        title: "📚Facultad",
+        label: "facultad",
+        url: "/tags/facultad",
+      },
+      {
+        title: "🐧Linux",
+        label: "linux",
+        url: "/tags/linux",
+      },
+      {
+        title: "🐍Python",
+        label: "python",
+        url: "/tags/python",
+      },
+    ],
   },
   {
     title: "Proyectos",
@@ -28,21 +37,75 @@ const navItems = [
   },
   {
     title: "Otros",
-    label: "Otros",
+    label: "otros",
     url: "/otros",
   },
   {
     title: "Curriculum",
-    label: "Curriculum",
+    label: "curriculum",
     url: "/resumeES",
   },
-]
+];
+
 ---
 
+<style>
+  .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  box-shadow:  #f9f9f9;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #171515;
+}
+
+</style>
+
 <header
-  class="fixed top-0 left-0 right-0  flex items-center justify-between mx-auto mt-5 gap-x-2 border-4 border-black rounded-2xl  bg-stone-900 px-12 shadow-md w-fit z-[9999] ">
+  class="fixed top-0 left-0 right-0 flex items-center justify-between mx-auto mt-5 gap-x-2 border-4 border-black rounded-2xl bg-stone-900 px-12 shadow-md w-fit z-[9999]">
   <nav class="flex px-3 text-sm font-bold rounded-full text-white justify-center items-center">
-    {navItems.map((link) => (
+    {navItems.map((link) =>
+      link.subItems ? (
+        <div class="dropdown relative">
+          <a
+            class="relative block px-2 py-2 transition hover:text-yellow-500 text-white"
+            aria-label={link.label}
+            href={link.url}
+          >
+            {link.title}
+          </a>
+          <div class="dropdown-content absolute hidden bg-stone-800 text-white">
+            {link.subItems.map(subItem => (
+              <a
+                class="block px-2 py-2 hover:text-yellow-500"
+                aria-label={subItem.label}
+                href={subItem.url}
+              >
+                {subItem.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
         <a
           class="relative block px-2 py-2 transition hover:text-yellow-500 text-white"
           aria-label={link.label}
@@ -50,10 +113,11 @@ const navItems = [
         >
           {link.title}
         </a>
-      ))
-    }
+      )
+    )}
   </nav>
 </header>
+
 
 <script>
   document.addEventListener("astro:page-load", () => {
