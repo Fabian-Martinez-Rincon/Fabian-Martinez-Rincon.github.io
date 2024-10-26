@@ -117,12 +117,12 @@ const COLORS = [
     {REPOS.map((repo, i) => (
         Object.entries(repo).map(([key, value]) => (
             <h2
-            class= {`flex items-center mb-6 mt-6 text-2xl font-bold gap-x-1 ${(COLORS[i])} justify-center`}
+            class= {`flex items-center mb-6 mt-6 text-2xl font-bold gap-x-0 ${(COLORS[i])} justify-center`}
             >
            Materias de {key}
             </h2>
             <ul
-            class="mx-auto grid grid-cols-1 gap-x-2 gap-y-2 lg:mx-0 lg:max-w lg:grid-cols-3 md:gap-4 md:grid-cols-2"
+            class="mx-auto grid grid-cols-1 gap-x-0 gap-y-0 lg:mx-0 lg:max-w lg:grid-cols-3 md:gap-4 md:grid-cols-2"
             >
             {value.map((r:any) => (
                 <li class="">
