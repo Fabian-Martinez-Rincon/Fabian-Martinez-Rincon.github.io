@@ -3,7 +3,34 @@ import Layout from "../../layouts/Layout.astro"
 import SectionContainer from "../../components/SectionContainer.astro"
 import Blogs from "../../components/sections/Blogs.astro"
 import Title from "../../components/Title.astro"
-import Hero from "@/components/sections/Hero.astro"
+
+
+import BlogsPersonal from "../../components/sections/BlogsPersonal.astro"
+
+
+const allPosts = await Astro.glob('../*postsFacu*/**/*.md');
+
+type Post = {
+  frontmatter: {
+    title: string;
+    category?: string;
+  };
+  url: string;
+};
+
+type CategorizedPosts = {
+  [key: string]: Post[];
+};
+
+const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) => {
+  const category = post.frontmatter.category || "Otros";
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  acc[category].push(post);
+  return acc;
+}, {});
+
 ---
 
 <Layout
@@ -12,12 +39,21 @@ import Hero from "@/components/sections/Hero.astro"
 >
 
   <main class="px-4 ">
-    <SectionContainer class=" md:py-16 ">
-      <Hero>
-      </slot>
-    </Hero>
-    </SectionContainer>
-
+    <SectionContainer>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {Object.keys(categorizedPosts).map((category) => (
+        <div>
+          <ul class="ml-4 list-disc  text-gray-200">
+            {categorizedPosts[category].map((post) => (
+              <li class="mb-1">
+                <a href={post.url} class="text-blue-500 hover:underline">{post.frontmatter.title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </SectionContainer>
       <SectionContainer class="">
         <Title title="Linux" emoji="🤖"/>
         <Blogs/>

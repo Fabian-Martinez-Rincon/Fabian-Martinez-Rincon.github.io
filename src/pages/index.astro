@@ -2,7 +2,6 @@
 import Layout from "@/layouts/Layout.astro"
 import Github from "../components/sections/GithubPopu.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/sections/Hero.astro"
 import Youtube from "@/components/sections/Youtube.astro"
 import Title from "@/components/Title.astro"
 import CustomImageScroll from "../components/CustomImageScroll.astro";
@@ -14,15 +13,13 @@ import CustomImageScroll from "../components/CustomImageScroll.astro";
   description="Backend Developer Python"
 >
   <main class="px-4 ">
-    <SectionContainer class=" md:py-16 ">
-      <Hero>
-      </slot>
-    </Hero>
-    </SectionContainer>
+
 
     <SectionContainer >
+
       <Title title="Repositorios Populares" emoji="🤖"/>
       <Github/>
+
       <Title title="🎥 Timelabs De Algunos Proyectos 🎞️" emoji="💻"/>
       <CustomImageScroll />
     </SectionContainer>

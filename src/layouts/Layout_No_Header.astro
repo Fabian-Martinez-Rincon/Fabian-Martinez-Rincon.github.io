@@ -4,8 +4,7 @@ import "@fontsource-variable/onest"
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/sections/Hero.astro"
+
 
 interface Props {
   title: string
@@ -35,11 +34,6 @@ const { description, title } = Astro.props
     </div>
 
     <Header />
-    <SectionContainer class="mt-20">
-      <Hero>
-      </slot>
-    </Hero>
-    </SectionContainer>
     <slot />
     <Footer />
     <style is:global>

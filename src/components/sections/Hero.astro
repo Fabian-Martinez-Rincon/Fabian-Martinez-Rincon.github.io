@@ -1,9 +1,7 @@
 ---
-const personalImageAlt = "Fabian Martinez Rincon"
 import LinkedInIcon from "@/components/icons/IconLinkedIn.astro"
 import GithubIcon from "@/components/icons/IconGitHub.astro"
 import MailIcon from "@/components/icons/IconMail.astro"
-import Link from "../icons/IconLink.astro"
 import LinkButton from "../LinkButton.astro"
 ---
 
@@ -36,49 +34,43 @@ import LinkButton from "../LinkButton.astro"
   }
 </style> 
 
-<div id="marco" class="relative  text-custom-text p-4 ">
+<div id="marco" class="relative  text-custom-text  ">
+  <div class="m-10">
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl items-center justify-center flex " >El Rincon de Fabo</h1>
+    <h2 class="text-2xl  text-yellow-400  text-center">Data Engineer</h2>
 
-  <div class="">
+    <div class=" gap-4 items-center justify-center">
+        <div class="relative flex items-center justify-center">
+            <!-- Imagen principal centrada -->
+            <img
+            class="shadow-lg object-cover w-64 h-full border-4 border-gray-900"
+            src="/vegeta.gif"
+            alt="{personalImageAlt}"
+            />
+            <!-- Imagen pequeña en la esquina superior izquierda -->
+            <img
+            class="absolute w-12 h-12 border-2 border-gray-600 rounded-full top-0 left-0 transform translate-x-64 -translate-y-2"
+            src="/f.svg"
+            alt="Small overlay image"
+            />
+        </div>
+        <div class="flex items-center justify-center">
+            <LinkButton href="https://github.com/Fabian-Martinez-Rincon">
+            <GithubIcon class="size-6 flex " />
 
-  <h1 class="text-4xl font-bold tracking-tight sm:text-5xl items-center justify-center flex m-3" >El Rincon de Fabo</h1>
+            </LinkButton>
+            <LinkButton href="https://linkedin.com/in/fabian-martinez-rincon">
+            <LinkedInIcon class="size-6 flex" />
 
-  <h2 class="text-2xl  text-yellow-400  text-center">Data Engineer</h2>
+            </LinkButton>
 
-
-
-  <div class="flex gap-4 items-center justify-center">
-    <div class="relative ">
-      <!-- Imagen principal -->
-      <img
-        class="shadow-lg object-cover w-full h-full border-4 border-black"
-        src="/newton.jpg"
-        alt="{personalImageAlt}"
-      />
-      <!-- Imagen pequeña en la esquina superior izquierda -->
-      <img
-        class="absolute w-12 h-12 border-2 border-gray-600 rounded-full top-0 left-0 transform -translate-x-2 -translate-y-2"
-        src="/f.svg"
-        alt="Small overlay image"
-      />
-    </div>
+            <LinkButton href="mailto:fabianmartinezrincon.123@gmail.commailto:fabianmartinezrincon.123@gmail.com">
+            <MailIcon class="size-6 flex" />
+            </LinkButton>
+        </div>
+      </div>
     
-      <p class="text-custom-text ">Trabajo como Data Engineer en BB-Media, especializado en <strong class=" text-yellow-300">Web Scaping</strong> usando Python, MongoDB, Insomia y demas Tecnologias. Tambien soy Tecnico Electronico y Estoy cursando 4to año de Licenciatura en Sistemas en UNLP Informatica <br class="">
-        <br class="">
-        
-      <LinkButton href="https://github.com/Fabian-Martinez-Rincon">
-        <GithubIcon class="size-6 flex " />
-
-      </LinkButton>
-      <LinkButton href="https://linkedin.com/in/fabian-martinez-rincon">
-        <LinkedInIcon class="size-6 flex" />
-        
-      </LinkButton>
-
-      <LinkButton href="mailto:fabianmartinezrincon.123@gmail.commailto:fabianmartinezrincon.123@gmail.com">
-        <MailIcon class="size-6 flex" />
-      </LinkButton>
-    </p>
-</div>
-</div>
+      <p class="text-custom-text ">Trabajo como Data Engineer en BB-Media, especializado en <strong class=" text-yellow-300">Web Scaping</strong> usando Python, MongoDB, Insomia y demas Tecnologias. Tambien soy Tecnico y Estoy cursando 4to año de Licenciatura en Sistemas en UNLP Informatica </p>
+  </div>
 </div>
 
