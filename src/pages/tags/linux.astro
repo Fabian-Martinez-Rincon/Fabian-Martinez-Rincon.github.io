@@ -4,10 +4,6 @@ import SectionContainer from "../../components/SectionContainer.astro"
 import Blogs from "../../components/sections/Blogs.astro"
 import Title from "../../components/Title.astro"
 
-
-import BlogsPersonal from "../../components/sections/BlogsPersonal.astro"
-
-
 const allPosts = await Astro.glob('../*postsFacu*/**/*.md');
 
 type Post = {

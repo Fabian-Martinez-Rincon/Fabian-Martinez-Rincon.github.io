@@ -41,16 +41,6 @@ const COLORS = [
     "text-blue-500",
 ]
 
-const COLORS_TARGET = [
-    "BBF7D0",
-    "BFDBFE",
-    "F3E6A7",
-]
-
-function getRandomColor() {
-    const colors = Object.values(COLORS_TARGET);
-    return colors[Math.floor(Math.random() * colors.length)];
-}
 
 ---
 
@@ -58,7 +48,7 @@ function getRandomColor() {
 
 <section class=" max-w-screen-lg mx-auto pb-12">
     {REPOS.map((repo, i) => (
-        Object.entries(repo).map(([key, value]) => (
+        Object.entries(repo).map(([_, value]) => (
             
             <ul
             class="mx-auto grid grid-cols-1 gap-x-2 gap-y-2 lg:mx-0 lg:max-w lg:grid-cols-3 md:gap-4 md:grid-cols-2"

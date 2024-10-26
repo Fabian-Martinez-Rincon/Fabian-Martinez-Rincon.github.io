@@ -37,15 +37,15 @@ MINUTO HORA DIA_DEL_MES MES DIA_DE_LA_SEMANA COMANDO
 ### Ejemplos de Crontab
 
 1. **Ejecutar un script todos los días a medianoche**:
-   ```cron
+   ```
    0 0 * * * /ruta/al/script.sh
    ```
 2. **Realizar un respaldo el primer día de cada mes a las 3 AM**:
-   ```cron
+   ```
    0 3 1 * * /ruta/al/script_de_respaldo.sh
    ```
 3. **Ejecutar una tarea cada 15 minutos**:
-   ```cron
+   ```
    */15 * * * * /ruta/al/script_cada_15_minutos.sh
    ```
 
@@ -61,7 +61,7 @@ Cuando se edita un crontab, se utiliza el editor definido por la variable de ent
 
 Puedes definir variables de entorno al inicio del archivo crontab para usarlas en los comandos programados. Por ejemplo:
 
-```cron
+```
 SHELL=/bin/bash
 PATH=/usr/bin:/bin
 MAILTO=usuario@example.com
