@@ -4,28 +4,28 @@ import SectionContainer from "../../components/SectionContainer.astro"
 import Blogs from "../../components/sections/Blogs.astro"
 import Title from "../../components/Title.astro"
 
-const allPosts = await Astro.glob('../*postsFacu*/**/*.md');
+// const allPosts = await Astro.glob('../*postsFacu*/**/*.md');
 
-type Post = {
-  frontmatter: {
-    title: string;
-    category?: string;
-  };
-  url: string;
-};
+// type Post = {
+//   frontmatter: {
+//     title: string;
+//     category?: string;
+//   };
+//   url: string;
+// };
 
-type CategorizedPosts = {
-  [key: string]: Post[];
-};
+// type CategorizedPosts = {
+//   [key: string]: Post[];
+// };
 
-const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) => {
-  const category = post.frontmatter.category || "Otros";
-  if (!acc[category]) {
-    acc[category] = [];
-  }
-  acc[category].push(post);
-  return acc;
-}, {});
+// const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) => {
+//   const category = post.frontmatter.category || "Otros";
+//   if (!acc[category]) {
+//     acc[category] = [];
+//   }
+//   acc[category].push(post);
+//   return acc;
+// }, {});
 
 ---
 
@@ -35,7 +35,7 @@ const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) =
 >
 
   <main class="px-4 ">
-    <SectionContainer>
+    <!-- <SectionContainer>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {Object.keys(categorizedPosts).map((category) => (
         <div>
@@ -49,7 +49,7 @@ const categorizedPosts = allPosts.reduce<CategorizedPosts>((acc:any, post:any) =
         </div>
       ))}
     </div>
-  </SectionContainer>
+  </SectionContainer> -->
       <SectionContainer class="">
         <Title title="Linux"/>
         <Blogs/>
