@@ -47,12 +47,22 @@ import LinkButton from "../LinkButton.astro"
 
 
   <div class="flex gap-4 items-center justify-center">
-    <img
-      class="shadow-lg object-cover w-48 h-48 border-4 border-black rounded-full" 
-      src="/fabian2.png"
-      alt={personalImageAlt}
-    />
-      <p class="text-custom-text ">Me especializo en la automatización de tareas usando <strong class=" text-yellow-300">Python</strong>. Trato de documentar absolutamente todo lo que hago, y se ve reflejado en mi GitHub. Mis conocimientos no quedan solo en lo teórico, ya que trato de encontrar siempre una forma de aplicarlo en el trabajo o en algún proyecto. <br class="">
+    <div class="relative ">
+      <!-- Imagen principal -->
+      <img
+        class="shadow-lg object-cover w-full h-full border-4 border-black rounded-full"
+        src="/fabian22.png"
+        alt="{personalImageAlt}"
+      />
+      <!-- Imagen pequeña en la esquina superior izquierda -->
+      <img
+        class="absolute w-12 h-12 border-2 border-white rounded-full top-0 left-0 transform -translate-x-2 -translate-y-2"
+        src="/f.svg"
+        alt="Small overlay image"
+      />
+    </div>
+    
+      <p class="text-custom-text ">Trabajo como Data Engineer en BB-Media, especializado en <strong class=" text-yellow-300">Web Scaping</strong> usando Python, MongoDB, Insomia y demas Tecnologias. Tambien soy Tecnico Electronico y Estoy cursando 4to año de Licenciatura en Sistemas en UNLP Informatica <br class="">
         <br class="">
         
       <LinkButton href="https://github.com/Fabian-Martinez-Rincon">
