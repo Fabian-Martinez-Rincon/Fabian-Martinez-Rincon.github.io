@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro"
 import SectionContainer from "../../components/SectionContainer.astro"
 import BlogsProyectosOtros from "../../components/sections/BlogsProyectosOtros.astro"
 import BlogsProyectosWeb from "../../components/sections/BlogsProyectosWeb.astro"
+import BlogsProyectosPython from "../../components/sections/BlogsProyectosPython.astro"
 import Title from "../../components/Title.astro"
 import Trabajos from "@/components/sections/Trabajos.astro"
 
@@ -15,6 +16,8 @@ import Trabajos from "@/components/sections/Trabajos.astro"
 
   <main class="px-4 ">
     <SectionContainer>
+      <Title title="Proyectos Python"/>
+      <BlogsProyectosPython/>
       <Title title="Proyectos Webs"/>
       <BlogsProyectosWeb/>
       <Title title="Otros Proyectos"/>
