@@ -11,7 +11,7 @@ tags: ["Bash", "Linux", "Comandos"]
 category: Proyectos Python
 ---
 
-Claro, el control de flujo en Python permite dirigir el curso de ejecución del programa basándose en condiciones y repeticiones. Esto se logra mediante el uso de **condicionales** y **bucles**. A continuación, te explico ambos conceptos en detalle:
+
 
 ## Condicionales
 
