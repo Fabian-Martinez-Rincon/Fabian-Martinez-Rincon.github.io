@@ -11,6 +11,10 @@ tags: ["ACL", "Permisos", "Linux"]
 category: Linux
 ---
 
+
+
+---
+
 - [Bin](#bin)
 - [Boot](#boot)
 - [Dev](#dev)
