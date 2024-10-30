@@ -11,6 +11,13 @@ tags: [""]
 category: Facultad
 ---
 
+Bueno, como tengo que repasar, voy a emprezar con las clases
+
+
+
+
+---
+
 
 <details><summary>
 1.	Explique los métodos de pasaje de argumentos a procedimientos o funciones. 
