@@ -11,8 +11,201 @@ tags: [""]
 category: Facultad
 ---
 
+- [Clase 1 Subrutinas](#clase-1-subrutinas)
+- [Clase 2 Subrutinas](#clase-2-subrutinas)
+
+---
+
+### Clase 1 Subrutinas
+
+Temas de la clase
+
+Programas, Subrutinas, Pasaje de Parámetros, Funcionamiento de la pila, Push/Pop,
+
+<details><summary>Subrutinas</summary>
+
+- Misma idea de los procedimientos en Pascal.
+- También tiene una definición determinada. Encabezamiento y final. Cuerpo del procedimiento (instrucciones).
+- Vamos a ver esto para el simulador.
+
+Lo unico que es fijo es los 2000h que es el programa principal
+
+![image](https://github.com/user-attachments/assets/e610bfce-e313-4679-990c-3134eaf1dda6)
+</details>
+
+<details><summary>Pasaje de parámetros a subrutinas</summary>
+
+- Procedimientos (subrutinas), en general requieren datos de entrada y proveen datos de salidas.
+- Parámetros son estos datos pasados a y desde el procedimiento.
+- Estos parámetros pueden ser pasados de dos maneras:
+  - Por valor
+  - Por referencia
+
+**Parámetros por valor**
+
+- Es eso: se pasa el valor de una variable al procedimiento.
+- Son sólo parámetros de entrada.
+- Independientemente del uso de este valor por parte del procedimiento, éste no puede ser modificado.
+
+**Parámetros por referencia**
+
+> Esto es util cuando tenemos muchos parametros ya que en lugar de pasar muchos parametros pasamos la direccion de memoria de un arreglo.
+
+- Aquí es pasada la dirección de la variable y no su valor.
+- Es necesario cuando hay que modificar el valor del parámetro (retorno).
+- En general menos eficiente que pasar por valor. Tenemos la dir y hay que acceder a memoria para buscar el dato.
+- Pero más eficiente cuando hay que transferir un arreglo datos entre proc. Así se pasa la dir del arreglo.
+
+</details>
+
+<details><summary>¿Dónde se pasan los parámetros?</summary>
+
+- **Vía registros**
+  - El número de registros es la principal limitación
+  - Es importante documentar que registros se usan
+
+- **Vía memoria**
+  - Variables definidas en el programa (“globales”)
+  - Se usa un área definida de memoria (RAM).
+  - Difícil de estandarizar
+
+- **Vía pila (stack)**
+  - Es el método más ampliamente usado.
+  - La pila (o stack) es una zona de memoria (RAM) destinada a este uso específico.
+  - Lo usa la mayoría de los lenguajes de alto nivel.
+  - Independiente de memoria y registros.
+  - Hay que comprender bien cómo funciona porque la pila (stack) es usada por el usuario y por el sistema.
+  - Aunque es más complicado, en general los registros son recursos muy preciados.
+
+</details>
+
+<details><summary>Funcionamiento de la Pila</summary>
+
+- Zona de memoria destinada a un uso específico
+  - `Uso del sistema`: salva la dirección de retorno cuando es llamada una subrutina o se produce una interrupción por hardware
+  - `Uso del usuario`: pasaje de parámetros
+
+- Cada vez que se ejecuta un programa, el SO inicializa el reg SP apuntando a la pila
+  - El simulador inicializa SP=8000H
+
+</details>
+
+
+<details><summary>Operaciones de apilar/desapilar</summary>
+
+- **PUSH:** apila datos. El SP apunta al último dato almacenado, por lo tanto primero se decrementa y luego almacena el dato.
+- **POP:** desapila datos. Desapila el dato y luego incrementa el SP. Operación inversa a la anterior.
+- **PUSH y POP** apilan y desapilan datos de 16 bits (2 bytes).
+
+| Push                           | Pop                                                                                                                        |
+|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| ![image](https://github.com/user-attachments/assets/35f603af-5a8f-473b-9e34-c615747fd2fe) | ![image](https://github.com/user-attachments/assets/23a62094-7be9-47c8-bd5b-28d95ef60f98) |
+
+![image](https://github.com/user-attachments/assets/e666e366-481a-4ce0-8294-11b6783ee713)
+
+![image](https://github.com/user-attachments/assets/e2750d05-7327-4990-818c-050405b2fc5e)
+
+</details>
+
+<details><summary>Llamada al procedimiento y pasaje de parámetros por pila</summary>
+
+En el programa principal
+
+```
+...
+Push Parámetro 1
+Push Parámetro 2
+Call    Nombre
+...
+```
+
+**Uso de registros con la pila (1)**
+
+- SP = Stack pointer (Puntero de pila).
+- Apunta al último dato almacenado en la pila:
+  - Por el usuario con push y pop
+  - Por el sistema al salvar la dirección de retorno en el llamado a una subrutina o cuando se produce una interrupción (la veremos más adelante).
+
+
+**Uso de registros con la pila (2)**
+
+- BP = Base pointer (Puntero base). Como SP no es un registro base o índice, no puede ser usado para direccionar entre corchetes. No está permitido [SP].
+- Para direccionar la pila se usa BP. Así si se ejecutan instrucciones push y pop se modifica SP; si hay una llamada a procedimiento también se modifica SP.
+- BP está manejado por el usuario.
+
+> BX es como BP pero solo para usar con la pila
+
+Se pueden apilar direcciones sin usar un pull
+
+Nosotros como programadores movemos el stack pointer con push y pop y el sistema lol mueve cada vez que hay un `call` y un `ret` 
+
+![image](https://github.com/user-attachments/assets/05f3daa7-d559-46c0-b485-a67ca4c6b089)
+
+</details>
+
+<details><summary>Sumar dos datos pasados Por en Registros y Por Valor</summary>
+
+![image](https://github.com/user-attachments/assets/f7cd8a85-7415-426c-92c8-8ef5b8115a84)
+</details>
+
+<details><summary>Lo mismo de arriba pero por referencia</summary>
+
+![image](https://github.com/user-attachments/assets/76f96354-ce7a-467a-a217-baf8c99e069f)
+![image](https://github.com/user-attachments/assets/3078e1dc-471d-40ce-8087-4a12b7d24fbc)
+![image](https://github.com/user-attachments/assets/ca74c369-d6e1-4946-9832-44423aec5a99)
+![image](https://github.com/user-attachments/assets/1eb4ecf7-3f01-4047-8e8c-6887f15c7a5a)
+![image](https://github.com/user-attachments/assets/cf940e82-bf59-416c-9401-de125e23f94b)
+</details>
+
+<details><summary>Una suma donde los parametros se pansan por valor en la PILA</summary>
+
+![image](https://github.com/user-attachments/assets/51928990-cc8a-45a3-9b83-4364146c1f70)
+![image](https://github.com/user-attachments/assets/10223f55-8c1e-453c-aab6-1d52eeb57da5)
+![image](https://github.com/user-attachments/assets/92fd10f0-1f1b-4c91-a793-82fe3ef1ea23)
+![image](https://github.com/user-attachments/assets/99a72b26-3ce9-4612-89c0-2fb9c7aee75d)
+
+Aca BX se salva pero no es necesario si no se pide en el enunciado
+
+![image](https://github.com/user-attachments/assets/e1dfa43d-8b36-4ede-aa09-8bd4c158752b)
+![image](https://github.com/user-attachments/assets/c9391061-086d-4e78-88fa-a0a355ad02bc)
+
+Porque BX y no SP?, Porque es el unico registro que permite el direccionamiento indirecto (Lo de poner corchetes y quedarnos con los valores basicamente)
+
+![image](https://github.com/user-attachments/assets/6b9f2e5d-d7a8-494d-9444-9462952385cb)
+![image](https://github.com/user-attachments/assets/0c47184e-2850-4913-aa93-9e3ca5f5753f)
+![image](https://github.com/user-attachments/assets/7e6acb24-e661-4ed0-bde5-d05b664a53ab)
+![image](https://github.com/user-attachments/assets/bf3ae40f-8fd8-4bf4-9390-150e73af7354)
+![image](https://github.com/user-attachments/assets/0a8647be-19ae-410b-9d34-9894df1f25b6)
+![image](https://github.com/user-attachments/assets/9736f941-af1b-473a-9869-3b0a724f40b1)
+![image](https://github.com/user-attachments/assets/eb7a4368-09d4-4975-9658-ebe109074150)
+</details>
+
+---
+
+### Clase 2 Subrutinas
+
+
+
+
+
+
+---
+
 Bueno, como tengo que repasar, voy a emprezar con las clases
 
+### Final 1
+
+#### Pregunta 1
+a) ¿Qué métodos para pasaje de argumentos podemos utilizar en una computadora?
+b) ¿Cuáles son las diferenciasa en la terminación de una subrutina y un gestor de interrupción?
+
+#### Pregunta 2
+
+a) Esquematice y describa la estructura interna de un Controlador Programable de Interrupciones.
+b) Describa cómo funciona la gestión de E/S programa con espera de Respuesta
+
+#### Pregunta 3
+a) ¿
 
 
 
