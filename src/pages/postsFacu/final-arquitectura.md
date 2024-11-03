@@ -184,6 +184,28 @@ Porque BX y no SP?, Porque es el unico registro que permite el direccionamiento 
 
 ### Clase 2 Subrutinas
 
+<details><summary>Ejercicio 1</summary>
+
+![image](https://github.com/user-attachments/assets/8d5525f5-bd08-49bc-90ea-56efe455819a)
+</details>
+
+<details><summary>Ejercicio 2</summary>
+
+![image](https://github.com/user-attachments/assets/82a9eb6b-781f-450e-990f-de4128e1cd71)
+![image](https://github.com/user-attachments/assets/53c6e12f-3415-47db-8330-8b01b6b05b5f)
+</details>
+
+<details><summary>Ejercicio 3</summary>
+
+> Algunos numeros de aca estan mal igual, no hace falta ver este ejercicio.
+
+![image](https://github.com/user-attachments/assets/33000a6a-76c2-4eae-9098-d28d0bf58547)
+</details>
+
+<details><summary>Sumar la cantidad de caracteres</summary>
+
+![image](https://github.com/user-attachments/assets/372952a8-b60a-47bc-a5e0-77ff0cb73acb)
+</details>
 
 
 
