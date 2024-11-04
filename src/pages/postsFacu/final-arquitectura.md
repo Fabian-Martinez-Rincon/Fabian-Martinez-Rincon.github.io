@@ -13,6 +13,7 @@ category: Facultad
 
 - [Clase 1 Subrutinas](#clase-1-subrutinas)
 - [Clase 2 Subrutinas](#clase-2-subrutinas)
+- [Clase 3 Interrupciones](#clase-3-interrupciones)
 
 ---
 
@@ -207,6 +208,314 @@ Porque BX y no SP?, Porque es el unico registro que permite el direccionamiento 
 ![image](https://github.com/user-attachments/assets/372952a8-b60a-47bc-a5e0-77ff0cb73acb)
 </details>
 
+
+<details><summary>Ejercicio 7</summary>
+
+![image](https://github.com/user-attachments/assets/59f2324c-c822-4897-852a-1860aadf02d3)
+![image](https://github.com/user-attachments/assets/57bbaf37-20fb-488f-bd0a-3da5d2b67d8f)
+![image](https://github.com/user-attachments/assets/b8f85adb-1b44-44d5-b837-f8d3044271ca)
+</details>
+
+
+---
+
+### Clase 3 Interrupciones
+
+
+<details><summary>Interrupciones</summary>
+
+
+- La funcionalidad dentro de un sistema de cómputo es implementada por hardware que ayuda al procesador.
+- Cada dispositivo opera a su propio ritmo, pero hay necesidad de sincronizar la operación del procesador con estos dispositivos.
+
+
+**Interrupciones (2)**
+
+- Una solución: el procesador pregunta a c/dispositivo su estado (si hay dato disponible). Cuando el dato está disponible el procesador puede leerlo y procesarlo. (Polling)
+
+- Desventajas:
+  - El procesador malgasta tiempo preguntando continuamente si hay algún dato disponible.
+  - Hay que esperar a los dispositivos más lentos.
+
+
+**Interrupciones (3)**
+
+**Mejor solución**: cuando un dispositivo necesita la atención del procesador, envía una señal para avisarle, es decir, produce una interrupción. Este mecanismo permite alterar la secuencia normal de procesamiento. Recordar otros mecanismos (jmp, call).
+
+</details>
+
+<details><summary>Interrupciones por hardware</summary>
+
+- Son las generadas por dispositivos de E/S.
+- Son las "verdaderas" interrupciones.
+- El sistema de cómputo tiene que manejar estos eventos externos "no planeados" o "asíncrónicos".
+- No están relacionadas con el proceso en ejecución en ese momento.
+- Son conocidas como interrupt request.
+
+</details>
+
+
+<details><summary>Traps</summary>
+
+Interrupciones por hardware creadas por el procesador en respuesta a ciertos eventos como:
+- Condiciones excepcionales: overflow en punto flotante.
+- Falla de programa: tratar de ejecutar una instrucción no definida.
+- Fallas de hardware: error de paridad de memoria.
+
+</details>
+
+
+<details><summary>Interrupciones por software</summary>
+
+Muchos procesadores tienen instrucciones explícitas que afectan el estado del procesador en la misma manera que int por hardware. Generalmente usadas para hacer llamadas a funciones del SO. Esta característica permite que las subrutinas del sistema se carguen en cualquier lugar.
+
+- No requieren conocer la dirección de la rutina en tiempo de ejecución.
+- Son más cortas que Call.
+- Hay sistemas que no permiten hacer una llamada directa a una dirección de la función del SO, pues es una zona reservada.
+- Se pueden reubicar fácilmente.
+
+</details>
+
+<details><summary>¿Qué pasa si no las tuviera?</summary>
+
+Al cargar un programa habría que "mirar" todas las llamadas al BIOS y SO y reemplazar en el código las direcciones de todas estas funciones invocadas.
+
+</details>
+
+<details><summary>Interrupciones por Software vs Hardware</summary>
+
+![image](https://github.com/user-attachments/assets/9a394268-62ed-4446-a667-961c88dffde7)
+
+</details>
+
+#### Interrupciones por Hardware
+
+<details><summary>Diagrama de Estados de un ciclo de Intrucción con Interrupciones</summary>
+
+> Esto no se toma pero es para saberlo
+
+![image](https://github.com/user-attachments/assets/8e6ca96e-79f9-4103-8496-2efb181dca56)
+
+</details>
+
+<details><summary>Ciclo de interrupción</summary>
+
+- Añadido al ciclo de instrucción.
+- El procesador comprueba si se ha generado alguna interrupción.
+  - Indicada por la presencia de una señal de interrupción.
+- Si no hay señales de interrupción, capta la siguiente instrucción.
+- Si hay alguna interrupción pendiente:
+  - Se suspende la ejecución del programa en curso.
+  - Guarda su contexto (próxima instrucción a ejecutar y otros).
+  - Carga el PC con la dirección de comienzo de una rutina de gestión de interrupción.
+  - Finalizada la rutina de gestión, el procesador retoma la ejecución del programa del usuario en el punto de interrupción.
+</details>
+
+<details><summary>Escenario de trabajo</summary>
+
+- El procesador tiene una única entrada de interrupciones.
+- ¿Cómo solucionamos tener varias entradas de interrupciones?
+- Existe un dispositivo: controlador de interrupciones (PIC).
+- Interrupciones priorizadas.
+
+![image](https://github.com/user-attachments/assets/289cbea9-3c9c-4ed8-8ae6-89e9f1c904d1)
+</details>
+
+<details><summary>¿Como trabaja el PIC?</summary>
+
+1. El PIC recibe un pedido de interrupción de un dispositivo externo y prioriza éste con otros pedidos que pueden llegar o estar pendientes.
+
+![image](https://github.com/user-attachments/assets/5e98cf2e-a460-4cc2-bef1-9ec133890922)
+
+2. Un pedido de interrupción es enviado al procesador, por la línea INTR.
+
+![image](https://github.com/user-attachments/assets/a95fcaed-0564-44d6-b86e-7daf1ac36041)
+
+3. El procesador contesta por la línea INTA y solicita un puntero de 8 bits para la tabla.
+
+![image](https://github.com/user-attachments/assets/e421880e-70b1-4eda-bb6a-77d584780185)
+
+4. El procesador recibe el puntero y lo usa para acceder a la tabla de vectores (direcciones) donde se encuentra la dirección del servicio.
+
+![image](https://github.com/user-attachments/assets/84f02e74-33d9-4ebf-baf9-52cc884c185e)
+
+5. Accede a la tabla y obtiene la dirección buscada.
+
+![image](https://github.com/user-attachments/assets/05bdfff2-4c77-4d44-9bcb-14d3c5332484)
+
+6. Salva en la pila la dirección actual, los flags y salta a la dirección del servicio.
+
+![image](https://github.com/user-attachments/assets/e1c7eefb-0da1-4d27-b644-d5c399a8ee63)
+
+</details>
+
+<details><summary>Vectores de Interrupción</summary>
+
+- 00 ⟶ 255 - 00h ⟶ FFh hay 256 entradas en la tabla.
+- Cada entrada en la tabla son 4 bytes, que tienen la dirección del servicio que atiende a la interrupción.
+- Los 16 bits más altos están siempre en cero.
+- Los restantes 16 bits tienen la dirección lógica/física. Las direcciones en el simulador son de 16 bits. Ej. 0000XXXXh
+- De las 256 posibles interrupciones: 4 están usadas por interrupciones de soft:
+  - **Tipo 0 (INT 0)**: finaliza la ejecución de un programa.
+  - **Tipo 3 (INT 3)**: puntos de parada en el programa.
+  - **Tipo 6 (INT 6)**: espera un carácter del teclado y lo almacena en la dirección apuntada por BX. (Entrada estándar).
+  - **Tipo 7 (INT 7)**: escribe en pantalla. BX = dirección de comienzo del bloque de datos. AL = No de datos. (Salida estándar).
+- El resto de las interrupciones (entradas en la tabla) están libres para ser utilizadas.
+</details>
+
+<details><summary>Perifericos Internos</summary>
+
+- PIO: puertos paralelos de e/s
+- HAND-SHAKE:
+- PIC: controlador de interrupciones
+- TIMER: contador de eventos
+- CDMA: controlador de acceso directo a memoria
+</details>
+
+<details><summary>Perifericos Externos</summary>
+
+- Barra de led’s.
+- Barra de interruptores (microswitchs).
+- Impresora.
+</details>
+
+<details><summary>Controlador de interrupciones (PIC)</summary>
+
+- Puede manejar hasta 8 interrupciones.
+- INT0 ⟶ INT7, por hardware (sin espacios)
+- Esquema de prioridades:
+  - 0 = más alta prioridad
+  - 7 = más baja prioridad
+</details>
+
+<details><summary>PIC: registros internos</summary>
+
+- Todos son de 8 bits
+- **ISR**: registro de interrupción en servicio. Indica cuál es la interrupción que está siendo atendida. Ej. Si se atiende INT0 se pone en 1 el bit 0; si se atiende INT7 se pone en 1 bit 7.
+- **IRR**: registro de petición de interrupción. El bit asociado se pone en 1 cuando hay un pedido de int y va a 0 cuando es atendida.
+- **IMR**: registro de máscara de interrupción. Permite enmascarar cada una de las entradas, bit 0 ⟶ INT0, si se pone en 1 se enmascara INT0 (no se atiende).
+- **INT0...INT7**: contiene el valor del vector. Este número multiplicado por 4 = entrada en la tabla.
+- **EOI**: se envía el comando de final de interrupción (end of interrupt) 20h = comando al final de la rutina de hard.
+</details>
+
+<details><summary>Acceso a los registros del PIC</summary>
+
+> No creo que lo tomen
+
+Se acceden a partir de la dirección 20h.
+
+- EOI = 20h
+- IMR = 21h
+- IRR = 22h
+- ISR = 23h
+- INT0 = 24h
+- INT1 = 25h
+- INT2 = 26h
+- INT3 = 27h
+- INT4 = 28h
+- INT5 = 29h
+- INT6 = 2Ah
+- INT7 = 2Bh
+
+![image](https://github.com/user-attachments/assets/188d6438-221b-42a5-ae07-1b5228a2cd20)
+
+</details>
+
+<details><summary>Interrupciones por hardware</summary>
+
+- **int0**: conectada a la tecla F10, que produce una interrupción al ser pulsada.
+- **int1**: se conecta a la línea OUT del TIMER, se produce una interrupción con cada pulso del mismo.
+- **int2**: se conecta a la línea INT de HAND.
+- **int3**: se conecta al controlador de acceso directo a memoria.
+</details>
+
+<details><summary>Interrupciones por software Imprimir Mensaje</summary>
+
+![image](https://github.com/user-attachments/assets/38bfd0e1-1cc2-4b6e-9ae1-1126402e2856)
+</details>
+
+<details><summary>Interrupciones por software Leer desde Teclado</summary>
+
+![image](https://github.com/user-attachments/assets/9e1fc729-ba73-461f-a28d-7ada5f551245)
+
+En AL van la cantidad de elementos que voy a imprimir
+</details>
+
+<details><summary>Interrupción por Hardware con tecla F10</summary>
+
+| Codigo | Acceso a los registros del PIC |
+|--------------|--------------|
+|![image](https://github.com/user-attachments/assets/2d91b454-0372-4b55-aea6-0882e459fc0b) | ![image](https://github.com/user-attachments/assets/71f50286-37ae-43c1-afc0-5f99014f6a29) |
+
+```
+ORG 40
+IP_F10 DW RUT_F10
+```
+
+ORG 40: porque vamos a instalar la interrupción en el lugar 10 de la tabla de vectores. Como cada entrada ocupa 4 bytes, la dirección es 4*10. Aquí va la dirección de la primera instrucción del servicio que atiende a la interrupción. Esta dirección tiene una etiqueta RUT_F10, pero vemos que es 3000h.
+
+```
+MOV AL, 0FEH # En Binario es 11111110
+OUT PIC+1, AL
+```
+
+- Estas dos instrucciones cargan en el registro IMR el valor FEh, poniendo el bit 0 en 0 y los restantes bits en 1, enmascarando todas las interrupciones menos la INT0 que corresponde a la tecla F10.
+- 0FEh = lleva un 0 al principio para indicar que el resto de las letras corresponden a un número y no al nombre de una variable.
+
+`¿Como sabemos que INT0 corresponde a la tecla F10?`
+
+Por el siguiente grafico
+
+| Grafico del PIC | Interrupciones por Hardware |
+|--------------|--------------|
+|![image](https://github.com/user-attachments/assets/d301caff-7f41-4dbe-809c-fd069b966814) | ![image](https://github.com/user-attachments/assets/4e29723c-10c5-4131-8529-838d1d2cd0f3) |
+
+```
+MOV AL, N_F10
+OUT PIC+4, AL
+```
+
+Estas dos instrucciones escriben en el registro INT0 del PIC, el valor de la posición en la tabla de vectores; en este registro se buscará dicha posición para la interrupción producida por F10. Recordemos que se accede al registro en la dirección 24h (PIC+4).
+
+```
+MOV DX, 0
+```
+
+En DX vamos a contar cuántas veces fue presionada la tecla F10. Acá inicializamos la cuenta en 0.
+
+**STI y CLI**
+
+- Las instrucciones STI y CLI activan y desactivan, respectivamente, interrupciones. Cuando se activa la bandera I permite que por el terminal INTR del procesador, se produzca una interrupción.
+- Cuando se desactiva el bit impide que se produzca la interrupción por el terminal INTR.
+- INTR es un terminal del procesador.
+
+```
+MOV AL, EOI    #OUT 20H,20H
+OUT EOI, AL
+```
+
+- La CPU debe indicarle al controlador cuando ha completado el servicio de cada interrupción de hardware. Por lo tanto, al final de la rutina de servicio de la interrupción habrá que escribir en el registro de comandos, un número (comando) que indique el final de la interrupción.
+- La dirección del registro coincide con el valor a escribir.
+
+
+**IRET**
+
+- La instrucción IRET es una instrucción especial para retorno y se utiliza para retornar de las interrupciones de software y hardware.
+- La instrucción IRET es como una instrucción RET, porque recupera de la pila la dirección de retorno.
+- Es diferente porque también recupera una copia del registro de banderas de la pila.
+- La instrucción IRET extrae 6 bytes de la pila: 4 para la dirección de retorno y 2 para el registro de banderas.
+
+**TIMER**
+
+- Posee dos registros de 8 bits.
+- COMP: registro de comparación que determina el módulo de la cuenta del timer.
+- CONT: registro contador, muestra la cuenta de los pulsos de la señal aplicada a la entrada INT del periférico. Cuando coincide su valor con el registro COMP, provoca una salida del TIMER.
+- Direcciones de registros: 10h y 11h
+- Frecuencia: 1 Hz
+
+</details>
+
+### Clase 4 ES
 
 
 
