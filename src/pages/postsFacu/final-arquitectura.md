@@ -896,6 +896,181 @@ Una vez cargados los valores adecuados en los registros, para arrancar la transf
 
 ### Clase 6 Segmentación de Intrucciones
 
+<details><summary>Segmentación de cauce: Conceptos básicos</summary>
+
+- La segmentación de cauce (*pipelining*) es una forma particularmente efectiva de organizar el hardware de la CPU para realizar más de una operación al mismo tiempo.
+- Consiste en descomponer el proceso de ejecución de las instrucciones en fases o etapas que permitan una ejecución simultánea.
+- Explota el paralelismo entre las instrucciones de un flujo secuencial. 
+
+</details>
+
+<details><summary>Ejemplo de estrategia</summary>
+
+- Similar a la línea de armado en una planta de manufactura.
+- El producto pasa por varios estados en el proceso de producción.
+- Por lo tanto, varios productos pueden ser manipulados simultáneamente (cada uno en estados distintos).
+- Se puede comenzar el proceso nuevamente (entrada a la línea de producción) antes de que salga el producto final de la misma.
+
+| Mal | Bien |
+|-----------|-----------|
+|![image](https://github.com/user-attachments/assets/cc6289bd-be26-403d-80f0-990d59f3ecd3)    | ![image](https://github.com/user-attachments/assets/b15e55a8-11cf-4e98-84e1-959ad21b5b80) |
+
+</details>
+
+<details><summary>Características</summary>
+
+- La segmentación es una técnica de mejora de prestaciones a nivel de diseño hardware.
+- La segmentación es invisible al programador.
+- Necesidad de uniformizar las etapas:
+  - Al tiempo de la más lenta.
+- El diseño de procesadores segmentados tiene gran dependencia del repertorio de instrucciones.
+</details>
+
+<details><summary>Tareas a realizar por ciclo</summary>
+
+- **Búsqueda (F, Fetch)**
+  - Se accede a memoria por la instrucción.
+  - Se incrementa el PC.
+- **Decodificación (D, Decode)**
+  - Se decodifica la instrucción, obteniendo operación a realizar en la ruta de datos.
+  - Se accede al banco de registros por el/los operando/s (si es necesario).
+  - Se calcula el valor del operando inmediato con extensión de signo (si hace falta).
+- **Ejecución (X, Execute)**
+  - Se ejecuta la operación en la ALU.
+- **Acceso a memoria (M, Memory Access)**
+  - Si se requiere un acceso a memoria, se accede.
+- **Almacenamiento (W, Writeback)**
+  - Si se requiere volcar un resultado a un registro, se accede al banco de registros.
+
+</details>
+
+<details><summary>Formato de Intrucción</summary>
+
+![image](https://github.com/user-attachments/assets/3f21e2fa-d3d5-402f-99d0-6299b7e3e722)
+
+</details>
+
+<details><summary>Prestaciones del cauce segmentado</summary>
+
+**Teórica**: El máximo rendimiento es completar una instrucción con cada ciclo de reloj.
+
+Si **K** es el número de etapas del cauce ⇒
+
+Vel. procesador segmentado = Vel. secuencial × **K**
+
+El incremento potencial de la segmentación del cauce es proporcional al número de etapas del cauce.
+
+**Incrementa la productividad (throughput), pero no reduce el tiempo de ejecución de la instrucción.**
+
+</details>
+
+<details><summary>¿Qué sucede en cada etapa?</summary>
+
+![image](https://github.com/user-attachments/assets/400a66f9-fbd2-4ee1-8e74-edb466c2dd03)
+![image](https://github.com/user-attachments/assets/c55a99ec-5e1e-4519-a5ad-fafd07ab0e4c)
+
+</details>
+
+<details><summary>Riesgos en MIPS</summary>
+
+- Estructurales
+- Dependencia de datos
+- Dependencia de control 
+
+
+</details>
+
+<details><summary>Riesgos Estructurales</summary>
+
+Cuando dos o más instrucciones intentan usar el mismo recurso de hardware a la vez.
+
+![image](https://github.com/user-attachments/assets/8c060474-4694-429d-bdf8-56f8a028879f)
+
+</details>
+
+<details><summary>Riesgos por Dependencia de Datos</summary>
+
+Dependencia verdadera: cuando una instrucción depende de los resultados de otra instrucción, de manera que ambas no pueden ejecutarse de forma solapada.
+
+> RAW: Read After Write
+
+```
+DADD R1, R6, R7  
+AND R4, R5, R1
+```
+
+![image](https://github.com/user-attachments/assets/1c20445c-5d6c-4963-ae44-0a7b2c442822)
+
+![image](https://github.com/user-attachments/assets/8da5ff63-76bc-44a8-8567-42aa33d0b8c2)
+
+</details>
+
+<details><summary>Soluciones de Riesgos RAW (Soluciones a la dependencia de datos)</summary>
+
+![image](https://github.com/user-attachments/assets/6a9bbccf-c31e-412c-9183-f1879e10b6cc)
+
+</details>
+
+<details><summary>Inserción de Instrucciones NOP (Solución por Software)</summary>
+
+![image](https://github.com/user-attachments/assets/4b040d67-44b4-4924-910d-1037517b36ec)
+
+![image](https://github.com/user-attachments/assets/3ae3e7f5-4671-477c-874b-0cd97237bad2)
+
+</details>
+
+<details><summary>Reordenación de código (Solución por Software)</summary>
+
+![image](https://github.com/user-attachments/assets/8fa05ae5-236e-45b4-a2da-e896b7e8d7fd)
+
+</details>
+
+<details><summary>Deteción del Cause (Solución por Hardware)</summary>
+
+![image](https://github.com/user-attachments/assets/0d54dc3e-b5f8-4b88-af4e-f56ee3509b7e)
+
+</details>
+
+
+<details><summary>Adelantamiento (Forwarding)(Solución por Hardware)</summary>
+
+En lugar de esperar a que termine, uso el dato del registro temporal
+![image](https://github.com/user-attachments/assets/63d373c0-59c9-4e4a-98d9-322d72d419db)
+
+![image](https://github.com/user-attachments/assets/d9a2ef48-03ec-4f8d-911a-5d1ae7e98432)
+
+R1 Contiene 45 + el contenido de R2. El simulador lo pone al revez. Primero espera (RAW) y despues se ejecuta (EX)
+
+![image](https://github.com/user-attachments/assets/38509a4f-3e1e-42bb-ad35-80afc6cc260c)
+> LOAD O STORAGE SIEMPRE EN LA VERDE SE LIBERA EL REGISTRO
+
+![image](https://github.com/user-attachments/assets/a959a6c7-ce72-4e9e-b1ae-5b266b2b7ef4)
+
+- Recordar que sin forwarding los datos están disponibles en la primera mitad de la etapa WB (violeta).
+- Pensar también que al ser una instrucción de load (LD) el dato para forwarding está disponible en la etapa MEM (verde). No es un ADD que el dato está disponible en la etapa EX (roja).
+
+![image](https://github.com/user-attachments/assets/19e7317e-a1ba-41b3-ab9e-76782d506b49)
+![image](https://github.com/user-attachments/assets/04db9b30-2f24-480c-af91-55812a5de2d5)
+
+![image](https://github.com/user-attachments/assets/d2753cd9-f060-4978-99a9-1927f51dc63d)
+
+- En las dos figuras anteriores se muestra la dependencia de datos separada por dos instrucciones.
+- El primer caso sin forwarding y el segundo con forwarding.
+- Vemos que con la “separación” de dos instrucciones, desaparece la dependencia de datos.
+- Viendo cualquiera de las dos figuras anteriores, no podemos decir si está habilitado ó no el forwarding. La “separación” entre instrucciones elimina la dependencia.
+
+</details>
+
+---
+
+### Clase 7 Seguimos con Segmentación de Intrucciones
+
+<details><summary>Riesgos de Control</summary>
+
+![image](https://github.com/user-attachments/assets/3cf150ac-7bcd-440d-a403-91f15e6c5c80)
+
+</details>
+
 ---
 
 Bueno, como tengo que repasar, voy a emprezar con las clases
