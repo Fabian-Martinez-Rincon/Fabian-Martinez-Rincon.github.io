@@ -14,6 +14,10 @@ category: Facultad
 - [Clase 1 Subrutinas](#clase-1-subrutinas)
 - [Clase 2 Subrutinas](#clase-2-subrutinas)
 - [Clase 3 Interrupciones](#clase-3-interrupciones)
+- [Clase 4 Entrada/Salida](#clase-4-entradasalida)
+- [Clase 5 Comunicación CPU-Impresora](#clase-5-comunicación-cpu-impresora)
+- [Clase 6 Segmentación de Intrucciones](#clase-6-segmentación-de-intrucciones)
+
 
 ---
 
@@ -515,10 +519,382 @@ OUT EOI, AL
 
 </details>
 
-### Clase 4 ES
+---
+
+### Clase 4 Entrada/Salida
+
+<details><summary>Problemas de Entrada/Salida</summary>
+
+- Gran variedad de periféricos con varios métodos de operación.
+  - Transmisión de diferentes cantidades de datos.
+  - A diferentes velocidades.
+  - Usan diferentes formatos de dato y tamaño de palabra.
+- Todos más lentos que la CPU y la RAM.
+- Necesidad de módulos de E/S (con alguna "inteligencia").
+
+</details>
+
+<details><summary>Módulo de Entrada/Salida</summary>
+
+![image](https://github.com/user-attachments/assets/fadfafe4-5521-4777-bfc8-932f3c475d59)
+
+</details>
+
+<details><summary>Dispositivos Externos</summary>
+
+> Basicamente todo lo que no es memoria y CPU
+
+- **e/s básicos**
+  - monitor/pantalla, mouse, teclado
+- **almacenamiento**
+  - disco duro, CD, DVD
+- **impresión**
+  - impresora, escáner
+- **comunicación con dispositivos remotos**
+  - módem, acceso/interfaz de red
+- **multimedia**
+  - micrófono, parlantes
+- **automatización y control**
+  - sensores, alarmas, adquisición de datos
+
+</details>
+
+<details><summary>Características de un puerto</summary>
+
+- Interfase entre el periférico y el módulo de E/S
+- Señales de Control, Estado y Datos
+  - **Señal de Control**: función a realizar
+    - Ej: INPUT ó READ, OUTPUT ó WRITE
+  - **Señal de Estado**: READY/NOT READY
+  - **Control lógico**: manejo de direccionamiento
+  - **Transductor**: conversión del datos
+  - **Buffer**: adaptación (1, 8 o 16 bits)
+
+</details>
+
+<details><summary>Funciones de un módulo de E/S</summary>
+
+- Control y temporización de uno o más dispositivos externos
+- Interpretar las órdenes que recibe de CPU y transmitirlas al periférico
+- Comunicación con la CPU (registros) y Memoria
+- Controlar las transferencias de datos entre CPU y el periférico (convertir formatos, adaptar velocidades)
+- Comunicación con los dispositivos (periféricos)
+- Informar a la CPU del estado del periférico
+- Almacenamiento temporal (buffering) de datos
+- Detección de errores
+
+</details>
+
+<details><summary>Diagrama en Bloques de un módulo de E/S</summary>
+
+![image](https://github.com/user-attachments/assets/3965fe7e-d8fa-4591-9c83-3eeb367dd908)
+</details>
+
+<details><summary>Capacidades de un módulo de E/S</summary>
+
+- Ocultar las propiedades del dispositivo a la CPU.
+  - Ej: temporizados, formatos, electromecanismos ...etc
+- Ocuparse de uno o varios dispositivos.
+- Controlar o no las funciones del dispositivo.
+  - Canales de E/S ó procesador de E/S (manejo de parte importante de la carga del procesamiento). Presentes en Mainframes.
+  - Controlador de E/S ó controlador de dispositivo (manejo primitivo). Presentes en microcomputadoras.
+
+</details>
+
+<details><summary>Operación de Entrada o Salida</summary>
+
+Requiere:
+
+- **Direccionamiento**
+  - E/S mapeada en memoria
+  - E/S aislada
+- **Transferencia de información**
+  - Lectura o escritura
+- **Gestión de la transferencia**
+  - Mecanismos de sincronización y control de la transferencia de datos
+
+</details>
+
+<details><summary>Direccionamiento de E/S</summary>
+
+- **E/S asignada en memoria (memory-mapped)**
+  - Dispositivos de E/S y memoria comparten un único espacio de direcciones.
+  - E/S se parece a la memoria de lectura/escritura.
+  - No hay órdenes específicas para E/S.
+    - Variedad de órdenes de acceso a memoria (programación eficiente).
+
+- **E/S aislada**
+  - Espacios de direcciones separados.
+  - Necesidad de líneas especiales de E/S y de memoria.
+  - Órdenes específicas para E/S.
+    - Conjunto limitado de instrucciones.
+
+</details>
+
+<details><summary>E/S Aislada</summary>
+
+| Diagrama 1 | Diagrama 2 |
+|-----------|-----------|
+|![image](https://github.com/user-attachments/assets/2963ad5d-57bc-4071-ba3d-f47d6968682b)    | ![382872446-d26f051e-6152-4a5f-a344-627b2ad47c37](https://github.com/user-attachments/assets/60dfab3c-39a8-4395-ab05-ba56013d4060)|
+
+
+Recordemos, todas las instrucciones que vimos eran de la forma:
+- MOV mem, reg
+- MOV reg, mem
+- MOV reg, reg
+
+Son entre el procesador y memoria
+
+Ahora tenemos instrucciones:
+
+- IN AL, puerto: Lee un byte de la dirección de e/s puerto.
+- IN AL, DX: Lee un byte de la dirección de e/s almacenada en DX.
+- OUT puerto, AL: Escribe un byte de AL en la dirección de e/s puerto.
+- OUT DX, AL: Escribe un byte de AL en la dirección de e/s contenida en DX.
+
+
+Cuando la UC decodifica OUT o IN, activa las líneas del bus de control  
+- iow = input/output write  
+- ior = input/output read  
+
+Cuando la UC decodifica MOV, activa las líneas del bus de control  
+- mwr = memory write  
+- mrd = memory read  
+
+Se puede ver en el simulador.
+</details>
+
+> Este no lo vamos a usar
+
+<details><summary>E/S Mapeada en Memoria</summary>
+
+- Las direcciones de e/s están mapeadas en las direcciones de memoria.
+- Las direcciones de e/s pertenecen al espacio de memoria.
+- No se distingue una posición de e/s de una posición de memoria.
+
+![image](https://github.com/user-attachments/assets/c4216183-d26a-4273-9c2e-41c191160ec8)
+
+`Ventaja:`
+
+Puedo usar todo el conjunto de instrucciones del µp, porque todas las posiciones son tomadas como direcciones. No hay instrucciones como IN y OUT.
+
+`Desventaja:`
+
+Ocupa espacio de memoria
+
+</details>
+
+
+> Esto puede que entre :/
+
+<details><summary>Técnicas de gestión de E/S</summary>
+
+- E/S Programada con espera de respuesta
+- E/S con interrupciones
+- E/S con acceso directo a memoria (DMA)
+
+</details>
+
+<details><summary>E/S programada</summary>
+
+- Intercambio de datos entre la CPU y el módulo
+- La CPU tiene control directo sobre la operación de E/S
+  - Comprobación del estado del dispositivo
+  - Envío de comandos de lectura/escritura
+  - Transferencia de datos
+- La CPU espera que el módulo E/S termine la operación
+- Por lo tanto la CPU permanece ociosa durante un período de tiempo (no deseable)
+
+</details>
+
+<details><summary>E/S con Interrupciones</summary>
+
+- La CPU no tiene que esperar la finalización de la tarea de E/S, puede seguir procesando.
+- No se repite la comprobación de los estados de los módulos.
+- El módulo envía un pedido de interrupción a la CPU cuando está listo nuevamente.
+
+</details>
+
+
+<details><summary>PIO</summary>
+
+- 2 puertos paralelos de 8 bits: A y B.
+- Se puede programar c/bit por separado como entrada o salida.
+- 4 registros internos de 8 bits:
+  - 2 de datos, PA y PB.
+  - 2 de control CA y CB, para programar los bits de PA y PB.
+
+Las direcciones de los registros son (P de port y C de configuración):
+- PA ➔ 30H
+- PB ➔ 31H
+- CA ➔ 32H
+  - CA = un bit en 0 selecciona como salida a la línea correspondiente en PA.
+  - CA = un bit en 1 selecciona como entrada a la línea correspondiente en PA.
+- CB ➔ 33H
+  - CB = controla de la misma manera a PB.
+
+![image](https://github.com/user-attachments/assets/f66b74af-6da1-4bb9-a507-41601e208040)
+![image](https://github.com/user-attachments/assets/072a603b-61eb-4b40-af27-95292797683b)
+![image](https://github.com/user-attachments/assets/e2a4e286-ece3-4d77-9d87-def13b49d54b)
+![image](https://github.com/user-attachments/assets/26e16cfb-a74a-4226-9c11-b2a3b9c207af)
+![image](https://github.com/user-attachments/assets/6c96892c-85bc-4545-8c7b-488a0f6fdd46)
+![image](https://github.com/user-attachments/assets/ca5d3fe3-6f4e-46ed-855d-fc1603eda3cc)
+
+![image](https://github.com/user-attachments/assets/ecc46d16-d02e-4c86-b4a2-50b1b7a6f5e3)
+![image](https://github.com/user-attachments/assets/02bf59cd-c600-4fa7-8e5e-b49ef4694f65)
+![image](https://github.com/user-attachments/assets/ce8caa7d-c570-454e-b682-4eea3d6bd83f)
+![image](https://github.com/user-attachments/assets/0ee72cd1-0ae0-4ac7-b741-5fe7b77a0f0e)
+
+**Codigo**
+
+![image](https://github.com/user-attachments/assets/0bec8b6e-0d8e-48a3-a764-070c16c8a719)
+</details>
+
+---
+
+### Clase 5 Comunicación CPU-Impresora
+
+<details><summary>Comunicación CPU - Impresora</summary>
+
+![image](https://github.com/user-attachments/assets/7e4d4a3f-80fe-4ba9-809a-4b89e5fce5f2)
+
+- La comunicación con la impresora es a través de 8 líneas entrantes (8 bits) por donde la CPU envía el código ASCII del carácter a imprimir.
+- Otra línea entrante es STROBE por donde la CPU avisa que el carácter ASCII enviado es válido y hay que imprimirlo. Si no está presente esta señal no se lleva a cabo la impresión.
+- Por último, una línea saliente BUSY (1 bit) indica cuando la impresora está libre o ocupada; la impresión se lleva a cabo cuando la impresora está libre. El estado ocupado es cuando está imprimiendo, en el estado libre la CPU envía caracteres para imprimir.
+
+</details>
+
+<details><summary>CPU - PIO - Impresora</summary>
+
+![image](https://github.com/user-attachments/assets/57350908-ef1d-41f0-91d7-243b740fdb25)
+
+- El Puerto B (8 bits) del PIO se conecta a la impresora a las entradas del carácter ASCII, o sea el carácter a imprimir la CPU lo envía a este puerto.
+- El bit 0 del Puerto A (PA0) se conecta a la línea de ocupado (BUSY) de la impresora y el bit 1 de este mismo puerto (PA1) se conecta a la entrada de la señal de STROBE.
+
+**Secuencia de impresión**
+
+1) Si la impresora está libre PA0 (bit 0 de PA) en 0, entonces enviar el carácter ASCII a imprimir a PB. En caso contrario, esperar.
+
+2) Generar la señal de STROBE que valida el dato en PB. PA1 está en 0, llevarla a 1 y luego otra vez a 0. Tiene que pasar de 0 a 1 y de 1 a 0, generando así un pulso.
+
+3) Volver a 1) si hay más caracteres a imprimir.
+
+</details>
+
+
+Podes tener por consulta de estado o por interrupciones, en comparación con el PIO que siempre es con consulta de estado
+
+<details><summary>CPU - HAND - Impresora</summary>
+
+Tiene inteligencia solo para comunicarse con la impresora.
+
+![image](https://github.com/user-attachments/assets/e98187ad-17e4-40cb-88dc-f3aaa69d54ad)
+
+</details>
+
+<details><summary>Transferencia desde memoria → periférico</summary>
+
+![image](https://github.com/user-attachments/assets/63642683-d7e4-4a1e-99c8-1f92e443bc7a)
+
+- La transferencia ocurre después que la CPU "determinó" que el dispositivo de E/S está listo.
+- Esto último puede ser por consulta de estado o a la espera de un pedido de interrupción.
+- "Sobrecarga" se produce porque hay que ejecutar varias instrucciones por cada dato transferido.
+- Instrucciones se necesitan para incrementar el puntero a memoria y para llevar la cuenta de la cantidad de datos transferidos.
+- Con interrupciones esto se complica más, porque cada vez que hay una interrupción, existen instrucciones para salvar el contexto y luego instrucciones para retornar al punto de interrupción.
+
+</details>
+
+<details><summary>Acceso directo a memoria –> DMA</summary>
+
+![image](https://github.com/user-attachments/assets/3e43e433-d2b2-4a47-8413-f70d4e341db2)
 
 
 
+- Para transferir una “gran cantidad de datos” (ej. multimedia) la estrategia utilizada es otra.
+- La transferencia de datos entre la memoria y el dispositivo externo es realizada sin la intervención de la CPU.
+- La operación es controlada por otro dispositivo: controlador de acceso directo a memoria (CDMA).
+- Realiza las mismas funciones que hace la CPU para transferir datos a la memoria. Para cada palabra de datos transferida genera el direccionamiento y todas las señales necesarias para el manejo del bus.
+
+</details>
+
+<details><summary>Etapas de la transferencia DMA</summary>
+
+> Parar la cpu es mas eficiente que guardar todos los registros y estar haciendo interrupciones
+
+- Se distinguen 3 etapas:
+  1) **Inicialización**: interviene la CPU. Configuración de dispositivos, direcciones, a qué dispositivo transferir, etc.
+  2) **Transferencia de datos**: no interviene la CPU.
+  3) **Finalización**: interviene la CPU.
+
+</details>
+
+> El CDMA es mejor porque no tiene que salvar nada en la pila, solo se ocupa de transferir datos
+
+
+<details><summary>Modos de transferencia por DMA</summary>
+
+- **Modo ráfaga (burst)**: cuando el CDMA toma el control del bus, transfiere un bloque de datos y no libera el bus hasta terminar.
+- **Modo robo de ciclo**: el CDMA toma el control del bus, transfiere el dato y luego devuelve el control del bus. Luego la CPU ejecuta una instrucción y, si el CDMA necesita hacer otra transferencia, vuelve a pedir el uso del bus y transfiere el dato. Así se van alternando entre ejecución (CPU) y transferencia (CDMA).
+- **Modo transparente**: el CDMA transmite en aquellos casos en los que la CPU no utiliza los buses al realizar movimiento entre registros.
+
+> El segundo es el mejor en teoria
+
+![image](https://github.com/user-attachments/assets/05be5e49-8780-4330-83af-d20d9f78ca48)
+
+
+
+</details>
+
+<details><summary>Controlador de DMA (CDMA)</summary>
+
+- Realiza transferencia de datos de memoria-memoria o memoria-periférico y a la inversa.
+- Trabaja por robo de ciclo.
+- Tamaño máximo del bloque a transferir: 64 kbytes.
+
+**Registros de CDMA**
+
+- **RF**: Registro de direcciones fuente. Se carga en él la dirección del bloque de memoria a transferir.
+  - RFL → 50H
+  - RFH → 51H
+- **RD**: Registro de direcciones destino. Se carga en él la dirección destino del bloque. Memoria-memoria.
+  - RDL → 54H
+  - RDH → 55H
+- **CONT**: Registro contador. Indica el número de bytes a transferir.
+  - CONTL → 52H
+  - CONTH → 53H
+- CTRL → 56H
+- ARRANQUE → 57H
+
+Una vez cargados los valores adecuados en los registros, para arrancar la transferencia programada hay que poner en 1 A0=A1=A2 del registro de arranque, esto pone a 0 C0. Si se desea detener momentáneamente la transferencia se pone C0 a 1. Pero ponerlo en 0 no "rearranca".
+
+- **CTRL**: registro de control.
+- Campos del registro:
+  - **TC**: Bit de control.
+  - **X**: Reservados o no especificados (C6, C5, C4).
+  - **MT**: Modo de transferencia.
+  - **ST**: Sentido de transferencia.
+  - **TT**: Tipo de transferencia.
+  - **STOP**: Detiene la transferencia en curso.
+- **Escritura**
+- **C0**: STOP
+  - 0: No se usa
+  - 1: Detiene la CPU la transferencia en curso.
+- **C1**: TT = Tipo de transferencia
+  - 0: Memoria-Periférico o al revés
+  - 1: Memoria-Memoria
+- **C2**: ST = Sentido de transferencia. Solo si C1 = 0.
+  - 0: Periférico-Memoria
+  - 1: Memoria-Periférico
+- **C3**: MT = Modo de transferencia
+  - 0: Transferencia por demanda
+  - 1: Transferencia en modo bloque
+- **C4...C7**: no se usan
+
+</details>
+
+---
+
+### Clase 6 Segmentación de Intrucciones
 
 ---
 
