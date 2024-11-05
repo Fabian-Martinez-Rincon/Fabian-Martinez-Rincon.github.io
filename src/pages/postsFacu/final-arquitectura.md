@@ -20,6 +20,8 @@ category: Facultad
 - [Clase 7 Seguimos con Segmentación de Intrucciones](#clase-7-seguimos-con-segmentación-de-intrucciones)
 - [Clase 8 Memoria](#clase-8-memoria)
 - [Clase 9 Memoria Cache](#clase-9-memoria-cache)
+- [Clase 10 Buses del Sistema](#clase-10-buses-del-sistema)
+- [Clase 11 Procesadores SuperEscalares](#clase-11-procesadores-superescalares)
 
 
 ---
@@ -1305,7 +1307,6 @@ La cache incluye etiquetas para identificar qué bloque de la memoria principal 
 - Requiere controles de tiempos
 - En correspondencias asociativas por conjuntos de 2 vías. ¿Cuál de las 2 líneas es la LRU?
 
-
 **Primero en entrar - primero en salir (FIFO)**
 - Requiere controles de acceso.
 - Se sustituye aquella línea que ha estado más tiempo en la cache.
@@ -1360,6 +1361,63 @@ La cache incluye etiquetas para identificar qué bloque de la memoria principal 
 ---
 
 ### Clase 9 Memoria Cache
+
+>Me dormi, no explico nada relevante creo xd
+
+### Clase 10 Buses del Sistema
+
+<details><summary>Estructuras de interconexión</summary>
+
+- Todas las unidades han de estar interconectadas.
+- Existen distintos tipos de interconexiones para los distintos tipos de unidades:
+  - Memoria
+  - Módulo de E/S
+  - Procesador
+
+</details>
+
+<details><summary>Interconexión de la memoria</summary>
+
+- Recibe y entrega datos.
+- Recibe direcciones (ubicación de trabajo).
+- Recibe señales de control
+  - Leer
+  - Escribir
+  - Temporizar
+
+</details>
+
+<details><summary>Problemas de un único bus</summary>
+
+- Conectar gran número de dispositivos a un bus produce Retardos de propagación
+  - Si el control del bus pasa de un dispositivo a otro, puede afectar sensiblemente a las prestaciones.
+- La mayoría de los sistemas utilizan varios buses para solucionar estos problemas.
+  - Jerarquía de buses
+
+</details>
+
+---
+
+### Clase 11 Procesadores Superescalares
+
+
+<details><summary>Procesadores Superescalares</summary>
+
+![image](https://github.com/user-attachments/assets/ea0f3bc2-1d47-4a34-8f9b-eead073574b1)
+
+</details>
+
+<details><summary>Segmentado de Cause</summary>
+
+![image](https://github.com/user-attachments/assets/62a52bc3-c349-46ee-87a5-0603d9b4dcc4)
+
+</details>
+
+<details><summary>Procesador Superescalar Segmentado</summary>
+
+![image](https://github.com/user-attachments/assets/9058e145-e0b1-4210-ac64-e8f0da887ca9)
+
+</details>
 
 ---
 
