@@ -17,6 +17,9 @@ category: Facultad
 - [Clase 4 Entrada/Salida](#clase-4-entradasalida)
 - [Clase 5 Comunicación CPU-Impresora](#clase-5-comunicación-cpu-impresora)
 - [Clase 6 Segmentación de Intrucciones](#clase-6-segmentación-de-intrucciones)
+- [Clase 7 Seguimos con Segmentación de Intrucciones](#clase-7-seguimos-con-segmentación-de-intrucciones)
+- [Clase 8 Memoria](#clase-8-memoria)
+- [Clase 9 Memoria Cache](#clase-9-memoria-cache)
 
 
 ---
@@ -1069,7 +1072,294 @@ R1 Contiene 45 + el contenido de R2. El simulador lo pone al revez. Primero espe
 
 ![image](https://github.com/user-attachments/assets/3cf150ac-7bcd-440d-a403-91f15e6c5c80)
 
+
+
+
 </details>
+
+<details><summary>Soluciones por Software</summary>
+
+![image](https://github.com/user-attachments/assets/b5ba6612-0d72-4847-a8ce-ae89db9d7381)
+
+![image](https://github.com/user-attachments/assets/5e751a5e-e5d3-4e5e-b4d3-d0a74c0106e3)
+
+![image](https://github.com/user-attachments/assets/82da2c08-c17d-4b73-a0e1-f5fd75101cd9)
+
+</details>
+
+<details><summary>Soluciones por Hardware</summary>
+
+![image](https://github.com/user-attachments/assets/1fc8a6c1-1d4b-4ceb-a036-147e2bb4a1a1)
+
+![image](https://github.com/user-attachments/assets/94411335-ea50-49b2-bd4b-0172a97eb444)
+
+![image](https://github.com/user-attachments/assets/3a0af169-1ee1-4101-bd26-a023d3619f5b)
+
+La mejor estrategia que no existe es de identificar si es un salto o no en la etapa amarilla (IF)
+
+</details>
+
+<details><summary>BTB: Branch Target Buffer</summary>
+
+- En la etapa ID se comprueba si el salto se lleva a cabo ó no y donde saltar.
+- No se puede comprobar antes porque primero hay que decodificar la instrucción.
+- Si en la etapa IF se pudiera saber si hay que saltar ó no, el pipe tomaría el camino correcto.
+- ¿Pero cómo saber si la instrucción es un salto si todavía no fue decodificada?
+- Se “agrega” en la etapa IF una memoria “muy rápida” (BTB) donde se almacenan las direcciones (IP) de memoria donde están los saltos solamente. Si saltó ó no la última vez y la dirección donde saltó.
+- Cada vez que se busca una instrucción se comprueba si esta dirección está en la tabla (BTB). Si está es porque es un salto.
+- Así sabemos que es un salto, sin decodificar, y si saltó y donde la última vez.
+
+![image](https://github.com/user-attachments/assets/a6e80b22-4c50-4ed8-96bb-a62a21cc5d5b)
+
+</details>
+
+<details><summary>Resumen de todos los pasos</summary>
+
+![image](https://github.com/user-attachments/assets/0bdc4054-0659-47a2-a6d6-b825371e5201)
+
+</details>
+
+<details><summary>El Paso siguiente - RISC</summary>
+
+- Computadoras de repertorio reducido de instrucciones.
+- Características principales:
+  - Gran número de registros de uso general ó mejorar tecnología de compiladores para optimizar el uso de los registros.
+  - Repertorio de instrucciones limitado y sencillo.
+  - Énfasis en la optimización de la segmentación de instrucciones.
+
+</details>
+
+<details><summary>Inconvenientes del CISC</summary>
+
+- El software resulta mucho más caro que el hardware
+- El nivel del lenguaje era cada vez más complicado.
+- Salto semántico
+  - Diferencias entre operaciones HLL y operaciones de la Arquitectura
+- Todo esto conduce a:
+  - Repertorios de instrucciones grandes
+  - Más modos de direccionamiento
+  - Varias sentencias de HLL implementadas en el Hardware
+    - Por ejemplo, el CASE del VAX
+</details>
+
+<details><summary>Finalidad del CISC</summary>
+
+- Facilitar el trabajo del escritor de compiladores.
+- Mejorar la eficiencia de la ejecución:
+  - Secuencias complejas de operaciones en microcódigo.
+- Dar soporte a HLL más complejos.
+
+</details>
+
+<details><summary>Características de la ejecución</summary>
+
+- Se han realizado estudios sobre programas escritos en HLL.
+- Operaciones realizadas
+  - Funcionamiento del procesador e interacción con memoria
+- Operandos usados
+  - Tipos y frecuencia de uso
+    - Organización de la memoria y modos de direccionamiento
+- Secuenciamiento de la ejecución
+  - Organización del control y del cauce
+
+Estudios dinámicos: se miden durante la ejecución del programa.
+
+</details>
+
+<details><summary>Buffer Circular</summary>
+
+![image](https://github.com/user-attachments/assets/2b45473a-e6f2-4bbf-9bb7-b07c06049cd4)
+
+</details>
+
+---
+
+### Clase 8 Memoria
+
+<details><summary>Sistema de Memoria</summary>
+
+- Los programadores desean acceder a cantidades ilimitadas de memoria rápida.
+- Solución práctica:
+  
+**Jerarquía de memoria**
+
+- organizada en niveles que son ubicados en distintos lugares físicos
+- fabricados con tecnologías diferentes que se gestionan de manera independiente
+
+</details>
+
+<details><summary>Jerarquía de Memoria</summary>
+
+![image](https://github.com/user-attachments/assets/03fff589-f451-43dd-85a9-f9bf8178813c)
+
+- **Objetivo:** la velocidad del sistema deberá ser, aproximadamente, la del nivel más rápido al costo del nivel más barato.
+- A medida que nos alejamos de la CPU, cada nivel inferior es más grande, más lento y más barato que el nivel previo (o superior) en la jerarquía.
+- Debe haber correspondencia de direcciones en los distintos niveles.
+
+**Propiedades a cumplir**
+
+- **Inclusión**
+  - Los datos almacenados en un nivel han de estar almacenados en los niveles inferiores a él.
+- **Coherencia**
+  - Las copias de la misma información en los distintos niveles deben contener los mismos valores.
+
+</details>
+
+<details><summary>¿Porqué funciona la jerarquía?</summary>
+
+**Principio de localidad de referencias**
+- **Localidad Temporal**: los elementos de memoria referenciados recientemente (datos o instrucciones), volverán a serlo en un futuro próximo => subo la palabra de nivel.
+- **Localidad Espacial**: los elementos de memoria cuyas direcciones están próximas a los últimos referenciados serán referenciados. => subo un bloque (con la palabra) de nivel.
+
+</details>
+
+<details><summary>Memoria Cache</summary>
+
+![image](https://github.com/user-attachments/assets/92e15ecc-8969-4dca-9d3f-2db04d5d53d2)
+
+</details>
+
+<details><summary>Funcionamiento de la cache</summary>
+
+- La CPU solicita contenido de 1 dirección de memoria.
+- La cache ¿tiene ese dato?
+  - Si es así, la obtiene de la cache (rápidamente).
+  - Si no está, se lee el bloque que contiene esa dirección desde la memoria principal y copia en la cache.
+    - Después, la cache entrega el dato requerido a la CPU.
+
+La cache incluye etiquetas para identificar qué bloque de la memoria principal está en cada una de sus líneas.
+
+</details>
+
+<details><summary>Ubicación de un bloque</summary>
+
+
+**Correspondencia directa.** Un bloque sólo puede estar almacenado en un lugar de la caché.
+- Nº línea caché = Nº bloque ref. mod Nº líneas caché
+
+**Correspondencia totalmente asociativa.** Un bloque puede almacenarse en cualquier lugar de la caché.
+
+**Correspondencia asociativa por conjuntos.** Un bloque puede almacenarse en un conjunto restringido de lugares en la caché.
+- Un conjunto es un grupo de líneas de la caché.
+- Nº conjunto = Nº bloque ref. mod Nº conjuntos caché
+
+![image](https://github.com/user-attachments/assets/e4ce9e3f-136e-4273-9fcb-1020632a77d4)
+
+![image](https://github.com/user-attachments/assets/a04b6db5-9563-4a5f-8517-e19d19a75687)
+
+</details>
+
+<details><summary>Correspondencia Directa: ventajas y desventajas</summary>
+
+- Simple.
+- Poco costosa.
+- Hay una posición concreta para cada bloque dado:
+  - si un programa accede a dos bloques que se corresponden a la misma línea (diferentes bloques de memoria principal) de forma repetida, las pérdidas de cache (desaciertos) serán muy grandes.
+
+</details>
+
+<details><summary>Correspondencia Asociativa: ventajas y desventajas</summary>
+
+- Un bloque de memoria principal puede colocarse en cualquier línea de la cache.
+- La etiqueta identifica unívocamente un bloque de memoria.
+- Todas las etiquetas de las líneas se examinan para buscar una coincidencia.
+- Búsqueda costosa (en tiempo principalmente).
+
+</details>
+
+<details><summary>Corres. asoc. por conjuntos: ventajas y desventajas</summary>
+
+- Combina lo mejor de las otras correspondencias
+- La cache se divide en un grupo de conjuntos.
+  - Cada conjunto contiene un número de líneas
+    - N vías, con N=2, 4, 8 … etc.
+- Un bloque determinado corresponderá a cualquier línea de un conjunto determinado.
+  - El bloque B puede asignarse en cualquiera de las líneas del conjunto i.
+
+</details>
+
+<details><summary>Política de reemplazos</summary>
+
+- Algoritmos de sustitución
+  - En correspondencia directa:
+    - el que ocupa el lugar del nuevo
+  - En correspondencia asociativa:
+    - LRU (menos recientemente usado)
+    - FIFO (más antiguo)
+    - LFU (menos frecuentemente usado)
+    - Aleatoria
+
+</details>
+
+<details><summary>Algoritmos de sustitución</summary>
+
+**Correspondencia directa**
+- No hay elección.
+- Sólo hay una posible línea para cada bloque.
+- Se necesita una sustitución de esa línea (sí o sí).
+
+**Correspondencias asociativas**
+- Los algoritmos deben implementarse en hardware (para conseguir velocidad).
+
+**Menos recientemente usado (LRU)**
+- Requiere controles de tiempos
+- En correspondencias asociativas por conjuntos de 2 vías. ¿Cuál de las 2 líneas es la LRU?
+
+
+**Primero en entrar - primero en salir (FIFO)**
+- Requiere controles de acceso.
+- Se sustituye aquella línea que ha estado más tiempo en la cache.
+
+**Menos frecuentemente usado (LFU)**
+- Requiere controles de uso.
+- Se sustituye aquella línea que ha experimentado menos referencias.
+
+**Aleatoria**
+- Se sustituye una línea al azar.
+
+</details>
+
+<details><summary>Política de escritura</summary>
+
+- Se debe evitar inconsistencia de memorias en el caso de escrituras.
+
+**Tener en cuenta:**
+- La CPU escribe sobre una línea de cache
+  - El bloque de memoria principal correspondiente debe ser actualizado en algún momento.
+- Un módulo E/S puede tener acceso directo a la memoria principal.
+- En procesamiento paralelo, las múltiples CPU pueden tener caches individuales.
+
+</details>
+
+<details><summary>Política de escritura: en acierto</summary>
+
+- **Write-through (Escritura inmediata)**:
+  - Se actualizan simultáneamente la posición de la caché y de la memoria principal.
+    - Con múltiples CPU, observar el tráfico a memoria principal para mantener actualizada cada caché local.
+    - Se genera mucho tráfico y retrasa la escritura.
+
+- **Write-back (Post-escritura)**:
+  - La información sólo se actualiza en la caché.
+    - Se marca como actualizada ⇒ bit de "sucio".
+    - La memoria principal se actualiza en el reemplazo y puede contener información errónea en algún momento.
+
+</details>
+
+<details><summary>Política de escritura: en fallo</summary>
+
+- **Write allocate**:
+  - La información se lleva de la memoria principal a la caché. Se sobreescribe en la caché.
+    - Habitual con write-back.
+
+- **No-write allocate**:
+  - El bloque no se lleva a memoria caché. Se escribe directamente en la memoria principal.
+    - Habitual con write-through.
+
+</details>
+
+---
+
+### Clase 9 Memoria Cache
 
 ---
 
