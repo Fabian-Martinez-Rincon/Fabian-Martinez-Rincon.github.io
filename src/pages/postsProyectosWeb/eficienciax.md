@@ -8,7 +8,7 @@ image:
     alt: "Miniatura de los arcos de Astro."
 pubDate: 2022-10-04
 tags: ["CSS", "HTML", "JavaScript"]
-category: Proyectos Estudios
+category: Otros
 ---
 
 - [Link del repositorio](https://github.com/Fabian-Martinez-Rincon/Efficiency_X)
