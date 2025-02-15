@@ -12,17 +12,17 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     
-    <title>Python Developer </title>
+    <title>Data Engineer </title>
     <meta name="description" content="Python Developer" />
     <meta name="author" content="Fabian Martinez Rincon" />
     <meta name="keywords" content="Python Developer" />
     <link rel="icon" href="/f.svg" />
   </head>
   <body class="dark:bg-white">
-    <button id="dark-mode-toggle" class="mb-2 mt-2">
-    </button>
-
-  
+    <div class=" mb-3 text-center">
+      <h1 class="text-4xl  mb-1 dark:text-dark">FABIAN MARTINEZ RINCON</h1>
+      <h2 class="text-3xl font-bold mb-1 dark:text-dark">DATA ENGINEER</h2>
+    </div>
     <div id="Links" class="flex items-center justify-start gap-6 w-full">
       <div class="flex items-center">
         <strong>Mail:</strong>
@@ -38,8 +38,8 @@ import "../styles/global.css";
       </div>
       <div class="flex items-center">
         <strong>Portfolio:</strong>
-        <a href="https://rincondelfabo.vercel.app/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-700">
-          rincondelfabo.vercel.app
+        <a href="https://data-engineer-fabian-martinez.vercel.app/" target="_blank" rel="noopener noreferrer" class="ml-2 text-red-700">
+          data-engineer-fabian-martinez.vercel.app
         </a>
       </div>
 
@@ -61,26 +61,22 @@ import "../styles/global.css";
       </div>
     </div>
     
-    <div class=" mb-3 ">
-      <h1 class="text-4xl  mb-1 dark:text-dark">FABIAN MARTINEZ RINCON</h1>
-      <h2 class="text-3xl font-bold mb-1 dark:text-dark">PYTHON DEVELOPER</h2>
-    
-    </div>
 
     <div id="work" class="mb-2">
       <SectionTitle title="EXPERIENCIA LABORAL" />
 
-      <!-- <RowEntry
+        <RowEntry
         name="18/09/2024 - Actualidad"
         title="Data Engineer | Web Scraper"
         subTitle="BB Media"
         description={[
-            "Realice varios scrapings utilizando Playwright, Beautifulsoup y/o Apis según corresponda. Los datos se almacenan y manipulan usando NoSQL en MongoDB",
-            "Realice actualizaciones en cuando a las datos que traen los scripts, ya que una web puede traer mucho menos contenidos pero simplemente fueron eliminados",
-            "Realice tareas de Mantenimiento de Scripts escritos en Python, desde metodos obsoletos (porque la web cambia) hasta reestructuración buscando formas mas eficiente de obtener los datos como por ejemplo APIS.",
+              "ETL & Python Realice multiples mantenimientos a diferentes scrips, y realice diferentes procesos ETL de plataformas como Canalplus, Bilibili, Stbvideos, Virginmediaplayer, entre otras en las que utilice como lenguaje Python junto con Playwright, Beautifulsoup y Apis (Insomnia como herramienta), usando expresiones regulares (Regex), Studio-3T como interfaz para manipular datos. Los datos se almacenan y manipulan usando NoSQL en MongoDB.",
+              "Gestión de Datos: Experiencia con bases de datos relacionales y no relacionales (PostgreSQL, MongoDB)",
+              "Python y Librerías: Dominio de Python con librerías como pandas, numpy y SQLAlchemy.",
+              "Metodologías Ágiles: Trabajo en equipo con metodologías ágiles (Scrum) en el que nos repartimos tareas, realizamos reuniones diarias y semanales para ver el avance de los proyecto.",
         ]}
         />
-        <hr class="bg-black h-0.5" /> -->
+        <hr class="bg-black h-1"/> 
       <RowEntry
         name="01/07/2023 - 17/09/2024"
         title="Testing Engineer"
@@ -100,14 +96,14 @@ import "../styles/global.css";
        <SectionTitle title="Educación" />
     
        <RowEntry
-            name="2021 - Actualidad"
-            title="Licenciado en Sistemas"
+            name="2021 - 2025"
+            title="Analista Programador Universitario"
             subTitle="UNLP | Informatica"
             description={[
                 "Competente en Java y patrones de diseño, metodologías ágiles (Scrum), PostgreSQL, SQL, Linux y bases de datos relacionales. Hábil en Bash Scripting, Python, Flask y tecnologías de front-end incluyendo HTML, CSS, JavaScript, React, Tailwind y Vue.js."
             ]}
         />
-
+        <hr class="bg-black h-1"/> 
         <RowEntry
             name="2014-2020"
             link="https://rincondelfabo.vercel.app/certificaciones/tecnico.webp"
@@ -131,7 +127,17 @@ import "../styles/global.css";
             ]},
             link="https://github.com/Fabian-Martinez-Rincon/Scraping_PLUTO_TV"
         />
-
+        <hr class="bg-black h-1"/> 
+        <RowEntry
+          name="01/11/2024"
+          title="Lab-Genetics"
+          subTitle="Github"
+          description={[
+          "Proyecto para digitalizar la gestión de muestras biológicas utilizando Flask, SQLAlchemy. Se integran funcionalidades para gestionar usuarios, muestras y resultados, con una interfaz intuitiva y segura. Librerías utilizadas: flask, python-dotenv, psycopg2-binary, flask-sqlalchemy, flask-wtf, flask-session, flask-bcrypt, flask-mail, flask-cors, authlib, flask-jwt-extended, requests, gunicorn, email_validator, flask_login."
+          ]}
+          link="https://github.com/Fabian-Martinez-Rincon/Lab-Genetics"
+          />
+          <hr class="bg-black h-1"/> 
         <RowEntry
         name="20/06/2024"
         title="Char-IT"
@@ -141,8 +147,7 @@ import "../styles/global.css";
         ]}
         link="https://github.com/Fabian-Martinez-Rincon/Char-IT"
     />
-    
-
+    <hr class="bg-black h-1"/> 
       <RowEntry
             name="24/12/2022"
             title="Midflash"
@@ -152,7 +157,7 @@ import "../styles/global.css";
             ]},
             link="https://github.com/Fabian-Martinez-Rincon/MidFlash"
         />
-
+        <hr class="bg-black h-1"/> 
         <RowEntry
             name="01/05/2022"
             title="Datasets-Processor"
@@ -175,7 +180,7 @@ import "../styles/global.css";
         title="Charla"
         subTitle="UNLP | Informatica"
       />
-      
+      <hr class="bg-black h-1"/> 
       <RowEntry
         description={["Fui reconocido por el presidente de la UNLP por mi destacada actuación en el evento. Para más detalles, por favor consulta la nota oficial de la UNLP."]}
         name="29/06/2023"
@@ -183,7 +188,7 @@ import "../styles/global.css";
         title="Nota de Reconocimiento"
         subTitle="UNLP | Informatica"
       />
-
+      <hr class="bg-black h-1"/> 
       <RowEntry
         description={["Fui el líder del proyecto ganador en el evento de emprendimiento UNIDEA 2023, que contó con la participación de estudiantes y graduados de diversas universidades."]}
         name="31/05/2023"
@@ -191,7 +196,7 @@ import "../styles/global.css";
         title="UNIDEA 2023 Ganador"
         subTitle="UNICEN | Tandil"
       />
-
+      <hr class="bg-black h-1"/> 
       <RowEntry
         description={["Mi tarea fue compartir mi experiencia con quienes están comenzando a transitar por alguna de las carreras, a fin de facilitar su adaptación al nuevo ámbito y ayudarlos a construir su rol de estudiante universitario."]}
         name="01-03-2022 / 01-12-2022"
@@ -199,7 +204,7 @@ import "../styles/global.css";
         title="Tutor de Acompañamiento"
         subTitle="UNLP | Informatica"
       />
-
+      <hr class="bg-black h-1"/> 
       <RowEntry
         description={["Realice un desafio en el Hackaton 'Space-App Challengue'. Presente y documente el software en un equipo de 3 personas."]}
         name="01/10/2022"
@@ -208,7 +213,7 @@ import "../styles/global.css";
         subTitle=""
       />
 
-
+      <hr class="bg-black h-1"/> 
       <RowEntry
         description={["Pasantía de 200hs en las que trabaje con herramientas y módulos de Arduino para la implementación de proyectos. Documente todo en una página web estática usando CSS, HTML y JavaScript en GitHub Pages."]}
         name="2020-2021"
